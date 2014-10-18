@@ -512,7 +512,7 @@ for command,long_name,minimum_version,paths in [
         ('pip', None, None, None),
         ('sqlite3', 'SQLite 3', None, None),
         ('nosetests', 'Nose', (1, 0, 0), None),
-        ('ipython', 'IPython script', (0, 13), None),
+        ('ipython', 'IPython script', (1, 0), None),
         ('emacs', 'Emacs', None, None),
         ('xemacs', 'XEmacs', None, None),
         ('vim', 'Vim', None, None),
