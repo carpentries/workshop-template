@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Build the workshop website locally for checking.
+jekyll build -t -d _site

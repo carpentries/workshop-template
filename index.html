@@ -1,0 +1,528 @@
+---
+layout: page
+root: .
+venue: FIXME (brief name of host site)
+address: FIXME (street address of workshop location)
+country: FIXME (country (hyphenated if need be, like 'United-Kingdom')
+humandate: FIXME (use the format 'Feb 17-18, 2020' (without the quotes)
+humantime: FIXME (use the format '9:00 am - 4:30 pm' (without the quotes)
+startdate: FIXME (use YYYY-MM-DD format like 2015-01-01)
+enddate: FIXME (use YYYY-MM-DD format like 2015-01-02)
+latlng: FIXME (fractional latitude and longitude like 41.7901128,-87.6007318)
+instructor: FIXME (list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"])
+helper: FIXME (list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"])
+contact: FIXME (contact email address for workshop organizer)
+eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 1234567890AB key for Eventbrite registration)
+---
+FIXME: finish tidying this up
+<!-- Edit the values in the parameter block above to be appropriate for your workshop. -->
+
+<!-- Remove the block below. -->
+<div align="center">
+  <p>
+    <strong>
+      This page is a template for workshop home pages.  Please see
+      <a href="//github.com/swcarpentry/workshop-template">github.com/swcarpentry/workshop-template</a>
+      for instructions.
+    </strong>
+  </p>
+</div>
+
+<!-- This block includes the Eventbrite registration widget if 'eventbrite' has been set in the header. -->
+{% if page.eventbrite %}
+<iframe
+  src="//www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
+  frameborder="0"
+  pwidth="100%"
+  height="206px"
+  scrolling="auto">
+</iframe>
+{% endif %}
+
+<h2>General Information</h2>
+
+<p>
+  <a href="{{site.swc_site}}">Software Carpentry</a>'s mission
+  is to help scientists and engineers get more research done in less
+  time and with less pain by teaching them basic lab skills for
+  scientific computing.  This hands-on workshop will cover basic
+  concepts and tools, including program design, version control, data
+  management, and task automation.  Participants will be encouraged to
+  help one another and to apply what they have learned to their own
+  research problems.
+</p>
+
+<!-- Who is your audience?  (In particular, is the workshop only open to people from a particular institution? -->
+<p>
+  <strong>Who:</strong>
+  The course is aimed at graduate students and other researchers.
+</p>
+
+<!-- This block displays the address and links to a map showing directions. -->
+{% if page.latlng %}
+<p>
+  <strong>Where:</strong>
+  {{ page.address }}.
+  Get directions with
+  <a href="//www.openstreetmap.org/?mlat={{ page.latlng | replace:',','&mlon=' }}&zoom=16">OpenStreetMap</a>
+  or
+  <a href="//maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>.
+</p>
+{% endif %}
+
+<!-- Modify the block below if there are any special requirements. -->
+<p>
+  <strong>Requirements:</strong> Participants must bring a laptop with
+  a few specific software packages installed (listed below). They are
+  also required to abide by Software Carpentry's
+  <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
+</p>
+
+<!-- Insert a contact address. -->
+<p>
+  <strong>Contact</strong>:
+  Please mail
+  {% if page.contact %}
+    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
+  {% else %}
+    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
+  {% endif %}
+  for more information.
+</p>
+
+<hr/>
+
+<!-- Show the schedule for the workshop. -->
+<h2>Schedule</h2>
+
+<div class="row-fluid">
+  <div class="span6">
+    <h3>Day 1</h3>
+    <table class="table table-striped">
+      <tr> <td>09:00</td> <td>Automating tasks with the Unix shell</td> </tr>
+      <tr> <td><em>10:30</em></td> <td><em>Coffee break</em></td> </tr>
+      <tr> <td>12:00</td> <td>Lunch break</td> </tr>
+      <tr> <td>13:00</td> <td>Building programs with Python</td> </tr>
+      <tr> <td><em>14:30</em></td> <td><em>Coffee break</em></td> </tr>
+      <tr> <td>16:00</td> <td>Wrap-up</td> </tr>
+    </table>
+  </div>
+  <div class="span6">
+    <h3>Day 2</h3>
+    <table class="table table-striped">
+      <tr> <td>09:00</td> <td>Version control with Git</td> </tr>
+      <tr> <td><em>10:30</em></td> <td><em>Coffee break</em></td> </tr>
+      <tr> <td>12:00</td> <td>Lunch break</td> </tr>
+      <tr> <td>13:00</td> <td>Managing data with SQL</td> </tr>
+      <tr> <td><em>14:30</em></td> <td><em>Coffee break</em></td> </tr>
+      <tr> <td>16:00</td> <td>Wrap-up</td> </tr>
+    </table>
+  </div>
+</div>
+
+<hr/>
+
+<!-- Show what topics will be covered. Note: most workshops will delete either Python or R. -->
+<h2>Syllabus</h2>
+
+<div class="row-fluid">
+  <div class="span6">
+    <h3>The Unix Shell</h3>
+    <ul>
+      <li>Files and directories: <code>pwd</code>, <code>cd</code>, <code>ls</code>, <code>mkdir</code>, ...</li>
+      <li>History and tab completion</li>
+      <li>Pipes and redirection</li>
+      <li>Looping over files</li>
+      <li>Creating and running shell scripts</li>
+      <li>Finding things: <code>grep</code>, <code>find</code>, ...</li>
+      <li><a href="novice/ref/01-shell.html">Reference...</a></li>
+    </ul>
+  </div>
+  <div class="span6">
+    <h3>Programming in Python</h3>
+    <ul>
+      <li>Using libraries</li>
+      <li>Working with arrays</li>
+      <li>Reading and plotting data</li>
+      <li>Creating and using functions</li>
+      <li>Loops and conditionals: <code>for</code>, <code>if</code>, <code>else</code>, ...</li>
+      <li>Defensive programming</li>
+      <li>Using Python from the command line</li>
+      <li><a href="novice/ref/03-python.html">Reference...</a></li>
+    </ul>
+  </div>
+  <div class="span6">
+    <h3>Programming in R</h3>
+    <ul>
+      <li>Working with vectors and data frames</li>
+      <li>Reading and plotting data</li>
+      <li>Creating and using functions</li>
+      <li>Loops and conditionals: <code>for</code>, <code>if</code>, <code>else</code></li>
+      <li>Using R from the command line</li>
+      <li><a href="novice/ref/06-R.html">Reference...</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span6">
+    <h3>Version Control with Git</h3>
+    <ul>
+      <li>Creating a repository</li>
+      <li>Recording changes to files: <code>add</code>, <code>commit</code>, ...</li>
+      <li>Viewing changes: <code>status</code>, <code>diff</code>, ...</li>
+      <li>Ignoring files</li>
+      <li>Working on the web: <code>clone</code>, <code>pull</code>, <code>push</code>, ...</li>
+      <li>Resolving conflicts</li>
+      <li>Open licenses</li>
+      <li>Where to host work, and why</li>
+      <li><a href="novice/ref/02-git.html">Reference...</a></li>
+    </ul>
+  </div>
+  <div class="span6">
+    <h3>Managing Data with SQL</h3>
+    <ul>
+      <li>Reading and sorting data</li>
+      <li>Filtering with <code>where</code></li>
+      <li>Calculating new values on the fly</li>
+      <li>Handling missing values</li>
+      <li>Combining values using aggregation</li>
+      <li>Combining information from multiple tables using <code>join</code></li>
+      <li>Creating, modifying, and deleting data</li>
+      <li>Programming with databases</li>
+      <li><a href="novice/ref/04-sql.html">Reference...</a></li>
+    </ul>
+  </div>
+</div>
+
+<hr/>
+
+<!-- Delete irrelevant sections from the setup instructions. -->
+
+<h2>Setup</h2>
+
+<!-- Editor. -->
+
+<h3>Text Editor</h3>
+
+<p>
+  When you're writing code, it's nice to have a text editor that is
+  optimized for writing code, with features like automatic
+  color-coding of key words.  The default text editor on Mac OS X and
+  Linux is usually set to Vim, which is not famous for being
+  intuitive.  if you accidentally find yourself stuck in it, try
+  typing the escape key, followed by ':q!' (colon, lower-case 'q',
+  exclamation mark), then hitting Return to return to the shell.
+</p>
+
+<div class="row-fluid">
+  <div class="span4">
+    <h4>Windows</h4>
+    <p>
+      <code>nano</code> is the editor installed by the Software
+      Carpentry Installer, it is a basic editor integrated into the
+      lesson material.
+    </p>
+    <p>
+      <a href="http://notepad-plus-plus.org/">Notepad++</a> is a
+      popular free code editor for Windows.  Be aware that you must
+      add its installation directory to your system path in order to
+      launch it from the command line (or have other tools like Git
+      launch it for you).  Please ask your instructor to help you do
+      this.
+    </p>
+  </div>
+  <div class="span4">
+    <h4>Mac OS X</h4>
+    <p>
+      We recommend
+      <a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
+      <a href="http://www.sublimetext.com/">Sublime Text</a>.
+      In a pinch, you can use <code>nano</code>,
+      which should be pre-installed.
+    </p>
+  </div>
+  <div class="span4">
+    <h4>Linux</h4>
+    <p>
+      <a href="http://kate-editor.org/">Kate</a> is one option for
+      Linux users.  In a pinch, you can use <code>nano</code>, which
+      should be pre-installed.
+    </p>
+  </div>
+</div>
+
+<!-- Shell. -->
+
+<h3>The Bash Shell</h3>
+
+<p>
+  Bash is a commonly-used shell that gives you the power to do simple
+  tasks more quickly.
+</p>
+
+<div class="row-fluid">
+  <div class="span4">
+    <h4>Windows</h4>
+    <p>
+      Install Git for Windows by download and running
+      <a href="http://msysgit.github.io/">the installer</a>.
+      This will provide you with both Git and Bash in the Git Bash program.
+    </p>
+    <h4>Software Carpentry Installer</h4>
+    <p><em>This installer requires an active internet connection.</em></p>
+    <p>After installing Python and Git Bash:</p>
+    <ul>
+      <li>
+        Download the <a href="{{site.swc_installer}}">installer</a>.
+      </li>
+      <li>
+        If the file opens directly in the browser
+        select <strong>File&rarr;Save Page As</strong> to download it
+        to your computer.
+      </li>
+      <li>
+        Double click on the file to run it.
+      </li>
+    </ul>
+  </div>
+  <div class="span4">
+    <h4>Mac OS X</h4>
+    <p>
+      The default shell in all versions of Mac OS X is bash, so no
+      need to install anything.  You access bash from the Terminal
+      (found in
+      <code>/Applications/Utilities</code>).  You may want to keep
+      Terminal in your dock for this workshop.
+    </p>
+  </div>
+  <div class="span4">
+    <h4>Linux</h4>
+    <p>
+      The default shell is usually <code>bash</code>, but if your
+      machine is set up differently you can run it by opening a
+      terminal and typing <code>bash</code>.  There is no need to
+      install anything.
+    </p>
+  </div>
+</div>
+
+<!-- Git. -->
+
+<h3>Git</h3>
+
+<p>
+  Git is a version control system that lets you track who made changes
+  to what when and has options for easily updating a shared or public
+  version of your code
+  on <a href="https://github.com/">github.com</a>.
+</p>
+
+<div class="row-fluid">
+  <div class="span4">
+    <h4>Windows</h4>
+    <p>
+      Git should be installed on your computer as part of your Bash
+      install (described above).
+    </p>
+  </div>
+  <div class="span4">
+    <h4>Mac OS X</h4>
+    <p>
+      <strong>For OS X 10.8 and higher</strong>, install Git for Mac
+      by downloading and running
+      <a href="http://git-scm.com/downloads">the installer</a>.
+      <strong>For older versions of OS X (10.5-10.7)</strong> use the
+      most recent available installer for your
+      OS <a href="https://code.google.com/p/git-osx-installer/downloads/list">available
+      here</a>.  Use the Leopard installer for 10.5 and the Snow
+      Leopard installer for 10.6-10.7.
+    </p>
+  </div>
+  <div class="span4">
+    <h4>Linux</h4>
+    <p>
+      If Git is not already available on your machine you can try to
+      install it via your distro's package manager
+      (e.g. <code>apt-get</code> or <code>yum</code>).
+    </p>
+  </div>
+</div>
+
+<!-- Python. -->
+
+<h3>Python</h3>
+
+<p>
+  <a href="http://python.org">Python</a> is a popular language for
+  scientific computing, and great for general-purpose programming as
+  well.  Installing all of its scientific packages individually can be
+  a bit difficult, so we recommend an all-in-one installer.
+</p>
+
+<div class="row-fluid">
+  <div class="span4">
+    <h4>Windows</h4>
+    <ul>
+      <li>
+        Download and
+        install <a href="https://store.continuum.io/cshop/anaconda/">Anaconda</a>.
+      </li>
+      <li>
+        Use all of the defaults for installation
+        <em>except</em> make sure to check <strong>Make Anaconda the
+        default Python</strong>.
+      </li>
+    </ul>
+  </div>
+  <div class="span4">
+    <h4>Mac OS X</h4>
+    <ul>
+      <li>
+        Download and
+        install <a href="https://store.continuum.io/cshop/anaconda/">Anaconda</a>.
+      </li>
+      <li>
+        Use all of the defaults for installation
+        <em>except</em>
+        make sure to check <strong>Make Anaconda the default Python</strong>.
+      </li>
+    </ul>
+  </div>
+  <div class="span4">
+    <h4>Linux</h4>
+    <p>
+      We recommend the all-in-one scientific Python installer
+      <a href="http://continuum.io/downloads.html">Anaconda</a>.
+      (Installation requires using the shell and if you aren't
+      comfortable doing the installation yourself just
+      download the installer and we'll help you at the boot
+      camp.)
+    </p>
+    <ol>
+      <li>
+        Download the installer that matches your operating
+        system and save it in your home folder.
+      </li>
+      <li>
+        Open a terminal window.
+      </li>
+      <li>
+        Type <pre>bash Anaconda-</pre> and then press
+        tab. The name of the file you just downloaded should
+        appear.
+      </li>
+      <li>
+        Press enter. You will follow the text-only prompts.  When
+        there is a colon at the bottom of the screen press the down
+        arrow to move down through the text. Type <code>yes</code> and
+        press enter to approve the license. Press enter to approve the
+        default location for the files. Type <code>yes</code> and
+        press enter to prepend Anaconda to your <code>PATH</code>
+        (this makes the Anaconda distribution the default Python).
+      </li>
+    </ol>
+  </div>
+</div>
+
+<!-- R. -->
+
+<h3>R</h3>
+
+<p>
+  <a href="http://www.r-project.org">R</a> is a programming language
+  that is especially powerful for data exploration, visualization, and
+  statistical analysis. To interact with R, we use
+  <a href="http://www.rstudio.com/">RStudio</a>.
+</p>
+
+<div class="row-fluid">
+  <div class="span4">
+    <h4>Windows</h4>
+    <p>
+      Install R by downloading and running
+      <a href="http://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a>
+      from <a href="http://cran.r-project.org/index.html">CRAN</a>.
+      Also, please install the
+      <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
+    </p>
+  </div>
+  <div class="span4">
+    <h4>Mac OS X</h4>
+    <p>
+      Install R by downloading and running
+      <a href="http://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
+      from <a href="http://cran.r-project.org/index.html">CRAN</a>.
+      Also, please install the
+      <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
+    </p>
+  </div>
+  <div class="span4">
+    <h4>Linux</h4>
+    <p>
+      You can download the binary files for your distribution
+      from <a href="http://cran.r-project.org/index.html">CRAN</a>. Or
+      you can use your package manager, e.g. for Debian/Ubuntu
+      run <code>apt-get install r-base</code> or <code>yum install
+      R</code>.  Also, please install the
+      <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
+    </p>
+  </div>
+</div>
+
+<!-- SQLite. -->
+
+<h3>SQLite</h3>
+
+<p>
+  SQL is a specialized programming language used with databases.  We
+  use a simple database manager called
+  <a href="http://www.sqlite.org/">SQLite</a> in our lessons.
+</p>
+
+<div class="row-fluid">
+  <div class="span4">
+    <h4>Windows</h4>
+    <p>
+      Download the <a href="{{site.swc_files}}/sqlite3.exe">sqlite3
+      program</a> and put it in the directory where you are running
+      examples.
+    </p>
+  </div>
+  <div class="span4">
+    <h4>Mac OS X</h4>
+    <p>
+      <code>sqlite3</code> comes pre-installed on Mac OS X.
+    </p>
+  </div>
+  <div class="span4">
+    <h4>Linux</h4>
+    <p>
+      <code>sqlite3</code> comes pre-installed on Linux.
+    </p>
+  </div>
+</div>
+
+<!-- Delete this if your are not using a virtual machine. -->
+
+<h3>Virtual Machine</h3>
+
+<p>
+  Some instructors prefer to have learners use a virtual machine (VM)
+  rather than install software on their own computers.  If your
+  instructors have chosen to do this, please:
+</p>
+<ol>
+  <li>
+    Install <a href="https://www.virtualbox.org/">VirtualBox</a>.
+  </li>
+  <li>
+    Download our <a href="{{site.swc_vm_url}}">VM image</a>.
+    <strong>Warning:</strong> this file is 1.7 GByte, so please
+    download it <em>before</em> coming to your workshop.
+  </li>
+  <li>
+    Load the VM into VirtualBox by selecting "Import Appliance" and
+    loading the <code>.ova</code> file.
+  </li>
+</ol>
