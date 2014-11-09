@@ -6,4 +6,5 @@ exclude         : [tools]
 swc_site        : "http://software-carpentry.org"
 swc_files       : "http://files.software-carpentry.org"
 swc_installer   : "http://files.software-carpentry.org/SWCarpentryInstaller.exe"
+swc_lessons     : "http://software-carpentry.org/v5/novice"
 swc_vm_url      : "https://docs.google.com/uc?id=0B4Kr6DYkzkQtd05FekRId05DLXM&amp;export=download"
