@@ -40,6 +40,8 @@ workshop; instead, follow the instructions below.
 
 ## Summary
 
+**Note: the website creation script mentioned below does not work properly yet.  Please follow the "by hand" instructions instead. **
+
 1.   Download the workshop website creation script from [http://files.software-carpentry.org/create](http://files.software-carpentry.org/create).
 2.   Make sure that you are *not* inside another Git repository.
 3.   Run that script with no parameters - it will print a help message telling you what parameters it needs.
