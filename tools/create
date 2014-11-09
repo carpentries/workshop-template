@@ -1,0 +1,140 @@
+#!/bin/bash
+
+# FIXME: check that repository doesn't already exist *on GitHub*.
+# FIXME: suppress echo of curl data in create_repo.
+# FIXME: collaborators are *not* being set up.
+# FIXME: test to see if we're already in a Git repo isn't working.
+
+## Create a website for a new workshop.
+##
+## Usage:
+##
+##     $ tools/create workshop_id title owner [instructor [instructor ...]]
+##
+## Parameters:
+##
+## - workshop_id: the identifier provide by Software Carpentry for the
+##   workshop that you will be running. It will be used for the name of
+##   the Git repository and is a name like YYYY-MM-DD-site, e.g.,
+##   '2015-06-18-esu'.
+##
+## - title: the title of the workshop that you will be running.
+##   It should be multi-word and must be enclose with single or double
+##   quotes.
+##
+## - owner: your GitHub username.
+##
+## - instructor: the GitHub username(s) of the other instructors.  The
+##   GitHub username of the owner is added to this list when setting up
+##   the team with permission to push to the repository.
+##
+## Example:
+##
+##     $ tools/create 2015-06-18-esu "Euphoric State University" aturing ghopper
+##
+## will create a workshop website at http://github.com/aturing/2015-06-18-esu
+## with the title "Euphoric State University" and give 'ghopper' permissions
+## to push as well as the owner 'aturing'.
+##
+## Note:
+##
+## This script may ask for your GitHub password twice: once to use the
+## GitHub API, and once to push changes to the newly-created
+## repository.
+
+# Check that the current working directory is *not* already a Git repo.
+function check_pwd {
+    if test $(git status > /dev/null 2>&1)
+    then
+        echo "ERROR: you are already inside a Git repository."
+        exit 2
+    fi
+}
+
+# Create the remote repository.
+function create_repo {
+    url=https://api.github.com/user/repos
+    ghpages=https://${OWNER}.github.io/${WORKSHOP_ID}
+    curl -f -u "${OWNER}:${PASSWORD}" \
+        -d "{\"name\":\"${WORKSHOP_ID}\",\"title\":\"${TITLE}\",\"homepage\":\"${ghpages}\"${REPOSITORY_DEFAULTS}}" \
+        ${url}
+    if test $? -ne 0
+    then
+        echo "ERROR: cannot create the remote repository. Aborting."
+        exit $?
+    fi
+}
+
+# Create the team for the repository.
+function set_team {
+    for instructor in ${INSTRUCTORS};
+    do
+        url=https://api.github.com/repos/${OWNER}/${WORKSHOP_ID}/collaborators/${instructor}
+        curl -f -u "${OWNER}:${PASSWORD}" -X PUT -d "{}" ${url}
+        if test $? -ne 0
+        then
+            echo "WARNING: cannot add ${instructor} as collaborator."
+        fi
+    done
+}
+
+# Clone the template directory, setting it as the upstream, and push
+# the cloned material to the repository for this workshop.
+function clone_and_push {
+    git clone -b gh-pages -o upstream \
+        https://github.com/${WORKSHOP_TEMPLATE_SRC}.git ${REPOSITORY_PATH}
+    cd ${REPOSITORY_PATH}
+    git remote add origin \
+        ${WORKSHOP_URL/https:\/\//https:\/\/${OWNER}@}.git
+    git config credential.username ${OWNER}
+    git push -u origin gh-pages
+}
+
+# Report what was done.
+function end_message {
+    echo "LOG:"
+    echo ""
+    echo "1. Repository create at ${WORKSHOP_URL}"
+    echo "2. Repository cloned at ${REPOSITORY_PATH}"
+    echo ""
+    echo "TODO:"
+    echo ""
+    echo "1. Update ${REPOSITORY_PATH}/index.html"
+    echo "2. Run tools/check to make sure everything conforms"
+    echo "3. Push changes to the gh-pages branch"
+}
+
+# Main driver.
+function main {
+    check_pwd
+    create_repo
+    set_team
+    clone_and_push
+    end_message
+}
+
+# Check the number of input arguments
+if test $# -lt 3
+then
+    echo ""
+    sed -n 's/^## //p' $0
+    echo ""
+    exit 1
+fi
+
+# Set up environment variables.
+WORKSHOP_TEMPLATE_SRC=swcarpentry/workshop-template
+WORKSHOP_ID=$1
+REPOSITORY_PATH=./$1
+TITLE="$2"
+OWNER=$3
+INSTRUCTORS=${OWNER} ${@:4}
+WORKSHOP_URL=https://github.com/${OWNER}/${WORKSHOP_ID}
+REPOSITORY_DEFAULTS=,\"has_issues\":false,\"has_wiki\":false,\"has_downloads\":false
+
+# Get the user's Gitub password.
+echo "Enter the GitHub password for $OWNER:"
+read -s PASSWORD
+
+# Run.
+main
