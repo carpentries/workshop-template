@@ -196,11 +196,10 @@ in its header:
     values.  You can *not* put spaces around the comma separating the
     latitude from the longitude.
 
-*   `humandate` is the human-friendly dates for the workshop (e.g.,
-    `Jul 3-4, 2015`).  Please use three- or four-letter month names
-    and abbreviations (e.g., `Dec` instead of `December`), since these
-    values are displayed in a table on the
-    [Software Carpentry](http://software-carpentry.org) website.
+*   `humandate` is the human-friendly dates for the workshop.  Please
+    use three-letter month names and abbreviations (e.g., `Jul`
+    instead of `July`), since these values are displayed in a table on
+    the [Software Carpentry](http://software-carpentry.org) website.
 
 *   `startdate` is the workshop's starting date in YYYY-MM-DD format,
     such as `2015-07-01`.  You must use four digits for the year and
