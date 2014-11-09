@@ -1,7 +1,9 @@
 #!/bin/bash
 
+# FIXME: check that repository doesn't already exist *on GitHub*.
 # FIXME: suppress echo of curl data in create_repo.
 # FIXME: collaborators are *not* being set up.
+# FIXME: test to see if we're already in a Git repo isn't working.
 
 ## Create a website for a new workshop.
 ##
@@ -28,15 +30,15 @@
 ##
 ## Example:
 ##
-##     $ tools/create 2015-06-18-esu "Euphoric State University" aturing aturing ghopper
+##     $ tools/create 2015-06-18-esu "Euphoric State University" aturing ghopper
 ##
 ## will create a workshop website at http://github.com/aturing/2015-06-18-esu
 ## with the title "Euphoric State University" and give 'ghopper' permissions
-## to push as well as 'aturing'.
+## to push as well as the owner 'aturing'.
 ##
 ## Note:
 ##
-## This script will ask for your GitHub password twice: once to use the
+## This script may ask for your GitHub password twice: once to use the
 ## GitHub API, and once to push changes to the newly-created
 ## repository.
 
@@ -44,7 +46,7 @@
 function check_pwd {
     if test $(git status > /dev/null 2>&1)
     then
-        echo "Look like you are already inside a Git repository."
+        echo "ERROR: you are already inside a Git repository."
         exit 2
     fi
 }
@@ -58,7 +60,7 @@ function create_repo {
         ${url}
     if test $? -ne 0
     then
-        echo "Cannot create the remote repository. Aborting."
+        echo "ERROR: cannot create the remote repository. Aborting."
         exit $?
     fi
 }
@@ -71,7 +73,7 @@ function set_team {
         curl -f -u "${OWNER}:${PASSWORD}" -X PUT -d "{}" ${url}
         if test $? -ne 0
         then
-            echo "WARNING: can't add ${instructor} as collaborator."
+            echo "WARNING: cannot add ${instructor} as collaborator."
         fi
     done
 }
@@ -114,7 +116,9 @@ function main {
 # Check the number of input arguments
 if test $# -lt 3
 then
+    echo ""
     sed -n 's/^## //p' $0
+    echo ""
     exit 1
 fi
 
