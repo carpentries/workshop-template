@@ -104,7 +104,7 @@ function end_message {
     echo "TODO:"
     echo ""
     echo "1. Update ${REPOSITORY_PATH}/index.html"
-    echo "2. Run tools/check to make sure everything conforms"
+    echo "2. Run tools/check.py on ${REPOSITORY_PATH}/index.html to make sure everything conforms"
     echo "3. Push changes to the gh-pages branch"
 }
 
