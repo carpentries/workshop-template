@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # FIXME: check that repository doesn't already exist *on GitHub*.
-# FIXME: suppress echo of curl data in create_repo.
 # FIXME: collaborators are *not* being set up.
-# FIXME: test to see if we're already in a Git repo isn't working.
+# FIXME: check to see if we're already in a Git repo isn't working.
 
 ## Create a website for a new workshop.
 ##
@@ -36,11 +35,14 @@
 ## with the title "Euphoric State University" and give 'ghopper' permissions
 ## to push as well as the owner 'aturing'.
 ##
-## Note:
+## Notes:
 ##
-## This script may ask for your GitHub password twice: once to use the
-## GitHub API, and once to push changes to the newly-created
-## repository.
+## * This script may ask for your GitHub password twice: once to use
+##   the GitHub API, and once to push changes to the newly-created
+##   repository.
+## * This script uses the '-s' (silent) option for curl, and redirects
+##   output to /dev/null, so that it runs quietly.  For debugging, you
+##   may wish to change one or both of these.
 
 # Check that the current working directory is *not* already a Git repo.
 function check_pwd {
@@ -55,9 +57,9 @@ function check_pwd {
 function create_repo {
     url=https://api.github.com/user/repos
     ghpages=https://${OWNER}.github.io/${WORKSHOP_ID}
-    curl -f -u "${OWNER}:${PASSWORD}" \
+    curl -s -f -u "${OWNER}:${PASSWORD}" \
         -d "{\"name\":\"${WORKSHOP_ID}\",\"title\":\"${TITLE}\",\"homepage\":\"${ghpages}\"${REPOSITORY_DEFAULTS}}" \
-        ${url}
+        ${url} > /dev/null
     if test $? -ne 0
     then
         echo "ERROR: cannot create the remote repository. Aborting."
@@ -70,7 +72,7 @@ function set_team {
     for instructor in ${INSTRUCTORS};
     do
         url=https://api.github.com/repos/${OWNER}/${WORKSHOP_ID}/collaborators/${instructor}
-        curl -f -u "${OWNER}:${PASSWORD}" -X PUT -d "{}" ${url}
+        curl -s -f -u "${OWNER}:${PASSWORD}" -X PUT -d "{}" ${url} > /dev/null
         if test $? -ne 0
         then
             echo "WARNING: cannot add ${instructor} as collaborator."
@@ -80,6 +82,8 @@ function set_team {
 
 # Clone the template directory, setting it as the upstream, and push
 # the cloned material to the repository for this workshop.
+# FIXME: should check that 'git clone' worked correctly before trying
+# to 'cd'.
 function clone_and_push {
     git clone -b gh-pages -o upstream \
         https://github.com/${WORKSHOP_TEMPLATE_SRC}.git ${REPOSITORY_PATH}
@@ -132,7 +136,9 @@ INSTRUCTORS=${OWNER} ${@:4}
 WORKSHOP_URL=https://github.com/${OWNER}/${WORKSHOP_ID}
 REPOSITORY_DEFAULTS=,\"has_issues\":false,\"has_wiki\":false,\"has_downloads\":false
 
-# Get the user's Gitub password.
+# Get the user's Gitub password.  This isn't strictly needed if the
+# user has SSH keys set up, but asking for it is easier than checking
+# for keys.
 echo "Enter the GitHub password for $OWNER:"
 read -s PASSWORD
 
