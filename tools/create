@@ -57,6 +57,12 @@ function check_pwd {
 function create_repo {
     url=https://api.github.com/user/repos
     ghpages=https://${OWNER}.github.io/${WORKSHOP_ID}
+    curl -s --head ${ghpages} | head -n 1 | grep "HTTP/1.[01] [23].."
+    if test $? -ne 1
+    then
+        echo "ERROR: this repository already exists"
+        exit $?
+    fi
     curl -s -f -u "${OWNER}:${PASSWORD}" \
         -d "{\"name\":\"${WORKSHOP_ID}\",\"title\":\"${TITLE}\",\"homepage\":\"${ghpages}\"${REPOSITORY_DEFAULTS}}" \
         ${url} > /dev/null
