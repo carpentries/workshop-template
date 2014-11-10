@@ -74,7 +74,7 @@ the identifier for your workshop is `2015-07-01-esu`.
 8.   Check your changes by running `tools/check` inside your repository.
 9.   Preview your changes by running `tools/preview` and looking at `_site/index.html`.
 10.  When it all looks good, commit your changes and push to the `gh-pages` branch of your repository.
-11.  Manually add the other instructors as collaborators.
+11.  Manually add the other instructors as collaborators to your Github repository.
 12.  Send the workshop coordinators the URL for your GitHub repository (*not* the URL for the workshop website).
 
 ## Background
