@@ -65,17 +65,55 @@ script.  As above, we will assume that your user ID is `ghopper` and
 the identifier for your workshop is `2015-07-01-esu`.
 
 1.  Create an empty repository on GitHub called `2015-07-01-esu`.
-2.  Clone it to your desktop using `git clone git@github.com:/ghopper/2015-07-01-esu`.
-3.  Go into that directory using `cd 2015-07-01-esu`.
-4.  Add this repository as a remote called `upstream` using `git remote add upstream git@github.com:swcarpentry/workshop-template`.
-5.  Checkout a branch called `gh-pages` using `git checkout -b gh-pages`.
-6.  Pull content from this repository using `git pull upstream gh-pages`.
-7.  Edit `index.html`.  (Hints are embedded in the file, and full instructions are below.)
-8.  Check your changes by running `tools/check` inside your repository.
-9.  Preview your changes by running `tools/preview` and looking at `_site/index.html`.
-10. When it all looks good, commit your changes and push to the `gh-pages` branch of your repository.
-11. Manually add the other instructors as collaborators to your Github repository.
-12. Send the workshop coordinators the URL for your GitHub repository (*not* the URL for the workshop website).
+2.  Clone it to your desktop using
+
+    ~~~
+    $ git clone git@github.com:/ghopper/2015-07-01-esu
+    ~~~
+
+    It's OK if get `warning: You appear to have cloned an empty repository`.
+3.  Go into that directory using
+
+    ~~~
+    $ cd 2015-07-01-esu
+    ~~~
+4.  Add this repository as a remote called `upstream` using
+
+    ~~~
+    $ git remote add upstream git@github.com:swcarpentry/workshop-template
+    ~~~
+5.  Checkout a branch called `gh-pages` using
+
+    ~~~
+    $ git checkout -b gh-pages
+    ~~~
+6.  Pull content from this repository using
+
+    ~~~
+    $ git pull upstream gh-pages
+    ~~~
+7.  Edit `index.html`. (Hints are embedded in the file, and full instructions
+    are below.)
+8.  Check your changes by running 
+
+    ~~~
+    $ tools/check
+    ~~~
+    
+    inside your repository.
+9.  Preview your changes by running
+
+    ~~~
+    $ tools/preview
+    ~~~
+    
+    and looking at `_site/index.html`.
+10. When it all looks good, commit your changes and push to the `gh-pages`
+    branch of your repository.
+11. Manually add the other instructors as collaborators to your Github
+    repository.
+12. Send the workshop coordinators the URL for your GitHub repository (*not* the
+    URL for the workshop website).
 
 ## Background
 
