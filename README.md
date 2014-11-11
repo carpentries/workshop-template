@@ -42,16 +42,16 @@ workshop; instead, follow the instructions below.
 
 **Note: the website creation script mentioned below does not work properly yet.  Please follow the "by hand" instructions instead.**
 
-1.   Download the workshop website creation script from [http://files.software-carpentry.org/create](http://files.software-carpentry.org/create).  **Note:** this script has *not* been uploaded yet, since we're waiting for a few bugs to be fixed first.
-2.   Make sure that you are *not* inside another Git repository.
-3.   Run that script with no parameters - it will print a help message telling you what parameters it needs.
-4.   Run the script with those parameters.
-5.   Go into your newly-created repository.
-6.   Edit `index.html`.  (Hints are embedded in the file, and full instructions are below.)
-7.   Check your changes by running `tools/check` inside your repository.
-8.   Preview your changes by running `tools/preview` and looking at `_site/index.html`.
-9.   When it all looks good, commit your changes and push to the `gh-pages` branch of your repository.
-10.  Send the workshop coordinators the URL for your GitHub repository (*not* the URL for the workshop website).
+1.  Download the workshop website creation script from [http://files.software-carpentry.org/create](http://files.software-carpentry.org/create).  **Note:** this script has *not* been uploaded yet, since we're waiting for a few bugs to be fixed first.
+2.  Make sure that you are *not* inside another Git repository.
+3.  Run that script with no parameters - it will print a help message telling you what parameters it needs.
+4.  Run the script with those parameters.
+5.  Go into your newly-created repository.
+6.  Edit `index.html`.  (Hints are embedded in the file, and full instructions are below.)
+7.  Check your changes by running `tools/check` inside your repository.
+8.  Preview your changes by running `tools/preview` and looking at `_site/index.html`.
+9.  When it all looks good, commit your changes and push to the `gh-pages` branch of your repository.
+10. Send the workshop coordinators the URL for your GitHub repository (*not* the URL for the workshop website).
 
 If the identifier for your workshop is `2015-07-01-esu`, and your
 GitHub username is `ghopper`, your workshop repository will be
@@ -64,18 +64,18 @@ You can set up your repository manually instead of using the `create`
 script.  As above, we will assume that your user ID is `ghopper` and
 the identifier for your workshop is `2015-07-01-esu`.
 
-1.   Create an empty repository on GitHub called `2015-07-01-esu`.
-2.   Clone it to your desktop using `git clone git@github.com:/ghopper/2015-07-01-esu`.
-3.   Go into that directory using `cd 2015-07-01-esu`.
-4.   Add this repository as a remote called `upstream` using `git remote add upstream git@github.com:swcarpentry/workshop-template`.
-5.   Checkout a branch called `gh-pages` using `git checkout -b gh-pages`.
-6.   Pull content from this repository using `git pull upstream gh-pages`.
-7.   Edit `index.html`.  (Hints are embedded in the file, and full instructions are below.)
-8.   Check your changes by running `tools/check` inside your repository.
-9.   Preview your changes by running `tools/preview` and looking at `_site/index.html`.
-10.  When it all looks good, commit your changes and push to the `gh-pages` branch of your repository.
-11.  Manually add the other instructors as collaborators to your Github repository.
-12.  Send the workshop coordinators the URL for your GitHub repository (*not* the URL for the workshop website).
+1.  Create an empty repository on GitHub called `2015-07-01-esu`.
+2.  Clone it to your desktop using `git clone git@github.com:/ghopper/2015-07-01-esu`.
+3.  Go into that directory using `cd 2015-07-01-esu`.
+4.  Add this repository as a remote called `upstream` using `git remote add upstream git@github.com:swcarpentry/workshop-template`.
+5.  Checkout a branch called `gh-pages` using `git checkout -b gh-pages`.
+6.  Pull content from this repository using `git pull upstream gh-pages`.
+7.  Edit `index.html`.  (Hints are embedded in the file, and full instructions are below.)
+8.  Check your changes by running `tools/check` inside your repository.
+9.  Preview your changes by running `tools/preview` and looking at `_site/index.html`.
+10. When it all looks good, commit your changes and push to the `gh-pages` branch of your repository.
+11. Manually add the other instructors as collaborators to your Github repository.
+12. Send the workshop coordinators the URL for your GitHub repository (*not* the URL for the workshop website).
 
 ## Background
 
@@ -157,13 +157,13 @@ than Git itself.
     in a site a uniform appearance.
     We have created two layouts for workshop pages:
 
-    * `workshop.html` is used for workshops' home pages, and is the
-      layout for the `index.html` page in your repo's root directory.
-      That `index.html` page's header must [define several
-      variables](#variables) in order for your workshop to be included
-      in our main website.
+    *   `workshop.html` is used for workshops' home pages, and is the
+        layout for the `index.html` page in your repo's root directory.
+        That `index.html` page's header must [define several
+        variables](#variables) in order for your workshop to be included
+        in our main website.
 
-    * `page.html` is used for any other pages you want to create.
+    *   `page.html` is used for any other pages you want to create.
 
 ## Variables
 
