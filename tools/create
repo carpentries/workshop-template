@@ -87,11 +87,18 @@ function set_team {
 function clone_and_push {
     git clone -b gh-pages -o upstream \
         https://github.com/${WORKSHOP_TEMPLATE_SRC}.git ${REPOSITORY_PATH}
-    cd ${REPOSITORY_PATH}
-    git remote add origin \
-        ${WORKSHOP_URL/https:\/\//https:\/\/${OWNER}@}.git
-    git config credential.username ${OWNER}
-    git push -u origin gh-pages
+    if test $? -eq 0
+    then
+        cd ${REPOSITORY_PATH}
+        git remote add origin \
+            ${WORKSHOP_URL/https:\/\//https:\/\/${OWNER}@}.git
+        git config credential.username ${OWNER}
+        git push -u origin gh-pages
+    else
+        echo "Error when cloning https://github.com/${WORKSHOP_TEMPLATE_SRC}.git"
+        echo "Please remove ${REPOSITORY_PATH} and try again"
+        exit $?
+    fi
 }
 
 # Report what was done.
