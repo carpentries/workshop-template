@@ -342,7 +342,7 @@ The header may optionally define the following:
     $ gem install jekyll
     ~~~
 
-    The installs jekyll in `/usr/local/bin`. Make sure this directory comes before `/usr/bin` in your `PATH` environment variable such that
+    This installs jekyll in `/usr/local/bin`. If you have both versions, make sure this directory comes before `/usr/bin` in your `PATH` environment variable such that
 
     ~~~
     $ which jekyll
