@@ -42,7 +42,7 @@ workshop; instead, follow the instructions below.
 
 **Note: the website creation script mentioned below does not work properly yet.  Please follow the "by hand" instructions instead.**
 
-1.   Download the workshop website creation script from [http://files.software-carpentry.org/create](http://files.software-carpentry.org/create).
+1.   Download the workshop website creation script from [http://files.software-carpentry.org/create](http://files.software-carpentry.org/create).  **Note:** this script has *not* been uploaded yet, since we're waiting for a few bugs to be fixed first.
 2.   Make sure that you are *not* inside another Git repository.
 3.   Run that script with no parameters - it will print a help message telling you what parameters it needs.
 4.   Run the script with those parameters.
@@ -74,7 +74,7 @@ the identifier for your workshop is `2015-07-01-esu`.
 8.   Check your changes by running `tools/check` inside your repository.
 9.   Preview your changes by running `tools/preview` and looking at `_site/index.html`.
 10.  When it all looks good, commit your changes and push to the `gh-pages` branch of your repository.
-11.  Manually add the other instructors as collaborators.
+11.  Manually add the other instructors as collaborators to your Github repository.
 12.  Send the workshop coordinators the URL for your GitHub repository (*not* the URL for the workshop website).
 
 ## Background
@@ -314,3 +314,43 @@ The header may optionally define the following:
     The latest version is always available at
     [http://files.software-carpentry.org/SWCarpentryInstaller.exe](http://files.software-carpentry.org/SWCarpentryInstaller.exe),
     and contributions are always welcome.
+
+*   *I have build problems with ubuntu 14.04. What is wrong?*
+    
+    When you get the an error message of the form
+
+    ~~~
+    $ ./tools/preview 
+    /usr/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require': iconv will be deprecated in the future, use String#encode instead.
+    /usr/lib/ruby/1.9.1/time.rb:265:in `_parse': can't convert nil into String (TypeError)
+	    from /usr/lib/ruby/1.9.1/time.rb:265:in `parse'
+	    from /usr/bin/jekyll:95:in `block (2 levels) in <main>'
+	    from /usr/lib/ruby/1.9.1/optparse.rb:1391:in `call'
+	    from /usr/lib/ruby/1.9.1/optparse.rb:1391:in `block in parse_in_order'
+	    from /usr/lib/ruby/1.9.1/optparse.rb:1347:in `catch'
+	    from /usr/lib/ruby/1.9.1/optparse.rb:1347:in `parse_in_order'
+	    from /usr/lib/ruby/1.9.1/optparse.rb:1341:in `order!'
+	    from /usr/lib/ruby/1.9.1/optparse.rb:1432:in `permute!'
+	    from /usr/lib/ruby/1.9.1/optparse.rb:1453:in `parse!'
+	    from /usr/bin/jekyll:137:in `<main>'
+    ~~~
+
+    it is because you are using the `jekyll` program of the ubuntu distribution (in `/usr/bin`) which is too old.
+    Make sure that you have installed jekyll according to
+
+    ~~~
+    $ gem install jekyll
+    ~~~
+
+    The installs jekyll in `/usr/local/bin`. Make sure this directory comes before `/usr/bin` in your `PATH` environment variable such that
+
+    ~~~
+    $ which jekyll
+    /usr/local/bin/jekyll
+    ~~~
+
+    You may also have to install the `nodejs` package to disable references to JavaScript.
+    ~~~
+    $ sudo apt-get install nodejs
+    ~~~
+    Source:http://michaelchelen.net/81fa/install-jekyll-2-ubuntu-14-04/
