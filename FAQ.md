@@ -75,7 +75,7 @@
     [http://files.software-carpentry.org/SWCarpentryInstaller.exe](http://files.software-carpentry.org/SWCarpentryInstaller.exe),
     and contributions are always welcome.
 
-*   *I have build problems with ubuntu 14.04. What is wrong?*
+*   *`can't convert nil into String` error causing build problems with Ubuntu 14.04 and other Debian based Linux distributions. What is wrong?*
 
     When you get the an error message of the form
 
@@ -95,14 +95,14 @@
 	    from /usr/bin/jekyll:137:in `<main>'
     ~~~
 
-    it is because you are using the `jekyll` program of the ubuntu distribution (in `/usr/bin`) which is too old.
-    Make sure that you have installed jekyll according to
+    it is because you are using an old version of Jekyll.
+    Make sure that you have installed Jekyll according to
 
     ~~~
     $ gem install jekyll
     ~~~
 
-    The installs jekyll in `/usr/local/bin`. Make sure this directory comes before `/usr/bin` in your `PATH` environment variable such that
+    This installs Jekyll in `/usr/local/bin`. If you have both versions, make sure this directory comes before `/usr/bin` in your `PATH` environment variable such that
 
     ~~~
     $ which jekyll
@@ -110,7 +110,9 @@
     ~~~
 
     You may also have to install the `nodejs` package to disable references to JavaScript.
+
     ~~~
     $ sudo apt-get install nodejs
     ~~~
-    Source:http://michaelchelen.net/81fa/install-jekyll-2-ubuntu-14-04/
+
+    Source: http://michaelchelen.net/81fa/install-jekyll-2-ubuntu-14-04/
