@@ -1,12 +1,12 @@
 # workshop-template
 
-This repository is [Software Carpentry](http://software-carpentry.org)'s 
+This repository is [Software Carpentry](http://software-carpentry.org)'s
 template for creating workshop websites.
 
 
 ## Installation
 
-**Alert:** 
+**Alert:**
 Do *not* fork `workshop-template` directly on GitHub. Follow the
 instructions below to create *two* new repositories for your event's
 workshop.
@@ -14,7 +14,7 @@ workshop.
 ### Dependencies *(Check before proceeding)*
 
 Jekyll 1.0.3 or later must be installed in order to preview the workshop
-website locally on your computer. 
+website locally on your computer.
 
 1. Check if you have Ruby installed on your computer (`ruby -v` from the
 command line).
@@ -42,7 +42,7 @@ repositories:
 
   1.  repository for your workshop's website
 
-  2.  repository for learners to clone and update during your lessons 
+  2.  repository for learners to clone and update during your lessons
 
 You should not try to use the same repo for both purposes because:
 
@@ -52,7 +52,7 @@ You should not try to use the same repo for both purposes because:
   *  you probably don't want to accidentally merge a damaging pull
      request from a novice Git user into your workshop's website
      while you are using it to teach.
-          
+
 ### Installation *(Easy, automated method)*
 
 **Warning: the website creation script mentioned below does not work properly yet.  Please follow the "Manual, do it yourself" instructions instead.**
@@ -109,19 +109,19 @@ the identifier for your workshop is `2015-07-01-esu`.
     ~~~
 7.  Edit `index.html`. (Hints are embedded in the file, and full instructions
     are below.)
-8.  Check your changes by running 
+8.  Check your changes by running
 
     ~~~
     $ tools/check
     ~~~
-    
+
     inside your repository.
 9.  Preview your changes by running
 
     ~~~
     $ tools/preview
     ~~~
-    
+
     and looking at `_site/index.html`.
 10. When it all looks good, commit your changes and push to the `gh-pages`
     branch of your repository.
@@ -158,4 +158,3 @@ and ask for help there.
 Please file issues on this template
 [here](https://github.com/swcarpentry/workshop-template)
 or [mail us](mailto:admin@software-carpentry.org).
-
