@@ -107,7 +107,7 @@ the identifier for your workshop is `2015-07-01-esu`.
 2.  Clone it to your desktop using
 
     ~~~
-    $ git clone https://github.com:/ghopper/2015-07-01-esu.git
+    $ git clone https://github.com/ghopper/2015-07-01-esu.git
     ~~~
 
     It's OK if you get the message
