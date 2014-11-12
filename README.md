@@ -86,7 +86,7 @@ the identifier for your workshop is `2015-07-01-esu`.
 2.  Clone it to your desktop using
 
     ~~~
-    $ git clone git@github.com:/ghopper/2015-07-01-esu
+    $ git clone https://github.com:/ghopper/2015-07-01-esu.git
     ~~~
 
     It's OK if you get the message
@@ -101,7 +101,7 @@ the identifier for your workshop is `2015-07-01-esu`.
 4.  Add this repository as a remote called `upstream` using
 
     ~~~
-    $ git remote add upstream git@github.com:swcarpentry/workshop-template
+    $ git remote add upstream https://github.com:swcarpentry/workshop-template.git
     ~~~
 
 5.  Checkout a branch called `gh-pages` using
@@ -143,6 +143,10 @@ the identifier for your workshop is `2015-07-01-esu`.
 
 12. Send the workshop coordinators the URL for your GitHub repository (*not* the
     URL for the workshop website).
+
+Note that SSH cloning (as opposed to the HTTPS cloning used above)
+will also work for those who are familiar with how to set up SSH keys
+with GitHub.
 
 ## For More Information
 
