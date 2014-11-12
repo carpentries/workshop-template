@@ -2,7 +2,7 @@
 
 # FIXME: check that repository doesn't already exist *on GitHub*.
 # FIXME: collaborators are *not* being set up.
-# FIXME: check to see if we're already in a Git repo isn't working.
+# FIXME: clone_and_push should check that 'git clone' worked correctly before trying to 'cd'.
 
 ## Create a website for a new workshop.
 ##
@@ -83,8 +83,6 @@ function set_team {
 
 # Clone the template directory, setting it as the upstream, and push
 # the cloned material to the repository for this workshop.
-# FIXME: should check that 'git clone' worked correctly before trying
-# to 'cd'.
 function clone_and_push {
     git clone -b gh-pages -o upstream \
         https://github.com/${WORKSHOP_TEMPLATE_SRC}.git ${REPOSITORY_PATH}
