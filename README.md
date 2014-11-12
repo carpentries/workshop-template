@@ -87,9 +87,11 @@ workshop website repository because:
 
 6.  Edit `index.html`.  (Hints are embedded in the file, and full instructions are below.)
 
-7.  [If you installed the dependencies...] Check your changes by running `tools/check` inside your repository.
+7.  [If you installed the dependencies...] Check your changes by running `tools/check.py` 
+    inside your repository.
 
-8.  [If you installed the dependencies...] Preview your changes by running `tools/preview` and looking at `_site/index.html`. (if you s
+8.  [If you installed the dependencies...] Preview your changes by running `tools/preview` 
+    and looking at `_site/index.html`.
 
 9.  When it all looks good (or if you didn't install the dependencies for checking and previewing locally), commit your changes and push to the `gh-pages` branch of your repository.
 
@@ -133,7 +135,7 @@ the identifier for your workshop is `2015-07-01-esu`.
 6.  [If you installed the dependencies...] Check your changes by running
 
     ~~~
-    $ tools/check
+    $ tools/check.py
     ~~~
 
     inside your repository.
@@ -146,8 +148,9 @@ the identifier for your workshop is `2015-07-01-esu`.
 
     and looking at `_site/index.html`.
 
-8.  When it all looks good (or if you didn't install the dependencies for checking and previewing locally), commit your changes and push to the `gh-pages`
-    branch of your repository.
+8.  When it all looks good (or if you didn't install the dependencies 
+    for checking and previewing locally),commit your changes and push 
+    to the `gh-pages` branch of your repository.
 
 9.  Manually add the other instructors as collaborators to your Github
     repository.
