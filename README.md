@@ -31,6 +31,27 @@ website locally on your computer.
     default Redcarpet, because Kramdown handles Markdown inside HTML
     blocks.
 
+3.  Install the Python YAML module.  If you are using the Anaconda
+    Python distribution, you probably already have it; if you don't,
+    you can install it with:
+
+    ~~~
+    $ conda install pyyaml
+    ~~~
+
+    If you are using some other distribution, you can install it using
+    Pip:
+
+    ~~~
+    $ pip install pyyaml
+    ~~~
+
+    and if you are on Debian Linux, you can use:
+
+    ~~~
+    $ apt-get install python-yaml
+    ~~~
+
 ### One Repository or Two?
 
 If you are teaching Git, you should create a separate repository for
