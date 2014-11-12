@@ -22,6 +22,29 @@
     people to use that site, we should teach them to use it as it is,
     not as we wish it was.
 
+*   *Where should pages go if multiple workshops are running at a site simultaneously?*
+
+    Use subdirectories like `2015-07-01-esu/beginners`, so that main
+    directory names always follow our four-part convention.
+
+*   *What if I want to add more values to the page, like `address1` and `address2` for different rooms on different days?*
+
+    Go ahead, but you *must* have 
+    [the variables described above](#variables).
+
+*   *What is the "Windows installer"?*
+
+    We have built a small installation helper for Windows that
+    installs `nano` and `sqlite`, adds R to the path, and so on.  It
+    is maintained in
+    [https://github.com/swcarpentry/windows-installer](https://github.com/swcarpentry/windows-installer),
+    which also has an up-to-date description of what it actually does.
+    The latest version is always available at
+    [http://files.software-carpentry.org/SWCarpentryInstaller.exe](http://files.software-carpentry.org/SWCarpentryInstaller.exe),
+    and contributions are always welcome.
+
+## Debugging
+
 *   *What do I do if I see a `invalid byte sequence in ...` error when I run `tools/check`?*
 
     Declare the `en_US.UTF-8` locale in your shell:
@@ -54,33 +77,12 @@
     $ gem install pygments.rb --version "=0.5.0"
     ~~~
 
-*   *Where should pages go if multiple workshops are running at a site simultaneously?*
+*   *What do I do if I get a "can't convert nil into String" error?
 
-    Use subdirectories like `2015-07-01-esu/beginners`, so that main
-    directory names always follow our four-part convention.
-
-*   *What if I want to add more values to the page, like `address1` and `address2` for different rooms on different days?*
-
-    Go ahead, but you *must* have
-    [the variables described above](#variables).
-
-*   *What is the "Windows installer"?*
-
-    We have built a small installation helper for Windows that
-    installs `nano` and `sqlite`, adds R to the path, and so on.  It
-    is maintained in
-    [https://github.com/swcarpentry/windows-installer](https://github.com/swcarpentry/windows-installer),
-    which also has an up-to-date description of what it actually does.
-    The latest version is always available at
-    [http://files.software-carpentry.org/SWCarpentryInstaller.exe](http://files.software-carpentry.org/SWCarpentryInstaller.exe),
-    and contributions are always welcome.
-
-*   *`can't convert nil into String` error causing build problems with Ubuntu 14.04 and other Debian based Linux distributions. What is wrong?*
-
-    When you get the an error message of the form
+    On some Linux distributions (e.g, Ubuntu 14.04), you may get this error:
 
     ~~~
-    $ ./tools/preview
+    $ ./tools/preview 
     /usr/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require': iconv will be deprecated in the future, use String#encode instead.
     /usr/lib/ruby/1.9.1/time.rb:265:in `_parse': can't convert nil into String (TypeError)
 	    from /usr/lib/ruby/1.9.1/time.rb:265:in `parse'
@@ -95,24 +97,28 @@
 	    from /usr/bin/jekyll:137:in `<main>'
     ~~~
 
-    it is because you are using an old version of Jekyll.
-    Make sure that you have installed Jekyll according to
+    This occurs because you are using an old version of Jekyll located in `/usr/bin`.
+    Make sure that you have installed Jekyll using:
 
     ~~~
     $ gem install jekyll
     ~~~
 
-    This installs Jekyll in `/usr/local/bin`. If you have both versions, make sure this directory comes before `/usr/bin` in your `PATH` environment variable such that
+    This installs Jekyll in `/usr/local/bin`,
+    so make sure this directory comes before `/usr/bin` in your `PATH` environment variable,
+    so that:
 
     ~~~
     $ which jekyll
     /usr/local/bin/jekyll
     ~~~
 
-    You may also have to install the `nodejs` package to disable references to JavaScript.
+    You may also have to install the `nodejs` package to disable references to JavaScript,
+    which you can do using:
 
     ~~~
     $ sudo apt-get install nodejs
     ~~~
 
-    Source: http://michaelchelen.net/81fa/install-jekyll-2-ubuntu-14-04/
+    For more information, see
+    [http://michaelchelen.net/81fa/install-jekyll-2-ubuntu-14-04/](this article).
