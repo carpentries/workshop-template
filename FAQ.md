@@ -67,7 +67,7 @@
     Conversion error: There was an error converting 'lessons/misc-biopython/fastq.md'.
     done.
     ~~~
-        
+
     This is a [problem in Pygments.rb](http://stackoverflow.com/questions/17364028/jekyll-on-windows-pygments-not-working).
     Uninstall pygments.rb 0.5.1 or 0.5.2, install 0.5.0.  For example, here's how you would
     uninstall pygments 0.5.2 and restore version 0.5.0:

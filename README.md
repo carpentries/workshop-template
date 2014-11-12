@@ -9,7 +9,7 @@ second repository for your learners to use in your Git lessons).
 ### Dependencies
 
 Jekyll 1.0.3 or later must be installed in order to preview the workshop
-website locally on your computer. 
+website locally on your computer.
 
 1.  Check that you have Ruby installed on your computer (`ruby -v`
     from the command line).
@@ -145,7 +145,7 @@ the identifier for your workshop is `2015-07-01-esu`.
     ~~~
     $ tools/check
     ~~~
-    
+
     inside your repository.
 
 9.  Preview your changes by running
@@ -153,7 +153,7 @@ the identifier for your workshop is `2015-07-01-esu`.
     ~~~
     $ tools/preview
     ~~~
-    
+
     and looking at `_site/index.html`.
 
 10. When it all looks good, commit your changes and push to the `gh-pages`
