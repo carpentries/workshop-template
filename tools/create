@@ -132,7 +132,7 @@ WORKSHOP_ID=$1
 REPOSITORY_PATH=./$1
 TITLE="$2"
 OWNER=$3
-INSTRUCTORS=${OWNER} ${@:4}
+INSTRUCTORS="${OWNER} ${@:4}"
 WORKSHOP_URL=https://github.com/${OWNER}/${WORKSHOP_ID}
 REPOSITORY_DEFAULTS=,\"has_issues\":false,\"has_wiki\":false,\"has_downloads\":false
 
