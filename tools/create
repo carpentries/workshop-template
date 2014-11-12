@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# FIXME: check that repository doesn't already exist *on GitHub*.
-# FIXME: collaborators are *not* being set up.
-# FIXME: clone_and_push should check that 'git clone' worked correctly before trying to 'cd'.
-
 ## Create a website for a new workshop.
 ##
 ## Usage:
