@@ -122,7 +122,7 @@ the identifier for your workshop is `2015-07-01-esu`.
 4.  Add this repository as a remote called `upstream` using
 
     ~~~
-    $ git remote add upstream https://github.com:swcarpentry/workshop-template.git
+    $ git remote add upstream https://github.com/swcarpentry/workshop-template.git
     ~~~
 
 5.  Checkout a branch called `gh-pages` using
