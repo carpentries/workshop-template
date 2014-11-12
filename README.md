@@ -64,7 +64,7 @@ workshop website repository because:
 *   you probably don't want to accidentally merge a damaging pull
     request from a novice Git user into your workshop's website while
     you are using it to teach.
-          
+
 ### Semi-Automated Installation
 
 **Warning: the website creation script mentioned below does not work properly yet.  Please follow the manual instructions below instead.**
@@ -104,14 +104,12 @@ the identifier for your workshop is `2015-07-01-esu`.
 
 1.  Create an empty repository on GitHub called `2015-07-01-esu`.
 
-2.  Clone it to your desktop using
+2.  Clone the template repository to your computer in a directory with the same
+    name as your workshop identifier:
 
     ~~~
-    $ git clone https://github.com/ghopper/2015-07-01-esu.git
+    $ git clone -b gh-pages -o upstream https://github.com/swcarpentry/workshop-template.git 2015-07-01-esu
     ~~~
-
-    It's OK if you get the message
-    `warning: You appear to have cloned an empty repository`.
 
 3.  Go into that directory using
 
@@ -119,28 +117,16 @@ the identifier for your workshop is `2015-07-01-esu`.
     $ cd 2015-07-01-esu
     ~~~
 
-4.  Add this repository as a remote called `upstream` using
+4.  Add your GitHub repository as a remote called `origin` using
 
     ~~~
-    $ git remote add upstream https://github.com/swcarpentry/workshop-template.git
+    $ git remote add origin https://github.com/ghopper/2015-07-01-esu.git
     ~~~
 
-5.  Checkout a branch called `gh-pages` using
-
-    ~~~
-    $ git checkout -b gh-pages
-    ~~~
-
-6.  Pull content from this repository using
-
-    ~~~
-    $ git pull upstream gh-pages
-    ~~~
-
-7.  Edit `index.html`. (Hints are embedded in the file, and full instructions
+5.  Edit `index.html`. (Hints are embedded in the file, and full instructions
     are below.)
 
-8.  Check your changes by running 
+6.  Check your changes by running
 
     ~~~
     $ tools/check
@@ -148,7 +134,7 @@ the identifier for your workshop is `2015-07-01-esu`.
 
     inside your repository.
 
-9.  Preview your changes by running
+7.  Preview your changes by running
 
     ~~~
     $ tools/preview
@@ -156,13 +142,13 @@ the identifier for your workshop is `2015-07-01-esu`.
 
     and looking at `_site/index.html`.
 
-10. When it all looks good, commit your changes and push to the `gh-pages`
+8.  When it all looks good, commit your changes and push to the `gh-pages`
     branch of your repository.
 
-11. Manually add the other instructors as collaborators to your Github
+9.  Manually add the other instructors as collaborators to your Github
     repository.
 
-12. Send the workshop coordinators the URL for your GitHub repository (*not* the
+10. Send the workshop coordinators the URL for your GitHub repository (*not* the
     URL for the workshop website).
 
 Note that SSH cloning (as opposed to the HTTPS cloning used above)
