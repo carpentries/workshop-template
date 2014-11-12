@@ -46,7 +46,8 @@
 
 # Check that the current working directory is *not* already a Git repo.
 function check_pwd {
-    if test $(git status > /dev/null 2>&1)
+    success=$(git status > /dev/null 2>&1; echo $?)
+    if [[ ${success} -eq 0 ]];
     then
         echo "ERROR: you are already inside a Git repository."
         exit 2
