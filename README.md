@@ -67,11 +67,8 @@ workshop website repository because:
 
 ### Semi-Automated Installation
 
-**Warning: the website creation script mentioned below does not work properly yet.  Please follow the manual instructions below instead.**
-
 1.  Download the workshop website creation script from
-    [http://files.software-carpentry.org/create](http://files.software-carpentry.org/create).
-    **Note:** this script has *not* been uploaded yet, since we're waiting for a few bugs to be fixed first.
+    [http://files.software-carpentry.org/workshop-create](http://files.software-carpentry.org/workshop-create).
 
 2.  Make sure that you are *not* inside another Git repository.
 
