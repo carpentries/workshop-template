@@ -61,8 +61,8 @@ You can set up your repository manually instead of using the automated
 
 1.  Create an empty repository on GitHub called `2015-07-01-esu`.
 
-2.  Clone the template repository to your computer in a directory with the same
-    name as your workshop identifier:
+2.  Clone the template repository to your computer in a directory with
+    the same name as your workshop identifier:
 
     ~~~
     $ git clone -b gh-pages -o upstream https://github.com/swcarpentry/workshop-template.git 2015-07-01-esu
