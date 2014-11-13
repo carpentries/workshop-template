@@ -8,8 +8,15 @@ second repository for your learners to use in your Git lessons).
 
 ### Dependencies
 
-Jekyll 1.0.3 or later must be installed in order to preview the workshop
-website locally on your computer.
+*Note that these dependencies are not critical to creating a workshop
+website. If you aren't able to install them successfully (and/or you just
+can't be bothered), all that means is you won't be able to preview
+the website locally on your computer. Every time you push a change to your
+website respository the live website will update automatically, so you can
+simply check your changes on the live site instead.*  
+
+In order to preview the workshop website locally on your computer,
+Jekyll 1.0.3 or later must be installed.
 
 1.  Check that you have Ruby installed on your computer (`ruby -v`
     from the command line).
@@ -80,11 +87,13 @@ workshop website repository because:
 
 6.  Edit `index.html`.  (Hints are embedded in the file, and full instructions are below.)
 
-7.  Check your changes by running `tools/check` inside your repository.
+7.  [If you installed the dependencies...] Check your changes by running `tools/check.py` 
+    inside your repository.
 
-8.  Preview your changes by running `tools/preview` and looking at `_site/index.html`.
+8.  [If you installed the dependencies...] Preview your changes by running `tools/preview` 
+    and looking at `_site/index.html`.
 
-9.  When it all looks good, commit your changes and push to the `gh-pages` branch of your repository.
+9.  When it all looks good (or if you didn't install the dependencies for checking and previewing locally), commit your changes and push to the `gh-pages` branch of your repository.
 
 10. Send the workshop coordinators the URL for your GitHub repository (*not* the URL for the workshop website).
 
@@ -123,15 +132,15 @@ the identifier for your workshop is `2015-07-01-esu`.
 5.  Edit `index.html`. (Hints are embedded in the file, and full instructions
     are below.)
 
-6.  Check your changes by running
+6.  [If you installed the dependencies...] Check your changes by running
 
     ~~~
-    $ tools/check
+    $ tools/check.py
     ~~~
 
     inside your repository.
 
-7.  Preview your changes by running
+7.  [If you installed the dependencies...] Preview your changes by running
 
     ~~~
     $ tools/preview
@@ -139,8 +148,9 @@ the identifier for your workshop is `2015-07-01-esu`.
 
     and looking at `_site/index.html`.
 
-8.  When it all looks good, commit your changes and push to the `gh-pages`
-    branch of your repository.
+8.  When it all looks good (or if you didn't install the dependencies 
+    for checking and previewing locally),commit your changes and push 
+    to the `gh-pages` branch of your repository.
 
 9.  Manually add the other instructors as collaborators to your Github
     repository.
