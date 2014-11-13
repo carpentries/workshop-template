@@ -121,8 +121,7 @@ you must install the software described below.
         $  ruby -v
         ~~~
 
-        Note: The following commands need a minimum version of 1.9.3 to
-        install and operate.
+        The following commands need a minimum version of 1.9.3.
 
     2. Install `github-pages`:
 
