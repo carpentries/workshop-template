@@ -115,8 +115,14 @@ you must install the software described below.
 
 1.  Jekyll 1.0.3
 
-    1.  Check that you have Ruby installed on your computer (`ruby -v`
-        from the command line).
+    1. Check Ruby is installed and the version using command line:
+
+        ~~~
+        $  ruby -v
+        ~~~
+
+        Note: The following commands need a minimum version of 1.9.3 to
+        install and operate.
 
     2. Install `github-pages`:
 
