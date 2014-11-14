@@ -182,9 +182,6 @@ If you find bugs or would like to suggest improvements,
 please file an issue [here](https://github.com/swcarpentry/workshop-template)
 or [mail us](mailto:admin@software-carpentry.org).
 
-We are committed to offering a pleasant workshop set up experience for our 
-organizers. Please take a moment and let us know what could be improved for
-future workshops.
-
-**Thanks and best wishes** for your upcoming workshop from all of us at
-Software Carpentry.
+We are committed to offering a pleasant setup experience for our
+organizers. Please take a moment and let us know what could be
+improved for future workshops.
