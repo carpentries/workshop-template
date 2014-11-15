@@ -11,7 +11,8 @@
 ## - workshop_id: the identifier provide by Software Carpentry for the
 ##   workshop that you will be running. It will be used for the name of
 ##   the Git repository and is a name like YYYY-MM-DD-site, e.g.,
-##   '2015-06-18-esu'.
+##   '2015-06-18-esu'. 'site' is a short form name for your location
+##   and must be all lowercase.
 ##
 ## - title: the title of the workshop that you will be running.
 ##   It should be multi-word and must be enclose with single or double
@@ -48,6 +49,15 @@ function check_pwd {
         echo "ERROR: you are already inside a Git repository."
         exit 2
     fi
+}
+
+function check_lowercase {
+  check=$(echo ${WORKSHOP_ID} | grep [A-Z] > /dev/null 2>&1; echo $?)
+  if [[ ${check} -eq 0 ]];
+  then
+      echo "ERROR: workshop_id cannot contain uppercase letters"
+      exit 2
+  fi
 }
 
 # Create the remote repository.
@@ -119,6 +129,7 @@ function end_message {
 # Main driver.
 function main {
     check_pwd
+    check_lowercase
     create_repo
     set_team
     clone_and_push
