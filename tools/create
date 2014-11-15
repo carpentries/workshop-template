@@ -129,7 +129,7 @@ function main {
 if test $# -lt 3
 then
     echo ""
-    sed -n 's/^## //p' $0
+    sed -n 's/^##//p' $0
     echo ""
     exit 1
 fi
