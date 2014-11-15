@@ -12,7 +12,7 @@
 ##   workshop that you will be running. It will be used for the name of
 ##   the Git repository and is a name like YYYY-MM-DD-site, e.g.,
 ##   '2015-06-18-esu'. 'site' is a short form name for your location
-##   and must be all lowercase.
+##   (typically part of it's domain name) and must be all lowercase.
 ##
 ## - title: the title of the workshop that you will be running.
 ##   It should be multi-word and must be enclose with single or double
