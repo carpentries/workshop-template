@@ -11,7 +11,8 @@
 ## - workshop_id: the identifier provide by Software Carpentry for the
 ##   workshop that you will be running. It will be used for the name of
 ##   the Git repository and must be formated as YYYY-MM-DD-site, e.g.,
-##   '2015-06-18-esu'. Hyphens must separate the date and site name.
+##   '2015-06-18-esu'. The year, month, day, and site must be separated
+##   by hyphens rather than underscores or some other character.
 ##
 ## - title: the title of the workshop that you will be running.
 ##   It should be multi-word and must be enclose with single or double
