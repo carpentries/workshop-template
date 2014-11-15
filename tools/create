@@ -8,11 +8,13 @@
 ##
 ## Parameters:
 ##
-## - workshop_id: the identifier provide by Software Carpentry for the
+## - workshop_id: the identifier provided by Software Carpentry for the
 ##   workshop that you will be running. It will be used for the name of
-##   the Git repository and is a name like YYYY-MM-DD-site, e.g.,
+##   the Git repository and must be formated as YYYY-MM-DD-site, e.g.,
 ##   '2015-06-18-esu'. 'site' is a short form name for your location
 ##   (typically part of it's domain name) and must be all lowercase.
+##   The year, month, day, and site must be separated by hyphens rather
+##   than underscores or some other character.
 ##
 ## - title: the title of the workshop that you will be running.
 ##   It should be multi-word and must be enclose with single or double
@@ -56,6 +58,15 @@ function check_lowercase {
   if [[ ${check} -eq 0 ]];
   then
       echo "ERROR: workshop_id cannot contain uppercase letters"
+      exit 2
+  fi
+}
+
+function check_hyphens {
+  success=$(echo ${WORKSHOP_ID} | grep -v "-" > /dev/null 2>&1; echo $?)
+  if [[ ${success} -eq 0 ]];
+  then
+      echo "ERROR: workshop_id must contain hyphens for the date."
       exit 2
   fi
 }
@@ -130,6 +141,7 @@ function end_message {
 function main {
     check_pwd
     check_lowercase
+    check_hyphens
     create_repo
     set_team
     clone_and_push
@@ -140,7 +152,7 @@ function main {
 if test $# -lt 3
 then
     echo ""
-    sed -n 's/^## //p' $0
+    sed -n 's/^##//p' $0
     echo ""
     exit 1
 fi
