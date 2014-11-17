@@ -43,6 +43,18 @@
     [http://files.software-carpentry.org/SWCarpentryInstaller.exe](http://files.software-carpentry.org/SWCarpentryInstaller.exe),
     and contributions are always welcome.
 
+*   *What do the [labels](https://github.com/swcarpentry/lesson-template/issues?q=is%3Aopen+is%3Aissue) mean?*
+
+    *   `bug`: something is wrong in our tools or documentation
+    *   `discussion`: marks issues used for conversations about specific problems and questions
+    *   `duplicate`: marks an issue that was closed as redundant (include the number of the original issue in the closing comment)
+    *   `enhancement`: asks for, or adds, a new feature or new information
+    *   `filed-by-newcomer`: issue or pull request was filed by someone new to GitHub and/or this project
+    *   `getting-started`: issue or pull request is suitable for someone new to GitHub and/or this project
+    *   `help-wanted`: a question or request for assistance
+    *   `wont-fix`: marks an issue that isn't going to be addressed
+    *   `work-in-progress`: a pull request that is not yet ready for review
+
 ## Debugging
 
 *   *What do I do if I see a `invalid byte sequence in ...` error when I run `tools/check`?*
