@@ -176,12 +176,10 @@ Mail us at [admin@software-carpentry.org](mailto:admin@software-carpentry.org),
 or join our [discussion list](http://lists.software-carpentry.org/mailman/listinfo/discuss_lists.software-carpentry.org)
 and ask for help there.
 
-## Sharing issues and suggestions
-
-If you find bugs or would like to suggest improvements,
-please file an issue [here](https://github.com/swcarpentry/workshop-template)
-or [mail us](mailto:admin@software-carpentry.org).
+## Giving Help
 
 We are committed to offering a pleasant setup experience for our
-organizers. Please take a moment and let us know what could be
-improved for future workshops.
+learners and organizers.  If you find bugs in our instructions, or
+would like to suggest improvements, please
+[file an issue](https://github.com/swcarpentry/workshop-template/issues?q=is%3Aopen+is%3Aissue)
+or [mail us](mailto:admin@software-carpentry.org).
