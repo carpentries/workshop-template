@@ -43,28 +43,31 @@
 ##   output to /dev/null, so that it runs quietly.  For debugging, you
 ##   may wish to change one or both of these.
 
+
 # Check that the current working directory is *not* already a Git repo.
 function check_pwd {
     success=$(git status > /dev/null 2>&1; echo $?)
-    if [[ ${success} -eq 0 ]];
+    if test ${success} -eq 0
     then
         echo "ERROR: you are already inside a Git repository."
         exit 2
     fi
 }
 
+# Check that the workshop_id contains only lower case characters.
 function check_lowercase {
-  check=$(echo ${WORKSHOP_ID} | grep [A-Z] > /dev/null 2>&1; echo $?)
-  if [[ ${check} -eq 0 ]];
+  echo ${WORKSHOP_ID} | grep [A-Z] > /dev/null 2>&1
+  if test $? -ne 1
   then
       echo "ERROR: workshop_id cannot contain uppercase letters"
       exit 2
   fi
 }
 
+# Check that the workshop_id contains a hyphenated date
 function check_hyphens {
-  success=$(echo ${WORKSHOP_ID} | grep -v "-" > /dev/null 2>&1; echo $?)
-  if [[ ${success} -eq 0 ]];
+  echo ${WORKSHOP_ID} | grep -v "-" > /dev/null 2>&1
+  if test $? -ne 1
   then
       echo "ERROR: workshop_id must contain hyphens for the date."
       exit 2
