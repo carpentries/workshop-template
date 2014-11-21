@@ -90,7 +90,7 @@
     $ gem install pygments.rb --version "=0.5.0"
     ~~~
 
-*   *What do I do if I get a "can't convert nil into String" error?
+*   *What do I do if I get a "can't convert nil into String" error?*
 
     On some Linux distributions (e.g, Ubuntu 14.04), you may get this error:
 
@@ -135,3 +135,18 @@
 
     For more information, see
     [http://michaelchelen.net/81fa/install-jekyll-2-ubuntu-14-04/](this article).
+
+
+*   *Help, my website isn't rendering correctly once its pushed to github!*
+
+    This can occur if you're trying to view the website over a 
+    HTTPS connection because the content from the Software 
+    Carpentry website is not currently served over HTTPS. Your 
+    browser sees this as unsecure content, so won't load it.
+    
+    To solve this simply load the website over HTTP, and make
+    sure the link you distribute uses http:// instead of https://.
+    If you're using a browser plugin like HTTPS everywhere, you
+    will need to disable it for your bootcamp's site.
+
+    
