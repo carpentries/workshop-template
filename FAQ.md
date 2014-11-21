@@ -147,6 +147,6 @@
     To solve this simply load the website over HTTP, and make
     sure the link you distribute uses http:// instead of https://.
     If you're using a browser plugin like HTTPS everywhere, you
-    will need to disable it for your bootcamp's site.
+    will need to disable it for your workshop's site.
 
     
