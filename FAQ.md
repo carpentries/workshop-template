@@ -29,7 +29,7 @@
 
 *   *What if I want to add more values to the page, like `address1` and `address2` for different rooms on different days?*
 
-    Go ahead, but you *must* have 
+    Go ahead, but you *must* have
     [the variables described above](#variables).
 
 *   *What is the "Windows installer"?*
@@ -95,7 +95,7 @@
     On some Linux distributions (e.g, Ubuntu 14.04), you may get this error:
 
     ~~~
-    $ ./tools/preview 
+    $ ./tools/preview
     /usr/lib/ruby/1.9.1/rubygems/custom_require.rb:36:in `require': iconv will be deprecated in the future, use String#encode instead.
     /usr/lib/ruby/1.9.1/time.rb:265:in `_parse': can't convert nil into String (TypeError)
 	    from /usr/lib/ruby/1.9.1/time.rb:265:in `parse'
@@ -137,16 +137,16 @@
     [http://michaelchelen.net/81fa/install-jekyll-2-ubuntu-14-04/](this article).
 
 
-*   *Help, my website isn't rendering correctly once its pushed to github!*
+*   *Help, my website isn't rendering correctly once its pushed to GitHub!*
 
-    This can occur if you're trying to view the website over a 
-    HTTPS connection because the content from the Software 
-    Carpentry website is not currently served over HTTPS. Your 
+    This can occur if you're trying to view the website over a
+    HTTPS connection because the content from the Software
+    Carpentry website is not currently served over HTTPS. Your
     browser sees this as unsecure content, so won't load it.
-    
+
     To solve this simply load the website over HTTP, and make
     sure the link you distribute uses http:// instead of https://.
     If you're using a browser plugin like HTTPS everywhere, you
     will need to disable it for your workshop's site.
 
-    
+
