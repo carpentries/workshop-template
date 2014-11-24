@@ -42,6 +42,16 @@ second repository for your learners to use in your Git lessons).
     2.  Preview your changes by running `tools/preview` and looking at
         `_site/index.html`.
 
+    3.  For some links work properly, **including the one to Eventbrite**, you
+        will need to look at `_site/index.html` provide by a HTTP server that
+        can be done using
+
+        ~~~
+        $ jekyll server -d _site
+        ~~~
+
+        and look at http://localhost:4000.
+
 8.  Commit your changes and push to the `gh-pages` branch of your
     repository.
 
@@ -90,6 +100,16 @@ You can set up your repository manually instead of using the automated
 
     2.  Preview your changes by running `tools/preview` and looking at
         `_site/index.html`.
+
+    3.  For some links work properly **including the one to Eventbrite** you
+        will need to look at `_site/index.html` provide by a HTTP server that
+        can be done using
+
+        ~~~
+        $ jekyll server -d _site
+        ~~~
+
+        and look at http://localhost:4000.
 
 7.  Commit your changes and push to the `gh-pages` branch of your
     repository.

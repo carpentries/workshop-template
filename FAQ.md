@@ -58,6 +58,24 @@
 
 ## Debugging
 
+*   *Eventbrite registration isn't show at workshop's home page.*
+
+    First check that you have something like
+
+    ~~~
+    eventbrite: 1234567890AB
+    ~~~
+
+    at the YAML header of `index.html`. If the YAML header is set properly you
+    probably are accessing
+    file:///home/to/workshop/directory/_site/index.html. Please run
+
+    ~~~
+    $ jekyll server -d _site
+    ~~~
+
+    and look at http://localhost:4000.
+
 *   *What do I do if I see a `invalid byte sequence in ...` error when I run `tools/check`?*
 
     Declare the `en_US.UTF-8` locale in your shell:
