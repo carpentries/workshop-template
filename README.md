@@ -92,7 +92,11 @@ You can set up your repository manually instead of using the automated
         `_site/index.html`.
 
 7.  Commit your changes and push to the `gh-pages` branch of your
-    repository.
+    repository using
+
+    ~~~
+    $ git push origin gh-pages
+    ~~~
 
 8.  Manually add the other instructors as collaborators to your Github
     repository.
