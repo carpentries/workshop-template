@@ -12,10 +12,12 @@
   </head>
   <body>
     <div class="container">
-      <div class="span10 offset1">
-        {% include banner.html %}
-        {{content}}
-        {% include footer.html %}
+      <div class="row">
+        <div class="span10 offset1">
+          {% include banner.html %}
+          {{content}}
+          {% include footer.html %}
+        </div>
       </div>
     </div>
     {% include javascript.html %}
