@@ -9,7 +9,7 @@ Checks for:
 3.  Contact email should be valid (letters + @ + letters + . + letters)
 4.  Latitute/longitude should be 2 floating point numbers separated by comma
 5.  startdate should be a valid date; if enddate is present, it should be valid as well
-6.  country should be a string with no spaces
+6.  country should be a recognized hyphenated country name
 7.  instructor and helper lists should be valid Python/Ruby lists
 8.  Template header should not exist
 9.  humandate should have three-letter month and four-letter year
@@ -40,6 +40,74 @@ USAGE = 'Usage: swc_index_validator.py [filename]'
 ERROR = 'ERROR:\t{0}\n'
 SUB_ERROR = '\t{0}\n'
 
+COUNTRIES = [
+    'Abkhazia', 'Afghanistan', 'Aland', 'Albania', 'Algeria',
+    'American-Samoa', 'Andorra', 'Angola', 'Anguilla',
+    'Antarctica', 'Antigua-and-Barbuda', 'Argentina', 'Armenia',
+    'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas',
+    'Bahrain', 'Bangladesh', 'Barbados', 'Basque-Country',
+    'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan',
+    'Bolivia', 'Bosnia-and-Herzegovina', 'Botswana', 'Brazil',
+    'British-Antarctic-Territory', 'British-Virgin-Islands',
+    'Brunei', 'Bulgaria', 'Burkina-Faso', 'Burundi', 'Cambodia',
+    'Cameroon', 'Canada', 'Canary-Islands', 'Cape-Verde',
+    'Cayman-Islands', 'Central-African-Republic', 'Chad',
+    'Chile', 'China', 'Christmas-Island',
+    'Cocos-Keeling-Islands', 'Colombia', 'Commonwealth',
+    'Comoros', 'Cook-Islands', 'Costa-Rica', 'Cote-dIvoire',
+    'Croatia', 'Cuba', 'Curacao', 'Cyprus', 'Czech-Republic',
+    'Democratic-Republic-of-the-Congo', 'Denmark', 'Djibouti',
+    'Dominica', 'Dominican-Republic', 'East-Timor', 'Ecuador',
+    'Egypt', 'El-Salvador', 'England', 'Equatorial-Guinea',
+    'Eritrea', 'Estonia', 'Ethiopia', 'European-Union',
+    'Falkland-Islands', 'Faroes', 'Fiji', 'Finland', 'France',
+    'French-Polynesia', 'French-Southern-Territories', 'Gabon',
+    'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar',
+    'GoSquared', 'Greece', 'Greenland', 'Grenada', 'Guam',
+    'Guatemala', 'Guernsey', 'Guinea-Bissau', 'Guinea', 'Guyana',
+    'Haiti', 'Honduras', 'Hong-Kong', 'Hungary', 'Iceland',
+    'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland',
+    'Isle-of-Man', 'Israel', 'Italy', 'Jamaica', 'Japan',
+    'Jersey', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati',
+    'Kosovo', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia',
+    'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein',
+    'Lithuania', 'Luxembourg', 'Macau', 'Macedonia',
+    'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali',
+    'Malta', 'Mars', 'Marshall-Islands', 'Martinique',
+    'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Micronesia',
+    'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat',
+    'Morocco', 'Mozambique', 'Myanmar', 'NATO',
+    'Nagorno-Karabakh', 'Namibia', 'Nauru', 'Nepal',
+    'Netherlands-Antilles', 'Netherlands', 'New-Caledonia',
+    'New-Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Niue',
+    'Norfolk-Island', 'North-Korea', 'Northern-Cyprus',
+    'Northern-Mariana-Islands', 'Norway', 'Olympics', 'Oman',
+    'Pakistan', 'Palau', 'Palestine', 'Panama',
+    'Papua-New-Guinea', 'Paraguay', 'Peru', 'Philippines',
+    'Pitcairn-Islands', 'Poland', 'Portugal', 'Puerto-Rico',
+    'Qatar', 'Red-Cross', 'Republic-of-the-Congo', 'Romania',
+    'Russia', 'Rwanda', 'Saint-Barthelemy', 'Saint-Helena',
+    'Saint-Kitts-and-Nevis', 'Saint-Lucia', 'Saint-Martin',
+    'Saint-Vincent-and-the-Grenadines', 'Samoa', 'San-Marino',
+    'Sao-Tome-and-Principe', 'Saudi-Arabia', 'Scotland',
+    'Senegal', 'Serbia', 'Seychelles', 'Sierra-Leone',
+    'Singapore', 'Slovakia', 'Slovenia', 'Solomon-Islands',
+    'Somalia', 'Somaliland', 'South-Africa',
+    'South-Georgia-and-the-South-Sandwich-Islands',
+    'South-Korea', 'South-Ossetia', 'South-Sudan', 'Spain',
+    'Sri-Lanka', 'Sudan', 'Suriname', 'Swaziland', 'Sweden',
+    'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania',
+    'Thailand', 'Togo', 'Tokelau', 'Tonga',
+    'Trinidad-and-Tobago', 'Tunisia', 'Turkey', 'Turkmenistan',
+    'Turks-and-Caicos-Islands', 'Tuvalu', 'US-Virgin-Islands',
+    'Uganda', 'Ukraine', 'United-Arab-Emirates',
+    'United-Kingdom', 'United-Nations', 'United-States',
+    'Unknown', 'Uruguay', 'Uzbekistan', 'Vanuatu',
+    'Vatican-City', 'Venezuela', 'Vietnam', 'Wales',
+    'Wallis-And-Futuna', 'Western-Sahara', 'Yemen', 'Zambia',
+    'Zimbabwe'
+]
+
 def look_for_fixme(func):
     '''Decorator to see whether a value starts with FIXME.'''
     def inner(arg):
@@ -60,8 +128,8 @@ def check_root(root):
 
 @look_for_fixme
 def check_country(country):
-    '''A valid country has no spaces, is one string, isn't empty'''
-    return (country is not None) and (' ' not in country)
+    '''A valid country is in the list of recognized countries.'''
+    return country in COUNTRIES
 
 @look_for_fixme
 def check_humandate(date):
@@ -147,7 +215,7 @@ def check_pass(value):
 HANDLERS = {
     'layout' :       (True,  check_layout, 'layout isn\'t "workshop".'),
     'root' :         (True,  check_root, 'root can only be ".".'), 
-    'country' :      (True,  check_country, 'country invalid. Please check whether there are spaces inside the country-name.'),
+    'country' :      (True,  check_country, 'country invalid: must use full hyphenated name (e.g., "United-Kingdom").'),
     'humandate' :    (True,  check_humandate, 'humandate invalid. Please use three-letter months like "Jan" and four-letter years like "2025".'),
     'humantime' :    (True,  check_humantime, 'humantime doesn\'t include numbers.'),
     'startdate' :    (True,  check_date, 'startdate invalid. Must be of format year-month-day, i.e., 2014-01-31.'),
