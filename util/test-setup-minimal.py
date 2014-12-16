@@ -4,7 +4,7 @@
 
 Execute this code at the command line by typing:
 
-  python swc-installation-test-1.py
+  python test-install-minimal.py
 
 How to get a command line:
 
@@ -15,10 +15,6 @@ How to get a command line:
 
 - On Linux, either use your login shell directly, or run one of a
   number of graphical terminals (e.g. 'xterm', 'gnome-terminal', ...).
-
-For some screen shots, see:
-
-  http://software-carpentry.org/setup/terminal.html
 
 Run the script and follow the instructions it prints at the end.  If
 you see an error saying that the 'python' command was not found, than
