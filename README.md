@@ -118,6 +118,10 @@ You can set up your repository manually instead of using the automated
     $ git push origin gh-pages
     ~~~
 
+    ~~~
+    $ git push origin gh-pages
+    ~~~
+
 8.  Manually add the other instructors as collaborators to your Github
     repository.
 
