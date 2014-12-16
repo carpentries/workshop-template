@@ -80,8 +80,8 @@ than Git itself.
 
     * `workshop.html` is used for workshops' home pages, and is the
       layout for the `index.html` page in your repo's root directory.
-      That `index.html` page's header must [define several
-      variables](#variables) in order for your workshop to be included
-      in our main website.
+      That `index.html` page's header must define several variables
+      as specified in [CUSTOMIZATION.md](CUSTOMIZATION.md)
+      in order for your workshop to be included in our main website.
 
     * `page.html` is used for any other pages you want to create.
