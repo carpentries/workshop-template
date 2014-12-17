@@ -1,3 +1,9 @@
+---
+layout: page
+root: ../
+title: Testing Setup
+---
+
 Students
 ========
 
