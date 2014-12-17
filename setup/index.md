@@ -10,21 +10,21 @@ you have the software you'll need for your workshop installed.  The
 comments at the head of each script have full details, but in brief,
 you should be able to:
 
-1.  Download [test-setup-minimal.py](util/test-setup-minimal.py).
+1.  Download [swc-installation-test-1.py](setup/swc-installation-test-1.py).
 
 2.  Run it from the shell by typing:
 
     ~~~
-    $ python test-install-minimal.py
+    $ python swc-installation-test-1.py
     Passed
     ~~~
 
-3.  Download [test-setup-all.py](util/test-setup-all.py).
+3.  Download [swc-installation-test-2.py](setup/swc-installation-test-2.py).
 
 4.  Run it from the shell by typing:
 
     ~~~
-    $ python test-install-all.py
+    $ python swc-installation-test-2.py
     check virtual-shell...  pass
     ...
     Successes:
@@ -36,7 +36,7 @@ you should be able to:
 If you see something like:
 
 ~~~
-$ python test-install-all.py
+$ python swc-installation-test-2.py
 check virtual-shell...  fail
 ...
 check for command line shell (virtual-shell) failed:
@@ -56,7 +56,7 @@ additional troubleshooting information, you can use the `--verbose`
 option:
 
 ~~~
-$ python test-install-all.py --verbose
+$ python swc-installation-test-2.py --verbose
 check virtual-shell...  fail
 ...
 ==================
@@ -69,23 +69,23 @@ os.name            : posix
 Instructors
 -----------
 
-`test-install-minimal.py` is pretty simple, and just checks that the
-students have a recent enough version of Python installed that they'll
-be able to parse `test-install-all.py`.  The latter checks for a list
-of dependencies and prints error messages if a package is not
-installed, or if the installed version is not current enough.  By
-default, the script checks for pretty much anything that has ever been
-used at a Software Carpentry workshop, which is probably not what you
-want for your particular workshop.
+`swc-installation-test-1.py` is pretty simple, and just checks that
+the students have a recent enough version of Python installed that
+they'll be able to parse `swc-installation-test-2.py`.  The latter
+checks for a list of dependencies and prints error messages if a
+package is not installed, or if the installed version is not current
+enough.  By default, the script checks for pretty much anything that
+has ever been used at a Software Carpentry workshop, which is probably
+not what you want for your particular workshop.
 
-Before your workshop, you should go through `test-install-all.py` and
-comment any dependencies you don't need out of the `CHECKS` list.  You
-might also want to skim through the minimum version numbers listed
-where particular dependencies are defined (e.g. `('git', 'Git', (1, 7,
-0), None)`).  For the most part, fairly conservative values have been
-selected, so students with modern machines should be fine.  If your
-workshop has stricter version requirements, feel free to bump them
-accordingly.
+Before your workshop, you should check `swc-installation-test-2.py`
+and comment out any dependencies you don't need out of the `CHECKS`
+list.  You might also want to skim through the minimum version numbers
+listed where particular dependencies are defined (e.g. `('git', 'Git',
+(1, 7, 0), None)`).  For the most part, fairly conservative values
+have been selected, so students with modern machines should be fine.
+If your workshop has stricter version requirements, feel free to bump
+them accordingly.
 
 Similarly, the virtual dependencies can be satisfied by any of several
 packages.  If you don't want to support a particular package (e.g. if
