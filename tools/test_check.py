@@ -25,14 +25,20 @@ def test_check_root():
 def test_check_root_fail():
     assert not check.check_root("setup")
 
-def test_check_contry():
-    assert check.check_country("Country")
-
-def test_check_contry_none():
+def test_check_country_none():
     assert not check.check_country(None)
 
-def test_check_contry_two_words():
+def test_check_country_two_words():
     assert not check.check_country("Some Country")
+
+def test_check_country_abbrev():
+    assert not check.check_country("USA")
+
+def test_check_country_correct_unhyphenated():
+    assert check.check_country("Canada")
+
+def test_check_country_correct_hyphenated():
+    assert check.check_country("United-Kingdom")
 
 def test_check_humandate():
     assert check.check_humandate("Feb 18-20, 2525")
