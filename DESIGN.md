@@ -57,12 +57,13 @@ than Git itself.
 7.  Jekyll gets variables from two places: a file called `_config.yml`
     located in the repo's root directory, and the header of each
     individual page.  Variables from `_config.yml` are put in an
-    object called `site`, and referred to as `site.variable`, so
-    `{{site.twitter_name}}` in a page is replaced by `@swcarpentry`.
-    Variables from the page's header are put in an object called
-    `page`, and referred to as `page.variable`, so if a page's header
-    defines a variable called `venue`, `{{page.venue}}` is replaced by
-    "Euphoric State University" (or whatever value the variable has).
+    object called `site`, and referred to as `site.variable`, so that
+    (for example) `{{site.swc_site}}` in a page is replaced by the URL
+    of the main Software Carpentry web site.  Variables from the
+    page's header are put in an object called `page`, and referred to
+    as `page.variable`, so if a page's header defines a variable
+    called `venue`, `{{page.venue}}` is replaced by "Euphoric State
+    University" (or whatever value the variable has).
 
 8.  If a page uses {% raw %}{% include something.html %}{% endraw %}
     to include a snippet of HTML, Jekyll looks in a directory called
