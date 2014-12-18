@@ -29,8 +29,8 @@
 
 *   *What if I want to add more values to the page, like `address1` and `address2` for different rooms on different days?*
 
-    Go ahead, but you *must* have
-    [the variables described above](#variables).
+    Go ahead, but you *must* have the variables described in
+    [CUSTOMIZATION.md](CUSTOMIZATION.md).
 
 *   *What is the "Windows installer"?*
 

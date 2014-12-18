@@ -190,13 +190,13 @@ you must install the software described below.
     $ apt-get install python-yaml
     ~~~
 
-## For More Information
+## Final Steps
 
-Please see the following for more information on:
-
-*   [customizing your workshop's home page](CUSTOMIZATION.md)
-*   [background and design](DESIGN.md)
-*   [FAQ](FAQ.md)
+The final step in creating a website for your workshop is to customize
+its home page by following [these instructions](CUSTOMIZATION.md).
+This [FAQ](FAQ.md) includes a few extra tips --- additions are always
+welcome --- and these notes on [the background and design](DESIGN.md)
+of this template may help as well.
 
 ## Getting Help
 
