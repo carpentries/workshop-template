@@ -1,5 +1,5 @@
-Students
-========
+For learners
+============
 
 This directory contains scripts for testing your machine to make sure
 you have the software you'll need for your workshop installed.  See
@@ -45,8 +45,8 @@ option:
     os.name            : posix
     …
 
-Instructors
-===========
+For instructors
+===============
 
 `swc-installation-test-1.py` is pretty simple, and just checks that
 the students have a recent enough version of Python installed that
