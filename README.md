@@ -20,7 +20,7 @@ second repository for your learners to use in your Git lessons).
 ## Semi-Automated Setup
 
 1.  Download the workshop website creation script from
-    [http://files.software-carpentry.org/workshop-create](http://files.software-carpentry.org/workshop-create).
+    [http://files.software-carpentry.org/swc-workshop-create](http://files.software-carpentry.org/swc-workshop-create).
 
 2.  Make sure that you are *not* inside another Git repository.
 
