@@ -27,6 +27,24 @@ second repository for your learners to use in your Git lessons).
 3.  Run the workshop website creation script with no parameters - it
     will print a help message telling you what parameters it needs.
 
+    You need to use
+
+    ~~~
+    $ bash swc-workshop-create
+    ~~~
+
+    or change file mode with
+
+    ~~~
+    $ chmod +x swc-workshop-create
+    ~~~
+
+    before run the script by
+
+    ~~~
+    $ ./swc-workshop-create
+    ~~~
+
 4.  Run the script with those parameters.
 
 5.  Go into your newly-created repository.
