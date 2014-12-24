@@ -108,6 +108,8 @@ COUNTRIES = [
     'Zimbabwe'
 ]
 
+Error_Messages = [] # error messages
+
 def look_for_fixme(func):
     '''Decorator to see whether a value starts with FIXME.'''
     def inner(arg):
@@ -174,13 +176,12 @@ def check_date(this_date):
 def check_latitude_longitude(latlng):
     '''A valid latitude/longitude listing is two floats, separated by comma'''
     try:
-        # just one of them has to break
         lat, lng = latlng.split(',')
-        float(lat)
-        float(lng)
+        lat = float(lat)
+        long = float(lng)
     except ValueError:
         return False
-    return True
+    return (-90.0 <= lat <= 90.0) and (-180.0 <= long <= 180.0)
 
 def check_instructors(instructors):
     '''Checks whether instructor list is of format ['First name', 'Second name', ...']'''
@@ -240,15 +241,15 @@ def check_validity(data, function, error):
     '''Wrapper-function around the various check-functions.'''
     valid = function(data)
     if not valid:
-        sys.stderr.write(ERROR.format(error))
-        sys.stderr.write(SUB_ERROR.format('Offending entry is: "{0}"'.format(data)))
+        Error_Messages.append(ERROR.format(error))
+        Error_Messages.append(SUB_ERROR.format('Offending entry is: "{0}"'.format(data)))
     return valid
 
 def check_categories(left, right, message):
     result = left - right
     if result:
-        sys.stderr.write(ERROR.format(message))
-        sys.stderr.write(SUB_ERROR.format('Offending entries: {0}'.format(result)))
+        Error_Messages.append(ERROR.format(message))
+        Error_Messages.append(SUB_ERROR.format('Offending entries: {0}'.format(result)))
         return False
     return True
 
@@ -256,59 +257,59 @@ def check_double_categories(seen_categories, message):
     category_counts = Counter(seen_categories)
     double_categories = [category for category in category_counts if category_counts[category] > 1]
     if double_categories:
-        sys.stderr.write(ERROR.format(message))
-        sys.stderr.write(SUB_ERROR.format('"{0}" appears more than once.\n'.format(double_categories)))
+        Error_Messages.append(ERROR.format(message))
+        Error_Messages.append(SUB_ERROR.format('"{0}" appears more than once.\n'.format(double_categories)))
         return False
     return True
 
-def get_header(index_fh):
-    '''Parses index.html file, returns just the header'''
+def get_header(lines):
+    '''Parses list of lines, returning just the header.'''
     # We stop the header once we see the second '---'
-    header_counter = 0
+    delimiters = 0
     header = []
-    this_categories = []
-    for line in index_fh:
+    categories = []
+    for line in lines:
         line = line.rstrip()
         if line == '---':
-            header_counter += 1
-            continue
-        if header_counter != 2:
+            delimiters += 1
+            if delimiters == 2:
+                break
+        else:
             # Work around PyYAML Ticket #114
             if not line.startswith('#'):
                 header.append(line)
-                this_categories.append(line.split(":")[0].strip())
+                categories.append(line.split(":")[0].strip())
 
-        if "This page is a template for workshop home pages." in line:
-            sys.stderr.write('WARN:\tYou seem to still have the template header in your index.html. Please remove that.\n')
-            sys.stderr.write('\tLook for: "<!-- Remove the block below. -->" in the index.html.\n')
-            break # we can stop here - for now, just check header and template header
+    valid = (delimiters == 2)
+    return valid, yaml.load("\n".join(header)), categories
 
-    return yaml.load("\n".join(header)), this_categories
-
-def check_file(index_fh):
+def check_file(filename, reader):
     '''Gets header from index.html, calls all other functions and checks file for validity.
     Returns True when 'index.html' has no problems and False when there are problems.
     '''
-    header_data, seen_categories = get_header(index_fh)
+    global Error_Messages
 
-    if not header_data:
+    Error_Messages = []
+    lines = reader.readlines()
+    valid, header_data, seen_categories = get_header(lines)
+
+    if not valid:
         msg = 'Cannot find header in given file "{0}". Please check path, is this the bc index.html?\n'.format(filename)
-        sys.stderr.write(ERROR.format(msg))
-        sys.exit(1)
-
-    is_valid = True
+        Error_Messages.append(ERROR.format(msg))
+        return False
 
     # Look through all header entries.  If the category is in the input
     # file and is either required or we have actual data (as opposed to
     # a commented-out entry), we check it.  If it *isn't* in the header
     # but is required, report an error.
+    is_valid = True
     for category in HANDLERS:
         required, handler_function, error_message = HANDLERS[category]
         if category in header_data:
             if required or header_data[category]:
                 is_valid &= check_validity(header_data[category], handler_function, error_message)
         elif required:
-            sys.stderr.write(ERROR.format('index file is missing mandatory key "{0}".'.format(category)))
+            Error_Messages.append(ERROR.format('index file is missing mandatory key "{0}".'.format(category)))
             is_valid &= False
 
     # Do we have double categories?
@@ -321,7 +322,8 @@ def check_file(index_fh):
 
     return is_valid
 
-if __name__ == '__main__':
+def main():
+    '''Run as the main program.'''
     filename = None
     if len(sys.argv) == 1:
         if os.path.exists('./index.html'):
@@ -336,12 +338,16 @@ if __name__ == '__main__':
 
     sys.stderr.write('Testing "{0}".\n'.format(filename))
 
-    with open(filename) as index_fh:
-        is_valid = check_file(index_fh)
+    with open(filename) as reader:
+        is_valid = check_file(filename, reader)
 
     if is_valid:
         sys.stderr.write('Everything seems to be in order.\n')
         sys.exit(0)
     else:
-        sys.stderr.write('There were problems, please see above.\n')
+        for m in Error_Messages:
+            sys.stderr.write(m)
         sys.exit(1)
+
+if __name__ == '__main__':
+    main()
