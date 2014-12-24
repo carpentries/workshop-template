@@ -9,7 +9,7 @@ Checks for:
 3.  Contact email should be valid (letters + @ + letters + . + letters)
 4.  Latitute/longitude should be 2 floating point numbers separated by comma
 5.  startdate should be a valid date; if enddate is present, it should be valid as well
-6.  country should be a recognized hyphenated country name
+6.  country should be a recognized hyphenated country name from the embedded list
 7.  instructor and helper lists should be valid Python/Ruby lists
 8.  Template header should not exist
 9.  humandate should have three-letter month and four-letter year
@@ -215,7 +215,7 @@ def check_pass(value):
 HANDLERS = {
     'layout' :       (True,  check_layout, 'layout isn\'t "workshop".'),
     'root' :         (True,  check_root, 'root can only be ".".'), 
-    'country' :      (True,  check_country, 'country invalid: must use full hyphenated name (e.g., "United-Kingdom").'),
+    'country' :      (True,  check_country, 'country invalid: must use full hyphenated name from: ' + ' '.join(COUNTRIES)),
     'humandate' :    (True,  check_humandate, 'humandate invalid. Please use three-letter months like "Jan" and four-letter years like "2025".'),
     'humantime' :    (True,  check_humantime, 'humantime doesn\'t include numbers.'),
     'startdate' :    (True,  check_date, 'startdate invalid. Must be of format year-month-day, i.e., 2014-01-31.'),

@@ -20,12 +20,30 @@ second repository for your learners to use in your Git lessons).
 ## Semi-Automated Setup
 
 1.  Download the workshop website creation script from
-    [http://files.software-carpentry.org/workshop-create](http://files.software-carpentry.org/workshop-create).
+    [http://files.software-carpentry.org/swc-workshop-create](http://files.software-carpentry.org/swc-workshop-create).
 
 2.  Make sure that you are *not* inside another Git repository.
 
 3.  Run the workshop website creation script with no parameters - it
     will print a help message telling you what parameters it needs.
+
+    You need to use
+
+    ~~~
+    $ bash swc-workshop-create
+    ~~~
+
+    or change file mode with
+
+    ~~~
+    $ chmod +x swc-workshop-create
+    ~~~
+
+    before run the script by
+
+    ~~~
+    $ ./swc-workshop-create
+    ~~~
 
 4.  Run the script with those parameters.
 
@@ -190,13 +208,13 @@ you must install the software described below.
     $ apt-get install python-yaml
     ~~~
 
-## For More Information
+## Final Steps
 
-Please see the following for more information on:
-
-*   [customizing your workshop's home page](CUSTOMIZATION.md)
-*   [background and design](DESIGN.md)
-*   [FAQ](FAQ.md)
+The final step in creating a website for your workshop is to customize
+its home page by following [these instructions](CUSTOMIZATION.md).
+This [FAQ](FAQ.md) includes a few extra tips --- additions are always
+welcome --- and these notes on [the background and design](DESIGN.md)
+of this template may help as well.
 
 ## Getting Help
 

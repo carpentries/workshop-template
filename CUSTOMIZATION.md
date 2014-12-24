@@ -1,6 +1,12 @@
 # Customizing Your Workshop's Website
 
-Your workshop's `index.html` page *must* define the following values
+You must change the values of `lesson_repo` and `lesson_site` in
+the `_config.yml` configuration file in the root directory of your
+workshop to point to the repository for the lesson and its GitHub
+pages URL respectively.  You should not need to modify any of the
+other values in `_config.yml`.
+
+Your workshop's `index.html` page must define the following values
 in its header:
 
 *   `layout` must be `workshop`.
