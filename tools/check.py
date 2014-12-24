@@ -283,14 +283,14 @@ def get_header(lines):
     valid = (delimiters == 2)
     return valid, yaml.load("\n".join(header)), categories
 
-def check_file(filename, reader):
+def check_file(filename, data):
     '''Gets header from index.html, calls all other functions and checks file for validity.
     Returns True when 'index.html' has no problems and False when there are problems.
     '''
     global Error_Messages
 
     Error_Messages = []
-    lines = reader.readlines()
+    lines = data.split('\n')
     valid, header_data, seen_categories = get_header(lines)
 
     if not valid:
@@ -320,7 +320,7 @@ def check_file(filename, reader):
     is_valid &= check_categories(REQUIRED, seen_categories, 'There are missing categories.')
     is_valid &= check_categories(seen_categories, REQUIRED.union(OPTIONAL), 'There are superfluous categories.')
 
-    return is_valid
+    return is_valid, Error_Messages
 
 def main():
     '''Run as the main program.'''
@@ -339,13 +339,14 @@ def main():
     sys.stderr.write('Testing "{0}".\n'.format(filename))
 
     with open(filename) as reader:
-        is_valid = check_file(filename, reader)
+        data = reader.read()
+        is_valid, error_messages = check_file(filename, data)
 
     if is_valid:
         sys.stderr.write('Everything seems to be in order.\n')
         sys.exit(0)
     else:
-        for m in Error_Messages:
+        for m in error_messages:
             sys.stderr.write(m)
         sys.exit(1)
 
