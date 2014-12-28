@@ -8,8 +8,10 @@ Checks for:
 2.  Categories are allowed to appear only once
 3.  Contact email should be valid (letters + @ + letters + . + letters)
 4.  Latitute/longitude should be 2 floating point numbers separated by comma
-5.  startdate should be a valid date; if enddate is present, it should be valid as well
-6.  country should be a recognized hyphenated country name from the embedded list
+5.  startdate should be a valid date; if enddate is present, it should be valid
+    as well
+6.  country should be a recognized hyphenated country name from the embedded
+    list
 7.  instructor and helper lists should be valid Python/Ruby lists
 8.  Template header should not exist
 9.  humandate should have three-letter month and four-letter year
@@ -19,15 +21,33 @@ Checks for:
 13. address, venue should be non-empty
 '''
 
+from __future__ import print_function
 import sys
 import os
 import re
+import logging
 
 import yaml
 from collections import Counter
 
 __version__ = '0.6'
 
+
+# basic logging configuration
+logger = logging.getLogger(__name__)
+verbosity = logging.INFO  # severity of at least INFO will emerge
+logger.setLevel(verbosity)
+
+# create console handler and set level to debug
+console_handler = logging.StreamHandler()
+console_handler.setLevel(verbosity)
+
+formatter = logging.Formatter('%(levelname)s: %(message)s')
+console_handler.setFormatter(formatter)
+logger.addHandler(console_handler)
+
+
+# TODO: these regexp patterns need comments inside
 EMAIL_PATTERN = r'[^@]+@[^@]+\.[^@]+'
 HUMANTIME_PATTERN = r'((0?\d|1[0-1]):[0-5]\d(am|pm)(-|to)(0?\d|1[0-1]):[0-5]\d(am|pm))|((0?\d|1\d|2[0-3]):[0-5]\d(-|to)(0?\d|1\d|2[0-3]):[0-5]\d)'
 EVENTBRITE_PATTERN = r'\d{9,10}'
@@ -35,10 +55,7 @@ URL_PATTERN = r'https?://.+'
 
 DEFAULT_CONTACT_EMAIL = 'admin@software-carpentry.org'
 
-USAGE = 'Usage: swc_index_validator.py [filename]'
-
-ERROR = 'ERROR:\t{0}\n'
-SUB_ERROR = '\t{0}\n'
+USAGE = 'Usage: "python check.py" or "python check.py path/to/index.html"\n'
 
 COUNTRIES = [
     'Abkhazia', 'Afghanistan', 'Aland', 'Albania', 'Algeria',
@@ -108,7 +125,37 @@ COUNTRIES = [
     'Zimbabwe'
 ]
 
-Error_Messages = [] # error messages
+
+def add_error(msg, errors):
+    """
+    Add error to the list of errors.  This function makes use of Python
+    reference mechanics: a list passed as `errors` argument is always passed
+    as a reference, therefore modification of that list in this function will
+    result in the same modification in the calling (parent) function.
+
+    For example:
+    >>> L = []
+    >>> add_error("Test1", L)
+    >>> print(L)
+    ['Test1']
+    """
+    errors.append(msg)
+
+
+def add_suberror(msg, errors):
+    """
+    Add sub error, ie. error indented by 1 level ("\t"), to the list of errors.
+    To see how this function works, take a look at :ref:`add_error` function.
+
+    An example:
+    >>> print(L)
+    ['Test1']
+    >>> add_suberror("Test1_1", L)
+    >>> print(L)
+    ['Test1', '\tTest1_1']
+    """
+    errors.append("\t{0}".format(msg))
+
 
 def look_for_fixme(func):
     '''Decorator to see whether a value starts with FIXME.'''
@@ -118,26 +165,31 @@ def look_for_fixme(func):
         return func(arg)
     return inner
 
+
 @look_for_fixme
 def check_layout(layout):
     '''Checks whether layout equals "workshop".'''
     return layout == 'workshop'
+
 
 @look_for_fixme
 def check_root(root):
     '''Checks root - can only be "."'''
     return root == '.'
 
+
 @look_for_fixme
 def check_country(country):
     '''A valid country is in the list of recognized countries.'''
     return country in COUNTRIES
 
+
 @look_for_fixme
 def check_humandate(date):
-    '''A valid human date starts with a three-letter month and ends with four-letter year,
-    Example: "Feb 18-20, 2525"
-    other example: "Feb 18 and 20, 2014"
+    '''A valid human date starts with a three-letter month and ends with
+    four-letter year.
+
+    For example: "Feb 18-20, 2525" or "Feb 18 and 20, 2014".
     '''
     if "," not in date:
         return False
@@ -161,16 +213,19 @@ def check_humandate(date):
 
     return True
 
+
 @look_for_fixme
 def check_humantime(time):
     '''A valid humantime contains at least one number'''
-    return bool(re.match(HUMANTIME_PATTERN, time.replace(" ","")))
+    return bool(re.match(HUMANTIME_PATTERN, time.replace(" ", "")))
+
 
 def check_date(this_date):
     '''A valid date is YEAR-MONTH-DAY, example: 2014-06-30'''
     from datetime import date
     # yaml automatically loads valid dates as datetime.date
     return isinstance(this_date, date)
+
 
 @look_for_fixme
 def check_latitude_longitude(latlng):
@@ -183,30 +238,40 @@ def check_latitude_longitude(latlng):
         return False
     return (-90.0 <= lat <= 90.0) and (-180.0 <= long <= 180.0)
 
+
 def check_instructors(instructors):
-    '''Checks whether instructor list is of format ['First name', 'Second name', ...']'''
+    '''Checks whether instructor list is of format:
+    ['First name', 'Second name', ...']'''
     # yaml automatically loads list-like strings as lists
     return isinstance(instructors, list) and len(instructors) > 0
 
+
 def check_helpers(helpers):
-    '''Checks whether helpers list is of format ['First name', 'Second name', ...']'''
+    '''Checks whether helpers list is of format:
+    ['First name', 'Second name', ...']'''
     # yaml automatically loads list-like strings as lists
     return isinstance(helpers, list) and len(helpers) >= 0
 
+
 @look_for_fixme
 def check_email(email):
-    '''A valid email has letters, then an @, followed by letters, followed by a dot, followed by letters.'''
-    return bool(re.match(EMAIL_PATTERN, email)) and email != DEFAULT_CONTACT_EMAIL
+    '''A valid email has letters, then an @, followed by letters, followed by
+    a dot, followed by letters.'''
+    return (bool(re.match(EMAIL_PATTERN, email)) and
+            email != DEFAULT_CONTACT_EMAIL)
+
 
 @look_for_fixme
 def check_eventbrite(eventbrite):
     '''A valid EventBrite key is 9 or more digits.'''
     return bool(re.match(EVENTBRITE_PATTERN, eventbrite))
 
+
 @look_for_fixme
 def check_etherpad(etherpad):
     '''A valid Etherpad URL is just a URL.'''
     return bool(re.match(URL_PATTERN, etherpad))
+
 
 @look_for_fixme
 def check_pass(value):
@@ -214,21 +279,43 @@ def check_pass(value):
     return True
 
 HANDLERS = {
-    'layout' :       (True,  check_layout, 'layout isn\'t "workshop".'),
-    'root' :         (True,  check_root, 'root can only be ".".'), 
-    'country' :      (True,  check_country, 'country invalid: must use full hyphenated name from: ' + ' '.join(COUNTRIES)),
-    'humandate' :    (True,  check_humandate, 'humandate invalid. Please use three-letter months like "Jan" and four-letter years like "2025".'),
-    'humantime' :    (True,  check_humantime, 'humantime doesn\'t include numbers.'),
-    'startdate' :    (True,  check_date, 'startdate invalid. Must be of format year-month-day, i.e., 2014-01-31.'),
-    'enddate' :      (False, check_date, 'enddate invalid. Must be of format year-month-day, i.e., 2014-01-31.'),
-    'latlng' :       (True,  check_latitude_longitude, 'latlng invalid. Check that it is two floating point numbers, separated by a comma.'),
-    'instructor' :   (True,  check_instructors, 'instructor list isn\'t a valid list of format ["First instructor", "Second instructor",..].'),
-    'helper' :       (True,  check_helpers, 'helper list isn\'t a valid list of format ["First helper", "Second helper",..].'),
-    'contact' :      (True,  check_email, 'contact email invalid or still set to "{0}".'.format(DEFAULT_CONTACT_EMAIL)),
-    'eventbrite' :   (False, check_eventbrite, 'Eventbrite key appears invalid.'),
-    'etherpad' :     (False, check_etherpad, 'Etherpad URL appears invalid.'),
-    'venue' :        (False, check_pass, 'venue name not specified'),
-    'address' :      (False, check_pass, 'address not specified')
+    'layout':     (True, check_layout, 'layout isn\'t "workshop"'),
+    'root':       (True, check_root, 'root can only be "."'),
+    'country':    (True, check_country,
+                   'country invalid: must use full hyphenated name from: ' +
+                   ' '.join(COUNTRIES)),
+
+    'humandate':  (True, check_humandate,
+                   'humandate invalid. Please use three-letter months like ' +
+                   '"Jan" and four-letter years like "2025".'),
+    'humantime':  (True, check_humantime,
+                   'humantime doesn\'t include numbers'),
+    'startdate':  (True, check_date,
+                   'startdate invalid. Must be of format year-month-day, ' +
+                   'i.e., 2014-01-31.'),
+    'enddate':    (False, check_date,
+                   'enddate invalid. Must be of format year-month-day, i.e.,' +
+                   ' 2014-01-31.'),
+
+    'latlng':     (True, check_latitude_longitude,
+                   'latlng invalid. Check that it is two floating point ' +
+                   'numbers, separated by a comma.'),
+
+    'instructor': (True, check_instructors,
+                   'instructor list isn\'t a valid list of format ' +
+                   '["First instructor", "Second instructor",..].'),
+    'helper':     (True, check_helpers,
+                   'helper list isn\'t a valid list of format ' +
+                   '["First helper", "Second helper",..].'),
+
+    'contact':    (True, check_email,
+                   'contact email invalid or still set to ' +
+                   '"{0}".'.format(DEFAULT_CONTACT_EMAIL)),
+
+    'eventbrite': (False, check_eventbrite, 'Eventbrite key appears invalid.'),
+    'etherpad':   (False, check_etherpad, 'Etherpad URL appears invalid.'),
+    'venue':      (False, check_pass, 'venue name not specified'),
+    'address':    (False, check_pass, 'address not specified')
 }
 
 # REQUIRED is all required categories.
@@ -237,30 +324,40 @@ REQUIRED = set([k for k in HANDLERS if HANDLERS[k][0]])
 # OPTIONAL is all optional categories.
 OPTIONAL = set([k for k in HANDLERS if not HANDLERS[k][0]])
 
-def check_validity(data, function, error):
+
+def check_validity(data, function, errors, error_msg):
     '''Wrapper-function around the various check-functions.'''
     valid = function(data)
     if not valid:
-        Error_Messages.append(ERROR.format(error))
-        Error_Messages.append(SUB_ERROR.format('Offending entry is: "{0}"'.format(data)))
+        add_error(error_msg, errors)
+        add_suberror('Offending entry is: "{0}"'.format(data), errors)
+
     return valid
 
-def check_categories(left, right, message):
+
+def check_categories(left, right, errors, error_msg):
     result = left - right
     if result:
-        Error_Messages.append(ERROR.format(message))
-        Error_Messages.append(SUB_ERROR.format('Offending entries: {0}'.format(result)))
+        add_error(error_msg, errors)
+        add_suberror('Offending entries: {0}'.format(result), errors)
         return False
+
     return True
 
-def check_double_categories(seen_categories, message):
+
+def check_double_categories(seen_categories, errors, error_msg):
     category_counts = Counter(seen_categories)
-    double_categories = [category for category in category_counts if category_counts[category] > 1]
+    double_categories = [category for category in category_counts
+                         if category_counts[category] > 1]
+
     if double_categories:
-        Error_Messages.append(ERROR.format(message))
-        Error_Messages.append(SUB_ERROR.format('"{0}" appears more than once.\n'.format(double_categories)))
+        add_error(error_msg, errors)
+        msg = '"{0}" appears more than once'.format(double_categories)
+        add_suberror(msg, errors)
         return False
+
     return True
+
 
 def get_header(lines):
     '''Parses list of lines, returning just the header.'''
@@ -283,20 +380,23 @@ def get_header(lines):
     valid = (delimiters == 2)
     return valid, yaml.load("\n".join(header)), categories
 
-def check_file(filename, data):
-    '''Gets header from index.html, calls all other functions and checks file for validity.
-    Returns True when 'index.html' has no problems and False when there are problems.
-    '''
-    global Error_Messages
 
-    Error_Messages = []
+def check_file(filename, data):
+    '''Get header from index.html, call all other functions and check file for
+    validity.
+    Return True when 'index.html' has no problems and False when there are
+    problems.
+    '''
+    errors = []
+
     lines = data.split('\n')
     valid, header_data, seen_categories = get_header(lines)
 
     if not valid:
-        msg = 'Cannot find header in given file "{0}". Please check path, is this the bc index.html?\n'.format(filename)
-        Error_Messages.append(ERROR.format(msg))
-        return False
+        msg = ('Cannot find header in given file "{0}". Please ' +
+               'check path, is this the bc index.html?'.format(filename))
+        add_error(msg, errors)
+        return False, errors
 
     # Look through all header entries.  If the category is in the input
     # file and is either required or we have actual data (as opposed to
@@ -307,20 +407,30 @@ def check_file(filename, data):
         required, handler_function, error_message = HANDLERS[category]
         if category in header_data:
             if required or header_data[category]:
-                is_valid &= check_validity(header_data[category], handler_function, error_message)
+                is_valid &= check_validity(header_data[category],
+                                           handler_function, errors,
+                                           error_message)
         elif required:
-            Error_Messages.append(ERROR.format('index file is missing mandatory key "{0}".'.format(category)))
+            msg = 'index file is missing mandatory key "{0}"'.format(category)
+            add_error(msg, errors)
             is_valid &= False
 
     # Do we have double categories?
-    is_valid &= check_double_categories(seen_categories, 'There are categories appearing twice or more.')
+    is_valid &= check_double_categories(
+        seen_categories, errors,
+        'There are categories appearing twice or more')
 
     # Check whether we have missing or too many categories
     seen_categories = set(seen_categories)
-    is_valid &= check_categories(REQUIRED, seen_categories, 'There are missing categories.')
-    is_valid &= check_categories(seen_categories, REQUIRED.union(OPTIONAL), 'There are superfluous categories.')
 
-    return is_valid, Error_Messages
+    is_valid &= check_categories(REQUIRED, seen_categories, errors,
+                                 'There are missing categories')
+
+    is_valid &= check_categories(seen_categories, REQUIRED.union(OPTIONAL),
+                                 errors, 'There are superfluous categories')
+
+    return is_valid, errors
+
 
 def main():
     '''Run as the main program.'''
@@ -332,22 +442,23 @@ def main():
             filename = '../index.html'
     elif len(sys.argv) == 2:
         filename = sys.argv[1]
+
     if filename is None:
-        sys.stderr.write('Usage: "python check" or "python check path/to/index.html"\n')
+        print(USAGE, file=sys.stderr)
         sys.exit(1)
 
-    sys.stderr.write('Testing "{0}".\n'.format(filename))
+    logger.info('Testing "{0}"'.format(filename))
 
     with open(filename) as reader:
         data = reader.read()
-        is_valid, error_messages = check_file(filename, data)
+        is_valid, errors = check_file(filename, data)
 
     if is_valid:
-        sys.stderr.write('Everything seems to be in order.\n')
+        logger.info('Everything seems to be in order')
         sys.exit(0)
     else:
-        for m in error_messages:
-            sys.stderr.write(m)
+        for m in errors:
+            logger.error(m)
         sys.exit(1)
 
 if __name__ == '__main__':
