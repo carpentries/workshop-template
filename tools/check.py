@@ -7,18 +7,16 @@ Checks for:
 1.  There should be the right number of categories
 2.  Categories are allowed to appear only once
 3.  Contact email should be valid (letters + @ + letters + . + letters)
-4.  Latitute/longitude should be 2 floating point numbers separated by comma
-5.  startdate should be a valid date; if enddate is present, it should be valid
-    as well
-6.  country should be a recognized hyphenated country name from the embedded
-    list
-7.  instructor and helper lists should be valid Python/Ruby lists
-8.  Template header should not exist
-9.  humandate should have three-letter month and four-letter year
-10. layout should be 'workshop'
-11. root must be '.'
-12. humantime should have 'am' or 'pm' or both
-13. address, venue should be non-empty
+4.  Address and venue should be non-empty
+5.  Latitute/longitude should be 2 floating point numbers separated by comma
+6.  Start date should be a valid date; if end date is present, it should be valid as well
+7.  Human date should have three-letter month and four-letter year
+8.  Human time should have 'am' or 'pm' or both
+9.  Country should be a recognized hyphenated country name from the embedded list
+10. Instructor and helper lists should be valid lists
+11. Template header should not exist
+12. Layout should be 'workshop'
+13. Root must be '.'
 '''
 
 from __future__ import print_function
@@ -187,10 +185,8 @@ def check_country(country):
 @look_for_fixme
 def check_humandate(date):
     '''A valid human date starts with a three-letter month and ends with
-    four-letter year.
-
-    For example: "Feb 18-20, 2525" or "Feb 18 and 20, 2014".
-    '''
+    four-letter year. For example: "Feb 18-20, 2525" or "Feb 18 and
+    20, 2014".'''
     if "," not in date:
         return False
 
@@ -257,8 +253,8 @@ def check_helpers(helpers):
 def check_email(email):
     '''A valid email has letters, then an @, followed by letters, followed by
     a dot, followed by letters.'''
-    return (bool(re.match(EMAIL_PATTERN, email)) and
-            email != DEFAULT_CONTACT_EMAIL)
+    return bool(re.match(EMAIL_PATTERN, email)) and \
+           (email != DEFAULT_CONTACT_EMAIL)
 
 
 @look_for_fixme
@@ -277,6 +273,7 @@ def check_etherpad(etherpad):
 def check_pass(value):
     '''A test that always passes, used for things like addresses.'''
     return True
+
 
 HANDLERS = {
     'layout':     (True, check_layout, 'layout isn\'t "workshop"'),
@@ -331,21 +328,21 @@ def check_validity(data, function, errors, error_msg):
     if not valid:
         add_error(error_msg, errors)
         add_suberror('Offending entry is: "{0}"'.format(data), errors)
-
     return valid
 
 
 def check_categories(left, right, errors, error_msg):
+    '''Report set difference of categories.'''
     result = left - right
     if result:
         add_error(error_msg, errors)
         add_suberror('Offending entries: {0}'.format(result), errors)
         return False
-
     return True
 
 
-def check_double_categories(seen_categories, errors, error_msg):
+def check_repeated_categories(seen_categories, errors, error_msg):
+    '''Check for categories appearing two or more times.'''
     category_counts = Counter(seen_categories)
     double_categories = [category for category in category_counts
                          if category_counts[category] > 1]
@@ -382,11 +379,9 @@ def get_header(lines):
 
 
 def check_file(filename, data):
-    '''Get header from index.html, call all other functions and check file for
-    validity.
-    Return True when 'index.html' has no problems and False when there are
-    problems.
-    '''
+    '''Get header from index.html, call all other functions and check file
+    for validity. Return True when 'index.html' has no problems and
+    False when there are problems.'''
     errors = []
 
     lines = data.split('\n')
@@ -416,7 +411,7 @@ def check_file(filename, data):
             is_valid &= False
 
     # Do we have double categories?
-    is_valid &= check_double_categories(
+    is_valid &= check_repeated_categories(
         seen_categories, errors,
         'There are categories appearing twice or more')
 
