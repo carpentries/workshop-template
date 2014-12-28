@@ -79,7 +79,8 @@ function check_hyphens {
 function create_repo {
     url=https://api.github.com/user/repos
     ghpages=https://${OWNER}.github.io/${WORKSHOP_ID}
-    curl -s --head ${ghpages} | head -n 1 | grep "HTTP/1.[01] [23].."
+    # Support redirects, collect last HTTP code as error code
+    curl -s -L --head ${ghpages} | grep "HTTP/1.[01]" | tail -1 | grep "[23].."
     if test $? -ne 1
     then
         echo "ERROR: this repository already exists"
