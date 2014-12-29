@@ -16,20 +16,23 @@ else
 	echo "Press any key to close this window"
 	echo ""
 	read -n 1 -s 
+	#Otherwise window will close itself
 	exit 1
 fi
 
 
 if [ `which git` == '/usr/bin/git' ] 
 	# Unfortunately this is still true even after adding an alias
+	echo ""
 	echo "Evaluating profile files..." 
+	echo ""
 then
 	if [ -f ~/.bashrc ]
 	then
 		if [ `grep -c "alias git" ~/.bashrc` > 0 ]
 			then
 			echo ""
-			echo "The string 'alias git' already exists in your profile, aborting."
+			echo "The string 'alias git' already exists in your .bashrc, aborting."
 			echo "This can happen if you run this script twice."
 			echo "Press any key to close this window."
 			echo ""
@@ -46,7 +49,7 @@ then
 		if [ `grep -c "alias git" ~/.bash_profile` > 0 ]
 			then
 			echo ""
-			echo "The string 'alias git' already exists in your profile, aborting."
+			echo "The string 'alias git' already exists in your .bash_profile, aborting."
 			echo "This can happen if you run this script twice."
 			echo "Press any key to close this window."
 			echo ""
@@ -60,7 +63,7 @@ then
 		fi
 	else
 		echo ""
-		echo "Neither .bashrc nor .bash_profile exist, creating one with git alias." 
+		echo "Neither .bashrc nor .bash_profile exist, creating .bash_profile with git alias." 
 		echo 'alias git=/usr/local/git/bin/git' >> ~/.bash_profile
 		echo ""
 	fi
