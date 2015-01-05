@@ -422,14 +422,14 @@ def check_file(filename, data):
             add_error(msg, errors)
             is_valid &= False
 
+    # Do we have any blank lines in the header?
+    is_valid &= check_blank_category(seen_categories, errors,
+                                     'There are blank lines in the header')
+
     # Do we have double categories?
     is_valid &= check_repeated_categories(
         seen_categories, errors,
         'There are categories appearing twice or more')
-
-    # Do we have any blank lines in the header?
-    is_valid &= check_blank_category(seen_categories, errors,
-                                     'There are blank lines in the header')
 
     # Check whether we have missing or too many categories
     seen_categories = set(seen_categories)
