@@ -206,4 +206,44 @@ helper: [ ]
 contact: alan@turing.com
 ---"""
 
-    assert not check.check_file('test.html', header)
+    assert check.check_file('test.html', header)
+
+def test_check_with_commented_lines():
+    header = """---
+layout: workshop
+root: .
+venue: Euphoric State University
+address: 123 College Street, Euphoria
+country: United-States
+humandate: Feb 17-18, 2020
+humantime: 9:00 am - 4:30 pm
+startdate: 2020-06-17
+enddate: 2020-06-18
+latlng: 41.7901128,-87.6007318
+instructor: ["Grace Hopper", "Alan Turing"]
+helper: [ ]
+contact: alan@turing.com
+# eventbrite:
+---"""
+
+    assert check.check_file('test.html', header)
+
+def test_check_with_commented_values():
+    header = """---
+layout: workshop
+root: .
+venue: Euphoric State University
+address: 123 College Street, Euphoria
+country: United-States
+humandate: Feb 17-18, 2020
+humantime: 9:00 am - 4:30 pm
+startdate: 2020-06-17
+enddate: 2020-06-18
+latlng: 41.7901128,-87.6007318
+instructor: ["Grace Hopper", "Alan Turing"]
+helper: [ ]
+contact: alan@turing.com
+eventbrite: # FIXME
+---"""
+
+    assert check.check_file('test.html', header)

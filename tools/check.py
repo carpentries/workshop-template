@@ -341,16 +341,12 @@ def check_validity(data, function, errors, error_msg):
     return valid
 
 
-def check_blank_category(seen_categories, errors, error_msg):
+def check_blank_lines(raw_data, errors, error_msg):
     '''Check for blank line in category headers.'''
-    if '' in seen_categories:
+    lines = [x.strip() for x in raw_data.split('\n')]
+    if '' in lines:
         add_error(error_msg, errors)
-        blank_count = 0
-        while '' in seen_categories:
-            seen_categories.remove('')
-            blank_count += 1
-        add_suberror('{0} blank lines found in header'.format(blank_count),
-                     errors)
+        add_suberror('{0} blank lines found in header'.format(lines.count('')), errors)
         return False
     return True
 
@@ -365,86 +361,51 @@ def check_categories(left, right, errors, error_msg):
     return True
 
 
-def check_repeated_categories(seen_categories, errors, error_msg):
-    '''Check for categories appearing two or more times.'''
-    category_counts = Counter(seen_categories)
-    double_categories = [category for category in category_counts
-                         if category_counts[category] > 1]
-
-    if double_categories:
-        add_error(error_msg, errors)
-        msg = '"{0}" appears more than once'.format(double_categories)
-        add_suberror(msg, errors)
-        return False
-
-    return True
-
-
-def get_header(lines):
-    '''Parses list of lines, returning just the header.'''
-    # We stop the header once we see the second '---'
-    delimiters = 0
-    header = []
-    categories = []
-    for line in lines:
-        line = line.rstrip()
-        if line == '---':
-            delimiters += 1
-            if delimiters == 2:
-                break
-        else:
-            # Work around PyYAML Ticket #114
-            if not line.startswith('#'):
-                header.append(line)
-                categories.append(line.split(":")[0].strip())
-
-    valid = (delimiters == 2)
-    return valid, yaml.load("\n".join(header)), categories
+def get_header(text):
+    '''Extract YAML header from raw data, returning (None, None) if no
+    valid header found and (raw, parsed) if header found.'''
+    pieces = text.split('---')
+    if len(pieces) < 2:
+        return None, None
+    raw = pieces[1].strip()
+    return raw, yaml.load(raw)
 
 
 def check_file(filename, data):
     '''Get header from index.html, call all other functions and check file
     for validity. Return True when 'index.html' has no problems and
     False when there are problems.'''
+
     errors = []
-
-    lines = data.split('\n')
-    valid, header_data, seen_categories = get_header(lines)
-
-    if not valid:
+    raw, header = get_header(data)
+    if header is None:
         msg = ('Cannot find header in given file "{0}". Please ' +
-               'check path, is this the bc index.html?'.format(filename))
+               'check path, is this index.html?'.format(filename))
         add_error(msg, errors)
         return False, errors
+
+    # Do we have any blank lines in the header?
+    is_valid = check_blank_lines(raw, errors,
+                                 'There are blank lines in the header')
 
     # Look through all header entries.  If the category is in the input
     # file and is either required or we have actual data (as opposed to
     # a commented-out entry), we check it.  If it *isn't* in the header
     # but is required, report an error.
-    is_valid = True
     for category in HANDLERS:
         required, handler_function, error_message = HANDLERS[category]
-        if category in header_data:
-            if required or header_data[category]:
-                is_valid &= check_validity(header_data[category],
+        if category in header:
+            if required or header[category]:
+                is_valid &= check_validity(header[category],
                                            handler_function, errors,
                                            error_message)
         elif required:
             msg = 'index file is missing mandatory key "{0}"'.format(category)
             add_error(msg, errors)
-            is_valid &= False
-
-    # Do we have any blank lines in the header?
-    is_valid &= check_blank_category(seen_categories, errors,
-                                     'There are blank lines in the header')
-
-    # Do we have double categories?
-    is_valid &= check_repeated_categories(
-        seen_categories, errors,
-        'There are categories appearing twice or more')
+            is_valid = False
 
     # Check whether we have missing or too many categories
-    seen_categories = set(seen_categories)
+    seen_categories = set(header.keys())
 
     is_valid &= check_categories(REQUIRED, seen_categories, errors,
                                  'There are missing categories')
