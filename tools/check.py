@@ -24,7 +24,6 @@ import sys
 import os
 import re
 import logging
-
 import yaml
 from collections import Counter
 
@@ -152,6 +151,7 @@ def add_suberror(msg, errors):
     """Add sub error, ie. error indented by 1 level ("\t"), to the list of errors."""
     errors.append("\t{0}".format(msg))
 
+
 def look_for_fixme(func):
     '''Decorator to fail test if text argument starts with "FIXME".'''
     def inner(arg):
@@ -185,6 +185,7 @@ def check_country(country):
 def check_language(language):
     """A valid language is a ISO 639-1 code."""
     return language in LANGUAGES
+
 
 @look_for_fixme
 def check_humandate(date):
@@ -339,6 +340,7 @@ def check_validity(data, function, errors, error_msg):
         add_suberror('Offending entry is: "{0}"'.format(data), errors)
     return valid
 
+
 def check_blank_category(seen_categories, errors, error_msg):
     '''Check for blank line in category headers.'''
     if '' in seen_categories:
@@ -351,6 +353,7 @@ def check_blank_category(seen_categories, errors, error_msg):
                      errors)
         return False
     return True
+
 
 def check_categories(left, right, errors, error_msg):
     '''Report set difference of categories.'''
@@ -480,6 +483,7 @@ def main():
         for m in errors:
             logger.error(m)
         sys.exit(1)
+
 
 if __name__ == '__main__':
     main()

@@ -6,13 +6,6 @@ from io import StringIO
 from datetime import date
 import check
 
-def make_file(text):
-    try: # this happens in Python3
-        f = StringIO(text)
-    except TypeError: # this happens in Python2
-        f = StringIO(unicode(text))
-    return f
-
 def test_check_layout():
     assert check.check_layout("workshop")
 
@@ -50,7 +43,10 @@ def test_check_language_upper_name():
     assert not check.check_layout('English')
 
 def test_check_language_correct():
-    assert check.check_layout('en')
+    assert check.check_language('en')
+
+def test_check_non_language_correct():
+    assert not check.check_language('xx')
 
 def test_check_humandate():
     assert check.check_humandate("Feb 18-20, 2525")
@@ -155,7 +151,7 @@ def test_check_not_eventbrite_non_digits():
     assert not check.check_eventbrite('1' * 8 + 'a')
 
 def test_check_with_enddate():
-    header_sample = """---
+    header = """---
 layout: workshop
 root: .
 venue: Euphoric State University
@@ -171,10 +167,10 @@ helper: [ ]
 contact: alan@turing.com
 ---"""
 
-    assert check.check_file(make_file(header_sample))
+    assert check.check_file('test.html', header)
 
 def test_check_without_enddate():
-    header_sample = """---
+    header = """---
 layout: workshop
 root: .
 venue: Euphoric State University
@@ -189,4 +185,25 @@ contact: alan@turing.com
 helper: [ "John von Neumann" ]
 ---"""
 
-    assert check.check_file(make_file(header_sample))
+    assert check.check_file('test.html', header)
+
+def test_check_with_blank_lines():
+    header = """---
+layout: workshop
+
+root: .
+
+venue: Euphoric State University
+address: 123 College Street, Euphoria
+country: United-States
+humandate: Feb 17-18, 2020
+humantime: 9:00 am - 4:30 pm
+startdate: 2020-06-17
+enddate: 2020-06-18
+latlng: 41.7901128,-87.6007318
+instructor: ["Grace Hopper", "Alan Turing"]
+helper: [ ]
+contact: alan@turing.com
+---"""
+
+    assert not check.check_file('test.html', header)
