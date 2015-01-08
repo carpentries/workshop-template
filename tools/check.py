@@ -330,6 +330,18 @@ def check_validity(data, function, errors, error_msg):
         add_suberror('Offending entry is: "{0}"'.format(data), errors)
     return valid
 
+def check_blank_category(seen_categories, errors, error_msg):
+    '''Check for blank line in category headers.'''
+    if '' in seen_categories:
+        add_error(error_msg, errors)
+        blank_count = 0
+        while '' in seen_categories:
+            seen_categories.remove('')
+            blank_count += 1
+        add_suberror('{0} blank lines found in header'.format(blank_count),
+                     errors)
+        return False
+    return True
 
 def check_categories(left, right, errors, error_msg):
     '''Report set difference of categories.'''
@@ -409,6 +421,10 @@ def check_file(filename, data):
             msg = 'index file is missing mandatory key "{0}"'.format(category)
             add_error(msg, errors)
             is_valid &= False
+
+    # Do we have any blank lines in the header?
+    is_valid &= check_blank_category(seen_categories, errors,
+                                     'There are blank lines in the header')
 
     # Do we have double categories?
     is_valid &= check_repeated_categories(
