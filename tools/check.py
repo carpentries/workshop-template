@@ -364,17 +364,24 @@ def check_categories(left, right, errors, error_msg):
 def get_header(text):
     '''Extract YAML header from raw data, returning (None, None) if no
     valid header found and (raw, parsed) if header found.'''
+
+    # YAML header must be right at the start of the file.
+    if not text.startswith('---'):
+        return None, None
+
+    # YAML header must start and end with '---'
     pieces = text.split('---')
     if len(pieces) < 2:
         return None, None
+
+    # Return raw text and YAML-ized form.
     raw = pieces[1].strip()
     return raw, yaml.load(raw)
 
 
 def check_file(filename, data):
     '''Get header from index.html, call all other functions and check file
-    for validity. Return True when 'index.html' has no problems and
-    False when there are problems.'''
+    for validity. Return list of errors (empty when no errors).'''
 
     errors = []
     raw, header = get_header(data)
@@ -382,7 +389,7 @@ def check_file(filename, data):
         msg = ('Cannot find header in given file "{0}". Please ' +
                'check path, is this index.html?'.format(filename))
         add_error(msg, errors)
-        return False, errors
+        return errors
 
     # Do we have any blank lines in the header?
     is_valid = check_blank_lines(raw, errors,
@@ -413,7 +420,7 @@ def check_file(filename, data):
     is_valid &= check_categories(seen_categories, REQUIRED.union(OPTIONAL),
                                  errors, 'There are superfluous categories')
 
-    return is_valid, errors
+    return errors
 
 
 def main():
@@ -435,15 +442,15 @@ def main():
 
     with open(filename) as reader:
         data = reader.read()
-        is_valid, errors = check_file(filename, data)
+        errors = check_file(filename, data)
 
-    if is_valid:
-        logger.info('Everything seems to be in order')
-        sys.exit(0)
-    else:
+    if errors:
         for m in errors:
             logger.error(m)
         sys.exit(1)
+    else:
+        logger.info('Everything seems to be in order')
+        sys.exit(0)
 
 
 if __name__ == '__main__':

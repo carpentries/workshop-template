@@ -117,13 +117,13 @@ def test_check_instructor_string():
 def test_check_helpers():
     assert check.check_helpers(["John Doe", "Jane Doe"])
 
-def test_check_instructor_only_one():
+def test_check_helpers_only_one():
     assert check.check_helpers(["John Doe"])
 
-def test_check_instructor_empty():
+def test_check_helpers_empty():
     assert check.check_helpers([])
 
-def test_check_instructor_string():
+def test_check_helper_string():
     assert not check.check_helpers("John Doe")
 
 def test_check_email():
@@ -167,7 +167,7 @@ helper: [ ]
 contact: alan@turing.com
 ---"""
 
-    assert check.check_file('test.html', header)
+    assert check.check_file('test.html', header) == []
 
 def test_check_without_enddate():
     header = """---
@@ -185,7 +185,7 @@ contact: alan@turing.com
 helper: [ "John von Neumann" ]
 ---"""
 
-    assert check.check_file('test.html', header)
+    assert check.check_file('test.html', header) == []
 
 def test_check_with_blank_lines():
     header = """---
@@ -206,7 +206,7 @@ helper: [ ]
 contact: alan@turing.com
 ---"""
 
-    assert check.check_file('test.html', header)
+    assert check.check_file('test.html', header) != []
 
 def test_check_with_commented_lines():
     header = """---
@@ -226,7 +226,7 @@ contact: alan@turing.com
 # eventbrite:
 ---"""
 
-    assert check.check_file('test.html', header)
+    assert check.check_file('test.html', header) == []
 
 def test_check_with_commented_values():
     header = """---
@@ -246,4 +246,25 @@ contact: alan@turing.com
 eventbrite: # FIXME
 ---"""
 
-    assert check.check_file('test.html', header)
+    assert check.check_file('test.html', header) == []
+
+def test_check_with_leading_blank_lines():
+    header = """
+---
+layout: workshop
+root: .
+venue: Euphoric State University
+address: 123 College Street, Euphoria
+country: United-States
+humandate: Feb 17-18, 2020
+humantime: 9:00 am - 4:30 pm
+startdate: 2020-06-17
+enddate: 2020-06-18
+latlng: 41.7901128,-87.6007318
+instructor: ["Grace Hopper", "Alan Turing"]
+helper: [ ]
+contact: alan@turing.com
+eventbrite: # FIXME
+---"""
+
+    assert check.check_file('test.html', header) != []
