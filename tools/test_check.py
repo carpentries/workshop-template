@@ -40,6 +40,18 @@ def test_check_country_correct_unhyphenated():
 def test_check_country_correct_hyphenated():
     assert check.check_country("United-Kingdom")
 
+def test_check_language_none():
+    assert not check.check_layout(None)
+
+def test_check_language_name():
+    assert not check.check_layout('english')
+
+def test_check_language_upper_name():
+    assert not check.check_layout('English')
+
+def test_check_language_correct():
+    assert check.check_layout('en')
+
 def test_check_humandate():
     assert check.check_humandate("Feb 18-20, 2525")
 

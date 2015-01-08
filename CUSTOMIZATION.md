@@ -29,6 +29,10 @@ in its header:
     'United-States'.  This is used to look up flags for display in the
     main web site.
 
+*   `language` is the language that will be used in the workshop.
+    It must be a
+    [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
+
 *   `latlng` is the latitude and longitude of the workshop site (so we
     can put a pin on our map).  You can use
     [this site](http://itouchmap.com/latlong.html) to find these
