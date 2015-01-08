@@ -125,40 +125,21 @@ COUNTRIES = [
 
 
 def add_error(msg, errors):
-    """
-    Add error to the list of errors.  This function makes use of Python
-    reference mechanics: a list passed as `errors` argument is always passed
-    as a reference, therefore modification of that list in this function will
-    result in the same modification in the calling (parent) function.
-
-    For example:
-    >>> L = []
-    >>> add_error("Test1", L)
-    >>> print(L)
-    ['Test1']
-    """
+    """Add error to the list of errors."""
     errors.append(msg)
 
 
 def add_suberror(msg, errors):
-    """
-    Add sub error, ie. error indented by 1 level ("\t"), to the list of errors.
-    To see how this function works, take a look at :ref:`add_error` function.
-
-    An example:
-    >>> print(L)
-    ['Test1']
-    >>> add_suberror("Test1_1", L)
-    >>> print(L)
-    ['Test1', '\tTest1_1']
-    """
+    """Add sub error, ie. error indented by 1 level ("\t"), to the list of errors."""
     errors.append("\t{0}".format(msg))
 
 
 def look_for_fixme(func):
-    '''Decorator to see whether a value starts with FIXME.'''
+    '''Decorator to fail test if text argument starts with "FIXME".'''
     def inner(arg):
-        if (arg is not None) and arg.lstrip().startswith('FIXME'):
+        if (arg is not None) and \
+           isinstance(arg, basestring) and \
+           arg.lstrip().startswith('FIXME'):
             return False
         return func(arg)
     return inner
@@ -257,10 +238,12 @@ def check_email(email):
            (email != DEFAULT_CONTACT_EMAIL)
 
 
-@look_for_fixme
 def check_eventbrite(eventbrite):
     '''A valid EventBrite key is 9 or more digits.'''
-    return bool(re.match(EVENTBRITE_PATTERN, eventbrite))
+    if isinstance(eventbrite, int):
+        return True
+    else:
+        return bool(re.match(EVENTBRITE_PATTERN, eventbrite))
 
 
 @look_for_fixme
