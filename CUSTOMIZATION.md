@@ -11,7 +11,7 @@ in its header:
 
 *   `layout` must be `workshop`.
 
-*   `root` must the path to the repository's root directory.  This is
+*   `root` must be the path to the repository's root directory.  This is
     '.' if the page is in the root directory (which `index.html` is).
     In other pages, `root` is '..' if the page is one directory down,
     '../..' if it is two levels down, and so on.
