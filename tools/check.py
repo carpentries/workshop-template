@@ -156,7 +156,7 @@ def look_for_fixme(func):
     '''Decorator to fail test if text argument starts with "FIXME".'''
     def inner(arg):
         if (arg is not None) and \
-           isinstance(arg, basestring) and \
+           isinstance(arg, str) and \
            arg.lstrip().startswith('FIXME'):
             return False
         return func(arg)
