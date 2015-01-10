@@ -27,6 +27,11 @@ import logging
 import yaml
 from collections import Counter
 
+try:  # Hack to make codebase compatible with python 2 and 3
+    basestring
+except NameError:
+    basestring = str
+
 __version__ = '0.6'
 
 
@@ -156,7 +161,7 @@ def look_for_fixme(func):
     '''Decorator to fail test if text argument starts with "FIXME".'''
     def inner(arg):
         if (arg is not None) and \
-           isinstance(arg, str) and \
+           isinstance(arg, basestring) and \
            arg.lstrip().startswith('FIXME'):
             return False
         return func(arg)
