@@ -24,7 +24,6 @@ import sys
 import os
 import re
 import logging
-
 import yaml
 from collections import Counter
 
@@ -144,39 +143,21 @@ LANGUAGES = [
 
 
 def add_error(msg, errors):
-    """
-    Add error to the list of errors.  This function makes use of Python
-    reference mechanics: a list passed as `errors` argument is always passed
-    as a reference, therefore modification of that list in this function will
-    result in the same modification in the calling (parent) function.
-
-    For example:
-    >>> L = []
-    >>> add_error("Test1", L)
-    >>> print(L)
-    ['Test1']
-    """
+    """Add error to the list of errors."""
     errors.append(msg)
 
 
 def add_suberror(msg, errors):
-    """
-    Add sub error, ie. error indented by 1 level ("\t"), to the list of errors.
-    To see how this function works, take a look at :ref:`add_error` function.
-
-    An example:
-    >>> print(L)
-    ['Test1']
-    >>> add_suberror("Test1_1", L)
-    >>> print(L)
-    ['Test1', '\tTest1_1']
-    """
+    """Add sub error, ie. error indented by 1 level ("\t"), to the list of errors."""
     errors.append("\t{0}".format(msg))
 
+
 def look_for_fixme(func):
-    '''Decorator to see whether a value starts with FIXME.'''
+    '''Decorator to fail test if text argument starts with "FIXME".'''
     def inner(arg):
-        if (arg is not None) and arg.lstrip().startswith('FIXME'):
+        if (arg is not None) and \
+           isinstance(arg, str) and \
+           arg.lstrip().startswith('FIXME'):
             return False
         return func(arg)
     return inner
@@ -204,6 +185,7 @@ def check_country(country):
 def check_language(language):
     """A valid language is a ISO 639-1 code."""
     return language in LANGUAGES
+
 
 @look_for_fixme
 def check_humandate(date):
@@ -280,10 +262,12 @@ def check_email(email):
            (email != DEFAULT_CONTACT_EMAIL)
 
 
-@look_for_fixme
 def check_eventbrite(eventbrite):
     '''A valid EventBrite key is 9 or more digits.'''
-    return bool(re.match(EVENTBRITE_PATTERN, eventbrite))
+    if isinstance(eventbrite, int):
+        return True
+    else:
+        return bool(re.match(EVENTBRITE_PATTERN, eventbrite))
 
 
 @look_for_fixme
@@ -356,18 +340,16 @@ def check_validity(data, function, errors, error_msg):
         add_suberror('Offending entry is: "{0}"'.format(data), errors)
     return valid
 
-def check_blank_category(seen_categories, errors, error_msg):
+
+def check_blank_lines(raw_data, errors, error_msg):
     '''Check for blank line in category headers.'''
-    if '' in seen_categories:
+    lines = [x.strip() for x in raw_data.split('\n')]
+    if '' in lines:
         add_error(error_msg, errors)
-        blank_count = 0
-        while '' in seen_categories:
-            seen_categories.remove('')
-            blank_count += 1
-        add_suberror('{0} blank lines found in header'.format(blank_count),
-                     errors)
+        add_suberror('{0} blank lines found in header'.format(lines.count('')), errors)
         return False
     return True
+
 
 def check_categories(left, right, errors, error_msg):
     '''Report set difference of categories.'''
@@ -379,86 +361,58 @@ def check_categories(left, right, errors, error_msg):
     return True
 
 
-def check_repeated_categories(seen_categories, errors, error_msg):
-    '''Check for categories appearing two or more times.'''
-    category_counts = Counter(seen_categories)
-    double_categories = [category for category in category_counts
-                         if category_counts[category] > 1]
+def get_header(text):
+    '''Extract YAML header from raw data, returning (None, None) if no
+    valid header found and (raw, parsed) if header found.'''
 
-    if double_categories:
-        add_error(error_msg, errors)
-        msg = '"{0}" appears more than once'.format(double_categories)
-        add_suberror(msg, errors)
-        return False
+    # YAML header must be right at the start of the file.
+    if not text.startswith('---'):
+        return None, None
 
-    return True
+    # YAML header must start and end with '---'
+    pieces = text.split('---')
+    if len(pieces) < 2:
+        return None, None
 
-
-def get_header(lines):
-    '''Parses list of lines, returning just the header.'''
-    # We stop the header once we see the second '---'
-    delimiters = 0
-    header = []
-    categories = []
-    for line in lines:
-        line = line.rstrip()
-        if line == '---':
-            delimiters += 1
-            if delimiters == 2:
-                break
-        else:
-            # Work around PyYAML Ticket #114
-            if not line.startswith('#'):
-                header.append(line)
-                categories.append(line.split(":")[0].strip())
-
-    valid = (delimiters == 2)
-    return valid, yaml.load("\n".join(header)), categories
+    # Return raw text and YAML-ized form.
+    raw = pieces[1].strip()
+    return raw, yaml.load(raw)
 
 
 def check_file(filename, data):
     '''Get header from index.html, call all other functions and check file
-    for validity. Return True when 'index.html' has no problems and
-    False when there are problems.'''
+    for validity. Return list of errors (empty when no errors).'''
+
     errors = []
-
-    lines = data.split('\n')
-    valid, header_data, seen_categories = get_header(lines)
-
-    if not valid:
+    raw, header = get_header(data)
+    if header is None:
         msg = ('Cannot find header in given file "{0}". Please ' +
-               'check path, is this the bc index.html?'.format(filename))
+               'check path, is this index.html?'.format(filename))
         add_error(msg, errors)
-        return False, errors
+        return errors
+
+    # Do we have any blank lines in the header?
+    is_valid = check_blank_lines(raw, errors,
+                                 'There are blank lines in the header')
 
     # Look through all header entries.  If the category is in the input
     # file and is either required or we have actual data (as opposed to
     # a commented-out entry), we check it.  If it *isn't* in the header
     # but is required, report an error.
-    is_valid = True
     for category in HANDLERS:
         required, handler_function, error_message = HANDLERS[category]
-        if category in header_data:
-            if required or header_data[category]:
-                is_valid &= check_validity(header_data[category],
+        if category in header:
+            if required or header[category]:
+                is_valid &= check_validity(header[category],
                                            handler_function, errors,
                                            error_message)
         elif required:
             msg = 'index file is missing mandatory key "{0}"'.format(category)
             add_error(msg, errors)
-            is_valid &= False
-
-    # Do we have any blank lines in the header?
-    is_valid &= check_blank_category(seen_categories, errors,
-                                     'There are blank lines in the header')
-
-    # Do we have double categories?
-    is_valid &= check_repeated_categories(
-        seen_categories, errors,
-        'There are categories appearing twice or more')
+            is_valid = False
 
     # Check whether we have missing or too many categories
-    seen_categories = set(seen_categories)
+    seen_categories = set(header.keys())
 
     is_valid &= check_categories(REQUIRED, seen_categories, errors,
                                  'There are missing categories')
@@ -466,7 +420,7 @@ def check_file(filename, data):
     is_valid &= check_categories(seen_categories, REQUIRED.union(OPTIONAL),
                                  errors, 'There are superfluous categories')
 
-    return is_valid, errors
+    return errors
 
 
 def main():
@@ -488,15 +442,16 @@ def main():
 
     with open(filename) as reader:
         data = reader.read()
-        is_valid, errors = check_file(filename, data)
+        errors = check_file(filename, data)
 
-    if is_valid:
-        logger.info('Everything seems to be in order')
-        sys.exit(0)
-    else:
+    if errors:
         for m in errors:
             logger.error(m)
         sys.exit(1)
+    else:
+        logger.info('Everything seems to be in order')
+        sys.exit(0)
+
 
 if __name__ == '__main__':
     main()
