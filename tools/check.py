@@ -1,22 +1,8 @@
 #!/usr/bin/env python
 
 '''Check that index.html is valid and print out warnings and errors
-when the header is malformed.
-
-Checks for:
-1.  There should be the right number of categories
-2.  Categories are allowed to appear only once
-3.  Contact email should be valid (letters + @ + letters + . + letters)
-4.  Address and venue should be non-empty
-5.  Latitute/longitude should be 2 floating point numbers separated by comma
-6.  Start date should be a valid date; if end date is present, it should be valid as well
-7.  Human date should have three-letter month and four-letter year
-8.  Human time should have 'am' or 'pm' or both
-9.  Country should be a recognized hyphenated country name from the embedded list
-10. Instructor and helper lists should be valid lists
-11. Template header should not exist
-12. Layout should be 'workshop'
-13. Root must be '.'
+when the header is malformed.  See the docstrings on the checking
+functions for a summary of the checks.
 '''
 
 from __future__ import print_function
@@ -170,33 +156,42 @@ def look_for_fixme(func):
 
 @look_for_fixme
 def check_layout(layout):
-    '''Checks whether layout equals "workshop".'''
+    '''"layout" in YAML header must be "workshop".'''
+
     return layout == 'workshop'
 
 
 @look_for_fixme
 def check_root(root):
-    '''Checks root - can only be "."'''
+    '''"root" (the path from this page to the root directory) must be "."'''
+
     return root == '.'
 
 
 @look_for_fixme
 def check_country(country):
-    '''A valid country is in the list of recognized countries.'''
+    '''"country" must be a hyphenated full country name from the list
+    embedded in this script.'''
+
     return country in COUNTRIES
 
 
 @look_for_fixme
 def check_language(language):
-    """A valid language is a ISO 639-1 code."""
+    '''"language" must be one of the two-letter ISO 639-1 language codes
+    embedded in this script.'''
+
     return language in LANGUAGES
 
 
 @look_for_fixme
 def check_humandate(date):
-    '''A valid human date starts with a three-letter month and ends with
-    four-letter year. For example: "Feb 18-20, 2525" or "Feb 18 and
-    20, 2014".'''
+    '''"humandate" must be a human-readable date with a 3-letter month and
+    4-digit year.  Examples include "Feb 18-20, 2025" and "Feb 18 and
+    20, 2025".  It may be in languages other than English, but the
+    month name should be kept short to aid formatting of the main
+    Software Carpentry web site.'''
+
     if "," not in date:
         return False
 
@@ -222,12 +217,16 @@ def check_humandate(date):
 
 @look_for_fixme
 def check_humantime(time):
-    '''A valid humantime contains at least one number'''
+    '''"humantime" is a human-readable start and end time for the workshop,
+    such as "09:00 - 16:00".'''
+
     return bool(re.match(HUMANTIME_PATTERN, time.replace(" ", "")))
 
 
 def check_date(this_date):
-    '''A valid date is YEAR-MONTH-DAY, example: 2014-06-30'''
+    '''"startdate" and "enddate" are machine-readable start and end dates for
+    the workshop, and must be in YYYY-MM-DD format, e.g., "2015-07-01".'''
+
     from datetime import date
     # yaml automatically loads valid dates as datetime.date
     return isinstance(this_date, date)
@@ -235,7 +234,9 @@ def check_date(this_date):
 
 @look_for_fixme
 def check_latitude_longitude(latlng):
-    '''A valid latitude/longitude listing is two floats, separated by comma'''
+    '''"latlng" must be a valid latitude and longitude represented as two
+    floating-point numbers separated by a comma.'''
+
     try:
         lat, lng = latlng.split(',')
         lat = float(lat)
@@ -246,29 +247,36 @@ def check_latitude_longitude(latlng):
 
 
 def check_instructors(instructors):
-    '''Checks whether instructor list is of format:
-    ['First name', 'Second name', ...']'''
+    '''"instructor" must be a non-empty comma-separated list of quoted names,
+    e.g. ['First name', 'Second name', ...'].  Do not use "TBD" or other
+    placeholders.'''
+
     # yaml automatically loads list-like strings as lists
     return isinstance(instructors, list) and len(instructors) > 0
 
 
 def check_helpers(helpers):
-    '''Checks whether helpers list is of format:
-    ['First name', 'Second name', ...']'''
+    '''"helper" must be a comma-separated list of quoted names,
+    e.g. ['First name', 'Second name', ...'].  The list may be empty.  Do
+    not use "TBD" or other placeholders.'''
+
     # yaml automatically loads list-like strings as lists
     return isinstance(helpers, list) and len(helpers) >= 0
 
 
 @look_for_fixme
 def check_email(email):
-    '''A valid email has letters, then an @, followed by letters, followed by
-    a dot, followed by letters.'''
+    '''"contact" must be a valid email address consisting of characters, a
+    @, and more characters.  It should not be the default contact
+    email address "admin@software-carpentry.org".'''
+
     return bool(re.match(EMAIL_PATTERN, email)) and \
            (email != DEFAULT_CONTACT_EMAIL)
 
 
 def check_eventbrite(eventbrite):
-    '''A valid EventBrite key is 9 or more digits.'''
+    '''"eventbrite" (the Eventbrite registration key) must be 9 or more digits.'''
+
     if isinstance(eventbrite, int):
         return True
     else:
@@ -277,13 +285,16 @@ def check_eventbrite(eventbrite):
 
 @look_for_fixme
 def check_etherpad(etherpad):
-    '''A valid Etherpad URL is just a URL.'''
+    '''"etherpad" must be a valid URL.'''
+
     return bool(re.match(URL_PATTERN, etherpad))
 
 
 @look_for_fixme
 def check_pass(value):
-    '''A test that always passes, used for things like addresses.'''
+    '''This test always passes (it is used for "checking" things like
+    addresses, for which no sensible validation is feasible).'''
+
     return True
 
 
@@ -391,8 +402,7 @@ def check_file(filename, data):
     errors = []
     raw, header = get_header(data)
     if header is None:
-        msg = ('Cannot find header in given file "{0}". Please ' +
-               'check path, is this index.html?'.format(filename))
+        msg = ('Cannot find YAML header in given file "{0}".'.format(filename))
         add_error(msg, errors)
         return errors
 

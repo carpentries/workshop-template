@@ -268,3 +268,17 @@ eventbrite: # FIXME
 ---"""
 
     assert check.check_file('test.html', header) != []
+
+def test_check_with_missing_yaml_terminator():
+    header = """
+---
+layout: workshop
+root: .
+<!--
+  Edit the values in the block above to be appropriate for your
+  workshop.  Run 'tools/check' *before* committing to make sure that
+  changes are good.
+-->
+"""
+
+    assert check.check_file('test.html', header) != []
