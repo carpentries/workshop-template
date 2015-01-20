@@ -16,11 +16,12 @@ than Git itself.
     This is a problem for us because an instructor may be involved in
     several workshops, each of which has its own website repo.  Those
     website repositories ought to be forks of this one, but since
-    GitHub doesn't allow that, we've had to find a workaround.
+    GitHub doesn't allow that, we have to use `import.github.com`
+    as described in [the main page](README.md).
 
 3.  If a repository has a file called `README.md` in its root
-    directory, GitHub displays that file on the repository's home
-    page.
+    directory, GitHub displays the contents of that file on the
+    repository's home page.
 
 4.  If a repository has a branch called `gh-pages` (which stands for
     "GitHub pages"), then GitHub uses the HTML and Markdown files in

@@ -1,150 +1,119 @@
 # workshop-template
 
 This repository is [Software Carpentry](http://software-carpentry.org)'s
-template for creating websites for workshops.  Do *not* fork this
-repository directly on GitHub.  Instead, follow the instructions below
-to create a website repository for your workshop (and possibly a
-second repository for your learners to use in your Git lessons).
+template for creating websites for workshops.
+Do *not* fork this repository directly on GitHub.
+Instead, please follow the instructions below
+to create a website repository for your workshop.
+Please also read
+[the notes on customizing your website](CUSTOMIZATION.md) and the [FAQ](FAQ.md).
+If you're interested in knowing more about why we do things the way we do,
+please check out the [design notes](DESIGN.md).
 
-> If you are teaching Git, you should create a separate repository for
-> learners to use in that lesson.  You should not have them use the
-> workshop website repository because:
+> If you are teaching Git,
+> you should create a separate repository for learners to use in that lesson.
+> You should not have them use the workshop website repository because:
 > 
-> *   your workshop website repository contains many files that
->     most learners don't need to see during the lesson, and
+> *   your workshop website repository contains many files
+>     that most learners don't need to see during the lesson,
+>     and
 > 
-> *   you probably don't want to accidentally merge a damaging pull
->     request from a novice Git user into your workshop's website while
->     you are using it to teach.
+> *   you probably don't want to accidentally merge
+>     a damaging pull request from a novice Git user
+>     into your workshop's website while you are using it to teach.
 
-## Semi-Automated Setup
+**Once you are done, please remember to send your repository's URL
+to the Software Carpentry administrator
+so that it can be included in the main web site.**
 
-1.  Download the workshop website creation script from
-    [http://files.software-carpentry.org/swc-workshop-create](http://files.software-carpentry.org/swc-workshop-create).
+## Creating a Repository
 
-2.  Make sure that you are *not* inside another Git repository.
+1.  Go to [http://import.github.com](http://import.github.com).
 
-3.  Run the workshop website creation script with no parameters - it
-    will print a help message telling you what parameters it needs.
+2.  Enter the URL for this template repository, which is
+    `https://github.com/swcarpentry/workshop-template`.
 
-    You need to use
+3.  Check the URL.  (GitHub won't import until you've done this.)
 
-    ~~~
-    $ bash swc-workshop-create
-    ~~~
+4.  Select the owner for your new repository.
+    (This will probably be you, but may instead be an organization you belong to.)
 
-    or change file mode with
+5.  Choose a name for your workshop website repository.
+    This name should have the form `YYYY-MM-DD-site`,
+    e.g., `2015-07-01-miskatonic`.
 
-    ~~~
-    $ chmod +x swc-workshop-create
-    ~~~
+6.  Make sure the repository is public.
 
-    before run the script by
+7.  At this point, you should have a page like this:
 
-    ~~~
-    $ ./swc-workshop-create
-    ~~~
+    ![](http://software-carpentry.org/img/workshop-template/using-github-import.png)
 
-4.  Run the script with those parameters.
+    You can now click "Begin Import".
+    When the process is done,
+    you can click "Continue to repository" to visit your newly-created repository.
 
-5.  Go into your newly-created repository.
+## Customizing Your Website
 
-6.  Edit `index.html`.  Hints are embedded in the file, and full
-    instructions are in [CUSTOMIZATION.md](CUSTOMIZATION.md).
+1.  Go into your newly-created repository,
+    which will be at `http://github.com/your_id/YYYY-MM-DD-site`.
+    For example,
+    if your username is `gvwilson`,
+    the repository's URL will be `https://github.com/gvwilson/2015-07-01-mistaktonic`.
 
-7.  If you have installed the software described below:
+2.  Edit `index.html`.
+    You can do this in the browser by clicking on it in the file view
+    and then selecting the pencil icon in the menu bar:
 
-    1.  Check your changes by running `tools/check.py` inside your
-        repository.
+    ![](http://software-carpentry.org/img/workshop-template/edit-index-file-menu-bar.png)
 
-    2.  Preview your changes by running `tools/preview` and looking at
-        `_site/index.html`.
+    or you can clone the repository to your desktop,
+    edit `index.html` there,
+    and push your changes back to the repository.
 
-    3.  For some links work properly, **including the one to Eventbrite**, you
-        will need to look at `_site/index.html` provide by a HTTP server that
-        can be done using
+3.  Edit `_config.yml` in the same way
+    so that `lesson_repo` and `lesson_site`
+    are the URLs for your repository and your GitHub Pages website
+    (described in the next bullet).
 
-        ~~~
-        $ jekyll server -d _site
-        ~~~
+4.  When you are done editing,
+    you can preview your website at its GitHub Pages URL,
+    which is `http://your_id.github.com/YYYY-MM-DD-site`.
+    For example,
+    the URL for the website we have just created is
+    `http://gvwilson.github.com/2015-07-01-miskatonic`.
 
-        and look at http://localhost:4000.
+Editing hints are embedded in `index.html`,
+and full instructions are in [CUSTOMIZATION.md](CUSTOMIZATION.md).
+This [FAQ](FAQ.md) includes a few extra tips
+(additions are always welcome)
+and these notes on [the background and design](DESIGN.md) of this template may help as well.
 
-8.  Commit your changes and push to the `gh-pages` branch of your
-    repository.
+> We build the [list of workshops on the main website](http://software-carpentry.org/workshops/index.html)
+> from the data included in your `index.html` page.
+> We can only do that if you [customize](CUSTOMIZATION.md) that page correctly
+> *and* send us a link to your workshop website.
 
-9.  Send the workshop coordinators the URL for your GitHub repository.
+## Checking Your Changes
 
-If the identifier for your workshop is `2015-07-01-esu`, and your
-GitHub username is `ghopper`, your workshop repository will be
-`https://github.com/ghopper/2015-07-01-esu` and the website for your
-workshop will be `https://ghopper.github.io/2015-07-01-esu`.  (Note:
-the workshop coordinators will want the former URL, not the latter.)
+No matter how you edit `index.html`, you should:
 
-## Manual Setup
+1.  Check your changes by running `tools/check.py` at the command line inside your repository.
 
-You can set up your repository manually instead of using the automated
-`create` script.  As above, we will assume that your user ID is
-`ghopper` and the identifier for your workshop is `2015-07-01-esu`.
+2.  Preview your changes by running `tools/preview` and looking at `_site/index.html`.
 
-1.  Create an empty repository on GitHub called `2015-07-01-esu`.
+For some links work properly,
+particularly the one to your workshop's Eventbrite registration page,
+you must view `_site/index.html` using an HTTP server.
+If you have Jekyll installed,
+you can do this by running:
 
-2.  Clone the template repository to your computer in a directory with
-    the same name as your workshop identifier:
+~~~
+$ jekyll server -d _site
+~~~
 
-    ~~~
-    $ git clone -b gh-pages -o upstream https://github.com/swcarpentry/workshop-template.git 2015-07-01-esu
-    ~~~
+and going to http://localhost:4000.
 
-3.  Go into that directory using
-
-    ~~~
-    $ cd 2015-07-01-esu
-    ~~~
-
-4.  Add your GitHub repository as a remote called `origin` using
-
-    ~~~
-    $ git remote add origin https://github.com/ghopper/2015-07-01-esu.git
-    ~~~
-
-5.  Edit `index.html`.  Hints are embedded in the file, and full
-    instructions are in [CUSTOMIZATION.md](CUSTOMIZATION.md).
-
-6.  If you have installed the software described below:
-
-    1.  Check your changes by running `tools/check.py` inside your
-        repository.
-
-    2.  Preview your changes by running `tools/preview` and looking at
-        `_site/index.html`.
-
-    3.  For some links work properly **including the one to Eventbrite** you
-        will need to look at `_site/index.html` provide by a HTTP server that
-        can be done using
-
-        ~~~
-        $ jekyll server -d _site
-        ~~~
-
-        and look at http://localhost:4000.
-
-7.  Commit your changes and push to the `gh-pages` branch of your
-    repository using
-
-    ~~~
-    $ git push origin gh-pages
-    ~~~
-
-8.  Manually add the other instructors as collaborators to your Github
-    repository.
-
-9.  Send the workshop coordinators the URL for your GitHub repository.
-
-Note that SSH cloning (as opposed to the HTTPS cloning used above)
-will also work for those who have set up SSH keys with GitHub.
-
-## Previewing Changes Locally
+## Installing Software
 
 In order to preview the workshop website locally on your computer,
 you must install the software described below.
@@ -204,14 +173,6 @@ you must install the software described below.
     $ apt-get install python-yaml
     ~~~
 
-## Final Steps
-
-The final step in creating a website for your workshop is to customize
-its home page by following [these instructions](CUSTOMIZATION.md).
-This [FAQ](FAQ.md) includes a few extra tips --- additions are always
-welcome --- and these notes on [the background and design](DESIGN.md)
-of this template may help as well.
-
 ## Getting Help
 
 Mail us at [admin@software-carpentry.org](mailto:admin@software-carpentry.org),
@@ -220,8 +181,8 @@ and ask for help there.
 
 ## Giving Help
 
-We are committed to offering a pleasant setup experience for our
-learners and organizers.  If you find bugs in our instructions, or
-would like to suggest improvements, please
-[file an issue](https://github.com/swcarpentry/workshop-template/issues?q=is%3Aopen+is%3Aissue)
+We are committed to offering a pleasant setup experience for our learners and organizers.
+If you find bugs in our instructions,
+or would like to suggest improvements,
+please [file an issue](https://github.com/swcarpentry/workshop-template/issues?q=is%3Aopen+is%3Aissue)
 or [mail us](mailto:admin@software-carpentry.org).

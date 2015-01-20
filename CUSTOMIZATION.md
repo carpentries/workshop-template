@@ -1,13 +1,16 @@
 # Customizing Your Workshop's Website
 
-You must change the values of `lesson_repo` and `lesson_site` in
-the `_config.yml` configuration file in the root directory of your
-workshop to point to the repository for the lesson and its GitHub
-pages URL respectively.  You should not need to modify any of the
-other values in `_config.yml`.
+## Configuration File
 
-Your workshop's `index.html` page must define the following values
-in its header:
+You must change the values of `lesson_repo` and `lesson_site`
+in the `_config.yml` configuration file in the root directory of your workshop
+to point to the repository for the lesson and its GitHub Pages site respectively.
+You should not need to modify any of the other values in `_config.yml`.
+
+## Home Page: Data
+
+Your workshop's home page lives in `index.html`,
+which must define the following values in its header:
 
 *   `layout` must be `workshop`.
 
@@ -80,3 +83,10 @@ The header may optionally define the following:
 
 *   `etherpad` is the URL for the Etherpad for your workshop.  If you are
     not using an Etherpad, you can delete this value.
+
+## Home Page: Schedule, Syllabus, and Setup
+
+You should edit the sections titled `Schedule` and `Syllabus`
+so that they show what you're actually planning to teach and when.
+You should also delete irrelevant parts of the section titled `Setup`
+so that your learners don't try to install software that they won't need.
