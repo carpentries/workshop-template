@@ -81,11 +81,11 @@ The header may optionally define the following:
 *   `etherpad` is the URL for the Etherpad for your workshop.  If you are
     not using an Etherpad, you can delete this line.
 
-*   `eventbrite` is the multi-digit Eventbrite registration key.  If you
-    are using Eventbrite, the admins will set this key for you.  If
-    you are using something else for registration, you may delete this line.
-    Note: this value must be given as a string in double quotes, rather
-    than as a number.
+* `eventbrite` is the multi-digit Eventbrite registration key.  If you
+    are using Eventbrite, the Software Carpentry administraotrs will
+    give this to you.  If you are using something else, you may delete
+    this line.  Note: this value must be given as a string in double
+    quotes, rather than as a number.
 
 ## Home Page: Schedule, Syllabus, and Setup
 
