@@ -22,9 +22,9 @@ please check out the [design notes](DESIGN.md).
 >     a damaging pull request from a novice Git user
 >     into your workshop's website while you are using it to teach.
 
-**Once you are done, please remember to send your repository's URL
-to the Software Carpentry administrator
-so that it can be included in the main web site.**
+Once you are done,
+please **send your repository's URL to the Software Carpentry administrator**
+so that it can be included in the main web site.
 
 ## Creating a Repository
 
@@ -55,9 +55,9 @@ so that it can be included in the main web site.**
 ## Customizing Your Website
 
 1.  Go into your newly-created repository,
-    which will be at `http://github.com/your_id/YYYY-MM-DD-site`.
+    which will be at `http://github.com/your_username/YYYY-MM-DD-site`.
     For example,
-    if your username is `gvwilson`,
+    if `your_username` is `gvwilson`,
     the repository's URL will be `https://github.com/gvwilson/2015-07-01-mistaktonic`.
 
 2.  Edit `index.html`.
@@ -70,17 +70,17 @@ so that it can be included in the main web site.**
     edit `index.html` there,
     and push your changes back to the repository.
 
-3.  Edit `_config.yml` in the same way
-    so that `lesson_repo` and `lesson_site`
-    are the URLs for your repository and your GitHub Pages website
-    (described in the next bullet).
-
-4.  When you are done editing,
+3.  When you are done editing,
     you can preview your website at its GitHub Pages URL,
     which is `http://your_id.github.com/YYYY-MM-DD-site`.
     For example,
     the URL for the website we have just created is
-    `http://gvwilson.github.com/2015-07-01-miskatonic`.
+    `http://gvwilson.github.io/2015-07-01-miskatonic`.
+
+4.  Edit `_config.yml` in the same way
+    so that `lesson_repo` and `lesson_site`
+    are the URLs of your repository (e.g., `https://github.com/gvwilson/2015-07-01-mistaktonic`)
+    and your GitHub Pages website (e.g., `http://gvwilson.github.io/2015-07-01-miskatonic`).
 
 Editing hints are embedded in `index.html`,
 and full instructions are in [CUSTOMIZATION.md](CUSTOMIZATION.md).

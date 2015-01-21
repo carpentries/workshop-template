@@ -17,7 +17,7 @@ than Git itself.
     several workshops, each of which has its own website repo.  Those
     website repositories ought to be forks of this one, but since
     GitHub doesn't allow that, we have to use `import.github.com`
-    as described in [the main page](README.md).
+    as described in [the main page](README.md#creating-a-repository).
 
 3.  If a repository has a file called `README.md` in its root
     directory, GitHub displays the contents of that file on the
