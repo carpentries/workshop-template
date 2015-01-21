@@ -80,7 +80,7 @@ please [get in touch](#getting-and-giving-help).
     edit `index.html` there,
     and push your changes back to the repository.
 
-4.  Edit `_config.yml` in the same way
+3.  Edit `_config.yml` in the same way
     so that `lesson_repo` and `lesson_site`
     are the URLs of your repository and your GitHub Pages website respectively.
 
@@ -90,7 +90,7 @@ please [get in touch](#getting-and-giving-help).
     its GitHub Pages website is at `http://gvwilson.github.io/2015-07-01-miskatonic`.
 
 4.  When you are done editing,
-    you can preview your GitHub Pages website.
+    you can preview your website.
     Again,
     if your repository is `https://github.com/your_username/YYYY-MM-DD-site`,
     its website will be `http://your_username.github.io/YYYY-MM-DD-site`.
@@ -109,6 +109,9 @@ No matter how you edit `index.html`, you should:
     from the root directory of your repository.
 
 2.  Preview your changes by running `tools/preview` and looking at `_site/index.html`.
+    To be able to preview your page locally,
+    you must install Ruby 1.9.3 or greater plus `github-pages`,
+    as described [below](#installing-software).
 
 For some links to work properly,
 particularly the link to your workshop's Eventbrite registration page,
