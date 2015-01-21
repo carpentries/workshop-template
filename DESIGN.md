@@ -47,7 +47,7 @@ than Git itself.
     them to fill in the page.
 
 6.  Commands can be embedded in the body of a page.  One is
-    {% raw %}{% include something.html %}{% endraw %}, which tells
+    `{% raw %}{% include something.html %}{% endraw %}`, which tells
     Jekyll to copy the contents of `something.html` into the file
     being translated; this is used to create standard headers and
     footers for pages.  Another is `{{variable}}`: when Jekyll sees
@@ -66,7 +66,7 @@ than Git itself.
     called `venue`, `{{page.venue}}` is replaced by "Euphoric State
     University" (or whatever value the variable has).
 
-8.  If a page uses {% raw %}{% include something.html %}{% endraw %}
+8.  If a page uses `{% raw %}{% include something.html %}{% endraw %}`
     to include a snippet of HTML, Jekyll looks in a directory called
     `_includes` to find `something.html`.  It always looks there, and
     nowhere else, so anything we want people to be able to include in
