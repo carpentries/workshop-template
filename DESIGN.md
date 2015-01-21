@@ -16,11 +16,12 @@ than Git itself.
     This is a problem for us because an instructor may be involved in
     several workshops, each of which has its own website repo.  Those
     website repositories ought to be forks of this one, but since
-    GitHub doesn't allow that, we've had to find a workaround.
+    GitHub doesn't allow that, we have to use `import.github.com`
+    as described in [the main page](README.md#creating-a-repository).
 
 3.  If a repository has a file called `README.md` in its root
-    directory, GitHub displays that file on the repository's home
-    page.
+    directory, GitHub displays the contents of that file on the
+    repository's home page.
 
 4.  If a repository has a branch called `gh-pages` (which stands for
     "GitHub pages"), then GitHub uses the HTML and Markdown files in
@@ -46,7 +47,7 @@ than Git itself.
     them to fill in the page.
 
 6.  Commands can be embedded in the body of a page.  One is
-    {% raw %}{% include something.html %}{% endraw %}, which tells
+    `{% raw %}{% include something.html %}{% endraw %}`, which tells
     Jekyll to copy the contents of `something.html` into the file
     being translated; this is used to create standard headers and
     footers for pages.  Another is `{{variable}}`: when Jekyll sees
@@ -65,7 +66,7 @@ than Git itself.
     called `venue`, `{{page.venue}}` is replaced by "Euphoric State
     University" (or whatever value the variable has).
 
-8.  If a page uses {% raw %}{% include something.html %}{% endraw %}
+8.  If a page uses `{% raw %}{% include something.html %}{% endraw %}`
     to include a snippet of HTML, Jekyll looks in a directory called
     `_includes` to find `something.html`.  It always looks there, and
     nowhere else, so anything we want people to be able to include in

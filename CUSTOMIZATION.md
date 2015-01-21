@@ -1,13 +1,19 @@
 # Customizing Your Workshop's Website
 
-You must change the values of `lesson_repo` and `lesson_site` in
-the `_config.yml` configuration file in the root directory of your
-workshop to point to the repository for the lesson and its GitHub
-pages URL respectively.  You should not need to modify any of the
-other values in `_config.yml`.
+## Configuration File
 
-Your workshop's `index.html` page must define the following values
-in its header:
+You must edit the `_config.yml` configuration file in the root directory of your workshop
+and change the URLS called `lesson_repo` and `lesson_site`
+to point to the repository for the lesson and its GitHub Pages site respectively.
+If the URL for the repository is `https://github.com/gvwilson/2015-07-01-mistaktonic`,
+the URL for the website will be `http://gvwilson.github.io/2015-07-01-miskatonic`.
+
+You should not need to modify any of the other values in `_config.yml`.
+
+## Home Page: Data
+
+Your workshop's home page lives in `index.html`,
+which must define the following values in its header:
 
 *   `layout` must be `workshop`.
 
@@ -72,11 +78,18 @@ in its header:
 
 The header may optionally define the following:
 
-*   `eventbrite` is the multi-digit Eventbrite registration key.  If you
-    are using Eventbrite, the admins will set this key for you.  If
-    you are using something else for registration, it may be deleted.
-    Note: this value must be given as a string in double quotes, rather
-    than as a number.
-
 *   `etherpad` is the URL for the Etherpad for your workshop.  If you are
-    not using an Etherpad, you can delete this value.
+    not using an Etherpad, you can delete this line.
+
+* `eventbrite` is the multi-digit Eventbrite registration key.  If you
+    are using Eventbrite, the Software Carpentry administraotrs will
+    give this to you.  If you are using something else, you may delete
+    this line.  Note: this value must be given as a string in double
+    quotes, rather than as a number.
+
+## Home Page: Schedule, Syllabus, and Setup
+
+You should edit the sections titled `Schedule` and `Syllabus`
+so that they show what you're actually planning to teach and when.
+You should also delete irrelevant parts of the section titled `Setup`
+so that your learners don't try to install software that they won't need.
