@@ -2,29 +2,30 @@
 
 This repository is [Software Carpentry](http://software-carpentry.org)'s
 template for creating websites for workshops.
-Do *not* fork this repository directly on GitHub.
-Instead, please follow the instructions below
-to create a website repository for your workshop.
-Please also read
-[the notes on customizing your website](CUSTOMIZATION.md) and the [FAQ](FAQ.md).
-If you're interested in knowing more about why we do things the way we do,
-please check out the [design notes](DESIGN.md).
 
-> If you are teaching Git,
-> you should create a separate repository for learners to use in that lesson.
-> You should not have them use the workshop website repository because:
-> 
-> *   your workshop website repository contains many files
->     that most learners don't need to see during the lesson,
->     and
-> 
-> *   you probably don't want to accidentally merge
->     a damaging pull request from a novice Git user
->     into your workshop's website while you are using it to teach.
+1.  Do *not* fork this repository directly on GitHub.
+    Instead, please follow the instructions below
+    to create a website repository for your workshop.
 
-Once you are done,
-please **send your repository's URL to the Software Carpentry administrator**
-so that it can be included in the main web site.
+2.  Once you are done,
+    please **send your repository's URL to the Software Carpentry administrator**.
+    We build the [list of workshops on the main website](http://software-carpentry.org/workshops/index.html)
+    from the data included in your `index.html` page.
+    We can only do that if you [customize](CUSTOMIZATION.md) that page correctly
+    *and* send us a link to your workshop website.
+
+3.  Please also read
+    [the notes on customizing your website](CUSTOMIZATION.md) and the [FAQ](FAQ.md).
+    If you're interested in knowing more about why we do things the way we do,
+    please check out the [design notes](DESIGN.md).
+
+4.  If you are teaching Git,
+    please [create a separate repository](#setting-up-a-separate-repository-for-learners)
+    for your learners to practice in.
+
+5.  If you run into problems,
+    or have ideas about how to make this process simpler,
+    please [get in touch](#getting-and-giving-help).
 
 ## Creating a Repository
 
@@ -52,15 +53,24 @@ so that it can be included in the main web site.
     When the process is done,
     you can click "Continue to repository" to visit your newly-created repository.
 
+**Note:**
+some people have had intermittent errors during the import process,
+possibly because of the network timing out.
+If you experience a problem, please re-try;
+if the problem persists,
+please [get in touch](#getting-and-giving-help).
+
 ## Customizing Your Website
 
 1.  Go into your newly-created repository,
-    which will be at `http://github.com/your_username/YYYY-MM-DD-site`.
+    which will be at `https://github.com/your_username/YYYY-MM-DD-site`.
     For example,
     if `your_username` is `gvwilson`,
     the repository's URL will be `https://github.com/gvwilson/2015-07-01-mistaktonic`.
 
-2.  Edit `index.html`.
+2.  Edit `index.html` to customize the list of instructors,
+    workshop venue,
+    etc.
     You can do this in the browser by clicking on it in the file view
     and then selecting the pencil icon in the menu bar:
 
@@ -70,17 +80,20 @@ so that it can be included in the main web site.
     edit `index.html` there,
     and push your changes back to the repository.
 
-3.  When you are done editing,
-    you can preview your website at its GitHub Pages URL,
-    which is `http://your_id.github.com/YYYY-MM-DD-site`.
-    For example,
-    the URL for the website we have just created is
-    `http://gvwilson.github.io/2015-07-01-miskatonic`.
-
 4.  Edit `_config.yml` in the same way
     so that `lesson_repo` and `lesson_site`
-    are the URLs of your repository (e.g., `https://github.com/gvwilson/2015-07-01-mistaktonic`)
-    and your GitHub Pages website (e.g., `http://gvwilson.github.io/2015-07-01-miskatonic`).
+    are the URLs of your repository and your GitHub Pages website respectively.
+
+    Note: the URL for your website is determined automatically
+    based on the URL for your repository.
+    If your repository is at `https://github.com/gvwilson/2015-07-01-mistaktonic`,
+    its GitHub Pages website is at `http://gvwilson.github.io/2015-07-01-miskatonic`.
+
+4.  When you are done editing,
+    you can preview your GitHub Pages website.
+    Again,
+    if your repository is `https://github.com/your_username/YYYY-MM-DD-site`,
+    its website will be `http://your_username.github.io/YYYY-MM-DD-site`.
 
 Editing hints are embedded in `index.html`,
 and full instructions are in [CUSTOMIZATION.md](CUSTOMIZATION.md).
@@ -88,21 +101,17 @@ This [FAQ](FAQ.md) includes a few extra tips
 (additions are always welcome)
 and these notes on [the background and design](DESIGN.md) of this template may help as well.
 
-> We build the [list of workshops on the main website](http://software-carpentry.org/workshops/index.html)
-> from the data included in your `index.html` page.
-> We can only do that if you [customize](CUSTOMIZATION.md) that page correctly
-> *and* send us a link to your workshop website.
-
 ## Checking Your Changes
 
 No matter how you edit `index.html`, you should:
 
-1.  Check your changes by running `tools/check.py` at the command line inside your repository.
+1.  Check your changes by running `tools/check.py` at the command line
+    from the root directory of your repository.
 
 2.  Preview your changes by running `tools/preview` and looking at `_site/index.html`.
 
-For some links work properly,
-particularly the one to your workshop's Eventbrite registration page,
+For some links to work properly,
+particularly the link to your workshop's Eventbrite registration page,
 you must view `_site/index.html` using an HTTP server.
 If you have Jekyll installed,
 you can do this by running:
@@ -173,16 +182,31 @@ you must install the software described below.
     $ apt-get install python-yaml
     ~~~
 
-## Getting Help
+## Setting Up a Separate Repository for Learners
+
+If you are teaching Git,
+you should create a separate repository for learners to use in that lesson.
+You should not have them use the workshop website repository because:
+
+*   your workshop website repository contains many files
+    that most learners don't need to see during the lesson,
+    and
+
+*   you probably don't want to accidentally merge
+    a damaging pull request from a novice Git user
+    into your workshop's website while you are using it to teach.
+
+You can call this repository whatever you like,
+and add whatever content you need to it.
+
+## Getting and Giving Help
 
 Mail us at [admin@software-carpentry.org](mailto:admin@software-carpentry.org),
 or join our [discussion list](http://lists.software-carpentry.org/mailman/listinfo/discuss_lists.software-carpentry.org)
 and ask for help there.
 
-## Giving Help
-
 We are committed to offering a pleasant setup experience for our learners and organizers.
 If you find bugs in our instructions,
 or would like to suggest improvements,
-please [file an issue](https://github.com/swcarpentry/workshop-template/issues?q=is%3Aopen+is%3Aissue)
+please [file an issue](https://github.com/swcarpentry/workshop-template/issues)
 or [mail us](mailto:admin@software-carpentry.org).

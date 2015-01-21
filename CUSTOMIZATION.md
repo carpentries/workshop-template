@@ -2,9 +2,12 @@
 
 ## Configuration File
 
-You must change the values of `lesson_repo` and `lesson_site`
-in the `_config.yml` configuration file in the root directory of your workshop
+You must edit the `_config.yml` configuration file in the root directory of your workshop
+and change the URLS called `lesson_repo` and `lesson_site`
 to point to the repository for the lesson and its GitHub Pages site respectively.
+If the URL for the repository is `https://github.com/gvwilson/2015-07-01-mistaktonic`,
+the URL for the website will be `http://gvwilson.github.io/2015-07-01-miskatonic`.
+
 You should not need to modify any of the other values in `_config.yml`.
 
 ## Home Page: Data
@@ -75,14 +78,14 @@ which must define the following values in its header:
 
 The header may optionally define the following:
 
+*   `etherpad` is the URL for the Etherpad for your workshop.  If you are
+    not using an Etherpad, you can delete this line.
+
 *   `eventbrite` is the multi-digit Eventbrite registration key.  If you
     are using Eventbrite, the admins will set this key for you.  If
-    you are using something else for registration, it may be deleted.
+    you are using something else for registration, you may delete this line.
     Note: this value must be given as a string in double quotes, rather
     than as a number.
-
-*   `etherpad` is the URL for the Etherpad for your workshop.  If you are
-    not using an Etherpad, you can delete this value.
 
 ## Home Page: Schedule, Syllabus, and Setup
 
