@@ -88,7 +88,7 @@ You can set up your repository manually instead of using the automated
 `ghopper` and the identifier for your workshop is `2015-07-01-esu`.
 
 To be able to preview your page locally, you'll need `ruby` 1.9.3 or greater,
-plus `github-pages` installed, as described [below](#preview-changes).
+plus `github-pages` installed, as described [below](#previewing-changes-locally).
 
 1.  Create an empty repository on GitHub called `2015-07-01-esu`.
 
@@ -147,7 +147,7 @@ plus `github-pages` installed, as described [below](#preview-changes).
 Note that SSH cloning (as opposed to the HTTPS cloning used above)
 will also work for those who have set up SSH keys with GitHub.
 
-## <a name="preview-changes"/>Previewing Changes Locally
+## Previewing Changes Locally
 
 In order to preview the workshop website locally on your computer,
 you must install the software described below.
