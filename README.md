@@ -84,28 +84,32 @@ the workshop coordinators will want the former URL, not the latter.)
 ## Manual Setup
 
 You can set up your repository manually instead of using the automated
-`create` script.  As above, we will assume that your user ID is
-`ghopper` and the identifier for your workshop is `2015-07-01-esu`.
+`create` script.  Where you see <YOURUSERNAME> replace it with your 
+github userID. The identifier for your workshop is the start date and 
+the location of the workshop <YEAR-MONTH-DAY-LOCATION> e.g. 
+'2015-01-07-ucdavis'. Where you see YEAR-MONTH-DAY-LOCATION, replace it
+with the name of your workshop.
 
-1.  Create an empty repository on GitHub called `2015-07-01-esu`.
+1.  Create an empty repository on GitHub called `YEAR-MONTH-DAY-LOCATION`. Do 
+not initialize the repository with a README.
 
 2.  Clone the template repository to your computer in a directory with
     the same name as your workshop identifier:
 
     ~~~
-    $ git clone -b gh-pages -o upstream https://github.com/swcarpentry/workshop-template.git 2015-07-01-esu
+    $ git clone -b gh-pages -o upstream https://github.com/swcarpentry/workshop-template.git YEAR-MONTH-DAY-LOCATION
     ~~~
 
 3.  Go into that directory using
 
     ~~~
-    $ cd 2015-07-01-esu
+    $ cd YEAR-MONTH-DAY-LOCATION
     ~~~
 
 4.  Add your GitHub repository as a remote called `origin` using
 
     ~~~
-    $ git remote add origin https://github.com/ghopper/2015-07-01-esu.git
+    $ git remote add origin https://github.com/YOURUSERNAME/YEAR-MONTH-DAY-LOCATION.git
     ~~~
 
 5.  Edit `index.html`.  Hints are embedded in the file, and full
@@ -133,7 +137,11 @@ You can set up your repository manually instead of using the automated
     repository using
 
     ~~~
-    $ git push origin gh-pages
+    $ git add index.html
+    ~~~
+
+    ~~~
+    $ git commit -m "updated index.html with helpful information" 
     ~~~
 
 8.  Manually add the other instructors as collaborators to your Github
