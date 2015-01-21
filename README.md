@@ -87,6 +87,9 @@ You can set up your repository manually instead of using the automated
 `create` script.  As above, we will assume that your user ID is
 `ghopper` and the identifier for your workshop is `2015-07-01-esu`.
 
+To be able to preview your page locally, you'll need `ruby` 1.9.3 or greater,
+plus `github-pages` installed, as described [below](#preview-changes).
+
 1.  Create an empty repository on GitHub called `2015-07-01-esu`.
 
 2.  Clone the template repository to your computer in a directory with
@@ -111,7 +114,7 @@ You can set up your repository manually instead of using the automated
 5.  Edit `index.html`.  Hints are embedded in the file, and full
     instructions are in [CUSTOMIZATION.md](CUSTOMIZATION.md).
 
-6.  If you have installed the software described below:
+6.  If you have installed the software described [below](#preview-changes):
 
     1.  Check your changes by running `tools/check.py` inside your
         repository.
@@ -144,7 +147,7 @@ You can set up your repository manually instead of using the automated
 Note that SSH cloning (as opposed to the HTTPS cloning used above)
 will also work for those who have set up SSH keys with GitHub.
 
-## Previewing Changes Locally
+## <a name="preview-changes"/>Previewing Changes Locally
 
 In order to preview the workshop website locally on your computer,
 you must install the software described below.
