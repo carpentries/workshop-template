@@ -74,6 +74,15 @@ template for creating websites for workshops.
 
         ![](http://software-carpentry.org/img/workshop-template/changing-default-branch.png)
 
+    This step is not strictly necessary, but if it is omitted, people
+    must remember to clone your repository using:
+
+    ~~~
+    git clone -b gh-pages https://github.com/your_username/YYYY-MM-DD-site
+    ~~~
+
+    where the `-b gh-pages` argument tells Git which branch you want to use.
+
 ## Customizing Your Website
 
 1.  Go into your newly-created repository,
