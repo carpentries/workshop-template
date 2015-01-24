@@ -53,35 +53,12 @@ template for creating websites for workshops.
     When the process is done,
     you can click "Continue to repository" to visit your newly-created repository.
 
-    > **Note:**
-    > some people have had intermittent errors during the import process,
-    > possibly because of the network timing out.
-    > If you experience a problem, please re-try;
-    > if the problem persists,
-    > please [get in touch](#getting-and-giving-help).
-
-8.  You must now make `gh-pages` the default branch in your new repository.
-    (If you do not, anyone who clones the repository may get a message
-    "warning: remote HEAD refers to nonexistent ref, unable to checkout"
-    because Git is looking for a branch called `master` which doesn't exist.)
-    To do this:
-
-    1.  Go to "Settings" in the controls on the right hand side:
-
-        ![](http://software-carpentry.org/img/workshop-template/settings.png)
-
-    2.  Change the default branch to `gh-pages`:
-
-        ![](http://software-carpentry.org/img/workshop-template/changing-default-branch.png)
-
-    This step is not strictly necessary, but if it is omitted, people
-    must remember to clone your repository using:
-
-    ~~~
-    git clone -b gh-pages https://github.com/your_username/YYYY-MM-DD-site
-    ~~~
-
-    where the `-b gh-pages` argument tells Git which branch you want to use.
+**Note:**
+some people have had intermittent errors during the import process,
+possibly because of the network timing out.
+If you experience a problem, please re-try;
+if the problem persists,
+please [get in touch](#getting-and-giving-help).
 
 ## Customizing Your Website
 
