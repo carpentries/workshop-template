@@ -775,7 +775,48 @@ for package,name,long_name,minimum_version,and_dependencies in [
         ('jinja2', 'jinja', 'Jinja', (2, 6), None),
         ('zmq', 'pyzmq', 'PyZMQ', (2, 1, 4), None),
         ('IPython', None, 'IPython Python package',
-         CHECKER['ipython'].minimum_version, ['jinja', 'tornado', 'pyzmq']),
+         CHECKER['ipython'].minimum_version, [
+             'jinja',
+             'tornado',
+             'pyzmq',
+             VirtualDependency(
+                 name='virtual-browser-ipython',
+                 long_name='IPython-compatible web browser',
+                 or_dependencies=[
+                     CommandDependency(
+                         command=CHECKER['firefox'].command,
+                         paths=CHECKER['firefox'].paths,
+                         name='{0}-for-ipython'.format(
+                             CHECKER['firefox'].name),
+                         long_name='{0} for IPython'.format(
+                             CHECKER['firefox'].long_name),
+                         minimum_version=(6, 0)),
+                     CommandDependency(
+                         command=CHECKER['google-chrome'].command,
+                         paths=CHECKER['google-chrome'].paths,
+                         name='{0}-for-ipython'.format(
+                             CHECKER['google-chrome'].name),
+                         long_name='{0} for IPython'.format(
+                             CHECKER['google-chrome'].long_name),
+                         minimum_version=(13, 0)),
+                     CommandDependency(
+                         command=CHECKER['chromium'].command,
+                         paths=CHECKER['chromium'].paths,
+                         name='{0}-for-ipython'.format(
+                             CHECKER['chromium'].name),
+                         long_name='{0} for IPython'.format(
+                             CHECKER['chromium'].long_name),
+                         minimum_version=(13, 0)),
+                     PathCommandDependency(
+                         command=CHECKER['safari'].command,
+                         paths=CHECKER['safari'].paths,
+                         name='{0}-for-ipython'.format(
+                             CHECKER['safari'].name),
+                         long_name='{0} for IPython'.format(
+                             CHECKER['safari'].long_name),
+                         minimum_version=(5, 0)),
+                 ]),
+         ]),
         ('argparse', None, 'Argparse', None, None),
         ('numpy', None, 'NumPy', None, None),
         ('scipy', None, 'SciPy', None, None),
