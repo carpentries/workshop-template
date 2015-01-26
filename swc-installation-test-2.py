@@ -504,11 +504,11 @@ class VersionPlistCommandDependency (CommandDependency):
                 return node
         raise ValueError((root, element))
 
-    @staticmethod
-    def _get_next(root, element):
+    @classmethod
+    def _get_next(cls, root, element):
         """Returns the following sibling of this element or None
         """
-        parent = self._get_parent(root=root, element=element)
+        parent = cls._get_parent(root=root, element=element)
         siblings = iter(parent)
         for node in siblings:
             if node == element:
