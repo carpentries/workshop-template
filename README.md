@@ -81,7 +81,7 @@ please [get in touch](#getting-and-giving-help).
     and push your changes back to the repository.
 
 3.  Edit `_config.yml` in the same way
-    so that `lesson_repo` and `lesson_site`
+    so that `workshop_repo` and `workshop_site`
     are the URLs of your repository and your GitHub Pages website respectively.
 
     Note: the URL for your website is determined automatically
