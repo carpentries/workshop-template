@@ -6,13 +6,6 @@ from io import StringIO
 from datetime import date
 import check
 
-def make_file(text):
-    try: # this happens in Python3
-        f = StringIO(text)
-    except TypeError: # this happens in Python2
-        f = StringIO(unicode(text))
-    return f
-
 def test_check_layout():
     assert check.check_layout("workshop")
 
@@ -25,14 +18,35 @@ def test_check_root():
 def test_check_root_fail():
     assert not check.check_root("setup")
 
-def test_check_contry():
-    assert check.check_country("Country")
-
-def test_check_contry_none():
+def test_check_country_none():
     assert not check.check_country(None)
 
-def test_check_contry_two_words():
+def test_check_country_two_words():
     assert not check.check_country("Some Country")
+
+def test_check_country_abbrev():
+    assert not check.check_country("USA")
+
+def test_check_country_correct_unhyphenated():
+    assert check.check_country("Canada")
+
+def test_check_country_correct_hyphenated():
+    assert check.check_country("United-Kingdom")
+
+def test_check_language_none():
+    assert not check.check_layout(None)
+
+def test_check_language_name():
+    assert not check.check_layout('english')
+
+def test_check_language_upper_name():
+    assert not check.check_layout('English')
+
+def test_check_language_correct():
+    assert check.check_language('en')
+
+def test_check_non_language_correct():
+    assert not check.check_language('xx')
 
 def test_check_humandate():
     assert check.check_humandate("Feb 18-20, 2525")
@@ -103,13 +117,13 @@ def test_check_instructor_string():
 def test_check_helpers():
     assert check.check_helpers(["John Doe", "Jane Doe"])
 
-def test_check_instructor_only_one():
+def test_check_helpers_only_one():
     assert check.check_helpers(["John Doe"])
 
-def test_check_instructor_empty():
+def test_check_helpers_empty():
     assert check.check_helpers([])
 
-def test_check_instructor_string():
+def test_check_helper_string():
     assert not check.check_helpers("John Doe")
 
 def test_check_email():
@@ -137,7 +151,7 @@ def test_check_not_eventbrite_non_digits():
     assert not check.check_eventbrite('1' * 8 + 'a')
 
 def test_check_with_enddate():
-    header_sample = """---
+    header = """---
 layout: workshop
 root: .
 venue: Euphoric State University
@@ -153,10 +167,10 @@ helper: [ ]
 contact: alan@turing.com
 ---"""
 
-    assert check.check_file(make_file(header_sample))
+    assert check.check_file('test.html', header) == []
 
 def test_check_without_enddate():
-    header_sample = """---
+    header = """---
 layout: workshop
 root: .
 venue: Euphoric State University
@@ -171,4 +185,100 @@ contact: alan@turing.com
 helper: [ "John von Neumann" ]
 ---"""
 
-    assert check.check_file(make_file(header_sample))
+    assert check.check_file('test.html', header) == []
+
+def test_check_with_blank_lines():
+    header = """---
+layout: workshop
+
+root: .
+
+venue: Euphoric State University
+address: 123 College Street, Euphoria
+country: United-States
+humandate: Feb 17-18, 2020
+humantime: 9:00 am - 4:30 pm
+startdate: 2020-06-17
+enddate: 2020-06-18
+latlng: 41.7901128,-87.6007318
+instructor: ["Grace Hopper", "Alan Turing"]
+helper: [ ]
+contact: alan@turing.com
+---"""
+
+    assert check.check_file('test.html', header) != []
+
+def test_check_with_commented_lines():
+    header = """---
+layout: workshop
+root: .
+venue: Euphoric State University
+address: 123 College Street, Euphoria
+country: United-States
+humandate: Feb 17-18, 2020
+humantime: 9:00 am - 4:30 pm
+startdate: 2020-06-17
+enddate: 2020-06-18
+latlng: 41.7901128,-87.6007318
+instructor: ["Grace Hopper", "Alan Turing"]
+helper: [ ]
+contact: alan@turing.com
+# eventbrite:
+---"""
+
+    assert check.check_file('test.html', header) == []
+
+def test_check_with_commented_values():
+    header = """---
+layout: workshop
+root: .
+venue: Euphoric State University
+address: 123 College Street, Euphoria
+country: United-States
+humandate: Feb 17-18, 2020
+humantime: 9:00 am - 4:30 pm
+startdate: 2020-06-17
+enddate: 2020-06-18
+latlng: 41.7901128,-87.6007318
+instructor: ["Grace Hopper", "Alan Turing"]
+helper: [ ]
+contact: alan@turing.com
+eventbrite: # FIXME
+---"""
+
+    assert check.check_file('test.html', header) == []
+
+def test_check_with_leading_blank_lines():
+    header = """
+---
+layout: workshop
+root: .
+venue: Euphoric State University
+address: 123 College Street, Euphoria
+country: United-States
+humandate: Feb 17-18, 2020
+humantime: 9:00 am - 4:30 pm
+startdate: 2020-06-17
+enddate: 2020-06-18
+latlng: 41.7901128,-87.6007318
+instructor: ["Grace Hopper", "Alan Turing"]
+helper: [ ]
+contact: alan@turing.com
+eventbrite: # FIXME
+---"""
+
+    assert check.check_file('test.html', header) != []
+
+def test_check_with_missing_yaml_terminator():
+    header = """
+---
+layout: workshop
+root: .
+<!--
+  Edit the values in the block above to be appropriate for your
+  workshop.  Run 'tools/check' *before* committing to make sure that
+  changes are good.
+-->
+"""
+
+    assert check.check_file('test.html', header) != []

@@ -1,27 +1,32 @@
 ---
 layout: workshop
 root: .
-venue: FIXME (brief name of host site)
-address: FIXME (street address of workshop location)
-country: FIXME (country (hyphenated if need be, like 'United-Kingdom')
-latlng: FIXME (fractional latitude and longitude like 41.7901128,-87.6007318)
-humandate: FIXME (use the format 'Feb 17-18, 2020' (without the quotes)
-humantime: FIXME (use the format '9:00 am - 4:30 pm' (without the quotes)
-startdate: FIXME (use YYYY-MM-DD format like 2015-01-01)
-enddate: FIXME (use YYYY-MM-DD format like 2015-01-02)
-instructor: FIXME (list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"])
-helper: FIXME (list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"])
-contact: FIXME (contact email address for workshop organizer)
+venue: Some University
+address: 456 Main St #123 Somewhere, SW
+country: Canada
+language: fr
+latlng: 12.34, -56.78
+humandate: Jan 02-03, 2015
+humantime: 9:00 am - 4:30 pm
+startdate: 2015-01-02
+enddate: 2015-01-03
+instructor: ["A Nice Human", "Some Human", "Another Nice-Human"]
+helper: ["More NicePeople", "Smart Human"]
+contact: someone@somewhere.org
 etherpad: # FIXME (insert the URL for your Etherpad if you're using one)
 eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 1234567890AB key for Eventbrite registration)
 ---
 <!--
+  HEADER
+
   Edit the values in the block above to be appropriate for your
   workshop.  Run 'tools/check' *before* committing to make sure that
   changes are good.
 -->
 
 <!--
+  EVENTBRITE
+
   This block includes the Eventbrite registration widget if
   'eventbrite' has been set in the header.  You can delete it if you
   are not using Eventbrite, or leave it in, since it will not be
@@ -31,7 +36,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 <iframe
   src="//www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
   frameborder="0"
-  pwidth="100%"
+  width="100%"
   height="206px"
   scrolling="auto">
 </iframe>
@@ -40,6 +45,8 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 <h2>General Information</h2>
 
 <!--
+  INTRODUCTION
+
   Edit the general explanatory paragraph below if you want to change
   the pitch.
 -->
@@ -55,6 +62,8 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 </p>
 
 <!--
+  AUDIENCE
+
   Explain who your audience is.  (In particular, tell readers if the
   workshop is only open to people from a particular institution.
 -->
@@ -64,6 +73,8 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 </p>
 
 <!--
+  LOCATION
+
   This block displays the address and links to maps showing directions
   if the latitude and longitude of the workshop have been set.  You
   can use http://itouchmap.com/latlong.html to find the lat/long of an
@@ -81,6 +92,8 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 {% endif %}
 
 <!--
+  SPECIAL REQUIREMENTS
+
   Modify the block below if there are any special requirements.
 -->
 <p>
@@ -92,6 +105,8 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 </p>
 
 <!--
+  CONTACT EMAIL ADDRESS
+
   Display the contact email address set in the header.  If an address
   isn't set in the header, the Software Carpentry admin address is
   used.
@@ -110,6 +125,8 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 <hr/>
 
 <!--
+  SCHEDULE
+
   Show the workshop's schedule.  Edit the items and times in the table
   to match your plans.  You may also want to change 'Day 1' and 'Day
   2' to be actual dates or days of the week.
@@ -121,7 +138,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
     <h3>Day 1</h3>
     <table class="table table-striped">
       <tr> <td>09:00</td>  <td>Automating tasks with the Unix shell</td> </tr>
-      <tr> <td>10:30></td> <td>Coffee</td> </tr>
+      <tr> <td>10:30</td> <td>Coffee</td> </tr>
       <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
       <tr> <td>13:00</td>  <td>Building programs with Python</td> </tr>
       <tr> <td>14:30</td>  <td>Coffee</td> </tr>
@@ -142,9 +159,11 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 </div>
 
 <!--
-  Display the Etherpad for the workshop.  You will probably set this
-  up on the first day, so make sure you push changes to GitHub after
-  you have its URL.  To create an Etherpad, go to
+  ETHERPAD
+
+  Display the Etherpad for the workshop.  You can set this up in
+  advance or on the first day; either way, make sure you push changes
+  to GitHub after you have its URL.  To create an Etherpad, go to
 
       http://etherpad.mozilla.org/YYYY-MM-DD-site
 
@@ -162,6 +181,8 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 <hr/>
 
 <!--
+  SYLLABUS
+
   Show what topics will be covered.
 
   1. If your workshop is R rather than Python, remove the comment
@@ -253,6 +274,8 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 <hr/>
 
 <!--
+  SETUP
+
   Delete irrelevant sections from the setup instructions.  Each
   section is inside a 'div' without any classes to make the beginning
   and end easier to find.
@@ -263,6 +286,11 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 -->
 
 <h2 id="setup">Setup</h2>
+
+<p>
+  <a href="setup/index.html">This page</a> has instructions on testing
+  that you have the right software installed.
+</p>
 
 <div> <!-- Start of 'editor' section. -->
   <h3>Text Editor</h3>
@@ -393,10 +421,12 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
       <p>
 	<strong>For OS X 10.8 and higher</strong>, install Git for Mac
 	by downloading and running
-	<a href="http://git-scm.com/downloads">the installer</a>.
+	<a href="http://sourceforge.net/projects/git-osx-installer/files/latest/download">the installer</a>.
+	After installing Git, there will not be anything in your <code>/Applications</code> folder, 
+	as Git is a command line program.
 	<strong>For older versions of OS X (10.5-10.7)</strong> use the
 	most recent available installer for your
-	OS <a href="https://code.google.com/p/git-osx-installer/downloads/list">available
+	OS <a href="http://sourceforge.net/projects/git-osx-installer/files/">available
 	  here</a>.  Use the Leopard installer for 10.5 and the Snow
 	Leopard installer for 10.6-10.7.
       </p>
@@ -583,7 +613,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
       Install <a href="https://www.virtualbox.org/">VirtualBox</a>.
     </li>
     <li>
-      Download our <a href="{{site.swc_vm_url}}">VM image</a>.
+      Download our <a href="{{site.swc_vm}}">VM image</a>.
       <strong>Warning:</strong> this file is 1.7 GByte, so please
       download it <em>before</em> coming to your workshop.
     </li>

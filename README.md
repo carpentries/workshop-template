@@ -1,316 +1,215 @@
 # workshop-template
 
-This repository is the template for
-[Software Carpentry](http://software-carpentry.org) workshop websites.
-Do *not* fork it directly on GitHub to create a website for your
-workshop; instead, follow the instructions below.
+This repository is [Software Carpentry](http://software-carpentry.org)'s
+template for creating websites for workshops.
+
+1.  Do *not* fork this repository directly on GitHub.
+    Instead, please follow the instructions below
+    to create a website repository for your workshop.
+
+2.  Once you are done,
+    please **send your repository's URL to the Software Carpentry administrator**.
+    We build the [list of workshops on the main website](http://software-carpentry.org/workshops/index.html)
+    from the data included in your `index.html` page.
+    We can only do that if you [customize](CUSTOMIZATION.md) that page correctly
+    *and* send us a link to your workshop website.
+
+3.  Please also read
+    [the notes on customizing your website](CUSTOMIZATION.md) and the [FAQ](FAQ.md).
+    If you're interested in knowing more about why we do things the way we do,
+    please check out the [design notes](DESIGN.md).
+
+4.  If you are teaching Git,
+    please [create a separate repository](#setting-up-a-separate-repository-for-learners)
+    for your learners to practice in.
+
+5.  If you run into problems,
+    or have ideas about how to make this process simpler,
+    please [get in touch](#getting-and-giving-help).
+
+## Creating a Repository
+
+1.  Go to [http://import.github.com](http://import.github.com).
+
+2.  Enter the URL for this template repository, which is
+    `https://github.com/swcarpentry/workshop-template`.
+
+3.  Check the URL.  (GitHub won't import until you've done this.)
+
+4.  Select the owner for your new repository.
+    (This will probably be you, but may instead be an organization you belong to.)
+
+5.  Choose a name for your workshop website repository.
+    This name should have the form `YYYY-MM-DD-site`,
+    e.g., `2015-07-01-miskatonic`.
+
+6.  Make sure the repository is public.
+
+7.  At this point, you should have a page like this:
+
+    ![](http://software-carpentry.org/img/workshop-template/using-github-import.png)
+
+    You can now click "Begin Import".
+    When the process is done,
+    you can click "Continue to repository" to visit your newly-created repository.
 
 **Note:**
+some people have had intermittent errors during the import process,
+possibly because of the network timing out.
+If you experience a problem, please re-try;
+if the problem persists,
+please [get in touch](#getting-and-giving-help).
 
-1.  If you are teaching Git in your workshop, you should create *two*
-    repositories: one for your workshop's website, and one for
-    learners to clone and update during your lessons.  You should not
-    try to use the same repo for both purposes because:
+## Customizing Your Website
 
-    1.  your workshop website probably contains a lot of files that
-        most learners don't need to see during the lesson, and
+1.  Go into your newly-created repository,
+    which will be at `https://github.com/your_username/YYYY-MM-DD-site`.
+    For example,
+    if `your_username` is `gvwilson`,
+    the repository's URL will be `https://github.com/gvwilson/2015-07-01-mistaktonic`.
 
-    2.  you probably don't want to accidentally merge a damaging pull
-        request from a novice Git user into your workshop's website
-        while you are using it to teach.
+2.  Edit `index.html` to customize the list of instructors,
+    workshop venue,
+    etc.
+    You can do this in the browser by clicking on it in the file view
+    and then selecting the pencil icon in the menu bar:
 
-2.  You will need to install Jekyll 1.0.3 or later in order to preview
-    things locally.  If you have Ruby installed on your computer, this
-    *should* be as simple as:
+    ![](http://software-carpentry.org/img/workshop-template/edit-index-file-menu-bar.png)
 
-    ~~~
-    $ gem install github-pages
-    ~~~
+    or you can clone the repository to your desktop,
+    edit `index.html` there,
+    and push your changes back to the repository.
 
-    or if that doesn't work:
+3.  Edit `_config.yml` in the same way
+    so that `lesson_repo` and `lesson_site`
+    are the URLs of your repository and your GitHub Pages website respectively.
 
-    ~~~
-    $ gem install jekyll
-    $ gem install kramdown
-    ~~~
+    Note: the URL for your website is determined automatically
+    based on the URL for your repository.
+    If your repository is at `https://github.com/gvwilson/2015-07-01-mistaktonic`,
+    its GitHub Pages website is at `http://gvwilson.github.io/2015-07-01-miskatonic`.
 
-    (We use Kramdown for translating Markdown instead of the default
-    Redcarpet because Kramdown will handle Markdown inside HTML
-    blocks).
+4.  When you are done editing,
+    you can preview your website.
+    Again,
+    if your repository is `https://github.com/your_username/YYYY-MM-DD-site`,
+    its website will be `http://your_username.github.io/YYYY-MM-DD-site`.
 
-## Summary
+Editing hints are embedded in `index.html`,
+and full instructions are in [CUSTOMIZATION.md](CUSTOMIZATION.md).
+This [FAQ](FAQ.md) includes a few extra tips
+(additions are always welcome)
+and these notes on [the background and design](DESIGN.md) of this template may help as well.
 
-**Note: the website creation script mentioned below does not work properly yet.  Please follow the "by hand" instructions instead.**
+## Checking Your Changes
 
-1.   Download the workshop website creation script from [http://files.software-carpentry.org/create](http://files.software-carpentry.org/create).
-2.   Make sure that you are *not* inside another Git repository.
-3.   Run that script with no parameters - it will print a help message telling you what parameters it needs.
-4.   Run the script with those parameters.
-5.   Go into your newly-created repository.
-6.   Edit `index.html`.  (Hints are embedded in the file, and full instructions are below.)
-7.   Check your changes by running `tools/check` inside your repository.
-8.   Preview your changes by running `tools/preview` and looking at `_site/index.html`.
-9.   When it all looks good, commit your changes and push to the `gh-pages` branch of your repository.
-10.  Send the workshop coordinators the URL for your GitHub repository (*not* the URL for the workshop website).
+No matter how you edit `index.html`, you should:
 
-If the identifier for your workshop is `2015-07-01-esu`, and your
-GitHub username is `ghopper`, your workshop repository will be
-`https://github.com/ghopper/2015-07-01-esu` and the website for your
-workshop will be `https://ghopper.github.io/2015-07-01-esu`.
+1.  Check your changes by running `tools/check.py` at the command line
+    from the root directory of your repository.
 
-## If You Want To Do Things By Hand
+2.  Preview your changes by running `tools/preview` and looking at `_site/index.html`.
+    To be able to preview your page locally,
+    you must install Ruby 1.9.3 or greater plus `github-pages`,
+    as described [below](#installing-software).
 
-You can set up your repository manually instead of using the `create`
-script.  As above, we will assume that your user ID is `ghopper` and
-the identifier for your workshop is `2015-07-01-esu`.
+For some links to work properly,
+particularly the link to your workshop's Eventbrite registration page,
+you must view `_site/index.html` using an HTTP server.
+If you have Jekyll installed,
+you can do this by running:
 
-1.   Create an empty repository on GitHub called `2015-07-01-esu`.
-2.   Clone it to your desktop using `git clone git@github.com:/ghopper/2015-07-01-esu`.
-3.   Go into that directory using `cd 2015-07-01-esu`.
-4.   Add this repository as a remote called `upstream` using `git remote add upstream git@github.com:swcarpentry/workshop-template`.
-5.   Checkout a branch called `gh-pages` using `git checkout -b gh-pages`.
-6.   Pull content from this repository using `git pull upstream gh-pages`.
-7.   Edit `index.html`.  (Hints are embedded in the file, and full instructions are below.)
-8.   Check your changes by running `tools/check` inside your repository.
-9.   Preview your changes by running `tools/preview` and looking at `_site/index.html`.
-10.  When it all looks good, commit your changes and push to the `gh-pages` branch of your repository.
-11.  Manually add the other instructors as collaborators.
-12.  Send the workshop coordinators the URL for your GitHub repository (*not* the URL for the workshop website).
+~~~
+$ jekyll server -d _site
+~~~
 
-## Background
+and going to http://localhost:4000.
 
-There are a few things you need to know in order to understand why we
-do things the way we do.  Some of them are specific to GitHub, rather
-than Git itself.
+## Installing Software
 
-1.  Git uses the term "clone" to mean "a copy of a repository".
-    GitHub uses the term "fork" to mean, "a copy of a GitHub-hosted
-    repo that is also hosted on GitHub", and the term "clone" to mean
-    "a copy of a GitHub-hosted repo that's located on someone else's
-    machine".  In both cases, the duplicate has a remote called
-    `origin` that points to the original repo; other remotes can be
-    added manually.
+In order to preview the workshop website locally on your computer,
+you must install the software described below.
 
-2.  A user on GitHub can only have one fork of a particular repo.
-    This is a problem for us because an instructor may be involved in
-    several workshops, each of which has its own website repo.  Those
-    website repositories ought to be forks of this one, but since
-    GitHub doesn't allow that, we've had to find a workaround.
+> If you aren't able to install this software (or you just can't be
+> bothered), you can still create a website for your workshop.  Every
+> time you push a change to your website respository the live website
+> will update automatically, so you can check your changes on the live
+> site instead of locally.
 
-3.  If a repository has a file called `README.md` in its root
-    directory, GitHub displays that file on the repository's home
-    page.
+1.  Jekyll 1.0.3
 
-4.  If a repository has a branch called `gh-pages` (which stands for
-    "GitHub pages"), then GitHub uses the HTML and Markdown files in
-    that branch to create a website for the repository.  If the
-    repository's URL is `http://github.com/darwin/finches`, the URL
-    for the website is `http://darwin.github.io/finches`.
+    1. Check if Ruby is installed and find its version using command line:
 
-5.  If an HTML or Markdown file has a header consisting of three
-    dashes, some data about the page, and three more dashes:
+        ~~~
+        $  ruby -v
+        ~~~
 
-    ~~~
-    ---
-    key: value
-    other_key: other_value
-    ---
-    stuff in the page
-    ~~~
+        The following commands need a minimum version of 1.9.3.
 
-    then GitHub doesn't just copy the file over verbatim.  Instead, it
-    runs the file through a translator called
-    [Jekyll](https://en.wikipedia.org/wiki/Jekyll_%28software%29) that
-    looks for specially-formatted commands embedded in the file and uses
-    them to fill in the page.
+    2. Install `github-pages`:
 
-6.  Commands can be embedded in the body of a page.  One is
-    {% raw %}{% include something.html %}{% endraw %}, which tells
-    Jekyll to copy the contents of `something.html` into the file
-    being translated; this is used to create standard headers and
-    footers for pages.  Another is `{{variable}}`: when Jekyll sees
-    this, it replaces it with the value of `variable`.  This is used
-    to insert things like a contact email address and the URL for our
-    Twitter account.
+        ~~~
+        $ gem install github-pages
+        ~~~
 
-7.  Jekyll gets variables from two places: a file called `_config.yml`
-    located in the repo's root directory, and the header of each
-    individual page.  Variables from `_config.yml` are put in an
-    object called `site`, and referred to as `site.variable`, so
-    `{{site.twitter_name}}` in a page is replaced by `@swcarpentry`.
-    Variables from the page's header are put in an object called
-    `page`, and referred to as `page.variable`, so if a page's header
-    defines a variable called `venue`, `{{page.venue}}` is replaced by
-    "Euphoric State University" (or whatever value the variable has).
+        or if that doesn't work:
 
-8.  If a page uses {% raw %}{% include something.html %}{% endraw %}
-    to include a snippet of HTML, Jekyll looks in a directory called
-    `_includes` to find `something.html`.  It always looks there, and
-    nowhere else, so anything we want people to be able to include in
-    their pages has to be stored in `_includes`.
+        ~~~
+        $ gem install jekyll
+        $ gem install kramdown
+        ~~~
 
-9.  A repository can have another special directory called `_layouts`.
-    If a page like `index.html` has a variable called `layout`, and
-    that variable's value is `standard.html`, Jekyll loads the file
-    `_layouts/standard.html` and copies the content of `index.html`
-    into it, then expands the result.  This is used to give the pages
-    in a site a uniform appearance.
-    We have created two layouts for workshop pages:
+        We use Kramdown to translate Markdown into HTML, instead of
+        the default Redcarpet, because Kramdown handles Markdown
+        inside HTML blocks.
 
-    * `workshop.html` is used for workshops' home pages, and is the
-      layout for the `index.html` page in your repo's root directory.
-      That `index.html` page's header must [define several
-      variables](#variables) in order for your workshop to be included
-      in our main website.
+2.  The Python YAML module
 
-    * `page.html` is used for any other pages you want to create.
-
-## Variables
-
-Your workshop's `index.html` page *must* define the following values
-in its header:
-
-*   `layout` must be `workshop`.
-
-*   `root` must the path to the repository's root directory.  This is
-    '.' if the page is in the root directory (which `index.html` is).
-    In other pages, `root` is '..' if the page is one directory down,
-    '../..' if it is two levels down, and so on.
-
-*   `venue` is the short name of the institution or group hosting the
-    workshop, like "Euphoric State University".  It should *not*
-    include the address or other details, since this value is 
-    displayed in a table on the main
-    [Software Carpentry](http://software-carpentry.org) website.
-
-*   `address` is the workshop's address (including details like the
-    room number.
-
-*   `country` must be a hyphenated title-cased country name like
-    'United-States'.  This is used to look up flags for display in the
-    main web site.
-
-*   `latlng` is the latitude and longitude of the workshop site (so we
-    can put a pin on our map).  You can use
-    [this site](http://itouchmap.com/latlong.html) to find these
-    values.  You can *not* put spaces around the comma separating the
-    latitude from the longitude.
-
-*   `humandate` is the human-friendly dates for the workshop.  Please
-    use three-letter month names and abbreviations (e.g., `Jul`
-    instead of `July`), since these values are displayed in a table on
-    the [Software Carpentry](http://software-carpentry.org) website.
-
-*   `startdate` is the workshop's starting date in YYYY-MM-DD format,
-    such as `2015-07-01`.  You must use four digits for the year and
-    two each for the month and day.
-
-*   `enddate` is the workshop's ending date in the same format.  If your
-    workshop is only one day long, the `enddate` field should be deleted.
-    If your workshop has a more complicated schedule (e.g., a half day a
-    week for four weeks), please delete the `enddate` field and only tell
-    us its start date.
-
-*   `instructor` is a comma-separated list of instructor names.  The
-    list must be enclosed in square brackets, and each name must be in
-    double quotes, as in `["Alan Turing","Grace Hopper"]`.  Do not
-    include other information (such as the word "instructor") in these
-    values.
-
-*   `helper` is a comma-separated list of helper names formatted in the
-    same way as the instructor names.  If there are no helpers, use an
-    empty list `[]`.
-
-*   `contact` is the contact email address to use for your workshop.
-    If you do not provide a contact email address, your website will
-    display the address for the workshop coordinators (who probably
-    won't be able to answer questions about the specific details of
-    your workshop).
-
-The header may optionally define the following:
-
-*   `eventbrite` is the multi-digit Eventbrite registration key.  If you
-    are using Eventbrite, the admins will set this key for you.  If
-    you are using something else for registration, it may be deleted.
-    Note: this value must be given as a string in double quotes, rather
-    than as a number.
-
-*   `etherpad` is the URL for the Etherpad for your workshop.  If you are
-    not using an Etherpad, you can delete this value.
-
-## FAQ
-
-*   *Where can I get help?*
-
-    Mail us at [admin@software-carpentry.org](mailto:admin@software-carpentry.org),
-    or join our [discussion list](http://lists.software-carpentry.org/mailman/listinfo/discuss_lists.software-carpentry.org)
-    and ask for help there.
-
-*   *Where can I report problems or suggest improvements?*
-
-    Please file an issue against [https://github.com/swcarpentry/workshop-template](this repository)
-    or [mail us](mailto:admin@software-carpentry.org).
-
-*   *Why does the workshop repository have to be created from scratch? Why not fork `workshop-template` on GitHub?*
-
-    Because any particular user can only have one fork of a repository,
-    but instructors frequently need to work on several workshops at once.
-
-*   *Why use Jekyll?  Why not some other markup language and some other converter?*
-
-    Because it's the default on GitHub.  If we're going to teach
-    people to use that site, we should teach them to use it as it is,
-    not as we wish it was.
-
-*   *What do I do if I see a `invalid byte sequence in ...` error when I run `tools/check`?*
-
-    Declare the `en_US.UTF-8` locale in your shell:
+    If you are using the Anaconda Python distribution, you probably
+    already have it; if you don't, you can install it with:
 
     ~~~
-    $ export LC_ALL=en_US.UTF-8
-    $ export LANG=en_US.UTF-8
+    $ conda install pyyaml
     ~~~
 
-*   *What do I do if I see a `Conversion error` when I run `tools/check`?*
-
-    The error message may look something like this:
-
-    ~~~
-    Configuration file: d:/OpenCourses/swc/2013-10-17-round6.4/_config.yml
-            Source: d:/OpenCourses/swc/2013-10-17-round6.4
-       Destination: _site
-      Generating... c:/Ruby193/lib/ruby/gems/1.9.1/gems/posix-spawn-0.3.6/lib/posix/spawn.rb:162: wa
-    rning: cannot close fd before spawn
-    Conversion error: There was an error converting 'lessons/misc-biopython/fastq.md'.
-    done.
-    ~~~
-        
-    This is a [problem in Pygments.rb](http://stackoverflow.com/questions/17364028/jekyll-on-windows-pygments-not-working).
-    Uninstall pygments.rb 0.5.1 or 0.5.2, install 0.5.0.  For example, here's how you would
-    uninstall pygments 0.5.2 and restore version 0.5.0:
+    If you are using some other distribution, you can install the
+    Python YAML module using Pip:
 
     ~~~
-    $ gem uninstall pygments.rb --version "=0.5.2"
-    $ gem install pygments.rb --version "=0.5.0"
+    $ pip install pyyaml
     ~~~
 
-*   *Where should pages go if multiple workshops are running at a site simultaneously?*
+    and if you are on Debian Linux, you can use:
 
-    Use subdirectories like `2015-07-01-esu/beginners`, so that main
-    directory names always follow our four-part convention.
+    ~~~
+    $ apt-get install python-yaml
+    ~~~
 
-*   *What if I want to add more values to the page, like `address1` and `address2` for different rooms on different days?*
+## Setting Up a Separate Repository for Learners
 
-    Go ahead, but you *must* have 
-    [the variables described above](#variables).
+If you are teaching Git,
+you should create a separate repository for learners to use in that lesson.
+You should not have them use the workshop website repository because:
 
-*   *What is the "Windows installer"?*
+*   your workshop website repository contains many files
+    that most learners don't need to see during the lesson,
+    and
 
-    We have built a small installation helper for Windows that
-    installs `nano` and `sqlite`, adds R to the path, and so on.  It
-    is maintained in
-    [https://github.com/swcarpentry/windows-installer](https://github.com/swcarpentry/windows-installer),
-    which also has an up-to-date description of what it actually does.
-    The latest version is always available at
-    [http://files.software-carpentry.org/SWCarpentryInstaller.exe](http://files.software-carpentry.org/SWCarpentryInstaller.exe),
-    and contributions are always welcome.
+*   you probably don't want to accidentally merge
+    a damaging pull request from a novice Git user
+    into your workshop's website while you are using it to teach.
+
+You can call this repository whatever you like,
+and add whatever content you need to it.
+
+## Getting and Giving Help
+
+Mail us at [admin@software-carpentry.org](mailto:admin@software-carpentry.org),
+or join our [discussion list](http://lists.software-carpentry.org/mailman/listinfo/discuss_lists.software-carpentry.org)
+and ask for help there.
+
+We are committed to offering a pleasant setup experience for our learners and organizers.
+If you find bugs in our instructions,
+or would like to suggest improvements,
+please [file an issue](https://github.com/swcarpentry/workshop-template/issues)
+or [mail us](mailto:admin@software-carpentry.org).
