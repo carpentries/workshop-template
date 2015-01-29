@@ -3,7 +3,7 @@
 ## Configuration File
 
 You must edit the `_config.yml` configuration file in the root directory of your workshop
-and change the URLS called `lesson_repo` and `lesson_site`
+and change the URLS called `workshop_repo` and `workshop_site`
 to point to the repository for the lesson and its GitHub Pages site respectively.
 If the URL for the repository is `https://github.com/gvwilson/2015-07-01-mistaktonic`,
 the URL for the website will be `http://gvwilson.github.io/2015-07-01-miskatonic`.
