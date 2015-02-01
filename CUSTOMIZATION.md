@@ -29,7 +29,7 @@ which must define the following values in its header:
     [Software Carpentry](http://software-carpentry.org) website.
 
 *   `address` is the workshop's address (including details like the
-    room number). The address should be all on one line, separated by commas.
+    room number.
 
 *   `country` must be a hyphenated title-cased country name like
     'United-States'.  This is used to look up flags for display in the
