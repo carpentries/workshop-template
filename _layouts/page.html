@@ -12,13 +12,13 @@
   </head>
   <body class="workshop">
     <div class="container card">
+      {% include banner.html %}
       <div class="row">
-        <div class="span10 offset1">
-          {% include banner.html %}
+        <div class="col-md-10 col-md-offset-1">
           {{content}}
           {% include footer.html %}
         </div>
-      </div>
+       </div>
     </div>
     {% include javascript.html %}
   </body>
