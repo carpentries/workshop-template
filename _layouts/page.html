@@ -1,0 +1,25 @@
+---
+---
+<!DOCTYPE html>
+<!--
+  Use this layout for generic pages in the workshop website.
+  Use 'workshop.html' for the workshop home page.
+-->
+<html>
+  <head>
+    <title>Software Carpentry: {{ page.venue }}</title>
+    {% include header.html %}
+  </head>
+  <body class="workshop">
+    <div class="container card">
+      <div class="row">
+        <div class="span10 offset1">
+          {% include banner.html %}
+          {{content}}
+          {% include footer.html %}
+        </div>
+      </div>
+    </div>
+    {% include javascript.html %}
+  </body>
+</html>
