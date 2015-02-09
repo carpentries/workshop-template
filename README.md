@@ -60,7 +60,13 @@ If you experience a problem, please re-try;
 if the problem persists,
 please [get in touch](#getting-and-giving-help).
 
-To clone your new repository, use `git clone -b gh-pages https://github.com/your_username/YYYY-MM-DD-site`; this is needed because the imported repository doesn't have a `master` branch.
+To clone your new repository, use:
+
+~~~
+git clone -b gh-pages https://github.com/your_username/YYYY-MM-DD-site
+~~~
+
+This is needed because the imported repository doesn't have a `master` branch.
 
 ## Customizing Your Website
 
