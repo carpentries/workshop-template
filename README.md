@@ -32,9 +32,9 @@ template for creating websites for workshops.
 1.  Go to [http://import.github.com](http://import.github.com).
 
 2.  Enter the URL for this template repository, which is
-    `https://github.com/swcarpentry/workshop-template`.
+    `https://github.com/swcarpentry/workshop-template.git`.
 
-3.  Check the URL.  (GitHub won't import until you've done this.)
+3.  Click on "Check the URL".  (GitHub won't import until you've done this.)
 
 4.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
