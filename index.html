@@ -307,7 +307,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 
   <div class="row">
     <div class="col-md-4">
-      <h4>Windows</h4>
+      <h4 id="editor-windows">Windows</h4>
       <p>
 	<code>nano</code> is the editor installed by the Software
 	Carpentry Installer, it is a basic editor integrated into the
@@ -323,7 +323,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
       </p>
     </div>
     <div class="col-md-4">
-      <h4>Mac OS X</h4>
+      <h4 id="editor-macosx">Mac OS X</h4>
       <p>
 	We recommend
 	<a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
@@ -333,7 +333,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
       </p>
     </div>
     <div class="col-md-4">
-      <h4>Linux</h4>
+      <h4 id="editor-linux">Linux</h4>
       <p>
 	<a href="http://kate-editor.org/">Kate</a> is one option for
 	Linux users.  In a pinch, you can use <code>nano</code>, which
@@ -353,7 +353,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 
   <div class="row">
     <div class="col-md-4">
-      <h4>Windows</h4>
+      <h4 id="shell-windows">Windows</h4>
       <p>
 	Install Git for Windows by download and running
 	<a href="http://msysgit.github.io/">the installer</a>.
@@ -377,7 +377,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
       </p>
     </div>
     <div class="col-md-4">
-      <h4>Mac OS X</h4>
+      <h4 id="shell-macosx">Mac OS X</h4>
       <p>
 	The default shell in all versions of Mac OS X is bash, so no
 	need to install anything.  You access bash from the Terminal
@@ -387,7 +387,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
       </p>
     </div>
     <div class="col-md-4">
-      <h4>Linux</h4>
+      <h4 id="shell-linux">Linux</h4>
       <p>
 	The default shell is usually <code>bash</code>, but if your
 	machine is set up differently you can run it by opening a
@@ -410,14 +410,14 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 
   <div class="row">
     <div class="col-md-4">
-      <h4>Windows</h4>
+      <h4 id="git-windows">Windows</h4>
       <p>
 	Git should be installed on your computer as part of your Bash
 	install (described above).
       </p>
     </div>
     <div class="col-md-4">
-      <h4>Mac OS X</h4>
+      <h4 id="git-macosx">Mac OS X</h4>
       <p>
 	<strong>For OS X 10.8 and higher</strong>, install Git for Mac
 	by downloading and running
@@ -432,7 +432,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
       </p>
     </div>
     <div class="col-md-4">
-      <h4>Linux</h4>
+      <h4 id="git-linux">Linux</h4>
       <p>
 	If Git is not already available on your machine you can try to
 	install it via your distro's package manager. For Debian/Ubuntu run
@@ -462,7 +462,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 
   <div class="row">
     <div class="col-md-4">
-      <h4>Windows</h4>
+      <h4 id="python-windows">Windows</h4>
       <ul>
 	<li>
           Download and
@@ -477,7 +477,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
       </ul>
     </div>
     <div class="col-md-4">
-      <h4>Mac OS X</h4>
+      <h4 id="python-macosx">Mac OS X</h4>
       <ul>
 	<li>
           Download and
@@ -492,7 +492,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
       </ul>
     </div>
     <div class="col-md-4">
-      <h4>Linux</h4>
+      <h4 id="python-linux">Linux</h4>
       <p>
 	We recommend the all-in-one scientific Python installer
 	<a href="http://continuum.io/downloads.html">Anaconda</a>.
@@ -541,7 +541,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 
   <div class="row">
     <div class="col-md-4">
-      <h4>Windows</h4>
+      <h4 id="r-windows">Windows</h4>
       <p>
 	Install R by downloading and running
 	<a href="http://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a>
@@ -551,7 +551,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
       </p>
     </div>
     <div class="col-md-4">
-      <h4>Mac OS X</h4>
+      <h4 id="r-macosx">Mac OS X</h4>
       <p>
 	Install R by downloading and running
 	<a href="http://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
@@ -561,7 +561,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
       </p>
     </div>
     <div class="col-md-4">
-      <h4>Linux</h4>
+      <h4 id="r-linux">Linux</h4>
       <p>
 	You can download the binary files for your distribution
 	from <a href="http://cran.r-project.org/index.html">CRAN</a>. Or
@@ -585,7 +585,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 
   <div class="row">
     <div class="col-md-4">
-      <h4>Windows</h4>
+      <h4 id="sql-windows">Windows</h4>
       <p>
 	Download the <a href="{{site.swc_files}}/sqlite3.exe">sqlite3
 	  program</a> and put it in the directory where you are running
@@ -593,13 +593,13 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
       </p>
     </div>
     <div class="col-md-4">
-      <h4>Mac OS X</h4>
+      <h4 id="sql-macosx">Mac OS X</h4>
       <p>
 	<code>sqlite3</code> comes pre-installed on Mac OS X.
       </p>
     </div>
     <div class="col-md-4">
-      <h4>Linux</h4>
+      <h4 id="sql-linux">Linux</h4>
       <p>
 	<code>sqlite3</code> comes pre-installed on Linux.
       </p>
