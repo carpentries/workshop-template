@@ -50,6 +50,7 @@ try:  # Python 3.x
     import urllib.parse as _urllib_parse
 except ImportError:  # Python 2.x
     import urllib as _urllib_parse  # for quote()
+import xml.etree.ElementTree as _element_tree
 
 
 if not hasattr(_shlex, 'quote'):  # Python versions older than 3.3
@@ -477,26 +478,62 @@ class CommandDependency (Dependency):
         return match.group(1)
 
 
-class PathCommandDependency (CommandDependency):
+class VersionPlistCommandDependency (CommandDependency):
     """A command that doesn't support --version or equivalent options
 
-    On some operating systems (e.g. OS X), a command's executable may
-    be hard to find, or not exist in the PATH.  Work around that by
-    just checking for the existence of a characteristic file or
-    directory.  Since the characteristic path may depend on OS,
-    installed version, etc., take a list of paths, and succeed if any
-    of them exists.
+    On OS X, a command's executable may be hard to find, or not exist
+    in the PATH.  Work around that by looking up the version
+    information in the package's version.plist file.
     """
+    def __init__(self, key='CFBundleShortVersionString', **kwargs):
+        super(VersionPlistCommandDependency, self).__init__(**kwargs)
+        self.key = key
+
     def _get_command_version_stream(self, *args, **kwargs):
         raise NotImplementedError()
 
     def _get_version_stream(self, *args, **kwargs):
         raise NotImplementedError()
 
+    @staticmethod
+    def _get_parent(root, element):
+        """Returns the parent of this element or None for the root element
+        """
+        for node in root.iter():
+            if element in node:
+                return node
+        raise ValueError((root, element))
+
+    @classmethod
+    def _get_next(cls, root, element):
+        """Returns the following sibling of this element or None
+        """
+        parent = cls._get_parent(root=root, element=element)
+        siblings = iter(parent)
+        for node in siblings:
+            if node == element:
+                try:
+                    return next(siblings)
+                except StopIteration:
+                    return None
+        return None
+
+    def _get_version_from_plist(self, path):
+        """Parse the plist and return the value string for self.key
+        """
+        tree = _element_tree.parse(source=path)
+        data = {}
+        for key in tree.findall('.//key'):
+            value = self._get_next(root=tree, element=key)
+            if value.tag != 'string':
+                raise ValueError((tree, key, value))
+            data[key.text] = value.text
+        return data[self.key]
+
     def _get_version(self):
         for path in self.paths:
             if _os.path.exists(path):
-                return None
+                return self._get_version_from_plist(path=path)
         raise DependencyError(
             checker=self,
             message=(
@@ -746,23 +783,28 @@ CHECKER['py.test'] = CommandDependency(
 
 
 for paths,name,long_name in [
-        ([_os.path.join(_ROOT_PATH, 'Applications', 'Sublime Text 2.app')],
+        ([_os.path.join(_ROOT_PATH, 'Applications', 'Sublime Text 2.app',
+                        'Contents', 'version.plist')],
          'sublime-text', 'Sublime Text'),
-        ([_os.path.join(_ROOT_PATH, 'Applications', 'TextMate.app')],
+        ([_os.path.join(_ROOT_PATH, 'Applications', 'TextMate.app',
+                        'Contents', 'version.plist')],
          'textmate', 'TextMate'),
-        ([_os.path.join(_ROOT_PATH, 'Applications', 'TextWrangler.app')],
+        ([_os.path.join(_ROOT_PATH, 'Applications', 'TextWrangler.app',
+                        'Contents', 'version.plist')],
          'textwrangler', 'TextWrangler'),
-        ([_os.path.join(_ROOT_PATH, 'Applications', 'Safari.app')],
+        ([_os.path.join(_ROOT_PATH, 'Applications', 'Safari.app',
+                        'Contents', 'version.plist')],
          'safari', 'Safari'),
-        ([_os.path.join(_ROOT_PATH, 'Applications', 'Xcode.app'),  # OS X >=1.7
-          _os.path.join(_ROOT_PATH, 'Developer', 'Applications', 'Xcode.app'
-                        )  # OS X 1.6,
+        ([_os.path.join(_ROOT_PATH, 'Applications', 'Xcode.app',
+                        'Contents', 'version.plist'),  # OS X >=1.7
+          _os.path.join(_ROOT_PATH, 'Developer', 'Applications', 'Xcode.app',
+                        'Contents', 'version.plist'),  # OS X 1.6,
           ],
          'xcode', 'Xcode'),
         ]:
     if not long_name:
         long_name = name
-    CHECKER[name] = PathCommandDependency(
+    CHECKER[name] = VersionPlistCommandDependency(
         command=None, paths=paths, name=name, long_name=long_name)
 del paths, name, long_name  # cleanup namespace
 
@@ -807,9 +849,10 @@ for package,name,long_name,minimum_version,and_dependencies in [
                          long_name='{0} for IPython'.format(
                              CHECKER['chromium'].long_name),
                          minimum_version=(13, 0)),
-                     PathCommandDependency(
+                     VersionPlistCommandDependency(
                          command=CHECKER['safari'].command,
                          paths=CHECKER['safari'].paths,
+                         key=CHECKER['safari'].key,
                          name='{0}-for-ipython'.format(
                              CHECKER['safari'].name),
                          long_name='{0} for IPython'.format(
