@@ -22,6 +22,25 @@ version of a particular dependency, and you just want to re-test that
 dependency.
 """
 
+# Some details about the implementation:
+
+# The dependencies are divided into a hierarchy of classes rooted on
+# Dependency class. You can refer to the code to see which package
+# comes under which type of dependency.
+
+# The CHECKER dictionary stores information about all the dependencies
+# and CHECKS stores list of the dependencies which are to be checked in
+# the current workshop.
+
+# In the "__name__ == '__main__'" block, we launch all the checks with
+# check() function, which prints information about the tests as they run
+# and details about the failures after the tests complete. In case of
+# failure, the functions print_system_info() and print_suggestions()
+# are called after this, where the former prints information about the
+# user's system for debugging purposes while the latter prints some
+# suggestions to follow.
+
+
 from __future__ import print_function  # for Python 2.6 compatibility
 
 import distutils.ccompiler as _distutils_ccompiler
