@@ -16,6 +16,11 @@
     Because any particular user can only have one fork of a repository,
     but instructors frequently need to work on several workshops at once.
 
+*   *Why use the `gh-pages` branch instead of `master`?
+
+    Because [GitHub automatically publishes `gh-pages`](https://help.github.com/articles/creating-project-pages-manually/)
+    as a website.
+
 *   *Why use Jekyll?  Why not some other markup language and some other converter?*
 
     Because it's the default on GitHub.

@@ -7,23 +7,26 @@ template for creating websites for workshops.
     Instead, please follow the instructions below
     to create a website repository for your workshop.
 
-2.  Once you are done,
+2.  Please *do your work in your repository's `gh-pages` branch*,
+    since that is what is [automatically published as a website by GitHub](https://help.github.com/articles/creating-project-pages-manually/).
+
+3.  Once you are done,
     please **send your repository's URL to the Software Carpentry administrator**.
     We build the [list of workshops on the main website](http://software-carpentry.org/workshops/index.html)
     from the data included in your `index.html` page.
     We can only do that if you [customize](CUSTOMIZATION.md) that page correctly
     *and* send us a link to your workshop website.
 
-3.  Please also read
+4.  Please also read
     [the notes on customizing your website](CUSTOMIZATION.md) and the [FAQ](FAQ.md).
     If you're interested in knowing more about why we do things the way we do,
     please check out the [design notes](DESIGN.md).
 
-4.  If you are teaching Git,
+5.  If you are teaching Git,
     please [create a separate repository](#setting-up-a-separate-repository-for-learners)
     for your learners to practice in.
 
-5.  If you run into problems,
+6.  If you run into problems,
     or have ideas about how to make this process simpler,
     please [get in touch](#getting-and-giving-help).
 
@@ -64,6 +67,9 @@ git clone -b gh-pages https://github.com/your_username/YYYY-MM-DD-site
 ~~~
 
 This is needed because the imported repository doesn't have a `master` branch.
+
+**Note:** please do all of your work in your repository's `gh-pages` branch,
+since [GitHub automatically publishes that as a website](https://help.github.com/articles/creating-project-pages-manually/).
 
 ## Customizing Your Website
 
