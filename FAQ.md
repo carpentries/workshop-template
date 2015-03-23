@@ -18,7 +18,8 @@
 
 *   *Why use the `gh-pages` branch instead of `master`?
 
-    Because GitHub automatically publishes a repository's `gh-pages` branch as a website.
+    Because [GitHub automatically publishes `gh-pages`](https://help.github.com/articles/creating-project-pages-manually/)
+    as a website.
 
 *   *Why use Jekyll?  Why not some other markup language and some other converter?*
 
