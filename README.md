@@ -215,10 +215,6 @@ and add whatever content you need to it.
 
 ## Getting and Giving Help
 
-Mail us at [admin@software-carpentry.org](mailto:admin@software-carpentry.org),
-or join our [discussion list](http://lists.software-carpentry.org/mailman/listinfo/discuss_lists.software-carpentry.org)
-and ask for help there.
-
 We are committed to offering a pleasant setup experience for our learners and organizers.
 If you find bugs in our instructions,
 or would like to suggest improvements,
