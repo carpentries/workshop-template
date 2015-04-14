@@ -11,7 +11,7 @@ template for creating websites for workshops.
     since that is what is [automatically published as a website by GitHub](https://help.github.com/articles/creating-project-pages-manually/).
 
 3.  Once you are done,
-    please **send your repository's URL to the Software Carpentry administrator**.
+    please **send your repository's URL to the [Software Carpentry administrator](mailto:admin@software-carpentry.org)**.
     We build the [list of workshops on the main website](http://software-carpentry.org/workshops/index.html)
     from the data included in your `index.html` page.
     We can only do that if you [customize](CUSTOMIZATION.md) that page correctly
