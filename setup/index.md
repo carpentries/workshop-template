@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Testing Setup
+root: ..
 ---
 For Learners
 ------------
