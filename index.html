@@ -303,57 +303,6 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
   which has instructions on how to test that everything was installed correctly.
 </p>
 
-<div id="editor"> <!-- Start of 'editor' section. -->
-  <h3>Text Editor</h3>
-
-  <p>
-    When you're writing code, it's nice to have a text editor that is
-    optimized for writing code, with features like automatic
-    color-coding of key words.  The default text editor on Mac OS X and
-    Linux is usually set to Vim, which is not famous for being
-    intuitive.  if you accidentally find yourself stuck in it, try
-    typing the escape key, followed by <code>:q!</code> (colon, lower-case <code>q</code>,
-    exclamation mark), then hitting Return to return to the shell.
-  </p>
-
-  <div class="row">
-    <div class="col-md-4">
-      <h4 id="editor-windows">Windows</h4>
-      <p>
-	nano is the editor installed by the Software
-	Carpentry Installer, it is a basic editor integrated into the
-	lesson material.
-      </p>
-      <p>
-	<a href="http://notepad-plus-plus.org/">Notepad++</a> is a
-	popular free code editor for Windows.  Be aware that you must
-	add its installation directory to your system path in order to
-	launch it from the command line (or have other tools like Git
-	launch it for you).  Please ask your instructor to help you do
-	this.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h4 id="editor-macosx">Mac OS X</h4>
-      <p>
-	We recommend
-	<a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
-	<a href="http://www.sublimetext.com/">Sublime Text</a>.
-	In a pinch, you can use nano,
-	which should be pre-installed.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h4 id="editor-linux">Linux</h4>
-      <p>
-	<a href="http://kate-editor.org/">Kate</a> is one option for
-	Linux users.  In a pinch, you can use nano, which
-	should be pre-installed.
-      </p>
-    </div>
-  </div>
-</div> <!-- End of 'editor' section. -->
-
 <div id="shell"> <!-- Start of 'shell' section. -->
   <h3>The Bash Shell</h3>
 
@@ -370,18 +319,6 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
 	<a href="http://msysgit.github.io/">the installer</a>.
 	This will provide you with both Git and Bash in the Git Bash program.
       </p>
-      <h4>Software Carpentry Windows Installer</h4>
-      <p>It installs and configures nano (<a href="{{site.swc_github}}/windows-installer">Among other things</a>)</p>
-      <p><em>This installer requires an active internet connection.</em></p>
-      <p>After installing Git Bash:</p>
-      <ul>
-	<li>
-          Download the <a href="{{site.swc_installer}}">Software Carpentry Windows installer</a>.
-	</li>
-	<li>
-          Double click on the file to run it.
-	</li>
-      </ul>
     </div>
     <div class="col-md-4">
       <h4 id="shell-macosx">Mac OS X</h4>
@@ -453,6 +390,66 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
     </div>
   </div>
 </div> <!-- End of 'Git' section. -->
+
+<div id="editor"> <!-- Start of 'editor' section. -->
+  <h3>Text Editor</h3>
+
+  <p>
+    When you're writing code, it's nice to have a text editor that is
+    optimized for writing code, with features like automatic
+    color-coding of key words.  The default text editor on Mac OS X and
+    Linux is usually set to Vim, which is not famous for being
+    intuitive.  if you accidentally find yourself stuck in it, try
+    typing the escape key, followed by ':q!' (colon, lower-case 'q',
+    exclamation mark), then hitting Return to return to the shell.
+  </p>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h4 id="editor-windows">Windows</h4>
+      <p>
+	nano is a basic editor and the default that instructors use in the workshop.
+        To install it, 
+        download the <a href="{{site.swc_installer}}">Software Carpentry Windows installer</a>
+        and double click on the file to run it.
+        <strong>This installer requires an active internet connection.</strong>
+      </p>
+      <p>
+        Others editors that you can use is
+	<a href="http://notepad-plus-plus.org/">Notepad++</a> or
+	<a href="http://www.sublimetext.com/">Sublime Text</a>.
+        <strong>Be aware that you must
+          add its installation directory to your system path.</strong>
+	Please ask your instructor to help you do this.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h4 id="editor-macosx">Mac OS X</h4>
+      <p>
+	nano is a basic editor and the default that instructors use in the workshop.
+        It should be pre-installed.
+      </p>
+      <p>
+        Others editors that you can use is
+	<a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
+	<a href="http://www.sublimetext.com/">Sublime Text</a>.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h4 id="editor-linux">Linux</h4>
+      <p>
+	nano is a basic editor and the default that instructors use in the workshop.
+        It should be pre-installed.
+      </p>
+      <p>
+        Others editors that you can use is
+        <a href="https://wiki.gnome.org/Apps/Gedit">Gedit</a>,
+	<a href="http://kate-editor.org/">Kate</a> or
+	<a href="http://www.sublimetext.com/">Sublime Text</a>.
+      </p>
+    </div>
+  </div>
+</div> <!-- End of 'editor' section. -->
 
 <div id="python"> <!-- Start of 'Python' section. Remove the third paragraph if
            the workshop will teach Python using something other than
