@@ -22,38 +22,42 @@
     {% include github-ribbon.html %}
 
     <div class="container card">
-      <div class="row">
-	<div class="col-md-10 col-md-offset-1">
-          {% include banner.html %}
-          <div class="jumbotron">
-	    <h2>{{page.venue}}</h2>
+      {% include banner.html %}
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <h2>{{page.venue}}</h2>
             <div class="row">
-	      <div class="col-md-6">
-		<p>{{page.humandate}}</p>
-		<p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
-	      </div>
-	      <div class="col-md-6">
-		<p>
-		  <strong>Instructors:</strong>
-		  {% if page.instructor %}
-		  {{page.instructor | join: ', ' %}}
-		  {% else %}
-		  to be announced.
-		  {% endif %}
-		</p>
-		{% if page.helper %}
-		<p>
-		  <strong>Helpers:</strong>
-		  {{page.helper | join: ', ' %}}
-		</p>
-		{% endif %}
-	      </div>
+              <div class="col-md-6">
+                <p>{{page.humandate}}</p>
+                <p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                <strong>Instructors:</strong>
+                {% if page.instructor %}
+                {{page.instructor | join: ', ' %}}
+                {% else %}
+                to be announced.
+                {% endif %}
+                </p>
+                {% if page.helper %}
+                <p>
+                <strong>Helpers:</strong>
+                {{page.helper | join: ', ' %}}
+                </p>
+                {% endif %}
+              </div>
             </div>
           </div>
-          {{content}}
-          {% include footer.html %}
-	</div>
+        </div>
       </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          {{content}}
+        </div>
+      </div>
+      {% include footer.html %}
     </div>
     {% include javascript.html %}
   </body>
