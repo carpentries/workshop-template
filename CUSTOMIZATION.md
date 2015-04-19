@@ -87,9 +87,40 @@ The header may optionally define the following:
     this line.  Note: this value must be given as a string in double
     quotes, rather than as a number.
 
-## Home Page: Schedule, Syllabus, and Setup
+## Home Page: Schedule and Syllabus
 
 You should edit the sections titled `Schedule` and `Syllabus`
 so that they show what you're actually planning to teach and when.
-You should also delete irrelevant parts of the section titled `Setup`
-so that your learners don't try to install software that they won't need.
+
+## Home Page: Setup
+
+You should delete the pieces of the `Setup` section
+related to software you will not be using in your workshop,
+so that learners don't spend time installing software they don't need.
+After you edit the `Setup` section, you should edit the installation test script.
+
+`swc-installation-test-1.py` is pretty simple, and just checks that
+the students have a recent enough version of Python installed that
+they can run `swc-installation-test-2.py`.
+
+`swc-installation-test-2.py`
+checks for a list of dependencies and prints error messages if a
+package is not installed, or if the installed version is not current
+enough.  By default, the script checks for pretty much anything that
+has ever been used at a Software Carpentry workshop, which is probably
+not what you want for your particular workshop.
+
+Go through `swc-installation-test-2.py` and
+comment any dependencies you don't need out of the `CHECKS` list.  You
+might also want to skim through the minimum version numbers listed
+where particular dependencies are defined (e.g. `('git', 'Git', (1, 7,
+0), None)`).  For the most part, fairly conservative values have been
+selected, so students with modern machines should be fine.  If your
+workshop has stricter version requirements, feel free to bump them
+accordingly.
+
+Similarly, the virtual dependencies can be satisfied by any of several
+packages.  If you don't want to support a particular package (e.g. if
+you have no Emacs experience and don't want to be responsible for
+students who show up with Emacs as their only editor), you can comment
+out that particular `or_dependency`.
