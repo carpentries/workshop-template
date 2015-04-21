@@ -303,57 +303,6 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
   which has instructions on how to test that everything was installed correctly.
 </p>
 
-<div id="editor"> <!-- Start of 'editor' section. -->
-  <h3>Text Editor</h3>
-
-  <p>
-    When you're writing code, it's nice to have a text editor that is
-    optimized for writing code, with features like automatic
-    color-coding of key words.  The default text editor on Mac OS X and
-    Linux is usually set to Vim, which is not famous for being
-    intuitive.  if you accidentally find yourself stuck in it, try
-    typing the escape key, followed by <code>:q!</code> (colon, lower-case <code>q</code>,
-    exclamation mark), then hitting Return to return to the shell.
-  </p>
-
-  <div class="row">
-    <div class="col-md-4">
-      <h4 id="editor-windows">Windows</h4>
-      <p>
-	nano is the editor installed by the Software
-	Carpentry Installer, it is a basic editor integrated into the
-	lesson material.
-      </p>
-      <p>
-	<a href="http://notepad-plus-plus.org/">Notepad++</a> is a
-	popular free code editor for Windows.  Be aware that you must
-	add its installation directory to your system path in order to
-	launch it from the command line (or have other tools like Git
-	launch it for you).  Please ask your instructor to help you do
-	this.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h4 id="editor-macosx">Mac OS X</h4>
-      <p>
-	We recommend
-	<a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
-	<a href="http://www.sublimetext.com/">Sublime Text</a>.
-	In a pinch, you can use nano,
-	which should be pre-installed.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h4 id="editor-linux">Linux</h4>
-      <p>
-	<a href="http://kate-editor.org/">Kate</a> is one option for
-	Linux users.  In a pinch, you can use nano, which
-	should be pre-installed.
-      </p>
-    </div>
-  </div>
-</div> <!-- End of 'editor' section. -->
-
 <div id="shell"> <!-- Start of 'shell' section. -->
   <h3>The Bash Shell</h3>
 
@@ -366,40 +315,28 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
     <div class="col-md-4">
       <h4 id="shell-windows">Windows</h4>
       <p>
-	Install Git for Windows by downloading and running
-	<a href="http://msysgit.github.io/">the installer</a>.
-	This will provide you with both Git and Bash in the Git Bash program.
+        Install Git for Windows by downloading and running
+        <a href="http://msysgit.github.io/">the installer</a>.
+        This will provide you with both Git and Bash in the Git Bash program.
       </p>
-      <h4>Software Carpentry Windows Installer</h4>
-      <p>It installs and configures nano (<a href="{{site.swc_github}}/windows-installer">Among other things</a>)</p>
-      <p><em>This installer requires an active internet connection.</em></p>
-      <p>After installing Git Bash:</p>
-      <ul>
-	<li>
-          Download the <a href="{{site.swc_installer}}">Software Carpentry Windows installer</a>.
-	</li>
-	<li>
-          Double click on the file to run it.
-	</li>
-      </ul>
     </div>
     <div class="col-md-4">
       <h4 id="shell-macosx">Mac OS X</h4>
       <p>
-	The default shell in all versions of Mac OS X is bash, so no
-	need to install anything.  You access bash from the Terminal
-	(found in
-	<code>/Applications/Utilities</code>).  You may want to keep
-	Terminal in your dock for this workshop.
+        The default shell in all versions of Mac OS X is bash, so no
+        need to install anything.  You access bash from the Terminal
+        (found in
+        <code>/Applications/Utilities</code>).  You may want to keep
+        Terminal in your dock for this workshop.
       </p>
     </div>
     <div class="col-md-4">
       <h4 id="shell-linux">Linux</h4>
       <p>
-	The default shell is usually Bash, but if your
-	machine is set up differently you can run it by opening a
-	terminal and typing <code>bash</code>.  There is no need to
-	install anything.
+        The default shell is usually Bash, but if your
+        machine is set up differently you can run it by opening a
+        terminal and typing <code>bash</code>.  There is no need to
+        install anything.
       </p>
     </div>
   </div>
@@ -423,36 +360,96 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
     <div class="col-md-4">
       <h4 id="git-windows">Windows</h4>
       <p>
-	Git should be installed on your computer as part of your Bash
-	install (described above).
+        Git should be installed on your computer as part of your Bash
+        install (described above).
       </p>
     </div>
     <div class="col-md-4">
       <h4 id="git-macosx">Mac OS X</h4>
       <p>
-	<strong>For OS X 10.8 and higher</strong>, install Git for Mac
-	by downloading and running
-	<a href="http://sourceforge.net/projects/git-osx-installer/files/latest/download">the installer</a>.
-	After installing Git, there will not be anything in your <code>/Applications</code> folder, 
-	as Git is a command line program.
-	<strong>For older versions of OS X (10.5-10.7)</strong> use the
-	most recent available installer for your
-	OS <a href="http://sourceforge.net/projects/git-osx-installer/files/">available
-	  here</a>.  Use the Leopard installer for 10.5 and the Snow
-	Leopard installer for 10.6-10.7.
+        <strong>For OS X 10.8 and higher</strong>, install Git for Mac
+        by downloading and running
+        <a href="http://sourceforge.net/projects/git-osx-installer/files/latest/download">the installer</a>.
+        After installing Git, there will not be anything in your <code>/Applications</code> folder, 
+        as Git is a command line program.
+        <strong>For older versions of OS X (10.5-10.7)</strong> use the
+        most recent available installer for your
+        OS <a href="http://sourceforge.net/projects/git-osx-installer/files/">available here</a>.
+        Use the Leopard installer for 10.5 and the Snow
+        Leopard installer for 10.6-10.7.
       </p>
     </div>
     <div class="col-md-4">
       <h4 id="git-linux">Linux</h4>
       <p>
-	If Git is not already available on your machine you can try to
-	install it via your distro's package manager. For Debian/Ubuntu run
+        If Git is not already available on your machine you can try to
+        install it via your distro's package manager. For Debian/Ubuntu run
         <code>sudo apt-get install git</code> and for Fedora run
         <code>sudo yum install git</code>.
       </p>
     </div>
   </div>
 </div> <!-- End of 'Git' section. -->
+
+<div id="editor"> <!-- Start of 'editor' section. -->
+  <h3>Text Editor</h3>
+
+  <p>
+    When you're writing code, it's nice to have a text editor that is
+    optimized for writing code, with features like automatic
+    color-coding of key words.  The default text editor on Mac OS X and
+    Linux is usually set to Vim, which is not famous for being
+    intuitive.  if you accidentally find yourself stuck in it, try
+    typing the escape key, followed by <code>:q!<code> (colon, lower-case 'q',
+    exclamation mark), then hitting Return to return to the shell.
+  </p>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h4 id="editor-windows">Windows</h4>
+      <p>
+        nano is a basic editor and the default that instructors use in the workshop.
+        To install it, 
+        download the <a href="{{site.swc_installer}}">Software Carpentry Windows installer</a>
+        and double click on the file to run it.
+        <strong>This installer requires an active internet connection.</strong>
+      </p>
+      <p>
+        Others editors that you can use are
+        <a href="http://notepad-plus-plus.org/">Notepad++</a> or
+        <a href="http://www.sublimetext.com/">Sublime Text</a>.
+        <strong>Be aware that you must
+          add its installation directory to your system path.</strong>
+        Please ask your instructor to help you do this.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h4 id="editor-macosx">Mac OS X</h4>
+      <p>
+        nano is a basic editor and the default that instructors use in the workshop.
+        It should be pre-installed.
+      </p>
+      <p>
+        Others editors that you can use are
+        <a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
+        <a href="http://www.sublimetext.com/">Sublime Text</a>.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h4 id="editor-linux">Linux</h4>
+      <p>
+        nano is a basic editor and the default that instructors use in the workshop.
+        It should be pre-installed.
+      </p>
+      <p>
+        Others editors that you can use are
+        <a href="https://wiki.gnome.org/Apps/Gedit">Gedit</a>,
+        <a href="http://kate-editor.org/">Kate</a> or
+        <a href="http://www.sublimetext.com/">Sublime Text</a>.
+      </p>
+    </div>
+  </div>
+</div> <!-- End of 'editor' section. -->
 
 <div id="python"> <!-- Start of 'Python' section. Remove the third paragraph if
            the workshop will teach Python using something other than
@@ -488,55 +485,55 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
     <div class="col-md-4">
       <h4 id="python-windows">Windows</h4>
       <ul>
-	<li>
+        <li>
           Download and
           install <a href="https://store.continuum.io/cshop/anaconda/">Anaconda</a>.
-	</li>
-	<li>
+        </li>
+        <li>
           Download the default Python 2 installer (do not follow the link to version 3).
-	  Use all of the defaults for installation
+          Use all of the defaults for installation
           <em>except</em> make sure to check
-	  <strong>Make Anaconda the default Python</strong>.
-	</li>
+          <strong>Make Anaconda the default Python</strong>.
+        </li>
       </ul>
     </div>
     <div class="col-md-4">
       <h4 id="python-macosx">Mac OS X</h4>
       <ul>
-	<li>
+        <li>
           Download and
           install <a href="https://store.continuum.io/cshop/anaconda/">Anaconda</a>.
-	</li>
-	<li>
+        </li>
+        <li>
           Download the default Python 2 installer (do not follow the link to version 3).
-	  Use all of the defaults for installation.
-	</li>
+          Use all of the defaults for installation.
+        </li>
       </ul>
     </div>
     <div class="col-md-4">
       <h4 id="python-linux">Linux</h4>
       <p>
-	We recommend the all-in-one scientific Python installer
-	<a href="http://continuum.io/downloads.html">Anaconda</a>.
-	(Installation requires using the shell and if you aren't
-	comfortable doing the installation yourself just
-	download the installer and we'll help you at the workshop.)
+        We recommend the all-in-one scientific Python installer
+        <a href="http://continuum.io/downloads.html">Anaconda</a>.
+        (Installation requires using the shell and if you aren't
+        comfortable doing the installation yourself just
+        download the installer and we'll help you at the workshop.)
       </p>
       <ol>
-	<li>
+        <li>
           Download the installer that matches your operating
           system and save it in your home folder.
-	  Download the default Python 2 installer (do not follow the link to version 3). 
-	</li>
-	<li>
+          Download the default Python 2 installer (do not follow the link to version 3). 
+        </li>
+        <li>
           Open a terminal window.
-	</li>
-	<li>
+        </li>
+        <li>
           Type <pre>bash Anaconda-</pre> and then press
           tab. The name of the file you just downloaded should
           appear.
-	</li>
-	<li>
+        </li>
+        <li>
           Press enter. You will follow the text-only prompts.  When
           there is a colon at the bottom of the screen press the down
           arrow to move down through the text. Type <code>yes</code> and
@@ -544,7 +541,7 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
           default location for the files. Type <code>yes</code> and
           press enter to prepend Anaconda to your <code>PATH</code>
           (this makes the Anaconda distribution the default Python).
-	</li>
+        </li>
       </ol>
     </div>
   </div>
@@ -564,32 +561,32 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
     <div class="col-md-4">
       <h4 id="r-windows">Windows</h4>
       <p>
-	Install R by downloading and running
-	<a href="http://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a>
-	from <a href="http://cran.r-project.org/index.html">CRAN</a>.
-	Also, please install the
-	<a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
+        Install R by downloading and running
+        <a href="http://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a>
+        from <a href="http://cran.r-project.org/index.html">CRAN</a>.
+        Also, please install the
+        <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
       </p>
     </div>
     <div class="col-md-4">
       <h4 id="r-macosx">Mac OS X</h4>
       <p>
-	Install R by downloading and running
-	<a href="http://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
-	from <a href="http://cran.r-project.org/index.html">CRAN</a>.
-	Also, please install the
-	<a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
+        Install R by downloading and running
+        <a href="http://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
+        from <a href="http://cran.r-project.org/index.html">CRAN</a>.
+        Also, please install the
+        <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
       </p>
     </div>
     <div class="col-md-4">
       <h4 id="r-linux">Linux</h4>
       <p>
-	You can download the binary files for your distribution
-	from <a href="http://cran.r-project.org/index.html">CRAN</a>. Or
-	you can use your package manager (e.g. for Debian/Ubuntu
-	run <code>sudo apt-get install r-base</code> and for Fedora run
+        You can download the binary files for your distribution
+        from <a href="http://cran.r-project.org/index.html">CRAN</a>. Or
+        you can use your package manager (e.g. for Debian/Ubuntu
+        run <code>sudo apt-get install r-base</code> and for Fedora run
         <code>sudo yum install R</code>).  Also, please install the
-	<a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
+        <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
       </p>
     </div>
   </div>
@@ -608,21 +605,21 @@ eventbrite: # FIXME (delete this if not used, otherwise uncomment and provide 12
     <div class="col-md-4">
       <h4 id="sql-windows">Windows</h4>
       <p>
-      The <a href="{{site.swc_github}}/windows-installer">Software Carpentry
-          Windows Installer</a> installs SQLite for Windows. If
-      you used the installer to configure nano, you don't need to run it again.
+        The <a href="{{site.swc_github}}/windows-installer">Software Carpentry Windows Installer</a>
+        installs SQLite for Windows.
+        If you used the installer to configure nano, you don't need to run it again.
       </p>
     </div>
     <div class="col-md-4">
       <h4 id="sql-macosx">Mac OS X</h4>
       <p>
-	SQLite comes pre-installed on Mac OS X.
+        SQLite comes pre-installed on Mac OS X.
       </p>
     </div>
     <div class="col-md-4">
       <h4 id="sql-linux">Linux</h4>
       <p>
-	SQLite comes pre-installed on Linux.
+        SQLite comes pre-installed on Linux.
       </p>
     </div>
   </div>
