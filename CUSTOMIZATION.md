@@ -31,13 +31,16 @@ which must define the following values in its header:
 *   `address` is the workshop's address (including details like the
     room number). The address should be all on one line.
 
-*   `country` must be a hyphenated title-cased country name like
-    'United-States'.  This is used to look up flags for display in the
-    main web site.
+*   `country` must be a two-letter ISO-3166 code for the country in
+    which the workshop is going to take place, such as 'fr' (for
+    France) or 'nz' (for New Zealand) - see [Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)
+    for a complete list.
 
 *   `language` is the language that will be used in the workshop.
-    It must be a
-    [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
+    It must be an [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
+    Note that two-letter codes mean different things for countries
+    and languages: 'ar' is Arabic when used for a language, but
+    Argentina when used for a country.
 
 *   `latlng` is the latitude and longitude of the workshop site (so we
     can put a pin on our map).  You can use
