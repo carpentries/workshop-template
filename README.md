@@ -114,15 +114,15 @@ and these notes on [the background and design](DESIGN.md) of this template may h
 
 ## Checking Your Changes
 
+**Note:** to check your changes you need some softwares
+that are describe at [Installing Software session](#installing-software).
+
 No matter how you edit `index.html`, you should:
 
 1.  Check your changes by running `tools/check.py` at the command line
     from the root directory of your repository.
 
 2.  Preview your changes by running `tools/preview` and looking at `_site/index.html`.
-    To be able to preview your page locally,
-    you must install Ruby 1.9.3 or greater plus `github-pages`,
-    as described [below](#installing-software).
 
 For some links to work properly,
 particularly the link to your workshop's Eventbrite registration page,
@@ -147,32 +147,40 @@ you must install the software described below.
 > will update automatically, so you can check your changes on the live
 > site instead of locally.
 
-1.  Jekyll 1.0.3
+1.  Ruby 2.0 or greater
 
-    1. Check if Ruby is installed and find its version using command line:
+    On Debian/Ubuntu based machines you can install it using
 
-        ~~~
-        $  ruby -v
-        ~~~
+    ~~~
+    $ sudo apt-get install ruby2.0 ruby2.0-dev
+    ~~~
 
-        The following commands need a minimum version of 1.9.3.
+2.  NodeJS
 
-    2. Install `github-pages`:
+    On Debian/Ubuntu based machines you can install it using
 
-        ~~~
-        $ gem install github-pages
-        ~~~
+    ~~~
+    $ sudo apt-get install nodejs
+    ~~~
 
-        or if that doesn't work:
+3.  Jekyll
 
-        ~~~
-        $ gem install jekyll
-        $ gem install kramdown
-        ~~~
+    Install `github-pages`:
 
-        We use Kramdown to translate Markdown into HTML, instead of
-        the default Redcarpet, because Kramdown handles Markdown
-        inside HTML blocks.
+     ~~~
+     $ gem install github-pages
+     ~~~
+
+     or if that doesn't work:
+
+     ~~~
+     $ gem install jekyll
+     $ gem install kramdown
+     ~~~
+
+     We use Kramdown to translate Markdown into HTML, instead of
+     the default Redcarpet, because Kramdown handles Markdown
+     inside HTML blocks.
 
 2.  The Python YAML module
 
