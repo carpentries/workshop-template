@@ -136,6 +136,10 @@ $ jekyll server -d _site
 
 and going to http://localhost:4000.
 
+## That's it
+---------------------------------------------------------
+ The following steps are only necesary if you want to run the website locally on your computer.
+
 ## Installing Software
 
 In order to preview the workshop website locally on your computer,
