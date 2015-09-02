@@ -112,6 +112,9 @@ This [FAQ](FAQ.md) includes a few extra tips
 (additions are always welcome)
 and these notes on [the background and design](DESIGN.md) of this template may help as well.
 
+That's it.
+The following steps are only necessary if you want to run the website locally on your computer.
+
 ## Checking Your Changes
 
 **Note:** to check your changes you need some softwares
@@ -135,10 +138,6 @@ $ jekyll server -d _site
 ~~~
 
 and going to http://localhost:4000.
-
-## That's it
----------------------------------------------------------
- The following steps are only necesary if you want to run the website locally on your computer.
 
 ## Installing Software
 
