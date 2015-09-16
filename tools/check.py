@@ -45,75 +45,34 @@ DEFAULT_CONTACT_EMAIL = 'admin@software-carpentry.org'
 
 USAGE = 'Usage: "python check.py" or "python check.py path/to/index.html"\n'
 
-COUNTRIES = [
-    'Abkhazia', 'Afghanistan', 'Aland', 'Albania', 'Algeria',
-    'American-Samoa', 'Andorra', 'Angola', 'Anguilla',
-    'Antarctica', 'Antigua-and-Barbuda', 'Argentina', 'Armenia',
-    'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas',
-    'Bahrain', 'Bangladesh', 'Barbados', 'Basque-Country',
-    'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan',
-    'Bolivia', 'Bosnia-and-Herzegovina', 'Botswana', 'Brazil',
-    'British-Antarctic-Territory', 'British-Virgin-Islands',
-    'Brunei', 'Bulgaria', 'Burkina-Faso', 'Burundi', 'Cambodia',
-    'Cameroon', 'Canada', 'Canary-Islands', 'Cape-Verde',
-    'Cayman-Islands', 'Central-African-Republic', 'Chad',
-    'Chile', 'China', 'Christmas-Island',
-    'Cocos-Keeling-Islands', 'Colombia', 'Commonwealth',
-    'Comoros', 'Cook-Islands', 'Costa-Rica', 'Cote-dIvoire',
-    'Croatia', 'Cuba', 'Curacao', 'Cyprus', 'Czech-Republic',
-    'Democratic-Republic-of-the-Congo', 'Denmark', 'Djibouti',
-    'Dominica', 'Dominican-Republic', 'East-Timor', 'Ecuador',
-    'Egypt', 'El-Salvador', 'England', 'Equatorial-Guinea',
-    'Eritrea', 'Estonia', 'Ethiopia', 'European-Union',
-    'Falkland-Islands', 'Faroes', 'Fiji', 'Finland', 'France',
-    'French-Polynesia', 'French-Southern-Territories', 'Gabon',
-    'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar',
-    'GoSquared', 'Greece', 'Greenland', 'Grenada', 'Guam',
-    'Guatemala', 'Guernsey', 'Guinea-Bissau', 'Guinea', 'Guyana',
-    'Haiti', 'Honduras', 'Hong-Kong', 'Hungary', 'Iceland',
-    'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland',
-    'Isle-of-Man', 'Israel', 'Italy', 'Jamaica', 'Japan',
-    'Jersey', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati',
-    'Kosovo', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia',
-    'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein',
-    'Lithuania', 'Luxembourg', 'Macau', 'Macedonia',
-    'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali',
-    'Malta', 'Mars', 'Marshall-Islands', 'Martinique',
-    'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Micronesia',
-    'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat',
-    'Morocco', 'Mozambique', 'Myanmar', 'NATO',
-    'Nagorno-Karabakh', 'Namibia', 'Nauru', 'Nepal',
-    'Netherlands-Antilles', 'Netherlands', 'New-Caledonia',
-    'New-Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Niue',
-    'Norfolk-Island', 'North-Korea', 'Northern-Cyprus',
-    'Northern-Mariana-Islands', 'Norway', 'Olympics', 'Oman',
-    'Pakistan', 'Palau', 'Palestine', 'Panama',
-    'Papua-New-Guinea', 'Paraguay', 'Peru', 'Philippines',
-    'Pitcairn-Islands', 'Poland', 'Portugal', 'Puerto-Rico',
-    'Qatar', 'Red-Cross', 'Republic-of-the-Congo', 'Romania',
-    'Russia', 'Rwanda', 'Saint-Barthelemy', 'Saint-Helena',
-    'Saint-Kitts-and-Nevis', 'Saint-Lucia', 'Saint-Martin',
-    'Saint-Vincent-and-the-Grenadines', 'Samoa', 'San-Marino',
-    'Sao-Tome-and-Principe', 'Saudi-Arabia', 'Scotland',
-    'Senegal', 'Serbia', 'Seychelles', 'Sierra-Leone',
-    'Singapore', 'Slovakia', 'Slovenia', 'Solomon-Islands',
-    'Somalia', 'Somaliland', 'South-Africa',
-    'South-Georgia-and-the-South-Sandwich-Islands',
-    'South-Korea', 'South-Ossetia', 'South-Sudan', 'Spain',
-    'Sri-Lanka', 'Sudan', 'Suriname', 'Swaziland', 'Sweden',
-    'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania',
-    'Thailand', 'Togo', 'Tokelau', 'Tonga',
-    'Trinidad-and-Tobago', 'Tunisia', 'Turkey', 'Turkmenistan',
-    'Turks-and-Caicos-Islands', 'Tuvalu', 'US-Virgin-Islands',
-    'Uganda', 'Ukraine', 'United-Arab-Emirates',
-    'United-Kingdom', 'United-Nations', 'United-States',
-    'Unknown', 'Uruguay', 'Uzbekistan', 'Vanuatu',
-    'Vatican-City', 'Venezuela', 'Vietnam', 'Wales',
-    'Wallis-And-Futuna', 'Western-Sahara', 'Yemen', 'Zambia',
-    'Zimbabwe'
+# Country and language codes.  Note that codes mean different things: 'ar'
+# is 'Arabic' as a language but 'Argentina' as a country.
+
+ISO_COUNTRY = [
+    'ad', 'ae', 'af', 'ag', 'ai', 'al', 'am', 'an', 'ao', 'aq', 'ar', 'as',
+    'at', 'au', 'aw', 'ax', 'az', 'ba', 'bb', 'bd', 'be', 'bf', 'bg', 'bh',
+    'bi', 'bj', 'bm', 'bn', 'bo', 'br', 'bs', 'bt', 'bv', 'bw', 'by', 'bz',
+    'ca', 'cc', 'cd', 'cf', 'cg', 'ch', 'ci', 'ck', 'cl', 'cm', 'cn', 'co',
+    'cr', 'cu', 'cv', 'cx', 'cy', 'cz', 'de', 'dj', 'dk', 'dm', 'do', 'dz',
+    'ec', 'ee', 'eg', 'eh', 'er', 'es', 'et', 'eu', 'fi', 'fj', 'fk', 'fm',
+    'fo', 'fr', 'ga', 'gb', 'gd', 'ge', 'gf', 'gg', 'gh', 'gi', 'gl', 'gm',
+    'gn', 'gp', 'gq', 'gr', 'gs', 'gt', 'gu', 'gw', 'gy', 'hk', 'hm', 'hn',
+    'hr', 'ht', 'hu', 'id', 'ie', 'il', 'im', 'in', 'io', 'iq', 'ir', 'is',
+    'it', 'je', 'jm', 'jo', 'jp', 'ke', 'kg', 'kh', 'ki', 'km', 'kn', 'kp',
+    'kr', 'kw', 'ky', 'kz', 'la', 'lb', 'lc', 'li', 'lk', 'lr', 'ls', 'lt',
+    'lu', 'lv', 'ly', 'ma', 'mc', 'md', 'me', 'mg', 'mh', 'mk', 'ml', 'mm',
+    'mn', 'mo', 'mp', 'mq', 'mr', 'ms', 'mt', 'mu', 'mv', 'mw', 'mx', 'my',
+    'mz', 'na', 'nc', 'ne', 'nf', 'ng', 'ni', 'nl', 'no', 'np', 'nr', 'nu',
+    'nz', 'om', 'pa', 'pe', 'pf', 'pg', 'ph', 'pk', 'pl', 'pm', 'pn', 'pr',
+    'ps', 'pt', 'pw', 'py', 'qa', 're', 'ro', 'rs', 'ru', 'rw', 'sa', 'sb',
+    'sc', 'sd', 'se', 'sg', 'sh', 'si', 'sj', 'sk', 'sl', 'sm', 'sn', 'so',
+    'sr', 'st', 'sv', 'sy', 'sz', 'tc', 'td', 'tf', 'tg', 'th', 'tj', 'tk',
+    'tl', 'tm', 'tn', 'to', 'tr', 'tt', 'tv', 'tw', 'tz', 'ua', 'ug', 'um',
+    'us', 'uy', 'uz', 'va', 'vc', 've', 'vg', 'vi', 'vn', 'vu', 'wf', 'ws',
+    'ye', 'yt', 'za', 'zm', 'zw'
 ]
 
-LANGUAGES = [
+ISO_LANGUAGE = [
     'aa', 'ab', 'ae', 'af', 'ak', 'am', 'an', 'ar', 'as', 'av', 'ay', 'az',
     'ba', 'be', 'bg', 'bh', 'bi', 'bm', 'bn', 'bo', 'br', 'bs', 'ca', 'ce',
     'ch', 'co', 'cr', 'cs', 'cu', 'cv', 'cy', 'da', 'de', 'dv', 'dz', 'ee',
@@ -170,18 +129,16 @@ def check_root(root):
 
 @look_for_fixme
 def check_country(country):
-    '''"country" must be a hyphenated full country name from the list
-    embedded in this script.'''
+    '''"country" must be an ISO-3166 two-letter code.'''
 
-    return country in COUNTRIES
+    return country in ISO_COUNTRY
 
 
 @look_for_fixme
 def check_language(language):
-    '''"language" must be one of the two-letter ISO 639-1 language codes
-    embedded in this script.'''
+    '''"language" must be an ISO-639 two-letter code.'''
 
-    return language in LANGUAGES
+    return language in ISO_LANGUAGE
 
 
 @look_for_fixme
@@ -301,12 +258,13 @@ def check_pass(value):
 HANDLERS = {
     'layout':     (True, check_layout, 'layout isn\'t "workshop"'),
     'root':       (True, check_root, 'root can only be "."'),
-    'country':    (True, check_country,
-                   'country invalid: must use full hyphenated name from: ' +
-                   ' '.join(COUNTRIES)),
 
+    'country':    (True, check_country,
+                   'country invalid: must use two-letter ISO code from ' +
+                   ', '.join(ISO_COUNTRY)),
     'language' :  (False,  check_language,
-                   'language invalid: must be a ISO 639-1 code'),
+                   'language invalid: must use two-letter ISO code from ' +
+                   ', '.join(ISO_LANGUAGE)),
 
     'humandate':  (True, check_humandate,
                    'humandate invalid. Please use three-letter months like ' +
@@ -337,6 +295,7 @@ HANDLERS = {
 
     'eventbrite': (False, check_eventbrite, 'Eventbrite key appears invalid.'),
     'etherpad':   (False, check_etherpad, 'Etherpad URL appears invalid.'),
+
     'venue':      (False, check_pass, 'venue name not specified'),
     'address':    (False, check_pass, 'address not specified')
 }
