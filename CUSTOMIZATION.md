@@ -32,14 +32,14 @@ which must define the following values in its header:
     room number). The address should be all on one line.
 
 *   `country` must be a two-letter ISO-3166 code for the country in
-    which the workshop is going to take place, such as 'fr' (for
-    France) or 'nz' (for New Zealand) - see [Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)
+    which the workshop is going to take place, such as "fr" (for
+    France) or "nz" (for New Zealand) - see [Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)
     for a complete list.
 
 *   `language` is the language that will be used in the workshop.
     It must be an [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
     Note that two-letter codes mean different things for countries
-    and languages: 'ar' is Arabic when used for a language, but
+    and languages: "ar" is Arabic when used for a language, but
     Argentina when used for a country.
 
 *   `latlng` is the latitude and longitude of the workshop site (so we
@@ -84,7 +84,7 @@ The header may optionally define the following:
 *   `etherpad` is the URL for the Etherpad for your workshop.  If you are
     not using an Etherpad, you can delete this line.
 
-* `eventbrite` is the multi-digit Eventbrite registration key.  If you
+*   `eventbrite` is the multi-digit Eventbrite registration key.  If you
     are using Eventbrite, the Software Carpentry administraotrs will
     give this to you.  If you are using something else, you may delete
     this line.  Note: this value must be given as a string in double
