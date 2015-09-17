@@ -4,7 +4,7 @@ This repository is [Software Carpentry](http://software-carpentry.org)'s
 template for creating websites for workshops.
 
 1.  Do *not* fork this repository directly on GitHub.
-    Instead, please follow the instructions below
+    Instead, please use GitHub's importer following the instructions [below](#creating-a-repository)
     to create a website repository for your workshop.
 
 2.  Please *do your work in your repository's `gh-pages` branch*,
@@ -90,6 +90,8 @@ since [GitHub automatically publishes that as a website](https://help.github.com
     or you can clone the repository to your desktop,
     edit `index.html` there,
     and push your changes back to the repository.
+    Editing hints are embedded in `index.html`,
+    and full instructions are in [CUSTOMIZATION.md](CUSTOMIZATION.md).
 
 3.  Edit `_config.yml` in the same way
     so that `workshop_repo` and `workshop_site`
@@ -106,8 +108,7 @@ since [GitHub automatically publishes that as a website](https://help.github.com
     if your repository is `https://github.com/your_username/YYYY-MM-DD-site`,
     its website will be `http://your_username.github.io/YYYY-MM-DD-site`.
 
-Editing hints are embedded in `index.html`,
-and full instructions are in [CUSTOMIZATION.md](CUSTOMIZATION.md).
+Full instructions are available in [CUSTOMIZATION.md](CUSTOMIZATION.md).
 This [FAQ](FAQ.md) includes a few extra tips
 (additions are always welcome)
 and these notes on [the background and design](DESIGN.md) of this template may help as well.
