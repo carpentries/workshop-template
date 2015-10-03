@@ -10,9 +10,22 @@
     <title>Software Carpentry: {{ page.venue }}</title>
     {% include header.html %}
     <meta name="venue" content="{{page.venue}}" />
-    <meta name="date" content="{{page.humandate}}" />
+    <meta name="address" content="{{page.address}}" />
+    <meta name="country" content="{{page.country}}" />
+    <meta name="language" content="{{page.language}}" />
+    <meta name="latlng" content="{{page.latlng}}" />
+    <meta name="humandate" content="{{page.humandate}}" />
     <meta name="startdate" content="{{page.startdate}}" />
     <meta name="enddate" content="{{page.enddate}}" />
+    <meta name="instructor" content="{{page.instructor}}" />
+    <meta name="helper" content="{{page.helper}}" />
+    <meta name="contact" content="{{page.contact}}" />
+    {% if page.etherpad %}
+    <meta name="etherpad" content="{{page.etherpad}}" />
+    {% endif %}
+    {% if page.eventbrite %}
+    <meta name="eventbrite" content="{{page.eventbrite}}" />
+    {% endif %}
     {% if page.redirect %}
     <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
     {% endif %}
