@@ -129,14 +129,14 @@ def check_root(root):
 
 @look_for_fixme
 def check_country(country):
-    '''"country" must be an ISO-3166 two-letter code.'''
+    '''"country" must be a lowercase ISO-3166 two-letter code.'''
 
     return country in ISO_COUNTRY
 
 
 @look_for_fixme
 def check_language(language):
-    '''"language" must be an ISO-639 two-letter code.'''
+    '''"language" must be a lowercase ISO-639 two-letter code.'''
 
     return language in ISO_LANGUAGE
 
@@ -260,11 +260,11 @@ HANDLERS = {
     'root':       (True, check_root, 'root can only be "."'),
 
     'country':    (True, check_country,
-                   'country invalid: must use two-letter ISO code from ' +
-                   ', '.join(ISO_COUNTRY)),
-    'language' :  (False,  check_language,
-                   'language invalid: must use two-letter ISO code from ' +
-                   ', '.join(ISO_LANGUAGE)),
+                   'country invalid: must use lowercase two-letter ISO code ' +
+                   'from ' + ', '.join(ISO_COUNTRY)),
+    'language':   (False,  check_language,
+                   'language invalid: must use lowercase two-letter ISO code' +
+                   ' from ' + ', '.join(ISO_LANGUAGE)),
 
     'humandate':  (True, check_humandate,
                    'humandate invalid. Please use three-letter months like ' +
