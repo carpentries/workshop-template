@@ -181,3 +181,7 @@
     If you're using a browser plugin like [HTTPS Everywhere](https://www.eff.org/https-everywhere)
     you will need to disable it for your workshop's site.
     We are presently (January 2015) working to get HTTPS working properly on our website.
+
+*   *Help, my github.io website is not updating!*
+
+    Ensure that strings in the index.html header are enclosed in quotations `"`. Special characters such as `"&"` may render correctly on your local machine but cause rendering to fail (silently?) on GitHub.
