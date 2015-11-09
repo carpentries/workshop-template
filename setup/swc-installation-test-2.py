@@ -22,6 +22,25 @@ version of a particular dependency, and you just want to re-test that
 dependency.
 """
 
+# Some details about the implementation:
+
+# The dependencies are divided into a hierarchy of classes rooted on
+# Dependency class. You can refer to the code to see which package
+# comes under which type of dependency.
+
+# The CHECKER dictionary stores information about all the dependencies
+# and CHECKS stores list of the dependencies which are to be checked in
+# the current workshop.
+
+# In the "__name__ == '__main__'" block, we launch all the checks with
+# check() function, which prints information about the tests as they run
+# and details about the failures after the tests complete. In case of
+# failure, the functions print_system_info() and print_suggestions()
+# are called after this, where the former prints information about the
+# user's system for debugging purposes while the latter prints some
+# suggestions to follow.
+
+
 from __future__ import print_function  # for Python 2.6 compatibility
 
 import distutils.ccompiler as _distutils_ccompiler
@@ -50,6 +69,7 @@ try:  # Python 3.x
     import urllib.parse as _urllib_parse
 except ImportError:  # Python 2.x
     import urllib as _urllib_parse  # for quote()
+import xml.etree.ElementTree as _element_tree
 
 
 if not hasattr(_shlex, 'quote'):  # Python versions older than 3.3
@@ -95,10 +115,10 @@ CHECKS = [
     'scipy',
     'matplotlib',
     'pandas',
-    'sympy',
-    'Cython',
-    'networkx',
-    'mayavi.mlab',
+    #'sympy',
+    #'Cython',
+    #'networkx',
+    #'mayavi.mlab',
     ]
 
 CHECKER = {}
@@ -378,21 +398,11 @@ class Dependency (object):
         return tuple(parsed_version)
 
 
-class PythonDependency (Dependency):
-    def __init__(self, name='python', long_name='Python version',
-                 minimum_version=(2, 6), **kwargs):
-        super(PythonDependency, self).__init__(
-            name=name, long_name=long_name, minimum_version=minimum_version,
-            **kwargs)
-
-    def _get_version(self):
-        return _sys.version
-
-    def _get_parsed_version(self):
-        return _sys.version_info
-
-
-CHECKER['python'] = PythonDependency()
+class VirtualDependency (Dependency):
+    def _check(self):
+        return '{0} {1}'.format(
+            self.or_pass['dependency'].full_name(),
+            self.or_pass['version'])
 
 
 class CommandDependency (Dependency):
@@ -487,136 +497,62 @@ class CommandDependency (Dependency):
         return match.group(1)
 
 
-def _program_files_paths(*args):
-    "Utility for generating MS Windows search paths"
-    pf = _os.environ.get('ProgramFiles', '/usr/bin')
-    pfx86 = _os.environ.get('ProgramFiles(x86)', pf)
-    paths = [_os.path.join(pf, *args)]
-    if pfx86 != pf:
-        paths.append(_os.path.join(pfx86, *args))
-    return paths
-
-
-for command,long_name,minimum_version,paths in [
-        ('sh', 'Bourne Shell', None, None),
-        ('ash', 'Almquist Shell', None, None),
-        ('bash', 'Bourne Again Shell', None, None),
-        ('csh', 'C Shell', None, None),
-        ('ksh', 'KornShell', None, None),
-        ('dash', 'Debian Almquist Shell', None, None),
-        ('tcsh', 'TENEX C Shell', None, None),
-        ('zsh', 'Z Shell', None, None),
-        ('git', 'Git', (1, 7, 0), None),
-        ('hg', 'Mercurial', (2, 0, 0), None),
-        ('EasyMercurial', None, (1, 3), None),
-        ('pip', None, None, None),
-        ('sqlite3', 'SQLite 3', None, None),
-        ('nosetests', 'Nose', (1, 0, 0), None),
-        ('ipython', 'IPython script', (1, 0), None),
-        ('emacs', 'Emacs', None, None),
-        ('xemacs', 'XEmacs', None, None),
-        ('vim', 'Vim', None, None),
-        ('vi', None, None, None),
-        ('nano', 'Nano', None, None),
-        ('gedit', None, None, None),
-        ('kate', 'Kate', None, None),
-        ('notepad++', 'Notepad++', None,
-         _program_files_paths('Notepad++', 'notepad++.exe')),
-        ('firefox', 'Firefox', None,
-         _program_files_paths('Mozilla Firefox', 'firefox.exe')),
-        ('google-chrome', 'Google Chrome', None,
-         _program_files_paths('Google', 'Chrome', 'Application', 'chrome.exe')
-         ),
-        ('chromium', 'Chromium', None, None),
-        ]:
-    if not long_name:
-        long_name = command
-    CHECKER[command] = CommandDependency(
-        command=command, paths=paths, long_name=long_name,
-        minimum_version=minimum_version)
-del command, long_name, minimum_version, paths  # cleanup namespace
-
-
-class MakeDependency (CommandDependency):
-    makefile = '\n'.join([
-            'all:',
-            '\t@echo "MAKE_VERSION=$(MAKE_VERSION)"',
-            '\t@echo "MAKE=$(MAKE)"',
-            '',
-            ])
-
-    def _get_version(self):
-        try:
-            return super(MakeDependency, self)._get_version()
-        except DependencyError as e:
-            version_options = self.version_options
-            self.version_options = ['-f', '-']
-            try:
-                stream = self._get_version_stream(stdin=self.makefile)
-                info = {}
-                for line in stream.splitlines():
-                    try:
-                        key,value = line.split('=', 1)
-                    except ValueError as ve:
-                        raise e# from NotImplementedError(stream)
-                    info[key] = value
-                if info.get('MAKE_VERSION', None):
-                    return info['MAKE_VERSION']
-                elif info.get('MAKE', None):
-                    return None
-                raise e
-            finally:
-                self.version_options = version_options
-
-
-CHECKER['make'] = MakeDependency(command='make', minimum_version=None)
-
-
-class EasyInstallDependency (CommandDependency):
-    def _get_version(self):
-        try:
-            return super(EasyInstallDependency, self)._get_version()
-        except DependencyError as e:
-            version_stream = self.version_stream
-            try:
-                self.version_stream = 'stderr'
-                stream = self._get_version_stream(expect=(1,))
-                if 'option --version not recognized' in stream:
-                    return 'unknown (possibly Setuptools?)'
-            finally:
-                self.version_stream = version_stream
-
-
-CHECKER['easy_install'] = EasyInstallDependency(
-    command='easy_install', long_name='Setuptools easy_install',
-    minimum_version=None)
-
-
-CHECKER['py.test'] = CommandDependency(
-    command='py.test', version_stream='stderr',
-    minimum_version=None)
-
-
-class PathCommandDependency (CommandDependency):
+class VersionPlistCommandDependency (CommandDependency):
     """A command that doesn't support --version or equivalent options
 
-    On some operating systems (e.g. OS X), a command's executable may
-    be hard to find, or not exist in the PATH.  Work around that by
-    just checking for the existence of a characteristic file or
-    directory.  Since the characteristic path may depend on OS,
-    installed version, etc., take a list of paths, and succeed if any
-    of them exists.
+    On OS X, a command's executable may be hard to find, or not exist
+    in the PATH.  Work around that by looking up the version
+    information in the package's version.plist file.
     """
+    def __init__(self, key='CFBundleShortVersionString', **kwargs):
+        super(VersionPlistCommandDependency, self).__init__(**kwargs)
+        self.key = key
+
     def _get_command_version_stream(self, *args, **kwargs):
         raise NotImplementedError()
 
     def _get_version_stream(self, *args, **kwargs):
         raise NotImplementedError()
 
+    @staticmethod
+    def _get_parent(root, element):
+        """Returns the parent of this element or None for the root element
+        """
+        for node in root.iter():
+            if element in node:
+                return node
+        raise ValueError((root, element))
+
+    @classmethod
+    def _get_next(cls, root, element):
+        """Returns the following sibling of this element or None
+        """
+        parent = cls._get_parent(root=root, element=element)
+        siblings = iter(parent)
+        for node in siblings:
+            if node == element:
+                try:
+                    return next(siblings)
+                except StopIteration:
+                    return None
+        return None
+
+    def _get_version_from_plist(self, path):
+        """Parse the plist and return the value string for self.key
+        """
+        tree = _element_tree.parse(source=path)
+        data = {}
+        for key in tree.findall('.//key'):
+            value = self._get_next(root=tree, element=key)
+            if value.tag != 'string':
+                raise ValueError((tree, key, value))
+            data[key.text] = value.text
+        return data[self.key]
+
     def _get_version(self):
         for path in self.paths:
             if _os.path.exists(path):
-                return None
+                return self._get_version_from_plist(path=path)
         raise DependencyError(
             checker=self,
             message=(
@@ -624,139 +560,6 @@ class PathCommandDependency (CommandDependency):
                 ).format(
                 self.full_name(),
                 '\n    '.join(p for p in self.paths)))
-
-
-for paths,name,long_name in [
-        ([_os.path.join(_ROOT_PATH, 'Applications', 'Sublime Text 2.app')],
-         'sublime-text', 'Sublime Text'),
-        ([_os.path.join(_ROOT_PATH, 'Applications', 'TextMate.app')],
-         'textmate', 'TextMate'),
-        ([_os.path.join(_ROOT_PATH, 'Applications', 'TextWrangler.app')],
-         'textwrangler', 'TextWrangler'),
-        ([_os.path.join(_ROOT_PATH, 'Applications', 'Safari.app')],
-         'safari', 'Safari'),
-        ([_os.path.join(_ROOT_PATH, 'Applications', 'Xcode.app'),  # OS X >=1.7
-          _os.path.join(_ROOT_PATH, 'Developer', 'Applications', 'Xcode.app'
-                        )  # OS X 1.6,
-          ],
-         'xcode', 'Xcode'),
-        ]:
-    if not long_name:
-        long_name = name
-    CHECKER[name] = PathCommandDependency(
-        command=None, paths=paths, name=name, long_name=long_name)
-del paths, name, long_name  # cleanup namespace
-
-
-class PythonPackageDependency (Dependency):
-    def __init__(self, package, **kwargs):
-        if 'name' not in kwargs:
-            kwargs['name'] = package
-        if 'and_dependencies' not in kwargs:
-            kwargs['and_dependencies'] = []
-        if 'python' not in kwargs['and_dependencies']:
-            kwargs['and_dependencies'].append('python')
-        super(PythonPackageDependency, self).__init__(**kwargs)
-        self.package = package
-
-    def _get_version(self):
-        package = self._get_package(self.package)
-        return self._get_version_from_package(package)
-
-    def _get_package(self, package):
-        try:
-            return _importlib.import_module(package)
-        except ImportError as e:
-            raise DependencyError(
-                checker=self,
-                message="could not import the '{0}' package for {1}".format(
-                    package, self.full_name()),
-                )# from e
-
-    def _get_version_from_package(self, package):
-        try:
-            version = package.__version__
-        except AttributeError:
-            version = None
-        return version
-
-
-for package,name,long_name,minimum_version,and_dependencies in [
-        ('nose', None, 'Nose Python package',
-         CHECKER['nosetests'].minimum_version, None),
-        ('pytest', None, 'pytest Python package',
-         CHECKER['py.test'].minimum_version, None),
-        ('jinja2', 'jinja', 'Jinja', (2, 6), None),
-        ('zmq', 'pyzmq', 'PyZMQ', (2, 1, 4), None),
-        ('IPython', None, 'IPython Python package',
-         CHECKER['ipython'].minimum_version, ['jinja', 'tornado', 'pyzmq']),
-        ('argparse', None, 'Argparse', None, None),
-        ('numpy', None, 'NumPy', None, None),
-        ('scipy', None, 'SciPy', None, None),
-        ('matplotlib', None, 'Matplotlib', None, None),
-        ('pandas', None, 'Pandas', (0, 8), None),
-        ('sympy', None, 'SymPy', None, None),
-        ('Cython', None, None, None, None),
-        ('networkx', None, 'NetworkX', None, None),
-        ('mayavi.mlab', None, 'MayaVi', None, None),
-        ('setuptools', None, 'Setuptools', None, None),
-        ]:
-    if not name:
-        name = package
-    if not long_name:
-        long_name = name
-    kwargs = {}
-    if and_dependencies:
-        kwargs['and_dependencies'] = and_dependencies
-    CHECKER[name] = PythonPackageDependency(
-        package=package, name=name, long_name=long_name,
-        minimum_version=minimum_version, **kwargs)
-# cleanup namespace
-del package, name, long_name, minimum_version, and_dependencies, kwargs
-
-
-class MercurialPythonPackage (PythonPackageDependency):
-    def _get_version(self):
-        try:  # mercurial >= 1.2
-            package = _importlib.import_module('mercurial.util')
-        except ImportError as e:  # mercurial <= 1.1.2
-            package = self._get_package('mercurial.version')
-            return package.get_version()
-        else:
-            return package.version()
-
-
-CHECKER['mercurial'] = MercurialPythonPackage(
-    package='mercurial.util', name='mercurial',
-    long_name='Mercurial Python package',
-    minimum_version=CHECKER['hg'].minimum_version)
-
-
-class TornadoPythonPackage (PythonPackageDependency):
-    def _get_version_from_package(self, package):
-        return package.version
-
-    def _get_parsed_version(self):
-        package = self._get_package(self.package)
-        return package.version_info
-
-
-CHECKER['tornado'] = TornadoPythonPackage(
-    package='tornado', name='tornado', long_name='Tornado', minimum_version=(2, 0))
-
-
-class SQLitePythonPackage (PythonPackageDependency):
-    def _get_version_from_package(self, package):
-        return _sys.version
-
-    def _get_parsed_version(self):
-        return _sys.version_info
-
-
-CHECKER['sqlite3-python'] = SQLitePythonPackage(
-    package='sqlite3', name='sqlite3-python',
-    long_name='SQLite Python package',
-    minimum_version=CHECKER['sqlite3'].minimum_version)
 
 
 class UserTaskDependency (Dependency):
@@ -810,15 +613,315 @@ class EditorTaskDependency (UserTaskDependency):
                     ).format(contents, self.contents))
 
 
+class MakeDependency (CommandDependency):
+    makefile = '\n'.join([
+            'all:',
+            '\t@echo "MAKE_VERSION=$(MAKE_VERSION)"',
+            '\t@echo "MAKE=$(MAKE)"',
+            '',
+            ])
+
+    def _get_version(self):
+        try:
+            return super(MakeDependency, self)._get_version()
+        except DependencyError as e:
+            version_options = self.version_options
+            self.version_options = ['-f', '-']
+            try:
+                stream = self._get_version_stream(stdin=self.makefile)
+                info = {}
+                for line in stream.splitlines():
+                    try:
+                        key,value = line.split('=', 1)
+                    except ValueError as ve:
+                        raise e# from NotImplementedError(stream)
+                    info[key] = value
+                if info.get('MAKE_VERSION', None):
+                    return info['MAKE_VERSION']
+                elif info.get('MAKE', None):
+                    return None
+                raise e
+            finally:
+                self.version_options = version_options
+
+
+class EasyInstallDependency (CommandDependency):
+    def _get_version(self):
+        try:
+            return super(EasyInstallDependency, self)._get_version()
+        except DependencyError as e:
+            version_stream = self.version_stream
+            try:
+                self.version_stream = 'stderr'
+                stream = self._get_version_stream(expect=(1,))
+                if 'option --version not recognized' in stream:
+                    return 'unknown (possibly Setuptools?)'
+            finally:
+                self.version_stream = version_stream
+
+
+class PythonDependency (Dependency):
+    def __init__(self, name='python', long_name='Python version',
+                 minimum_version=(2, 6), **kwargs):
+        super(PythonDependency, self).__init__(
+            name=name, long_name=long_name, minimum_version=minimum_version,
+            **kwargs)
+
+    def _get_version(self):
+        return _sys.version
+
+    def _get_parsed_version(self):
+        return _sys.version_info
+
+
+class PythonPackageDependency (Dependency):
+    def __init__(self, package, **kwargs):
+        if 'name' not in kwargs:
+            kwargs['name'] = package
+        if 'and_dependencies' not in kwargs:
+            kwargs['and_dependencies'] = []
+        if 'python' not in kwargs['and_dependencies']:
+            kwargs['and_dependencies'].append('python')
+        super(PythonPackageDependency, self).__init__(**kwargs)
+        self.package = package
+
+    def _get_version(self):
+        package = self._get_package(self.package)
+        return self._get_version_from_package(package)
+
+    def _get_package(self, package):
+        try:
+            return _importlib.import_module(package)
+        except ImportError as e:
+            raise DependencyError(
+                checker=self,
+                message="could not import the '{0}' package for {1}".format(
+                    package, self.full_name()),
+                )# from e
+
+    def _get_version_from_package(self, package):
+        try:
+            version = package.__version__
+        except AttributeError:
+            version = None
+        return version
+
+
+class MercurialPythonPackage (PythonPackageDependency):
+    def _get_version(self):
+        try:  # mercurial >= 1.2
+            package = _importlib.import_module('mercurial.util')
+        except ImportError as e:  # mercurial <= 1.1.2
+            package = self._get_package('mercurial.version')
+            return package.get_version()
+        else:
+            return package.version()
+
+
+class TornadoPythonPackage (PythonPackageDependency):
+    def _get_version_from_package(self, package):
+        return package.version
+
+    def _get_parsed_version(self):
+        package = self._get_package(self.package)
+        return package.version_info
+
+
+class SQLitePythonPackage (PythonPackageDependency):
+    def _get_version_from_package(self, package):
+        return _sys.version
+
+    def _get_parsed_version(self):
+        return _sys.version_info
+
+
+def _program_files_paths(*args):
+    "Utility for generating MS Windows search paths"
+    pf = _os.environ.get('ProgramFiles', '/usr/bin')
+    pfx86 = _os.environ.get('ProgramFiles(x86)', pf)
+    paths = [_os.path.join(pf, *args)]
+    if pfx86 != pf:
+        paths.append(_os.path.join(pfx86, *args))
+    return paths
+
+
+CHECKER['python'] = PythonDependency()
+
+
+for command,long_name,minimum_version,paths in [
+        ('sh', 'Bourne Shell', None, None),
+        ('ash', 'Almquist Shell', None, None),
+        ('bash', 'Bourne Again Shell', None, None),
+        ('csh', 'C Shell', None, None),
+        ('ksh', 'KornShell', None, None),
+        ('dash', 'Debian Almquist Shell', None, None),
+        ('tcsh', 'TENEX C Shell', None, None),
+        ('zsh', 'Z Shell', None, None),
+        ('git', 'Git', (1, 7, 0), None),
+        ('hg', 'Mercurial', (2, 0, 0), None),
+        ('EasyMercurial', None, (1, 3), None),
+        ('pip', None, None, None),
+        ('sqlite3', 'SQLite 3', None, None),
+        ('nosetests', 'Nose', (1, 0, 0), None),
+        ('ipython', 'IPython script', (1, 0), None),
+        ('emacs', 'Emacs', None, None),
+        ('xemacs', 'XEmacs', None, None),
+        ('vim', 'Vim', None, None),
+        ('vi', None, None, None),
+        ('nano', 'Nano', None, None),
+        ('gedit', None, None, None),
+        ('kate', 'Kate', None, None),
+        ('notepad++', 'Notepad++', None,
+         _program_files_paths('Notepad++', 'notepad++.exe')),
+        ('firefox', 'Firefox', None,
+         _program_files_paths('Mozilla Firefox', 'firefox.exe')),
+        ('google-chrome', 'Google Chrome', None,
+         _program_files_paths('Google', 'Chrome', 'Application', 'chrome.exe')
+         ),
+        ('chromium', 'Chromium', None, None),
+        ]:
+    if not long_name:
+        long_name = command
+    CHECKER[command] = CommandDependency(
+        command=command, paths=paths, long_name=long_name,
+        minimum_version=minimum_version)
+del command, long_name, minimum_version, paths  # cleanup namespace
+
+
+CHECKER['make'] = MakeDependency(command='make', minimum_version=None)
+
+
+CHECKER['easy_install'] = EasyInstallDependency(
+    command='easy_install', long_name='Setuptools easy_install',
+    minimum_version=None)
+
+
+CHECKER['py.test'] = CommandDependency(
+    command='py.test', version_stream='stderr',
+    minimum_version=None)
+
+
+for paths,name,long_name in [
+        ([_os.path.join(_ROOT_PATH, 'Applications', 'Sublime Text 2.app',
+                        'Contents', 'version.plist')],
+         'sublime-text', 'Sublime Text'),
+        ([_os.path.join(_ROOT_PATH, 'Applications', 'TextMate.app',
+                        'Contents', 'version.plist')],
+         'textmate', 'TextMate'),
+        ([_os.path.join(_ROOT_PATH, 'Applications', 'TextWrangler.app',
+                        'Contents', 'version.plist')],
+         'textwrangler', 'TextWrangler'),
+        ([_os.path.join(_ROOT_PATH, 'Applications', 'Safari.app',
+                        'Contents', 'version.plist')],
+         'safari', 'Safari'),
+        ([_os.path.join(_ROOT_PATH, 'Applications', 'Xcode.app',
+                        'Contents', 'version.plist'),  # OS X >=1.7
+          _os.path.join(_ROOT_PATH, 'Developer', 'Applications', 'Xcode.app',
+                        'Contents', 'version.plist'),  # OS X 1.6,
+          ],
+         'xcode', 'Xcode'),
+        ]:
+    if not long_name:
+        long_name = name
+    CHECKER[name] = VersionPlistCommandDependency(
+        command=None, paths=paths, name=name, long_name=long_name)
+del paths, name, long_name  # cleanup namespace
+
+
+for package,name,long_name,minimum_version,and_dependencies in [
+        ('nose', None, 'Nose Python package',
+         CHECKER['nosetests'].minimum_version, None),
+        ('pytest', None, 'pytest Python package',
+         CHECKER['py.test'].minimum_version, None),
+        ('jinja2', 'jinja', 'Jinja', (2, 6), None),
+        ('zmq', 'pyzmq', 'PyZMQ', (2, 1, 4), None),
+        ('IPython', None, 'IPython Python package',
+         CHECKER['ipython'].minimum_version, [
+             'jinja',
+             'tornado',
+             'pyzmq',
+             VirtualDependency(
+                 name='virtual-browser-ipython',
+                 long_name='IPython-compatible web browser',
+                 or_dependencies=[
+                     CommandDependency(
+                         command=CHECKER['firefox'].command,
+                         paths=CHECKER['firefox'].paths,
+                         name='{0}-for-ipython'.format(
+                             CHECKER['firefox'].name),
+                         long_name='{0} for IPython'.format(
+                             CHECKER['firefox'].long_name),
+                         minimum_version=(6, 0)),
+                     CommandDependency(
+                         command=CHECKER['google-chrome'].command,
+                         paths=CHECKER['google-chrome'].paths,
+                         name='{0}-for-ipython'.format(
+                             CHECKER['google-chrome'].name),
+                         long_name='{0} for IPython'.format(
+                             CHECKER['google-chrome'].long_name),
+                         minimum_version=(13, 0)),
+                     CommandDependency(
+                         command=CHECKER['chromium'].command,
+                         paths=CHECKER['chromium'].paths,
+                         name='{0}-for-ipython'.format(
+                             CHECKER['chromium'].name),
+                         long_name='{0} for IPython'.format(
+                             CHECKER['chromium'].long_name),
+                         minimum_version=(13, 0)),
+                     VersionPlistCommandDependency(
+                         command=CHECKER['safari'].command,
+                         paths=CHECKER['safari'].paths,
+                         key=CHECKER['safari'].key,
+                         name='{0}-for-ipython'.format(
+                             CHECKER['safari'].name),
+                         long_name='{0} for IPython'.format(
+                             CHECKER['safari'].long_name),
+                         minimum_version=(5, 0)),
+                 ]),
+         ]),
+        ('argparse', None, 'Argparse', None, None),
+        ('numpy', None, 'NumPy', None, None),
+        ('scipy', None, 'SciPy', None, None),
+        ('matplotlib', None, 'Matplotlib', None, None),
+        ('pandas', None, 'Pandas', (0, 8), None),
+        ('sympy', None, 'SymPy', None, None),
+        ('Cython', None, None, None, None),
+        ('networkx', None, 'NetworkX', None, None),
+        ('mayavi.mlab', None, 'MayaVi', None, None),
+        ('setuptools', None, 'Setuptools', None, None),
+        ]:
+    if not name:
+        name = package
+    if not long_name:
+        long_name = name
+    kwargs = {}
+    if and_dependencies:
+        kwargs['and_dependencies'] = and_dependencies
+    CHECKER[name] = PythonPackageDependency(
+        package=package, name=name, long_name=long_name,
+        minimum_version=minimum_version, **kwargs)
+# cleanup namespace
+del package, name, long_name, minimum_version, and_dependencies, kwargs
+
+
+CHECKER['mercurial'] = MercurialPythonPackage(
+    package='mercurial.util', name='mercurial',
+    long_name='Mercurial Python package',
+    minimum_version=CHECKER['hg'].minimum_version)
+
+
+CHECKER['tornado'] = TornadoPythonPackage(
+    package='tornado', name='tornado', long_name='Tornado', minimum_version=(2, 0))
+
+
+CHECKER['sqlite3-python'] = SQLitePythonPackage(
+    package='sqlite3', name='sqlite3-python',
+    long_name='SQLite Python package',
+    minimum_version=CHECKER['sqlite3'].minimum_version)
+
+
 CHECKER['other-editor'] = EditorTaskDependency(
     name='other-editor', long_name='')
-
-
-class VirtualDependency (Dependency):
-    def _check(self):
-        return '{0} {1}'.format(
-            self.or_pass['dependency'].full_name(),
-            self.or_pass['version'])
 
 
 for name,long_name,dependencies in [
