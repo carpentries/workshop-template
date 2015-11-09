@@ -115,10 +115,10 @@ CHECKS = [
     'scipy',
     'matplotlib',
     'pandas',
-    'sympy',
-    'Cython',
-    'networkx',
-    'mayavi.mlab',
+    #'sympy',
+    #'Cython',
+    #'networkx',
+    #'mayavi.mlab',
     ]
 
 CHECKER = {}
