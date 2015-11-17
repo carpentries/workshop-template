@@ -9,10 +9,18 @@
   <head>
     <title>Software Carpentry: {{ page.venue }}</title>
     {% include header.html %}
-    <meta name="venue" content="{{page.venue}}" />
-    <meta name="date" content="{{page.humandate}}" />
+    <meta name="slug" content="{{site.github.project_title}}" />
     <meta name="startdate" content="{{page.startdate}}" />
     <meta name="enddate" content="{{page.enddate}}" />
+    <meta name="country" content="{{page.country}}" />
+    <meta name="venue" content="{{page.venue}}" />
+    <meta name="address" content="{{page.address}}" />
+    <meta name="latlng" content="{{page.latlng}}" />
+    <meta name="language" content="{{page.language}}" />
+    <meta name="eventbrite" content="{{page.eventbrite}}" />
+    <meta name="instructor" content="{{page.instructor|join:','}}" />
+    <meta name="helper" content="{{page.helper|join:','}}" />
+    <meta name="contact" content="{{page.contact}}" />
     {% if page.redirect %}
     <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
     {% endif %}
