@@ -43,7 +43,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 </iframe>
 {% endif %}
 
-<h2>General Information</h2>
+<h2 id="general">General Information</h2>
 
 <!--
   INTRODUCTION
@@ -75,7 +75,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   Explain who your audience is.  (In particular, tell readers if the
   workshop is only open to people from a particular institution.
 -->
-<p>
+<p id="who">
   <strong>Who:</strong>
   The course is aimed at graduate students and other researchers.
   <strong>You don't need to have any previous knowledge of the tools that will
@@ -91,7 +91,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   address.
 -->
 {% if page.latlng %}
-<p>
+<p id="where">
   <strong>Where:</strong>
   {{page.address}}.
   Get directions with
@@ -106,7 +106,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 
   Modify the block below if there are any special requirements.
 -->
-<p>
+<p id="requirements">
   <strong>Requirements:</strong> Participants must bring a laptop with
   a few specific software packages installed (listed
   <a href="#setup">below</a>). They are also required to abide by
@@ -121,7 +121,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   isn't set in the header, the Software Carpentry admin address is
   used.
 -->
-<p>
+<p id="contact">
   <strong>Contact</strong>:
   Please mail
   {% if page.contact %}
@@ -141,7 +141,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   to match your plans.  You may also want to change 'Day 1' and 'Day
   2' to be actual dates or days of the week.
 -->
-<h2>Schedule</h2>
+<h2 id="schedule">Schedule</h2>
 
 <div class="row">
   <div class="col-md-6">
@@ -185,7 +185,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   e.g., '2015-06-10-esu'.
 -->
 {% if page.etherpad %}
-<p>
+<p id="etherpad">
   <strong>Etherpad:</strong> <a href="{{page.etherpad}}">{{page.etherpad}}</a>.
   <br/>
   We will use this Etherpad for chatting, taking notes, and sharing URLs and bits of code.
@@ -211,11 +211,11 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   please preview your site before committing, and make sure to run
   'tools/check' as well.
 -->
-<h2>Syllabus</h2>
+<h2 id="syllabus">Syllabus</h2>
 
 <div class="row">
   <div class="col-md-6">
-    <h3>The Unix Shell</h3>
+    <h3 id="syllabus-shell">The Unix Shell</h3>
     <ul>
       <li>Files and directories</li>
       <li>History and tab completion</li>
@@ -227,7 +227,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
     </ul>
   </div>
   <div class="col-md-6">
-    <h3>Programming in Python</h3>
+    <h3 id="syllabus-python">Programming in Python</h3>
     <ul>
       <li>Using libraries</li>
       <li>Working with arrays</li>
@@ -241,7 +241,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   </div>
   <!--
   <div class="col-md-6">
-    <h3>Programming in R</h3>
+    <h3 id="syllabus-r">Programming in R</h3>
     <ul>
       <li>Working with vectors and data frames</li>
       <li>Reading and plotting data</li>
@@ -254,7 +254,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   -->
   <!--
   <div class="col-md-6">
-    <h3>Programming in MATLAB</h3>
+    <h3 id="syllabus-matlab">Programming in MATLAB</h3>
     <ul>
       <li>Working with arrays</li>
       <li>Reading and plotting data</li>
@@ -269,7 +269,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 
 <div class="row">
   <div class="col-md-6">
-    <h3>Version Control with Git</h3>
+    <h3 id="syllabus-git">Version Control with Git</h3>
     <ul>
       <li>Creating a repository</li>
       <li>Recording changes to files: <code>add</code>, <code>commit</code>, ...</li>
@@ -283,7 +283,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
     </ul>
   </div>
   <div class="col-md-6">
-    <h3>Managing Data with SQL</h3>
+    <h3 id="syllabus-sql">Managing Data with SQL</h3>
     <ul>
       <li>Reading and sorting data</li>
       <li>Filtering with <code>where</code></li>
