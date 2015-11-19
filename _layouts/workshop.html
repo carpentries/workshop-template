@@ -18,16 +18,8 @@
     <meta name="latlng" content="{{page.latlng}}" />
     <meta name="language" content="{{page.language}}" />
     <meta name="eventbrite" content="{{page.eventbrite}}" />
-    {% if page.instructor == "FIXME" %}
-    <meta name="instructor" content="{{page.instructor}}" />
-    {% else %}
     <meta name="instructor" content="{{page.instructor|join:'|'}}" />
-    {% endif %}
-    {% if page.helper == "FIXME" %}
-    <meta name="helper" content="{{page.helper}}" />
-    {% else %}
     <meta name="helper" content="{{page.helper|join:'|'}}" />
-    {% endif %}
     <meta name="contact" content="{{page.contact}}" />
     {% if page.redirect %}
     <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
