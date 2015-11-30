@@ -24,7 +24,7 @@ which must define the following values in its header:
 
 *   `venue` is the short name of the institution or group hosting the
     workshop, like "Euphoric State University".  It should *not*
-    include the address or other details, since this value is 
+    include the address or other details, since this value is
     displayed in a table on the main
     [Software Carpentry](http://software-carpentry.org) website.
 
@@ -127,3 +127,29 @@ packages.  If you don't want to support a particular package (e.g. if
 you have no Emacs experience and don't want to be responsible for
 students who show up with Emacs as their only editor), you can comment
 out that particular `or_dependency`.
+
+## Updating the repository
+
+If for some reason you need to get changes from this repository
+into the clone of it with your workshop page,
+please follow the steps bellow:
+
+1.  Add the template repository as upstream:
+
+        $ git remote add upstream git@github.com:swcarpentry/workshop-template.git
+
+2.  Fetch the data:
+
+        $ git fetch upstream
+
+3.  Merge the new changes:
+
+        $ git merge upstream/gh-pages
+
+4.  If get any conflicts, solve it and
+
+        $ git commit -a
+
+5.  Push the changes to GitHub:
+
+        $ git push origin gh-pages
