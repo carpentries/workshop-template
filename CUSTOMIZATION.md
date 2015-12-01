@@ -130,15 +130,19 @@ out that particular `or_dependency`.
 
 ## Updating the repository
 
-If for some reason you need to get changes from this repository
+If for some reason,
+such as the installation instructions having become disconnected
+with the current lesson material,
+you need to get changes from this repository
 into the clone of it with your workshop page,
 please follow the steps bellow:
 
-1.  Add the template repository as upstream:
+1.  Add the workshop-template repository as upstream:
 
-        $ git remote add upstream git@github.com:swcarpentry/workshop-template.git
+        $ git remote add upstream https://github.com/swcarpentry/workshop-template.git
 
-2.  Fetch the data:
+2.  Fetch the data from upstream repository (also know as the workshop-template
+    repository):
 
         $ git fetch upstream
 
@@ -146,7 +150,7 @@ please follow the steps bellow:
 
         $ git merge upstream/gh-pages
 
-4.  If get any conflicts, solve it and
+4.  When get conflicts, solve it and
 
         $ git commit -a
 
