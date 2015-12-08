@@ -1285,14 +1285,14 @@ $table-even-row-bg: $grey-1;
 
 // These control the table head styles
 $table-head-bg: $grey-2;
-// $table-head-font-size: rem-calc(14);
+$table-head-font-size: 1em;
 // $table-head-font-color: $jet;
 // $table-head-font-weight: $font-weight-bold;
 // $table-head-padding: rem-calc(8 10 10);
 
 // These control the row padding and font styles
 // $table-row-padding: rem-calc(9 10);
-// $table-row-font-size: rem-calc(14);
+$table-row-font-size: 1em;
 // $table-row-font-color: $jet;
 // $table-line-height: rem-calc(18);
 
