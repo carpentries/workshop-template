@@ -1,0 +1,20 @@
+---
+# Use this layout for generic pages in the workshop website.
+# Use 'workshop.html' for the workshop home page.
+# Remember to set the variable 'root' in the header of the actual page.
+---
+<!doctype html>
+<html lang="en">
+<head>
+{% include newincludes/head.html %}
+</head>
+<body id="top-of-page">{% include github-ribbon.html %}
+{% include newincludes/header.html %}
+  <div class="row">
+    <div class="medium-12 columns">
+      {{ content }}
+    </div>
+  </div>
+{% include newincludes/footer.html %}
+</body>
+</html>

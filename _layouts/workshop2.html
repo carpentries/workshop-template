@@ -1,46 +1,32 @@
 ---
+# Use this layout for the home page for the workshop website.
+# Use 'page.html' for other pages.
 ---
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Software Carpentry</title>
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/swc/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/swc/swc.css" />
-  <script src="{{ site.baseurl }}/assets/js/modernizr.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
-  <script>WebFont.load({ google: { families: [ 'Lato:400,700,400italic:latin', 'Volkhov::latin' ] } });</script>
-  <noscript>
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Volkhov' rel='stylesheet' type='text/css' />
-  </noscript>
-  <meta name="description" content="Software Carpentry is volunteer non-profit organization dedicated to teaching basic computing skills to researchers." />
+  {% include newincludes/head.html %}
+  <meta name="slug" content="{{site.github.project_title}}" />
+  <meta name="startdate" content="{{page.startdate}}" />
+  <meta name="enddate" content="{{page.enddate}}" />
+  <meta name="country" content="{{page.country}}" />
+  <meta name="venue" content="{{page.venue}}" />
+  <meta name="address" content="{{page.address}}" />
+  <meta name="latlng" content="{{page.latlng}}" />
+  <meta name="language" content="{{page.language}}" />
+  <meta name="eventbrite" content="{{page.eventbrite}}" />
+  <meta name="instructor" content="{{page.instructor|join:'|'}}" />
+  <meta name="helper" content="{{page.helper|join:'|'}}" />
+  <meta name="contact" content="{{page.contact}}" />
+  {% if page.redirect %}
+  <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
+  {% endif %}
 </head>
 <body id="top-of-page">{% include github-ribbon.html %}
-<div id="navigation" class="sticky">
-  <nav class="top-bar show-for-small-only" role="navigation" data-topbar="">
-    <ul class="title-area">
-      <li class="name">
-      <h1 class=""><a href="http://dev.software-carpentry.org"> Software Carpentry</a></h1>
-    </li>
-    </ul>
-  </nav>
-</div>
-  <div id="masthead-no-image-header">
-    <div class="row">
-      <div class="small-6 columns">
-        <a id="logo" href="http://dev.software-carpentry.org" title="Software Carpentry – Teaching Lab Skills for Scientific Computing">
-          <img src="http://swctasks.github.io/styles/assets/img/swc/swc-logo-white.svg" alt="Software Carpentry – Teaching Lab Skills for Scientific Computing">
-        </a>
-      </div>
-      <div class="small-6 columns">
-        <h3 class="masthead">Teaching basic lab skills<br/>for research computing</h3>
-      </div>
-    </div><!-- /.row -->
-  </div><!-- /#masthead -->
+  {% include newincludes/header.html %}
   <div class="row">
     <div class="medium-12 columns">
-      <h2><a href="{{ site.swc_site }}/workshops">Workshops</a>  &gt; {{page.venue}}</h2>
+      <h2 class="t30"><a href="{{ site.swc_site }}/workshops">Workshops</a>  &gt; {{page.venue}}</h2>
       <div class="row">
         <div class="medium-6 columns">
           <p>{{page.humandate}}</p>
@@ -65,33 +51,11 @@
       </div>
     </div>
   </div>
-
   <div class="row">
     <div class="medium-12 columns">
       {{ content }}
     </div>
   </div>
-
-  <div id="up-to-top" class="row">
-    <div class="small-12 columns" style="text-align: right;">
-      <a class="iconfont" href="#top-of-page"></a>
-    </div><!-- /.small-12.columns -->
-  </div>
-
-
-<footer id="footer-content" class="bg-grau">
-  <div id="footer">
-    <div class="row">
-      <div class="medium-6 large-5 columns">
-        <h5 class="shadow-black">About This Site</h5>
-        <p class="shadow-black">
-          Software Carpentry is volunteer non-profit organization dedicated to teaching basic computing skills to researchers.
-          <a href="http://dev.software-carpentry.org/about/">More ›</a>
-        </p>
-      </div><!-- /.large-6.columns -->
-    </div><!-- /.row -->
-  </div><!-- /#footer -->
-</footer>
-
+{% include newincludes/footer.html %}
 </body>
 </html>
