@@ -25,3 +25,23 @@ kramdown        :
   entity_output : as_input # &mdash; is output as &mdash;
   smart_quotes  : [39, 39, 34, 34] # decimal for left/right single/double quotes
 exclude         : [tools]
+
+#############################################
+# Assets configuration
+#############################################
+
+# extensionless url allows to automatically switch
+# to current page protocol (http or https)
+# to avoid mixed content problems
+# distant-assets-url: "//swcarpentry.github.io/styles/"
+
+# repository url
+# NO TRAILING SLASH
+distantAssetsUrl: "http://swctasks.github.io"
+
+# path : "/styles"
+# NO TRAILING SLASH
+# Leave empty if assets are at the root of the domain
+distantAssetsPath: "/styles/assets"
+
+baseurl: "/workshop-template"
