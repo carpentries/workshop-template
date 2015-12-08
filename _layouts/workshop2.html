@@ -1,0 +1,97 @@
+---
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software Carpentry</title>
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/swc/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/swc/swc.css" />
+  <script src="{{ site.baseurl }}/assets/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>WebFont.load({ google: { families: [ 'Lato:400,700,400italic:latin', 'Volkhov::latin' ] } });</script>
+  <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Volkhov' rel='stylesheet' type='text/css' />
+  </noscript>
+  <meta name="description" content="Software Carpentry is volunteer non-profit organization dedicated to teaching basic computing skills to researchers." />
+</head>
+<body id="top-of-page">{% include github-ribbon.html %}
+<div id="navigation" class="sticky">
+  <nav class="top-bar show-for-small-only" role="navigation" data-topbar="">
+    <ul class="title-area">
+      <li class="name">
+      <h1 class=""><a href="http://dev.software-carpentry.org"> Software Carpentry</a></h1>
+    </li>
+    </ul>
+  </nav>
+</div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-6 columns">
+        <a id="logo" href="http://dev.software-carpentry.org" title="Software Carpentry – Teaching Lab Skills for Scientific Computing">
+          <img src="http://swctasks.github.io/styles/assets/img/swc/swc-logo-white.svg" alt="Software Carpentry – Teaching Lab Skills for Scientific Computing">
+        </a>
+      </div>
+      <div class="small-6 columns">
+        <h3 class="masthead">Teaching basic lab skills<br/>for research computing</h3>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /#masthead -->
+  <div class="row">
+    <div class="medium-12 columns">
+      <h2><a href="{{ site.swc_site }}/workshops">Software Carpentry Workshops</a>  &gt; {{page.venue}}</h2>
+      <div class="row">
+        <div class="medium-6 columns">
+          <p>{{page.humandate}}</p>
+          <p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
+        </div>
+        <div class="medium-6 columns">
+          <p>
+          <strong>Instructors:</strong>
+          {% if page.instructor %}
+          {{page.instructor | join: ', ' %}}
+          {% else %}
+          to be announced.
+          {% endif %}
+          </p>
+          {% if page.helper %}
+          <p>
+          <strong>Helpers:</strong>
+          {{page.helper | join: ', ' %}}
+          </p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      {{ content }}
+    </div>
+  </div>
+
+  <div id="up-to-top" class="row">
+    <div class="small-12 columns" style="text-align: right;">
+      <a class="iconfont" href="#top-of-page"></a>
+    </div><!-- /.small-12.columns -->
+  </div>
+
+
+<footer id="footer-content" class="bg-grau">
+  <div id="footer">
+    <div class="row">
+      <div class="medium-6 large-5 columns">
+        <h5 class="shadow-black">About This Site</h5>
+        <p class="shadow-black">
+          Software Carpentry is volunteer non-profit organization dedicated to teaching basic computing skills to researchers.
+          <a href="http://dev.software-carpentry.org/about/">More ›</a>
+        </p>
+      </div><!-- /.large-6.columns -->
+    </div><!-- /.row -->
+  </div><!-- /#footer -->
+</footer>
+
+</body>
+</html>
