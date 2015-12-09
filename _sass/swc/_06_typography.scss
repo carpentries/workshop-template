@@ -178,10 +178,13 @@ pre code {
 }
 
 code {
-    font-size: rem-calc(14);
-    line-height: 1.5;
+    padding: 2px 4px;
+    font-size: 90%;
+    background-color: #F9F2F4;
+    border-radius: 4px;
+    border: none;
+    font-family: "Courier New",monospace;
 }
-
 
 
 /* Lists
