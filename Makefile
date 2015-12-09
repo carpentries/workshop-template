@@ -8,11 +8,7 @@ commands :
 
 ## serve      : run a local server.
 serve :
-	bundle exec jekyll serve --config _config.yml,_config_dev.yml
-
-## offline    : run a local server FOR OFFLINE USE with fallback assets
-offline :
-	bundle exec jekyll serve --config _config.yml,_config_dev.yml,_config_offline.yml
+	bundle exec jekyll serve --config _config.yml
 
 ## build      : build files but do not run a server.
 build :
