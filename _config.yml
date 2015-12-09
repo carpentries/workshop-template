@@ -43,5 +43,3 @@ distantAssetsUrl: "http://swctasks.github.io"
 # NO TRAILING SLASH
 # Leave empty if assets are at the root of the domain
 distantAssetsPath: "/styles/assets"
-
-baseurl: "/workshop-template"
