@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Testing Setup
-root: ..
 ---
 
 This directory contains scripts for testing your machine to make sure

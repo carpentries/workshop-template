@@ -121,13 +121,6 @@ def check_layout(layout):
 
 
 @look_for_fixme
-def check_root(root):
-    '''"root" (the path from this page to the root directory) must be "."'''
-
-    return root == '.'
-
-
-@look_for_fixme
 def check_country(country):
     '''"country" must be a lowercase ISO-3166 two-letter code.'''
 
