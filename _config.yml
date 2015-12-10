@@ -2,6 +2,15 @@
 # Values for this workshop - EDIT THIS SECTION.
 #--------------------------------------------------------------------------------
 workshop_repo   : "http://github.com/swcarpentry/workshop-template"
+
+# Your web site url. eg: http://mysite.com
+# NO trailing slash
+url: "http://swctasks.github.io"
+# Your web site relative path from domain. eg: /folder
+# NO trailing slash
+baseurl: "/workshop-template"
+
+# DEPRECATED it's now derived from "url" and "baseurl"
 workshop_site   : "http://swcarpentry.github.io/workshop-template"
 #--------------------------------------------------------------------------------
 # Standard Software Carpentry settings - should not need to be modified.
@@ -17,6 +26,26 @@ swc_twitter     : "http://twitter.com/swcarpentry"
 swc_vm          : "https://docs.google.com/uc?id=0B4Kr6DYkzkQtSTZLQzF4aVB4NDQ&export=download"
 swc_pre_survey  : "https://www.surveymonkey.com/r/swc_pre_workshop_v1?workshop_id="
 swc_post_survey : "https://www.surveymonkey.com/r/swc_post_workshop_v1?workshop_id="
+
+
+#############################################
+# Assets configuration
+#############################################
+
+# extensionless url allows to automatically switch
+# to current page protocol (http or https)
+# to avoid mixed content problems
+# distant-assets-url: "//swcarpentry.github.io/styles/"
+
+# repository url
+# NO TRAILING SLASH
+distantAssetsUrl: "//swctasks.github.io"
+
+# path : "/styles"
+# NO TRAILING SLASH
+# Leave empty if assets are at the root of the domain
+distantAssetsPath: "/styles/assets"
+
 #--------------------------------------------------------------------------------
 # Settings for Jekyll - should not need to be modified.
 #--------------------------------------------------------------------------------
@@ -59,3 +88,20 @@ socialmedia:
       url: https://www.youtube.com/user/softwarecarpentry
       class: icon-youtube
       title: "Software Carpentry Videos"
+
+services:
+  - name: "Contact"
+    url: "/contact/"
+    title: "Contact"
+
+  - name: "RSS"
+    url: "/feed.xml"
+    title: "Subscribe to RSS Feed"
+
+  - name: "sitemap.xml"
+    url: "/sitemap.xml"
+    title: "Sitemap for Google Webmaster Tools"
+
+  - name: "License"
+    url: "/license/"
+    title: "License"

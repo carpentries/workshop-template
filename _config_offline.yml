@@ -1,0 +1,8 @@
+# Use this script when you are offline
+# with the command : bundle exec jekyll serve --config _config.yml,_config_dev.yml,_config_offline.yml
+# or
+# if you have python : make offline
+
+# when developing offline we fallback to local styles
+
+fallbackAssets: "/assets-fallback"
