@@ -1,6 +1,5 @@
 ---
 layout: page
-root: .
 title: Licenses
 ---
 ## Instructional Material

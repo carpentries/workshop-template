@@ -1,0 +1,11 @@
+{% comment %}
+Here we choose which assets we load distant or fallback (for offline use)
+In development the server is started with make serve and then,
+_config_dev.yml overrides _config.yml variables.
+It also creates a -site.fallbackAssets- variable
+
+fallbackAssets: "/assets-fallback"
+
+This setup is made here to be accessible globally, including includes files
+
+{% endcomment %}<!-- site.distantAssetsPath : {{ site.distantAssetsPath }} - site.distantAssetsUrl : {{ site.distantAssetsUrl }} - site.fallbackAssets : {{ site.fallbackAssets }}-->{% if site.fallbackAssets == NULL %}{% capture assetsFullPath %}{{ site.distantAssetsUrl }}{{ site.distantAssetsPath }}{% endcapture %}<!-- use DISTANT ASSETS  at {{ assetsFullPath }} -->{% else %}{% assign assetsFullPath = site.fallbackAssets %}<!-- use FALLBACK ASSETS at {{ assetsFullPath }} -->{% endif %}

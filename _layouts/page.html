@@ -1,29 +1,20 @@
 ---
+# Use this layout for generic pages in the workshop website.
+# Use 'workshop.html' for the workshop home page.
 ---
-<!DOCTYPE html>
-<!--
-  Use this layout for generic pages in the workshop website.
-  Use 'workshop.html' for the workshop home page.
-
-  Remember to set the variable 'root' in the header of the actual page.
--->
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Software Carpentry: {{ page.venue }}</title>
-    {% include header.html %}
-  </head>
-  <body class="workshop">
-    {% include github-ribbon.html %}
-    <div class="container card">
-      {% include banner.html %}
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          {{content}}
-        </div>
-        {% include footer.html %}
-      </div>
+<!doctype html>
+<html lang="en">
+<head>
+{% include head.html %}
+</head>
+<body id="top-of-page">{% include github-ribbon.html %}
+{% include header.html %}
+  <div class="row">
+    <div class="medium-12 columns">
+      {{ content }}
     </div>
-    {% include javascript.html %}
-  </body>
+  </div>
+{% include footer.html %}
+{% include javascript.html %}
+</body>
 </html>

@@ -1,6 +1,5 @@
 ---
 layout: workshop
-root: .
 venue: FIXME      # brief name of host site without address (e.g., "Euphoric State University")
 address: FIXME    # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
 country: FIXME    # country (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_3166-1)
@@ -144,7 +143,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 <h2 id="schedule">Schedule</h2>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="medium-6 columns">
     <h3>Day 1</h3>
     <table class="table table-striped">
       <tr> <td>Arrival</td>  <td><a href='{{ site.swc_pre_survey }}{{ site.github.project_title }}'>Pre-workshop Survey</a></td> </tr>
@@ -156,7 +155,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
     </table>
   </div>
-  <div class="col-md-6">
+  <div class="medium-6 columns">
     <h3>Day 2</h3>
     <table class="table table-striped">
       <tr> <td>09:00</td>  <td>Version control with Git</td> </tr>
@@ -204,7 +203,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   2. Some workshops will delete SQL.
   3. Please make sure the list of topics is synchronized with what you
      intend to teach.
-  4. You may need to move the div's with class="col-md-6" around inside
+  4. You may need to move the div's with class="medium-6 columns" around inside
      the div's with class="row" to balance the multi-column layout.
 
   This is one of the places where people frequently make mistakes, so
@@ -214,7 +213,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 <h2 id="syllabus">Syllabus</h2>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="medium-6 columns">
     <h3 id="syllabus-shell">The Unix Shell</h3>
     <ul>
       <li>Files and directories</li>
@@ -226,7 +225,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <li><a href="{{site.swc_githubio}}/shell-novice/reference.html">Reference...</a></li>
     </ul>
   </div>
-  <div class="col-md-6">
+  <div class="medium-6 columns">
     <h3 id="syllabus-python">Programming in Python</h3>
     <ul>
       <li>Using libraries</li>
@@ -240,7 +239,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
     </ul>
   </div>
   <!--
-  <div class="col-md-6">
+  <div class="medium-6 columns">
     <h3 id="syllabus-r">Programming in R</h3>
     <ul>
       <li>Working with vectors and data frames</li>
@@ -253,7 +252,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   </div>
   -->
   <!--
-  <div class="col-md-6">
+  <div class="medium-6 columns">
     <h3 id="syllabus-matlab">Programming in MATLAB</h3>
     <ul>
       <li>Working with arrays</li>
@@ -268,7 +267,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 </div>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="medium-6 columns">
     <h3 id="syllabus-git">Version Control with Git</h3>
     <ul>
       <li>Creating a repository</li>
@@ -282,7 +281,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <li><a href="{{site.swc_githubio}}/git-novice/reference.html">Reference...</a></li>
     </ul>
   </div>
-  <div class="col-md-6">
+  <div class="medium-6 columns">
     <h3 id="syllabus-sql">Managing Data with SQL</h3>
     <ul>
       <li>Reading and sorting data</li>
@@ -334,7 +333,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   </p>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="shell-windows">Windows</h4>
       <ol>
         <li>Download the Git for Windows <a href="https://git-for-windows.github.io/">installer</a>.</li>
@@ -382,7 +381,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       </ol>
       <p>This will provide you with both Git and Bash in the Git Bash program.</p>
     </div>
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="shell-macosx">Mac OS X</h4>
       <p>
         The default shell in all versions of Mac OS X is Bash, so no
@@ -392,7 +391,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
         Terminal in your dock for this workshop.
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="shell-linux">Linux</h4>
       <p>
         The default shell is usually Bash, but if your
@@ -419,14 +418,14 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   </p>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="git-windows">Windows</h4>
       <p>
         Git should be installed on your computer as part of your Bash
         install (described above).
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="git-macosx">Mac OS X</h4>
       <p>
         <strong>For OS X 10.9 and higher</strong>, install Git for Mac
@@ -439,7 +438,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
         <a href="http://sourceforge.net/projects/git-osx-installer/files/">available here</a>.
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="git-linux">Linux</h4>
       <p>
         If Git is not already available on your machine you can try to
@@ -465,7 +464,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   </p>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="editor-windows">Windows</h4>
       <p>
         nano is a basic editor and the default that instructors use in the workshop.
@@ -483,7 +482,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
         Please ask your instructor to help you do this.
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="editor-macosx">Mac OS X</h4>
       <p>
         nano is a basic editor and the default that instructors use in the workshop.
@@ -495,7 +494,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
         <a href="http://www.sublimetext.com/">Sublime Text</a>.
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="editor-linux">Linux</h4>
       <p>
         nano is a basic editor and the default that instructors use in the workshop.
@@ -543,7 +542,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
     </p>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="python-windows">Windows</h4>
       <ol>
         <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
@@ -551,7 +550,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
         <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Make Anaconda the default Python</strong>.</li>
       </ol>
     </div>
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="python-macosx">Mac OS X</h4>
       <ol>
         <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
@@ -559,7 +558,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
         <li>Install Python 3 using all of the defaults for installation.</li>
       </ol>
     </div>
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="python-linux">Linux</h4>
       </p>
       <ol>
@@ -607,7 +606,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   </p>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="r-windows">Windows</h4>
       <p>
         Install R by downloading and running
@@ -617,7 +616,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
         <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="r-macosx">Mac OS X</h4>
       <p>
         Install R by downloading and running
@@ -627,7 +626,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
         <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="r-linux">Linux</h4>
       <p>
         You can download the binary files for your distribution
@@ -651,7 +650,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   </p>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="sql-windows">Windows</h4>
       <p>
         The <a href="{{site.swc_github}}/windows-installer">Software Carpentry Windows Installer</a>
@@ -659,13 +658,13 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
         If you used the installer to configure nano, you don't need to run it again.
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="sql-macosx">Mac OS X</h4>
       <p>
         SQLite comes pre-installed on Mac OS X.
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="medium-4 columns">
       <h4 id="sql-linux">Linux</h4>
       <p>
         SQLite comes pre-installed on Linux.
