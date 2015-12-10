@@ -46,6 +46,15 @@ distantAssetsUrl: "//swctasks.github.io"
 # Leave empty if assets are at the root of the domain
 distantAssetsPath: "/styles/assets"
 
+#############################################
+# External domain
+#############################################
+# This is used to build links to parent domain mainly in footer links
+ParentDomainUrl: "http://dev.software-carpentry.org"
+
+
+footerDescription: "Software Carpentry is volunteer non-profit organization dedicated to teaching basic computing skills to researchers."
+
 #--------------------------------------------------------------------------------
 # Settings for Jekyll - should not need to be modified.
 #--------------------------------------------------------------------------------

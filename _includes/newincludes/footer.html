@@ -1,33 +1,31 @@
-
-  <div id="up-to-top" class="row">
-    <div class="small-12 columns" style="text-align: right;">
-      <a class="iconfont" href="#top-of-page"></a>
-    </div>
+<div id="up-to-top" class="row">
+  <div class="small-12 columns" style="text-align: right;">
+    <a class="iconfont" href="#top-of-page">&#xf108;</a>
   </div>
-
-  <footer id="footer" class="shadow-black">
+</div>
+<footer class="main-footer shadow-black">
     <div class="row">
-      <div class="medium-6 columns">
-        <h5>About This Site</h5>
-        <p>Software Carpentry is volunteer non-profit organization dedicated to teaching basic computing skills to researchers.  <a href="http://dev.software-carpentry.org/about/">More ›</a></p>
-        <p>Site template: <a href="http://phlow.github.io/feeling-responsive/">Feeling&nbsp;Responsive</a>.</p>
-      </div>
       <div class="medium-5 columns">
-        <ul class="inline-list social-icons">
-        {% for social_item in site.socialmedia %}
-          <li><a href="{{ social_item.url }}" target="_blank" class="{{ social_item.class }}" title="{{ social_item.title }}"></a></li>
-        {% endfor %}
-        </ul>
-        <ul class="inline-list">
-          <li><a href="LICENSE.html">License</a></li>
-          <li><a href="{{site.swc_blog}}">Blog</a></li>
-          <li><a href="{{site.swc_github}}">GitHub</a></li>
-          <li><a href="{{site.swc_twitter}}">Twitter</a></li>
-          <li><a href="{{site.workshop_repo}}/issues/">Issues</a></li>
+        <p>
+          {{ site.footerDescription }}
+          <a href="{{ site.ParentDomainUrl }}/about">More</a>
+        </p>
+      </div>
+      <div class="medium-4 columns">
+          <ul class="inline-list social-icons">
+          {% for social_item in site.socialmedia %}
+            <li><a href="{{ social_item.url }}" target="_blank" class="{{ social_item.class }}" title="{{ social_item.title }}"></a></li>
+          {% endfor %}
+          </ul>
+      </div>
+      <div class="medium-3 columns">
+        <ul class="no-bullet shadow-black">
+          {% for service_item in site.services %}
+              <li>
+                <a href="{{ site.ParentDomainUrl }}{{ service_item.url }}"  title="{{ service_item.title }}">{{ service_item.name }}</a>
+              </li>
+          {% endfor %}
         </ul>
       </div>
     </div>
-  </footer>
-{% include newincludes/javascript.html %}
-
-
+</footer>
