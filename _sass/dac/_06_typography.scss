@@ -1,6 +1,6 @@
-/* TOC – Typography
+/* TOC – Typography
 
-Check typography variables › _3_typography_settings.scss
+Check typography variables › _3_typography_settings.scss
 
 - Links
 - Customize Foundation Typography
@@ -210,68 +210,58 @@ li {
 dl {
 
 }
-/*
 dt:first-child {
     padding-top: 0px;
 }
-*/
 dt {
     font-weight: bold;
-    /* padding-top: 30px; */
+    padding-top: 30px;
 }
 dd {
 }
-/*
-article dl dt {
-    line-height: 1.3;
-}
-*/
-article dl dd {
-    /* line-height: 1.6; */
-    /* margin-bottom: rem-calc(12); */
-    margin-left: rem-calc(24);
-}
+article dl dt   { line-height: 1.3; }
+article dl dd   { line-height: 1.6; margin-bottom: rem-calc(12); margin-left: rem-calc(24); }
 
 
 
 /* Quotes
 ------------------------------------------------------------------- */
 
-/*blockquote {
+blockquote {
     font-style: italic;
     position: relative;
     border: none;
     margin: 0 30px 30px 30px;
     color: #4b4b4d
-}*/
-
-blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  border-bottom: 2px solid #ccc;
-  margin: 1.7em 10px;
-  padding: 0.7em 15px;
-  quotes: "\201C""\201D";
 }
-    blockquote:before {
-      color: #ccc;
-      content: open-quote;
-      font-size: 4em;
-      line-height: 0.1em;
-      margin-right: 0.25em;
-      vertical-align: -0.4em;
-    }
-    blockquote p {
-      display: inline;
-      font-style: italic;
-      color: $grey-10;
-    }
 
+    blockquote p {font-style: italic; color: $grey-10; }
+
+    blockquote:before {
+        display:block;content:"\00BB";
+        font-size:80px;
+        position:absolute;
+        left:-25px;
+        top:-40px;
+        color:#4b4b4d
+    }
+    blockquote:after {
+        display:block;
+        content:"\00AB";
+        font-size:80px;
+        position:absolute;
+        right:-10px;
+        bottom:-40px;
+        color:#4b4b4d;
+    }
+    blockquote cite:before {
+        content:"\2014 \0020"
+    }
     blockquote cite a,blockquote cite a:visited {
         color: #555
     }
 cite {
-    padding-top: 15px;
+    padding-top: 5px;
 }
 
 button, .button {
@@ -334,25 +324,12 @@ mark {
 /* Footnotes
 ------------------------------------------------------------------- */
 
-.footnotes:before {
-    content: "";
-    position: absolute;
-    height: 1px;
-    width: 60px;
-    margin-top: -10px;
-    border-bottom: 1px solid $grey-2;
-}
 .footnotes {
     margin-top: 60px;
 }
 .footnotes ol {
     font-size: $font-size-small;
 }
-.footnotes p {
-    font-size: inherit;
-    margin-bottom: 0;
-}
-
 
 
 

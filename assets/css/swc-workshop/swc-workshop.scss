@@ -14,26 +14,27 @@ sitemap:
 @import "swc/05_normalize.scss"; // normalize.css v3.0.2
 
 @import "foundation-components/top-bar";
-@import "foundation-components/accordion";
+//@import "foundation-components/accordion";
 @import "foundation-components/alert-boxes";
-@import "foundation-components/breadcrumbs";
+//@import "foundation-components/breadcrumbs";
 @import "foundation-components/block-grid";
-@import "foundation-components/button-groups";
-@import "foundation-components/buttons";
+//@import "foundation-components/button-groups";
+//@import "foundation-components/buttons";
 @import "foundation-components/clearing";
-@import "foundation-components/dropdown";
-@import "foundation-components/dropdown-buttons";
+//@import "foundation-components/dropdown";
+//@import "foundation-components/dropdown-buttons";
 @import "foundation-components/flex-video";
 @import "foundation-components/forms";
 @import "foundation-components/grid";
 @import "foundation-components/inline-lists";
 @import "foundation-components/keystrokes";
-@import "foundation-components/panels";
-@import "foundation-components/reveal";
-@import "foundation-components/side-nav";
-@import "foundation-components/sub-nav";
+@import "foundation-components/labels";
+//@import "foundation-components/panels";
+//@import "foundation-components/reveal";
+//@import "foundation-components/side-nav";
+//@import "foundation-components/sub-nav";
 @import "foundation-components/tables";
-@import "foundation-components/thumbs";
+//@import "foundation-components/thumbs";
 @import "foundation-components/top-bar";
 @import "foundation-components/type";
 @import "foundation-components/visibility";
@@ -44,3 +45,30 @@ sitemap:
 @import "swc/09_elements.scss";
 
 @import "swc/11_syntax-highlighting.scss";
+
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    background-color: #F9F2F4;
+    border-radius: 4px;
+    border: none;
+    font-family: "Courier New",monospace;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.venueDatas{
+    border: 1px solid $swc-blue-light;
+    border-radius: $global-radius;
+    background: #FEFAEE;
+    padding: 20px;
+    margin-top: 40px;
+
+    h2{
+        margin: 0 0 20px 0;
+    }
+}

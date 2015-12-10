@@ -1,19 +1,16 @@
 ---
-# Only the main Sass file needs front matter, rest is included from site.sass.sass_dir
-sitemap:
-  exclude: true
+# Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
 
-@import "swc/functions.scss";
-@import "swc/01_settings_colors.scss";
-@import "swc/02_settings_typography.scss";
-@import "swc/03_settings_mixins_media_queries.scss";
-@import "swc/04_settings_global.scss";
+@import "dac/functions.scss";
+@import "dac/01_settings_colors.scss";
+@import "dac/02_settings_typography.scss";
+@import "dac/03_settings_mixins_media_queries.scss";
+@import "dac/04_settings_global.scss";
+@import "dac/05_normalize.scss";    // normalize.css v3.0.2
 
-@import "swc/05_normalize.scss"; // normalize.css v3.0.2
-
-@import "foundation-components/top-bar";
+@import "foundation-components/top-bar.scss";
 @import "foundation-components/accordion";
 @import "foundation-components/alert-boxes";
 @import "foundation-components/breadcrumbs";
@@ -38,9 +35,9 @@ sitemap:
 @import "foundation-components/type";
 @import "foundation-components/visibility";
 
-@import "swc/06_typography.scss";
-@import "swc/07_layout.scss";
+@import "dac/06_typography.scss";
+@import "dac/07_layout";
 @import "foundation-components/grid";
-@import "swc/09_elements.scss";
+@import "dac/09_elements";
 
-@import "swc/11_syntax-highlighting.scss";
+@import "dac/11_syntax-highlighting";

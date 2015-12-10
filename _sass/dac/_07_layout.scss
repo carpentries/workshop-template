@@ -4,10 +4,10 @@
 - Navigation
 - Search
 - Masthead
-- Masthead › small-only
-- Masthead › medium-only
-- Masthead › large-only
-- Masthead › xlarge-up
+- Masthead › small-only
+- Masthead › medium-only
+- Masthead › large-only
+- Masthead › xlarge-up
 - Breadcrumb
 - Meta
 - Jump to top
@@ -54,8 +54,9 @@ body.video cite { color: #fff; }
 /* Search
 ------------------------------------------------------------------- */
 
-.no-js form#search {
-  display: none;
+#search {
+    padding: 20px 0 0 0;
+    background: $ci-4;
 }
 
 
@@ -64,34 +65,30 @@ body.video cite { color: #fff; }
 ------------------------------------------------------------------- */
 
 #masthead {
-    background-color: $primary-color;
-    color: #ffffff;
+    background: $primary-color;
 }
 #masthead-no-image-header {
-    background-color: $primary-color;
-    color: #ffffff;
+    background: $primary-color;
 }
 #masthead-with-text {
     text-align: center;
     font-size: rem-calc(54);
     font-family: $header-font-family;
-    color: #ffffff;
+    color: #fff;
     text-transform: uppercase;
     text-shadow: 0 2px 3px rgba(0,0,0,.4);
 }
 #masthead-no-image-header {
-    height: 115px;
+    height: 175px;
 }
 #masthead-no-image-header #logo img {
-    margin-top: 10px;
-    max-width: 445px;
+    margin-top: 60px;
+}
+.backstretch {
+    background: $primary-color;
 }
 
-h3.masthead {
-    color: #ffffff;
-}
-
-/* Masthead › small-only
+/* Masthead › small-only
 ------------------------------------------------------------------- */
 
 @media #{$small-only} {
@@ -118,13 +115,12 @@ h3.masthead {
 }
 
 
-/* Masthead › medium-only
+/* Masthead › medium-only
 ------------------------------------------------------------------- */
 
 @media #{$medium-only} {
     #logo img {
         margin-top: 60px;
-        max-width: 445px;
     }
     #masthead {
         height: 280px;
@@ -142,16 +138,15 @@ h3.masthead {
 }
 
 
-/* Masthead › large-only
+/* Masthead › large-only
 ------------------------------------------------------------------- */
 
 @media #{$large-only} {
     #logo img {
-        margin-top: 40px;
-        max-width: 445px;
+        margin-top: 80px;
     }
     #masthead {
-        height: 3px;
+        height: 310px;
     }
     #masthead-with-pattern {
         padding: 30px 0;
@@ -166,13 +161,12 @@ h3.masthead {
 }
 
 
-/* Masthead › xlarge-up
+/* Masthead › xlarge-up
 ------------------------------------------------------------------- */
 
 @media #{$xlarge-up} {
     #logo img {
         margin-top: 110px;
-        max-width: 445px;
     }
     #masthead {
         height: 380px;
@@ -235,18 +229,6 @@ h3.masthead {
 #page-meta .button:hover {
     background: $primary-color;
 }
-.meta-info p {
-  font-size: rem-calc(13);
-  color: scale-color($grey-1, $lightness: 40%);
-}
-  .meta-info a {
-    text-decoration: underline;
-    color: scale-color($grey-1, $lightness: 40%);
-  }
-  .meta-info a:hover {
-    text-decoration: none;
-    color: $secondary-color;
-  }
 
 
 
@@ -254,7 +236,7 @@ h3.masthead {
 ------------------------------------------------------------------- */
 
 #up-to-top {
-    padding: 10px 0 10px 0;
+    padding: 160px 0 10px 0;
 }
 #up-to-top a {
     font-size: 24px;
@@ -270,50 +252,62 @@ h3.masthead {
 /* Footer
 ------------------------------------------------------------------- */
 
-.main-footer{
-    padding-top: 10px;
-    padding-bottom: 0px;
+#footer {
+    padding-top: 30px;
+    padding-bottom: 20px;
     background: $footer-bg;
     color: $footer-color;
-    font-size: $base-font-size;
-    a{
+    }
+    footer p,
+    footer li {
+        font-size: rem-calc(13);
+        font-weight: 300;
+    }
+
+    #footer a {
         color: $footer-link-color;
-        font-weight: normal;
-        text-decoration: none;
-        border-bottom: 1px dotted $footer-color;
     }
-    a:hover{
-        border-bottom: 1px solid $footer-color;
+    #footer h4,
+    #footer h5 {
+        letter-spacing: 1px;
+        color: #fff;
+        text-transform: uppercase;
     }
-    .credits{
-        font-size: 0.9em;
-        a{
 
-        }
+
+
+/* Subfooter
+------------------------------------------------------------------- */
+
+#subfooter {
+    background: $subfooter-bg;
+    color: $subfooter-color;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+    #subfooter-left ul.inline-list {
+        float: left;
     }
-}
-
-@media #{$medium-up} {
-    .social-icons{
-        margin-left: 1.4em;
-        margin-top: 5px;
+    #subfooter li a {
+        color: $subfooter-link-color;
+        text-transform: uppercase;
     }
-}
-
-.social-icons a {
-    font-size: rem-calc(23);
-    display: block;
-    width: 36px;
-    border-radius: 50%;
-    color: $footer-bg;
-    background: $footer-color;
-    text-align: center;
-}
-
-.social-icons a:hover {
-    background: $footer-bg;
-    color: $footer-color;
-}
+    #subfooter li a:hover {
+        color: #fff;
+    }
+    #subfooter .social-icons li a {
+        font-size: rem-calc(23);
+        display: block;
+        width: 36px;
+        border-radius: 50%;
+        color: $subfooter-bg;
+        background: $subfooter-color;
+        text-align: center;
+    }
+    #subfooter .social-icons li a:hover {
+        background: $subfooter-bg;
+        color: #fff;
+    }
 
 
 

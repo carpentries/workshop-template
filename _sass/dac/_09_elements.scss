@@ -7,9 +7,8 @@
 - Breadcrumb
 - Button
 - Side-Nav
+- Meta
 - Accordion
-- Lazy Load XT
-- Frontpage Widget
 
 */
 
@@ -112,6 +111,24 @@ button, .button         { letter-spacing: 1px; }
 
 
 
+/* Meta
+------------------------------------------------------------------- */
+
+.meta-info p {
+  font-size: rem-calc(13);
+  color: scale-color($grey-1, $lightness: 40%);
+}
+  .meta-info a {
+    text-decoration: underline;
+    color: scale-color($grey-1, $lightness: 40%);
+  }
+  .meta-info a:hover {
+    text-decoration: none;
+    color: $secondary-color;
+  }
+
+
+
 /* Accordion
 ------------------------------------------------------------------- */
 
@@ -122,53 +139,3 @@ dd.accordion-navigation span:before { content: "\F107" }
 dd.accordion-navigation.active span:before { content: "\F105" }
 dd.accordion-navigation.active span:before { content: "\F105" }
 
-
-
-/* Lazy Load XT
-------------------------------------------------------------------- */
-
-/*! Lazy Load XT v1.0.6 2014-11-19
- * http://ressio.github.io/lazy-load-xt
- * (C) 2014 RESS.io
- * Licensed under MIT */
-img.lazy {
-  display: none;
-}
-.lazy-hidden {
-    opacity: 0;
-}
-.lazy-loaded {
-    -webkit-transition: opacity 0.7s;
-    -moz-transition: opacity 0.7s;
-    -ms-transition: opacity 0.7s;
-    -o-transition: opacity 0.7s;
-    transition: opacity 0.7s;
-    opacity: 1;
-}
-
-
-
-/* Images beside paragraphs
-Use as <p class="imgpar"><img src="..." /> text </p>
-------------------------------------------------------------------- */
-
-p.imgpar {
-    clear: both;
-}
-
-p.imgpar img {
-    float: left;
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
-
-
-/* People
-Use as <p class="person">...</p> or <a href="..." class="person">...</a>
-------------------------------------------------------------------- */
-
-.person {
-    font-weight: bold;
-    font-style: italic;
-}
