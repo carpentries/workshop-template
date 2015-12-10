@@ -25,8 +25,8 @@
 <body id="top-of-page">{% include github-ribbon.html %}
   {% include newincludes/header.html %}
   <div class="row">
-    <div class="medium-12 columns">
-      <h2 class="t30"><a href="{{ site.swc_site }}/workshops">Workshops</a>  &gt; {{page.venue}}</h2>
+    <div class="medium-10 medium-offset-1 columns venueDatas">
+      <h2 class=""><a href="{{ site.swc_site }}/workshops">Workshops</a>  &gt; {{page.venue}}</h2>
       <div class="row">
         <div class="medium-6 columns">
           <p>{{page.humandate}}</p>
@@ -57,5 +57,6 @@
     </div>
   </div>
 {% include newincludes/footer.html %}
+{% include newincludes/javascript.html %}
 </body>
 </html>
