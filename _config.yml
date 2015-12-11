@@ -114,3 +114,6 @@ services:
   - name: "License"
     url: "/license/"
     title: "License"
+
+# Logo image (white with transparent background to stand out on blue background)
+logo: "swc-logo-white.svg"
