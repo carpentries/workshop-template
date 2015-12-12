@@ -41,6 +41,9 @@ swc_post_survey : "https://www.surveymonkey.com/r/swc_post_workshop_v1?workshop_
 # NO TRAILING SLASH
 distantAssetsUrl: "//swctasks.github.io"
 
+## Fallback assets (for now)
+fallbackAssets: "/assets"
+
 # path : "/styles"
 # NO TRAILING SLASH
 # Leave empty if assets are at the root of the domain
