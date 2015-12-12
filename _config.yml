@@ -9,7 +9,7 @@ url: "http://gvwilson.github.io"
 
 # Your web site relative path from domain. eg: /folder
 # NO trailing slash
-baseurl: "/workshop-template"
+baseurl: "/swctasks-workshop-template"
 
 #--------------------------------------------------------------------------------
 # Standard Software Carpentry settings - should not need to be modified.
