@@ -1,5 +1,3 @@
-PY=python3
-
 all : commands
 
 ## commands   : show all commands.
