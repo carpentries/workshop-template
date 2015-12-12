@@ -6,12 +6,11 @@ workshop_repo   : "http://github.com/swcarpentry/workshop-template"
 # Your web site url. eg: http://mysite.com
 # NO trailing slash
 url: "http://swctasks.github.io"
+
 # Your web site relative path from domain. eg: /folder
 # NO trailing slash
 baseurl: "/workshop-template"
 
-# DEPRECATED it's now derived from "url" and "baseurl"
-workshop_site   : "http://swcarpentry.github.io/workshop-template"
 #--------------------------------------------------------------------------------
 # Standard Software Carpentry settings - should not need to be modified.
 #--------------------------------------------------------------------------------
