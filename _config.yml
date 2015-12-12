@@ -27,14 +27,6 @@ swc_vm          : "https://docs.google.com/uc?id=0B4Kr6DYkzkQtSTZLQzF4aVB4NDQ&ex
 swc_pre_survey  : "https://www.surveymonkey.com/r/swc_pre_workshop_v1?workshop_id="
 swc_post_survey : "https://www.surveymonkey.com/r/swc_post_workshop_v1?workshop_id="
 
-
-#############################################
-# Assets configuration
-#############################################
-
-## Fallback assets (for now)
-fallbackAssets: "/assets"
-
 #############################################
 # External domain
 #############################################
