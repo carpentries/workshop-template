@@ -1,6 +1,7 @@
 *~
+_site
 *.pyc
 .DS_Store
-_site
-.sass-cache
 Gemfile.lock
+.sass-cache
+.fontcustom-manifest.json
