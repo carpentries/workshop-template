@@ -32,29 +32,14 @@ swc_post_survey : "https://www.surveymonkey.com/r/swc_post_workshop_v1?workshop_
 # Assets configuration
 #############################################
 
-# extensionless url allows to automatically switch
-# to current page protocol (http or https)
-# to avoid mixed content problems
-# distant-assets-url: "//swcarpentry.github.io/styles/"
-
-# repository url
-# NO TRAILING SLASH
-distantAssetsUrl: "//swctasks.github.io"
-
 ## Fallback assets (for now)
 fallbackAssets: "/assets"
-
-# path : "/styles"
-# NO TRAILING SLASH
-# Leave empty if assets are at the root of the domain
-distantAssetsPath: "/styles/assets"
 
 #############################################
 # External domain
 #############################################
 # This is used to build links to parent domain mainly in footer links
 ParentDomainUrl: "http://dev.software-carpentry.org"
-
 
 footerDescription: "Software Carpentry is volunteer non-profit organization dedicated to teaching basic computing skills to researchers."
 
