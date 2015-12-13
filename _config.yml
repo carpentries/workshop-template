@@ -21,7 +21,7 @@ project_type: "swc"
 # E.g., http://yourname.github.io
 domain: "http://gvwilson.github.io"
 
-# Base URL below the domain.
+# Base URL below the domain (no trailing slash).
 # This will usually be the workshop slug with a leading slash.
 baseurl: "/swctasks-workshop-template"
 
