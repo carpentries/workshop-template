@@ -7,8 +7,8 @@
     <div class="row">
       <div class="medium-5 columns">
         <p>
-          {{ site.footer_description }}
-          <a href="{{ site.parent_domain }}/about">More</a>
+          {{ project.footer_description }}
+          <a href="{{ project.parent_domain }}/about">More</a>
         </p>
       </div>
       <div class="medium-4 columns">
@@ -22,7 +22,7 @@
         <ul class="no-bullet shadow-black">
           {% for service_item in site.services %}
               <li>
-                <a href="{{ site.parent_domain }}{{ service_item.url }}"  title="{{ service_item.title }}">{{ service_item.name }}</a>
+                <a href="{{ project.parent_domain }}{{ service_item.url }}"  title="{{ service_item.title }}">{{ service_item.name }}</a>
               </li>
           {% endfor %}
         </ul>
