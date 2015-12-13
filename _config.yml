@@ -45,20 +45,3 @@ exclude         : [tools]
 
 # Logo image (white with transparent background to stand out on blue background)
 logo: "swc-logo-white.svg"
-
-services:
-  - name: "Contact"
-    url: "/contact/"
-    title: "Contact"
-
-  - name: "RSS"
-    url: "/feed.xml"
-    title: "Subscribe to RSS Feed"
-
-  - name: "sitemap.xml"
-    url: "/sitemap.xml"
-    title: "Sitemap for Google Webmaster Tools"
-
-  - name: "License"
-    url: "/license/"
-    title: "License"

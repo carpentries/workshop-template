@@ -20,7 +20,7 @@
       </div>
       <div class="medium-3 columns">
         <ul class="no-bullet shadow-black">
-          {% for service_item in site.services %}
+          {% for service_item in site.data.services %}
               <li>
                 <a href="{{ project.parent_domain }}{{ service_item.url }}"  title="{{ service_item.title }}">{{ service_item.name }}</a>
               </li>
