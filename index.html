@@ -20,7 +20,7 @@ in index.html BEFORE explicit assignment
 project = {{project}}
 -->
 {% comment %}Must use 'assign' (to get variable value) rather than 'capture' (which gives text expansion){% endcomment %}
-{% if site.project_type == 'dc %}{% assign project = site.data.dc %}{% endif %}
+{% if site.project_type == 'dc' %}{% assign project = site.data.dc %}{% endif %}
 {% if site.project_type == 'swc' %}{% assign project = site.data.swc %}{% endif %}
 <!--
 in index.html AFTER explicit assignment
