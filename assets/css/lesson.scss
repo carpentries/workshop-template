@@ -5,12 +5,12 @@ sitemap:
 ---
 @charset "utf-8";
 
-@import "swc-lesson/normalize.scss"; // always first
+@import "lesson/normalize.scss"; // always first
 
-@import "swc-lesson/settings_colors.scss";
+@import "lesson/settings_colors.scss";
 
-@import "swc-lesson/functions.scss";
-@import "swc-lesson/settings_global.scss";
+@import "lesson/functions.scss";
+@import "lesson/settings_global.scss";
 
 /* +++++++++++++++++ Glyphicons from twitter bootstrap +++++++++++++++++ */
 $icon-font-path: "../fonts/glyphicon-fonts/" !default;
@@ -55,8 +55,8 @@ $icon-font-path: "../fonts/glyphicon-fonts/" !default;
 @import "foundation-components/type";
 @import "foundation-components/visibility";
 
-@import "swc-lesson/01_custom_typography.scss";
-@import "swc-lesson/02_custom_layout.scss";
-@import "swc-lesson/03_custom_elements.scss";
+@import "lesson/01_custom_typography.scss";
+@import "lesson/02_custom_layout.scss";
+@import "lesson/03_custom_elements.scss";
 
-@import "swc-lesson/syntax-highlighting.scss";
+@import "lesson/syntax-highlighting.scss";
