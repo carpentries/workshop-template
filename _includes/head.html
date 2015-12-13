@@ -1,6 +1,11 @@
 {% comment %}Must use 'assign' (to get variable value) rather than 'capture' (which gives text expansion){% endcomment %}
 {% if site.project_type == 'dc %}{% assign project = site.data.dc %}{% endif %}
 {% if site.project_type == 'swc' %}{% assign project = site.data.swc %}{% endif %}
+<!--
+in head.html
+project = {{project}}
+project.twitter = {{project.twitter}}
+-->
   <meta charset="utf-8" />
   <title>Software Carpentry: {{ page.venue }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
