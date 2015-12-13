@@ -35,33 +35,33 @@ logo: "swc-logo-white.svg"
 # Software Carpentry values.
 #-------------------------------------------------------------------------------
 
-swc:
-  blog        : "http://software-carpentry.org/feed.xml"
-  contact     : "admin@software-carpentry.org"
-  files       : "http://files.software-carpentry.org"
-  github      : "http://github.com/swcarpentry"
-  githubio    : "http://swcarpentry.github.io/"
-  installer   : "https://github.com/swcarpentry/windows-installer/releases/download/v0.3/SWCarpentryInstaller.exe"
-  site        : "http://software-carpentry.org"
-  twitter     : "http://twitter.com/swcarpentry"
-  vm          : "https://docs.google.com/uc?id=0B4Kr6DYkzkQtSTZLQzF4aVB4NDQ&export=download"
-  pre_survey  : "https://www.surveymonkey.com/r/swc_pre_workshop_v1"
-  post_survey : "https://www.surveymonkey.com/r/swc_post_workshop_v1"
-  parent_domain : "http://gvwilson.github.io/swctasks-website"
-  footer_description : "Software Carpentry is volunteer non-profit organization dedicated to teaching basic computing skills to researchers."
-  socialmedia :
-      - name: GitHub
-        url: http://github.com/swcarpentry
-        class: icon-github
-        title: Source
-      - name: Twitter
-        url: http://twitter.com/swcarpentry
-        class: icon-twitter
-        title: "Software Carpentry on Twitter"
-      - name: YouTube
-        url: https://www.youtube.com/user/softwarecarpentry
-        class: icon-youtube
-        title: "Software Carpentry Videos"
+blog        : "http://software-carpentry.org/feed.xml"
+contact     : "admin@software-carpentry.org"
+files       : "http://files.software-carpentry.org"
+github      : "http://github.com/swcarpentry"
+githubio    : "http://swcarpentry.github.io/"
+installer   : "https://github.com/swcarpentry/windows-installer/releases/download/v0.3/SWCarpentryInstaller.exe"
+site        : "http://software-carpentry.org"
+twitter     : "http://twitter.com/swcarpentry"
+vm          : "https://docs.google.com/uc?id=0B4Kr6DYkzkQtSTZLQzF4aVB4NDQ&export=download"
+pre_survey  : "https://www.surveymonkey.com/r/swc_pre_workshop_v1"
+post_survey : "https://www.surveymonkey.com/r/swc_post_workshop_v1"
+parent_domain : "http://gvwilson.github.io/swctasks-website"
+footer_description : "Software Carpentry is volunteer non-profit organization dedicated to teaching basic computing skills to researchers."
+
+socialmedia :
+    - name: GitHub
+      url: http://github.com/swcarpentry
+      class: icon-github
+      title: Source
+    - name: Twitter
+      url: http://twitter.com/swcarpentry
+      class: icon-twitter
+      title: "Software Carpentry on Twitter"
+    - name: YouTube
+      url: https://www.youtube.com/user/softwarecarpentry
+      class: icon-youtube
+      title: "Software Carpentry Videos"
 
 #--------------------------------------------------------------------------------
 # Services.
