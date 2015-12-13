@@ -16,17 +16,6 @@ etherpad:         # optional (insert the URL for your Etherpad if you're using o
 eventbrite:       # optional (insert the alphanumeric key for Eventbrite registration, e.g., "1234567890AB")
 ---
 <!--
-in index.html BEFORE explicit assignment
-project = {{project}}
--->
-{% comment %}Must use 'assign' (to get variable value) rather than 'capture' (which gives text expansion){% endcomment %}
-{% if site.project_type == 'dc' %}{% assign project = site.data.dc %}{% endif %}
-{% if site.project_type == 'swc' %}{% assign project = site.data.swc %}{% endif %}
-<!--
-in index.html AFTER explicit assignment
-project = {{project}}
--->
-<!--
   HEADER
 
   Edit the values in the block above to be appropriate for your workshop.
@@ -121,7 +110,7 @@ project = {{project}}
   a few specific software packages installed (listed
   <a href="#setup">below</a>). They are also required to abide by
   Software Carpentry's
-  <a href="{{project.site}}/conduct.html">Code of Conduct</a>.
+  <a href="{{site.swc.site}}/conduct.html">Code of Conduct</a>.
 </p>
 
 <!--
@@ -157,7 +146,7 @@ project = {{project}}
   <div class="medium-6 columns">
     <h3>Day 1</h3>
     <table class="table table-striped">
-      <tr> <td>Arrival</td>  <td><a href="{{ project.pre_survey }}?workshop_id={{ site.github.project_title }}">Pre-workshop Survey</a></td> </tr>
+      <tr> <td>Arrival</td>  <td><a href="{{ site.swc.pre_survey }}?workshop_id={{ site.github.project_title }}">Pre-workshop Survey</a></td> </tr>
       <tr> <td>09:00</td>  <td>Automating tasks with the Unix shell</td> </tr>
       <tr> <td>10:30</td> <td>Coffee</td> </tr>
       <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
@@ -175,7 +164,7 @@ project = {{project}}
       <tr> <td>13:00</td>  <td>Managing data with SQL</td> </tr>
       <tr> <td>14:30</td>  <td>Coffee</td> </tr>
       <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
-      <tr> <td>Dismissal</td>  <td><a href="{{ project.post_survey }}?workshop_id={{ site.github.project_title }}">Post-workshop Survey</a></td> </tr>
+      <tr> <td>Dismissal</td>  <td><a href="{{ site.swc.post_survey }}?workshop_id={{ site.github.project_title }}">Post-workshop Survey</a></td> </tr>
     </table>
   </div>
 </div>

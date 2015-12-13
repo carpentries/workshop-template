@@ -1,15 +1,7 @@
-{% comment %}Must use 'assign' (to get variable value) rather than 'capture' (which gives text expansion){% endcomment %}
-{% if site.project_type == 'dc' %}{% assign project = site.data.dc %}{% endif %}
-{% if site.project_type == 'swc' %}{% assign project = site.data.swc %}{% endif %}
-<!--
-in head.html
-project = {{project}}
-project.twitter = {{project.twitter}}
--->
   <meta charset="utf-8" />
   <title>Software Carpentry: {{ page.venue }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="{{ project.parent_domain }}/favicon.ico"><!-- must remain in your root directory -->
+  <link rel="shortcut icon" href="{{ site.swc.parent_domain }}/favicon.ico"><!-- must remain in your root directory -->
 
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/swc-workshop.css" />
   <script src="{{ site.baseurl }}/assets/js/modernizr.min.js"></script>
