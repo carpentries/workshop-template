@@ -51,7 +51,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   the pitch.
 -->
 <p>
-  <a href="{{site.swc_site}}">Software Carpentry</a>'s mission
+  <a href="{{site.data.swc.site}}">Software Carpentry</a>'s mission
   is to help scientists and engineers get more research done in less
   time and with less pain by teaching them basic lab skills for
   scientific computing.  This hands-on workshop will cover basic
@@ -110,7 +110,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   a few specific software packages installed (listed
   <a href="#setup">below</a>). They are also required to abide by
   Software Carpentry's
-  <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
+  <a href="{{site.data.swc.site}}/conduct.html">Code of Conduct</a>.
 </p>
 
 <!--
@@ -146,7 +146,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   <div class="medium-6 columns">
     <h3>Day 1</h3>
     <table class="table table-striped">
-      <tr> <td>Arrival</td>  <td><a href='{{ site.swc_pre_survey }}{{ site.github.project_title }}'>Pre-workshop Survey</a></td> </tr>
+      <tr> <td>Arrival</td>  <td><a href="{{ site.data.swc.pre_survey }}?workshop_id={{ site.github.project_title }}">Pre-workshop Survey</a></td> </tr>
       <tr> <td>09:00</td>  <td>Automating tasks with the Unix shell</td> </tr>
       <tr> <td>10:30</td> <td>Coffee</td> </tr>
       <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
@@ -164,7 +164,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <tr> <td>13:00</td>  <td>Managing data with SQL</td> </tr>
       <tr> <td>14:30</td>  <td>Coffee</td> </tr>
       <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
-      <tr> <td>Dismissal</td>  <td><a href='{{ site.swc_post_survey }}{{ site.github.project_title }}'>Post-workshop Survey</a></td> </tr>
+      <tr> <td>Dismissal</td>  <td><a href="{{ site.data.swc.post_survey }}?workshop_id={{ site.github.project_title }}">Post-workshop Survey</a></td> </tr>
     </table>
   </div>
 </div>
@@ -222,7 +222,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <li>Looping over files</li>
       <li>Creating and running shell scripts</li>
       <li>Finding things</li>
-      <li><a href="{{site.swc_githubio}}/shell-novice/reference.html">Reference...</a></li>
+      <li><a href="{{site.data.swc.githubio}}/shell-novice/reference.html">Reference...</a></li>
     </ul>
   </div>
   <div class="medium-6 columns">
@@ -235,7 +235,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <li>Loops and conditionals</li>
       <li>Defensive programming</li>
       <li>Using Python from the command line</li>
-      <li><a href="{{site.swc_githubio}}/python-novice-inflammation/reference.html">Reference...</a></li>
+      <li><a href="{{site.data.swc.githubio}}/python-novice-inflammation/reference.html">Reference...</a></li>
     </ul>
   </div>
   <!--
@@ -247,7 +247,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <li>Creating and using functions</li>
       <li>Loops and conditionals</li>
       <li>Using R from the command line</li>
-      <li><a href="{{site.swc_githubio}}/r-novice-inflammation/reference.html">Reference...</a></li>
+      <li><a href="{{site.data.swc.githubio}}/r-novice-inflammation/reference.html">Reference...</a></li>
     </ul>
   </div>
   -->
@@ -260,7 +260,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <li>Creating and using functions</li>
       <li>Loops and conditionals</li>
       <li>Defensive programming</li>
-      <li><a href="{{site.swc_githubio}}/matlab-novice-inflammation/reference.html">Reference...</a></li>
+      <li><a href="{{site.data.swc.githubio}}/matlab-novice-inflammation/reference.html">Reference...</a></li>
      </ul>
    </div>
    -->
@@ -278,7 +278,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <li>Resolving conflicts</li>
       <li>Open licenses</li>
       <li>Where to host work, and why</li>
-      <li><a href="{{site.swc_githubio}}/git-novice/reference.html">Reference...</a></li>
+      <li><a href="{{site.data.swc.githubio}}/git-novice/reference.html">Reference...</a></li>
     </ul>
   </div>
   <div class="medium-6 columns">
@@ -292,7 +292,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <li>Combining information from multiple tables using <code>join</code></li>
       <li>Creating, modifying, and deleting data</li>
       <li>Programming with databases</li>
-      <li><a href="{{site.swc_githubio}}/sql-novice-survey/reference.html">Reference...</a></li>
+      <li><a href="{{site.data.swc.githubio}}/sql-novice-survey/reference.html">Reference...</a></li>
     </ul>
   </div>
 </div>
@@ -469,7 +469,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <p>
         nano is a basic editor and the default that instructors use in the workshop.
         To install it,
-        download the <a href="{{site.swc_installer}}">Software Carpentry Windows installer</a>
+        download the <a href="{{site.data.swc.installer}}">Software Carpentry Windows installer</a>
         and double click on the file to run it.
         <strong>This installer requires an active internet connection.</strong>
       </p>
@@ -653,7 +653,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
     <div class="medium-4 columns">
       <h4 id="sql-windows">Windows</h4>
       <p>
-        The <a href="{{site.swc_github}}/windows-installer">Software Carpentry Windows Installer</a>
+        The <a href="{{site.data.swc.github}}/windows-installer">Software Carpentry Windows Installer</a>
         installs SQLite for Windows.
         If you used the installer to configure nano, you don't need to run it again.
       </p>
@@ -673,7 +673,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   </div>
 
   <p><strong>If you installed Anaconda, it also has a copy of SQLite
-    <a href="https://github.com/ContinuumIO/anaconda-issues/issues/307">without support to <code>readline</code></a>.
+    <a href="https://github.com/ContinuumIO/anaconda-issues/issues/307">without support for <code>readline</code></a>.
     Instructors will provide a workaround for it if needed.</strong></p>
 </div> <!-- End of 'SQLite' section. -->
 
@@ -693,7 +693,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       Install <a href="https://www.virtualbox.org/">VirtualBox</a>.
     </li>
     <li>
-      Download our <a href="{{site.swc_vm}}">VM image</a>.
+      Download our <a href="{{site.data.swc.vm}}">VM image</a>.
       <strong>Warning:</strong> this file is 1.7 GByte, so please
       download it <em>before</em> coming to your workshop.
     </li>
