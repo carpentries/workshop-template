@@ -1,5 +1,6 @@
 # Settings
 MAKEFILES=Makefile $(wildcard *.mk)
+CONFIG=--config _config.yml,_config_dev.yml
 
 all : commands
 
@@ -9,11 +10,11 @@ commands :
 
 ## serve      : run a local server.
 serve :
-	bundle exec jekyll serve --config _config.yml,_config_dev.yml
+	bundle exec jekyll serve ${CONFIG}
 
 ## build      : build files but do not run a server.
 build :
-	bundle exec jekyll build
+	bundle exec jekyll build ${CONFIG}
 
 ## install    : install missing Ruby gems using bundle.
 install :
