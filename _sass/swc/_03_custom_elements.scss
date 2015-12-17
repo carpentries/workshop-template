@@ -29,11 +29,7 @@
     margin-top: $spacing-unit;
 }
 
-.table {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 20px;
-}
+
 
 /* Panel
 ------------------------------------------------------------------- */
@@ -243,5 +239,18 @@ Use as <p class="person">...</p> or <a href="..." class="person">...</a>
 @media #{$small-only} {
     #github-ribbon {
         display: none;
+    }
+}
+
+
+.venueDatas{
+    border: 1px solid $swc-blue-light;
+    border-radius: $global-radius;
+    background: $dc-header-background-color;
+    padding: 20px;
+    margin-top: 40px;
+
+    h2{
+        margin: 0 0 20px 0;
     }
 }
