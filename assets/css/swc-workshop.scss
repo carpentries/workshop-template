@@ -1,0 +1,150 @@
+---
+# Only the main Sass file needs front matter,
+# rest is included from site.sass.sass_dir
+---
+@charset "utf-8";
+
+@import "foundation-components/normalize"; // always first
+@import "foundation-components/functions";
+
+@import "swc/settings_colors";
+@import "swc/settings_global";
+
+@import "foundation-components/global";
+@import "foundation-components/accordion";
+@import "foundation-components/alert-boxes";
+@import "foundation-components/block-grid";
+@import "foundation-components/breadcrumbs";
+@import "foundation-components/button-groups";
+@import "foundation-components/buttons";
+@import "foundation-components/clearing";
+@import "foundation-components/dropdown-buttons";
+@import "foundation-components/dropdown";
+@import "foundation-components/flex-video";
+@import "foundation-components/forms";
+@import "foundation-components/grid";
+@import "foundation-components/icon-bar";
+@import "foundation-components/inline-lists";
+//@import "foundation-components/joyride";
+@import "foundation-components/keystrokes";
+//@import "foundation-components/labels";
+//@import "foundation-components/magellan";
+//@import "foundation-components/offcanvas";
+//@import "foundation-components/orbit";
+@import "foundation-components/pagination";
+@import "foundation-components/panels";
+//@import "foundation-components/pricing-tables";
+//@import "foundation-components/progress-bars";
+//@import "foundation-components/range-slider";
+@import "foundation-components/reveal";
+@import "foundation-components/side-nav";
+//@import "foundation-components/split-buttons";
+@import "foundation-components/sub-nav";
+//@import "foundation-components/switches";
+@import "foundation-components/tables";
+//@import "foundation-components/tabs";
+@import "foundation-components/thumbs";
+//@import "foundation-components/toolbar";
+@import "foundation-components/tooltips";
+@import "foundation-components/top-bar";
+@import "foundation-components/type";
+@import "foundation-components/visibility";
+@import "foundation-components/syntax-highlighting";
+
+@import "swc/01_custom_typography";
+@import "swc/02_custom_layout";
+@import "swc/03_custom_elements";
+
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    background-color: #F9F2F4;
+    border-radius: 4px;
+    border: none;
+    font-family: "Courier New",monospace;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.venueDatas{
+    border: 1px solid $swc-blue-light;
+    border-radius: $global-radius;
+    background: #F9D59E;
+    padding: 20px;
+    margin-top: 40px;
+
+    h2{
+        margin: 0 0 20px 0;
+    }
+}
+
+
+/* GitHub Ribbon */
+#github-ribbon a {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-family: arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 45%;
+    //font-size: 1.2rem;
+    line-height: 2rem;
+    position: relative;
+    transition: 0.5s;
+    width: 100%;
+    margin: 0 auto;
+    white-space: nowrap;
+    z-index: 99999;
+}
+#github-ribbon a:hover {
+    background: #600;
+    color: #fff;
+}
+#github-ribbon a::before, #github-ribbon a::after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    height: 1px;
+    background: #fff;
+}
+#github-ribbon a::after {
+    bottom: 1px;
+    top: auto;
+}
+
+
+/* GitHub ribbon breaking point */
+@media #{$large-up} {
+    #github-ribbon {
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        width: 150px;
+        overflow: hidden;
+        height: 150px;
+    }
+    #github-ribbon a {
+        width: 200px;
+        position: absolute;
+        padding: 5px 40px;
+        top: 40px;
+        right: -40px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+    }
+}
+@media #{$small-only} {
+    #github-ribbon {
+        display: none;
+    }
+}
