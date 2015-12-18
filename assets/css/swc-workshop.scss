@@ -51,8 +51,6 @@
 @import "foundation-components/visibility";
 @import "foundation-components/syntax-highlighting.scss";
 
-@import "swc/01_custom_typography";
-@import "swc/02_custom_layout";
-@import "swc/03_custom_elements";
-
-
+@import "common/01_typography";
+@import "common/02_layout";
+@import "common/03_elements";

@@ -7,6 +7,7 @@
 - Breadcrumb
 - Button
 - Side-Nav
+- Meta
 - Accordion
 - Lazy Load XT
 - Frontpage Widget
@@ -58,6 +59,7 @@
   font-family: $font-family-sans-serif;
   text-shadow: 0px 1px 1px rgba(0,0,0,0.9);
 }
+
   .alert-box p {
     margin-bottom: 0;
   }
@@ -109,7 +111,6 @@ button, .button         { letter-spacing: 1px; }
 .side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus { background: $grey-1; }
 
 .homepage p { margin: 0; padding: 0; color: $grey-10; }
-
 
 
 /* Accordion
