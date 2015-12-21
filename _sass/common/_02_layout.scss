@@ -88,15 +88,23 @@ body.video cite { color: #fff; }
 #masthead-no-image-header #logo img {}
 
 .data-carpentry{
-	#masthead-no-image-header {
-		height: 175px;
-	}
-	#masthead-no-image-header #logo img {
-		margin-top: 60px;
-	}
-	.backstretch {
-		background: $primary-color;
-	}
+    #masthead {
+        height: 210px;
+    }
+
+    #logo img {
+        margin-top: 15px;
+    }
+
+    #masthead-no-image-header {
+        height: 175px;
+    }
+    #masthead-no-image-header #logo img {
+        margin-top: 60px;
+    }
+    .backstretch {
+        background: $primary-color;
+    }
 
     &.lesson,
     &.workshop{
@@ -112,21 +120,21 @@ body.video cite { color: #fff; }
 }
 
 .software-carpentry{
-	#masthead {
-		color: #fff;
-	}
-	#masthead-no-image-header {
-		color: #fff;
-		height: 115px;
-	}
-	#masthead-no-image-header #logo img {
-		margin-top: 10px;
-		width: 100%;
-	}
+    #masthead {
+        color: #fff;
+    }
+    #masthead-no-image-header {
+        color: #fff;
+        height: 115px;
+    }
+    #masthead-no-image-header #logo img {
+        margin-top: 10px;
+        width: 100%;
+    }
 
-	h3.masthead {
-		color: #ffffff;
-	}
+    h3.masthead {
+        color: #ffffff;
+    }
 
     &.lesson,
     &.workshop{
@@ -190,11 +198,12 @@ body.video cite { color: #fff; }
         height: 300px;
     }
 
-	.software-carpentry{
-		#logo img {
-			max-width: 445px;
-		}
-	}
+    .software-carpentry{
+        #logo img {
+            max-width: 445px;
+        }
+    }
+
 }
 
 
@@ -215,27 +224,15 @@ body.video cite { color: #fff; }
         padding: 60px 0;
     }
 
-	.data-carpentry{
-		#masthead {
-		    height: 310px;
-		}
-		#logo img {
-		    margin-top: 80px;
-		}
-		#masthead {
-		    height: 310px;
-		}
-	}
-
-	.software-carpentry{
-		#masthead {
-		    height: 280px;
-		}
-		#logo img {
-			margin-top: 40px;
-			max-width: 445px;
-		}
-	}
+    .software-carpentry{
+        #masthead {
+            height: 280px;
+        }
+        #logo img {
+            margin-top: 40px;
+            max-width: 445px;
+        }
+    }
 }
 
 
@@ -247,7 +244,7 @@ body.video cite { color: #fff; }
         margin-top: 110px;
     }
     #masthead {
-        height: 380px;
+        height: 340px;
     }
     #masthead-with-pattern {
         padding: 45px 0;
@@ -259,11 +256,11 @@ body.video cite { color: #fff; }
         padding: 95px 0;
         height: 400px;
     }
-	.software-carpentry{
-		#logo img {
-		    max-width: 445px;
-		}
-	}
+    .software-carpentry{
+        #logo img {
+            max-width: 445px;
+        }
+    }
 }
 
 
@@ -332,15 +329,15 @@ body.video cite { color: #fff; }
 ------------------------------------------------------------------- */
 
 .data-carpentry{
-	#up-to-top {
-		padding: 160px 0 10px 0;
-	}
+    #up-to-top {
+        padding: 160px 0 10px 0;
+    }
 }
 
 .software-carpentry{
-	#up-to-top {
-		padding: 10px 0 10px 0;
-	}
+    #up-to-top {
+        padding: 10px 0 10px 0;
+    }
 }
 
 #up-to-top a {
@@ -358,129 +355,129 @@ body.video cite { color: #fff; }
 ------------------------------------------------------------------- */
 
 .data-carpentry{
-	#footer {
-		padding-top: 30px;
-		padding-bottom: 20px;
-		background: $footer-bg;
-		color: $footer-color;
+    #footer {
+        padding-top: 30px;
+        padding-bottom: 20px;
+        background: $footer-bg;
+        color: $footer-color;
 
-		p, li {
-		    font-size: rem-calc(13);
-		    font-weight: 300;
-		}
+        p, li {
+            font-size: rem-calc(13);
+            font-weight: 300;
+        }
 
-		a {
-		    color: $footer-link-color;
-		}
-		h4, h5 {
-		    letter-spacing: 1px;
-		    color: #fff;
-		    text-transform: uppercase;
-		}
+        a {
+            color: $footer-link-color;
+        }
+        h4, h5 {
+            letter-spacing: 1px;
+            color: #fff;
+            text-transform: uppercase;
+        }
 
-		.social-icons li a {
-			font-size: rem-calc(23);
-			display: block;
-			width: 36px;
-			border-radius: 50%;
-			color: $footer-bg;
-			background: $footer-color;
-			text-align: center;
-		}
-		.social-icons li a:hover {
-			background: $footer-bg;
-			color: $footer-color;
-		}
-	}
+        .social-icons li a {
+            font-size: rem-calc(23);
+            display: block;
+            width: 36px;
+            border-radius: 50%;
+            color: $footer-bg;
+            background: $footer-color;
+            text-align: center;
+        }
+        .social-icons li a:hover {
+            background: $footer-bg;
+            color: $footer-color;
+        }
+    }
 
-	.main-footer{
-		padding-top: 10px;
-		padding-bottom: 0px;
-		background: $dc-header-background-color;
-		color: $grey-16;
-		font-size: $base-font-size;
-		a{
-		    color: $grey-16;
-		    font-weight: normal;
-		    text-decoration: none;
-		    border-bottom: 1px dotted $grey-16;
-		}
-		a:hover{
-		    border-bottom: 1px solid $grey-16;
-		}
-		.credits{
-		    font-size: 0.9em;
-		}
+    .main-footer{
+        padding-top: 10px;
+        padding-bottom: 0px;
+        background: $dc-header-background-color;
+        color: $grey-16;
+        font-size: $base-font-size;
+        a{
+            color: $grey-16;
+            font-weight: normal;
+            text-decoration: none;
+            border-bottom: 1px dotted $grey-16;
+        }
+        a:hover{
+            border-bottom: 1px solid $grey-16;
+        }
+        .credits{
+            font-size: 0.9em;
+        }
 
-		@media #{$medium-up} {
-			.social-icons{
-			    margin-left: 1.4em;
-			    margin-top: 5px;
-			}
-		}
-		.social-icons a {
-			font-size: rem-calc(23);
-			display: block;
-			width: 36px;
-			border-radius: 50%;
-			color: $dc-header-background-color;
-			background: $grey-16;
-			text-align: center;
-		}
-		.social-icons a:hover {
-			background: $dc-header-background-color;
-			color: $grey-16;
-		}
-	}
+        @media #{$medium-up} {
+            .social-icons{
+                margin-left: 1.4em;
+                margin-top: 5px;
+            }
+        }
+        .social-icons a {
+            font-size: rem-calc(23);
+            display: block;
+            width: 36px;
+            border-radius: 50%;
+            color: $dc-header-background-color;
+            background: $grey-16;
+            text-align: center;
+        }
+        .social-icons a:hover {
+            background: $dc-header-background-color;
+            color: $grey-16;
+        }
+    }
 
 
 
 }
 
 .software-carpentry{
-	.main-footer{
-		padding-top: 10px;
-		padding-bottom: 0px;
-		background: $footer-bg;
-		color: $footer-color;
-		font-size: $base-font-size;
-		a{
-		    color: $footer-link-color;
-		    font-weight: normal;
-		    text-decoration: none;
-		    border-bottom: 1px dotted $footer-color;
-		}
-		a:hover{
-		    border-bottom: 1px solid $footer-color;
-		}
-		.credits{
-		    font-size: 0.9em;
-		}
-	}
+    .main-footer{
+        padding-top: 10px;
+        padding-bottom: 0px;
+        background: $footer-bg;
+        color: $footer-color;
+        font-size: $base-font-size;
+        a{
+            color: $footer-link-color;
+            font-weight: normal;
+            text-decoration: none;
+            border-bottom: 1px dotted $footer-color;
+        }
+        a:hover{
+            border-bottom: 1px solid $footer-color;
+        }
+        .credits{
+            font-size: 0.9em;
+        }
+    }
 
-	.social-icons a {
-		font-size: rem-calc(23);
-		display: block;
-		width: 36px;
-		border-radius: 50%;
-		color: $footer-bg;
-		background: $footer-color;
-		text-align: center;
-	}
+    .social-icons a {
+        font-size: rem-calc(23);
+        display: block;
+        width: 36px;
+        border-radius: 50%;
+        color: $footer-bg;
+        background: $footer-color;
+        text-align: center;
+    }
 
-	.social-icons a:hover {
-		background: $footer-bg;
-		color: $footer-color;
-	}
+    .social-icons a:hover {
+        background: $footer-bg;
+        color: $footer-color;
+    }
 }
 
 @media #{$medium-up} {
-	.software-carpentry{
-		.social-icons{
-			margin-left: 1.4em;
-			margin-top: 5px;
-		}
-	}
+    .software-carpentry{
+        .social-icons{
+            margin-left: 1.4em;
+            margin-top: 5px;
+        }
+    }
 }
 
 /* Subfooter
