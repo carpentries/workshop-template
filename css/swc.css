@@ -187,9 +187,7 @@ pre.error {
 
 @media (max-width: 700px) {
     div.banner a img {
-        padding: 0;
-        max-width: 100%;
-        max-height: 100%;
+        padding: 20px 0px;
     }
 }
 
@@ -308,8 +306,7 @@ div.banner {
 
 /* Padding around image in top banner. */
 div.banner a img {
-	padding: 0;
-        max-height: 100%;
+	padding: 20px 25px;
 }
 
 /* Explanatory call-out boxes. */
