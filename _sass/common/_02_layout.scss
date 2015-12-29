@@ -4,10 +4,10 @@
 - Navigation
 - Search
 - Masthead
-- Masthead › small-only
-- Masthead › medium-only
-- Masthead › large-only
-- Masthead › xlarge-up
+- Masthead › small-only
+- Masthead › medium-only
+- Masthead › large-only
+- Masthead › xlarge-up
 - Breadcrumb
 - Meta
 - Jump to top
@@ -54,14 +54,20 @@ body.video cite { color: #fff; }
 /* Search
 ------------------------------------------------------------------- */
 
+.no-js form#search {
+  display: none;
+}
+
 #search {
     padding: 20px 0 0 0;
     background: $ci-4;
 }
 
 
-
 /* Masthead
+             Specific styles for software-carpentry
+             and data-carpentry must be applied in
+             specific classes
 ------------------------------------------------------------------- */
 
 #masthead {
@@ -78,17 +84,73 @@ body.video cite { color: #fff; }
     text-transform: uppercase;
     text-shadow: 0 2px 3px rgba(0,0,0,.4);
 }
-#masthead-no-image-header {
-    height: 175px;
-}
-#masthead-no-image-header #logo img {
-    margin-top: 60px;
-}
-.backstretch {
-    background: $primary-color;
+#masthead-no-image-header {}
+#masthead-no-image-header #logo img {}
+
+.data-carpentry{
+    #masthead {
+        height: 210px;
+    }
+
+    #logo img {
+        margin-top: 15px;
+    }
+
+    #masthead-no-image-header {
+        height: 175px;
+    }
+    #masthead-no-image-header #logo img {
+        margin-top: 60px;
+    }
+    .backstretch {
+        background: $primary-color;
+    }
+
+    &.lesson,
+    &.workshop{
+        #masthead-no-image-header {
+            background: $dc-header-background-color;
+        }
+        #masthead-no-image-header #logo img {
+            margin: 0px;
+            width: 100%;
+            padding: 10px;
+        }
+    }
 }
 
-/* Masthead › small-only
+.software-carpentry{
+    #masthead {
+        color: #fff;
+    }
+    #masthead-no-image-header {
+        color: #fff;
+        height: 115px;
+    }
+    #masthead-no-image-header #logo img {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    h3.masthead {
+        color: #ffffff;
+    }
+
+    &.lesson,
+    &.workshop{
+        #masthead-no-image-header {
+            background: $swc-blue;
+            color: white;
+        }
+        #masthead-no-image-header #logo img {
+            margin: 0px;
+            width: 100%;
+            padding: 10px;
+        }
+    }
+}
+
+/* Masthead › small-only
 ------------------------------------------------------------------- */
 
 @media #{$small-only} {
@@ -115,7 +177,7 @@ body.video cite { color: #fff; }
 }
 
 
-/* Masthead › medium-only
+/* Masthead › medium-only
 ------------------------------------------------------------------- */
 
 @media #{$medium-only} {
@@ -135,19 +197,22 @@ body.video cite { color: #fff; }
         padding: 60px 0;
         height: 300px;
     }
+
+    .software-carpentry{
+        #logo img {
+            max-width: 445px;
+        }
+    }
+
 }
 
 
-/* Masthead › large-only
+/* Masthead › large-only
 ------------------------------------------------------------------- */
 
 @media #{$large-only} {
-    #logo img {
-        margin-top: 80px;
-    }
-    #masthead {
-        height: 310px;
-    }
+    #logo img {}
+    #masthead {}
     #masthead-with-pattern {
         padding: 30px 0;
     }
@@ -158,10 +223,20 @@ body.video cite { color: #fff; }
         height: 330px;
         padding: 60px 0;
     }
+
+    .software-carpentry{
+        #masthead {
+            height: 280px;
+        }
+        #logo img {
+            margin-top: 40px;
+            max-width: 445px;
+        }
+    }
 }
 
 
-/* Masthead › xlarge-up
+/* Masthead › xlarge-up
 ------------------------------------------------------------------- */
 
 @media #{$xlarge-up} {
@@ -169,7 +244,7 @@ body.video cite { color: #fff; }
         margin-top: 110px;
     }
     #masthead {
-        height: 380px;
+        height: 340px;
     }
     #masthead-with-pattern {
         padding: 45px 0;
@@ -180,6 +255,11 @@ body.video cite { color: #fff; }
     #masthead-with-text {
         padding: 95px 0;
         height: 400px;
+    }
+    .software-carpentry{
+        #logo img {
+            max-width: 445px;
+        }
     }
 }
 
@@ -196,6 +276,7 @@ body.video cite { color: #fff; }
 #title-image-index-large {
     height: 260px;
 }
+
 
 
 
@@ -229,15 +310,36 @@ body.video cite { color: #fff; }
 #page-meta .button:hover {
     background: $primary-color;
 }
+.meta-info p {
+  font-size: rem-calc(13);
+  color: scale-color($grey-1, $lightness: 40%);
+}
+  .meta-info a {
+    text-decoration: underline;
+    color: scale-color($grey-1, $lightness: 40%);
+  }
+  .meta-info a:hover {
+    text-decoration: none;
+    color: $secondary-color;
+  }
 
 
 
 /* Jump to top
 ------------------------------------------------------------------- */
 
-#up-to-top {
-    padding: 160px 0 10px 0;
+.data-carpentry{
+    #up-to-top {
+        padding: 160px 0 10px 0;
+    }
 }
+
+.software-carpentry{
+    #up-to-top {
+        padding: 10px 0 10px 0;
+    }
+}
+
 #up-to-top a {
     font-size: 24px;
     padding: 5px;
@@ -252,41 +354,132 @@ body.video cite { color: #fff; }
 /* Footer
 ------------------------------------------------------------------- */
 
-#footer {
-    padding-top: 30px;
-    padding-bottom: 20px;
-    background: $footer-bg;
-    color: $footer-color;
-    }
-    footer p,
-    footer li {
-        font-size: rem-calc(13);
-        font-weight: 300;
+.data-carpentry{
+    #footer {
+        padding-top: 30px;
+        padding-bottom: 20px;
+        background: $footer-bg;
+        color: $footer-color;
+
+        p, li {
+            font-size: rem-calc(13);
+            font-weight: 300;
+        }
+
+        a {
+            color: $footer-link-color;
+        }
+        h4, h5 {
+            letter-spacing: 1px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .social-icons li a {
+            font-size: rem-calc(23);
+            display: block;
+            width: 36px;
+            border-radius: 50%;
+            color: $footer-bg;
+            background: $footer-color;
+            text-align: center;
+        }
+        .social-icons li a:hover {
+            background: $footer-bg;
+            color: $footer-color;
+        }
     }
 
-    #footer a {
-        color: $footer-link-color;
-    }
-    #footer h4,
-    #footer h5 {
-        letter-spacing: 1px;
-        color: #fff;
-        text-transform: uppercase;
+    .main-footer{
+        padding-top: 10px;
+        padding-bottom: 0px;
+        background: $dc-header-background-color;
+        color: $grey-16;
+        font-size: $base-font-size;
+        a{
+            color: $grey-16;
+            font-weight: normal;
+            text-decoration: none;
+            border-bottom: 1px dotted $grey-16;
+        }
+        a:hover{
+            border-bottom: 1px solid $grey-16;
+        }
+        .credits{
+            font-size: 0.9em;
+        }
+
+        @media #{$medium-up} {
+            .social-icons{
+                margin-left: 1.4em;
+                margin-top: 5px;
+            }
+        }
+        .social-icons a {
+            font-size: rem-calc(23);
+            display: block;
+            width: 36px;
+            border-radius: 50%;
+            color: $dc-header-background-color;
+            background: $grey-16;
+            text-align: center;
+        }
+        .social-icons a:hover {
+            background: $dc-header-background-color;
+            color: $grey-16;
+        }
     }
 
-.social-icons li a {
-    font-size: rem-calc(23);
-    display: block;
-    width: 36px;
-    border-radius: 50%;
-    color: $footer-bg;
-    background: $footer-color;
-    text-align: center;
+
+
 }
-.social-icons li a:hover {
-    background: $footer-bg;
-    color: $footer-color;
+
+.software-carpentry{
+    .main-footer{
+        padding-top: 10px;
+        padding-bottom: 0px;
+        background: $footer-bg;
+        color: $footer-color;
+        font-size: $base-font-size;
+        a{
+            color: $footer-link-color;
+            font-weight: normal;
+            text-decoration: none;
+            border-bottom: 1px dotted $footer-color;
+        }
+        a:hover{
+            border-bottom: 1px solid $footer-color;
+        }
+        .credits{
+            font-size: 0.9em;
+        }
+    }
+
+    .social-icons a {
+        font-size: rem-calc(23);
+        display: block;
+        width: 36px;
+        border-radius: 50%;
+        color: $footer-bg;
+        background: $footer-color;
+        text-align: center;
+    }
+
+    .social-icons a:hover {
+        background: $footer-bg;
+        color: $footer-color;
+    }
 }
+
+@media #{$medium-up} {
+    .software-carpentry{
+        .social-icons{
+            margin-left: 1.4em;
+            margin-top: 5px;
+        }
+    }
+}
+
 /* Subfooter
 ------------------------------------------------------------------- */
 

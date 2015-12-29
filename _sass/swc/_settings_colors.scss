@@ -1,4 +1,4 @@
-/* TOC – Color Variables
+/* TOC – Color Variables
 
 - Basics
 - Corporate Identity Colorpalette
@@ -17,7 +17,7 @@
 
 $text-color:       	#111;
 $body-font-color: 	$text-color;
-$body-bg: 			#fdfdfd;
+$body-bg: 		#fdfdfd;
 
 
 
@@ -30,17 +30,27 @@ $ci-2: #45B29D;		// turquoise
 $ci-3: #EFC94C;		// yellow
 $ci-4: #E27A3F;		// orange
 $ci-5: #DF4949;		// red
-$ci-6: #A1D044;     // green
-$ci-7: #EFEFEF;     //something
-$ci-8: #008CBA;
-$ci-9: #e7e7e7;
+$ci-6: #A1D044;		// green
 
+
+/* Software Carpentry colors
+---------------------------------------- */
+
+$swc-blue: #2B3990;		// Software Carpentry dark blue
+$swc-blue-light: #4C65FF;	// Brighter version of Software Carpentry blue
+$swc-blue-med: #4156D9;		// Medium version of Software Carpentry blue
+
+
+/* Data Carpentry colors
+---------------------------------------- */
+
+$dc-header-background-color: #F9D59E;
 
 /* Foundation Color Variables
 ------------------------------------------------------------------- */
 
-$primary-color: $ci-1;
-$secondary-color: $ci-6;
+$primary-color: $swc-blue;
+$secondary-color: $swc-blue-light;
 $alert-color: $ci-5;
 $success-color: $ci-6;
 $warning-color: $ci-4;
@@ -75,45 +85,44 @@ $grey-16: #0B0B0B;
 
 $topbar-bg-color: #fff;
 
-$topbar-dropdown-toggle-color: $ci-1;
+$topbar-dropdown-toggle-color: $swc-blue;
 
 $topbar-link-color: #000;
 $topbar-link-color-hover: #000;
 $topbar-link-color-active: #000;
 $topbar-link-color-active-hover: #000;
 
-$topbar-dropdown-label-color: $grey-4;
-$topbar-dropdown-link-bg-hover: $ci-8;
+$topbar-dropdown-label-color: $swc-blue-light;
+$topbar-dropdown-link-bg-hover: $swc-blue-med;
 
-$topbar-link-bg-active: $ci-8; // Active Navigation Link
-$topbar-link-bg-hover: $ci-8;
-$topbar-link-bg-active-hover: $grey-4;
+$topbar-link-bg-active: $swc-blue-med; // Active Navigation Link
+$topbar-link-bg-hover: $swc-blue-med;
+$topbar-link-bg-active-hover: $swc-blue-light;
 
-
-$topbar-dropdown-bg: $ci-8; // Background Mobile Navigation
+$topbar-dropdown-bg: $swc-blue-med; // Background Mobile Navigation
 $topbar-dropdown-link-color: #000;
-$topbar-dropdown-link-bg: $grey-4;
+$topbar-dropdown-link-bg: $swc-blue-light;
 
-$topbar-menu-link-color-toggled: $ci-1;
-$topbar-menu-icon-color-toggled: $ci-1;
+$topbar-menu-link-color-toggled: $swc-blue;
+$topbar-menu-icon-color-toggled: $swc-blue;
 $topbar-menu-link-color: #000;
 $topbar-menu-icon-color: #000;
-$topbar-menu-link-color-toggled: $ci-8;
-$topbar-menu-icon-color-toggled: $ci-8;
+$topbar-menu-link-color-toggled: $swc-blue-med;
+$topbar-menu-icon-color-toggled: $swc-blue-med;
 
 
 
 /* Footer
 ------------------------------------------------------------------- */
 
-$footer-bg: $grey-8;
-$footer-color: #fff;
-$footer-link-color: $ci-6;
+$footer-bg: $swc-blue;
+$footer-color: $body-bg;
+$footer-link-color: $body-bg;
 
 
-$subfooter-bg: $grey-13;
-$subfooter-color: $grey-8;
-$subfooter-link-color: $grey-8;
+$subfooter-bg: $swc-blue;
+$subfooter-color: $body-bg;
+$subfooter-link-color: $body-bg;
 
 
 

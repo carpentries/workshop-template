@@ -7,6 +7,7 @@
 - Breadcrumb
 - Button
 - Side-Nav
+- Meta
 - Accordion
 - Lazy Load XT
 - Frontpage Widget
@@ -29,11 +30,7 @@
     margin-top: $spacing-unit;
 }
 
-.table {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 20px;
-}
+
 
 /* Panel
 ------------------------------------------------------------------- */
@@ -62,6 +59,7 @@
   font-family: $font-family-sans-serif;
   text-shadow: 0px 1px 1px rgba(0,0,0,0.9);
 }
+
   .alert-box p {
     margin-bottom: 0;
   }
@@ -115,7 +113,6 @@ button, .button         { letter-spacing: 1px; }
 .homepage p { margin: 0; padding: 0; color: $grey-10; }
 
 
-
 /* Accordion
 ------------------------------------------------------------------- */
 
@@ -165,6 +162,18 @@ p.imgpar img {
     margin-right: 10px;
     margin-bottom: 10px;
 }
+
+
+
+/* People
+Use as <p class="person">...</p> or <a href="..." class="person">...</a>
+------------------------------------------------------------------- */
+
+.person {
+    font-weight: bold;
+    font-style: italic;
+}
+
 
 
 
@@ -235,128 +244,14 @@ p.imgpar img {
 }
 
 
+.venueDatas{
+    border: 1px solid $swc-blue-light;
+    border-radius: $global-radius;
+    background: $dc-header-background-color;
+    padding: 20px;
+    margin-top: 40px;
 
-/* ++++++++++++++++++++++ blockquotes ++++++++++++++++++++++ */
-
-$bk-radius: 13px;
-
-@mixin bkSetup($color, $glyph) {
-
-  $gradientcolor1: scale-color($color, $lightness: 70%);
-  $gradientcolor2: scale-color($color, $lightness: 80%);
-
-  border-color: $color;
-
-  h2{
-    background: linear-gradient(to bottom, $gradientcolor1, $gradientcolor2);
-    border-color: $color;
-    color: darken( $color, 20% );
-  }
-  h2:before {
-    content:$glyph ;
-  }
-
-}
-
-blockquote {
-    margin: 10px;
-    padding: 0px;
-    font-weight: 500;
-    line-height: 1.1;
-    border: 1px solid transparent;
-    border-radius: $bk-radius;
     h2{
-        margin: 0px;
-        padding: 10px 15px;
-        display: inline-block;
-        width: 100%;
-        border-radius: $bk-radius $bk-radius 0 0;
-        border-bottom:1px solid $swc-blue;
-        font-size: 1.4em;
+        margin: 0 0 20px 0;
     }
-    h2:before {
-      font-family: 'Glyphicons Halflings';
-      float: left;
-      padding-right:10px;
-      position: relative;
-      top: 1px;
-      display: inline-block;
-      font-family: 'Glyphicons Halflings';
-      font-style: normal;
-      font-weight: normal;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    p, ul, ol { padding: 15px }
-    ul, ol { margin-left: 1em; }
-    cite { font-style: italic; }
-
-    @include bkSetup($swc-blue, "\e233");
-}
-
-.prereq{ @include bkSetup(#D4C30B, "\e233"); }
-.getready{ @include bkSetup(#D4C30B, "\e067"); }
-.callout{ @include bkSetup(#31708f, "\e146"); }
-.challenge{ @include bkSetup(#3c763d, "\270f"); }
-.objectives{ @include bkSetup(#D4C30B, "\e124"); }
-.testimonial{ @include bkSetup(#D4C30B, "\e067"); }
-
-/* ++++++++++++++++++++++ code highlight ++++++++++++++++++++++ */
-
-.lesson{
-
-  pre {
-      display: block;
-      padding: 9.5px;
-      margin: 0px 0px 10px;
-      font-size: 13px;
-      line-height: 1.42857;
-      color: #333;
-      word-break: break-all;
-      word-wrap: break-word;
-      background-color: #F5F5F5;
-      border: 1px solid #CCC;
-      border-radius: 4px;
-  }
-
-  code{
-    background: transparent;
-    color: inherit;
-  }
-
-  .python{ color:ForestGreen; }
-  /* Code sample */
-  .sourceCode, pre.input { color: ForestGreen; }
-  .output { color: MediumBlue; }
-  .error { color: Red; }
-  .comment { color: purple; }
-  /* Error messages. */
-  .err { color: darkred; font-style: italic; }
-  /* Things to fix. */
-  .fixme {
-      text-decoration: underline;
-      color: darkred;
-      background-color: lightgray;
-  }
-  /* Highlighted changes in code. */
-  .highlight { background-color: mistyrose; }
-  /* Manual input. */
-  .in { color: darkgreen; }
-  /* Program output. */
-  .out { color: darkblue; font-style: italic; }
-
-}
-
-/* +++++++++++++++++ Glyphicons from twitter bootstrap +++++++++++++++++ */
-
-@font-face {
-  font-family: 'Glyphicons Halflings';
-
-  src: url('#{$icon-font-path}glyphicons-halflings-regular.eot');
-  src: url('#{$icon-font-path}glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-       url('#{$icon-font-path}glyphicons-halflings-regular.woff2') format('woff2'),
-       url('#{$icon-font-path}glyphicons-halflings-regular.woff') format('woff'),
-       url('#{$icon-font-path}glyphicons-halflings-regular.ttf') format('truetype'),
-       url('#{$icon-font-path}glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }

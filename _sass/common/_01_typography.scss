@@ -1,6 +1,6 @@
-/* TOC – Typography
+/* TOC – Typography
 
-Check typography variables › _3_typography_settings.scss
+Check typography variables › _3_typography_settings.scss
 
 - Links
 - Customize Foundation Typography
@@ -10,6 +10,7 @@ Check typography variables › _3_typography_settings.scss
 - Tables
 - Code
 - Quotes
+- **** lessons blockquotes  and  code highlight
 - Typography for Articles
 - Smaller Fontsize for Bigteaser on small devices
 - Additional typographical elements
@@ -18,7 +19,8 @@ Check typography variables › _3_typography_settings.scss
 
 */
 
-
+/* +++++++++++++++++ Foundation icons +++++++++++++++++ */
+$icon-font-path: "../fonts/" !default;
 
 /* Links
 ------------------------------------------------------------------- */
@@ -27,19 +29,19 @@ a,
 a:link {}
 
 a:visited {
-        border-bottom: $grey-2;
+    border-bottom: $grey-2;
 }
 
 a:hover {
-        color: darken( $ci-1, 10% );
+    color: darken( $ci-1, 10% );
 }
 
 a:focus {
-        color: lighten( $ci-1, 20% );
+    color: lighten( $ci-1, 20% );
 }
 
 a:active {
-        color: darken( $ci-1, 20% );
+    color: darken( $ci-1, 20% );
 }
 
 
@@ -53,21 +55,26 @@ p {
     -ms-hyphens: auto;
     hyphens: auto;
 }
+
 p a,
 article a {
+    text-decoration: none;
     font-weight: bold;
     border-bottom: 1px dotted;
 }
+
 p a:hover,
 article a:hover {
     border-bottom: 2px solid;
 }
+
 p a.button,
 .button,
 .button:hover {
     border: 0;
     color: #fff;
 }
+
 p.button a {
     border: 0;
     color: #fff;
@@ -78,6 +85,20 @@ p.button a {
 
 /* Headlines
 ------------------------------------------------------------------- */
+
+$font-size-h1:      2.441em;
+$font-size-h2:      1.953em;
+$font-size-h3:      1.563em;
+$font-size-h4:      1.25em;
+$font-size-h5:      1.152em;
+$font-size-small:   0.8em;
+
+.font-size-h1   { font-size: $font-size-h1; }
+.font-size-h2   { font-size: $font-size-h2; }
+.font-size-h3   { font-size: $font-size-h3; }
+.font-size-h4   { font-size: $font-size-h4; }
+.font-size-h5   { font-size: $font-size-h5; }
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $header-font-family;
@@ -115,12 +136,20 @@ h5 {
 ------------------------------------------------------------------- */
 
 img { border-radius: $global-radius;}
+
     img.alignleft,
     img.left        { float: left; margin:5px 15px 5px 0; }
     img.alignright,
     img.right       { float: right; margin:5px 0 5px 15px; }
     img.aligncenter,
     img.center      { display: block; margin:0 auto 10px; }
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 
 figure {
     margin: 0 0 rem-calc(30) 0;
@@ -152,9 +181,14 @@ figcaption a:hover,
 }
 
 
-
 /* Tables
 ------------------------------------------------------------------- */
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
 
 td {
     vertical-align: top;
@@ -180,6 +214,192 @@ pre code {
 code {
     font-size: rem-calc(14);
     line-height: 1.5;
+}
+
+.workshop{
+  code {
+    padding: 2px 4px;
+    font-size: 90%;
+    background-color: #F9F2F4;
+    border-radius: 4px;
+    border: none;
+    font-family: "Courier New",monospace;
+  }
+}
+
+/* Quotes
+------------------------------------------------------------------- */
+
+blockquote {
+    font-style: italic;
+    position: relative;
+    border: none;
+    margin: 0 30px 30px 30px;
+    color: #4b4b4d
+}
+
+    blockquote p {font-style: italic; color: $grey-10; }
+
+    blockquote:before {
+        display:block;
+        content:"\00BB";
+        font-size:80px;
+        position:absolute;
+        left:-25px;
+        top:-40px;
+        color:#4b4b4d
+    }
+    blockquote:after {
+        display:block;
+        content:"\00AB";
+        font-size:80px;
+        position:absolute;
+        right:-10px;
+        bottom:-40px;
+        color:#4b4b4d;
+    }
+    blockquote cite:before {
+        content:"\2014 \0020"
+    }
+    blockquote cite a,blockquote cite a:visited {
+        color: #555
+    }
+
+cite {
+    padding-top: 5px;
+}
+
+button, .button {
+    letter-spacing: 1px;
+}
+
+mark {
+    background-color: scale-color($warning-color, $lightness: 60%);
+}
+
+
+/* +++++++++++ lessons blockquotes  and  code highlight +++++++++++++++ */
+$bk-radius: 13px;
+
+@mixin bkSetup($color, $glyph) {
+
+  $gradientcolor1: scale-color($color, $lightness: 70%);
+  $gradientcolor2: scale-color($color, $lightness: 80%);
+
+  border-color: $color;
+
+  h2{
+    background: linear-gradient(to bottom, $gradientcolor1, $gradientcolor2);
+    border-color: $color;
+    color: darken( $color, 20% );
+  }
+  h2:before {
+    content:$glyph ;
+  }
+
+}
+
+.lesson{
+  blockquote {
+      margin: 10px;
+      padding: 0px;
+      font-weight: 500;
+      font-style: normal;
+      line-height: 1.1;
+      border: 1px solid transparent;
+      border-radius: $bk-radius;
+
+    &::before {
+        display:block;
+        content:"";
+    }
+    &::after {
+        display:block;
+        content:"";
+    }
+
+    h2{
+        margin: 0px;
+        padding: 10px 15px;
+        display: inline-block;
+        width: 100%;
+        border-radius: $bk-radius $bk-radius 0 0;
+        border-bottom:1px solid $swc-blue;
+        font-size: 1.4em;
+    }
+
+    h2:before {
+      font-family: 'Glyphicons Halflings';
+      float: left;
+      padding-right:10px;
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      font-family: 'Glyphicons Halflings';
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    p, ul, ol {
+      padding: 10px 15px;
+      margin-bottom: 0px;
+      font-style: normal;
+    }
+    ul, ol { margin-left: 1em; }
+    cite { font-style: italic; }
+
+    @include bkSetup($swc-blue, "\e233");
+  }
+
+  .prereq{ @include bkSetup(#D4C30B, "\e233"); }
+  .getready{ @include bkSetup(#D4C30B, "\e067"); }
+  .callout{ @include bkSetup(#31708f, "\e146"); }
+  .challenge{ @include bkSetup(#3c763d, "\270f"); }
+  .objectives{ @include bkSetup(#D4C30B, "\e124"); }
+  .testimonial{ @include bkSetup(#D4C30B, "\e067"); }
+
+  pre {
+      display: block;
+      padding: 10px;
+      margin: 0px 10px 10px;
+      font-size: 13px;
+      line-height: 1.42857;
+      color: #333;
+      word-break: break-all;
+      word-wrap: break-word;
+      background-color: #F5F5F5;
+      border: 1px solid #CCC;
+      border-radius: 4px;
+  }
+
+  code{
+    background: transparent;
+    color: inherit;
+  }
+
+  .python{ color:ForestGreen; }
+  /* Code sample */
+  .sourceCode, pre.input { color: ForestGreen; }
+  .output { color: MediumBlue; }
+  .error { color: Red; }
+  .comment { color: purple; }
+  /* Error messages. */
+  .err { color: darkred; font-style: italic; }
+  /* Things to fix. */
+  .fixme {
+      text-decoration: underline;
+      color: darkred;
+      background-color: lightgray;
+  }
+  /* Highlighted changes in code. */
+  .highlight { background-color: mistyrose; }
+  /* Manual input. */
+  .in { color: darkgreen; }
+  /* Program output. */
+  .out { color: darkblue; font-style: italic; }
+
 }
 
 
@@ -210,68 +430,27 @@ li {
 dl {
 
 }
+/*
 dt:first-child {
     padding-top: 0px;
 }
+*/
 dt {
     font-weight: bold;
-    padding-top: 30px;
+    /* padding-top: 30px; */
 }
 dd {
 }
-article dl dt   { line-height: 1.3; }
-article dl dd   { line-height: 1.6; margin-bottom: rem-calc(12); margin-left: rem-calc(24); }
-
-
-
-/* Quotes
-------------------------------------------------------------------- */
-
-blockquote {
-    font-style: italic;
-    position: relative;
-    border: none;
-    margin: 0 30px 30px 30px;
-    color: #4b4b4d
+/*
+article dl dt {
+    line-height: 1.3;
 }
-
-    blockquote p {font-style: italic; color: $grey-10; }
-
-    blockquote:before {
-        display:block;content:"\00BB";
-        font-size:80px;
-        position:absolute;
-        left:-25px;
-        top:-40px;
-        color:#4b4b4d
-    }
-    blockquote:after {
-        display:block;
-        content:"\00AB";
-        font-size:80px;
-        position:absolute;
-        right:-10px;
-        bottom:-40px;
-        color:#4b4b4d;
-    }
-    blockquote cite:before {
-        content:"\2014 \0020"
-    }
-    blockquote cite a,blockquote cite a:visited {
-        color: #555
-    }
-cite {
-    padding-top: 5px;
+*/
+article dl dd {
+    /* line-height: 1.6; */
+    /* margin-bottom: rem-calc(12); */
+    margin-left: rem-calc(24);
 }
-
-button, .button {
-    letter-spacing: 1px;
-}
-
-mark {
-    background-color: scale-color($warning-color, $lightness: 60%);
-}
-
 
 
 /* Typography for Articles
@@ -312,24 +491,29 @@ mark {
 .sans           { font-family: $font-family-sans-serif; }
 .serif          { font-family: $font-family-serif; }
 
-.font-size-h1   { font-size: $font-size-h1; }
-.font-size-h2   { font-size: $font-size-h2; }
-.font-size-h3   { font-size: $font-size-h3; }
-.font-size-h4   { font-size: $font-size-h4; }
-.font-size-h5   { font-size: $font-size-h5; }
-.font-size-p    { font-size: $font-size-p; }
-
-
 
 /* Footnotes
 ------------------------------------------------------------------- */
 
+.footnotes:before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 60px;
+    margin-top: -10px;
+    border-bottom: 1px solid $grey-2;
+}
 .footnotes {
     margin-top: 60px;
 }
 .footnotes ol {
     font-size: $font-size-small;
 }
+.footnotes p {
+    font-size: inherit;
+    margin-bottom: 0;
+}
+
 
 
 
@@ -339,11 +523,11 @@ mark {
 
 @font-face {
   font-family: 'iconfont';
-  src: url('../../fonts/iconfont.eot'); /* IE9 Compat Modes */
-  src: url('../../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../../fonts/iconfont.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../../fonts/iconfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../../fonts/iconfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('#{$icon-font-path}iconfont.eot'); /* IE9 Compat Modes */
+  src: url('#{$icon-font-path}iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$icon-font-path}iconfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('#{$icon-font-path}iconfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$icon-font-path}iconfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 .iconfont       { font-family: iconfont; }
@@ -475,3 +659,4 @@ font-smoothing: antialiased;
 .icon-warning:before { content: "\f131"; }
 .icon-xing:before { content: "\f135"; }
 .icon-youtube:before { content: "\f132"; }
+
