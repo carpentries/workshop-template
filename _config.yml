@@ -26,7 +26,7 @@ domain: "http://gvwilson.github.io"
 baseurl: "/swctasks-workshop-template"
 
 # Workshops's GitHub repository.
-workshop_repo   : "http://github.com/swcarpentry/workshop-template"
+github_repo   : "http://github.com/swcarpentry/workshop-template"
 
 # Logo image (white with transparent background to stand out on blue background)
 logo: "swc-logo-white.svg"
