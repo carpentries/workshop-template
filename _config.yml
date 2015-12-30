@@ -12,11 +12,6 @@
 # use the values of other YAML variables, we've left it as is.
 #-------------------------------------------------------------------------------
 
-# What kind of project is this?
-# Allowed values are "dc" and "swc".
-# This is used to set the variable "project" in _includes/head.html.
-project_type: "swc"
-
 # Website domain (no trailing slash).
 # E.g., http://yourname.github.io
 domain: "http://gvwilson.github.io"
