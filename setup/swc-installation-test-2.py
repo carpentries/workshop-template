@@ -90,9 +90,6 @@ CHECKS = [
     'virtual-browser',
 # Version control
     'git',
-    'hg',              # Command line tool
-    #'mercurial',       # Python package
-    'EasyMercurial',
 # Build tools and packaging
     'make',
     'virtual-pypi-installer',
@@ -115,10 +112,6 @@ CHECKS = [
     'scipy',
     'matplotlib',
     'pandas',
-    #'sympy',
-    #'Cython',
-    #'networkx',
-    #'mayavi.mlab',
     ]
 
 CHECKER = {}
@@ -140,11 +133,6 @@ class InvalidCheck (KeyError):
 class DependencyError (Exception):
     _default_url = 'http://software-carpentry.org/setup/'
     _setup_urls = {  # (system, version, package) glob pairs
-        ('*', '*', 'Cython'): 'http://docs.cython.org/src/quickstart/install.html',
-        ('Linux', '*', 'EasyMercurial'): 'http://easyhg.org/download.html#download-linux',
-        ('Darwin', '*', 'EasyMercurial'): 'http://easyhg.org/download.html#download-mac',
-        ('Windows', '*', 'EasyMercurial'): 'http://easyhg.org/download.html#download-windows',
-        ('*', '*', 'EasyMercurial'): 'http://easyhg.org/download.html',
         ('*', '*', 'argparse'): 'https://pypi.python.org/pypi/argparse#installation',
         ('*', '*', 'ash'): 'http://www.in-ulm.de/~mascheck/various/ash/',
         ('*', '*', 'bash'): 'http://www.gnu.org/software/bash/manual/html_node/Basic-Installation.html#Basic-Installation',
@@ -158,8 +146,6 @@ class DependencyError (Exception):
         ('Linux', '*', 'gedit'): 'http://www.linuxfromscratch.org/blfs/view/svn/gnome/gedit.html',
         ('*', '*', 'git'): 'http://git-scm.com/downloads',
         ('*', '*', 'google-chrome'): 'https://www.google.com/intl/en/chrome/browser/',
-        ('*', '*', 'hg'): 'http://mercurial.selenic.com/',
-        ('*', '*', 'mercurial'): 'http://mercurial.selenic.com/',
         ('*', '*', 'IPython'): 'http://ipython.org/install.html',
         ('*', '*', 'ipython'): 'http://ipython.org/install.html',
         ('*', '*', 'jinja'): 'http://jinja.pocoo.org/docs/intro/#installation',
@@ -168,9 +154,7 @@ class DependencyError (Exception):
         ('Darwin', '*', 'matplotlib'): 'http://matplotlib.org/users/installing.html#building-on-osx',
         ('Windows', '*', 'matplotlib'): 'http://matplotlib.org/users/installing.html#installing-on-windows',
         ('*', '*', 'matplotlib'): 'http://matplotlib.org/users/installing.html#installing',
-        ('*', '*', 'mayavi.mlab'): 'http://docs.enthought.com/mayavi/mayavi/installation.html',
         ('*', '*', 'nano'): 'http://www.nano-editor.org/dist/latest/faq.html#3',
-        ('*', '*', 'networkx'): 'http://networkx.github.com/documentation/latest/install.html#installing',
         ('*', '*', 'nose'): 'https://nose.readthedocs.org/en/latest/#installation-and-quick-start',
         ('*', '*', 'nosetests'): 'https://nose.readthedocs.org/en/latest/#installation-and-quick-start',
         ('*', '*', 'notepad++'): 'http://notepad-plus-plus.org/download/v6.3.html',
@@ -188,7 +172,6 @@ class DependencyError (Exception):
         ('*', '*', 'setuptools'): 'https://pypi.python.org/pypi/setuptools#installation-instructions',
         ('*', '*', 'sqlite3'): 'http://www.sqlite.org/download.html',
         ('*', '*', 'sublime-text'): 'http://www.sublimetext.com/2',
-        ('*', '*', 'sympy'): 'http://docs.sympy.org/dev/install.html',
         ('Darwin', '*', 'textmate'): 'http://macromates.com/',
         ('Darwin', '*', 'textwrangler'): 'http://www.barebones.com/products/textwrangler/download.html',
         ('*', '*', 'tornado'): 'http://www.tornadoweb.org/',
@@ -707,17 +690,6 @@ class PythonPackageDependency (Dependency):
         return version
 
 
-class MercurialPythonPackage (PythonPackageDependency):
-    def _get_version(self):
-        try:  # mercurial >= 1.2
-            package = _importlib.import_module('mercurial.util')
-        except ImportError as e:  # mercurial <= 1.1.2
-            package = self._get_package('mercurial.version')
-            return package.get_version()
-        else:
-            return package.version()
-
-
 class TornadoPythonPackage (PythonPackageDependency):
     def _get_version_from_package(self, package):
         return package.version
@@ -758,8 +730,6 @@ for command,long_name,minimum_version,paths in [
         ('tcsh', 'TENEX C Shell', None, None),
         ('zsh', 'Z Shell', None, None),
         ('git', 'Git', (1, 7, 0), None),
-        ('hg', 'Mercurial', (2, 0, 0), None),
-        ('EasyMercurial', None, (1, 3), None),
         ('pip', None, None, None),
         ('sqlite3', 'SQLite 3', None, None),
         ('nosetests', 'Nose', (1, 0, 0), None),
@@ -884,10 +854,6 @@ for package,name,long_name,minimum_version,and_dependencies in [
         ('scipy', None, 'SciPy', None, None),
         ('matplotlib', None, 'Matplotlib', None, None),
         ('pandas', None, 'Pandas', (0, 8), None),
-        ('sympy', None, 'SymPy', None, None),
-        ('Cython', None, None, None, None),
-        ('networkx', None, 'NetworkX', None, None),
-        ('mayavi.mlab', None, 'MayaVi', None, None),
         ('setuptools', None, 'Setuptools', None, None),
         ]:
     if not name:
@@ -902,12 +868,6 @@ for package,name,long_name,minimum_version,and_dependencies in [
         minimum_version=minimum_version, **kwargs)
 # cleanup namespace
 del package, name, long_name, minimum_version, and_dependencies, kwargs
-
-
-CHECKER['mercurial'] = MercurialPythonPackage(
-    package='mercurial.util', name='mercurial',
-    long_name='Mercurial Python package',
-    minimum_version=CHECKER['hg'].minimum_version)
 
 
 CHECKER['tornado'] = TornadoPythonPackage(

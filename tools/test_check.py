@@ -12,12 +12,6 @@ def test_check_layout():
 def test_check_layout_fail():
     assert not check.check_layout("lesson")
 
-def test_check_root():
-    assert check.check_root(".")
-
-def test_check_root_fail():
-    assert not check.check_root("setup")
-
 def test_check_country_none():
     assert not check.check_country(None)
 

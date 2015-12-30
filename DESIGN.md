@@ -59,11 +59,13 @@ than Git itself.
     located in the repo's root directory, and the header of each
     individual page.  Variables from `_config.yml` are put in an
     object called `site`, and referred to as `site.variable`, so that
-    (for example) `{{site.swc_site}}` in a page is replaced by the URL
-    of the main Software Carpentry web site.  Variables from the
-    page's header are put in an object called `page`, and referred to
-    as `page.variable`, so if a page's header defines a variable
-    called `venue`, `{{page.venue}}` is replaced by "Euphoric State
+    (for example) `{{site.domain}}` is replaced with the domain of the
+    workshop website.  Some values are stored in files in the `_data`
+    directory, so (for example) `{{site.data.swc.site}}` refers to the
+    `site` variable in `_data/swc.yml`.  Variables from the page's
+    header are put in an object called `page`, and referred to as
+    `page.variable`, so if a page's header defines a variable called
+    `venue`, `{{page.venue}}` is replaced by "Euphoric State
     University" (or whatever value the variable has).
 
 8.  If a page uses `{% raw %}{% include something.html %}{% endraw %}`
