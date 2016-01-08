@@ -186,6 +186,13 @@ you must install the software described below.
      the default Redcarpet, because Kramdown handles Markdown
      inside HTML blocks.
 
+    Note: You may need to specify the version of gem to use for installation (if you have multiple versions of Ruby installed). For example for version 2.0 you could use:
+
+     ~~~
+     $ gem2.0 install github-pages
+     ~~~
+
+
 2.  The Python YAML module
 
     If you are using the Anaconda Python distribution, you probably
