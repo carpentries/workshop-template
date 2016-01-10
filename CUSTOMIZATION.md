@@ -133,6 +133,10 @@ you have no Emacs experience and don't want to be responsible for
 students who show up with Emacs as their only editor), you can comment
 out that particular `or_dependency`.
 
+## Home Page: Downloads
+
+You should edit the `Downloads` section to list content you will be using in your workshop.
+
 ## Updating the repository
 
 If for some reason,
