@@ -135,7 +135,22 @@ out that particular `or_dependency`.
 
 ## Home Page: Downloads
 
-You should edit the `Downloads` section to list content you will be using in your workshop.
+You should edit the `Downloads` section to list content you will be
+using in your workshop.  If you don't want to do that by hand,
+`tools/update-downloads.py` script can automatically populate the
+download section with downloads required for your lesson set.  Call it
+with:
+
+~~~
+$ ./tools/update-downloads.py lessons.json index.html
+~~~
+
+after creating a `lessons.json` file.  For a description of the
+`lessons.json` syntax, run:
+
+~~~
+$ ./tools/update-downloads.py --help
+~~~
 
 ## Updating the repository
 
