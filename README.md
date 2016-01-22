@@ -47,7 +47,7 @@ template for creating websites for workshops.
 
 6.  At this point, you should have a page like this:
 
-    ![](http://software-carpentry.org/img/workshop-template/using-github-import.png)
+    ![](img/using-github-import.png?raw=true)
 
     You can now click "Begin Import".
     When the process is done,
@@ -73,7 +73,7 @@ please [get in touch](#getting-and-giving-help).
     You can do this in the browser by clicking on it in the file view on GitHub
     and then selecting the pencil icon in the menu bar:
 
-    ![](http://software-carpentry.org/img/workshop-template/edit-index-file-menu-bar.png)
+    ![](img/edit-index-file-menu-bar.png?raw=true)
     
     Editing hints are embedded in `index.html`,
     and full instructions are in [CUSTOMIZATION.md](CUSTOMIZATION.md).
