@@ -60,17 +60,6 @@ If you experience a problem, please re-try;
 if the problem persists,
 please [get in touch](#getting-and-giving-help).
 
-To clone your new repository, use:
-
-~~~
-git clone -b gh-pages https://github.com/your_username/YYYY-MM-DD-site
-~~~
-
-This is needed because the imported repository doesn't have a `master` branch.
-
-**Note:** please do all of your work in your repository's `gh-pages` branch,
-since [GitHub automatically publishes that as a website](https://help.github.com/articles/creating-project-pages-manually/).
-
 ## Customizing Your Website
 
 1.  Go into your newly-created repository,
@@ -80,18 +69,27 @@ since [GitHub automatically publishes that as a website](https://help.github.com
     the repository's URL will be `https://github.com/gvwilson/2015-07-01-mistaktonic`.
 
 2.  Edit `index.html` to customize the list of instructors,
-    workshop venue,
-    etc.
-    You can do this in the browser by clicking on it in the file view
+    workshop venue, etc. 
+    You can do this in the browser by clicking on it in the file view on GitHub
     and then selecting the pencil icon in the menu bar:
 
     ![](http://software-carpentry.org/img/workshop-template/edit-index-file-menu-bar.png)
-
-    or you can clone the repository to your desktop,
-    edit `index.html` there,
-    and push your changes back to the repository.
+    
     Editing hints are embedded in `index.html`,
     and full instructions are in [CUSTOMIZATION.md](CUSTOMIZATION.md).
+
+    > Alternatively, you can clone the repository to your desktop,
+    > edit `index.html` there,
+    > and push your changes back to the repository.
+    >
+    > ~~~
+    > git clone -b gh-pages https://github.com/your_username/YYYY-MM-DD-site
+    > ~~~
+    >
+    > This is needed because the imported repository doesn't have a `master` branch.
+    >
+    > **Note:** please do all of your work in your repository's `gh-pages` branch,
+    > since [GitHub automatically publishes that as a website](https://help.github.com/articles/creating-project-pages-manually/).
 
 3.  Edit `_config.yml` in the same way
     so that `workshop_repo` and `workshop_site`
@@ -99,8 +97,8 @@ since [GitHub automatically publishes that as a website](https://help.github.com
 
     Note: the URL for your website is determined automatically
     based on the URL for your repository.
-    If your repository is at `https://github.com/gvwilson/2015-07-01-mistaktonic`,
-    its GitHub Pages website is at `http://gvwilson.github.io/2015-07-01-miskatonic`.
+    If your repository is at `https://github.com/your_username/YYYY-MM-DD-site`,
+    its GitHub Pages website is at `http://your_username.github.io/YYYY-MM-DD-site`.
 
 4.  When you are done editing,
     you can preview your website.
