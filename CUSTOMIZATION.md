@@ -80,7 +80,7 @@ The header may optionally define the following:
     not using an Etherpad, you can delete this line.
 
 *   `eventbrite` is the multi-digit Eventbrite registration key.  If you
-    are using Eventbrite, the Software Carpentry administraotrs will
+    are using Eventbrite, the Software Carpentry administrators will
     give this to you.  If you are using something else, you may delete
     this line.  Note: this value must be given as a string in double
     quotes, rather than as a number.
