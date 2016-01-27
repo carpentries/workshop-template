@@ -100,7 +100,12 @@ so that they show what you're actually planning to teach and when.
 You should delete the pieces of the `Setup` section
 related to software you will not be using in your workshop,
 so that learners don't spend time installing software they don't need.
-After you edit the `Setup` section, you should edit the installation test script.
+
+## Setup: Installation tests
+
+If you intend to use the installation-test scripts,
+uncomment the paragraph linking to `setup/index.html` in `index.html`
+and edit `setup/swc-installation-test-2.py` as described below.
 
 `swc-installation-test-1.py` is pretty simple, and just checks that
 the students have a recent enough version of Python installed that
