@@ -17,11 +17,6 @@ which must define the following values in its header:
 
 *   `layout` must be `workshop`.
 
-*   `root` must be the path to the repository's root directory.  This is
-    '.' if the page is in the root directory (which `index.html` is).
-    In other pages, `root` is '..' if the page is one directory down,
-    '../..' if it is two levels down, and so on.
-
 *   `venue` is the short name of the institution or group hosting the
     workshop, like "Euphoric State University".  It should *not*
     include the address or other details, since this value is

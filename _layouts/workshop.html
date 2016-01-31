@@ -1,72 +1,62 @@
 ---
+# Use this layout for the home page for the workshop website.
+# Use 'page.html' for other pages.
 ---
-<!DOCTYPE html>
-<!--
-  Use this layout for the home page for the workshop website.
-  Use 'page.html' for other pages.
--->
-<html>
-  <head>
-    <title>Software Carpentry: {{ page.venue }}</title>
-    {% include header.html %}
-    <meta name="slug" content="{{site.github.project_title}}" />
-    <meta name="startdate" content="{{page.startdate}}" />
-    <meta name="enddate" content="{{page.enddate}}" />
-    <meta name="country" content="{{page.country}}" />
-    <meta name="venue" content="{{page.venue}}" />
-    <meta name="address" content="{{page.address}}" />
-    <meta name="latlng" content="{{page.latlng}}" />
-    <meta name="language" content="{{page.language}}" />
-    <meta name="eventbrite" content="{{page.eventbrite}}" />
-    <meta name="instructor" content="{{page.instructor|join:'|'}}" />
-    <meta name="helper" content="{{page.helper|join:'|'}}" />
-    <meta name="contact" content="{{page.contact}}" />
-    {% if page.redirect %}
-    <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
-    {% endif %}
-  </head>
-  <body class="workshop">
-
-    {% include github-ribbon.html %}
-
-    <div class="container card">
-      {% include banner.html %}
-      <div class="jumbotron">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <h2>{{page.venue}}</h2>
-            <div class="row">
-              <div class="col-md-6">
-                <p>{{page.humandate}}</p>
-                <p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
-              </div>
-              <div class="col-md-6">
-                <p>
-                <strong>Instructors:</strong>
-                {% if page.instructor %}
-                {{page.instructor | join: ', ' %}}
-                {% else %}
-                to be announced.
-                {% endif %}
-                </p>
-                {% if page.helper %}
-                <p>
-                <strong>Helpers:</strong>
-                {{page.helper | join: ', ' %}}
-                </p>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<!doctype html>
+<html lang="en">
+<head>
+  {% include head.html %}
+  <meta name="slug" content="{{site.github.project_title}}" />
+  <meta name="startdate" content="{{page.startdate}}" />
+  <meta name="enddate" content="{{page.enddate}}" />
+  <meta name="country" content="{{page.country}}" />
+  <meta name="venue" content="{{page.venue}}" />
+  <meta name="address" content="{{page.address}}" />
+  <meta name="latlng" content="{{page.latlng}}" />
+  <meta name="language" content="{{page.language}}" />
+  <meta name="eventbrite" content="{{page.eventbrite}}" />
+  <meta name="instructor" content="{{page.instructor|join:'|'}}" />
+  <meta name="helper" content="{{page.helper|join:'|'}}" />
+  <meta name="contact" content="{{page.contact}}" />
+  {% if page.redirect %}
+  <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
+  {% endif %}
+</head>
+<body id="top-of-page" class="software-carpentry workshop">{% include github-ribbon.html %}
+  {% include header.html %}
+  <div class="row">
+    <div class="medium-10 medium-offset-1 columns venueDatas">
+      <h2 class=""><a href="{{ site.site }}/workshops">Workshops</a>  &gt; {{page.venue}}</h2>
       <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          {{content}}
+        <div class="medium-6 columns">
+          <p>{{page.humandate}}</p>
+          <p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
+        </div>
+        <div class="medium-6 columns">
+          <p>
+          <strong>Instructors:</strong>
+          {% if page.instructor %}
+          {{page.instructor | join: ', ' %}}
+          {% else %}
+          to be announced.
+          {% endif %}
+          </p>
+          {% if page.helper %}
+          <p>
+          <strong>Helpers:</strong>
+          {{page.helper | join: ', ' %}}
+          </p>
+          {% endif %}
         </div>
       </div>
-      {% include footer.html %}
     </div>
-    {% include javascript.html %}
-  </body>
+  </div>
+  <div class="row">
+    <div class="medium-12 columns">
+      {{ content }}
+    </div>
+  </div>
+  {% include footer.html %}
+  {% include javascript.html %}
+</body>
 </html>
