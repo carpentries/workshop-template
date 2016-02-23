@@ -37,8 +37,6 @@
 
     Go ahead,
     but you *must* have the variables described in [CUSTOMIZATION.md](CUSTOMIZATION.md).
-    Please make sure to run `tools/check.py` after adding or changing variables
-    to make sure that our main website will understand your changes.
 
 *   *What is the "Windows installer"?*
 

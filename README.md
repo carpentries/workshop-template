@@ -101,8 +101,7 @@ please [get in touch](#getting-and-giving-help).
     its GitHub Pages website is at `http://your_username.github.io/YYYY-MM-DD-site`.
 
 4.  When you are done editing,
-    you can preview your website.
-    Again,
+    you can view your website:
     if your repository is `https://github.com/your_username/YYYY-MM-DD-site`,
     its website will be `http://your_username.github.io/YYYY-MM-DD-site`.
 
@@ -116,27 +115,22 @@ The following steps are only necessary if you want to run the website locally on
 
 ## Checking Your Changes
 
-**Note:** to check your changes you need some softwares
-that are describe at [Installing Software session](#installing-software).
+1.  To check your changes on your desktop you need some softwares
+    described at [Installing Software session](#installing-software).
+    This may require some work to set up,
+    so feel free to preview by pushing to the website.
 
-No matter how you edit `index.html`, you should:
+2.  For some links to work properly,
+    particularly the link to your workshop's Eventbrite registration page,
+    you must view `_site/index.html` using an HTTP server.
+    If you have Jekyll installed,
+    you can do this by running:
 
-1.  Check your changes by running `tools/check.py` at the command line
-    from the root directory of your repository.
+    ~~~
+    $ jekyll server -d _site
+    ~~~
 
-2.  Preview your changes by running `tools/preview` and looking at `_site/index.html`.
-
-For some links to work properly,
-particularly the link to your workshop's Eventbrite registration page,
-you must view `_site/index.html` using an HTTP server.
-If you have Jekyll installed,
-you can do this by running:
-
-~~~
-$ jekyll server -d _site
-~~~
-
-and going to http://localhost:4000.
+    and going to http://localhost:4000.
 
 ## Installing Software
 
@@ -184,7 +178,9 @@ you must install the software described below.
      the default Redcarpet, because Kramdown handles Markdown
      inside HTML blocks.
 
-    Note: You may need to specify the version of gem to use for installation (if you have multiple versions of Ruby installed). For example for version 2.0 you could use:
+    Note: you may need to specify the version of gem to use for installation
+    if you have multiple versions of Ruby installed.
+    For example for version 2.0 you could use:
 
      ~~~
      $ gem2.0 install github-pages
