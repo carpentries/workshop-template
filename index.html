@@ -21,6 +21,20 @@ helper: ["FIXME"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Rut
 contact: "FIXME"      # contact email address for workshop organizer, such as "grace@hopper.org"
 etherpad:         # optional (insert the URL for your Etherpad if you're using one)
 eventbrite:       # optional (insert the alphanumeric key for Eventbrite registration, e.g., "1234567890AB")
+
+# Control which setup instructions are displayed.  You can edit this
+# list, or ignore this list and delete any unwanted the HTML below,
+# whichever you find easiest.
+tools: ["Bash", "nano", "R", "Python", "Git", "SQLite"]
+# Available tools and setup-oriented topics that are not enabled by
+# default:
+#
+# - VM: controls a section on installing the SWC VirtualBox image.
+# - test: controls a paragraph linking the installation-test scripts.
+#
+# Add these to the tools list to show them, for example:
+#
+#   tools: ["Bash", "nano", "Python", "Git", "SQLite", "test"]
 ---
 <!--
   HEADER
@@ -336,6 +350,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   <a href = "https://github.com/swcarpentry/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
 
+{% if page.tools contains 'Bash' %}
 <div id="shell"> <!-- Start of 'shell' section. -->
   <h3>The Bash Shell</h3>
 
@@ -414,7 +429,9 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
     </div>
   </div>
 </div> <!-- End of 'shell' section. -->
+{% endif %}
 
+{% if page.tools contains 'Git' %}
 <div id='git'> <!-- Start of 'Git' section. GitHub browser compatability
            is given at https://help.github.com/articles/supported-browsers/-->
   <h3>Git</h3>
@@ -461,7 +478,9 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
     </div>
   </div>
 </div> <!-- End of 'Git' section. -->
+{% endif %}
 
+{% if page.tools contains 'nano' %}
 <div id="editor"> <!-- Start of 'editor' section. -->
   <h3>Text Editor</h3>
 
@@ -521,7 +540,9 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
     </div>
   </div>
 </div> <!-- End of 'editor' section. -->
+{% endif %}
 
+{% if page.tools contains 'Python' %}
 <div id="python"> <!-- Start of 'Python' section. Remove the third paragraph if
            the workshop will teach Python using something other than
            the IPython notebook.
@@ -599,15 +620,10 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       </ol>
     </div>
   </div>
-<!--
-  <p>
-  Once you are done installing the software listed above,
-  please go to <a href="setup/index.html">this page</a>,
-  which has instructions on how to test that everything was installed correctly.
-  </p>
--->
 </div> <!-- End of 'Python' section. -->
+{% endif %}
 
+{% if page.tools contains 'R' %}
 <div id="r"> <!-- Start of 'R' section. -->
   <h3>R</h3>
 
@@ -652,7 +668,9 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
     </div>
   </div>
 </div> <!-- End of 'R' section. -->
+{% endif %}
 
+{% if page.tools contains 'SQLite' %}
 <div id="sql"> <!-- Start of 'SQLite' section. -->
   <h3>SQLite</h3>
 
@@ -689,10 +707,14 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
     <a href="https://github.com/ContinuumIO/anaconda-issues/issues/307">without support to <code>readline</code></a>.
     Instructors will provide a workaround for it if needed.</strong></p>
 </div> <!-- End of 'SQLite' section. -->
+{% endif %}
 
 <!--
-  Uncomment this section if you are using our virtual machine.
-
+  The VM section is disabled by default.  Add a "VM" entry to the
+  'tools' array in the YAML front matter at the top of this file to
+  show this section.
+-->
+{% if page.tools contains 'VM' %}
 <div id="vm">
   <h3>Virtual Machine</h3>
 
@@ -715,5 +737,22 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       loading the <code>.ova</code> file.
     </li>
   </ol>
-</div>
+</div>  <!-- End of 'VM' section. -->
+{% endif %}
+
+<!--
+  The test section is disabled by default.  Add a "test" entry to
+  the 'tools' array in the YAML front matter at the top of this file
+  to show this section.
 -->
+{% if page.tools contains 'test' %}
+<div id="test">  <!-- Start of 'test' section. -->
+  <h3>Installation testing</h3>
+
+  <p>
+    Once you are done installing the software listed above,
+    please go to <a href="setup/index.html">this page</a>,
+    which has instructions on how to test that everything was installed correctly.
+  </p>
+</div>  <!-- End of 'test' section. -->
+{% endif %}
