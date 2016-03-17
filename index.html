@@ -49,9 +49,9 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 </iframe>
 {% endif %}
 
-<h4>This is the workshop template.  Use it to create your own website. 
-Delete this line and email the link to your workshop page to admin@software-carpentry.org.  
-If this is a self organized workshop, please be sure to include any other details 
+<h4>This is the workshop template.  Use it to create your own website.
+Delete this line and email the link to your workshop page to admin@software-carpentry.org.
+If this is a self organized workshop, please be sure to include any other details
 Software Carpentry staff may need to know in your email.</h4>
 
 
@@ -119,12 +119,39 @@ Software Carpentry staff may need to know in your email.</h4>
   Modify the block below if there are any special requirements.
 -->
 <p id="requirements">
-  <strong>Requirements:</strong> Participants must bring a laptop with a 
+  <strong>Requirements:</strong> Participants must bring a laptop with a
   Mac, Linux, or Windows operating sytem (not a tablet, Chromebook, etc.) that they have administrative privileges
   on. They should have a few specific software packages installed (listed
   <a href="#setup">below</a>). They are also required to abide by
   Software Carpentry's
   <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
+</p>
+
+<!--
+  ACCESSIBILITY
+
+  Modify the block below if there are any barriers to accessibility or
+  special instructions.
+-->
+<p id="accessibility">
+    <strong>Accessibility:</strong> We are committed to making this workshop
+    accessible to everybody.
+    The workshop organisers have checked that:
+    <ul>
+        <li>The room is wheelchair / scooter accessible.</li>
+        <li>Accessible restrooms are available.</li>
+    </ul>
+    Materials will be provided in advance of the workshop and large-print
+    handouts are available if needed by notifying the organizers in advance.
+    If we can help making learning easier for you (e.g. sign-language interpreters,
+    lactation facilities) please
+
+    {% if page.contact %}
+      <a href='mailto:{{page.contact}}'>get in touch</a>
+    {% else %}
+      <a href='mailto:{{site.contact}}'>get in touch</a>
+    {% endif %}
+     and we will attempt to provide them. 
 </p>
 
 <!--
