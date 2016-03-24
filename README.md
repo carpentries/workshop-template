@@ -1,6 +1,6 @@
 # workshop-template
 
-This repository is [Software Carpentry](http://software-carpentry.org)'s
+This repository is [Software Carpentry](https://software-carpentry.org)'s
 template for creating websites for workshops.
 
 1.  Do *not* fork this repository directly on GitHub.
@@ -12,7 +12,7 @@ template for creating websites for workshops.
 
 3.  Once you are done,
     please **send your repository's URL to the [Software Carpentry administrator](mailto:admin@software-carpentry.org)**.
-    We build the [list of workshops on the main website](http://software-carpentry.org/workshops/index.html)
+    We build the [list of workshops on the main website](https://software-carpentry.org/workshops/index.html)
     from the data included in your `index.html` page.
     We can only do that if you [customize](CUSTOMIZATION.md) that page correctly
     *and* send us a link to your workshop website.
@@ -98,12 +98,12 @@ please [get in touch](#getting-and-giving-help).
     Note: the URL for your website is determined automatically
     based on the URL for your repository.
     If your repository is at `https://github.com/your_username/YYYY-MM-DD-site`,
-    its GitHub Pages website is at `http://your_username.github.io/YYYY-MM-DD-site`.
+    its GitHub Pages website is at `https://your_username.github.io/YYYY-MM-DD-site`.
 
 4.  When you are done editing,
     you can view your website:
     if your repository is `https://github.com/your_username/YYYY-MM-DD-site`,
-    its website will be `http://your_username.github.io/YYYY-MM-DD-site`.
+    its website will be `https://your_username.github.io/YYYY-MM-DD-site`.
 
 Full instructions are available in [CUSTOMIZATION.md](CUSTOMIZATION.md).
 This [FAQ](FAQ.md) includes a few extra tips
@@ -234,4 +234,4 @@ or would like to suggest improvements,
 please [file an issue](https://github.com/swcarpentry/workshop-template/issues)
 or [mail us](mailto:admin@software-carpentry.org).
 
-[import]: http://import.github.com/new?import_url=https://github.com/swcarpentry/workshop-template
+[import]: https://import.github.com/new?import_url=https://github.com/swcarpentry/workshop-template

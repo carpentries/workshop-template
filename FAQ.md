@@ -3,7 +3,7 @@
 *   *Where can I get help?*
 
     Mail us at [admin@software-carpentry.org](mailto:admin@software-carpentry.org),
-    or join our [discussion list](http://lists.software-carpentry.org/mailman/listinfo/discuss_lists.software-carpentry.org)
+    or join our [discussion list](https://lists.software-carpentry.org/mailman/listinfo/discuss_lists.software-carpentry.org)
     and ask for help there.
 
 *   *Where can I report problems or suggest improvements?*
@@ -46,7 +46,7 @@
     [https://github.com/swcarpentry/windows-installer](https://github.com/swcarpentry/windows-installer),
     which also has an up-to-date description of what it actually does.
     The latest version is always available at
-    [http://files.software-carpentry.org/SWCarpentryInstaller.exe](http://files.software-carpentry.org/SWCarpentryInstaller.exe);
+    [https://files.software-carpentry.org/SWCarpentryInstaller.exe](https://files.software-carpentry.org/SWCarpentryInstaller.exe);
     contributions are always welcome.
 
 *   *What do the [labels](https://github.com/swcarpentry/lesson-template/issues?q=is%3Aopen+is%3Aissue) mean?*
@@ -109,7 +109,7 @@
     done.
     ~~~
 
-    This is a [problem in Pygments.rb](http://stackoverflow.com/questions/17364028/jekyll-on-windows-pygments-not-working),
+    This is a [problem in Pygments.rb](https://stackoverflow.com/questions/17364028/jekyll-on-windows-pygments-not-working),
     which Jekyll uses for syntax highlighting.
     To fix the problem
     uninstall pygments.rb 0.5.1 or 0.5.2 and install version 0.5.0.
