@@ -1,3 +1,21 @@
+#!/usr/bin/env python
+
+"""Initialize a newly-created repository."""
+
+
+import sys
+import os
+
+
+ROOT_AUTHORS = '''\
+FIXME: list authors' names and email addresses.
+'''
+
+ROOT_CITATION = '''\
+FIXME: describe how to cite this lesson.
+'''
+
+ROOT_CONTRIBUTING_MD = '''\
 # Contributing
 
 [Software Carpentry][swc-site] and [Data Carpentry][dc-site] are open source projects,
@@ -136,8 +154,191 @@ You can also [reach us by email][contact].
 [github-flow]: https://guides.github.com/introduction/flow/
 [github-join]: https://github.com/join
 [how-contribute]: https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github
-[issues]: https://github.com/swcarpentry/workshop-template/issues/
-[repo]: https://github.com/swcarpentry/workshop-template/
+[issues]: https://github.com/{USERNAME}/{LESSON-NAME}/issues/
+[repo]: https://github.com/{USERNAME}/{LESSON-NAME}/
 [swc-issues]: https://github.com/issues?q=user%3Aswcarpentry
 [swc-lessons]: http://software-carpentry.org/lessons/
 [swc-site]: http://software-carpentry.org/
+'''
+
+ROOT_CONFIG_YML = '''\
+#------------------------------------------------------------
+# Values for this lesson.
+#------------------------------------------------------------
+
+# Which carpentry is this ("swc" or "dc")?
+carpentry: "swc"
+
+# What kind of thing is this ("workshop" or "lesson")?
+kind: "lesson"
+
+# Overall title for pages.
+title: "Lesson Title"
+
+# Account (without slashes).
+account: "[[USER-NAME]]"
+
+# Root URL below account (without slashes).
+project: "[[REPO-NAME]]"
+
+# Contact email address.
+email: "[[CONTACT-ADDRESS]]"
+
+#------------------------------------------------------------
+# Generic settings (should not need to change).
+#------------------------------------------------------------
+
+# Is this production or development? (Overridden in _config_dev.yml.)
+is_production: true
+
+# Sites.
+amy_site: "https://amy.software-carpentry.org/workshops"
+dc_site: "https://datacarpentry.org"
+swc_github: "https://github.com/swcarpentry"
+swc_site: "https://software-carpentry.org"
+template_repo: "https://github.com/swcarpentry/styles"
+example_repo: "https://github.com/swcarpentry/lesson-example"
+example_site: "https://swcarpentry.github.com/lesson-example"
+workshop_repo: "https://github.com/swcarpentry/workshop-template"
+workshop_site: "https://swcarpentry.github.io/workshop-template"
+
+# Surveys.
+pre_survey: "https://www.surveymonkey.com/r/swc_pre_workshop_v1?workshop_id="
+post_survey: "https://www.surveymonkey.com/r/swc_post_workshop_v1?workshop_id="
+
+# Start time in minutes (540 is 09:00 am)
+start_time: 540
+
+# Specify that things in the episodes collection should be output.
+collections:
+  episodes:
+    output: true
+    permalink: /:path/
+  extras:
+    output: true
+
+# Set the default layout for things in the episodes collection.
+defaults:
+  - scope:
+      path: ""
+      type: episodes
+    values:
+      layout: episode
+
+# Files and directories that are not to be copied.
+exclude:
+  - Makefile
+  - bin
+
+# Turn off built-in syntax highlighting.
+highlighter: false
+'''
+
+ROOT_INDEX_MD = '''\
+---
+layout: lesson
+---
+FIXME: home page introduction
+
+> ## Prerequisites
+>
+> FIXME
+{: .prereq}
+'''
+
+ROOT_REFERENCE_MD = '''\
+---
+layout: reference
+---
+
+## Glossary
+
+FIXME
+'''
+
+ROOT_SETUP_MD = '''\
+---
+layout: page
+title: Setup
+permalink: /setup/
+---
+FIXME
+'''
+
+EPISODES_INTRODUCTION_MD = '''\
+---
+title: "Introduction"
+teaching: 0
+exercises: 0
+questions:
+- "Key question"
+objectives:
+- "First objective."
+keypoints:
+- "First key point."
+---
+'''
+
+EXTRAS_ABOUT_MD = '''\
+---
+layout: page
+title: About
+permalink: /about/
+---
+{% include carpentries.html %}
+'''
+
+EXTRAS_DISCUSS_MD = '''\
+---
+layout: page
+title: Discussion
+permalink: /discuss/
+---
+FIXME
+'''
+
+EXTRAS_GUIDE_MD = '''\
+---
+layout: page
+title: "Instructors' Guide"
+permalink: /guide/
+---
+FIXME
+'''
+
+BOILERPLATE = (
+    ('AUTHORS', ROOT_AUTHORS),
+    ('CITATION', ROOT_CITATION),
+    ('CONTRIBUTING.md', ROOT_CONTRIBUTING_MD),
+    ('_config.yml', ROOT_CONFIG_YML),
+    ('index.md', ROOT_INDEX_MD),
+    ('reference.md', ROOT_REFERENCE_MD),
+    ('setup.md', ROOT_SETUP_MD),
+    ('_episodes/01-introduction.md', EPISODES_INTRODUCTION_MD),
+    ('_extras/about.md', EXTRAS_ABOUT_MD),
+    ('_extras/discuss.md', EXTRAS_DISCUSS_MD),
+    ('_extras/guide.md', EXTRAS_GUIDE_MD)
+)
+
+
+def main():
+    """Check for collisions, then create."""
+
+    # Check.
+    errors = False
+    for (path, _) in BOILERPLATE:
+        if os.path.exists(path):
+            print('Warning: {0} already exists.'.format(path), file=sys.stderr)
+            errors = True
+    if errors:
+        print('**Exiting without creating files.**', file=sys.stderr)
+        sys.exit(1)
+
+    # Create.
+    for (path, content) in BOILERPLATE:
+        with open(path, 'w') as writer:
+            writer.write(content)
+
+
+if __name__ == '__main__':
+    main()

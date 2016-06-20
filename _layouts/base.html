@@ -3,24 +3,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-
-    <meta name="slug" content="{{site.github.project_title}}" />
-    <meta name="startdate" content="{{page.startdate}}" />
-    <meta name="enddate" content="{{page.enddate}}" />
-    <meta name="humandate" content="{{page.humandate}}" />
-    <meta name="country" content="{{page.country}}" />
-    <meta name="venue" content="{{page.venue}}" />
-    <meta name="address" content="{{page.address}}" />
-    <meta name="latlng" content="{{page.latlng}}" />
-    <meta name="language" content="{{page.language}}" />
-    <meta name="eventbrite" content="{{page.eventbrite}}" />
-    <meta name="instructor" content="{{page.instructor|join:'|'}}" />
-    <meta name="helper" content="{{page.helper|join:'|'}}" />
-    <meta name="contact" content="{{page.contact}}" />
-    {% if page.redirect %}
-    <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
-    {% endif %}
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="last-modified" content="{{ site.time }}">
@@ -41,14 +23,13 @@
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
-    <title>{{ page.venue }}: {{ page.humandate }}</title>
+    <title>{{ site.title }}{% if page.title %}: {{ page.title }}{% endif %}</title>
   </head>
   <body>
     <div class="container">
       {% include navbar.html %}
-      {% include workshop_ad.html %}
 {{ content }}
-      {% include workshop_footer.html %}
+      {% include footer.html %}
     </div>
     {% include javascript.html %}
   </body>

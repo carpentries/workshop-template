@@ -1,6 +1,6 @@
 ---
 layout: workshop      # DON'T CHANGE THIS.
-root: .               # DON'T CHANGE THIS.
+carpentry: "FIXME"    # what kind of Carpentry (must be either "dc" or "swc")
 venue: "FIXME"        # brief name of host site without address (e.g., "Euphoric State University")
 address: "FIXME"      # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
 country: "FIXME"      # country (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_3166-1)
@@ -12,15 +12,12 @@ startdate: FIXME      # use YYYY-MM-DD format like 2015-01-01
 enddate: FIXME        # use YYYY-MM-DD format like 2015-01-02
 instructor: ["FIXME"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["FIXME"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
-contact: "FIXME"      # contact email address for workshop organizer, such as "grace@hopper.org"
-etherpad:         # optional (insert the URL for your Etherpad if you're using one)
-eventbrite:       # optional (insert the alphanumeric key for Eventbrite registration, e.g., "1234567890AB")
+contact: "FIXME"      # contact email address
+etherpad:             # optional (insert the URL for your Etherpad if you're using one)
+eventbrite:           # optional (insert the alphanumeric key for Eventbrite registration, e.g., "1234567890AB")
 ---
 
-
 <!-- See instructions in the comments below for how to edit specific sections of this workshop template. -->
-
-
 
 <!--
   HEADER
@@ -147,30 +144,20 @@ Software Carpentry staff may need to know in your email.</h4>
   large-print handouts are available if needed by notifying the
   organizers in advance.  If we can help making learning easier for
   you (e.g. sign-language interpreters, lactation facilities) please
-  {% if page.contact %}
-    <a href='mailto:{{page.contact}}'>get in touch</a>
-  {% else %}
-    <a href='mailto:{{site.contact}}'>get in touch</a>
-  {% endif %}
-  and we will attempt to provide them. 
+  <a href="mailto:{{page.contact}}">get in touch</a> and we will
+  attempt to provide them.
 </p>
 
 <!--
   CONTACT EMAIL ADDRESS
 
-  Display the contact email address set in the header.  If an address
-  isn't set in the header, the Software Carpentry admin address is
-  used.
+  Display the contact email address set in the configuration file.
 -->
 <p id="contact">
   <strong>Contact</strong>:
   Please mail
-  {% if page.contact %}
-    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
-  {% else %}
-    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
-  {% endif %}
-  for more information.
+  <a href="mailto:{{page.contact}}">{{page.contact}}</a> for more
+  information.
 </p>
 
 <hr/>
@@ -187,8 +174,8 @@ Software Carpentry staff may need to know in your email.</h4>
 <!-- DO NOT EDIT SURVEY LINKS -->
 <p><em>Surveys</em></p>
 <p>Please be sure to complete these surveys before and after the workshop.</p>
-<p><a href='{{ site.swc_pre_survey }}{{ site.github.project_title }}'>Pre-workshop Survey</a></p>
-<p><a href='{{ site.swc_post_survey }}{{ site.github.project_title }}'>Post-workshop Survey</a></p>
+<p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
+<p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
 
 <div class="row">
   <div class="col-md-6">
@@ -268,7 +255,7 @@ Software Carpentry staff may need to know in your email.</h4>
       <li>Looping over files</li>
       <li>Creating and running shell scripts</li>
       <li>Finding things</li>
-      <li><a href="{{site.swc_githubio}}/shell-novice/reference.html">Reference...</a></li>
+      <li><a href="{{site.swc_github_io}}/shell-novice/reference/">Reference...</a></li>
     </ul>
   </div>
   <div class="col-md-6">
@@ -281,7 +268,7 @@ Software Carpentry staff may need to know in your email.</h4>
       <li>Loops and conditionals</li>
       <li>Defensive programming</li>
       <li>Using Python from the command line</li>
-      <li><a href="{{site.swc_githubio}}/python-novice-inflammation/reference.html">Reference...</a></li>
+      <li><a href="{{site.swc_github_io}}/python-novice-inflammation/reference/">Reference...</a></li>
     </ul>
   </div>
   <!--
@@ -293,7 +280,7 @@ Software Carpentry staff may need to know in your email.</h4>
       <li>Creating and using functions</li>
       <li>Loops and conditionals</li>
       <li>Using R from the command line</li>
-      <li><a href="{{site.swc_githubio}}/r-novice-inflammation/reference.html">Reference...</a></li>
+      <li><a href="{{site.swc_github_io}}/r-novice-inflammation/reference/">Reference...</a></li>
     </ul>
   </div>
   -->
@@ -306,7 +293,7 @@ Software Carpentry staff may need to know in your email.</h4>
       <li>Creating and using functions</li>
       <li>Loops and conditionals</li>
       <li>Defensive programming</li>
-      <li><a href="{{site.swc_githubio}}/matlab-novice-inflammation/reference.html">Reference...</a></li>
+      <li><a href="{{site.swc_github_io}}/matlab-novice-inflammation/reference/">Reference...</a></li>
      </ul>
    </div>
    -->
@@ -324,7 +311,7 @@ Software Carpentry staff may need to know in your email.</h4>
       <li>Resolving conflicts</li>
       <li>Open licenses</li>
       <li>Where to host work, and why</li>
-      <li><a href="{{site.swc_githubio}}/git-novice/reference.html">Reference...</a></li>
+      <li><a href="{{site.swc_github_io}}/git-novice/reference/">Reference...</a></li>
     </ul>
   </div>
   <div class="col-md-6">
@@ -338,7 +325,7 @@ Software Carpentry staff may need to know in your email.</h4>
       <li>Combining information from multiple tables using <code>join</code></li>
       <li>Creating, modifying, and deleting data</li>
       <li>Programming with databases</li>
-      <li><a href="{{site.swc_githubio}}/sql-novice-survey/reference.html">Reference...</a></li>
+      <li><a href="{{site.swc_github_io}}/sql-novice-survey/reference/">Reference...</a></li>
     </ul>
   </div>
 </div>
@@ -609,8 +596,8 @@ Software Carpentry staff may need to know in your email.</h4>
       We will teach Python using the IPython notebook, a programming environment
       that runs in a web browser. For this to work you will need a reasonably
       up-to-date browser. The current versions of the Chrome, Safari and
-      Firefox browsers are all <a
-      href='http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility'>supported</a>
+      Firefox browsers are all
+      <a href="http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility">supported</a>
       (some older browsers, including Internet Explorer version 9
       and below, are not).
     </p>
