@@ -297,6 +297,15 @@ permalink: /discuss/
 FIXME
 '''
 
+EXTRAS_FIGURES_MD = '''\
+---
+layout: page
+title: Figures
+permalink: /figures/
+---
+{% include all_figures.html %}
+'''
+
 EXTRAS_GUIDE_MD = '''\
 ---
 layout: page
@@ -317,6 +326,7 @@ BOILERPLATE = (
     ('_episodes/01-introduction.md', EPISODES_INTRODUCTION_MD),
     ('_extras/about.md', EXTRAS_ABOUT_MD),
     ('_extras/discuss.md', EXTRAS_DISCUSS_MD),
+    ('_extras/figures.md', EXTRAS_FIGURES_MD),
     ('_extras/guide.md', EXTRAS_GUIDE_MD)
 )
 
