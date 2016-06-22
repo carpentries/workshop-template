@@ -51,12 +51,15 @@ class Reporter(object):
 
         if not self.messages:
             return
-        for m in self.messages:
+        for m in sorted(self.messages):
             print(m, file=stream)
 
 
 def read_markdown(parser, path):
-    """Get YAML and AST for Markdown file, returning {'metadata':yaml, 'text': text, 'doc':doc}."""
+    """
+    Get YAML and AST for Markdown file, returning
+    {'metadata':yaml, 'metadata_len':N, 'text':text, 'lines':[(i, line, len)], 'doc':doc}.
+    """
 
     # Split and extract YAML (if present).
     metadata = None
@@ -73,6 +76,10 @@ def read_markdown(parser, path):
         metadata_len = pieces[1].count('\n')
         body = pieces[2]
 
+    # Split into lines.
+    offset = 0 if metadata_len is None else metadata_len
+    lines = [(offset+i+1, l, len(l)) for (i, l) in enumerate(body.split('\n'))]
+
     # Parse Markdown.
     cmd = 'ruby {0}'.format(parser)
     p = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE, close_fds=True, universal_newlines=True)
@@ -83,5 +90,6 @@ def read_markdown(parser, path):
         'metadata': metadata,
         'metadata_len': metadata_len,
         'text': body,
+        'lines': lines,
         'doc': doc
     }

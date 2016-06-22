@@ -67,14 +67,21 @@ KNOWN_CODEBLOCKS = {
     'sql'
 }
 
-# What fields are required in episode metadata?
-EPISODE_METADATA_FIELDS = {
+# What fields are required in teaching episode metadata?
+TEACHING_METADATA_FIELDS = {
     ('title', str),
     ('teaching', int),
     ('exercises', int),
     ('questions', list),
     ('objectives', list),
     ('keypoints', list)
+}
+
+# What fields are required in break episode metadata?
+BREAK_METADATA_FIELDS = {
+    ('layout', str),
+    ('title', str),
+    ('break', int)
 }
 
 # How long are lines allowed to be?
@@ -98,6 +105,10 @@ def parse_args():
     """Parse command-line arguments."""
 
     parser = OptionParser()
+    parser.add_option('-l', '--linelen',
+                      default=False,
+                      dest='line_len',
+                      help='Check line lengths')
     parser.add_option('-p', '--parser',
                       default=None,
                       dest='parser',
@@ -127,7 +138,9 @@ def check_config(args):
 
 
 def read_all_markdown(args, source_dir):
-    """Read source files, returning {path : {'metadta':yaml, 'text':text, 'doc':doc}}."""
+    """Read source files, returning
+    {path : {'metadata':yaml, 'metadata_len':N, 'text':text, 'lines':[(i, line, len)], 'doc':doc}}
+    """
 
     all_dirs = [os.path.join(source_dir, d) for d in SOURCE_DIRS]
     all_patterns = [os.path.join(d, '*.md') for d in all_dirs]
@@ -160,17 +173,22 @@ def check_fileset(source_dir, reporter, filenames_present):
         else:
             reporter.add(None, 'Episode {0} has badly-formatted filename', filename)
 
-    # Check episode filename numbering.
+    # Check for duplicate episode numbers.
     reporter.check(len(seen) == len(set(seen)),
                         None,
                         'Duplicate episode numbers {0} vs {1}',
                         sorted(seen), sorted(set(seen)))
+
+    # Check that numbers are consecutive.
     seen = [int(s) for s in seen]
     seen.sort()
-    reporter.check(all([i+1 == n for (i, n) in enumerate(seen)]),
-                        None,
-                        'Missing or non-consecutive episode numbers {0}',
-                        seen)
+    clean = True
+    for i in range(len(seen) - 1):
+        clean = clean and ((seen[i+1] - seen[i]) == 1)
+    reporter.check(clean,
+                   None,
+                   'Missing or non-consecutive episode numbers {0}',
+                   seen)
 
 
 def create_checker(args, filename, info):
@@ -192,7 +210,7 @@ def require(condition, message):
 class CheckBase(object):
     """Base class for checking Markdown files."""
 
-    def __init__(self, args, filename, metadata, metadata_len, text, doc):
+    def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
         """Cache arguments for checking."""
 
         super(CheckBase, self).__init__()
@@ -202,6 +220,7 @@ class CheckBase(object):
         self.metadata = metadata
         self.metadata_len = metadata_len
         self.text = text
+        self.lines = lines
         self.doc = doc
 
         self.layout = None
@@ -230,15 +249,12 @@ class CheckBase(object):
     def check_text(self):
         """Check the raw text of the lesson body."""
 
-        offset = 0
-        if self.metadata_len is not None:
-            offset = self.metadata_len
-        lines = [(offset+i+1, l, len(l)) for (i, l) in enumerate(self.text.split('\n'))]
-        over = [i for (i, l, n) in lines if (n > MAX_LINE_LEN) and (not l.startswith('!'))]
-        self.reporter.check(not over,
-                            self.filename,
-                            'Line(s) are too long: {0}',
-                            ', '.join([str(i) for i in over]))
+        if self.args.line_len:
+            over = [i for (i, l, n) in self.lines if (n > MAX_LINE_LEN) and (not l.startswith('!'))]
+            self.reporter.check(not over,
+                                self.filename,
+                                'Line(s) are too long: {0}',
+                                ', '.join([str(i) for i in over]))
 
 
     def check_blockquote_classes(self):
@@ -315,8 +331,8 @@ class CheckBase(object):
 class CheckNonJekyll(CheckBase):
     """Check a file that isn't translated by Jekyll."""
 
-    def __init__(self, args, filename, metadata, metadata_len, text, doc):
-        super(CheckNonJekyll, self).__init__(args, filename, metadata, metadata_len, text, doc)
+    def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
+        super(CheckNonJekyll, self).__init__(args, filename, metadata, metadata_len, text, lines, doc)
 
 
     def check_metadata(self):
@@ -328,40 +344,56 @@ class CheckNonJekyll(CheckBase):
 class CheckIndex(CheckBase):
     """Check the main index page."""
 
-    def __init__(self, args, filename, metadata, metadata_len, text, doc):
-        super(CheckIndex, self).__init__(args, filename, metadata, metadata_len, text, doc)
+    def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
+        super(CheckIndex, self).__init__(args, filename, metadata, metadata_len, text, lines, doc)
         self.layout = 'lesson'
 
 
 class CheckEpisode(CheckBase):
     """Check an episode page."""
 
-    def __init__(self, args, filename, metadata, metadata_len, text, doc):
-        super(CheckEpisode, self).__init__(args, filename, metadata, metadata_len, text, doc)
+    def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
+        super(CheckEpisode, self).__init__(args, filename, metadata, metadata_len, text, lines, doc)
 
     def check_metadata(self):
         super(CheckEpisode, self).check_metadata()
         if self.metadata:
-            for (name, type_) in EPISODE_METADATA_FIELDS:
-                self.reporter.check(type(self.metadata.get(name, None)) == type_,
-                                    self.filename,
-                                    '"{0}" missing, empty, or has wrong type in metadata',
-                                    name)
+            if 'layout' in self.metadata:
+                if self.metadata['layout'] == 'break':
+                    self.check_metadata_fields(BREAK_METADATA_FIELDS)
+                else:
+                    self.reporter.add(self.filename,
+                                      'Unknown episode layout "{0}"',
+                                      self.metadata['layout'])
+            else:
+                self.check_metadata_fields(TEACHING_METADATA_FIELDS)
+
+
+    def check_metadata_fields(self, expected):
+        for (name, type_) in expected:
+            if name not in self.metadata:
+                self.reporter.add(self.filename,
+                                  'Missing metadata field {0}',
+                                  name)
+            elif type(self.metadata[name]) != type_:
+                self.reporter.add(self.filename,
+                                  '"{0}" has wrong type in metadata ({1} instead of {2})',
+                                  name, type(self.metadata[name]), type_)
 
 
 class CheckReference(CheckBase):
     """Check the reference page."""
 
-    def __init__(self, args, filename, metadata, metadata_len, text, doc):
-        super(CheckReference, self).__init__(args, filename, metadata, metadata_len, text, doc)
+    def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
+        super(CheckReference, self).__init__(args, filename, metadata, metadata_len, text, lines, doc)
         self.layout = 'reference'
 
 
 class CheckGeneric(CheckBase):
     """Check a generic page."""
 
-    def __init__(self, args, filename, metadata, metadata_len, text, doc):
-        super(CheckGeneric, self).__init__(args, filename, metadata, metadata_len, text, doc)
+    def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
+        super(CheckGeneric, self).__init__(args, filename, metadata, metadata_len, text, lines, doc)
         self.layout = 'page'
 
 
