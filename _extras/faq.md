@@ -21,11 +21,11 @@ permalink: /faq/
 
 *   *Why does the workshop repository name have to follow the `YYYY-MM-DD-site` pattern?*
 
-    This makes it easy for coordinators to track workshops in
-    spreadsheets for instructor training.
+    This makes it easy for coordinators to track workshops.
     There are [plans to move that coordination into AMY][amy-training],
     but until that happens this pattern makes it easy to sort workshops
     by date without requiring an additional start-date column.
+    (Note that `YYYY-MM-DD` should be the start date of the workshop.)
 
 *   *Why use the `gh-pages` branch instead of `master`?
 

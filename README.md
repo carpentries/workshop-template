@@ -41,7 +41,8 @@ template for creating websites for workshops.
 
 4.  Choose a name for your workshop website repository.
     This name should have the form `YYYY-MM-DD-site`,
-    e.g., `2015-07-01-miskatonic`.
+    e.g., `2015-07-01-miskatonic`,
+    where `YYYY-MM-DD` is the start date of the workshop.
 
 5.  Make sure the repository is public.
 
