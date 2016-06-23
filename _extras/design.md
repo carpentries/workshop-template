@@ -84,8 +84,8 @@ than Git itself.
     * `workshop.html` is used for workshops' home pages, and is the
       layout for the `index.html` page in your repo's root directory.
       That `index.html` page's header must define several variables as
-      specified in the the [customization instructions][customization]
-      in order for your workshop to be included in our main website.
+      specified in the the customization instructions in order for
+      your workshop to be included in our main website.
 
     * `page.html` is used for any other pages you want to create.
       **Note:** if you create extra pages, you *must* edit the values
@@ -109,5 +109,4 @@ used to store extra material when necessary:
 For more information on these, please see [the documentation for the
 lesson template]({{ site.example_site }}).
 
-[customization]: {{ site.github.url }}/customization/
 [jekyll]: https://jekyllrb.com/
