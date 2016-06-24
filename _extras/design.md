@@ -101,6 +101,7 @@ used to store extra material when necessary:
 
 *   `_extras/`: extra pages (like this one).
 *   `_episodes/`: lesson episodes (which workshops usually don't have).
+*   `_episodes_rmd/`: R Markdown lesson episodes (if any).
 *   `code/`: for code samples.
 *   `data/`: for data files.
 *   `fig/`: for figures and other images.
