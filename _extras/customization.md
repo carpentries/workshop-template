@@ -57,6 +57,13 @@ which must define the following values in its header:
     `enddate`, but reliably translating those into human-readable
     dates is an interesting challenge...)
 
+*   `humantime` is the human-friendly start and end time for each day of
+    the workshop, e.g., "09:00 am - 4:00 pm" or "09:00-16:00".  (We
+    recognize that we ought to allow different start or end times on
+    different days, but going down that path leads eventually to
+    embedding iCal date/time specifications in our headers, which in
+    turn leads to madness...)
+
 *   `startdate` is the workshop's starting date in YYYY-MM-DD format,
     such as `2015-07-01`.  You must use four digits for the year and
     two each for the month and day.
