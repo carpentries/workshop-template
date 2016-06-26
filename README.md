@@ -32,21 +32,24 @@ template for creating websites for workshops.
 
 ## Creating a Repository
 
-1.  Go to [GitHub's importer][importer]. 
+1.  Log in to GitHub.
+    (If you do not have an account, you can quickly create one for free.)
 
-2.  Paste the url of this repo as the old repository to clone: <https://github.com/swcarpentry/workshop-template>.
+2.  Go to [GitHub's importer][importer].
 
-3.  Select the owner for your new repository.
+3.  Paste the url of this repo as the old repository to clone: <https://github.com/swcarpentry/workshop-template>.
+
+4.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
 
-4.  Choose a name for your workshop website repository.
+5.  Choose a name for your workshop website repository.
     This name should have the form `YYYY-MM-DD-site`,
     e.g., `2015-07-01-miskatonic`,
     where `YYYY-MM-DD` is the start date of the workshop.
 
-5.  Make sure the repository is public.
+6.  Make sure the repository is public.
 
-6.  At this point, you should have a page like this:
+7.  At this point, you should have a page like this:
 
     ![](fig/using-github-import.png?raw=true)
 
