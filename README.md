@@ -37,7 +37,12 @@ template for creating websites for workshops.
 
 2.  Go to [GitHub's importer][importer].
 
-3.  Paste the url of this repo as the old repository to clone: <https://github.com/swcarpentry/workshop-template>.
+3.  Paste the url from the table below based on the language that you are interested.
+
+    | Language   | ISO 639-1 | url                                                    |
+    | ---------- | --------- | ------------------------------------------------------ |
+    | English    | en-US     | https://github.com/swcarpentry/workshop-template       |
+    | Portuguese | pt-BR     | https://github.com/swcarpentry/workshop-template-pt-br |
 
 4.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
