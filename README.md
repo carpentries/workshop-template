@@ -57,7 +57,8 @@ template for creating websites for workshops.
 
     You can now click "Begin Import".
     When the process is done,
-    you can click "Continue to repository" to visit your newly-created repository.
+    you will receive a message close to "Importing complete! Your new repository julie32/2015-07-01-miskatonic is ready."
+    and you can go to the new repository by clicking on the name.
 
 **Note:**
 some people have had intermittent errors during the import process,
