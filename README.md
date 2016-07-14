@@ -4,7 +4,7 @@ This repository is [Software Carpentry][swc-site] and [Data Carpentry][dc-site]'
 template for creating websites for workshops.
 
 1.  Please *do not fork this repository directly on GitHub.*
-    Instead, please use GitHub's importer following the instructions [below](#creating-a-repository)
+    Instead, please use GitHub's importer following [the instructions below](#creating-a-repository)
     to create a website repository for your workshop.
 
 2.  Please *do your work in your repository's `gh-pages` branch*,
@@ -34,10 +34,12 @@ template for creating websites for workshops.
 
 1.  Log in to GitHub.
     (If you do not have an account, you can quickly create one for free.)
+    You must be logged in for the remaining steps to work.
 
 2.  Go to [GitHub's importer][importer].
 
-3.  Paste the url of this repo as the old repository to clone: <https://github.com/swcarpentry/workshop-template>.
+3.  Paste the url of this repo as the old repository to clone:
+    <https://github.com/swcarpentry/workshop-template>.
 
 4.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
@@ -82,7 +84,9 @@ please [get in touch](#getting-and-giving-help).
     Editing hints are embedded in `index.html`,
     and full instructions are in [the customization instructions][customization].
 
-3.  Alternatively, you can clone the repository to your desktop,
+3.  Alternatively,
+    if you are already familiar with Git,
+    you can clone the repository to your desktop,
     edit `index.html` there,
     and push your changes back to the repository.
 
@@ -92,7 +96,8 @@ please [get in touch](#getting-and-giving-help).
 
     You should specify `-b gh-pages` because the imported repository doesn't have a `master` branch.
 
-    **Note:** please do all of your work in your repository's `gh-pages` branch,
+    **Note:**
+    please do all of your work in your repository's `gh-pages` branch,
     since [GitHub automatically publishes that as a website][github-project-pages].
 
 4.  The URL for your website is determined automatically based on the URL for your repository:
@@ -116,18 +121,19 @@ please [get in touch](#getting-and-giving-help).
     go to the GitHub Pages URL for your workshop and preview your changes.
     In the example above, this is `https://gvwilson.github.io/2015-07-01-miskatonic`.
 
-**Note:** this template automatically creates some files and
-directories that most workshops do not need, but which provide a
-standard place to put extra content if desired.  See the [design
-notes][design] for more information about these.
+**Note:**
+this template includes some files and directories that most workshops do not need,
+but which provide a standard place to put extra content if desired.
+See the [design notes][design] for more information about these.
 
-Further instructions are available in [_extras/customization.md][customization].
+Further instructions are available in [the customization instructions][customization].
 This [FAQ][faq] includes a few extra tips (additions are always welcome)
 and these notes on [the background and design][design] of this template may help as well.
 
 ## Checking Your Changes
 
-The following steps are only necessary if you want to preview your website locally on your computer.
+If you want to preview your changes on your own machine before publishing them on GitHub,
+you can do so as described below.
 
 1.  Install the software [described below](#installing-software).
     This may require some work,
@@ -143,7 +149,8 @@ The following steps are only necessary if you want to preview your website local
     You can also run this command by typing `make serve`
     (assuming you have Make installed).
 
-    **Note:** the command above uses the values from `_config.yml`,
+    Note:
+    the command above uses the values from `_config.yml`,
     then overrides some of them with `_config_dev.yml`
     so that local files (including CSS style files) will load properly.
     Simply running `jekyll serve` will *not* load local files,
@@ -177,10 +184,10 @@ you must install the software described below.
 3.  **[Jekyll][jekyll]**.
     You can install this by running `gem install jekyll`.
 
-If you want to run `bin/workshop_check.py` (which is invoked by `make workshop-check`)
-to check for common errors in your workshop's home page,
-you must have Python 3 installed.
-You will also need the [PyYAML][pyyaml] module.
+You can check the formatting of your header by running `bin/workshop_check.py`
+(which is invoked by `make workshop-check`).
+You must have Python 3 installed in order to do this,
+and you will also need the [PyYAML][pyyaml] module.
 
 ## Setting Up a Separate Repository for Learners
 
