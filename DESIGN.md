@@ -26,8 +26,8 @@ than Git itself.
 4.  If a repository has a branch called `gh-pages` (which stands for
     "GitHub pages"), then GitHub uses the HTML and Markdown files in
     that branch to create a website for the repository.  If the
-    repository's URL is `http://github.com/darwin/finches`, the URL
-    for the website is `http://darwin.github.io/finches`.
+    repository's URL is `https://github.com/darwin/finches`, the URL
+    for the website is `https://darwin.github.io/finches`.
 
 5.  If an HTML or Markdown file has a header consisting of three
     dashes, some data about the page, and three more dashes:

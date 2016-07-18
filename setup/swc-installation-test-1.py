@@ -18,13 +18,13 @@ How to get a command line:
 
 For some screen shots, see:
 
-  http://software-carpentry.org/setup/terminal.html
+  https://software-carpentry.org/setup/terminal.html
 
 Run the script and follow the instructions it prints at the end.  If
 you see an error saying that the 'python' command was not found, than
 you may not have any version of Python installed.  See:
 
-  http://www.python.org/download/releases/2.7.3/#download
+  https://www.python.org/download/releases/2.7.3/#download
 
 for installation instructions.
 
@@ -52,5 +52,5 @@ if __name__ == '__main__':
     else:
         print('Failed')
         print('Install a current version of Python 3!')
-        print('http://continuum.io/downloads')
+        print('https://continuum.io/downloads')
         _sys.exit(1)

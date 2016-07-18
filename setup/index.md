@@ -40,12 +40,12 @@ these scripts:
     check for command line shell (virtual-shell) failed:
       command line shell (virtual-shell) requires at least one of the following dependencies
       For instructions on installing an up-to-date version, see
-      http://software-carpentry.org/setup/
+      https://software-carpentry.org/setup/
       causes:
       check for Bourne Again Shell (bash) failed:
         could not find 'bash' executable for Bourne Again Shell (bash)
         For instructions on installing an up-to-date version, see
-        http://software-carpentry.org/setup/
+        https://software-carpentry.org/setup/
     ...
     ~~~
 

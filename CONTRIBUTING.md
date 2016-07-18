@@ -29,5 +29,5 @@ That repository has instructions on formatting and previewing workshop websites.
 
 [conduct]: CONDUCT.md
 [license]: LICENSE.md
-[pro-git-chapter]: http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project
+[pro-git-chapter]: https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project
 [workshop-template]: https://github.com/swcarpentry/workshop-template
