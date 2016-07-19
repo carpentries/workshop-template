@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2016-07-19 12:36:24 +0200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="search-domain" value="/swc-releases/2016.06/workshop-template">
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/workshop-template/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/workshop-template/assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/workshop-template/assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Workshop Title: Background and Design</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="/swc-releases/2016.06/workshop-template/assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="/swc-releases/2016.06/workshop-template/">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="/swc-releases/2016.06/workshop-template/conduct/">Code of Conduct</a></li>
+
+	
+        
+
+	
+	
+
+	
+        <li><a href="/swc-releases/2016.06/workshop-template/license/">License</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search...">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<h1 class="maintitle"><a href="/swc-releases/2016.06/workshop-template/">Workshop Title</a>: Background and Design</h1>
+
+<p>There are a few things you need to know in order to understand why we
+do things the way we do.  Some of them are specific to GitHub, rather
+than Git itself.</p>
+
+<ol>
+  <li>
+    <p>Git uses the term “clone” to mean “a copy of a repository”.
+GitHub uses the term “fork” to mean, “a copy of a GitHub-hosted
+repo that is also hosted on GitHub”, and the term “clone” to mean
+“a copy of a GitHub-hosted repo that’s located on someone else’s
+machine”.  In both cases, the duplicate has a remote called
+<code class="highlighter-rouge">origin</code> that points to the original repo; other remotes can be
+added manually.</p>
+  </li>
+  <li>
+    <p>A user on GitHub can only have one fork of a particular repo.
+This is a problem for us because an instructor may be involved in
+several workshops, each of which has its own website repo.  Those
+website repositories ought to be forks of this one, but since
+GitHub doesn’t allow that, we have to use <code class="highlighter-rouge">import.github.com</code>.</p>
+  </li>
+  <li>
+    <p>If a repository has a file called <code class="highlighter-rouge">README.md</code> in its root
+directory, GitHub displays the contents of that file on the
+repository’s home page.</p>
+  </li>
+  <li>
+    <p>If a repository has a branch called <code class="highlighter-rouge">gh-pages</code> (which stands for
+“GitHub pages”), then GitHub uses the HTML and Markdown files in
+that branch to create a website for the repository.  If the
+repository’s URL is <code class="highlighter-rouge">http://github.com/darwin/finches</code>, the URL
+for the website is <code class="highlighter-rouge">http://darwin.github.io/finches</code>.</p>
+  </li>
+  <li>
+    <p>If an HTML or Markdown file has a header consisting of three
+dashes, some data about the page, and three more dashes:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>---
+key: value
+other_key: other_value
+---
+stuff in the page
+</code></pre>
+    </div>
+
+    <p>then GitHub doesn’t just copy the file over verbatim.  Instead, it
+runs the file through a translator called <a href="https://jekyllrb.com/">Jekyll</a> that
+looks for specially-formatted commands embedded in the file and
+uses them to fill in the page.</p>
+  </li>
+  <li>
+    <p>Commands can be embedded in the body of a page.  One is
+<code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">something.html</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code>, which tells
+Jekyll to copy the contents of <code class="highlighter-rouge">something.html</code> into the file
+being translated; this is used to create standard headers and
+footers for pages.  Another is ``: when Jekyll sees
+this, it replaces it with the value of <code class="highlighter-rouge">variable</code>.  This is used
+to insert things like a contact email address and the URL for our
+Twitter account.</p>
+  </li>
+  <li>
+    <p>Jekyll gets variables from two places: a file called <code class="highlighter-rouge">_config.yml</code>
+located in the repo’s root directory, and the header of each
+individual page.  Variables from <code class="highlighter-rouge">_config.yml</code> are put in an
+object called <code class="highlighter-rouge">site</code>, and referred to as <code class="highlighter-rouge">site.variable</code>, so that
+(for example) <code class="highlighter-rouge">https://software-carpentry.org</code> in a page is replaced by the URL
+of the main Software Carpentry web site.  Variables from the
+page’s header are put in an object called <code class="highlighter-rouge">page</code>, and referred to
+as <code class="highlighter-rouge">page.variable</code>, so if a page’s header defines a variable
+called <code class="highlighter-rouge">venue</code>, `` is replaced by “Euphoric State
+University” (or whatever value the variable has).</p>
+  </li>
+  <li>
+    <p>If a page uses <code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">something.html</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code>
+to include a snippet of HTML, Jekyll looks in a directory called
+<code class="highlighter-rouge">_includes</code> to find <code class="highlighter-rouge">something.html</code>.  It always looks there, and
+nowhere else, so anything we want people to be able to include in
+their pages has to be stored in <code class="highlighter-rouge">_includes</code>.</p>
+  </li>
+  <li>
+    <p>A repository can have another special directory called <code class="highlighter-rouge">_layouts</code>.
+If a page like <code class="highlighter-rouge">index.html</code> has a variable called <code class="highlighter-rouge">layout</code>, and
+that variable’s value is <code class="highlighter-rouge">standard.html</code>, Jekyll loads the file
+<code class="highlighter-rouge">_layouts/standard.html</code> and copies the content of <code class="highlighter-rouge">index.html</code>
+into it, then expands the result.  This is used to give the pages
+in a site a uniform appearance.
+We have created two layouts for workshop pages:</p>
+
+    <ul>
+      <li>
+        <p><code class="highlighter-rouge">workshop.html</code> is used for workshops’ home pages, and is the
+layout for the <code class="highlighter-rouge">index.html</code> page in your repo’s root directory.
+That <code class="highlighter-rouge">index.html</code> page’s header must define several variables as
+specified in the the customization instructions in order for
+your workshop to be included in our main website.</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">page.html</code> is used for any other pages you want to create.
+<strong>Note:</strong> if you create extra pages, you <em>must</em> edit the values
+in the top section of <code class="highlighter-rouge">_config.yml</code> as described in
+<a href="https://swcarpentry.github.com/lesson-example">the lesson template documentation</a>.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="extra-directories">Extra Directories</h2>
+
+<p>This workshop template shares resources with the template used for
+Carpentry lessons.  As a result, your workshop website’s repository
+contains directories that most workshops don’t need, but which can be
+used to store extra material when necessary:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">_extras/</code>: extra pages (like this one).</li>
+  <li><code class="highlighter-rouge">_episodes/</code>: lesson episodes (which workshops usually don’t have).</li>
+  <li><code class="highlighter-rouge">_episodes_rmd/</code>: R Markdown lesson episodes (if any).</li>
+  <li><code class="highlighter-rouge">code/</code>: for code samples.</li>
+  <li><code class="highlighter-rouge">data/</code>: for data files.</li>
+  <li><code class="highlighter-rouge">fig/</code>: for figures and other images.</li>
+  <li><code class="highlighter-rouge">files/</code>: for miscellaneous files.</li>
+</ul>
+
+<p>For more information on these, please see <a href="https://swcarpentry.github.com/lesson-example">the documentation for the
+lesson template</a>.</p>
+
+
+
+      
+      <hr/>
+<footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4><a href="https://software-carpentry.org">Software Carpentry</a></h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4><a href="https://datacarpentry.org">Data Carpentry</a></h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    <script src="/swc-releases/2016.06/workshop-template/assets/js/jquery.min.js"></script>
+<script src="/swc-releases/2016.06/workshop-template/assets/js/bootstrap.min.js"></script>
+<script src="/swc-releases/2016.06/workshop-template/assets/js/lesson.js"></script>
+
+  </body>
+</html>

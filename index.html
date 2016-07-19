@@ -1,21 +1,115 @@
----
-layout: workshop      # DON'T CHANGE THIS.
-carpentry: "FIXME"    # what kind of Carpentry (must be either "dc" or "swc")
-venue: "FIXME"        # brief name of host site without address (e.g., "Euphoric State University")
-address: "FIXME"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
-country: "FIXME"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1)
-language: "FIXME"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/ISO_639-1)
-latlng: "FIXME"       # decimal latitude and longitude of workshop venue (e.g., "41.7901128,-87.6007318" - use http://www.latlong.net/)
-humandate: "FIXME"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
-humantime: "FIXME"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
-startdate: FIXME      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
-enddate: FIXME        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
-instructor: ["FIXME"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: ["FIXME"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
-contact: "FIXME"      # contact email address for host, lead instructor, or whoever else is handling questions
-etherpad:             # optional: URL for the workshop Etherpad if there is one
-eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
----
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta name="slug" content="" />
+    <meta name="startdate" content="FIXME" />
+    <meta name="enddate" content="FIXME" />
+    <meta name="humandate" content="FIXME" />
+    <meta name="country" content="FIXME" />
+    <meta name="venue" content="FIXME" />
+    <meta name="address" content="FIXME" />
+    <meta name="latlng" content="FIXME" />
+    <meta name="language" content="FIXME" />
+    <meta name="eventbrite" content="" />
+    <meta name="instructor" content="FIXME" />
+    <meta name="helper" content="FIXME" />
+    <meta name="contact" content="FIXME" />
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2016-07-19 12:36:24 +0200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/workshop-template/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/workshop-template/assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/swc-releases/2016.06/workshop-template/assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>FIXME: FIXME</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="/swc-releases/2016.06/workshop-template/assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="/swc-releases/2016.06/workshop-template/">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="/swc-releases/2016.06/workshop-template/conduct/">Code of Conduct</a></li>
+
+	
+        
+
+	
+	
+
+	
+        <li><a href="/swc-releases/2016.06/workshop-template/license/">License</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search...">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+      <div class="jumbotron">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>FIXME</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p>FIXME</p>
+          <p>FIXME</p>
+        </div>
+        <div class="col-md-6">
+          <p>
+          <strong>Instructors:</strong>
+          
+          FIXME
+          
+          </p>
+          
+          <p>
+          <strong>Helpers:</strong>
+          FIXME
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- See instructions in the comments below for how to edit specific sections of this workshop template. -->
 
@@ -36,15 +130,7 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
   are not using Eventbrite, or leave it in, since it will not be
   displayed if the 'eventbrite' field in the header is not set.
 -->
-{% if page.eventbrite %}
-<iframe
-  src="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
-  frameborder="0"
-  width="100%"
-  height="248px"
-  scrolling="auto">
-</iframe>
-{% endif %}
+
 
 <h4>This is the workshop template.  Use it to create your own website.
 Delete this line and email the link to your workshop page to admin@software-carpentry.org.
@@ -61,7 +147,7 @@ Software Carpentry staff may need to know in your email.</h4>
   the pitch.
 -->
 <p>
-  <a href="{{site.swc_site}}">Software Carpentry</a>'s mission
+  <a href="https://software-carpentry.org">Software Carpentry</a>'s mission
   is to help scientists and engineers get more research done in less
   time and with less pain by teaching them basic lab skills for
   scientific computing.  This hands-on workshop will cover basic
@@ -99,16 +185,16 @@ Software Carpentry staff may need to know in your email.</h4>
   can use http://itouchmap.com/latlong.html to find the lat/long of an
   address.
 -->
-{% if page.latlng %}
+
 <p id="where">
   <strong>Where:</strong>
-  {{page.address}}.
+  FIXME.
   Get directions with
-  <a href="//www.openstreetmap.org/?mlat={{page.latlng | replace:',','&mlon='}}&zoom=16">OpenStreetMap</a>
+  <a href="//www.openstreetmap.org/?mlat=FIXME&zoom=16">OpenStreetMap</a>
   or
-  <a href="//maps.google.com/maps?q={{page.latlng}}">Google Maps</a>.
+  <a href="//maps.google.com/maps?q=FIXME">Google Maps</a>.
 </p>
-{% endif %}
+
 
 <!--
   SPECIAL REQUIREMENTS
@@ -121,7 +207,7 @@ Software Carpentry staff may need to know in your email.</h4>
   on. They should have a few specific software packages installed (listed
   <a href="#setup">below</a>). They are also required to abide by
   Software Carpentry's
-  <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
+  <a href="https://software-carpentry.org/conduct.html">Code of Conduct</a>.
 </p>
 
 <!--
@@ -144,7 +230,7 @@ Software Carpentry staff may need to know in your email.</h4>
   large-print handouts are available if needed by notifying the
   organizers in advance.  If we can help making learning easier for
   you (e.g. sign-language interpreters, lactation facilities) please
-  <a href="mailto:{{page.contact}}">get in touch</a> and we will
+  <a href="mailto:FIXME">get in touch</a> and we will
   attempt to provide them.
 </p>
 
@@ -156,7 +242,7 @@ Software Carpentry staff may need to know in your email.</h4>
 <p id="contact">
   <strong>Contact</strong>:
   Please mail
-  <a href="mailto:{{page.contact}}">{{page.contact}}</a> for more
+  <a href="mailto:FIXME">FIXME</a> for more
   information.
 </p>
 
@@ -174,8 +260,8 @@ Software Carpentry staff may need to know in your email.</h4>
 <!-- DO NOT EDIT SURVEY LINKS -->
 <p><em>Surveys</em></p>
 <p>Please be sure to complete these surveys before and after the workshop.</p>
-<p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
+<p><a href="https://www.surveymonkey.com/r/swc_pre_workshop_v1?workshop_id=">Pre-workshop Survey</a></p>
+<p><a href="https://www.surveymonkey.com/r/swc_post_workshop_v1?workshop_id=">Post-workshop Survey</a></p>
 
 <div class="row">
   <div class="col-md-6">
@@ -216,13 +302,7 @@ Software Carpentry staff may need to know in your email.</h4>
   where 'YYYY-MM-DD-site' is the identifier for your workshop,
   e.g., '2015-06-10-esu'.
 -->
-{% if page.etherpad %}
-<p id="etherpad">
-  <strong>Etherpad:</strong> <a href="{{page.etherpad}}">{{page.etherpad}}</a>.
-  <br/>
-  We will use this Etherpad for chatting, taking notes, and sharing URLs and bits of code.
-</p>
-{% endif %}
+
 
 <hr/>
 
@@ -255,7 +335,7 @@ Software Carpentry staff may need to know in your email.</h4>
       <li>Looping over files</li>
       <li>Creating and running shell scripts</li>
       <li>Finding things</li>
-      <li><a href="{{site.swc_github_io}}/shell-novice/reference/">Reference...</a></li>
+      <li><a href="/shell-novice/reference/">Reference...</a></li>
     </ul>
   </div>
   <div class="col-md-6">
@@ -268,7 +348,7 @@ Software Carpentry staff may need to know in your email.</h4>
       <li>Loops and conditionals</li>
       <li>Defensive programming</li>
       <li>Using Python from the command line</li>
-      <li><a href="{{site.swc_github_io}}/python-novice-inflammation/reference/">Reference...</a></li>
+      <li><a href="/python-novice-inflammation/reference/">Reference...</a></li>
     </ul>
   </div>
   <!--
@@ -280,7 +360,7 @@ Software Carpentry staff may need to know in your email.</h4>
       <li>Creating and using functions</li>
       <li>Loops and conditionals</li>
       <li>Using R from the command line</li>
-      <li><a href="{{site.swc_github_io}}/r-novice-inflammation/reference/">Reference...</a></li>
+      <li><a href="/r-novice-inflammation/reference/">Reference...</a></li>
     </ul>
   </div>
   -->
@@ -293,7 +373,7 @@ Software Carpentry staff may need to know in your email.</h4>
       <li>Creating and using functions</li>
       <li>Loops and conditionals</li>
       <li>Defensive programming</li>
-      <li><a href="{{site.swc_github_io}}/matlab-novice-inflammation/reference/">Reference...</a></li>
+      <li><a href="/matlab-novice-inflammation/reference/">Reference...</a></li>
      </ul>
    </div>
    -->
@@ -311,7 +391,7 @@ Software Carpentry staff may need to know in your email.</h4>
       <li>Resolving conflicts</li>
       <li>Open licenses</li>
       <li>Where to host work, and why</li>
-      <li><a href="{{site.swc_github_io}}/git-novice/reference/">Reference...</a></li>
+      <li><a href="/git-novice/reference/">Reference...</a></li>
     </ul>
   </div>
   <div class="col-md-6">
@@ -325,7 +405,7 @@ Software Carpentry staff may need to know in your email.</h4>
       <li>Combining information from multiple tables using <code>join</code></li>
       <li>Creating, modifying, and deleting data</li>
       <li>Programming with databases</li>
-      <li><a href="{{site.swc_github_io}}/sql-novice-survey/reference/">Reference...</a></li>
+      <li><a href="/sql-novice-survey/reference/">Reference...</a></li>
     </ul>
   </div>
 </div>
@@ -528,7 +608,7 @@ Software Carpentry staff may need to know in your email.</h4>
       <p>
         nano is a basic editor and the default that instructors use in the workshop.
         To install it,
-        download the <a href="{{site.swc_installer}}">Software Carpentry Windows installer</a>
+        download the <a href="">Software Carpentry Windows installer</a>
         and double click on the file to run it.
         <strong>This installer requires an active internet connection.</strong>
       </p>
@@ -719,7 +799,7 @@ Software Carpentry staff may need to know in your email.</h4>
     <div class="col-md-4">
       <h4 id="sql-windows">Windows</h4>
       <p>
-        The <a href="{{site.swc_github}}/windows-installer">Software Carpentry Windows Installer</a>
+        The <a href="https://github.com/swcarpentry/windows-installer">Software Carpentry Windows Installer</a>
         installs SQLite for Windows.
         If you used the installer to configure nano, you don't need to run it again.
       </p>
@@ -759,7 +839,7 @@ Software Carpentry staff may need to know in your email.</h4>
       Install <a href="https://www.virtualbox.org/">VirtualBox</a>.
     </li>
     <li>
-      Download our <a href="{{site.swc_vm}}">VM image</a>.
+      Download our <a href="">VM image</a>.
       <strong>Warning:</strong> this file is 1.7 GByte, so please
       download it <em>before</em> coming to your workshop.
     </li>
@@ -770,3 +850,23 @@ Software Carpentry staff may need to know in your email.</h4>
   </ol>
 </div>
 -->
+
+      <hr/>
+<footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4><a href="https://software-carpentry.org">Software Carpentry</a></h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4><a href="https://datacarpentry.org">Data Carpentry</a></h4>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/swc-releases/2016.06/workshop-template/assets/js/jquery.min.js"></script>
+<script src="/swc-releases/2016.06/workshop-template/assets/js/bootstrap.min.js"></script>
+<script src="/swc-releases/2016.06/workshop-template/assets/js/lesson.js"></script>
+
+  </body>
+</html>
