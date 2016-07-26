@@ -17,18 +17,16 @@ template for creating websites for workshops.
     We can only do that if you [customize][customization] that page correctly
     *and* send us a link to your workshop website.
 
-4.  Please also read
-    [the notes on customizing your website][customization] and the [FAQ][faq].
-    If you're interested in knowing more about why we do things the way we do,
-    please check out the [design notes][design].
-
-5.  If you are teaching Git,
-    please [create a separate repository](#setting-up-a-separate-repository-for-learners)
-    for your learners to practice in.
-
-6.  If you run into problems,
-    or have ideas about how to make this process simpler,
-    please [get in touch](#getting-and-giving-help).
+If you run into problems,
+or have ideas about how to make this process simpler,
+please [get in touch](#getting-and-giving-help).
+The pages on [customizing your website][customization],
+the [FAQ][faq],
+and the [design notes][design] have more detail on what we do and why.
+And please note:
+if you are teaching Git,
+please [create a separate repository](#setting-up-a-separate-repository-for-learners)
+for your learners to practice in.
 
 ## Creating a Repository
 
@@ -46,7 +44,7 @@ template for creating websites for workshops.
 
 5.  Choose a name for your workshop website repository.
     This name should have the form `YYYY-MM-DD-site`,
-    e.g., `2015-07-01-miskatonic`,
+    e.g., `2016-12-01-miskatonic`,
     where `YYYY-MM-DD` is the start date of the workshop.
 
 6.  Make sure the repository is public.
@@ -57,7 +55,8 @@ template for creating websites for workshops.
 
     You can now click "Begin Import".
     When the process is done,
-    you will receive a message close to "Importing complete! Your new repository julie32/2015-07-01-miskatonic is ready."
+    you will receive a message like
+    "Importing complete! Your new repository gvwilson/2016-12-01-miskatonic is ready."
     and you can go to the new repository by clicking on the name.
 
 **Note:**
@@ -73,7 +72,7 @@ please [get in touch](#getting-and-giving-help).
     which will be at `https://github.com/your_username/YYYY-MM-DD-site`.
     For example,
     if your username is `gvwilson`,
-    the repository's URL will be `https://github.com/gvwilson/2015-07-01-miskatonic`.
+    the repository's URL will be `https://github.com/gvwilson/2016-12-01-miskatonic`.
 
 2.  Edit the header of `index.html` to customize the list of instructors,
     workshop venue, etc. 
@@ -97,30 +96,20 @@ please [get in touch](#getting-and-giving-help).
 
     You should specify `-b gh-pages` because the imported repository doesn't have a `master` branch.
 
+    In order to view your changes once you are done editing,
+    you must push to your GitHub repository:
+
+    ~~~
+    git push origin gh-pages
+    ~~~
+
     **Note:**
     please do all of your work in your repository's `gh-pages` branch,
     since [GitHub automatically publishes that as a website][github-project-pages].
 
-4.  The URL for your website is determined automatically based on the URL for your repository:
-    if your repository is at `https://github.com/your_username/YYYY-MM-DD-site`,
-    its GitHub Pages website is at `http://your_username.github.io/YYYY-MM-DD-site`.
-    You must therefore edit the configuration values in `_config.yml` so that:
-
-    1.  `carpentry` is either "dc" (for Data Carpentry) or "swc" (for Software Carpentry).
-        This determines which logos are loaded.
-
-    2.  `repo` is the name of your GitHub repository,
-        e.g., `https://github.com/gvwilson/2015-07-01-miskatonic`.
-
-    3.  `root` is the unique identifier of your workshop *with the leading '/'*,
-        e.g., `/2015-07-01-miskatonic`.
-
-    4.  `email` is the contact email address for your workshop,
-        e.g., `gvwilson@miskatonic.edu`.
-
 5.  When you are done editing,
     go to the GitHub Pages URL for your workshop and preview your changes.
-    In the example above, this is `https://gvwilson.github.io/2015-07-01-miskatonic`.
+    In the example above, this is `https://gvwilson.github.io/2016-12-01-miskatonic`.
 
 **Note:**
 this template includes some files and directories that most workshops do not need,
@@ -143,25 +132,41 @@ you can do so as described below.
 2.  Run the command:
 
     ~~~
-    $ jekyll serve --config _config.yml,_config_dev.yml
+    $ jekyll serve
     ~~~
 
     and go to <http://0.0.0.0:4000> to preview your site.
     You can also run this command by typing `make serve`
     (assuming you have Make installed).
 
-    Note:
-    the command above uses the values from `_config.yml`,
-    then overrides some of them with `_config_dev.yml`
-    so that local files (including CSS style files) will load properly.
-    Simply running `jekyll serve` will *not* load local files,
-    so styles and icons may not display properly if you do this.
-
 3.  Run the command `python bin/workshop_check.py index.html`
     to check for a few common errors in your workshop's home page.
     (You must have Python 3 installed to do this.)
     If you have Make installed,
     you can also run this command by typing `make workshop-check`.
+
+## Creating Extra Pages
+
+In rare cases,
+you may want to add extra pages to your workshop website.
+You can do this by putting either Markdown or HTML pages in the website's root directory
+and styling them according to the instructions give in
+[the lesson template][lesson-example].
+If you do this,
+you *must* also edit `_config.yml` to set these three values:
+
+1.  `carpentry` is either "dc" (for Data Carpentry) or "swc" (for Software Carpentry).
+    This determines which logos are loaded.
+
+2.  `title` is the title of your workshop (typically the venue and date).
+
+3.  `email` is the contact email address for your workshop,
+    e.g., `gvwilson@miskatonic.edu`.
+
+Note: `carpentry and `email` duplicate information that's in `index.html`,
+but there is no way to avoid this
+without requiring people to edit both files in the usual case
+where no extra pages are created.
 
 ## Installing Software
 
@@ -225,6 +230,7 @@ or [mail us][contact].
 [issues]: https://github.com/swcarpentry/workshop-template/issues
 [jekyll]: https://jekyllrb.com/
 [jekyll-windows]: http://jekyll-windows.juthilo.com/
+[lesson-example]: https://swcarpentry.github.io/lesson-example/
 [pyyaml]: https://pypi.python.org/pypi/PyYAML
 [ruby-install-guide]: https://www.ruby-lang.org/en/downloads/
 [ruby-installer]: http://rubyinstaller.org/
