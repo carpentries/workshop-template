@@ -12,7 +12,7 @@ template for creating websites for workshops.
     [automatically published as a website by GitHub][github-project-pages].
 
 3.  Once you are done,
-    please **send your repository's URL to the [Software Carpentry administrator][contact]**.
+    please **mail your repository's URL to the [Software Carpentry administrator][contact]**.
     We build the list of workshops on our websites from the data included in your `index.html` page.
     We can only do that if you [customize][customization] that page correctly
     *and* send us a link to your workshop website.
@@ -119,6 +119,17 @@ See the [design notes][design] for more information about these.
 Further instructions are available in [the customization instructions][customization].
 This [FAQ][faq] includes a few extra tips (additions are always welcome)
 and these notes on [the background and design][design] of this template may help as well.
+
+## Send the Link to the Admin
+
+When you are happy with your workshop's page,
+please mail the link to the [Software Carpentry administrator][contact].
+We build the list of workshops on our websites from the data included in your `index.html` page,
+and can only do that if you send us a link.
+
+**Note:**
+if you are creating a web page as part of instructor training,
+please do *not* send the link to the admin.
 
 ## Checking Your Changes
 
