@@ -110,6 +110,7 @@ please [get in touch](#getting-and-giving-help).
 5.  When you are done editing,
     go to the GitHub Pages URL for your workshop and preview your changes.
     In the example above, this is `https://gvwilson.github.io/2016-12-01-miskatonic`.
+    The finished page should look [something like this](fig/completed-page.png?raw=true).
 
 **Note:**
 this template includes some files and directories that most workshops do not need,
