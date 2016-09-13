@@ -12,12 +12,11 @@ template for creating websites for workshops.
     [automatically published as a website by GitHub][github-project-pages].
 
 3.  Once you are done,
-    please access [AMY's self-organized workshop form][self-organized-workshop-form],
-    fill it and Software Carpentry administrator will contact you back
-    if need any extra information.
+    please fill in [this self-organized workshop form][self-organized-workshop-form]
+    and the administrator will contact you if we need any extra information.
     We build the list of workshops on our websites from the data included in your `index.html` page.
     We can only do that if you [customize][customization] that page correctly
-    *and* [fill the form][self-organized-workshop-form].
+    *and* [fill in the form][self-organized-workshop-form].
 
 If you run into problems,
 or have ideas about how to make this process simpler,
