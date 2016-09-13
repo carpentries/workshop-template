@@ -12,10 +12,11 @@ template for creating websites for workshops.
     [automatically published as a website by GitHub][github-project-pages].
 
 3.  Once you are done,
-    please **send your repository's URL to the [Software Carpentry administrator][contact]**.
+    please fill in [this self-organized workshop form][self-organized-workshop-form]
+    and the administrator will contact you if we need any extra information.
     We build the list of workshops on our websites from the data included in your `index.html` page.
     We can only do that if you [customize][customization] that page correctly
-    *and* send us a link to your workshop website.
+    *and* [fill in the form][self-organized-workshop-form].
 
 If you run into problems,
 or have ideas about how to make this process simpler,
@@ -228,11 +229,12 @@ or [mail us][contact].
 [github-project-pages]: https://help.github.com/articles/creating-project-pages-manually/
 [importer]: http://import.github.com/new
 [issues]: https://github.com/swcarpentry/workshop-template/issues
-[jekyll]: https://jekyllrb.com/
 [jekyll-windows]: http://jekyll-windows.juthilo.com/
+[jekyll]: https://jekyllrb.com/
 [lesson-example]: https://swcarpentry.github.io/lesson-example/
 [pyyaml]: https://pypi.python.org/pypi/PyYAML
 [ruby-install-guide]: https://www.ruby-lang.org/en/downloads/
 [ruby-installer]: http://rubyinstaller.org/
 [rubygems]: https://rubygems.org/pages/download/
+[self-organized-workshop-form]: https://amy.software-carpentry.org/workshops/submit/
 [swc-site]: http://software-carpentry.org
