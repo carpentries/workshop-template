@@ -108,9 +108,11 @@ please [get in touch](#getting-and-giving-help).
     please do all of your work in your repository's `gh-pages` branch,
     since [GitHub automatically publishes that as a website][github-project-pages].
 
-5.  When you are done editing,
+4.  When you are done editing,
     go to the GitHub Pages URL for your workshop and preview your changes.
     In the example above, this is `https://gvwilson.github.io/2016-12-01-miskatonic`.
+
+5.  Optional: you can now change the README.md file in your website's repository, which contains these instructions, so that it contains a short description of your workshop and a link to the workshop website.
 
 **Note:**
 this template includes some files and directories that most workshops do not need,
