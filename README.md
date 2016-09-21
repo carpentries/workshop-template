@@ -146,6 +146,22 @@ you can do so as described below.
     If you have Make installed,
     you can also run this command by typing `make workshop-check`.
 
+## (Optional) Linking to Your Page
+
+At the top of your repository on GitHub you'll see
+
+~~~
+No description or website provided. — Edit
+~~~
+
+Click 'Edit' and add:
+
+1.  A very brief description of your workshop in the "Description" box (e.g., "Miskatonic University workshop, Dec. 2016")
+
+2.  The URL for your workshop in the "Website" box (e.g., `https://gvwilson.github.io/2016-12-01-miskatonic`)
+
+This will help people find your website if they come to your repository's home page.
+
 ## Creating Extra Pages
 
 In rare cases,
