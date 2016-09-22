@@ -111,6 +111,7 @@ please [get in touch](#getting-and-giving-help).
 4.  When you are done editing,
     go to the GitHub Pages URL for your workshop and preview your changes.
     In the example above, this is `https://gvwilson.github.io/2016-12-01-miskatonic`.
+    The finished page should look [something like this](fig/completed-page.png?raw=true).
 
 5.  Optional: you can now change the README.md file in your website's repository, which contains these instructions, so that it contains a short description of your workshop and a link to the workshop website.
 
