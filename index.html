@@ -157,20 +157,19 @@ and the administrator will contact you if we need any extra information.</h4>
   <strong>Contact</strong>:
   Please email
   {% if page.contact %}
-  {% for contact in page.contact: %}
-  {% if forloop.last and page.contact.size > 1 %}
-    or
+    {% for contact in page.contact: %}
+      {% if forloop.last and page.contact.size > 1 %}
+        or
+      {% else %}
+        {% unless forloop.first %}
+        ,
+        {% endunless %}
+      {% endif %}
+      <a href='mailto:{{contact}}'>{{contact}}</a>
+    {% endfor %}
   {% else %}
-    {% unless forloop.first %}
-    ,
-    {% endunless %}
+    to-be-announced
   {% endif %}
-  <a href='mailto:{{contact}}'>{{contact}} </a>
-  {% endfor %}
-  {% else %}
-  to-be-announced
-  {% endif %}
-  <!--<a href="mailto:{{page.contact}}">{{page.contact}}</a>-->
   for more information.
 </p>
 
