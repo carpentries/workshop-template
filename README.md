@@ -75,7 +75,12 @@ please [get in touch](#getting-and-giving-help).
     if your username is `gvwilson`,
     the repository's URL will be `https://github.com/gvwilson/2016-12-01-miskatonic`.
 
-2.  Edit the header of `index.html` to customize the list of instructors,
+3.  Ensure you are on the gh-pages branch by clicking on the branch under the drop 
+    down in the menu bar (see the note below):
+
+    ![](fig/select-gh-pages-branch.png?raw=true)
+
+3.  Edit the header of `index.html` to customize the list of instructors,
     workshop venue, etc. 
     You can do this in the browser by clicking on it in the file view on GitHub
     and then selecting the pencil icon in the menu bar:
@@ -85,7 +90,7 @@ please [get in touch](#getting-and-giving-help).
     Editing hints are embedded in `index.html`,
     and full instructions are in [the customization instructions][customization].
 
-3.  Alternatively,
+4.  Alternatively,
     if you are already familiar with Git,
     you can clone the repository to your desktop,
     edit `index.html` there,
@@ -95,7 +100,8 @@ please [get in touch](#getting-and-giving-help).
     git clone -b gh-pages https://github.com/your_username/YYYY-MM-DD-site
     ~~~
 
-    You should specify `-b gh-pages` because the imported repository doesn't have a `master` branch.
+    You should specify `-b gh-pages` to checkout the gh-pages branch because the imported 
+    repository doesn't have a `master` branch.
 
     In order to view your changes once you are done editing,
     you must push to your GitHub repository:
@@ -104,16 +110,16 @@ please [get in touch](#getting-and-giving-help).
     git push origin gh-pages
     ~~~
 
-    **Note:**
-    please do all of your work in your repository's `gh-pages` branch,
-    since [GitHub automatically publishes that as a website][github-project-pages].
-
-4.  When you are done editing,
+5.  When you are done editing,
     go to the GitHub Pages URL for your workshop and preview your changes.
     In the example above, this is `https://gvwilson.github.io/2016-12-01-miskatonic`.
     The finished page should look [something like this](fig/completed-page.png?raw=true).
 
-5.  Optional: you can now change the README.md file in your website's repository, which contains these instructions, so that it contains a short description of your workshop and a link to the workshop website.
+6.  Optional: you can now change the README.md file in your website's repository, which contains these instructions, so that it contains a short description of your workshop and a link to the workshop website.
+
+**Note:**
+please do all of your work in your repository's `gh-pages` branch,
+since [GitHub automatically publishes that as a website][github-project-pages].
 
 **Note:**
 this template includes some files and directories that most workshops do not need,
