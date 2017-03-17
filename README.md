@@ -189,7 +189,7 @@ you *must* also edit `_config.yml` to set these three values:
 3.  `email` is the contact email address for your workshop,
     e.g., `gvwilson@miskatonic.edu`.
 
-Note: `carpentry and `email` duplicate information that's in `index.html`,
+Note: `carpentry` and `email` duplicate information that's in `index.html`,
 but there is no way to avoid this
 without requiring people to edit both files in the usual case
 where no extra pages are created.
