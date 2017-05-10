@@ -87,7 +87,7 @@ please [get in touch](#getting-and-giving-help).
     
 4.  Edit `_config.yml` to customize certain site-wide variables, such as: `carpentry` (to tell us which carpentry workshop this is), `title` (overall title for all pages), `repository` (so that URLs resolve correctly both locally and on GitHub), `workshop_repo` (the URL of the workshop repository on GitHub) and `workshop_site` (the repository's GitHub Pages URL).
 
-Editing hints are embedded in `_config.yml`,
+    Editing hints are embedded in `_config.yml`,
     and full instructions are in [the customization instructions][customization].
     
 5.  Alternatively,
