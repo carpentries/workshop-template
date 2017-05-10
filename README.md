@@ -84,11 +84,13 @@ please [get in touch](#getting-and-giving-help).
     
     Editing hints are embedded in `index.html`,
     and full instructions are in [the customization instructions][customization].
-
-4.  Alternatively,
+    
+4.  Edit `_config.yml` to customize certain site-wide variables, such as: `carpentry` (to tell us which carpentry workshop this is), `title` (overall title for all pages), `workshop_repo` (the URL of the workshop repository on GitHub) and `workshop_site` (the repository's GitHub Pages URL).
+ 
+5.  Alternatively,
     if you are already familiar with Git,
     you can clone the repository to your desktop,
-    edit `index.html` there,
+    edit `index.html` and `_config.yml` there,
     and push your changes back to the repository.
 
     ~~~
@@ -105,12 +107,12 @@ please [get in touch](#getting-and-giving-help).
     git push origin gh-pages
     ~~~
 
-5.  When you are done editing,
+6.  When you are done editing,
     go to the GitHub Pages URL for your workshop and preview your changes.
     In the example above, this is `https://gvwilson.github.io/2016-12-01-miskatonic`.
     The finished page should look [something like this](fig/completed-page.png?raw=true).
 
-6.  Optional: you can now change the README.md file in your website's repository, which contains these instructions, so that it contains a short description of your workshop and a link to the workshop website.
+7.  Optional: you can now change the README.md file in your website's repository, which contains these instructions, so that it contains a short description of your workshop and a link to the workshop website.
 
 **Note:**
 please do all of your work in your repository's `gh-pages` branch,
