@@ -5,18 +5,13 @@ template for creating websites for workshops.
 
 1.  Please *do not fork this repository directly on GitHub.*
     Instead, please use GitHub's importer following [the instructions below](#creating-a-repository)
-    to create a website repository for your workshop.
+    to copy this `workshop-template` repository and customize it for your workshop.
 
 2.  Please *do your work in your repository's `gh-pages` branch*,
     since that is what is
     [automatically published as a website by GitHub][github-project-pages].
 
-3.  Once you are done,
-    please fill in [this self-organized workshop form][self-organized-workshop-form]
-    and the administrator will contact you if we need any extra information.
-    We build the list of workshops on our websites from the data included in your `index.html` page.
-    We can only do that if you [customize][customization] that page correctly
-    *and* [fill in the form][self-organized-workshop-form].
+3.  Once you are done, please also [let us know][contact] the workshop URL. If this is a self-organised workshop, you should also [fill in the self-organized workshop form][self-organized-workshop-form] (if you have not already done so), so we can keep track of all workshops. We build the list of workshops on our websites from the data included in your `index.html` page. We can only do that if you [customize][customization] that page correctly *and* let us know the workshop URL.
 
 If you run into problems,
 or have ideas about how to make this process simpler,
@@ -89,11 +84,16 @@ please [get in touch](#getting-and-giving-help).
     
     Editing hints are embedded in `index.html`,
     and full instructions are in [the customization instructions][customization].
+    
+4.  Edit `_config.yml` to customize certain site-wide variables, such as: `carpentry` (to tell us which carpentry workshop this is), `title` (overall title for all pages), `repository` (so that URLs resolve correctly both locally and on GitHub), `workshop_repo` (the URL of the workshop repository on GitHub) and `workshop_site` (the repository's GitHub Pages URL).
 
-4.  Alternatively,
+    Editing hints are embedded in `_config.yml`,
+    and full instructions are in [the customization instructions][customization].
+    
+5.  Alternatively,
     if you are already familiar with Git,
     you can clone the repository to your desktop,
-    edit `index.html` there,
+    edit `index.html` and `_config.yml` there,
     and push your changes back to the repository.
 
     ~~~
@@ -110,12 +110,12 @@ please [get in touch](#getting-and-giving-help).
     git push origin gh-pages
     ~~~
 
-5.  When you are done editing,
+6.  When you are done editing,
     go to the GitHub Pages URL for your workshop and preview your changes.
     In the example above, this is `https://gvwilson.github.io/2016-12-01-miskatonic`.
     The finished page should look [something like this](fig/completed-page.png?raw=true).
 
-6.  Optional: you can now change the README.md file in your website's repository, which contains these instructions, so that it contains a short description of your workshop and a link to the workshop website.
+7.  Optional: you can now change the README.md file in your website's repository, which contains these instructions, so that it contains a short description of your workshop and a link to the workshop website.
 
 **Note:**
 please do all of your work in your repository's `gh-pages` branch,

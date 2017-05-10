@@ -3,12 +3,17 @@ layout: page
 title: Customizing Your Workshop's Website
 permalink: /customization/
 ---
-## Configuration File
+## Configuration File `_config.yml`
 
-You must edit the `_config.yml` configuration file in the root directory of your workshop
-and change the URLS called `workshop_repo` and `workshop_site`
-to point to the repository for the lesson and its GitHub Pages site respectively.
-If the URL for the repository is `https://github.com/gvwilson/2015-07-01-miskatonic`,
+You should edit the `_config.yml` configuration file in the root directory of your workshop to configure some site-wide variables and make the site function correctly:
+
+* `carpentry` - to tell us which carpentry workshop this is, possible values are ("swc", "dc" or "lc")
+* `title` - overall title for all pages
+* `repository` - as \<USERNAME>/\<PROJECT> (e.g. `gvwilson/2015-07-01-miskatonic`), so that URLs resolve correctly both locally and on GitHub - see https://help.github.com/articles/repository-metadata-on-github-pages
+* `workshop_repo` - the URL of your workshop repository on GitHub
+* `workshop_site` - the repository's GitHub Pages URL
+
+For example, if the URL for the repository is `https://github.com/gvwilson/2015-07-01-miskatonic`,
 the URL for the website will be `http://gvwilson.github.io/2015-07-01-miskatonic`.
 
 You should not need to modify any of the other values in `_config.yml`.
