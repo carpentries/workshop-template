@@ -5,7 +5,7 @@ permalink: /customization/
 ---
 ## Configuration File `config.yml`
 
-You must edit the `_config.yml` configuration file in the root directory of your workshop to configure some site-wide variables and make the site function correctly:
+You should edit the `_config.yml` configuration file in the root directory of your workshop to configure some site-wide variables and make the site function correctly:
 
 * `carpentry` - to tell us which carpentry workshop this is, possible values are ("swc", "dc" or "lc")
 * `title` - overall title for all pages
