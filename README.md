@@ -5,7 +5,7 @@ template for creating websites for workshops.
 
 1.  Please *do not fork this repository directly on GitHub.*
     Instead, please use GitHub's importer following [the instructions below](#creating-a-repository)
-    to create a website repository for your workshop.
+    to copy this `workshop-template` repository and customize it for your workshop.
 
 2.  Please *do your work in your repository's `gh-pages` branch*,
     since that is what is
