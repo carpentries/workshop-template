@@ -3,7 +3,7 @@ layout: page
 title: Customizing Your Workshop's Website
 permalink: /customization/
 ---
-## Configuration File `config.yml`
+## Configuration File `_config.yml`
 
 You should edit the `_config.yml` configuration file in the root directory of your workshop to configure some site-wide variables and make the site function correctly:
 
