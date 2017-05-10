@@ -9,7 +9,7 @@ You must edit the `_config.yml` configuration file in the root directory of your
 
 * `carpentry` - to tell us which carpentry workshop this is, possible values are ("swc", "dc" or "lc")
 * `title` - overall title for all pages
-* `repository` - as \<USERNAME>/\<PROJECT> (e.g. "gvwilson/2015-07-01-miskatonic"), so that URLs resolve correctly both locally and on GitHub - see https://help.github.com/articles/repository-metadata-on-github-pages
+* `repository` - as \<USERNAME>/\<PROJECT> (e.g. `gvwilson/2015-07-01-miskatonic`), so that URLs resolve correctly both locally and on GitHub - see https://help.github.com/articles/repository-metadata-on-github-pages
 * `workshop_repo` - the URL of your workshop repository on GitHub
 * `workshop_site` - the repository's GitHub Pages URL
 
