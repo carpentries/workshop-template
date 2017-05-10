@@ -11,12 +11,7 @@ template for creating websites for workshops.
     since that is what is
     [automatically published as a website by GitHub][github-project-pages].
 
-3.  Once you are done,
-    please fill in [this self-organized workshop form][self-organized-workshop-form]
-    and the administrator will contact you if we need any extra information.
-    We build the list of workshops on our websites from the data included in your `index.html` page.
-    We can only do that if you [customize][customization] that page correctly
-    *and* [fill in the form][self-organized-workshop-form].
+3.  Once you are done, please also [let us know][contact] the workshop URL. If this is a self-organised workshop, you should also [fill in the self-organized workshop form][self-organized-workshop-form] (if you have not already done so), so we can keep track of all workshops. We build the list of workshops on our websites from the data included in your `index.html` page. We can only do that if you [customize][customization] that page correctly *and* let us know the workshop URL.
 
 If you run into problems,
 or have ideas about how to make this process simpler,
