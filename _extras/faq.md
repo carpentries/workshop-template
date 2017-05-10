@@ -32,7 +32,7 @@ permalink: /faq/
     by date without requiring an additional start-date column.
     **Note: `YYYY-MM-DD` should be the start date of the workshop.**
 
-*Why use the `gh-pages` branch instead of `master`?
+*Why use the `gh-pages` branch instead of `master`?*
 :   Because [GitHub automatically publishes `gh-pages`][github-pages] as a website.
 
 *Why use Jekyll?  Why not some other markup language and some other converter?*
