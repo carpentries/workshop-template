@@ -181,8 +181,8 @@ and styling them according to the instructions give in
 If you do this,
 you *must* also edit `_config.yml` to set these three values:
 
-1.  `carpentry` is either "dc" (for Data Carpentry) or "swc" (for Software Carpentry).
-    This determines which logos are loaded.
+1.  `carpentry` is either "dc" (for Data Carpentry), "swc" (for Software Carpentry),
+    or "lc" (for Library Carpentry). This determines which logos are loaded.
 
 2.  `title` is the title of your workshop (typically the venue and date).
 
