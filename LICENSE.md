@@ -1,14 +1,15 @@
 ---
 layout: page
-root: .
-title: Licenses
+title: "Licenses"
+permalink: /license/
 ---
-### Instructional Material
+## Instructional Material
 
-All Software Carpentry instructional material is made available under
-the [Creative Commons Attribution license][cc-by-human]. The following
-is a human-readable summary of (and not a substitute for) the [full
-legal text of the CC BY 4.0 license][cc-by-legal].
+All Software Carpentry and Data Carpentry instructional material is
+made available under the [Creative Commons Attribution
+license][cc-by-human]. The following is a human-readable summary of
+(and not a substitute for) the [full legal text of the CC BY 4.0
+license][cc-by-legal].
 
 You are free:
 
@@ -44,12 +45,12 @@ Notices:
   rights such as publicity, privacy, or moral rights may limit how you
   use the material.
 
-### Software
+## Software
 
 Except where otherwise noted, the example programs and other software
-provided by Software Carpentry are made available under the
-[OSI](http://opensource.org)-approved
-[MIT license](http://opensource.org/licenses/mit-license.html).
+provided by Software Carpentry and Data Carpentry are made available under the
+[OSI][osi]-approved
+[MIT license][mit-license].
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -70,16 +71,13 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-### Other Material
+## Trademark
 
-Our [code of conduct](CODE_OF_CONDUCT.html) is taken from
-[this site](https://github.com/Bantik/contributor_covenant/blob/master/LICENSE),
-and is made available under the same MIT License as our software.
-
-### Trademark
-
-"Software Carpentry" and the Software Carpentry logo are registered
-trademarks of the Software Carpentry Foundation.
+"Software Carpentry" and "Data Carpentry" and their respective logos
+are registered trademarks of [NumFOCUS][numfocus].
 
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
 [cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
+[mit-license]: http://opensource.org/licenses/mit-license.html
+[numfocus]: http://numfocus.org/
+[osi]: http://opensource.org
