@@ -1,0 +1,30 @@
+language: python
+python:
+  - "3.2"
+  - "3.3"
+  - "3.4"
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+# command to run tests
+before_script:
+  - "awk -i inplace 'FNR == 4 {print \"carpentry: swc\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 5 {print \"venue: Foo\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 6 {print \"address: Room 123\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 7 {print \"country: us\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 8 {print \"language: en\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 9 {print \"latlng: 0,0\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 10 {print \"humandate: Jan 01-02, 2020\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 11 {print \"humantime: 9:00 am - 4:30 pm\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 12 {print \"startdate: 2020-01-01\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 13 {print \"enddate: 2020-01-01\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 14 {print \"instructor: [Foo]\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 15 {print \"helper: [Foo]\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 16 {print \"contact: [foo@bar.com]\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 17 {print \"collaborative_notes: http://foo.bar\"} {print}' index.html"
+  - "awk -i inplace 'FNR == 18 {print \"eventbrite: 1234567890AB\"} {print}' index.html"
+script:
+  - python bin/workshop_check.py .
+branches:
+  only:
+    - gh-pages
