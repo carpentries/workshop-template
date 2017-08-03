@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2017-08-04 00:27:04 +0200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="/swc-releases/2017.08/workshop-template">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Workshop Title: Customizing Your Workshop's Website</title>
+  </head>
+  <body>
+    <div class="container">
+      
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../conduct/">Code of Conduct</a></li>
+
+	
+        
+
+	
+	
+
+	
+        <li><a href="../license/">License</a></li>
+	
+	<li><a href="/edit/gh-pages/_extras/customization.md">Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<h1 class="maintitle"><a href="../">Workshop Title</a>: Customizing Your Workshop's Website</h1>
+
+<h2 id="configuration-file-_configyml">Configuration File <code class="highlighter-rouge">_config.yml</code></h2>
+
+<p>You should edit the <code class="highlighter-rouge">_config.yml</code> configuration file in the root directory of your workshop to configure some site-wide variables and make the site function correctly:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">carpentry</code> - to tell us which carpentry workshop this is, possible values are (“swc”, “dc” or “lc”)</li>
+  <li><code class="highlighter-rouge">title</code> - overall title for all pages</li>
+  <li><code class="highlighter-rouge">repository</code> - as &lt;USERNAME&gt;/&lt;PROJECT&gt; (e.g. <code class="highlighter-rouge">gvwilson/2015-07-01-miskatonic</code>), so that URLs resolve correctly both locally and on GitHub - see https://help.github.com/articles/repository-metadata-on-github-pages</li>
+  <li><code class="highlighter-rouge">workshop_repo</code> - the URL of your workshop repository on GitHub</li>
+  <li><code class="highlighter-rouge">workshop_site</code> - the repository’s GitHub Pages URL</li>
+</ul>
+
+<p>For example, if the URL for the repository is <code class="highlighter-rouge">https://github.com/gvwilson/2015-07-01-miskatonic</code>,
+the URL for the website will be <code class="highlighter-rouge">http://gvwilson.github.io/2015-07-01-miskatonic</code>.</p>
+
+<p>You should not need to modify any of the other values in <code class="highlighter-rouge">_config.yml</code>.</p>
+
+<h2 id="home-page-data">Home Page: Data</h2>
+
+<p>Your workshop’s home page lives in <code class="highlighter-rouge">index.html</code>,
+which must define the following values in its header:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">layout</code> must be <code class="highlighter-rouge">workshop</code>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">carpentry</code> must be either “dc” (for Data Carpentry) or “swc” (for
+Software Carpentry).</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">venue</code> is the short name of the institution or group hosting the
+workshop, like “Euphoric State University”.  It should <em>not</em>
+include the address or other details, since this value is
+displayed in a table on the main
+<a href="http://software-carpentry.org">Software Carpentry</a> website.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">address</code> is the workshop’s address (including details like the
+room number). The address should be all on one line.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">country</code> must be a two-letter ISO-3166 code for the country in
+which the workshop is going to take place, such as “fr” (for
+France) or “nz” (for New Zealand) - see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">Wikipedia</a>
+for a complete list.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">language</code> is the language that will be used in the workshop.
+It must be an <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1 code</a>.
+Note that two-letter codes mean different things for countries
+and languages: “ar” is Arabic when used for a language, but
+Argentina when used for a country.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">latlng</code> is the latitude and longitude of the workshop site (so we
+can put a pin on our map).  You can use
+<a href="http://itouchmap.com/latlong.html">this site</a> to find these
+values.  You can <em>not</em> put spaces around the comma separating the
+latitude from the longitude.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">humandate</code> is the human-friendly start and end date for the
+ workshop.  Please use three-letter month names and abbreviations
+ (e.g., <code class="highlighter-rouge">Jul</code> instead of <code class="highlighter-rouge">July</code>), since these values are displayed
+ in a table on our websites.  (Strictly speaking this information
+ is redundant, since we require a machine-readable <code class="highlighter-rouge">startdate</code> and
+ <code class="highlighter-rouge">enddate</code>, but reliably translating those into human-readable
+ dates is an interesting challenge…)</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">humantime</code> is the human-friendly start and end time for each day of
+the workshop, e.g., “09:00 am - 4:00 pm” or “09:00-16:00”.  (We
+recognize that we ought to allow different start or end times on
+different days, but going down that path leads eventually to
+embedding iCal date/time specifications in our headers, which in
+turn leads to madness…)</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">startdate</code> is the workshop’s starting date in YYYY-MM-DD format,
+such as <code class="highlighter-rouge">2015-07-01</code>.  You must use four digits for the year and
+two each for the month and day.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">enddate</code> is the workshop’s ending date in the same format.  If your
+workshop is only one day long, the <code class="highlighter-rouge">enddate</code> field should be deleted.
+If your workshop has a more complicated schedule (e.g., a half day a
+week for four weeks), please delete the <code class="highlighter-rouge">enddate</code> field and only tell
+us its start date.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">instructor</code> is a comma-separated list of instructor names.  The
+list must be enclosed in square brackets, and each name must be in
+double quotes, as in <code class="highlighter-rouge">["Alan Turing","Grace Hopper"]</code>.  Do not
+include other information (such as the word “instructor”) in these
+values.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">helper</code> is a comma-separated list of helper names formatted in the
+same way as the instructor names.  If there are no helpers, use an
+empty list <code class="highlighter-rouge">[]</code>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">contact</code> is the contact email address to use for your workshop.
+If you do not provide a contact email address, your website will
+display the address for the workshop coordinators (who probably
+won’t be able to answer questions about the specific details of
+your workshop).</p>
+  </li>
+</ul>
+
+<p>The header may optionally define the following:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">etherpad</code> is the URL for the Etherpad for your workshop.  If you are
+not using an Etherpad, you can delete this line.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">eventbrite</code> is the multi-digit Eventbrite registration key.  If you
+are using Eventbrite, the Software Carpentry administrators will
+give this to you.  If you are using something else, you may delete
+this line.  Note: this value must be given as a string in double
+quotes, rather than as a number.</p>
+  </li>
+</ul>
+
+<h2 id="home-page-schedule-and-syllabus">Home Page: Schedule and Syllabus</h2>
+
+<p>You should edit the sections titled <code class="highlighter-rouge">Schedule</code> and <code class="highlighter-rouge">Syllabus</code>
+so that they show what you’re actually planning to teach and when.</p>
+
+<h2 id="home-page-setup">Home Page: Setup</h2>
+
+<p>You should delete the pieces of the <code class="highlighter-rouge">Setup</code> section
+related to software you will not be using in your workshop,
+so that learners don’t spend time installing software they don’t need.</p>
+
+<h2 id="setup-installation-tests">Setup: Installation tests</h2>
+
+<p>If you intend to use the installation-test scripts,
+uncomment the paragraph linking to <code class="highlighter-rouge">setup/index.html</code> in <code class="highlighter-rouge">index.html</code>
+and edit <code class="highlighter-rouge">setup/swc-installation-test-2.py</code> as described below.</p>
+
+<p><code class="highlighter-rouge">swc-installation-test-1.py</code> is pretty simple, and just checks that
+the students have a recent enough version of Python installed that
+they can run <code class="highlighter-rouge">swc-installation-test-2.py</code>.</p>
+
+<p><code class="highlighter-rouge">swc-installation-test-2.py</code>
+checks for a list of dependencies and prints error messages if a
+package is not installed, or if the installed version is not current
+enough.  By default, the script checks for pretty much anything that
+has ever been used at a Software Carpentry workshop, which is probably
+not what you want for your particular workshop.</p>
+
+<p>Go through <code class="highlighter-rouge">swc-installation-test-2.py</code> and
+comment any dependencies you don’t need out of the <code class="highlighter-rouge">CHECKS</code> list.  You
+might also want to skim through the minimum version numbers listed
+where particular dependencies are defined (e.g. <code class="highlighter-rouge">('git', 'Git', (1, 7,
+0), None)</code>).  For the most part, fairly conservative values have been
+selected, so students with modern machines should be fine.  If your
+workshop has stricter version requirements, feel free to bump them
+accordingly.</p>
+
+<p>Similarly, the virtual dependencies can be satisfied by any of several
+packages.  If you don’t want to support a particular package (e.g. if
+you have no Emacs experience and don’t want to be responsible for
+students who show up with Emacs as their only editor), you can comment
+out that particular <code class="highlighter-rouge">or_dependency</code>.</p>
+
+<h2 id="updating-the-repository">Updating the repository</h2>
+
+<p>If for some reason,
+such as the installation instructions having become disconnected
+with the current lesson material,
+you need to get changes from this repository
+into the clone of it with your workshop page,
+please follow the steps bellow:</p>
+
+<ol>
+  <li>
+    <p>Add the workshop-template repository as upstream:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ git remote add upstream https://github.com/swcarpentry/workshop-template.git
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Fetch the data from upstream repository (also know as the workshop-template
+repository):</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ git fetch upstream
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Merge the new changes:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ git merge upstream/gh-pages
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>When get conflicts, solve it and</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ git commit -a
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Push the changes to GitHub:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ git push origin gh-pages
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+
+      
+      
+<footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016
+	
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	<a href="mailto:lessons@software-carpentry.org">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
