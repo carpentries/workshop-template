@@ -1,25 +1,73 @@
-#--------------------------------------------------------------------------------
-# Values for this workshop - EDIT THIS SECTION.
-#--------------------------------------------------------------------------------
-workshop_repo   : "http://github.com/swcarpentry/workshop-template"
-workshop_site   : "http://swcarpentry.github.io/workshop-template"
-#--------------------------------------------------------------------------------
-# Standard Software Carpentry settings - should not need to be modified.
-#--------------------------------------------------------------------------------
-swc_blog        : "http://software-carpentry.org/feed.xml"
-swc_contact     : "admin@software-carpentry.org"
-swc_files       : "http://files.software-carpentry.org"
-swc_github      : "http://github.com/swcarpentry"
-swc_installer   : "http://files.software-carpentry.org/SWCarpentryInstaller.exe"
-swc_lessons     : "http://software-carpentry.org/v5/novice"
-swc_site        : "http://software-carpentry.org"
-swc_twitter     : "http://twitter.com/swcarpentry"
-swc_vm          : "https://docs.google.com/uc?id=0B4Kr6DYkzkQtSTZLQzF4aVB4NDQ&export=download"
-#--------------------------------------------------------------------------------
-# Settings for Jekyll - should not need to be modified.
-#--------------------------------------------------------------------------------
-markdown        : kramdown
-kramdown        :
-  entity_output : as_input # &mdash; is output as &mdash;
-  smart_quotes  : [39, 39, 34, 34] # decimal for left/right single/double quotes
-exclude         : [tools]
+#------------------------------------------------------------
+# Values for this workshop.
+#------------------------------------------------------------
+
+# Which carpentry is this ("swc", "dc", or "lc")?
+carpentry: "swc"
+
+# Overall title for pages.
+title: "Workshop Title"
+
+# Contact email address.
+email: lessons@software-carpentry.org
+
+#------------------------------------------------------------
+# Generic settings (should not need to change).
+#------------------------------------------------------------
+
+# What kind of thing is this ("workshop" or "lesson")?
+kind: "workshop"
+
+# Magic to make URLs resolve both locally and on GitHub.
+# See https://help.github.com/articles/repository-metadata-on-github-pages/.
+repository: <USERNAME>/<PROJECT>
+
+# Sites.
+amy_site: "https://amy.software-carpentry.org/workshops"
+lc_site: "https://librarycarpentry.github.io/"
+dc_site: "http://datacarpentry.org"
+swc_github: "https://github.com/swcarpentry"
+swc_site: "https://software-carpentry.org"
+swc_pages: "https://swcarpentry.github.io"
+template_repo: "https://github.com/swcarpentry/styles"
+example_repo: "https://github.com/swcarpentry/lesson-example"
+example_site: "https://swcarpentry.github.com/lesson-example"
+workshop_repo: "https://github.com/swcarpentry/workshop-template"
+workshop_site: "https://swcarpentry.github.io/workshop-template"
+training_site: "https://swcarpentry.github.io/instructor-training"
+swc_installer: "https://github.com/swcarpentry/windows-installer/releases/download/v0.3/SWCarpentryInstaller.exe"
+
+# Surveys.
+swc_pre_survey: "https://www.surveymonkey.com/r/swc_pre_workshop_v1?workshop_id="
+swc_post_survey: "https://www.surveymonkey.com/r/swc_post_workshop_v1?workshop_id="
+dc_pre_survey: "https://www.surveymonkey.com/r/dcpostworkshopassessment?workshop_id="
+dc_post_survey: "https://www.surveymonkey.com/r/dcpostworkshopassessment?workshop_id="
+
+# Start time in minutes (0 to be clock-independent, 540 to show a start at 09:00 am)
+start_time: 0
+
+# Specify that things in the episodes collection should be output.
+collections:
+  episodes:
+    output: true
+    permalink: /:path/
+  extras:
+    output: true
+
+# Set the default layout for things in the episodes collection.
+defaults:
+  - values:
+      root: ..
+  - scope:
+      path: ""
+      type: episodes
+    values:
+      layout: episode
+
+# Files and directories that are not to be copied.
+exclude:
+  - Makefile
+  - bin
+
+# Turn off built-in syntax highlighting.
+highlighter: false

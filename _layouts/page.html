@@ -1,28 +1,5 @@
 ---
+layout: base
 ---
-<!DOCTYPE html>
-<!--
-  Use this layout for generic pages in the workshop website.
-  Use 'workshop.html' for the workshop home page.
-
-  Remember to set the variable 'root' in the header of the actual page.
--->
-<html>
-  <head>
-    <title>Software Carpentry: {{ page.venue }}</title>
-    {% include header.html %}
-  </head>
-  <body class="workshop">
-    {% include github-ribbon.html %}
-    <div class="container card">
-      {% include banner.html %}
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          {{content}}
-        </div>
-        {% include footer.html %}
-      </div>
-    </div>
-    {% include javascript.html %}
-  </body>
-</html>
+{% include main_title.html %}
+{{content}}

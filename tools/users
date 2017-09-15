@@ -1,5 +1,0 @@
-#!/usr/bin/env python
-
-'''Manage user permissions for GitHub repository.'''
-
-# FIXME: make 'users add name' and 'users remove name' work with the GitHub API.
