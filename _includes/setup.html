@@ -1,0 +1,37 @@
+<p>
+  To participate in a
+  {% if page.carpentry == "swc" %}
+  Software Carpentry
+  {% elsif page.carpentry == "dc" %}
+  Data Carpentry
+  {% elsif page.carpentry == "lc" %}
+  Library Carpentry
+  {% endif %}
+  workshop,
+  you will need access to the software described below.
+  In addition, you will need an up-to-date web browser.
+</p>
+<p>
+  We maintain a list of common issues that occur during installation as a reference for instructors
+  that may be useful on the
+  <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
+</p>
+
+{% include setup/shell.html %}
+
+{% include setup/git.html %}
+
+{% include setup/editor.html %}
+
+{% include setup/python.html %}
+
+{% include setup/r.html %}
+
+{% include setup/sql.html %}
+
+{% include setup/openrefine.html %}
+
+<!--
+  Uncomment this section if you are using our virtual machine.
+  {% include setup/vm.html %}
+-->
