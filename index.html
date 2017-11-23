@@ -154,7 +154,7 @@ and our administrator may contact you if we need any extra information.</h4>
   large-print handouts are available if needed by notifying the
   organizers in advance.  If we can help making learning easier for
   you (e.g. sign-language interpreters, lactation facilities) please
-  <a href="mailto:{{page.contact}}">get in touch</a> and we will
+  get in touch (using contact details below) and we will
   attempt to provide them.
 </p>
 
@@ -196,9 +196,18 @@ and our administrator may contact you if we need any extra information.</h4>
 
 <!-- DO NOT EDIT SURVEY LINKS -->
 <p><em>Surveys</em></p>
+{% if page.carpentry == "swc" %} 
 <p>Please be sure to complete these surveys before and after the workshop.</p>
-<p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
+<p><a href="{{ site.swc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
+<p><a href="{{ site.swc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
+{% elsif page.carpentry == "dc" %}
+  <p>Please be sure to complete these surveys before and after the workshop.</p>
+<p><a href="{{ site.dc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
+<p><a href="{{ site.dc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
+{% elsif page.carpentry == "lc" %}
+<p>Ask your instructor about pre- and post-workshop Survey details.</p>
+{% endif %}
+
 
 {% if page.carpentry == "swc" %}
   {% include sc/schedule.html %}
@@ -428,7 +437,7 @@ and our administrator may contact you if we need any extra information.</h4>
         If Git is not already available on your machine you can try to
         install it via your distro's package manager. For Debian/Ubuntu run
         <code>sudo apt-get install git</code> and for Fedora run
-        <code>sudo yum install git</code>.
+        <code>sudo dnf install git</code>.
       </p>
     </div>
   </div>
@@ -508,8 +517,8 @@ and our administrator may contact you if we need any extra information.</h4>
 
 <div id="python"> <!-- Start of 'Python' section. Remove the third paragraph if
            the workshop will teach Python using something other than
-           the IPython notebook.
-           Details at http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility -->
+           the Jupyter notebook.
+           Details at https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatibility -->
   <h3>Python</h3>
 
   <p>
@@ -517,22 +526,22 @@ and our administrator may contact you if we need any extra information.</h4>
     research computing, and great for general-purpose programming as
     well.  Installing all of its research packages individually can be
     a bit difficult, so we recommend
-    <a href="https://www.continuum.io/anaconda">Anaconda</a>,
+    <a href="https://www.anaconda.com/distribution/">Anaconda</a>,
     an all-in-one installer.
   </p>
 
     <p>
       Regardless of how you choose to install it,
       <strong>please make sure you install Python version 3.x</strong>
-      (e.g., 3.4 is fine).
+      (e.g., 3.6 is fine).
     </p>
 
     <p>
-      We will teach Python using the IPython notebook, a programming environment
-      that runs in a web browser. For this to work you will need a reasonably
+      We will teach Python using the <a href="https://jupyter.org/">Jupyter notebook</a>,
+      a programming environment that runs in a web browser. For this to work you will need a reasonably
       up-to-date browser. The current versions of the Chrome, Safari and
       Firefox browsers are all
-      <a href="http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility">supported</a>
+      <a href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatibility">supported</a>
       (some older browsers, including Internet Explorer version 9
       and below, are not).
     </p>
@@ -542,7 +551,7 @@ and our administrator may contact you if we need any extra information.</h4>
       <h4 id="python-windows">Windows</h4>
       <a href="https://www.youtube.com/watch?v=xxQ0mzZ8UvA">Video Tutorial</a>
       <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
+        <li>Open <a href="https://www.anaconda.com/download/#windows">https://www.anaconda.com/download/#windows</a> with your web browser.</li>
         <li>Download the Python 3 installer for Windows.</li>
         <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Make Anaconda the default Python</strong>.</li>
       </ol>
@@ -551,7 +560,7 @@ and our administrator may contact you if we need any extra information.</h4>
       <h4 id="python-macosx">Mac OS X</h4>
       <a href="https://www.youtube.com/watch?v=TcSAln46u9U">Video Tutorial</a>
       <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
+        <li>Open <a href="https://www.anaconda.com/download/#macos">https://www.anaconda.com/download/#macos</a> with your web browser.</li>
         <li>Download the Python 3 installer for OS X.</li>
         <li>Install Python 3 using all of the defaults for installation.</li>
       </ol>
@@ -559,9 +568,9 @@ and our administrator may contact you if we need any extra information.</h4>
     <div class="col-md-4">
       <h4 id="python-linux">Linux</h4>
       <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
+        <li>Open <a href="https://www.anaconda.com/download/#linux">https://www.anaconda.com/download/#linux</a> with your web browser.</li>
         <li>Download the Python 3 installer for Linux.<br>
-          (Installation requires using the shell. If you aren't
+          (The installation requires using the shell. If you aren't
            comfortable doing the installation yourself
            stop here and request help at the workshop.)
         </li>
@@ -642,7 +651,7 @@ and our administrator may contact you if we need any extra information.</h4>
         from <a href="http://cran.r-project.org/index.html">CRAN</a>. Or
         you can use your package manager (e.g. for Debian/Ubuntu
         run <code>sudo apt-get install r-base</code> and for Fedora run
-        <code>sudo yum install R</code>).  Also, please install the
+        <code>sudo dnf install R</code>).  Also, please install the
         <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
       </p>
     </div>
