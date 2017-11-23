@@ -21,7 +21,7 @@ URL_PATTERN = r'https?://.+'
 CARPENTRIES = ("dc", "swc")
 DEFAULT_CONTACT_EMAIL = 'admin@software-carpentry.org'
 
-USAGE = 'Usage: "check-workshop path/to/root/directory"'
+USAGE = 'Usage: "workshop_check.py path/to/root/directory"'
 
 # Country and language codes.  Note that codes mean different things: 'ar'
 # is 'Arabic' as a language but 'Argentina' as a country.
@@ -205,10 +205,9 @@ def check_helpers(helpers):
 @look_for_fixme
 def check_emails(emails):
     """
-    'contact' must be a comma-separated list of valid email addresses.
+    'email' must be a comma-separated list of valid email addresses.
     The list may be empty. A valid email address consists of characters,
     an '@', and more characters.  It should not contain the default contact
-    email address 'admin@software-carpentry.org'.
     """
 
     # YAML automatically loads list-like strings as lists.
@@ -294,7 +293,7 @@ HANDLERS = {
                    'helper list isn\'t a valid list of format ' +
                    '["First helper", "Second helper",..]'),
 
-    'contact':    (True, check_emails,
+    'email':    (True, check_emails,
                    'contact email list isn\'t a valid list of format ' +
                    '["me@example.org", "you@example.org",..] or contains incorrectly formatted email addresses or ' +
                    '"{0}".'.format(DEFAULT_CONTACT_EMAIL)),
