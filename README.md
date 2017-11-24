@@ -90,10 +90,12 @@ please [get in touch](#getting-and-giving-help).
     Editing hints are embedded in `_config.yml`,
     and full instructions are in [the customization instructions][customization].
     
-5.  Alternatively,
+5. Edit the `schedule.html` file, which is located in the `_includes` directory, to edit the schedule for your upcoming workshop.
+
+6.  Alternatively,
     if you are already familiar with Git,
     you can clone the repository to your desktop,
-    edit `index.html` and `_config.yml` there,
+    edit `index.html`, `_config.yml`, and `schedule.html` there,
     and push your changes back to the repository.
 
     ~~~
@@ -110,12 +112,12 @@ please [get in touch](#getting-and-giving-help).
     git push origin gh-pages
     ~~~
 
-6.  When you are done editing,
+7.  When you are done editing,
     go to the GitHub Pages URL for your workshop and preview your changes.
     In the example above, this is `https://gvwilson.github.io/2016-12-01-miskatonic`.
     The finished page should look [something like this](fig/completed-page.png?raw=true).
 
-7.  Optional: you can now change the README.md file in your website's repository, which contains these instructions, so that it contains a short description of your workshop and a link to the workshop website.
+8.  Optional: you can now change the README.md file in your website's repository, which contains these instructions, so that it contains a short description of your workshop and a link to the workshop website.
 
 **Note:**
 please do all of your work in your repository's `gh-pages` branch,
