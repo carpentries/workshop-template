@@ -594,6 +594,7 @@ and our administrator may contact you if we need any extra information.</h4>
         </li>
         <li>
           Close the terminal window.
+        </li>
       </ol>
     </div>
   </div>
@@ -723,7 +724,7 @@ and our administrator may contact you if we need any extra information.</h4>
       <p>Create a new directory called OpenRefine.</p>
       <p>Unzip the downloaded file into the OpenRefine directory by right-clicking and selecting "Extract ...". </p>
       <p>Go to your newly created OpenRefine directory.</p>
-      <p>Launch OpenRefine by clicking <code>google-refine.exe</code> (this will launch a command prompt window, but you can ignore that - just wait for OpenRefine to open in the browser).
+      <p>Launch OpenRefine by clicking <code>google-refine.exe</code> (this will launch a command prompt window, but you can ignore that - just wait for OpenRefine to open in the browser).</p>
       <p>If you are using a different browser, or if OpenRefine does not automatically open for you, point your browser at <a href="http://127.0.0.1:3333/">http://127.0.0.1:3333/</a> or <a href="http://localhost:3333">http://localhost:3333</a> to use the program.</p>
     </div>
     <div class="col-md-4">
@@ -733,8 +734,8 @@ and our administrator may contact you if we need any extra information.</h4>
       <p>Create a new directory called OpenRefine.</p>
       <p>Unzip the downloaded file into the OpenRefine directory by double-clicking it.</p>
       <p>Go to your newly created OpenRefine directory.</p>
-      <p>Launch OpenRefine by dragging the icon into the Applications folder.
-      <p>Use <code>Ctrl-click/Open ... </code> to launch it.
+      <p>Launch OpenRefine by dragging the icon into the Applications folder.</p>
+      <p>Use <code>Ctrl-click/Open ... </code> to launch it.</p>
       <p>If you are using a different browser, or if OpenRefine does not automatically open for you, point your browser at <a href="http://127.0.0.1:3333/">http://127.0.0.1:3333/</a> or <a href="http://localhost:3333">http://localhost:3333</a> to use the program.</p>
     </div>
     <div class="col-md-4">
