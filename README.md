@@ -11,7 +11,7 @@ template for creating websites for workshops.
     since that is what is
     [automatically published as a website by GitHub][github-project-pages].
 
-3.  Once you are done, please also [let us know][contact] the workshop URL. If this is a self-organised workshop, you should also [fill in the self-organized workshop form][self-organized-workshop-form] (if you have not already done so), so we can keep track of all workshops. We build the list of workshops on our websites from the data included in your `index.html` page. We can only do that if you [customize][customization] that page correctly *and* let us know the workshop URL.
+3.  Once you are done, please also [let us know][email] the workshop URL. If this is a self-organised workshop, you should also [fill in the self-organized workshop form][self-organized-workshop-form] (if you have not already done so), so we can keep track of all workshops. We build the list of workshops on our websites from the data included in your `index.html` page. We can only do that if you [customize][customization] that page correctly *and* let us know the workshop URL.
 
 If you run into problems,
 or have ideas about how to make this process simpler,
@@ -246,9 +246,9 @@ We are committed to offering a pleasant setup experience for our learners and or
 If you find bugs in our instructions,
 or would like to suggest improvements,
 please [file an issue][issues]
-or [mail us][contact].
+or [mail us][email].
 
-[contact]: mailto:admin@software-carpentry.org
+[email]: mailto:admin@software-carpentry.org
 [customization]: https://swcarpentry.github.io/workshop-template/customization/
 [dc-site]: http://datacarpentry.org
 [design]: https://swcarpentry.github.io/workshop-template/design/
