@@ -11,7 +11,7 @@ template for creating websites for workshops.
     since that is what is
     [automatically published as a website by GitHub][github-project-pages].
 
-3.  Once you are done, please also [let us know][email] the workshop URL. If this is a self-organised workshop, you should also [fill in the self-organized workshop form][self-organized-workshop-form] (if you have not already done so), so we can keep track of all workshops. We build the list of workshops on our websites from the data included in your `index.html` page. We can only do that if you [customize][customization] that page correctly *and* let us know the workshop URL.
+3.  Once you are done, please also [let us know][email] the workshop URL. If this is a self-organised workshop, you should also [fill in the self-organized workshop form][self-organized-workshop-form] (if you have not already done so), so we can keep track of all workshops. We build the list of workshops on our websites from the data included in your `index.md` page. We can only do that if you [customize][customization] that page correctly *and* let us know the workshop URL.
 
 If you run into problems,
 or have ideas about how to make this process simpler,
@@ -75,14 +75,14 @@ please [get in touch](#getting-and-giving-help).
 
     ![](fig/select-gh-pages-branch.png?raw=true)
 
-3.  Edit the header of `index.html` to customize the list of instructors,
+3.  Edit the header of `index.md` to customize the list of instructors,
     workshop venue, etc. 
     You can do this in the browser by clicking on it in the file view on GitHub
     and then selecting the pencil icon in the menu bar:
 
     ![](fig/edit-index-file-menu-bar.png?raw=true)
     
-    Editing hints are embedded in `index.html`,
+    Editing hints are embedded in `index.md`,
     and full instructions are in [the customization instructions][customization].
     
 4.  Edit `_config.yml` to customize certain site-wide variables, such as: `carpentry` (to tell us which carpentry workshop this is), `title` (overall title for all pages), `repository` (so that URLs resolve correctly both locally and on GitHub), `workshop_repo` (the URL of the workshop repository on GitHub) and `workshop_site` (the repository's GitHub Pages URL).
@@ -95,7 +95,7 @@ please [get in touch](#getting-and-giving-help).
 6.  Alternatively,
     if you are already familiar with Git,
     you can clone the repository to your desktop,
-    edit `index.html`, `_config.yml`, and `schedule.html` there,
+    edit `index.md`, `_config.yml`, and `schedule.html` there,
     and push your changes back to the repository.
 
     ~~~
@@ -151,7 +151,7 @@ you can do so as described below.
     You can also run this command by typing `make serve`
     (assuming you have Make installed).
 
-3.  Run the command `python bin/workshop_check.py index.html`
+3.  Run the command `python bin/workshop_check.py index.md`
     to check for a few common errors in your workshop's home page.
     (You must have Python 3 installed to do this.)
     If you have Make installed,
@@ -191,7 +191,7 @@ you *must* also edit `_config.yml` to set these three values:
 3.  `email` is the contact email address for your workshop,
     e.g., `gvwilson@miskatonic.edu`.
 
-Note: `carpentry` and `email` duplicate information that's in `index.html`,
+Note: `carpentry` and `email` duplicate information that's in `index.md`,
 but there is no way to avoid this
 without requiring people to edit both files in the usual case
 where no extra pages are created.
