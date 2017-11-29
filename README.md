@@ -141,21 +141,24 @@ you can do so as described below.
     This may require some work,
     so feel free to preview by pushing to the website.
 
-2.  Run the command:
+2.  Run the command
 
     ~~~
-    $ jekyll serve
+    make serve
     ~~~
 
     and go to <http://0.0.0.0:4000> to preview your site.
     You can also run this command by typing `make serve`
     (assuming you have Make installed).
 
-3.  Run the command `python bin/workshop_check.py index.md`
+3.  Run the command
+
+    ~~~
+    make workshop-check
+    ~~~
+
     to check for a few common errors in your workshop's home page.
     (You must have Python 3 installed to do this.)
-    If you have Make installed,
-    you can also run this command by typing `make workshop-check`.
 
 ## (Optional) Linking to Your Page
 
@@ -217,11 +220,6 @@ you must install the software described below.
 
 3.  **[Jekyll][jekyll]**.
     You can install this by running `gem install jekyll`.
-
-You can check the formatting of your header by running `bin/workshop_check.py`
-(which is invoked by `make workshop-check`).
-You must have Python 3 installed in order to do this,
-and you will also need the [PyYAML][pyyaml] module.
 
 ## Setting Up a Separate Repository for Learners
 
