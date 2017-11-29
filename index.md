@@ -17,25 +17,25 @@ collaborative_notes:             # optional: URL for the workshop collaborative 
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 ---
 
-<!-- See instructions in the comments below for how to edit specific sections of this workshop template. -->
+{% comment %} See instructions in the comments below for how to edit specific sections of this workshop template. {% endcomment %}
 
-<!--
+{% comment %}
   HEADER
 
   Edit the values in the block above to be appropriate for your workshop.
   If the value is not 'true', 'false', 'null', or a number, please use
   double quotation marks around the value, unless specified otherwise.
   And run 'bin/workshop_check.py' *before* committing to make sure that changes are good.
--->
+{% endcomment %}
 
-<!--
+{% comment %}
   EVENTBRITE
 
   This block includes the Eventbrite registration widget if
   'eventbrite' has been set in the header.  You can delete it if you
   are not using Eventbrite, or leave it in, since it will not be
   displayed if the 'eventbrite' field in the header is not set.
--->
+{% endcomment %}
 {% if page.eventbrite %}
 <iframe
   src="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
@@ -53,12 +53,12 @@ and our administrator may contact you if we need any extra information.</h4>
 
 <h2 id="general">General Information</h2>
 
-<!--
+{% comment %}
   INTRODUCTION
 
   Edit the general explanatory paragraph below if you want to change
   the pitch.
--->
+{% endcomment %}
 {% if page.carpentry == "swc" %}
   {% include sc/intro.html %}
 {% elsif page.carpentry == "dc" %}
@@ -67,12 +67,12 @@ and our administrator may contact you if we need any extra information.</h4>
   {% include lc/intro.html %}
 {% endif %}
 
-<!--
+{% comment %}
   AUDIENCE
 
   Explain who your audience is.  (In particular, tell readers if the
   workshop is only open to people from a particular institution.
--->
+{% endcomment %}
 {% if page.carpentry == "swc" %}
   {% include sc/who.html %}
 {% elsif page.carpentry == "dc" %}
@@ -81,14 +81,14 @@ and our administrator may contact you if we need any extra information.</h4>
   {% include lc/who.html %}
 {% endif %}
 
-<!--
+{% comment %}
   LOCATION
 
   This block displays the address and links to maps showing directions
   if the latitude and longitude of the workshop have been set.  You
   can use http://itouchmap.com/latlong.html to find the lat/long of an
   address.
--->
+{% endcomment %}
 {% if page.latlng %}
 <p id="where">
   <strong>Where:</strong>
@@ -100,11 +100,11 @@ and our administrator may contact you if we need any extra information.</h4>
 </p>
 {% endif %}
 
-<!--
+{% comment %}
   DATE
 
   This block displays the date and links to Google Calendar.
--->
+{% endcomment %}
 {% if page.humandate %}
 <p id="when">
   <strong>When:</strong>
@@ -113,11 +113,11 @@ and our administrator may contact you if we need any extra information.</h4>
 </p>
 {% endif %}
 
-<!--
+{% comment %}
   SPECIAL REQUIREMENTS
 
   Modify the block below if there are any special requirements.
--->
+{% endcomment %}
 <p id="requirements">
   <strong>Requirements:</strong> Participants must bring a laptop with a
   Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges
@@ -133,12 +133,12 @@ and our administrator may contact you if we need any extra information.</h4>
   <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
 </p>
 
-<!--
+{% comment %}
   ACCESSIBILITY
 
   Modify the block below if there are any barriers to accessibility or
   special instructions.
--->
+{% endcomment %}
 <p id="accessibility">
   <strong>Accessibility:</strong> We are committed to making this workshop
   accessible to everybody.
@@ -157,11 +157,11 @@ and our administrator may contact you if we need any extra information.</h4>
   attempt to provide them.
 </p>
 
-<!--
+{% comment %}
   CONTACT EMAIL ADDRESS
 
   Display the contact email address set in the configuration file.
--->
+{% endcomment %}
 <p id="contact">
   <strong>Contact</strong>:
   Please email
@@ -184,16 +184,16 @@ and our administrator may contact you if we need any extra information.</h4>
 
 <hr/>
 
-<!--
+{% comment %}
   SCHEDULE
 
   Show the workshop's schedule.  Edit the items and times in the table
   to match your plans.  You may also want to change 'Day 1' and 'Day
   2' to be actual dates or days of the week.
--->
+{% endcomment %}
 <h2 id="schedule">Schedule</h2>
 
-<!-- DO NOT EDIT SURVEY LINKS -->
+{% comment %} DO NOT EDIT SURVEY LINKS {% endcomment %}
 <p><em>Surveys</em></p>
 {% if page.carpentry == "swc" %} 
 <p>Please be sure to complete these surveys before and after the workshop.</p>
@@ -216,7 +216,7 @@ and our administrator may contact you if we need any extra information.</h4>
   {% include lc/schedule.html %}
 {% endif %}
 
-<!--
+{% comment %}
   Collaborative Notes
 
   If you want to use an Etherpad, go to
@@ -225,7 +225,7 @@ and our administrator may contact you if we need any extra information.</h4>
 
   where 'YYYY-MM-DD-site' is the identifier for your workshop,
   e.g., '2015-06-10-esu'.
--->
+{% endcomment %}
 {% if page.collaborative_notes %}
 <p id="collaborative_notes">
   We will use this <a href="{{page.collaborative_notes}}">collaborative document</a> for chatting, taking notes, and sharing URLs and bits of code.
@@ -234,7 +234,7 @@ and our administrator may contact you if we need any extra information.</h4>
 
 <hr/>
 
-<!--
+{% comment %}
   SYLLABUS
 
   Show what topics will be covered.
@@ -250,7 +250,7 @@ and our administrator may contact you if we need any extra information.</h4>
   This is one of the places where people frequently make mistakes, so
   please preview your site before committing, and make sure to run
   'tools/check' as well.
--->
+{% endcomment %}
 <h2 id="syllabus">Syllabus</h2>
 
 {% if page.carpentry == "swc" %}
@@ -263,7 +263,7 @@ and our administrator may contact you if we need any extra information.</h4>
 
 <hr/>
 
-<!--
+{% comment %}
   SETUP
 
   Delete irrelevant sections from the setup instructions.  Each
@@ -273,7 +273,7 @@ and our administrator may contact you if we need any extra information.</h4>
   This is the other place where people frequently make mistakes, so
   please preview your site before committing, and make sure to run
   'tools/check' as well.
--->
+{% endcomment %}
 
 <h2 id="setup">Setup</h2>
 
@@ -296,7 +296,7 @@ and our administrator may contact you if we need any extra information.</h4>
   <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
 
-<div id="shell"> <!-- Start of 'shell' section. -->
+<div id="shell"> {% comment %} Start of 'shell' section. {% endcomment %}
   <h3>The Bash Shell</h3>
 
   <p>
@@ -312,12 +312,12 @@ and our administrator may contact you if we need any extra information.</h4>
         <li>Download the Git for Windows <a href="https://git-for-windows.github.io/">installer</a>.</li>
         <li>Run the installer and follow the steps bellow:
           <ol>
-            <!-- Git 2.8.2 Setup -->
-            <!-- Information -->
+            {% comment %} Git 2.8.2 Setup {% endcomment %}
+            {% comment %} Information {% endcomment %}
             <li>Click on "Next".</li>
-            <!-- Select Components -->
+            {% comment %} Select Components {% endcomment %}
             <li>Click on "Next".</li>
-            <!-- Adjusting your PATH environment -->
+            {% comment %} Adjusting your PATH environment {% endcomment %}
             <li>
               <strong>
                 Keep "Use Git from the Windows Command Prompt" selected and click on "Next".
@@ -325,24 +325,24 @@ and our administrator may contact you if we need any extra information.</h4>
                 If you forgot to do this programs that you need for the workshop will not work properly.
                 If this happens rerun the installer and select the appropriate option.
             </li>
-            <!-- Choosing the SSH executable -->
+            {% comment %} Choosing the SSH executable {% endcomment %}
             <li>Click on "Next".</li>
-            <!-- Configuring the line ending conversions -->
+            {% comment %} Configuring the line ending conversions {% endcomment %}
             <li>
               <strong>
                 Keep "Checkout Windows-style, commit Unix-style line endings" selected and click on "Next".
               </strong>
             </li>
-            <!-- Configuring the terminal emulator to use with Git Bash -->
+            {% comment %} Configuring the terminal emulator to use with Git Bash {% endcomment %}
             <li>
               <strong>
                 Keep "Use Windows' default console window" selected and click on "Next".
               </strong>
             </li>
-            <!-- Configuring experimental performance tweaks -->
+            {% comment %} Configuring experimental performance tweaks {% endcomment %}
             <li>Click on "Install".</li>
-            <!-- Installing -->
-            <!-- Completing the Git Setup Wizard -->
+            {% comment %} Installing {% endcomment %}
+            {% comment %} Completing the Git Setup Wizard {% endcomment %}
             <li>Click on "Finish".</li>
           </ol>
         </li>
@@ -384,10 +384,10 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
     </div>
   </div>
-</div> <!-- End of 'shell' section. -->
+</div> {% comment %} End of 'shell' section. {% endcomment %}
 
-<div id="git"> <!-- Start of 'Git' section. GitHub browser compatability
-           is given at https://help.github.com/articles/supported-browsers/-->
+<div id="git"> {% comment %} Start of 'Git' section. GitHub browser compatability
+           is given at https://help.github.com/articles/supported-browsers/{% endcomment %}
   <h3>Git</h3>
   <p>
     Git is a version control system that lets you track who made changes
@@ -440,9 +440,9 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
     </div>
   </div>
-</div> <!-- End of 'Git' section. -->
+</div> {% comment %} End of 'Git' section. {% endcomment %}
 
-<div id="editor"> <!-- Start of 'editor' section. -->
+<div id="editor"> {% comment %} Start of 'editor' section. {% endcomment %}
   <h3>Text Editor</h3>
 
   <p>
@@ -512,12 +512,12 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
     </div>
   </div>
-</div> <!-- End of 'editor' section. -->
+</div> {% comment %} End of 'editor' section. {% endcomment %}
 
-<div id="python"> <!-- Start of 'Python' section. Remove the third paragraph if
+<div id="python"> {% comment %} Start of 'Python' section. Remove the third paragraph if
            the workshop will teach Python using something other than
            the Jupyter notebook.
-           Details at https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatibility -->
+           Details at https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatibility {% endcomment %}
   <h3>Python</h3>
 
   <p>
@@ -598,16 +598,16 @@ and our administrator may contact you if we need any extra information.</h4>
       </ol>
     </div>
   </div>
-<!--
+{% comment %}
   <p>
   Once you are done installing the software listed above,
   please go to <a href="setup/index.html">this page</a>,
   which has instructions on how to test that everything was installed correctly.
   </p>
--->
-</div> <!-- End of 'Python' section. -->
+{% endcomment %}
+</div> {% comment %} End of 'Python' section. {% endcomment %}
 
-<div id="r"> <!-- Start of 'R' section. -->
+<div id="r"> {% comment %} Start of 'R' section. {% endcomment %}
   <h3>R</h3>
 
   <p>
@@ -656,9 +656,9 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
     </div>
   </div>
-</div> <!-- End of 'R' section. -->
+</div> {% comment %} End of 'R' section. {% endcomment %}
 
-<div id="sql"> <!-- Start of 'SQLite' section. -->
+<div id="sql"> {% comment %} Start of 'SQLite' section. {% endcomment %}
   <h3>SQLite</h3>
 
   <p>
@@ -702,9 +702,9 @@ and our administrator may contact you if we need any extra information.</h4>
   <p><strong>If you installed Anaconda, it also has a copy of SQLite
     <a href="https://github.com/ContinuumIO/anaconda-issues/issues/307">without support to <code>readline</code></a>.
     Instructors will provide a workaround for it if needed.</strong></p>
-</div> <!-- End of 'SQLite' section. -->
+</div> {% comment %} End of 'SQLite' section. {% endcomment %}
 
-<div id="openrefine"> <!-- Start of 'OpenRefine' section. -->
+<div id="openrefine"> {% comment %} Start of 'OpenRefine' section. {% endcomment %}
   <h3>OpenRefine</h3>
   <p>
     For this lesson you will need <em>OpenRefine</em> and a
@@ -749,11 +749,9 @@ and our administrator may contact you if we need any extra information.</h4>
       <p>If you are using a different browser, or if OpenRefine does not automatically open for you, point your browser at <a href="http://127.0.0.1:3333/">http://127.0.0.1:3333/</a> or <a href="http://localhost:3333">http://localhost:3333</a> to use the program.</p>
     </div>
   </div>
-</div> <!-- End of 'OpenRefine' section. -->
+</div> {% comment %} End of 'OpenRefine' section. {% endcomment %}
 
-<!--
-  Uncomment this section if you are using our virtual machine.
-
+{% comment %}
 <div id="vm">
   <h3>Virtual Machine</h3>
 
@@ -777,4 +775,4 @@ and our administrator may contact you if we need any extra information.</h4>
     </li>
   </ol>
 </div>
--->
+{% endcomment %}
