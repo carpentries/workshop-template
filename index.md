@@ -742,7 +742,7 @@ and our administrator may contact you if we need any extra information.</h4>
       <h4 id="openrefine-linux">Linux</h4>
       <p>Check that you have either the Firefox or the Chrome browser installed and set as your default browser. <strong>OpenRefine runs in your default browser.</strong></p>
       <p>Download software from <a href="http://openrefine.org/">http://openrefine.org/</a>.</p>
-      <p>Make a directory called OpenRefine.<p>
+      <p>Make a directory called OpenRefine.</p>
       <p>Unzip the downloaded file into the OpenRefine directory.</p>
       <p>Go to your newly created OpenRefine directory.</p>
       <p>Launch OpenRefine by entering <code>./refine</code> into the terminal within the OpenRefine directory.</p>
