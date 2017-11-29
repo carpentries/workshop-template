@@ -312,20 +312,30 @@ and our administrator may contact you if we need any extra information.</h4>
         <li>Download the Git for Windows <a href="https://git-for-windows.github.io/">installer</a>.</li>
         <li>Run the installer and follow the steps bellow:
           <ol>
-            {% comment %} Git 2.8.2 Setup {% endcomment %}
+            {% comment %} Git 2.15.1(2) Setup {% endcomment %}
             {% comment %} Information {% endcomment %}
             <li>Click on "Next".</li>
             {% comment %} Select Components {% endcomment %}
             <li>Click on "Next".</li>
+            {% comment %} Choosing the default editor used by Git {% endcomment %}
+            <li>
+              <strong>
+                Select "Use the Nano editor by default" and click on "Next".
+              </strong>
+                If you forgot to do this, you can run the following command after opening Git Bash:
+                `git config --global core.editor nano`.
+            </li>
             {% comment %} Adjusting your PATH environment {% endcomment %}
             <li>
               <strong>
                 Keep "Use Git from the Windows Command Prompt" selected and click on "Next".
               </strong>
-                If you forgot to do this programs that you need for the workshop will not work properly.
+                If you forgot to do this, programs that you need for the workshop will not work properly.
                 If this happens rerun the installer and select the appropriate option.
             </li>
             {% comment %} Choosing the SSH executable {% endcomment %}
+            <li>Click on "Next".</li>
+            {% comment %} Choosing HTTPS transport backend  {% endcomment %}
             <li>Click on "Next".</li>
             {% comment %} Configuring the line ending conversions {% endcomment %}
             <li>
@@ -461,19 +471,7 @@ and our administrator may contact you if we need any extra information.</h4>
       <a href="https://www.youtube.com/watch?v=339AEqk9c-8">Video Tutorial</a>
       <p>
         nano is a basic editor and the default that instructors use in the workshop.
-        To install it,
-        download the <a href="{{site.swc_installer}}">
-          {% if page.carpentry == "swc" %}
-          Software Carpentry
-          {% elsif page.carpentry == "dc" %}
-          Data Carpentry
-          {% elsif page.carpentry == "lc" %}
-          Library Carpentry
-          {% endif %}
-          Windows installer
-	</a>
-        and double click on the file to run it.
-        <strong>This installer requires an active internet connection.</strong>
+        It is automatically installed with Git-for-Windows v2.15.1 or newer.
       </p>
       <p>
         Others editors that you can use are
