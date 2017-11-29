@@ -166,7 +166,7 @@ and our administrator may contact you if we need any extra information.</h4>
   <strong>Contact</strong>:
   Please email
   {% if page.email %}
-    {% for contact in page.email %}
+    {% for email in page.email %}
       {% if forloop.last and page.email.size > 1 %}
         or
       {% else %}
