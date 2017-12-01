@@ -312,7 +312,7 @@ and our administrator may contact you if we need any extra information.</h4>
         <li>Download the Git for Windows <a href="https://git-for-windows.github.io/">installer</a>.</li>
         <li>Run the installer and follow the steps bellow:
           <ol>
-            {% comment %} Git 2.15.1(2) Setup {% endcomment %}
+            {% comment %} Git for Windows >= 2.15.1(2), more info at https://github.com/git-for-windows/git/releases/ {% endcomment %}
             {% comment %} Information {% endcomment %}
             <li>Click on "Next".</li>
             {% comment %} Select Components {% endcomment %}
@@ -468,7 +468,6 @@ and our administrator may contact you if we need any extra information.</h4>
   <div class="row">
     <div class="col-md-4">
       <h4 id="editor-windows">Windows</h4>
-      <a href="https://www.youtube.com/watch?v=339AEqk9c-8">Video Tutorial</a>
       <p>
         nano is a basic editor and the default that instructors use in the workshop.
         It is automatically installed with Git-for-Windows v2.15.1 or newer.
