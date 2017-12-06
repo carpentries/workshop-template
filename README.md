@@ -208,7 +208,7 @@ you must install the software described below.
 [installing Jekyll on Windows][jekyll-windows].)
 
 1.  **Ruby**.
-    This is included with Linux and Mac OS X;
+    This is included with Linux and macOS;
     the simplest option on Windows is to use [RubyInstaller][ruby-installer].
     You can test your installation by running `ruby --version`.
     For more information,
