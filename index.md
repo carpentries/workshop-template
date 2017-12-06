@@ -362,9 +362,9 @@ and our administrator may contact you if we need any extra information.</h4>
       <p>This will provide you with both Git and Bash in the Git Bash program.</p>
     </div>
     <div class="col-md-4">
-      <h4 id="shell-macosx">Mac OS X</h4>
+      <h4 id="shell-macosx">macOS</h4>
       <p>
-        The default shell in all versions of Mac OS X is Bash, so no
+        The default shell in all versions of macOS is Bash, so no
         need to install anything.  You access Bash from the Terminal
         (found in
         <code>/Applications/Utilities</code>).
@@ -417,7 +417,7 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
     </div>
     <div class="col-md-4">
-      <h4 id="git-macosx">Mac OS X</h4>
+      <h4 id="git-macosx">macOS</h4>
       <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">Video Tutorial</a>
       <p>
         <strong>For OS X 10.9 and higher</strong>, install Git for Mac
@@ -448,7 +448,7 @@ and our administrator may contact you if we need any extra information.</h4>
   <p>
     When you're writing code, it's nice to have a text editor that is
     optimized for writing code, with features like automatic
-    color-coding of key words.  The default text editor on Mac OS X and
+    color-coding of key words.  The default text editor on macOS and
     Linux is usually set to Vim, which is not famous for being
     intuitive.  if you accidentally find yourself stuck in it, try
     typing the escape key, followed by <code>:q!</code> (colon, lower-case 'q',
@@ -485,7 +485,7 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
     </div>
     <div class="col-md-4">
-      <h4 id="editor-macosx">Mac OS X</h4>
+      <h4 id="editor-macosx">macOS</h4>
       <p>
         nano is a basic editor and the default that instructors use in the workshop.
         See the Git installation <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">video tutorial</a>
@@ -556,7 +556,7 @@ and our administrator may contact you if we need any extra information.</h4>
       </ol>
     </div>
     <div class="col-md-4">
-      <h4 id="python-macosx">Mac OS X</h4>
+      <h4 id="python-macosx">macOS</h4>
       <a href="https://www.youtube.com/watch?v=TcSAln46u9U">Video Tutorial</a>
       <ol>
         <li>Open <a href="https://www.anaconda.com/download/#macos">https://www.anaconda.com/download/#macos</a> with your web browser.</li>
@@ -634,7 +634,7 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
     </div>
     <div class="col-md-4">
-      <h4 id="r-macosx">Mac OS X</h4>
+      <h4 id="r-macosx">macOS</h4>
       <a href="https://www.youtube.com/watch?v=5-ly3kyxwEg">Video Tutorial</a>
       <p>
         Install R by downloading and running
@@ -686,9 +686,9 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
     </div>
     <div class="col-md-4">
-      <h4 id="sql-macosx">Mac OS X</h4>
+      <h4 id="sql-macosx">macOS</h4>
       <p>
-        SQLite comes pre-installed on Mac OS X.
+        SQLite comes pre-installed on macOS.
       </p>
     </div>
     <div class="col-md-4">
