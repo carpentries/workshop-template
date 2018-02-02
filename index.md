@@ -142,7 +142,7 @@ and our administrator may contact you if we need any extra information.</h4>
 <p id="accessibility">
   <strong>Accessibility:</strong> We are committed to making this workshop
   accessible to everybody.
-  The workshop organisers have checked that:
+  The workshop organizers have checked that:
 </p>
 <ul>
   <li>The room is wheelchair / scooter accessible.</li>
