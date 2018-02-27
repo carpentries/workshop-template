@@ -324,5 +324,7 @@ and our administrator may contact you if we need any extra information.</h4>
 Create anchor for each one of the episodes.
 {% endcomment %}
 {% for lesson in page.lessons %}
-<article id="{{ lesson }}setup/"></article>
+<article id="{{ lesson }}setup/">
+<p>Visit <a href="{{ lesson }}">{{ lesson }}setup/</a> for some installation instructions.</p>
+</article>
 {% endfor %}
