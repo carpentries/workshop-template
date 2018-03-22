@@ -24,5 +24,5 @@ $(".solution").each(function() {
 function site_search() {
   var query = document.getElementById("site-search").value;
   var domain = $("meta[name=search-domain]").attr("value");
-  window.open("https://www.google.com/search?q=" + query + "+site:" + domain);
+  window.open("https://www.duckduckgo.com/lite/search?q=" + query + "+site:" + domain);
 }
