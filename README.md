@@ -165,7 +165,7 @@ you can do so as described below.
 At the top of your repository on GitHub you'll see
 
 ~~~
-No description or website provided. — Edit
+No description, website, or topics provided. — Edit
 ~~~
 
 Click 'Edit' and add:
