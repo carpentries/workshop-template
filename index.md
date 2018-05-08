@@ -5,7 +5,7 @@ venue: "FIXME"        # brief name of host site without address (e.g., "Euphoric
 address: "FIXME"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
 country: "FIXME"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1)
 language: "FIXME"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/ISO_639-1)
-latlng: "FIXME"       # decimal latitude and longitude of workshop venue (e.g., "41.7901128,-87.6007318" - use http://www.latlong.net/)
+latlng: "FIXME"       # decimal latitude and longitude of workshop venue (e.g., "41.7901128,-87.6007318" - use https://www.latlong.net/)
 humandate: "FIXME"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
 humantime: "FIXME"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
 startdate: FIXME      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
@@ -86,7 +86,7 @@ and our administrator may contact you if we need any extra information.</h4>
 
   This block displays the address and links to maps showing directions
   if the latitude and longitude of the workshop have been set.  You
-  can use http://itouchmap.com/latlong.html to find the lat/long of an
+  can use https://itouchmap.com/latlong.html to find the lat/long of an
   address.
 {% endcomment %}
 {% if page.latlng %}
@@ -482,8 +482,8 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
       <p>
         Others editors that you can use are
-        <a href="http://notepad-plus-plus.org/">Notepad++</a> or
-        <a href="http://www.sublimetext.com/">Sublime Text</a>.
+        <a href="https://notepad-plus-plus.org/">Notepad++</a> or
+        <a href="https://www.sublimetext.com/">Sublime Text</a>.
         <strong>Be aware that you must
           add its installation directory to your system path.</strong>
         Please ask your instructor to help you do this.
@@ -499,8 +499,8 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
       <p>
         Others editors that you can use are
-        <a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
-        <a href="http://www.sublimetext.com/">Sublime Text</a>.
+        <a href="https://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
+        <a href="https://www.sublimetext.com/">Sublime Text</a>.
       </p>
     </div>
     <div class="col-md-4">
@@ -512,8 +512,8 @@ and our administrator may contact you if we need any extra information.</h4>
       <p>
         Others editors that you can use are
         <a href="https://wiki.gnome.org/Apps/Gedit">Gedit</a>,
-        <a href="http://kate-editor.org/">Kate</a> or
-        <a href="http://www.sublimetext.com/">Sublime Text</a>.
+        <a href="https://kate-editor.org/">Kate</a> or
+        <a href="https://www.sublimetext.com/">Sublime Text</a>.
       </p>
     </div>
   </div>
@@ -526,7 +526,7 @@ and our administrator may contact you if we need any extra information.</h4>
   <h3>Python</h3>
 
   <p>
-    <a href="http://python.org">Python</a> is a popular language for
+    <a href="https://python.org">Python</a> is a popular language for
     research computing, and great for general-purpose programming as
     well.  Installing all of its research packages individually can be
     a bit difficult, so we recommend
@@ -616,7 +616,7 @@ and our administrator may contact you if we need any extra information.</h4>
   <h3>R</h3>
 
   <p>
-    <a href="http://www.r-project.org">R</a> is a programming language
+    <a href="https://www.r-project.org">R</a> is a programming language
     that is especially powerful for data exploration, visualization, and
     statistical analysis. To interact with R, we use
     <a href="https://www.rstudio.com/">RStudio</a>.
@@ -628,8 +628,8 @@ and our administrator may contact you if we need any extra information.</h4>
       <a href="https://www.youtube.com/watch?v=q0PjTAylwoU">Video Tutorial</a>
       <p>
         Install R by downloading and running
-        <a href="http://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a>
-        from <a href="http://cran.r-project.org/index.html">CRAN</a>.
+        <a href="https://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a>
+        from <a href="https://cran.r-project.org/index.html">CRAN</a>.
         Also, please install the
         <a href="https://www.rstudio.com/ide/download/desktop/#download">RStudio IDE</a>.
         Note that if you have separate user and admin accounts, you should run the 
@@ -643,8 +643,8 @@ and our administrator may contact you if we need any extra information.</h4>
       <a href="https://www.youtube.com/watch?v=5-ly3kyxwEg">Video Tutorial</a>
       <p>
         Install R by downloading and running
-        <a href="http://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
-        from <a href="http://cran.r-project.org/index.html">CRAN</a>.
+        <a href="https://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
+        from <a href="https://cran.r-project.org/index.html">CRAN</a>.
         Also, please install the
         <a href="https://www.rstudio.com/ide/download/desktop/#download">RStudio IDE</a>.
       </p>
@@ -653,7 +653,7 @@ and our administrator may contact you if we need any extra information.</h4>
       <h4 id="r-linux">Linux</h4>
       <p>
         You can download the binary files for your distribution
-        from <a href="http://cran.r-project.org/index.html">CRAN</a>. Or
+        from <a href="https://cran.r-project.org/index.html">CRAN</a>. Or
         you can use your package manager (e.g. for Debian/Ubuntu
         run <code>sudo apt-get install r-base</code> and for Fedora run
         <code>sudo dnf install R</code>).  Also, please install the
@@ -669,7 +669,7 @@ and our administrator may contact you if we need any extra information.</h4>
   <p>
     SQL is a specialized programming language used with databases.  We
     use a simple database manager called
-    <a href="http://www.sqlite.org/">SQLite</a> in our lessons.
+    <a href="https://www.sqlite.org/">SQLite</a> in our lessons.
   </p>
 
   <div class="row">
