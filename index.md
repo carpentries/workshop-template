@@ -631,7 +631,7 @@ and our administrator may contact you if we need any extra information.</h4>
         <a href="https://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a>
         from <a href="https://cran.r-project.org/index.html">CRAN</a>.
         Also, please install the
-        <a href="https://www.rstudio.com/ide/download/desktop/#download">RStudio IDE</a>.
+        <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio IDE</a>.
         Note that if you have separate user and admin accounts, you should run the 
         installers as administrator (right-click on .exe file and select "Run as 
         administrator" instead of double-clicking). Otherwise problems may occur later, 
@@ -646,7 +646,7 @@ and our administrator may contact you if we need any extra information.</h4>
         <a href="https://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
         from <a href="https://cran.r-project.org/index.html">CRAN</a>.
         Also, please install the
-        <a href="https://www.rstudio.com/ide/download/desktop/#download">RStudio IDE</a>.
+        <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio IDE</a>.
       </p>
     </div>
     <div class="col-md-4">
@@ -657,7 +657,7 @@ and our administrator may contact you if we need any extra information.</h4>
         you can use your package manager (e.g. for Debian/Ubuntu
         run <code>sudo apt-get install r-base</code> and for Fedora run
         <code>sudo dnf install R</code>).  Also, please install the
-        <a href="https://www.rstudio.com/ide/download/desktop/#download">RStudio IDE</a>.
+        <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio IDE</a>.
       </p>
     </div>
   </div>
