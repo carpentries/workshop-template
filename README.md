@@ -246,7 +246,7 @@ or would like to suggest improvements,
 please [file an issue][issues]
 or [mail us][email].
 
-[email]: mailto:admin@software-carpentry.org
+[email]: mailto:team@carpentries.org
 [customization]: https://swcarpentry.github.io/workshop-template/customization/
 [dc-site]: http://datacarpentry.org
 [design]: https://swcarpentry.github.io/workshop-template/design/
