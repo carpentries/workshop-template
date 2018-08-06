@@ -464,20 +464,7 @@ and our administrator may contact you if we need any extra information.</h4>
       <h4 id="editor-windows">Windows</h4>
       <a href="https://www.youtube.com/watch?v=339AEqk9c-8">Video Tutorial</a>
       <p>
-        nano is a basic editor and the default that instructors use in the workshop.
-        To install it,
-        download the <a href="{{site.swc_installer}}">
-          {% if page.carpentry == "swc" %}
-          Software Carpentry
-          {% elsif page.carpentry == "dc" %}
-          Data Carpentry
-          {% elsif page.carpentry == "lc" %}
-          Library Carpentry
-          {% endif %}
-          Windows installer
-	</a>
-        and double click on the file to run it.
-        <strong>This installer requires an active internet connection.</strong>
+        nano is a basic editor and the default that instructors use in the workshop. It is installed with Git for Windows as described in the Bash shell section.
       </p>
       <p>
         Others editors that you can use are
