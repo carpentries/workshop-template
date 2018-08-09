@@ -462,7 +462,6 @@ and our administrator may contact you if we need any extra information.</h4>
   <div class="row">
     <div class="col-md-4">
       <h4 id="editor-windows">Windows</h4>
-      <a href="https://www.youtube.com/watch?v=339AEqk9c-8">Video Tutorial</a>
       <p>
         nano is a basic editor and the default that instructors use in the workshop. It is installed with Git for Windows as described in the Bash shell section.
       </p>
