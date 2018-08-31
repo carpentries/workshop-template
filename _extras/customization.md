@@ -97,7 +97,7 @@ which must define the following values in its header:
 The header may optionally define the following:
 
 *   `etherpad` is the URL for the Etherpad for your workshop.  If you are
-    not using an Etherpad, you can delete this line.
+    not using an Etherpad, you can delete this line. You can create a carpentries etherpad [here](https://pad.carpentries.org/).
 
 *   `eventbrite` is the multi-digit Eventbrite registration key.  If you
     are using Eventbrite, the Software Carpentry administrators will
