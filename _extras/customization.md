@@ -24,8 +24,8 @@ which must define the following values in its header:
 
 *   `layout` must be `workshop`.
 
-*   `carpentry` must be either "dc" (for Data Carpentry) or "swc" (for
-    Software Carpentry).
+*   `carpentry` must be either "dc" (for Data Carpentry),  "swc" (for
+    Software Carpentry) or "lc" (for Library Carpentry).
 
 *   `venue` is the short name of the institution or group hosting the
     workshop, like "Euphoric State University".  It should *not*
@@ -49,7 +49,7 @@ which must define the following values in its header:
 
 *   `latlng` is the latitude and longitude of the workshop site (so we
     can put a pin on our map).  You can use
-    [this site](http://itouchmap.com/latlong.html) to find these
+    [this site](https://getlatlong.net/) to find these
     values.  You can *not* put spaces around the comma separating the
     latitude from the longitude.
 
@@ -97,7 +97,7 @@ which must define the following values in its header:
 The header may optionally define the following:
 
 *   `etherpad` is the URL for the Etherpad for your workshop.  If you are
-    not using an Etherpad, you can delete this line.
+    not using an Etherpad, you can delete this line. You can create a carpentries etherpad [here](https://pad.carpentries.org/).
 
 *   `eventbrite` is the multi-digit Eventbrite registration key.  If you
     are using Eventbrite, the Software Carpentry administrators will
