@@ -121,7 +121,7 @@ so that learners don't spend time installing software they don't need.
 ## Setup: Installation tests
 
 If you intend to use the installation-test scripts,
-uncomment the paragraph linking to `setup/index.html` in `index.html`
+uncomment the paragraph linking to `setup/index.html` in `index.md`
 and edit `setup/swc-installation-test-2.py` as described below.
 
 `swc-installation-test-1.py` is pretty simple, and just checks that
