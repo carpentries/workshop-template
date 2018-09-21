@@ -308,6 +308,14 @@ and our administrator may contact you if we need any extra information.</h4>
     tasks more quickly.
   </p>
 
+
+
+- Keep "Use Windows' default console window" selected and click on "Next".
+- When asked about configuration of extra options, leave the defaults (Enable file system caching is checked, Enable Git Credential manager is checked, Enable Symlinks is unchecked) Click Next
+- Don't select any of the experimental features
+- Click Install
+- Click Finish (you may want to check "Launch Git Bash" which will open the terminal where you'll type the git commands)
+
   <div class="row">
     <div class="col-md-4">
       <h4 id="shell-windows">Windows</h4>
@@ -316,52 +324,46 @@ and our administrator may contact you if we need any extra information.</h4>
         <li>Download the Git for Windows <a href="https://git-for-windows.github.io/">installer</a>.</li>
         <li>Run the installer and follow the steps below:
           <ol>
-            {% comment %} Git 2.18.0 Setup {% endcomment %}
+            {% comment %} Git 2.19.0 Setup {% endcomment %}
             <li>
-                Click on "Next" four times (two times if you've previously
-                installed Git).  You don't need to change anything
-                in the Information, location, components, and start menu screens.
+                GNU License is being displayed, Click Next
             </li>
             <li>
-                <strong>
-                Select “Use the nano editor by default” and click on “Next”.
-                </strong>
+		Select component window is being displayed, keep defaults, click Next
             </li>
-            {% comment %} Adjusting your PATH environment {% endcomment %}
             <li>
-                Keep "Use Git from the Windows Command Prompt" selected and click on "Next".
-                If you forgot to do this programs that you need for the workshop will not work properly.
-                If this happens rerun the installer and select the appropriate option.
+                When asked for the choice of the editor, select "Nano" and click on Next
             </li>
-            {% comment %} Choosing the SSH executable {% endcomment %}
-            <li>Click on "Next".</li>
-            {% comment %} Configuring the line ending conversions {% endcomment %}
             <li>
-                Keep "Checkout Windows-style, commit Unix-style line endings" selected and click on "Next".
+                Keep "Use Git from the Windows Command Prompt" selected and click on "Next". 
+		  <li>
+		      If you forgot to do this programs that you need for the workshop will not work properly. If this happens rerun the installer and select the appropriate option.
+		  </li>
+	    </li>
+	    <li>
+              When asked for the https transport backend, choose OpenSSL and click next
             </li>
-            {% comment %} Configuring the terminal emulator to use with Git Bash {% endcomment %}
+	    <li>
+              Keep "Checkout Windows-style, commit Unix-style line endings" selected and click on "Next".
+            </li>
+	    <li>
+              Keep "Use Windows' default console window" selected and click on "Next".
+            </li>
+	    <li>
+              Keep "Checkout Windows-style, commit Unix-style line endings" selected and click on "Next".
+            </li>
+	    <li>
+              When asked about configuration of extra options, leave the defaults (Enable file system caching is checked, Enable Git Credential manager is checked, Enable Symlinks is unchecked), then click "Next".
+	     </li>
+	    <li>
+                Don't select any of the experimental features
+            </li>
             <li>
-              <strong>
-                Select "Use Windows' default console window" and click on "Next".
-              </strong>
+                Click Install
             </li>
-            {% comment %} Configuring experimental performance tweaks {% endcomment %}
-            <li>Click on "Install".</li>
-            {% comment %} Installing {% endcomment %}
-            {% comment %} Completing the Git Setup Wizard {% endcomment %}
-            <li>Click on "Finish".</li>
-          </ol>
-        </li>
-        <li>
-          If your "HOME" environment variable is not set (or you don't know what this is):
-          <ol>
-            <li>Open command prompt (Open Start Menu then type <code>cmd</code> and press [Enter])</li>
             <li>
-              Type the following line into the command prompt window exactly as shown:
-              <p><code>setx HOME "%USERPROFILE%"</code></p>
+                Click Finish (you may want to check "Launch Git Bash" which will open the terminal where you'll type the git commands)
             </li>
-            <li>Press [Enter], you should see <code>SUCCESS: Specified value was saved.</code></li>
-            <li>Quit command prompt by typing <code>exit</code> then pressing [Enter]</li>
           </ol>
         </li>
       </ol>
