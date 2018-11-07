@@ -109,7 +109,7 @@ CHECKS = [
 # Python
     'python',
     'ipython',         # Command line tool
-    'IPython',         # Python package
+    'jupyter',         # Former IPython features, notebook, etc.
     'argparse',        # Useful for utility scripts
     'numpy',
     'scipy',
