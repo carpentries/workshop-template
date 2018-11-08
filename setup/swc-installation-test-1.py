@@ -49,6 +49,7 @@ def check():
 if __name__ == '__main__':
     if check():
         print('Passed')
+        print('version of Python: ' + _sys.version)
     else:
         print('Failed')
         print('Install a current version of Python 3!')
