@@ -575,15 +575,15 @@ and our administrator may contact you if we need any extra information.</h4>
         </li>
         <li>
           Type <pre>bash Anaconda3-</pre> and then press
-          tab. The name of the file you just downloaded should
+          <kbd>Tab</kbd>. The name of the file you just downloaded should
           appear. If it does not, navigate to the folder where you
           downloaded the file, for example with:
           <pre>cd Downloads</pre>
           Then, try again.
         </li>
         <li>
-          Press enter. You will follow the text-only prompts. To move through
-          the text, press the space key. Type <code>yes</code> and
+          Press <kbd>Return</kbd>. You will follow the text-only prompts. To move through
+          the text, press <kbd>Spacebar</kbd>. Type <code>yes</code> and
           press enter to approve the license. Press enter to approve the
           default location for the files. Type <code>yes</code> and
           press enter to prepend Anaconda to your <code>PATH</code>
