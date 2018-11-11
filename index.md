@@ -460,7 +460,7 @@ and our administrator may contact you if we need any extra information.</h4>
     color-coding of key words. The default text editor on macOS and
     Linux is usually set to Vim, which is not famous for being
     intuitive. If you accidentally find yourself stuck in it, hit
-    the <kbd>Esc</kbd> key, followed by <kbd>:</kbd>+<kbd>q</kbd>+<kbd>!</kbd> 
+    the <kbd>Esc</kbd> key, followed by <kbd>:</kbd>+<kbd>Q</kbd>+<kbd>!</kbd> 
     (colon, lower-case 'q', exclamation mark), then hitting <kbd>Return</kbd> to 
     return to the shell.
   </p>
