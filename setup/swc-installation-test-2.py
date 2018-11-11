@@ -109,7 +109,7 @@ CHECKS = [
 # Python
     'python',
     'ipython',         # Command line tool
-    'IPython',         # Python package
+    'jupyter',         # Former IPython features, notebook, etc.
     'argparse',        # Useful for utility scripts
     'numpy',
     'scipy',
@@ -160,7 +160,7 @@ class DependencyError (Exception):
         ('*', '*', 'google-chrome'): 'https://www.google.com/intl/en/chrome/browser/',
         ('*', '*', 'hg'): 'http://mercurial.selenic.com/',
         ('*', '*', 'mercurial'): 'http://mercurial.selenic.com/',
-        ('*', '*', 'IPython'): 'http://ipython.org/install.html',
+        ('*', '*', 'jupyter'): 'http://jupyter.org/install.html',
         ('*', '*', 'ipython'): 'http://ipython.org/install.html',
         ('*', '*', 'jinja'): 'http://jinja.pocoo.org/docs/intro/#installation',
         ('*', '*', 'kate'): 'http://kate-editor.org/get-it/',
