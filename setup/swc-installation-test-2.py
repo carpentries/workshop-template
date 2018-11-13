@@ -109,7 +109,7 @@ CHECKS = [
 # Python
     'python',
     'ipython',         # Command line tool
-    'IPython',         # Python package
+    'jupyter',         # Former IPython features, notebook, etc.
     'argparse',        # Useful for utility scripts
     'numpy',
     'scipy',
@@ -160,7 +160,7 @@ class DependencyError (Exception):
         ('*', '*', 'google-chrome'): 'https://www.google.com/intl/en/chrome/browser/',
         ('*', '*', 'hg'): 'http://mercurial.selenic.com/',
         ('*', '*', 'mercurial'): 'http://mercurial.selenic.com/',
-        ('*', '*', 'IPython'): 'http://ipython.org/install.html',
+        ('*', '*', 'jupyter'): 'http://jupyter.org/install.html',
         ('*', '*', 'ipython'): 'http://ipython.org/install.html',
         ('*', '*', 'jinja'): 'http://jinja.pocoo.org/docs/intro/#installation',
         ('*', '*', 'kate'): 'http://kate-editor.org/get-it/',
@@ -835,14 +835,16 @@ for package,name,long_name,minimum_version,and_dependencies in [
          CHECKER['py.test'].minimum_version, None),
         ('jinja2', 'jinja', 'Jinja', (2, 6), None),
         ('zmq', 'pyzmq', 'PyZMQ', (2, 1, 4), None),
-        ('IPython', None, 'IPython Python package',
-         CHECKER['ipython'].minimum_version, [
+        ('jupyter', None, 'Jupyter',
+        # FIXME should use minimum version for Jupyter
+        # CHECKER['ipython'].minimum_version, [
+         None, [
              'jinja',
              'tornado',
              'pyzmq',
              VirtualDependency(
                  name='virtual-browser-ipython',
-                 long_name='IPython-compatible web browser',
+                 long_name='Jupyter-compatible web browser',
                  or_dependencies=[
                      CommandDependency(
                          command=CHECKER['firefox'].command,
