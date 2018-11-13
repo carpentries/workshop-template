@@ -5,7 +5,7 @@
 [coc]: https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html
 [concept-maps]: https://carpentries.github.io/instructor-training/05-memory/
 [contrib-covenant]: https://contributor-covenant.org/
-[contributing]: {{ site.github.repository_url }}/blob/gh-pages/CONTRIBUTING.md
+[contributing]: {{ repo_url }}/blob/{{ source_branch }}/CONTRIBUTING.md
 [cran-checkpoint]: https://cran.r-project.org/package=checkpoint
 [cran-knitr]: https://cran.r-project.org/package=knitr
 [cran-stringr]: https://cran.r-project.org/package=stringr
@@ -34,7 +34,7 @@
 [ruby-installer]: https://rubyinstaller.org/
 [rubygems]: https://rubygems.org/pages/download/
 [styles]: https://github.com/carpentries/styles/
-[swc-lessons]: https://software-carpentry.org/lessons/ 
+[swc-lessons]: https://software-carpentry.org/lessons/
 [swc-releases]: https://github.com/swcarpentry/swc-releases
 [workshop-repo]: {{ site.workshop_repo }}
 [yaml]: http://yaml.org/
