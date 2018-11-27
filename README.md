@@ -1,6 +1,6 @@
 # workshop-template
 
-This repository is [Software Carpentry][swc-site] and [Data Carpentry][dc-site]'s
+This repository is The Carpentries' ([Software Carpentry][swc-site], [Data Carpentry][dc-site], and [Library Carpentry][lc-site]'s)
 template for creating websites for workshops.
 
 1.  Please *do not fork this repository directly on GitHub.*
@@ -265,3 +265,4 @@ or [mail us][email].
 [rubygems]: https://rubygems.org/pages/download/
 [self-organized-workshop-form]: https://amy.software-carpentry.org/workshops/submit/
 [swc-site]: http://software-carpentry.org
+[lc-site]: https://librarycarpentry.org
