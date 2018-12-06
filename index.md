@@ -491,7 +491,7 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
       <p>
         Others editors that you can use are
-        <a href="https://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
+        <a href="https://www.barebones.com/products/bbedit/">BBEdit</a> or
         <a href="https://www.sublimetext.com/">Sublime Text</a>.
       </p>
     </div>
