@@ -1,10 +1,13 @@
 ---
 ---
+{% include base_path.html %}
+{% include gh_variables.html %}
+
 <!doctype html>
 <html lang="en">
   <head>
 
-    <meta name="slug" content="{{site.github.project_title}}" />
+    <meta name="slug" content="{{project_title}}" />
     <meta name="startdate" content="{{page.startdate}}" />
     <meta name="enddate" content="{{page.enddate}}" />
     <meta name="humandate" content="{{page.humandate}}" />
@@ -17,6 +20,7 @@
     <meta name="instructor" content="{{page.instructor|join:'|'}}" />
     <meta name="helper" content="{{page.helper|join:'|'}}" />
     <meta name="contact" content="{{page.email}}" />
+    <meta name="carpentry" content="{{site.carpentry}}"
     {% if page.redirect %}
     <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
     {% endif %}
@@ -25,16 +29,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="last-modified" content="{{ site.time }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ page.root }}/assets/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="{{ page.root }}/assets/css/bootstrap-theme.css" />
-    <link rel="stylesheet" type="text/css" href="{{ page.root }}/assets/css/lesson.css" />
-    {% if site.carpentry == "swc" %}
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
-    {% elsif site.carpentry == "dc" %}
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon-dc.ico" />
-    {% elsif site.carpentry == "lc" %}
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon-lc.ico" />
-    {% endif %}
+    <link rel="stylesheet" type="text/css" href="{{ relative_root_path }}/assets/css/bootstrap.css" />
+
+    <link rel="stylesheet" type="text/css" href="{{ relative_root_path }}/assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="{{ relative_root_path }}/assets/css/lesson.css" />
+
+    {% include favicons.html %}
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

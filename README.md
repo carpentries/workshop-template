@@ -1,6 +1,6 @@
 # workshop-template
 
-This repository is [Software Carpentry][swc-site] and [Data Carpentry][dc-site]'s
+This repository is The Carpentries' ([Software Carpentry][swc-site], [Data Carpentry][dc-site], and [Library Carpentry][lc-site]'s)
 template for creating websites for workshops.
 
 1.  Please *do not fork this repository directly on GitHub.*
@@ -33,7 +33,7 @@ for your learners to practice in.
 2.  Go to <a href="https://github.com/new/import" target="_blank">GitHub's importer</a>.
 
 3.  Paste the url of this repo as the old repository to clone:
-    <https://github.com/swcarpentry/workshop-template>.
+    <https://github.com/carpentries/workshop-template>.
 
 4.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
@@ -52,7 +52,7 @@ for your learners to practice in.
     You can now click "Begin Import".
     When the process is done,
     you will receive a message like
-    "Importing complete! Your new repository gvwilson/2016-12-01-miskatonic is ready."
+    "Importing complete! Your new repository jules32/2015-07-01-miskatonic is ready."
     and you can go to the new repository by clicking on the name.
 
 **Note:**
@@ -85,7 +85,7 @@ please [get in touch](#getting-and-giving-help).
     Editing hints are embedded in `index.md`,
     and full instructions are in [the customization instructions][customization].
     
-4.  Edit `_config.yml` to customize certain site-wide variables, such as: `carpentry` (to tell us which carpentry workshop this is), `title` (overall title for all pages), `repository` (so that URLs resolve correctly both locally and on GitHub), `workshop_repo` (the URL of the workshop repository on GitHub) and `workshop_site` (the repository's GitHub Pages URL).
+4.  Edit `_config.yml` to customize certain site-wide variables, such as: `carpentry` (to tell us which carpentry workshop this is), `title` (overall title for all pages), `workshop_repo` (the URL of the workshop repository on GitHub) and `workshop_site` (the repository's GitHub Pages URL).
 
     Editing hints are embedded in `_config.yml`,
     and full instructions are in [the customization instructions][customization].
@@ -118,6 +118,8 @@ please [get in touch](#getting-and-giving-help).
     The finished page should look [something like this](fig/completed-page.png?raw=true).
 
 8.  Optional: you can now change the README.md file in your website's repository, which contains these instructions, so that it contains a short description of your workshop and a link to the workshop website.
+
+9.  Optional: Add a link to your workshop website on the repository main page in the description/website section (look for the `Edit` button on the right to add).  
 
 **Note:**
 please do all of your work in your repository's `gh-pages` branch,
@@ -246,20 +248,21 @@ or would like to suggest improvements,
 please [file an issue][issues]
 or [mail us][email].
 
-[email]: mailto:admin@software-carpentry.org
-[customization]: https://swcarpentry.github.io/workshop-template/customization/
+[email]: mailto:team@carpentries.org
+[customization]: https://carpentries.github.io/workshop-template/customization/
 [dc-site]: http://datacarpentry.org
-[design]: https://swcarpentry.github.io/workshop-template/design/
-[faq]: https://swcarpentry.github.io/workshop-template/faq/
+[design]: https://carpentries.github.io/workshop-template/design/
+[faq]: https://carpentries.github.io/workshop-template/faq/
 [github-project-pages]: https://help.github.com/articles/creating-project-pages-manually/
 [importer]: https://github.com/new/import
-[issues]: https://github.com/swcarpentry/workshop-template/issues
+[issues]: https://github.com/carpentries/workshop-template/issues
 [jekyll-windows]: http://jekyll-windows.juthilo.com/
 [jekyll]: https://jekyllrb.com/
-[lesson-example]: https://swcarpentry.github.io/lesson-example/
+[lesson-example]: https://carpentries.github.io/lesson-example/
 [pyyaml]: https://pypi.python.org/pypi/PyYAML
 [ruby-install-guide]: https://www.ruby-lang.org/en/downloads/
 [ruby-installer]: http://rubyinstaller.org/
 [rubygems]: https://rubygems.org/pages/download/
 [self-organized-workshop-form]: https://amy.software-carpentry.org/workshops/submit/
 [swc-site]: http://software-carpentry.org
+[lc-site]: https://librarycarpentry.org

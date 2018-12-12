@@ -9,7 +9,6 @@ You should edit the `_config.yml` configuration file in the root directory of yo
 
 * `carpentry` - to tell us which carpentry workshop this is, possible values are ("swc", "dc" or "lc")
 * `title` - overall title for all pages
-* `repository` - as \<USERNAME>/\<PROJECT> (e.g. `gvwilson/2015-07-01-miskatonic`), so that URLs resolve correctly both locally and on GitHub - see https://help.github.com/articles/repository-metadata-on-github-pages
 * `workshop_repo` - the URL of your workshop repository on GitHub
 * `workshop_site` - the repository's GitHub Pages URL
 
@@ -20,13 +19,13 @@ You should not need to modify any of the other values in `_config.yml`.
 
 ## Home Page: Data
 
-Your workshop's home page lives in `index.html`,
+Your workshop's home page lives in `index.md`,
 which must define the following values in its header:
 
 *   `layout` must be `workshop`.
 
-*   `carpentry` must be either "dc" (for Data Carpentry) or "swc" (for
-    Software Carpentry).
+*   `carpentry` must be either "dc" (for Data Carpentry),  "swc" (for
+    Software Carpentry) or "lc" (for Library Carpentry).
 
 *   `venue` is the short name of the institution or group hosting the
     workshop, like "Euphoric State University".  It should *not*
@@ -50,7 +49,7 @@ which must define the following values in its header:
 
 *   `latlng` is the latitude and longitude of the workshop site (so we
     can put a pin on our map).  You can use
-    [this site](http://itouchmap.com/latlong.html) to find these
+    [this site](https://getlatlong.net/) to find these
     values.  You can *not* put spaces around the comma separating the
     latitude from the longitude.
 
@@ -98,7 +97,7 @@ which must define the following values in its header:
 The header may optionally define the following:
 
 *   `etherpad` is the URL for the Etherpad for your workshop.  If you are
-    not using an Etherpad, you can delete this line.
+    not using an Etherpad, you can delete this line. You can create a carpentries etherpad [here](https://pad.carpentries.org/).
 
 *   `eventbrite` is the multi-digit Eventbrite registration key.  If you
     are using Eventbrite, the Software Carpentry administrators will
@@ -109,7 +108,9 @@ The header may optionally define the following:
 ## Home Page: Schedule and Syllabus
 
 You should edit the sections titled `Schedule` and `Syllabus`
-so that they show what you're actually planning to teach and when.
+so that they show what you're actually planning to teach and when.  These 
+files are located in the appropriate workshop folder (`dc`, `lc` or `swc`) 
+inside the `_includes` folder.  
 
 ## Home Page: Setup
 
@@ -120,7 +121,7 @@ so that learners don't spend time installing software they don't need.
 ## Setup: Installation tests
 
 If you intend to use the installation-test scripts,
-uncomment the paragraph linking to `setup/index.html` in `index.html`
+uncomment the paragraph linking to `setup/index.html` in `index.md`
 and edit `setup/swc-installation-test-2.py` as described below.
 
 `swc-installation-test-1.py` is pretty simple, and just checks that
@@ -160,7 +161,7 @@ please follow the steps bellow:
 
 1.  Add the workshop-template repository as upstream:
 
-        $ git remote add upstream https://github.com/swcarpentry/workshop-template.git
+        $ git remote add upstream https://github.com/carpentries/workshop-template.git
 
 2.  Fetch the data from upstream repository (also know as the workshop-template
     repository):
