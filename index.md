@@ -393,17 +393,15 @@ and our administrator may contact you if we need any extra information.</h4>
   </div>
 </div> {% comment %} End of 'shell' section. {% endcomment %}
 
-<div id="git"> {% comment %} Start of 'Git' section. GitHub browser compatability
-           is given at https://help.github.com/articles/supported-browsers/{% endcomment %}
+<div id="git"> {% comment %} Start of 'Git' section. {% endcomment %}
   <h3>Git</h3>
   <p>
     Git is a version control system that lets you track who made changes
     to what when and has options for easily updating a shared or public
     version of your code
     on <a href="https://github.com/">github.com</a>. You will need a
-    <a href="https://help.github.com/articles/supported-browsers/">supported</a>
-    web browser (current versions of Chrome, Firefox or Safari,
-    or Internet Explorer version 9 or above).
+    <a href="https://help.github.com/articles/supported-browsers/">supported
+    web browser</a>.
   </p>
   <p>
     You will need an account at <a href="https://github.com/">github.com</a>
