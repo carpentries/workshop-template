@@ -302,20 +302,10 @@ and our administrator may contact you if we need any extra information.</h4>
 
 <div id="shell"> {% comment %} Start of 'shell' section. {% endcomment %}
   <h3>The Bash Shell</h3>
-
   <p>
     Bash is a commonly-used shell that gives you the power to do simple
     tasks more quickly.
   </p>
-
-
-
-- Keep "Use Windows' default console window" selected and click on "Next".
-- When asked about configuration of extra options, leave the defaults (Enable file system caching is checked, Enable Git Credential manager is checked, Enable Symlinks is unchecked) Click Next
-- Don't select any of the experimental features
-- Click Install
-- Click Finish (you may want to check "Launch Git Bash" which will open the terminal where you'll type the git commands)
-
   <div class="row">
     <div class="col-md-4">
       <h4 id="shell-windows">Windows</h4>
@@ -360,7 +350,21 @@ and our administrator may contact you if we need any extra information.</h4>
             </li>
             <li>
                 Click Install
-            </li>
+            </li>	      
+             {% comment %} Installing {% endcomment %}	
+             {% comment %} Completing the Git Setup Wizard {% endcomment %}	
+             <li>Click on "Finish".</li>	
+           </ol>	
+         </li>	
+         <li>	
+           If your "HOME" environment variable is not set (or you don't know what this is):		 
+           <ol>	
+             <li>Open command prompt (Open Start Menu then type <code>cmd</code> and press [Enter])</li>
+	     <li>Type the following line into the command prompt window exactly as shown:
+		 <p><code>setx HOME "%USERPROFILE%"</code></p></li>
+	    <li>Press [Enter], you should see <code>SUCCESS: Specified value was saved.</code></li>	
+             <li>Quit command prompt by typing <code>exit</code> then pressing [Enter]</li>
+	      
             <li>
                 Click Finish (you may want to check "Launch Git Bash" which will open the terminal where you'll type the git commands)
             </li>
