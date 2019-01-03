@@ -330,7 +330,7 @@ and our administrator may contact you if we need any extra information.</h4>
             </li>
             {% comment %} Adjusting your PATH environment {% endcomment %}
             <li>
-                Keep "Use Git from the Windows Command Prompt" selected and click on "Next".
+                Keep "Use Git from the command line and..." selected and click on "Next".
                 If you forgot to do this programs that you need for the workshop will not work properly.
                 If this happens rerun the installer and select the appropriate option.
             </li>
