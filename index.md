@@ -787,9 +787,9 @@ please preview your site before committing, and make sure to run
         <p>Go to your newly created OpenRefine directory.</p>
         <p>Launch OpenRefine by entering <code>./refine</code> into the terminal within the OpenRefine directory.</p>
         <p>If you are using a different browser, or if OpenRefine does not automatically open for you, point your browser at <a href="http://127.0.0.1:3333/">http://127.0.0.1:3333/</a> or <a href="http://localhost:3333">http://localhost:3333</a> to use the program.</p>
-        <article>
-    </div>
-  </div>
+        </article>
+</div>
+</div>
 </div> {% comment %} End of 'OpenRefine' section. {% endcomment %}
 
 {% comment %}
