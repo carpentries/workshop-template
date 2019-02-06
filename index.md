@@ -43,6 +43,13 @@ about your workshop and our administrator may contact you if we need any extra
 information.
 </div>
 
+{% if page.carpentry != site.carpentry %}
+<div class="alert alert-warning">
+You specified `carpentry: {{page.carpentry}}` in `index.md` and
+`carpentry: {{site.carpentry}} in `_config.yml`. Make sure you edit both files. After editing `_config.yml`, you need to run `make serve` again to 
+see the changes take effect locally.
+</div>
+{% endif %}
 
 {% comment %}
 EVENTBRITE
