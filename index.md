@@ -45,8 +45,8 @@ information.
 
 {% if page.carpentry != site.carpentry %}
 <div class="alert alert-warning">
-You specified `carpentry: {{page.carpentry}}` in `index.md` and
-`carpentry: {{site.carpentry}} in `_config.yml`. Make sure you edit both files. After editing `_config.yml`, you need to run `make serve` again to 
+You specified <code>carpentry: {{page.carpentry}}</code> in <code>index.md</code> and
+<code>carpentry: {{site.carpentry}}</code> in <code>_config.yml</code>. Make sure you edit both files. After editing <code>_config.yml</code>, you need to run <code>make serve</code> again to 
 see the changes take effect locally.
 </div>
 {% endif %}
