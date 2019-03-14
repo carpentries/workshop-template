@@ -709,9 +709,30 @@ please preview your site before committing, and make sure to run
       <li role="presentation" class="active"><a data-os="windows" href="#sql-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
       <li role="presentation"><a data-os="macos" href="#sql-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
       <li role="presentation"><a data-os="linux" href="#sql-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
+      {% if page.carpentry != 'dc' %}
       <li role="presentation"><a data-os="Web" href="#sql-web" aria-controls="Linux" role="tab" data-toggle="tab">Web</a></li>
+      {% endif %}
     </ul>
-
+    {% if page.carpentry == 'dc' %}
+    <div class="tab-content">
+      <article role="tabpanel" class="tab-pane active" id="sql-windows">
+        <p>
+          Visit <a href="https://sqlitebrowser.org/dl/">SqliteBrowser</a> and download and install it. Version 3.11.0 or greater.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="sql-macos">
+        <p>
+          Visit <a href="https://sqlitebrowser.org/dl/">SqliteBrowser</a> and download and install it. Version 3.11.0 or greater.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="sql-linux">
+        <p>
+          Visit <a href="https://sqlitebrowser.org/dl/">SqliteBrowser</a> and download and install it. Version 3.11.0 or greater.
+        </p>
+      </article>
+      
+    </div>
+    {%else%}
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="sql-windows">
         <p>
@@ -747,6 +768,7 @@ please preview your site before committing, and make sure to run
         </p>
       </article>
     </div>
+      {%endif%}
   </div>
 
   <p><strong>If you installed Anaconda, it also has a copy of SQLite
