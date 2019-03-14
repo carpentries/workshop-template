@@ -346,7 +346,7 @@ please preview your site before committing, and make sure to run
               </li>
               <li>
                 <strong>
-                  Select “Use the nano editor by default” and click on “Next”.
+                  Select "Use the nano editor by default" and click on "Next".
                 </strong>
               </li>
               {% comment %} Adjusting your PATH environment {% endcomment %}
@@ -448,7 +448,7 @@ please preview your site before committing, and make sure to run
           install (described above).
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane active" id="git-macos">
+      <article role="tabpanel" class="tab-pane" id="git-macos">
         <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">Video Tutorial</a>
         <p>
           <strong>For OS X 10.9 and higher</strong>, install Git for Mac
@@ -464,7 +464,7 @@ please preview your site before committing, and make sure to run
           <a href="http://sourceforge.net/projects/git-osx-installer/files/">available here</a>.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane active" id="git-linux">
+      <article role="tabpanel" class="tab-pane" id="git-linux">
         <p>
           If Git is not already available on your machine you can try to
           install it via your distro's package manager. For Debian/Ubuntu run
@@ -512,7 +512,7 @@ please preview your site before committing, and make sure to run
           Please ask your instructor to help you do this.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane active" id="editor-macos">
+      <article role="tabpanel" class="tab-pane" id="editor-macos">
         <p>
           nano is a basic editor and the default that instructors use in the workshop.
           See the Git installation <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">video tutorial</a>
@@ -525,7 +525,7 @@ please preview your site before committing, and make sure to run
           <a href="https://www.sublimetext.com/">Sublime Text</a>.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane active" id="editor-macos">
+      <article role="tabpanel" class="tab-pane" id="editor-macos">
         <p>
           nano is a basic editor and the default that instructors use in the workshop.
           It should be pre-installed.
@@ -588,7 +588,7 @@ please preview your site before committing, and make sure to run
           <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Add Anaconda to my PATH environment variable</strong>.</li>
         </ol>
       </article>
-      <article role="tabpanel" class="tab-pane active" id="python-macos">
+      <article role="tabpanel" class="tab-pane" id="python-macos">
         <a href="https://www.youtube.com/watch?v=TcSAln46u9U">Video Tutorial</a>
         <ol>
           <li>Open <a href="https://www.anaconda.com/download/#macos">https://www.anaconda.com/download/#macos</a> with your web browser.</li>
@@ -596,7 +596,7 @@ please preview your site before committing, and make sure to run
           <li>Install Python 3 using all of the defaults for installation.</li>
         </ol>
       </article>
-      <article role="tabpanel" class="tab-pane active" id="python-linux">
+      <article role="tabpanel" class="tab-pane" id="python-linux">
         <ol>
           <li>Open <a href="https://www.anaconda.com/download/#linux">https://www.anaconda.com/download/#linux</a> with your web browser.</li>
           <li>Download the Python 3 installer for Linux.<br>
@@ -671,7 +671,7 @@ please preview your site before committing, and make sure to run
           for example when installing R packages.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane active" id="rstats-macos">
+      <article role="tabpanel" class="tab-pane" id="rstats-macos">
         <a href="https://www.youtube.com/watch?v=5-ly3kyxwEg">Video Tutorial</a>
         <p>
           Install R by downloading and running
@@ -681,7 +681,7 @@ please preview your site before committing, and make sure to run
           <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio IDE</a>.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane active" id="rstats-linux">
+      <article role="tabpanel" class="tab-pane" id="rstats-linux">
         <p>
           You can download the binary files for your distribution
           from <a href="https://cran.r-project.org/index.html">CRAN</a>. Or
@@ -709,36 +709,66 @@ please preview your site before committing, and make sure to run
       <li role="presentation" class="active"><a data-os="windows" href="#sql-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
       <li role="presentation"><a data-os="macos" href="#sql-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
       <li role="presentation"><a data-os="linux" href="#sql-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
+      {% if page.carpentry != 'dc' %}
+      <li role="presentation"><a data-os="Web" href="#sql-web" aria-controls="Linux" role="tab" data-toggle="tab">Web</a></li>
+      {% endif %}
     </ul>
-
+    {% if page.carpentry == 'dc' %}
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="sql-windows">
         <p>
-          The <a href="https://www.sqlite.org/download.html">
-            {% if page.carpentry == "swc" %}
-            Software Carpentry
-            {% elsif page.carpentry == "dc" %}
-            Data Carpentry
-            {% elsif page.carpentry == "lc" %}
-            Library Carpentry
-            {% endif %}
-            Windows Installer
-	  </a>
-          installs SQLite for Windows.
-          If you used the installer to configure nano, you don't need to run it again.
+          Visit <a href="https://sqlitebrowser.org/dl/">SqliteBrowser</a> and download and install it. Version 3.11.0 or greater.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane active" id="sql-macos">
+      <article role="tabpanel" class="tab-pane" id="sql-macos">
+        <p>
+          Visit <a href="https://sqlitebrowser.org/dl/">SqliteBrowser</a> and download and install it. Version 3.11.0 or greater.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="sql-linux">
+        <p>
+          Visit <a href="https://sqlitebrowser.org/dl/">SqliteBrowser</a> and download and install it. Version 3.11.0 or greater.
+        </p>
+      </article>
+      
+    </div>
+    {%else%}
+    <div class="tab-content">
+      <article role="tabpanel" class="tab-pane active" id="sql-windows">
+        <p>
+          <ul>
+            <li>Run git-bash from the start menu</li>
+            <li>Copy the following <code>curl {{site.url}}{{site.baseurl}}/getsql.sh | bash</code></li>
+            <li>Paste it into the window that git bash opened. If you're unsure, ask an instructor for help</li>
+            <li>You should see something like <code>3.27.2 2019-02-25 16:06:06 ...</code></li>
+          </ul>
+            
+          <p>If you want to do this manually, download <a href="https://www.sqlite.org/2019/sqlite-tools-win32-x86-3270200.zip">sqlite3</a>, make a bin directory in the user's home directory, unzip sqlite3, move it into the bin directory, and then add the bin directory to the path.</p>
+
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="sql-macos">
         <p>
           SQLite comes pre-installed on macOS.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane active" id="sql-linux">
+      <article role="tabpanel" class="tab-pane" id="sql-linux">
         <p>
           SQLite comes pre-installed on Linux.
         </p>
       </article>
+      <article role="tabpanel" class="tab-pane" id="sql-web">
+        <p>
+          <ul>
+            <li>In case of problems: register for an account at <a href="http://pythonanywhere.com/">Python Anywhere</a></li>
+            <li>Download <a href="http://swcarpentry.github.io/sql-novice-survey/files/survey.db">survey.db</a></li>
+            <li>Click on files and upload survey.db</li>
+            <li>Click on dashboard and Choose new console <code>$ bash</code></li>
+            </ul>
+        </p>
+      </article>
     </div>
+      {%endif%}
   </div>
 
   <p><strong>If you installed Anaconda, it also has a copy of SQLite
