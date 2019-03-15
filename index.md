@@ -389,7 +389,7 @@ please preview your site before committing, and make sure to run
         </ol>
         <p>This will provide you with both Git and Bash in the Git Bash program.</p>
       </article>
-      <article role="tabpanel" class="tab-pane" id="shell-macos">
+      <article role="tabpanel" class="tab-pane active" id="shell-macos">
         <p>
           The default shell in all versions of macOS is Bash, so no
           need to install anything.  You access Bash from the Terminal
@@ -401,7 +401,7 @@ please preview your site before committing, and make sure to run
           Terminal in your dock for this workshop.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane" id="shell-linux">
+      <article role="tabpanel" class="tab-pane active" id="shell-linux">
         <p>
           The default shell is usually Bash, but if your
           machine is set up differently you can run it by opening a
@@ -448,7 +448,7 @@ please preview your site before committing, and make sure to run
           install (described above).
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane" id="git-macos">
+      <article role="tabpanel" class="tab-pane active" id="git-macos">
         <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">Video Tutorial</a>
         <p>
           <strong>For OS X 10.9 and higher</strong>, install Git for Mac
@@ -464,7 +464,7 @@ please preview your site before committing, and make sure to run
           <a href="http://sourceforge.net/projects/git-osx-installer/files/">available here</a>.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane" id="git-linux">
+      <article role="tabpanel" class="tab-pane active" id="git-linux">
         <p>
           If Git is not already available on your machine you can try to
           install it via your distro's package manager. For Debian/Ubuntu run
@@ -512,7 +512,7 @@ please preview your site before committing, and make sure to run
           Please ask your instructor to help you do this.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane" id="editor-macos">
+      <article role="tabpanel" class="tab-pane active" id="editor-macos">
         <p>
           nano is a basic editor and the default that instructors use in the workshop.
           See the Git installation <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">video tutorial</a>
@@ -525,7 +525,7 @@ please preview your site before committing, and make sure to run
           <a href="https://www.sublimetext.com/">Sublime Text</a>.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane" id="editor-macos">
+      <article role="tabpanel" class="tab-pane active" id="editor-macos">
         <p>
           nano is a basic editor and the default that instructors use in the workshop.
           It should be pre-installed.
@@ -588,7 +588,7 @@ please preview your site before committing, and make sure to run
           <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Add Anaconda to my PATH environment variable</strong>.</li>
         </ol>
       </article>
-      <article role="tabpanel" class="tab-pane" id="python-macos">
+      <article role="tabpanel" class="tab-pane active" id="python-macos">
         <a href="https://www.youtube.com/watch?v=TcSAln46u9U">Video Tutorial</a>
         <ol>
           <li>Open <a href="https://www.anaconda.com/download/#macos">https://www.anaconda.com/download/#macos</a> with your web browser.</li>
@@ -596,7 +596,7 @@ please preview your site before committing, and make sure to run
           <li>Install Python 3 using all of the defaults for installation.</li>
         </ol>
       </article>
-      <article role="tabpanel" class="tab-pane" id="python-linux">
+      <article role="tabpanel" class="tab-pane active" id="python-linux">
         <ol>
           <li>Open <a href="https://www.anaconda.com/download/#linux">https://www.anaconda.com/download/#linux</a> with your web browser.</li>
           <li>Download the Python 3 installer for Linux.<br>
@@ -671,7 +671,7 @@ please preview your site before committing, and make sure to run
           for example when installing R packages.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane" id="rstats-macos">
+      <article role="tabpanel" class="tab-pane active" id="rstats-macos">
         <a href="https://www.youtube.com/watch?v=5-ly3kyxwEg">Video Tutorial</a>
         <p>
           Install R by downloading and running
@@ -681,7 +681,7 @@ please preview your site before committing, and make sure to run
           <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio IDE</a>.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane" id="rstats-linux">
+      <article role="tabpanel" class="tab-pane active" id="rstats-linux">
         <p>
           You can download the binary files for your distribution
           from <a href="https://cran.r-project.org/index.html">CRAN</a>. Or
@@ -720,12 +720,12 @@ please preview your site before committing, and make sure to run
           Visit <a href="https://sqlitebrowser.org/dl/">SqliteBrowser</a> and download and install it. Version 3.11.0 or greater.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane" id="sql-macos">
+      <article role="tabpanel" class="tab-pane active" id="sql-macos">
         <p>
           Visit <a href="https://sqlitebrowser.org/dl/">SqliteBrowser</a> and download and install it. Version 3.11.0 or greater.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane" id="sql-linux">
+      <article role="tabpanel" class="tab-pane active" id="sql-linux">
         <p>
           Visit <a href="https://sqlitebrowser.org/dl/">SqliteBrowser</a> and download and install it. Version 3.11.0 or greater.
         </p>
@@ -747,17 +747,17 @@ please preview your site before committing, and make sure to run
 
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane" id="sql-macos">
+      <article role="tabpanel" class="tab-pane active" id="sql-macos">
         <p>
           SQLite comes pre-installed on macOS.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane" id="sql-linux">
+      <article role="tabpanel" class="tab-pane active" id="sql-linux">
         <p>
           SQLite comes pre-installed on Linux.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane" id="sql-web">
+      <article role="tabpanel" class="tab-pane active" id="sql-web">
         <p>
           <ul>
             <li>In case of problems: register for an account at <a href="http://pythonanywhere.com/">Python Anywhere</a></li>
