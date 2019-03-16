@@ -12,6 +12,7 @@ before_script:
   - "python bin/_travis.py"  
 script:
   - python bin/workshop_check.py .
+  - python -m unittest bin/_test/bs4test.py 
 branches:
   only:
     - gh-pages
