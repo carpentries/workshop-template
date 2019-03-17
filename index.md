@@ -242,7 +242,7 @@ Collaborative Notes
 
 If you want to use an Etherpad, go to
 
-http://pad.software-carpentry.org/YYYY-MM-DD-site
+http://pad.carpentries.org/YYYY-MM-DD-site
 
 where 'YYYY-MM-DD-site' is the identifier for your workshop,
 e.g., '2015-06-10-esu'.
