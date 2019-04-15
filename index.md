@@ -525,7 +525,7 @@ please preview your site before committing, and make sure to run
           <a href="https://www.sublimetext.com/">Sublime Text</a>.
         </p>
       </article>
-      <article role="tabpanel" class="tab-pane active" id="editor-macos">
+      <article role="tabpanel" class="tab-pane active" id="editor-linux">
         <p>
           nano is a basic editor and the default that instructors use in the workshop.
           It should be pre-installed.
