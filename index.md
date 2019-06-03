@@ -413,7 +413,7 @@ please preview your site before committing, and make sure to run
   </div>
 </div> {% comment %} End of 'shell' section. {% endcomment %}
 
-<div id="git"> {% comment %} Start of 'Git' section. GitHub browser compatability
+<div id="git"> {% comment %} Start of 'Git' section. GitHub browser compatibility
   is given at https://help.github.com/articles/supported-browsers/{% endcomment %}
   <h3>Git</h3>
   <p>
