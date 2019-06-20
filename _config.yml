@@ -19,6 +19,11 @@ carpentry: "dc"
 # dc-geospatial: for Data Carpentry Geospatial
 curriculum: "FIXME"
 
+# If there is both an R and python official version of a curriculum, change the
+# value of the variable below ("flavor") to get the schedule updated accordingly
+# (valid values are 'r' or 'python').
+flavor: "r"
+
 # Overall title for pages.
 title: "Workshop Title"
 

@@ -7,13 +7,7 @@ The schedule for the different curricula are listed here:
 - dc-geosptial
 {% endcomment %}
 
-{% comment %}
-If there is both an R and python official version of the curriculum, change the
-value of the variable below ("flavor") to get the schedule updated accordingly
-(valid values are 'r' or 'python')
-{% endcomment %}
-
-{% assign flavor = "python" %}
+{
 
 {% if site.curriculum == "dc-ecology" %}
 <div class="row">
@@ -29,16 +23,12 @@ value of the variable below ("flavor") to get the schedule updated accordingly
       <tr>
         <td>Afternoon</td>
         <td>
-          {% if flavor == "r" %}
+          {% if site.flavor == "r" %}
           <a href="http://www.datacarpentry.org/R-ecology-lesson/">Introduction to R</a>
-          {% elsif flavor == "python" %}
+          {% elsif site.flavor == "python" %}
           <a href="http://www.datacarpentry.org/python-ecology-lesson/">Introduction to Python</a>
           {% else %}
-          <div class="alert alert-warning">
-            <p>Invalid value for variable <code>flavor</code>.
-              Set to <code>{{flavor}}</code>. Possible values are <code>r</code> or <code>python</code>.
-            </p>
-          </div>
+          {% include warning-flavor.html %}
           {% endif %}
       </td></tr>
       <tr> <td>Evening</td> <td>END</td> </tr>
@@ -49,16 +39,12 @@ value of the variable below ("flavor") to get the schedule updated accordingly
     <table class="table table-striped">
       <tr> <td>Morning</td>
         <td>
-          {% if flavor == "r" %}
+          {% if site.flavor == "r" %}
           <a href="http://www.datacarpentry.org/R-ecology-lesson/">Continuation of R: Data analysis and Visualization</a>
-          {% elsif flavor == "python" %}
+          {% elsif site.flavor == "python" %}
           <a href="http://www.datacarpentry.org/python-ecology-lesson/">Continuation of Python: Data analysis and Visualization</a>
           {% else %}
-          <div class="alert alert-warning">
-            <p>Invalid value for variable <code>flavor</code>.
-              Set to <code>{{flavor}}</code>. Possible values are <code>r</code> or <code>python</code>.
-            </p>
-          </div>
+          {% include warning-flavor.html %}
           {% endif %}
         </td>
       </tr>
@@ -194,9 +180,5 @@ value of the variable below ("flavor") to get the schedule updated accordingly
 </div>
 
 {% else %}
-
-<div class="alert alert-warning">
-  Unrecognized value for variable <code>curriculum</code> set in <code>_config.yml</code>. Currently the variable is set to: <code>{{ site.curriculum }}</code>
-</div>
-
+{% include warning-curriculum.html %}
 {% endif %}
