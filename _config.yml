@@ -7,7 +7,17 @@
 # dc: Data Carpentry
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor traning for instance)
-carpentry: "swc"
+carpentry: "dc"
+
+# This option is currently only needed for Data Carpentry workshops.
+# The value of the variable will be ignored for Software Carpentry and
+# Library Carpentry workshops.
+# Possible values are:
+# dc-ecology: for Data Carpentry Ecology workshops
+# dc-genomics: for Data Carpentry Genomics
+# dc-socsci: for Data Carpentry Social Sciences
+# dc-geospatial: for Data Carpentry Geospatial
+curriculum: "FIXME"
 
 # Overall title for pages.
 title: "Workshop Title"
