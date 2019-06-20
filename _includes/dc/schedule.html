@@ -7,6 +7,14 @@ The schedule for the different curricula are listed here:
 - dc-geosptial
 {% endcomment %}
 
+{% comment %}
+If there is both an R and python official version of the curriculum, change the
+value of the variable below ("flavor") to get the schedule updated accordingly
+(valid values are 'r' or 'python')
+{% endcomment %}
+
+{% assign flavor = "python" %}
+
 {% if site.curriculum == "dc-ecology" %}
 <div class="row">
   <div class="col-md-6">
@@ -18,14 +26,42 @@ The schedule for the different curricula are listed here:
       </tr>
       <tr><td>Morning</td> <td> <a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/">Data Organization in Spreadsheets</a></td></tr>
       <tr><td> </td><td><a href="http://www.datacarpentry.org/OpenRefine-ecology-lesson/">OpenRefine for Data Cleaning</a></td></tr>
-      <tr><td>Afternoon</td><td><a href="http://www.datacarpentry.org/R-ecology-lesson/">Introduction to R</a></td></tr>
+      <tr>
+        <td>Afternoon</td>
+        <td>
+          {% if flavor == "r" %}
+          <a href="http://www.datacarpentry.org/R-ecology-lesson/">Introduction to R</a>
+          {% elsif flavor == "python" %}
+          <a href="http://www.datacarpentry.org/python-ecology-lesson/">Introduction to Python</a>
+          {% else %}
+          <div class="alert alert-warning">
+            <p>Invalid value for variable <code>flavor</code>.
+              Set to <code>{{flavor}}</code>. Possible values are <code>r</code> or <code>python</code>.
+            </p>
+          </div>
+          {% endif %}
+      </td></tr>
       <tr> <td>Evening</td> <td>END</td> </tr>
     </table>
   </div>
   <div class="col-md-6">
     <h3>Day 2</h3>
     <table class="table table-striped">
-      <tr> <td>Morning</td> <td><a href="http://www.datacarpentry.org/R-ecology-lesson/">Continuation of R: Data analysis & Visualization</a></td></tr>
+      <tr> <td>Morning</td>
+        <td>
+          {% if flavor == "r" %}
+          <a href="http://www.datacarpentry.org/R-ecology-lesson/">Continuation of R: Data analysis and Visualization</a>
+          {% elsif flavor == "python" %}
+          <a href="http://www.datacarpentry.org/python-ecology-lesson/">Continuation of Python: Data analysis and Visualization</a>
+          {% else %}
+          <div class="alert alert-warning">
+            <p>Invalid value for variable <code>flavor</code>.
+              Set to <code>{{flavor}}</code>. Possible values are <code>r</code> or <code>python</code>.
+            </p>
+          </div>
+          {% endif %}
+        </td>
+      </tr>
       <tr> <td>Afternoon</td><td><a href="http://www.datacarpentry.org/sql-ecology-lesson/">Data Management with SQL</a></td></tr>
       <tr>
 	<td>Evening</td>
