@@ -358,7 +358,7 @@ please preview your site before committing, and make sure to run
               {% comment %} Choosing the SSH executable {% endcomment %}
               <li>Click on "Next".</li>
               {% comment %} Choosing HTTPS transport backend {% endcomment %}
-              <li>Select "Use the native Windows Secure Channel library", and click "Next".
+              <li>Select "Use the native Windows Secure Channel library", and click "Next".</li>
               {% comment %} This should mean that people stuck behind corporate firewalls that do MITM attacks 
                                  with their own root CA are still able to access remote git repos. {% endcomment %}
               {% comment %} Configuring the line ending conversions {% endcomment %}
