@@ -374,7 +374,7 @@ please preview your site before committing, and make sure to run
               {% comment %} Configuring extra options {% endcomment %}
               <li>Leave all three items selected, and click on "Next".</li>
               {% comment %} Configuring experimental options {% endcomment %}
-              <li>Do not select the experimental option. Click "Install".
+              <li>Do not select the experimental option. Click "Install".</li>
               {% comment %} Installing {% endcomment %}
               {% comment %} Completing the Git Setup Wizard {% endcomment %}
               <li>Click on "Finish".</li>
