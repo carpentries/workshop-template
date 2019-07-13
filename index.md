@@ -335,5 +335,4 @@ please preview your site before committing, and make sure to run
 {% include dc/setup.html %}
 {% elsif site.carpentry == "lc" %}
 {% include lc/setup.html %}
-
 {% endif %}
