@@ -19,7 +19,7 @@
           <li>Download the Git for Windows <a href="https://git-for-windows.github.io/">installer</a>.</li>
           <li>Run the installer and follow the steps below:
             <ol>
-              {% comment %} Git 2.18.0 Setup {% endcomment %}
+              {% comment %} Git 2.22.0 Setup {% endcomment %}
               <li>
                 Click on "Next" four times (two times if you've previously
                 installed Git).  You don't need to change anything
@@ -32,12 +32,16 @@
               </li>
               {% comment %} Adjusting your PATH environment {% endcomment %}
               <li>
-                Keep "Use Git from the Windows Command Prompt" selected and click on "Next".
+                Keep "Git from the command line and also from 3rd-party software" selected and click on "Next".
                 If you forgot to do this programs that you need for the workshop will not work properly.
                 If this happens rerun the installer and select the appropriate option.
               </li>
               {% comment %} Choosing the SSH executable {% endcomment %}
               <li>Click on "Next".</li>
+              {% comment %} Choosing HTTPS transport backend {% endcomment %}
+              <li>Select "Use the native Windows Secure Channel library", and click "Next".
+              {% comment %} This should mean that people stuck behind corporate firewalls that do MITM attacks
+                                 with their own root CA are still able to access remote git repos. {% endcomment %}
               {% comment %} Configuring the line ending conversions {% endcomment %}
               <li>
                 Keep "Checkout Windows-style, commit Unix-style line endings" selected and click on "Next".
@@ -48,8 +52,10 @@
                   Select "Use Windows' default console window" and click on "Next".
                 </strong>
               </li>
-              {% comment %} Configuring experimental performance tweaks {% endcomment %}
-              <li>Click on "Install".</li>
+              {% comment %} Configuring extra options {% endcomment %}
+              <li>Leave all three items selected, and click on "Next".</li>
+              {% comment %} Configuring experimental options {% endcomment %}
+              <li>Do not select the experimental option. Click "Install".
               {% comment %} Installing {% endcomment %}
               {% comment %} Completing the Git Setup Wizard {% endcomment %}
               <li>Click on "Finish".</li>
