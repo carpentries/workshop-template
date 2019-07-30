@@ -1,7 +1,5 @@
 ---
 layout: workshop      # DON'T CHANGE THIS.
-carpentry: "dc"    # what kind of Carpentry (must be either "lc" or "dc" or "swc").  
-                      # Be sure to update the Carpentry type in _config.yml as well.  
 venue: "FIXME"        # brief name of host site without address (e.g., "Euphoric State University")
 address: "FIXME"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
 country: "FIXME"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes)
@@ -43,19 +41,11 @@ about your workshop and our administrator may contact you if we need any extra
 information.
 </div>
 
-{% if page.carpentry != site.carpentry %}
-<div class="alert alert-warning">
-You specified <code>carpentry: {{page.carpentry}}</code> in <code>index.md</code> and
-<code>carpentry: {{site.carpentry}}</code> in <code>_config.yml</code>. Make sure you edit both files. After editing <code>_config.yml</code>, you need to run <code>make serve</code> again to 
-see the changes take effect locally.
-</div>
-{% endif %}
-
 {% comment %}
 Check DC curriculum
 {% endcomment %}
 
-{% if page.carpentry == "dc" or site.carpentry == "dc" %}
+{% if site.carpentry == "dc" or site.carpentry == "dc" %}
 {% unless site.curriculum == "dc-ecology" or site.curriculum == "dc-genomics" or site.curriculum == "dc-socsci" or site.curriculum == "dc-geospatial" %}
 <div class="alert alert-warning">
 It looks like you are setting up a website for a Data Carpentry curriculum but you haven't specified the curriculum type in the <code>_config.yml</code> file (current value in <code>_config.yml</code>: "<strong>{{ site.curriculum }}</strong>", possible values: <code>dc-ecology</code>, <code>dc-genomics</code>, <code>dc-socsci</code>, or <code>dc-geospatial</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
@@ -90,11 +80,11 @@ INTRODUCTION
 Edit the general explanatory paragraph below if you want to change
 the pitch.
 {% endcomment %}
-{% if page.carpentry == "swc" %}
-{% include sc/intro.html %}
-{% elsif page.carpentry == "dc" %}
+{% if site.carpentry == "swc" %}
+{% include swc/intro.html %}
+{% elsif site.carpentry == "dc" %}
 {% include dc/intro.html %}
-{% elsif page.carpentry == "lc" %}
+{% elsif site.carpentry == "lc" %}
 {% include lc/intro.html %}
 {% endif %}
 
@@ -104,11 +94,11 @@ AUDIENCE
 Explain who your audience is.  (In particular, tell readers if the
 workshop is only open to people from a particular institution.
 {% endcomment %}
-{% if page.carpentry == "swc" %}
-{% include sc/who.html %}
-{% elsif page.carpentry == "dc" %}
+{% if site.carpentry == "swc" %}
+{% include swc/who.html %}
+{% elsif site.carpentry == "dc" %}
 {% include dc/who.html %}
-{% elsif page.carpentry == "lc" %}
+{% elsif site.carpentry == "lc" %}
 {% include lc/who.html %}
 {% endif %}
 
@@ -241,11 +231,11 @@ to match your plans.  You may also want to change 'Day 1' and 'Day
 {% endcomment %}
 <h2 id="schedule">Schedule</h2>
 
-{% if page.carpentry == "swc" %}
+{% if site.carpentry == "swc" %}
 {% include swc/schedule.html %}
-{% elsif page.carpentry == "dc" %}
+{% elsif site.carpentry == "dc" %}
 {% include dc/schedule.html %}
-{% elsif page.carpentry == "lc" %}
+{% elsif site.carpentry == "lc" %}
 {% include lc/schedule.html %}
 {% endif %}
 
@@ -286,11 +276,11 @@ please preview your site before committing, and make sure to run
 {% endcomment %}
 <h2 id="syllabus">Syllabus</h2>
 
-{% if page.carpentry == "swc" %}
+{% if site.carpentry == "swc" %}
 {% include swc/syllabus.html %}
-{% elsif page.carpentry == "dc" %}
+{% elsif site.carpentry == "dc" %}
 {% include dc/syllabus.html %}
-{% elsif page.carpentry == "lc" %}
+{% elsif site.carpentry == "lc" %}
 {% include lc/syllabus.html %}
 {% endif %}
 
@@ -312,11 +302,11 @@ please preview your site before committing, and make sure to run
 
 <p>
   To participate in a
-  {% if page.carpentry == "swc" %}
+  {% if site.carpentry == "swc" %}
   Software Carpentry
-  {% elsif page.carpentry == "dc" %}
+  {% elsif site.carpentry == "dc" %}
   Data Carpentry
-  {% elsif page.carpentry == "lc" %}
+  {% elsif site.carpentry == "lc" %}
   Library Carpentry
   {% endif %}
   workshop,
