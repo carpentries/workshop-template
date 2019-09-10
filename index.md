@@ -383,13 +383,13 @@ please preview your site before committing, and make sure to run
           <li>
             If your "HOME" environment variable is not set (or you don't know what this is):
             <ol>
-              <li>Open command prompt (Open Start Menu then type <code>cmd</code> and press [Enter])</li>
+              <li>Open command prompt (Open Start Menu then type <code>cmd</code> and press <kbd>Enter</kbd>)</li>
               <li>
                 Type the following line into the command prompt window exactly as shown:
                 <p><code>setx HOME "%USERPROFILE%"</code></p>
               </li>
-              <li>Press [Enter], you should see <code>SUCCESS: Specified value was saved.</code></li>
-              <li>Quit command prompt by typing <code>exit</code> then pressing [Enter]</li>
+              <li>Press <kbd>Enter</kbd>, you should see <code>SUCCESS: Specified value was saved.</code></li>
+              <li>Quit command prompt by typing <code>exit</code> then pressing <kbd>Enter</kbd></li>
             </ol>
           </li>
         </ol>
