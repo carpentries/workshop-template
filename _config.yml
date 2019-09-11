@@ -6,7 +6,7 @@
 # swc: Software Carpentry
 #  dc: Data Carpentry
 #  lc: Library Carpentry
-#  cp: Carpentries (to use for instructor traning for instance)
+#  cp: Carpentries (to use for instructor training for instance)
 carpentry: "swc"
 
 # This option is currently only needed for Data Carpentry workshops.
