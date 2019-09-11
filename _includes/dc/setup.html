@@ -5,7 +5,13 @@
   <li><a href="https://datacarpentry.org/spreadsheet-ecology-lesson/setup.html">Spreadsheets</a></li>
   <li><a href="https://datacarpentry.org/OpenRefine-ecology-lesson/setup.html">OpenRefine</a></li>
   <li><a href="https://datacarpentry.org/sql-ecology-lesson/setup.html">SQL</a></li>
+  {% if site.flavor == "r" %}
   <li><a href="https://datacarpentry.org/R-ecology-lesson/#setup-instructions">R and RStudio</a></li>
+  {% elsif site.flavor == "python" %}
+  <li><a href="https://datacarpentry.org/python-ecology-lesson/setup.html">Python</a></li>
+  {% else %}
+  {% include warning-flavor.html %}
+  {% endif %}
 </ul>
 
 {% elsif site.curriculum == "dc-genomics" %}
