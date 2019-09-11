@@ -426,7 +426,9 @@ please preview your site before committing, and make sure to run
     Git is a version control system that lets you track who made changes
     to what when and has options for easily updating a shared or public
     version of your code
-    on <a href="https://github.com/">github.com</a>. You will need a
+    on <a href="https://github.com/">GitHub.com</a> (which we'll use),
+    <a href="https://gitlab.com/">GitLab.com</a> or another, possibly
+    institution-internal code-hosting plattform. You will need a
     <a href="https://help.github.com/articles/supported-browsers/">supported
     web browser</a>.
   </p>
