@@ -111,10 +111,13 @@ inside the `_includes` folder.
 
 ## Home Page: Setup
 
-You may have to edit the `setup.html` located in the `dc`, `lc` or `swc` folders
-inside the `_includes` folder that describes the software and data you will not
-be using in your workshop, so that learners don't spend time installing software
-they don't need.
+You may have to edit the `setup.html` located
+in the `dc`, `lc` or `swc` folders
+inside the `_includes` folder 
+that describes the software and data
+you will **not** be using in your workshop, 
+so that learners don't spend time installing
+software they don't need.
 
 ## Setup: Installation tests
 
