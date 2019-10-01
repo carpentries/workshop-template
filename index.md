@@ -590,22 +590,22 @@ please preview your site before committing, and make sure to run
         <a href="https://www.youtube.com/watch?v=xxQ0mzZ8UvA">Video Tutorial</a>
         <ol>
           <li>Open <a href="https://www.anaconda.com/download/#windows">https://www.anaconda.com/download/#windows</a> with your web browser.</li>
-          <li>Download the Python 3 installer for Windows.</li>
-          <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Add Anaconda to my PATH environment variable</strong>.</li>
+          <li>Download the Anaconda for Windows version with Python 3. (You probably want the default, 64-bit installer <em>Anaconda3-...-Windows-x86_64.exe</em>)</li>
+          <li>Install Anaconda3 using all of the defaults for installation <em>except</em> make sure to check <strong>Add Anaconda to my PATH environment variable</strong>.</li>
         </ol>
       </article>
       <article role="tabpanel" class="tab-pane active" id="python-macos">
         <a href="https://www.youtube.com/watch?v=TcSAln46u9U">Video Tutorial</a>
         <ol>
           <li>Open <a href="https://www.anaconda.com/download/#macos">https://www.anaconda.com/download/#macos</a> with your web browser.</li>
-          <li>Download the Python 3 installer for OS X.</li>
-          <li>Install Python 3 using all of the defaults for installation.</li>
+          <li>Download the Anaconda for OS X version with Python 3.</li>
+          <li>Install Anaconda3 using all of the defaults for installation.</li>
         </ol>
       </article>
       <article role="tabpanel" class="tab-pane active" id="python-linux">
         <ol>
           <li>Open <a href="https://www.anaconda.com/download/#linux">https://www.anaconda.com/download/#linux</a> with your web browser.</li>
-          <li>Download the Python 3 installer for Linux.<br>
+          <li>Download the Anaconda for Linux version with Python 3.<br>
             (The installation requires using the shell. If you aren't
             comfortable doing the installation yourself
             stop here and request help at the workshop.)
