@@ -263,6 +263,6 @@ or [mail us][email].
 [ruby-install-guide]: https://www.ruby-lang.org/en/downloads/
 [ruby-installer]: http://rubyinstaller.org/
 [rubygems]: https://rubygems.org/pages/download/
-[self-organized-workshop-form]: https://amy.software-carpentry.org/workshops/submit/
+[self-organized-workshop-form]: https://amy.carpentries.org/forms/self-organised/
 [swc-site]: http://software-carpentry.org
 [lc-site]: https://librarycarpentry.org
