@@ -7,10 +7,10 @@ permalink: /customization/
 
 You should edit the `_config.yml` configuration file in the root directory of your workshop to configure some site-wide variables and make the site function correctly:
 
-* `carpentry` - to tell us which carpentry workshop this is, possible values are ("swc", "dc" or "lc")
-* `title` - overall title for all pages
-* `workshop_repo` - the URL of your workshop repository on GitHub
-* `workshop_site` - the repository's GitHub Pages URL
+* `carpentry` - to tell us which carpentry workshop this is, possible values are ("swc" for Software Carpentry workshops, "dc" for Data Carpentry workshops, "lc" for Library Carpentry Workshops, or "cp" for general Carpentries events such as instructor trainings).
+* `curriculum` - for Data Carpentry, which one of the curriculum is being taught. Possible values are: `dc-ecology`, `dc-genomics`, `dc-socsci`, `dc-geospatial`.
+* `flavor` - `r` or `python` depending on which lessons are being taught at the workshop (currently only for Data Carpentry workshops)
+* `title` - overall title for the workshop used by all pages
 
 For example, if the URL for the repository is `https://github.com/gvwilson/2015-07-01-miskatonic`,
 the URL for the website will be `http://gvwilson.github.io/2015-07-01-miskatonic`.
@@ -23,9 +23,6 @@ Your workshop's home page lives in `index.md`,
 which must define the following values in its header:
 
 *   `layout` must be `workshop`.
-
-*   `carpentry` must be either "dc" (for Data Carpentry),  "swc" (for
-    Software Carpentry) or "lc" (for Library Carpentry).
 
 *   `venue` is the short name of the institution or group hosting the
     workshop, like "Euphoric State University".  It should *not*
@@ -114,9 +111,13 @@ inside the `_includes` folder.
 
 ## Home Page: Setup
 
-You should delete the pieces of the `Setup` section
-related to software you will not be using in your workshop,
-so that learners don't spend time installing software they don't need.
+You may have to edit the `setup.html` located
+in the `dc`, `lc` or `swc` folders
+inside the `_includes` folder 
+that describes the software and data
+you will **not** be using in your workshop, 
+so that learners don't spend time installing
+software they don't need.
 
 ## Setup: Installation tests
 

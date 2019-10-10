@@ -4,10 +4,26 @@
 
 # Which carpentry is this ("swc", "dc", "lc", or "cp")?
 # swc: Software Carpentry
-# dc: Data Carpentry
-# lc: Library Carpentry
-# cp: Carpentries (to use for instructor traning for instance)
+#  dc: Data Carpentry
+#  lc: Library Carpentry
+#  cp: Carpentries (to use for instructor training for instance)
 carpentry: "swc"
+
+# This option is currently only needed for Data Carpentry workshops.
+# The value of the variable will be ignored for Software Carpentry and
+# Library Carpentry workshops.
+# Possible values are:
+# dc-ecology: for Data Carpentry Ecology workshops
+# dc-genomics: for Data Carpentry Genomics
+# dc-socsci: for Data Carpentry Social Sciences
+# dc-geospatial: for Data Carpentry Geospatial
+curriculum: "FIXME"
+
+# If there is both an R and python official version of a curriculum, change the
+# value of the variable below ("flavor") to get the schedule updated accordingly
+# (valid values are 'r' or 'python').
+# Note: this is only for Data Carpentry curricula at this time.
+flavor: "r"
 
 # Overall title for pages.
 title: "Workshop Title"
