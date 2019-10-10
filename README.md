@@ -134,7 +134,7 @@ Further instructions are available in [the customization instructions][customiza
 This [FAQ][faq] includes a few extra tips (additions are always welcome)
 and these notes on [the background and design][design] of this template may help as well.
 
-## Checking Your Changes
+## Checking Your Changes Locally
 
 If you want to preview your changes on your own machine before publishing them on GitHub,
 you can do so as described below.
