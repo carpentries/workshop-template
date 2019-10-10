@@ -90,7 +90,7 @@ please [get in touch](#getting-and-giving-help).
     Editing hints are embedded in `_config.yml`,
     and full instructions are in [the customization instructions][customization].
     
-5. Edit the `schedule.html` file to edit the schedule for your upcoming workshop. This file is located in the `_includes` directory, make sure to choose the one from the appropriate `dc` (Data Carpentry workshop), `lc` (Library Carpentry), or `sc` (Software Carpentry) subdirectory.
+5. Edit the `schedule.html` file to edit the schedule for your upcoming workshop. This file is located in the `_includes` directory, make sure to choose the one from the appropriate `dc` (Data Carpentry workshop), `lc` (Library Carpentry), or `swc` (Software Carpentry) subdirectory.
 
 6.  Alternatively,
     if you are already familiar with Git,
