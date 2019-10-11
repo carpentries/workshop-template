@@ -90,7 +90,7 @@ please [get in touch](#getting-and-giving-help).
     Editing hints are embedded in `_config.yml`,
     and full instructions are in [the customization instructions][customization].
     
-5. Edit the `schedule.html` file to edit the schedule for your upcoming workshop. This file is located in the `_includes` directory, make sure to choose the one from the appropriate `dc` (Data Carpentry workshop), `lc` (Library Carpentry), or `sc` (Software Carpentry) subdirectory.
+5. Edit the `schedule.html` file to edit the schedule for your upcoming workshop. This file is located in the `_includes` directory, make sure to choose the one from the appropriate `dc` (Data Carpentry workshop), `lc` (Library Carpentry), or `swc` (Software Carpentry) subdirectory.
 
 6.  Alternatively,
     if you are already familiar with Git,
@@ -134,7 +134,7 @@ Further instructions are available in [the customization instructions][customiza
 This [FAQ][faq] includes a few extra tips (additions are always welcome)
 and these notes on [the background and design][design] of this template may help as well.
 
-## Checking Your Changes
+## Checking Your Changes Locally
 
 If you want to preview your changes on your own machine before publishing them on GitHub,
 you can do so as described below.
@@ -263,6 +263,6 @@ or [mail us][email].
 [ruby-install-guide]: https://www.ruby-lang.org/en/downloads/
 [ruby-installer]: http://rubyinstaller.org/
 [rubygems]: https://rubygems.org/pages/download/
-[self-organized-workshop-form]: https://amy.software-carpentry.org/workshops/submit/
+[self-organized-workshop-form]: https://amy.carpentries.org/forms/self-organised/
 [swc-site]: http://software-carpentry.org
 [lc-site]: https://librarycarpentry.org
