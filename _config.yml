@@ -7,6 +7,10 @@
 #  dc: Data Carpentry
 #  lc: Library Carpentry
 #  cp: Carpentries (to use for instructor training for instance)
+# Note that for regular workshops, you should use:
+#  https://github.com/carpentries/workshop-template
+# and for instructor training events you should use:
+#  https://github.com/carpentries/training-template
 carpentry: "swc"
 
 # This option is currently only needed for Data Carpentry workshops.
