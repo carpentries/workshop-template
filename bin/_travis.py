@@ -6,7 +6,7 @@ with open("index.md", 'r') as reader:
 
 	blankbit, yaml_to_load, text = reader.read().split("---")
 
-yaml_data = yaml.load(yaml_to_load, Loader=yaml.Loader) # To deal with depreciation warnings, we need Loader=Loader
+yaml_data = yaml.load(yaml_to_load, Loader=yaml.FullLoader) # To deal with depreciation warnings, we need Loader=Loader
 
 	
 yaml_data['carpentry']="swc" 
