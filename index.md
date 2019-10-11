@@ -4,7 +4,8 @@ venue: "FIXME"        # brief name of host site without address (e.g., "Euphoric
 address: "FIXME"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
 country: "FIXME"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes)
 language: "FIXME"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
-latlng: "FIXME"       # decimal latitude and longitude of workshop venue (e.g., "41.7901128,-87.6007318" - use https://www.latlong.net/)
+latitude: "45"     # decimal latitude of workshop venue (use https://www.latlong.net/)
+longitude: "-1"    # decimal longitude of the workshop venue (use https://www.latlong.net)
 humandate: "FIXME"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
 humantime: "FIXME"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
 startdate: FIXME      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
@@ -110,14 +111,14 @@ if the latitude and longitude of the workshop have been set.  You
 can use https://itouchmap.com/latlong.html to find the lat/long of an
 address.
 {% endcomment %}
-{% if page.latlng %}
+{% if page.latitude and page.longitude %}
 <p id="where">
   <strong>Where:</strong>
   {{page.address}}.
   Get directions with
-  <a href="//www.openstreetmap.org/?mlat={{page.latlng | replace:',','&mlon='}}&zoom=16">OpenStreetMap</a>
+  <a href="//www.openstreetmap.org/?mlat={{page.latitude}}&mlon={{page.longitude}}&zoom=16">OpenStreetMap</a>
   or
-  <a href="//maps.google.com/maps?q={{page.latlng}}">Google Maps</a>.
+  <a href="//maps.google.com/maps?q={{page.latitude}},{{page.longitude}}">Google Maps</a>.
 </p>
 {% endif %}
 

@@ -44,12 +44,10 @@ which must define the following values in its header:
     and languages: "ar" is Arabic when used for a language, but
     Argentina when used for a country.
 
-*   `latlng` is the latitude and longitude of the workshop site (so we
-    can put a pin on our map).  You can use
-    [this site](https://getlatlong.net/) to find these
-    values.  You can *not* put spaces around the comma separating the
-    latitude from the longitude.
-
+*   `latitude` and `longitude` are the latitude and longitude of the workshop
+    site (so we can put a pin on our map). You can use
+    [this site](https://getlatlong.net/) to find these values.
+    
 *  `humandate` is the human-friendly start and end date for the
     workshop.  Please use three-letter month names and abbreviations
     (e.g., `Jul` instead of `July`), since these values are displayed
