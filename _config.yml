@@ -25,7 +25,12 @@ curriculum: "FIXME"
 # Note: this is only for Data Carpentry curricula at this time.
 flavor: "r"
 
-# Overall title for pages.
+# Overall title for the Workshop.
+# This variable is used to (optionally) add a title in the "jumbotron"
+# (the grey box at the top of the page), and to the extra pages.
+# Most workshops don't use extra pages. More information about extra
+# pages are included in the README:
+# https://github.com/carpentries/workshop-template#creating-extra-pages
 title: "Workshop Title"
 
 

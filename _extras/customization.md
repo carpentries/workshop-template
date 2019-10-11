@@ -10,7 +10,7 @@ You should edit the `_config.yml` configuration file in the root directory of yo
 * `carpentry` - to tell us which carpentry workshop this is, possible values are ("swc" for Software Carpentry workshops, "dc" for Data Carpentry workshops, "lc" for Library Carpentry Workshops, or "cp" for general Carpentries events such as instructor trainings).
 * `curriculum` - for Data Carpentry, which one of the curriculum is being taught. Possible values are: `dc-ecology`, `dc-genomics`, `dc-socsci`, `dc-geospatial`.
 * `flavor` - `r` or `python` depending on which lessons are being taught at the workshop (currently only for Data Carpentry workshops)
-* `title` - overall title for the workshop used by all pages
+* `title` - overall title for the workshop. If set (i.e., different from "Workshop Title" or empty), it will appear in the "jumbotron" (the gray box at the top of the page). This variable is also used for the title of the extra pages. More information about extra pages are [available in the README](https://github.com/carpentries/workshop-template#creating-extra-pages).
 
 For example, if the URL for the repository is `https://github.com/gvwilson/2015-07-01-miskatonic`,
 the URL for the website will be `http://gvwilson.github.io/2015-07-01-miskatonic`.
