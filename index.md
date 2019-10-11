@@ -104,6 +104,17 @@ workshop is only open to people from a particular institution.
 {% endif %}
 
 {% comment %}
+HUMAN LANGUAGE
+{% endcomment %}
+
+{% unless site.human_language == "" %}
+<p id="human-language">
+<strong>The course will be conducted in {{ site.human_language }}.</strong> For this course, we will expect our participants to have basic understanding of {{ site.human_language }}. We will have several helpers to assist you if you need some terms to be translated.
+</p>
+{% endunless %}
+
+
+{% comment %}
 LOCATION
 
 This block displays the address and links to maps showing directions
