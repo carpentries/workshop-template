@@ -27,35 +27,36 @@
               </li>
               <li>
                 <strong>
-                  Select "Use the nano editor by default" and click on "Next".
+                  From the dropdown menu select "Use the nano editor by default" and click on "Next".
                 </strong>
               </li>
               {% comment %} Adjusting your PATH environment {% endcomment %}
               <li>
-                Keep "Git from the command line and also from 3rd-party software" selected and click on "Next".
-                If you forgot to do this programs that you need for the workshop will not work properly.
-                If this happens rerun the installer and select the appropriate option.
+                Ensure that "Git from the command line and also from 3rd-party software" is selected and click on "Next". (If you don't do this gitbash will not work properly, requiring you to remove the GitBash installation, re-run the installer and to select the "Git from the command line and also from 3rd-party software" option.)
               </li>
               {% comment %} Choosing the SSH executable {% endcomment %}
-              <li>Click on "Next".</li>
               {% comment %} Choosing HTTPS transport backend {% endcomment %}
-              <li>Select "Use the native Windows Secure Channel library", and click "Next".</li>
+              <li>
+		Ensure that "Use the native Windows Secure Channel library" is selected and click on "Next".
+	      </li>
               {% comment %} This should mean that people stuck behind corporate firewalls that do MITM attacks
                                  with their own root CA are still able to access remote git repos. {% endcomment %}
               {% comment %} Configuring the line ending conversions {% endcomment %}
               <li>
-                Keep "Checkout Windows-style, commit Unix-style line endings" selected and click on "Next".
+                Ensure that "Checkout Windows-style, commit Unix-style line endings" is selected and click on "Next".
               </li>
               {% comment %} Configuring the terminal emulator to use with Git Bash {% endcomment %}
               <li>
                 <strong>
-                  Select "Use Windows' default console window" and click on "Next".
+                  Ensure that "Use Windows' default console window" is selected and click on "Next".
                 </strong>
               </li>
               {% comment %} Configuring extra options {% endcomment %}
-              <li>Leave all three items selected, and click on "Next".</li>
+              <li>
+		Ensure that "Enable file system caching" and "Enable Git Credential Manager" are selected and click on "Next".
+              </li>
               {% comment %} Configuring experimental options {% endcomment %}
-              <li>Do not select the experimental option. Click "Install".</li>
+              <li>Click on "Install".</li>
               {% comment %} Installing {% endcomment %}
               {% comment %} Completing the Git Setup Wizard {% endcomment %}
               <li>Click on "Finish".</li>
@@ -73,6 +74,10 @@
               <li>Quit command prompt by typing <code>exit</code> then pressing [Enter]</li>
             </ol>
           </li>
+          
+          
+          
+          
         </ol>
         <p>This will provide you with both Git and Bash in the Git Bash program.</p>
       </article>
