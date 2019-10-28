@@ -255,7 +255,7 @@ or [mail us][email].
 [dc-site]: http://datacarpentry.org
 [design]: https://carpentries.github.io/workshop-template/design/
 [faq]: https://carpentries.github.io/workshop-template/faq/
-[github-project-pages]: https://help.github.com/articles/creating-project-pages-manually/
+[github-project-pages]: https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site
 [importer]: https://github.com/new/import
 [issues]: https://github.com/carpentries/workshop-template/issues
 [jekyll-windows]: http://jekyll-windows.juthilo.com/
