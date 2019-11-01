@@ -165,20 +165,29 @@ def check_date(this_date):
 
 
 @look_for_fixme
-def check_latitude_longitude(latlng):
+def check_latitude(latitude):
     """
-    'latlng' must be a valid latitude and longitude represented as two
-    floating-point numbers separated by a comma.
+    'latitude' must be a valid latitude represented as a
+    floating-point number separated by a comma.
     """
 
     try:
-        lat, lng = latlng.split(',')
-        lat = float(lat)
-        lng = float(lng)
-        return (-90.0 <= lat <= 90.0) and (-180.0 <= lng <= 180.0)
+        lat = float(latitude)
+        return (-90.0 <= lat <= 90.0)
     except ValueError:
         return False
 
+def check_longitude(longitude):
+    """
+    'longitude' must be a valid latitude represented as a
+    floating-point number separated by a comma.
+    """
+
+    try:
+        lat = float(longitude)
+        return (-180.0 <= lat <= 180)
+    except ValueError:
+        return False
 
 def check_instructors(instructors):
     """
@@ -281,9 +290,13 @@ HANDLERS = {
                    'enddate invalid. Must be of format year-month-day, i.e.,' +
                    ' 2014-01-31'),
 
-    'latlng':     (True, check_latitude_longitude,
-                   'latlng invalid. Check that it is two floating point ' +
-                   'numbers, separated by a comma'),
+    'latitude':    (True, check_latitude,
+                   'latitude invalid. Check that it is a floating point, ' +
+                   'between -90 and 90'),
+
+    'longitude':    (True, check_longitude,
+                   'longitude invalid. Check that it is a floating point, ' +
+                   'between -180 and 180'),
 
     'instructor': (True, check_instructors,
                    'instructor list isn\'t a valid list of format ' +
