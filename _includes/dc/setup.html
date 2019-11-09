@@ -1,0 +1,34 @@
+
+{% if site.curriculum == "dc-ecology" %}
+<p> Please visit the setup instructions for each lesson that will be covered in your workshop:</p>
+<ul>
+  <li><a href="https://datacarpentry.org/spreadsheet-ecology-lesson/setup.html">Spreadsheets</a></li>
+  <li><a href="https://datacarpentry.org/OpenRefine-ecology-lesson/setup.html">OpenRefine</a></li>
+  <li><a href="https://datacarpentry.org/sql-ecology-lesson/setup.html">SQL</a></li>
+  {% if site.flavor == "r" %}
+  <li><a href="https://datacarpentry.org/R-ecology-lesson/#setup-instructions">R and RStudio</a></li>
+  {% elsif site.flavor == "python" %}
+  <li><a href="https://datacarpentry.org/python-ecology-lesson/setup.html">Python</a></li>
+  {% else %}
+  {% include warning-flavor.html %}
+  {% endif %}
+</ul>
+
+{% elsif site.curriculum == "dc-genomics" %}
+<p>The setup instructions for the Data Carpentry Genomics workshops can be found at <a href="https://datacarpentry.org/genomics-workshop/setup.html">the workshop overview site</a></p>.
+
+{% elsif site.curriculum == "dc-socsci" %}
+<p> Please visit the setup instructions for the each lesson that will be covered in your workshop:</p>
+  <ul>
+  <li><a href="https://datacarpentry.org/spreadsheets-socialsci/setup.html">Spreadsheets</a></li>
+  <li><a href="https://datacarpentry.org/openrefine-socialsci/setup.html">OpenRefine</a></li>
+  <li><a href="https://datacarpentry.org/sql-ecology-lesson/setup.html">SQL</a></li>
+  <li><a href="https://datacarpentry.org/r-socialsci/setup.html">R and RStudio</a></li>
+  </ul>
+
+{% elsif site.curriculum == "dc-geospatial" %}
+<p>The setup instructions for the Data Carpentry Geospatial workshop can be found at <a href="https://datacarpentry.org/geospatial-workshop/setup.html">the workshop overview site</a>.</p>
+
+{% else %}
+{% include warning-curriculum.html %}
+{% endif %}

@@ -4,12 +4,37 @@
 
 # Which carpentry is this ("swc", "dc", "lc", or "cp")?
 # swc: Software Carpentry
-# dc: Data Carpentry
-# lc: Library Carpentry
-# cp: Carpentries (to use for instructor traning for instance)
+#  dc: Data Carpentry
+#  lc: Library Carpentry
+#  cp: Carpentries (to use for instructor training for instance)
+# Note that for regular workshops, you should use:
+#  https://github.com/carpentries/workshop-template
+# and for instructor training events you should use:
+#  https://github.com/carpentries/training-template
 carpentry: "swc"
 
-# Overall title for pages.
+# This option is currently only needed for Data Carpentry workshops.
+# The value of the variable will be ignored for Software Carpentry and
+# Library Carpentry workshops.
+# Possible values are:
+# dc-ecology: for Data Carpentry Ecology workshops
+# dc-genomics: for Data Carpentry Genomics
+# dc-socsci: for Data Carpentry Social Sciences
+# dc-geospatial: for Data Carpentry Geospatial
+curriculum: "FIXME"
+
+# If there is both an R and python official version of a curriculum, change the
+# value of the variable below ("flavor") to get the schedule updated accordingly
+# (valid values are 'r' or 'python').
+# Note: this is only for Data Carpentry curricula at this time.
+flavor: "r"
+
+# Overall title for the Workshop.
+# This variable is used to (optionally) add a title in the "jumbotron"
+# (the grey box at the top of the page), and to the extra pages.
+# Most workshops don't use extra pages. More information about extra
+# pages are included in the README:
+# https://github.com/carpentries/workshop-template#creating-extra-pages
 title: "Workshop Title"
 
 
@@ -31,7 +56,7 @@ repository: <USERNAME>/<PROJECT>
 email: "team@carpentries.org"
 
 # Sites.
-amy_site: "https://amy.software-carpentry.org/workshops"
+amy_site: "https://amy.carpentries.org/workshops"
 carpentries_github: "https://github.com/carpentries"
 carpentries_pages: "https://carpentries.github.io"
 carpentries_site: "https://carpentries.org/"
@@ -48,13 +73,8 @@ workshop_repo: "https://github.com/carpentries/workshop-template"
 workshop_site: "https://carpentries.github.io/workshop-template"
 
 # Surveys.
-swc_pre_survey: "https://www.surveymonkey.com/r/swc_pre_workshop_v1?workshop_id="
-swc_post_survey: "https://www.surveymonkey.com/r/swc_post_workshop_v1?workshop_id="
-training_post_survey: "https://www.surveymonkey.com/r/post-instructor-training"
-dc_pre_survey: "https://www.surveymonkey.com/r/dcpreworkshopassessment?workshop_id="
-dc_post_survey: "https://www.surveymonkey.com/r/dcpostworkshopassessment?workshop_id="
-lc_pre_survey: "https://www.surveymonkey.com/r/lcpreworkshopsurvey?workshop_id="
-lc_post_survey: "https://www.surveymonkey.com/r/lcpostworkshopsurvey?workshop_id="
+pre_survey: "https://carpentries.typeform.com/to/wi32rS?slug="
+post_survey: "https://carpentries.typeform.com/to/UgVdRQ?slug="
 
 # Start time in minutes (0 to be clock-independent, 540 to show a start at 09:00 am).
 start_time: 0
