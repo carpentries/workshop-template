@@ -280,7 +280,9 @@ HANDLERS = {
                    '"Jan" and four-letter years like "2025"'),
 
     'humantime':  (True, check_humantime,
-                   'humantime doesn\'t include numbers'),
+                   'humantime is misformatted. Acceptable formats are '
+                   '"9:00 am - 5:00 pm", "09:00am - 05:00pm", "09:00-17:00" '
+                   '(spaces are ignored).'),
 
     'startdate':  (True, check_date,
                    'startdate invalid. Must be of format year-month-day, ' +
