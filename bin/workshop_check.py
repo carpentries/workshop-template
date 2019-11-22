@@ -264,7 +264,7 @@ def check_pass(value):
 HANDLERS = {
     'layout':     (True, check_layout, 'layout isn\'t "workshop"'),
 
-    'carpentry':  (True, check_carpentry, 'carpentry isn\'t in ' +
+    'carpentry':  (False, check_carpentry, 'carpentry isn\'t in ' +
                    ', '.join(CARPENTRIES)),
 
     'country':    (True, check_country,
