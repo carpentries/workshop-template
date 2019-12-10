@@ -29,10 +29,10 @@ And run 'make workshop-check' *before* committing to make sure that changes are 
 {% endcomment %}
 
 
-
 {% comment %}
 For a workshop please delete the following block
 {% endcomment %}
+
 <div class="alert alert-danger">
 This is the workshop template. Delete these lines and use it to customize your
 own website. If you are running a self-organized workshop or have not put in a
@@ -145,14 +145,6 @@ Modify the block below if there are any special requirements.
   Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on. They should have a few specific software packages installed (listed <a href="#setup">below</a>).
 </p>
 
-{% comment%}
-CODE OF CONDUCT
-{% endcomment %}
-<p id="code-of-conduct">
-<strong>Code of Conduct:</strong>  Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>. This document also outlines how to report an incident if needed.
-</p>
-
-
 {% comment %}
 ACCESSIBILITY
 
@@ -200,6 +192,21 @@ Display the contact email address set in the configuration file.
   to-be-announced
   {% endif %}
   for more information.
+</p>
+
+<hr/>
+
+{% comment%}
+CODE OF CONDUCT
+{% endcomment %}
+<h2 id="code-of-conduct">Code of Conduct</h2>
+
+<p>
+Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>.This document also outlines how to report an incident if needed.
+</p>
+
+<p class="text-center">
+<button type="button" class="btn btn-info">Report a Code of Conduct Incident</button>
 </p>
 
 <hr/>
