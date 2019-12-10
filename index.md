@@ -206,7 +206,7 @@ Everyone who participates in Carpentries activities is required to conform to th
 </p>
 
 <p class="text-center">
-<button type="button" class="btn btn-info btn-lg">Report a Code of Conduct Incident</button>
+<button type="button" class="btn btn-info">Report a Code of Conduct Incident</button>
 </p>
 
 <hr/>
