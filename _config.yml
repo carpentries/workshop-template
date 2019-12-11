@@ -37,8 +37,9 @@ flavor: "r"
 # https://github.com/carpentries/workshop-template#creating-extra-pages
 title: "Workshop Title"
 
-# If this variable is set to something else than `""`, the language in which the
-# workshop will be taught will be included in the workshop description.
+## human_language: the language in which the workshop is taught.
+# If set to anything other than "", a note about the language
+# of the workshop is added to the workshop description.
 human_language: ""
 
 #------------------------------------------------------------

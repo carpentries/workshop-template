@@ -109,7 +109,10 @@ HUMAN LANGUAGE
 
 {% unless site.human_language == "" %}
 <p id="human-language">
-<strong>The course will be conducted in {{ site.human_language }}.</strong> For this course, we will expect our participants to have basic understanding of {{ site.human_language }}. We will have several helpers to assist you if you need some terms to be translated.
+  <strong>The workshop will be conducted in {{ site.human_language }}.</strong>
+  For this course, we will expect our participants to have basic understanding
+  of {{ site.human_language }}. We will have several helpers to assist you if
+  you need assistance with understanding the lesson material.
 </p>
 {% endunless %}
 
