@@ -251,10 +251,10 @@ please [file an issue][issues]
 or [mail us][email].
 
 [email]: mailto:team@carpentries.org
-[customization]: https://carpentries.github.io/workshop-template/customization/
+[customization]: https://carpentries.github.io/workshop-template/customization/index.html
 [dc-site]: http://datacarpentry.org
 [design]: https://carpentries.github.io/workshop-template/design/
-[faq]: https://carpentries.github.io/workshop-template/faq/
+[faq]: https://carpentries.github.io/workshop-template/faq/index.html
 [github-project-pages]: https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site
 [importer]: https://github.com/new/import
 [issues]: https://github.com/carpentries/workshop-template/issues
