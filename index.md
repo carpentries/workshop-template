@@ -30,7 +30,8 @@ And run 'make workshop-check' *before* committing to make sure that changes are 
 
 
 {% comment %}
-For a workshop please delete the following block
+8< ----------- For a workshop delete from here --------------
+For a workshop please delete the following block until the next dashed-line
 {% endcomment %}
 
 <div class="alert alert-danger">
@@ -41,6 +42,11 @@ workshop request yet, please also fill in
 about your workshop and our administrator may contact you if we need any extra
 information.
 </div>
+
+{% comment %}
+8< --------------------- until here --------------------------
+{% endcomment %}
+
 
 {% comment %}
 Check DC curriculum
