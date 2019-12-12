@@ -260,7 +260,7 @@
 
   <p>
     We will teach Python using the <a href="https://jupyter.org/">Jupyter Notebook</a>,
-    a programming environment that runs in a web browser. For this to work you will need a reasonably
+    a programming environment that runs in a web browser (Jupyter Notebook will be installed by Anaconda). For this to work you will need a reasonably
     up-to-date browser. The current versions of the Chrome, Safari and
     Firefox browsers are all
     <a href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatibility">supported</a>
@@ -279,44 +279,45 @@
       <article role="tabpanel" class="tab-pane active" id="python-windows">
         <a href="https://www.youtube.com/watch?v=xxQ0mzZ8UvA">Video Tutorial</a>
         <ol>
-          <li>Open <a href="https://www.anaconda.com/distribution/#download-section">https://www.anaconda.com/download/#windows</a> with your web browser.</li>
-          <li>Download the Python 3 installer for Windows.</li>
-          <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Add Anaconda to my PATH environment variable</strong>.</li>
+          <li>Open <a href="https://www.anaconda.com/distribution/#download-section">https://www.anaconda.com/distribution/#download-section</a> with your web browser.</li>
+          <li>Download the Anaconda for Windows installer with Python 3. (If you are not sure which version to choose, you probably want the 64-bit Graphical Installer <em>Anaconda3-...-Windows-x86_64.exe</em>)</li>
+          <li>Install Python 3 by running the Anaconda Installer, using all of the defaults for installation <em>except</em> make sure to check <strong>Add Anaconda to my PATH environment variable</strong>.</li>
         </ol>
       </article>
       <article role="tabpanel" class="tab-pane active" id="python-macos">
         <a href="https://www.youtube.com/watch?v=TcSAln46u9U">Video Tutorial</a>
         <ol>
-          <li>Open <a href="https://www.anaconda.com/distribution/#download-section">https://www.anaconda.com/download/#macos</a> with your web browser.</li>
-          <li>Download the Python 3 installer for OS X.</li>
-          <li>Install Python 3 using all of the defaults for installation.</li>
+          <li>Open <a href="https://www.anaconda.com/distribution/#download-section">https://www.anaconda.com/distribution/#download-section</a> with your web browser.</li>
+          <li>Download the Anaconda Installer with Python 3 for macOS (you can either use the Graphical or the Command Line Installer).</li>
+          <li>Install Python 3 by running the Anaconda Installer using all of the defaults for installation.</li>
         </ol>
       </article>
       <article role="tabpanel" class="tab-pane active" id="python-linux">
         <ol>
-          <li>Open <a href="https://www.anaconda.com/distribution/#download-section">https://www.anaconda.com/download/#linux</a> with your web browser.</li>
-          <li>Download the Python 3 installer for Linux.<br>
+          <li>Open <a href="https://www.anaconda.com/distribution/#download-section">https://www.anaconda.com/distribution/#download-section</a> with your web browser.</li>
+          <li>Download the Anaconda Installer with Python 3 for Linux.<br>
             (The installation requires using the shell. If you aren't
             comfortable doing the installation yourself
             stop here and request help at the workshop.)
           </li>
           <li>
-            Open a terminal window.
+            Open a terminal window and navigate to the directory where
+            the executable is downloaded (e.g., `cd ~/Downloads`).
           </li>
           <li>
             Type <pre>bash Anaconda3-</pre> and then press
-            <kbd>Tab</kbd>. The name of the file you just downloaded should
-            appear. If it does not, navigate to the folder where you
-            downloaded the file, for example with:
-            <pre>cd Downloads</pre>
-            Then, try again.
+            <kbd>Tab</kbd> to autocomplete the full file name. The name of
+            file you just downloaded should appear.
           </li>
           <li>
-            Press <kbd>Return</kbd>. You will follow the text-only prompts. To move through
-            the text, press <kbd>Spacebar</kbd>. Type <code>yes</code> and
-            press enter to approve the license. Press enter to approve the
-            default location for the files. Type <code>yes</code> and
-            press enter to prepend Anaconda to your <code>PATH</code>
+            Press <kbd>Enter</kbd>.
+            You will follow the text-only prompts.
+            To move through the text, press <kbd>Spacebar</kbd>.
+            Type <code>yes</code> and press enter to approve the license.
+            Press <kbd>Enter</kbd> to approve the default location
+            for the files.
+            Type <code>yes</code> and press <kbd>Enter</kbd>
+            to prepend Anaconda to your <code>PATH</code>
             (this makes the Anaconda distribution the default Python).
           </li>
           <li>
