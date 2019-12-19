@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 '''Check that a workshop's index.html metadata is valid.  See the
 docstrings on the checking functions for a summary of the checks.
 '''
@@ -18,7 +16,6 @@ EVENTBRITE_PATTERN = r'\d{9,10}'
 URL_PATTERN = r'https?://.+'
 
 # Defaults.
-CARPENTRIES = ("dc", "swc", "lc", "cp")
 DEFAULT_CONTACT_EMAIL = 'admin@software-carpentry.org'
 
 USAGE = 'Usage: "workshop_check.py path/to/root/directory"'
@@ -87,13 +84,6 @@ def check_layout(layout):
     '''"layout" in YAML header must be "workshop".'''
 
     return layout == 'workshop'
-
-
-@look_for_fixme
-def check_carpentry(layout):
-    '''"carpentry" in YAML header must be "dc", "swc", "lc", or "cp".'''
-
-    return layout in CARPENTRIES
 
 
 @look_for_fixme
@@ -264,9 +254,6 @@ def check_pass(value):
 HANDLERS = {
     'layout':     (True, check_layout, 'layout isn\'t "workshop"'),
 
-    'carpentry':  (True, check_carpentry, 'carpentry isn\'t in ' +
-                   ', '.join(CARPENTRIES)),
-
     'country':    (True, check_country,
                    'country invalid: must use lowercase two-letter ISO code ' +
                    'from ' + ', '.join(ISO_COUNTRY)),
@@ -280,7 +267,9 @@ HANDLERS = {
                    '"Jan" and four-letter years like "2025"'),
 
     'humantime':  (True, check_humantime,
-                   'humantime doesn\'t include numbers'),
+                   'humantime is misformatted. Acceptable formats are '
+                   '"9:00 am - 5:00 pm", "09:00am - 05:00pm", "09:00-17:00" '
+                   '(spaces are ignored).'),
 
     'startdate':  (True, check_date,
                    'startdate invalid. Must be of format year-month-day, ' +

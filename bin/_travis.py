@@ -8,8 +8,7 @@ with open("index.md", 'r') as reader:
 
 yaml_data = yaml.load(yaml_to_load, Loader=yaml.Loader) # To deal with depreciation warnings, we need Loader=Loader
 
-	
-yaml_data['carpentry']="swc" 
+
 yaml_data['venue']="Foo" 
 yaml_data['address']="Room 123" 
 yaml_data['country']="us" 
