@@ -87,23 +87,31 @@
       </article>
       <article role="tabpanel" class="tab-pane active" id="shell-macos">
         <p>
-          The default shell prior to macOS 10.15 (Catalina) is Bash, and
+          The default shell in some versions of macOS is Bash, and
 	  Bash is available in all versions, so no need to install anything.
 	  You access Bash from the Terminal (found in
 	  <code>/Applications/Utilities</code>).
           See the Git installation <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">video tutorial</a>
           for an example on how to open the Terminal.
           You may want to keep Terminal in your dock for this workshop.
-	  If you are using macOS 10.15 (or later), you can run Bash by opening a
-          terminal and typing <code>bash</code>.
+	</p>
+	<p>
+          To see if your default shell is bash type <code>echo $SHELL</code> in
+          Terminal and press the enter/return key.  If the message printed does
+	  not end '/bash' then your default is something else and you can run
+	  Bash by typing <code>bash</code>.
         </p>
       </article>
       <article role="tabpanel" class="tab-pane active" id="shell-linux">
         <p>
-          The default shell is usually Bash, but if your
-          machine is set up differently you can run it by opening a
-          terminal and typing <code>bash</code>.  There is no need to
+          The default shell is usually Bash and there is usually no need to
           install anything.
+        </p>
+        <p>
+          To see if your default shell is bash type <code>echo $SHELL</code> in
+          a terminal and press the enter/return key.  If the message printed does
+	  not end '/bash' then your default is something else and you can run
+	  Bash by typing <code>bash</code>.
         </p>
       </article>
     </div>
