@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Customizing Your Workshop's Website
-permalink: /customization/
+permalink: /customization/index.html
 ---
 ## Configuration File `_config.yml`
 
