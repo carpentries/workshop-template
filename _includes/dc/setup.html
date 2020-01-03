@@ -1,0 +1,67 @@
+
+{% comment %}
+Ecology workshops
+{% endcomment %}
+
+
+{% if site.curriculum == "dc-ecology" %}
+
+{% if site.flavor == "r" %}
+<p>
+  The setup instructions for the Data Carpentry Ecology workshops (with R)
+  can be found at <a href="https://datacarpentry.org/ecology-workshop/setup-r-workshop.html">
+    the workshop overview site</a>.
+</p>
+
+{% elsif site.flavor == "python" %}
+<p>
+  The setup instructions for the Data Carpentry Ecology workshops (with Python)
+  can be found at <a href="https://datacarpentry.org/ecology-workshop/setup-python-workshop.html">
+    the workshop overview site</a>.
+</p>
+{% else %}
+{% include warning-flavor.html %}
+{% endif %}
+
+{% comment %}
+Genomics workshops
+{% endcomment %}
+
+{% elsif site.curriculum == "dc-genomics" %}
+<p>The setup instructions for the Data Carpentry Genomics workshops can be found at <a href="https://datacarpentry.org/genomics-workshop/setup.html">the workshop overview site</a></p>.
+
+
+{% comment %}
+Social sciences workshops
+{% endcomment %}
+
+{% elsif site.curriculum == "dc-socsci" %}
+
+{% if site.flavor == "r" %}
+<p>
+  The setup instructions for the Data Carpentry Social Sciences
+  workshops (with R) can be found at <a href="https://datacarpentry.org/socialsci-workshop/setup-r-workshop.html">
+    the workshop overview site</a>.
+</p>
+
+{% elsif site.flavor == "python" %}
+<p>
+  The setup instructions for the Data Carpentry Social Sciences workshops (with Python)
+  can be found at <a href="https://datacarpentry.org/socialsci-workshop/setup-python-workshop.html">
+    the workshop overview site</a>.
+</p>
+{% else %}
+{% include warning-flavor.html %}
+{% endif %}
+
+
+{% comment %}
+Geospatial workshops
+{% endcomment %}
+
+{% elsif site.curriculum == "dc-geospatial" %}
+<p>The setup instructions for the Data Carpentry Geospatial workshop can be found at <a href="https://datacarpentry.org/geospatial-workshop/setup.html">the workshop overview site</a>.</p>
+
+{% else %}
+{% include warning-curriculum.html %}
+{% endif %}

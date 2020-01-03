@@ -8,13 +8,13 @@ with open("index.md", 'r') as reader:
 
 yaml_data = yaml.load(yaml_to_load, Loader=yaml.Loader) # To deal with depreciation warnings, we need Loader=Loader
 
-	
-yaml_data['carpentry']="swc" 
+
 yaml_data['venue']="Foo" 
 yaml_data['address']="Room 123" 
 yaml_data['country']="us" 
 yaml_data['language']="en" 
-yaml_data['latlng']="0,0" 
+yaml_data['latitude']="0"
+yaml_data['longitude']="0"
 yaml_data['humandate']="Jan 01-02, 2020" 
 yaml_data['humantime']="9:00 am - 4:30 pm" 
 yaml_data['startdate']= datetime.datetime.today()

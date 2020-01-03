@@ -1,16 +1,16 @@
 ---
 layout: page
 title: Customizing Your Workshop's Website
-permalink: /customization/
+permalink: /customization/index.html
 ---
 ## Configuration File `_config.yml`
 
 You should edit the `_config.yml` configuration file in the root directory of your workshop to configure some site-wide variables and make the site function correctly:
 
-* `carpentry` - to tell us which carpentry workshop this is, possible values are ("swc", "dc" or "lc")
-* `title` - overall title for all pages
-* `workshop_repo` - the URL of your workshop repository on GitHub
-* `workshop_site` - the repository's GitHub Pages URL
+* `carpentry` - to tell us which carpentry workshop this is, possible values are ("swc" for Software Carpentry workshops, "dc" for Data Carpentry workshops, "lc" for Library Carpentry Workshops, or "cp" for general Carpentries events such as instructor trainings).
+* `curriculum` - for Data Carpentry, which one of the curriculum is being taught. Possible values are: `dc-ecology`, `dc-genomics`, `dc-socsci`, `dc-geospatial`.
+* `flavor` - `r` or `python` depending on which lessons are being taught at the workshop (currently only for Data Carpentry workshops)
+* `title` - overall title for the workshop. If set (i.e., different from "Workshop Title" or empty), it will appear in the "jumbotron" (the gray box at the top of the page). This variable is also used for the title of the extra pages. More information about extra pages are [available in the README](https://github.com/carpentries/workshop-template#creating-extra-pages).
 
 For example, if the URL for the repository is `https://github.com/gvwilson/2015-07-01-miskatonic`,
 the URL for the website will be `http://gvwilson.github.io/2015-07-01-miskatonic`.
@@ -23,9 +23,6 @@ Your workshop's home page lives in `index.md`,
 which must define the following values in its header:
 
 *   `layout` must be `workshop`.
-
-*   `carpentry` must be either "dc" (for Data Carpentry),  "swc" (for
-    Software Carpentry) or "lc" (for Library Carpentry).
 
 *   `venue` is the short name of the institution or group hosting the
     workshop, like "Euphoric State University".  It should *not*
@@ -47,12 +44,10 @@ which must define the following values in its header:
     and languages: "ar" is Arabic when used for a language, but
     Argentina when used for a country.
 
-*   `latlng` is the latitude and longitude of the workshop site (so we
-    can put a pin on our map).  You can use
-    [this site](https://getlatlong.net/) to find these
-    values.  You can *not* put spaces around the comma separating the
-    latitude from the longitude.
-
+*   `latitude` and `longitude` are the latitude and longitude of the workshop
+    site (so we can put a pin on our map). You can use
+    [this site](https://getlatlong.net/) to find these values.
+    
 *  `humandate` is the human-friendly start and end date for the
     workshop.  Please use three-letter month names and abbreviations
     (e.g., `Jul` instead of `July`), since these values are displayed
@@ -114,9 +109,13 @@ inside the `_includes` folder.
 
 ## Home Page: Setup
 
-You should delete the pieces of the `Setup` section
-related to software you will not be using in your workshop,
-so that learners don't spend time installing software they don't need.
+You may have to edit the `setup.html` located
+in the `dc`, `lc` or `swc` folders
+inside the `_includes` folder 
+that describes the software and data
+you will **not** be using in your workshop, 
+so that learners don't spend time installing
+software they don't need.
 
 ## Setup: Installation tests
 
