@@ -118,7 +118,7 @@ can use https://itouchmap.com/latlong.html to find the lat/long of an
 address.
 {% endcomment %}
 {% assign begin_address = page.address | slice: 0, 4 | downcase  %}
-{% if site.address == "online" %}
+{% if page.address == "online" %}
 {% assign online = "true_private" %}
 {% elsif begin_address contains "http" %}
 {% assign online = "true_public" %}
