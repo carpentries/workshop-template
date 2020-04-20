@@ -89,7 +89,7 @@ please [get in touch](#getting-and-giving-help).
     git clone -b gh-pages https://github.com/your_username/YYYY-MM-DD-site
     ~~~
 
-    You should specify `-b gh-pages` to checkout the gh-pages branch because the imported 
+    You should specify `-b gh-pages` to checkout the gh-pages branch because the 
     repository doesn't have a `master` branch.
 
     In order to view your changes once you are done editing,
