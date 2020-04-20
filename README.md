@@ -6,7 +6,7 @@ This repository is The Carpentries' ([Software Carpentry][swc-site], [Data Carpe
 template for creating websites for workshops.
 
 1.  Please *do not fork this repository directly on GitHub.*
-    Instead, please use GitHub's importer following [the instructions below](#creating-a-repository)
+    Instead, please use GitHub's "template" function following [the instructions below](#creating-a-repository)
     to copy this `workshop-template` repository and customize it for your workshop.
 
 2.  Please *do your work in your repository's `gh-pages` branch*,
@@ -32,38 +32,19 @@ for your learners to practice in.
     (If you do not have an account, you can quickly create one for free.)
     You must be logged in for the remaining steps to work.
 
-2.  Go to <a href="https://github.com/new/import" target="_blank">GitHub's
-    importer</a>. Note that you do not want to create a fork because any
-    particular user can only have one fork of a repository. Instructors
-    frequently teach more than one workshop and therefore need multiple copies
-    of the repository.
+2.  In this page, click on the green "Use this template" button (top right)
 
-3.  Paste the url of this repo as the old repository to clone:
-    <https://github.com/carpentries/workshop-template>.
-
-4.  Select the owner for your new repository.
+3.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
 
-5.  Choose a name for your workshop website repository.
+4.  Choose a name for your workshop website repository.
     This name should have the form `YYYY-MM-DD-site`,
     e.g., `2016-12-01-miskatonic`,
     where `YYYY-MM-DD` is the start date of the workshop.
 
-6.  Make sure the repository is public.
+6.  Make sure the repository is public, and click on "Create repository from template".
+You will be redirected to your new copy of the workshop template.
 
-7.  At this point, you should have a page like this:
-
-    ![](fig/using-github-import.png?raw=true)
-
-    You can now click "Begin Import".
-    When the process is done,
-    you will receive a message like
-    "Importing complete! Your new repository jules32/2015-07-01-miskatonic is ready."
-    and you can go to the new repository by clicking on the name.
-
-**Note:**
-some people have had intermittent errors during the import process,
-possibly because of the network timing out.
 If you experience a problem, please re-try;
 if the problem persists,
 please [get in touch](#getting-and-giving-help).
@@ -108,7 +89,7 @@ please [get in touch](#getting-and-giving-help).
     git clone -b gh-pages https://github.com/your_username/YYYY-MM-DD-site
     ~~~
 
-    You should specify `-b gh-pages` to checkout the gh-pages branch because the imported 
+    You should specify `-b gh-pages` to checkout the gh-pages branch because the 
     repository doesn't have a `master` branch.
 
     In order to view your changes once you are done editing,
