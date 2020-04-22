@@ -39,6 +39,8 @@ for your learners to practice in.
 2.  In this page (<https://github.com/carpentries/workshop-template>),
     click on the green "Use this template" button (top right)
 
+    ![the 'use this template' button on GitHub](fig/select-github-use-template.png?raw=true)
+
 3.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
 
