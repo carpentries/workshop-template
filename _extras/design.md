@@ -17,9 +17,8 @@ than Git itself.
 
 2.  A user on GitHub can only have one fork of a particular repo.
     This is a problem for us because an instructor may be involved in
-    several workshops, each of which has its own website repo. GitHub
-    does not allow having multiple forks for the same repository so,
-    we use the template functionality (you could also use the
+    several workshops, each of which has its own website repo. To avoid
+    this issue, we use the template functionality (you could also use the
     `import.github.com` functionality).
 
 3.  If a repository has a file called `README.md` in its root
