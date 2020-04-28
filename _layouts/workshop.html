@@ -3,6 +3,21 @@
 {% include base_path.html %}
 {% include gh_variables.html %}
 
+{% comment %}
+
+If the workshop is online, we add ' (online)' after the name of the venue
+in the metadata so it's easier for Regional Coordinators to identify
+online workshops.
+
+{% endcomment %}
+
+{% assign begin_address = page.address | slice: 0, 4 | downcase  %}
+{% if page.address == "online" or begin_address contains "http" %}
+{% assign online = " (online)" %}
+{% else %}
+{% assign online = "" %}
+{% endif %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,14 +27,14 @@
     <meta name="enddate" content="{{page.enddate}}" />
     <meta name="humandate" content="{{page.humandate}}" />
     <meta name="country" content="{{page.country}}" />
-    <meta name="venue" content="{{page.venue}}" />
+    <meta name="venue" content="{{page.venue}}{{ online }}" />
     <meta name="address" content="{{page.address}}" />
     <meta name="latlng" content="{{page.latitude}},{{page.longitude}}" />
     <meta name="language" content="{{page.language}}" />
     <meta name="eventbrite" content="{{page.eventbrite}}" />
     <meta name="instructor" content="{{page.instructor|join:'|'}}" />
     <meta name="helper" content="{{page.helper|join:'|'}}" />
-    <meta name="contact" content="{{page.email}}" />
+    <meta name="contact" content="{{page.email|join:'|'}}" />
     <meta name="carpentry" content="{{site.carpentry}}" />
     {% if page.redirect %}
     <meta http-equiv="refresh" content="0; url={{page.redirect}}" />

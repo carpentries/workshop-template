@@ -17,9 +17,9 @@ than Git itself.
 
 2.  A user on GitHub can only have one fork of a particular repo.
     This is a problem for us because an instructor may be involved in
-    several workshops, each of which has its own website repo.  Those
-    website repositories ought to be forks of this one, but since
-    GitHub doesn't allow that, we have to use `import.github.com`.
+    several workshops, each of which has its own website repo. To avoid
+    this issue, we use the template functionality (you could also use the
+    `import.github.com` functionality).
 
 3.  If a repository has a file called `README.md` in its root
     directory, GitHub displays the contents of that file on the
@@ -34,13 +34,13 @@ than Git itself.
 5.  If an HTML or Markdown file has a header consisting of three
     dashes, some data about the page, and three more dashes:
 
-    ~~~
+    ```yaml
     ---
     key: value
     other_key: other_value
     ---
-    stuff in the page
-    ~~~
+    content of the page
+    ```
 
     then GitHub doesn't just copy the file over verbatim.  Instead, it
     runs the file through a translator called [Jekyll][jekyll] that
