@@ -131,10 +131,6 @@ address.
 {% assign online = "false" %}
 {% endif %}
 {% if page.latitude and page.longitude and online == "false" %}
-
-begin: {{ begin_address }}
-online: {{ online }}
-
 <p id="where">
   <strong>Where:</strong>
   {{page.address}}.
