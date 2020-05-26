@@ -39,7 +39,7 @@ which must define the following values in its header:
     <https://carpentries.org/upcoming_workshops/>).
 
 *   `address` is the workshop's address (including details like the
-    room number). The address should be all on one line.
+    room number). The address should be all on one line. Suggestion: "Add a Zoom link"
 
 *   `country` must be a two-letter ISO-3166 code for the country in
     which the workshop is going to take place, such as "fr" (for
