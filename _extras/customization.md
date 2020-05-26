@@ -28,7 +28,10 @@ You should not need to modify any of the other values in `_config.yml`.
 ## Home Page (`index.md`): data in the YAML header
 
 Your workshop's home page lives in `index.md`,
-which must define the following values in its header:
+which must define the values below in its header.
+If your workshop is taught online, see the
+[following section](#for-online-workshops) for customization
+options.
 
 *   `layout` must be `workshop`.
 
@@ -36,15 +39,18 @@ which must define the following values in its header:
     workshop, like "Euphoric State University".  It should *not*
     include the address or other details, since this value is
     displayed in a table on websites (e.g.,
-    <https://carpentries.org/upcoming_workshops/>).
+    <https://carpentries.org/upcoming_workshops/>). See section
+    below for value to use for online workshops.
 
 *   `address` is the workshop's address (including details like the
-    room number). The address should be all on one line. Suggestion: "Add a Zoom link"
+    room number). The address should be all on one line.
+    See section below for value to use for online workshops.
 
 *   `country` must be a two-letter ISO-3166 code for the country in
     which the workshop is going to take place, such as "fr" (for
     France) or "nz" (for New Zealand) - see [Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)
-    for a complete list.
+    for a complete list. See section below for value to use for 
+    online workshops.
 
 *   `language` is the language that will be used in the workshop.
     It must be an [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
@@ -54,7 +60,8 @@ which must define the following values in its header:
 
 *   `latitude` and `longitude` are the latitude and longitude of the workshop
     site (so we can put a pin on our map). You can use
-    [this site](https://getlatlong.net/) to find these values.
+    [this site](https://getlatlong.net/) to find these values. 
+    See section below for value to use for online workshops.
 
 *  `humandate` is the human-friendly start and end date for the
     workshop.  Please use three-letter month names and abbreviations
@@ -99,8 +106,9 @@ which must define the following values in its header:
 
 The header may optionally define the following:
 
-*   `collaborative_notes` is the URL for the Etherpad for your workshop.  If you are
-    not using an Etherpad, you can delete this line. You can create a carpentries etherpad [here](https://pad.carpentries.org/).
+*   `collaborative_notes` is the URL for the Etherpad for your workshop.
+    If you are not using an Etherpad, you can delete this line. You can
+    create a carpentries etherpad [here](https://pad.carpentries.org/).
 
 *   `eventbrite` is the multi-digit Eventbrite registration key.  If you
     are using Eventbrite, the Carpentries Regional Coordinators will
