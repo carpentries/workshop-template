@@ -1,6 +1,16 @@
 {% comment %}
   Advertising box at the top of a workshop website home page.
 {% endcomment %}
+
+{% assign begin_address = page.address | slice: 0, 4 | downcase  %}
+{% if page.address == "online" %}
+{% assign online = "true_private" %}
+{% elsif begin_address contains "http" %}
+{% assign online = "true_public" %}
+{% else %}
+{% assign online = "false" %}
+{% endif %}
+
 <div class="jumbotron">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
@@ -10,6 +20,11 @@
       <h2>{{page.venue}}</h2>
       <div class="row">
         <div class="col-md-6">
+          {% if online == "true_public" %}
+          <p>Online (<a href="{{site.address}}">link</a>)</p>
+          {% elsif online == "true_private" %}
+          <p>Online</p>
+          {% endif %}
           <p>{{page.humandate}}</p>
           <p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
         </div>
