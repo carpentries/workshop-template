@@ -51,7 +51,7 @@ than Git itself.
     `{% raw %}{% include something.html %}{% endraw %}`, which tells
     Jekyll to copy the contents of `something.html` into the file
     being translated; this is used to create standard headers and
-    footers for pages.  Another is `{{variable}}`: when Jekyll sees
+    footers for pages.  Another is `{% raw %}{{variable}}{% endraw %}`: when Jekyll sees
     this, it replaces it with the value of `variable`.  This is used
     to insert things like a contact email address and the URL for our
     Twitter account.
@@ -60,11 +60,11 @@ than Git itself.
     located in the repo's root directory, and the header of each
     individual page.  Variables from `_config.yml` are put in an
     object called `site`, and referred to as `site.variable`, so that
-    (for example) `{{site.swc_site}}` in a page is replaced by the URL
-    of the main Software Carpentry web site.  Variables from the
+    (for example) `{% raw %}{{site.swc_site}}{% endraw %}` in a page is replaced by the URL
+    of the main Software Carpentry web site ({{site.swc_site}}).  Variables from the
     page's header are put in an object called `page`, and referred to
     as `page.variable`, so if a page's header defines a variable
-    called `venue`, `{{page.venue}}` is replaced by "Euphoric State
+    called `venue`, `{% raw %}{{page.venue}}{% endraw %}` is replaced by "Euphoric State
     University" (or whatever value the variable has).
 
 8.  If a page uses `{% raw %}{% include something.html %}{% endraw %}`
