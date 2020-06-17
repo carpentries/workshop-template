@@ -163,20 +163,21 @@ For Software Carpentry workshops,
 setting the `flavor` variable in `_config.yml` to `r` or `python`
 will include the respective installation instructions for these tools.
 Additionally, by default, the installation instructions for
-a text editor, the Bash shell, and Git will be included.
+a text editor, the Bash shell, and Git are included.
 
 #### If you need to remove tools
 
-If you need to remove any of these default options,
+If you need to remove any of the instructions for the default
+set of tools,
 you can delete lines that include these instructions in
-`_includes/swc/setup.html` file.
+the `_includes/swc/setup.html` file.
 
 #### If you need to add tools
 
 If you need to add installation instructions for other tools,
 we provide installation instructions for SQL and OpenRefine.
 To make them appear on your workshop website,
-you can move the `{% include %}` statements outside the comment
+you can move the `{% raw %}{% include %}{% endraw %}` statements outside the comment
 block in `_includes/swc/setup.html`.
 
 If you need to add installation instructions for other tools,
@@ -207,7 +208,7 @@ You can either write your own instructions using the ones
 provided in `_includes/lc/setup.html` as an example,
 or, if you are using tools that already have installation instructions
 provided for Software Carpentry,
-you can add `{% include install_instructions/<filename.html> %}`
+you can add `{% raw %}{% include install_instructions/<filename.html> %}{% endraw %}`
 where `<filename.html>` needs to be replaced by one of the files
 in the `_includes/install_instructions` folder.
 
@@ -223,17 +224,25 @@ please follow the steps bellow:
 
 1.  Add the workshop-template repository as upstream:
 
-        $ git remote add upstream https://github.com/carpentries/workshop-template.git
+```bash
+$ git remote add upstream https://github.com/carpentries/workshop-template.git
+```
 
 2.  Fetch the data from upstream repository (also know as the workshop-template
     repository):
 
-        $ git pull upstream
+```bash
+$ git pull upstream
+```
 
 4.  Address possible merge conflicts, and
 
-        $ git commit -a
+```bash
+$ git commit -a
+```
 
 5.  Push the changes to your repository on GitHub:
 
-        $ git push origin gh-pages
+```bash
+$ git push origin gh-pages
+```
