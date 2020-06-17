@@ -10,11 +10,13 @@ configure some site-wide variables and make the site function correctly:
 
 * `carpentry` - to tell us which carpentry workshop this is, possible values are ("swc" for Software
   Carpentry workshops, "dc" for Data Carpentry workshops, "lc" for Library Carpentry Workshops, or
-  "cp" for general Carpentries events such as instructor trainings).
-* `curriculum` - for Data Carpentry, which one of the curriculum is being taught. Possible values
-  are: `dc-ecology`, `dc-genomics`, `dc-socsci`, `dc-geospatial`.
+  "cp" for general Carpentries events such as instructor trainings for which you should use
+  <https://github.com/carpentries/training-template> for your website template).
+* `curriculum` - for Data Carpentry and Software Carpentry, which one of the curriculum is being
+  taught. Possible values are: `dc-ecology`, `dc-genomics`, `dc-socsci`, `dc-geospatial`,
+  `swc-inflammation` and `swc-gapminder`.
 * `flavor` - `r` or `python` depending on which lessons are being taught at the workshop (currently
-  only for Data Carpentry workshops)
+  only for Data Carpentry and Software Carpentry workshops)
 * `title` - overall title for the workshop. If set (i.e., different from "Workshop Title" or empty),
   it will appear in the "jumbotron" (the gray box at the top of the page). This variable is also
   used for the title of the extra pages. More information about extra pages are [available in the
@@ -23,7 +25,7 @@ configure some site-wide variables and make the site function correctly:
 For example, if the URL for the repository is `https://github.com/gvwilson/2015-07-01-miskatonic`,
 the URL for the website will be `http://gvwilson.github.io/2015-07-01-miskatonic`.
 
-You should not need to modify any of the other values in `_config.yml`.
+You should not need to modify any of the other variable values in `_config.yml`.
 
 ## Home Page (`index.md`): data in the YAML header
 
@@ -49,7 +51,7 @@ options.
 *   `country` must be a two-letter ISO-3166 code for the country in
     which the workshop is going to take place, such as "fr" (for
     France) or "nz" (for New Zealand) - see [Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)
-    for a complete list. See section below for value to use for 
+    for a complete list. See section below for value to use for
     online workshops.
 
 *   `language` is the language that will be used in the workshop.
@@ -60,7 +62,7 @@ options.
 
 *   `latitude` and `longitude` are the latitude and longitude of the workshop
     site (so we can put a pin on our map). You can use
-    [this site](https://getlatlong.net/) to find these values. 
+    [this site](https://getlatlong.net/) to find these values.
     See section below for value to use for online workshops.
 
 *  `humandate` is the human-friendly start and end date for the
@@ -140,16 +142,68 @@ so that they show what you're actually planning to teach and when.  These
 files are located in the appropriate workshop folder (`dc`, `lc` or `swc`)
 inside the `_includes` folder.
 
-## Home Page: Setup
+## Home Page: Setup Instructions
 
-You may have to edit the `setup.html` located
-in the `dc`, `lc` or `swc` folders
-inside the `_includes` folder.
-Make sure you delete the sections for the
-software and data
-you will **not** be using in your workshop,
-so that learners don't spend time installing
-software they don't need.
+If you need assistance with customizing the setup instructions for your website,
+feel free to ask your questions in the Carpentries
+[Instructors Slack channel](https://swcarpentry.slack.com/archives/C08BVNU00)
+([join The Carpentries Slack workspace](https://swc-slack-invite.herokuapp.com/)).
+
+### Software Carpentry workshops
+
+#### Default settings
+
+For Software Carpentry workshops,
+setting the `flavor` variable in `_config.yml` to `r` or `python`
+will include the respective installation instructions for these tools.
+Additionally, by default, the installation instructions for
+a text editor, the Bash shell, and Git will be included.
+
+#### If you need to remove tools
+
+If you need to remove any of these default options,
+you can delete lines that include these instructions in
+`_includes/swc/setup.html` file.
+
+#### If you need to add tools
+
+If you need to add installation instructions for other tools,
+we provide installation instructions for SQL and OpenRefine.
+To make them appear on your workshop website,
+you can move the `{% include %}` statements outside the comment
+block in `_includes/swc/setup.html`.
+
+If you need to add installation instructions for other tools,
+you will need to write your own. You can use installation instructions
+for other tools located in the `_includes/install_instructions/` folder
+as examples.
+
+### Data Carpentry workshops
+
+For Data Carpentry workshops,
+installation instructions live on the workshop overview page for each curriculum.
+Instead of including installation instructions in the workshop template,
+the workshop template includes links to these instructions.
+The correct link will be displyed
+when using the appropriate combination of values
+for the `curriculum`  and `flavor` variables
+in the `_config.yml` file.
+
+### Library Carpentry workshops
+
+By default, Library Carpentry workshop websites
+include installation instructions for the Bash shell and Git.
+
+You may need to add installation instructions for additional tools
+you will be using during your workshop
+by editing the `_includes/lc/setup.html` file.
+You can either write your own instructions using the ones
+provided in `_includes/lc/setup.html` as an example,
+or, if you are using tools that already have installation instructions
+provided for Software Carpentry,
+you can add `{% include install_instructions/<filename.html> %}`
+where `<filename.html>` needs to be replaced by one of the files
+in the `_includes/install_instructions` folder.
 
 
 ## Updating the repository
