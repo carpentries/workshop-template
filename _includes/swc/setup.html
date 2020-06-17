@@ -1,4 +1,7 @@
-{% if site.curriculum == "swc-inflammation" or site.curriculum == "swc-gapminder" %}
+{% assign curricula = "swc-gapminder|swc-inflammation"  | split: "|" %}
+{% unless curricula contains site.curriculum %}
+{% include warning-curriculum.html %}
+{% endunless %}
 
 {% include install_instructions/shell.html %}
 {% include install_instructions/git.html %}
@@ -14,14 +17,8 @@
 
 {% comment %}
 These tools are not used very often, but you can move them outside this
-comment block to make them appear on the workshop website as needed.
+comment block to make them appear on the workshop website if needed.
 
 {% include install_instructions/sql.html %}
 {% include install_instructions/openrefine.html %}
 {% endcomment %}
-
-{% else %}
-
-{% include warning-curriculum.html %}
-
-{% endif %}
