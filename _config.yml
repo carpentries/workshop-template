@@ -35,7 +35,7 @@ curriculum: "FIXME"
 # value of the variable below ("flavor") to get the schedule and installation
 # instructions updated accordingly (valid values are 'r' or 'python').
 # Note: this is only for Data Carpentry and SWC at this time.
-flavor: "r"
+flavor: "FIXME"
 
 # Overall title for the Workshop.
 # This variable is used to (optionally) add a title in the "jumbotron"
