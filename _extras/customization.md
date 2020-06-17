@@ -3,6 +3,12 @@ layout: page
 title: Customizing Your Workshop's Website
 permalink: /customization/index.html
 ---
+
+## Table of Content
+
+* TOC
+{:toc}
+
 ## Configuration File `_config.yml`
 
 You should edit the `_config.yml` configuration file in the root directory of your workshop to
