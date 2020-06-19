@@ -224,25 +224,32 @@ please follow the steps bellow:
 
 1.  Add the workshop-template repository as upstream:
 
-```bash
+~~~
 $ git remote add upstream https://github.com/carpentries/workshop-template.git
-```
+~~~
+{: .language-bash}
 
 2.  Fetch the data from upstream repository (also know as the workshop-template
     repository):
 
-```bash
+~~~
 $ git pull upstream
-```
+~~~
+{: .language-bash}
 
 4.  Address possible merge conflicts, and
 
-```bash
+~~~
 $ git commit -a
-```
+~~~
+{: .language-bash}
 
 5.  Push the changes to your repository on GitHub:
 
-```bash
+~~~
 $ git push origin gh-pages
-```
+~~~
+{: .language-bash}
+
+
+{% include links.md %}
