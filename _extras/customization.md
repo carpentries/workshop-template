@@ -228,34 +228,30 @@ you need to get changes from this repository
 into the clone of it with your workshop page,
 please follow the steps bellow:
 
-1.  Add the workshop-template repository as upstream:
+1. Add the workshop-template repository as upstream:
+    ~~~
+    $ git remote add upstream https://github.com/carpentries/workshop-template.git
+    ~~~
+    {: .language-bash}
 
-~~~
-$ git remote add upstream https://github.com/carpentries/workshop-template.git
-~~~
-{: .language-bash}
-
-2.  Fetch the data from upstream repository (also know as the workshop-template
+2. Fetch the data from upstream repository (also know as the workshop-template
     repository):
+    ~~~
+    $ git pull upstream
+    ~~~
+    {: .language-bash}
 
-~~~
-$ git pull upstream
-~~~
-{: .language-bash}
+3. Address possible merge conflicts, and
+    ~~~
+    $ git commit -a
+    ~~~
+    {: .language-bash}
 
-4.  Address possible merge conflicts, and
-
-~~~
-$ git commit -a
-~~~
-{: .language-bash}
-
-5.  Push the changes to your repository on GitHub:
-
-~~~
-$ git push origin gh-pages
-~~~
-{: .language-bash}
+4. Push the changes to your repository on GitHub:
+    ~~~
+    $ git push origin gh-pages
+    ~~~
+    {: .language-bash}
 
 
 {% include links.md %}
