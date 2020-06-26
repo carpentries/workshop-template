@@ -37,5 +37,18 @@ $('.nav-tabs li a').click(function(){
     show_instructions();
 });
 
+  // detect misssing iframe for Eventbrite
+  $(document).ready(function(){
+      if ($('iframe').height() == 0) {
+          $('iframe').before('<p>Looks like your adblocker blocked the registration window. Please navigate to <a href="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt">https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt</a> to register.</p>');
+      }
+  });
+
+  // hide warning when site is rendered on carpentries.github.io
+  $(document).ready(function() {
+      if (location.href.startsWith("https://carpentries.github.io/workshop-template/")) {
+          $("div.alert.alert-danger").hide();
+      }
+  });
 
 </script>
