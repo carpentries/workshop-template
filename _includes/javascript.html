@@ -44,10 +44,10 @@ $('.nav-tabs li a').click(function(){
       }
   });
 
-  // hide warning when site is rendered on carpentries.github.io
+  // hide alerts when site is rendered on carpentries.github.io
   $(document).ready(function() {
       if (location.href.startsWith("https://carpentries.github.io/workshop-template/")) {
-          $("div.alert.alert-danger").hide();
+          $("div.alert").hide();
       }
   });
 
