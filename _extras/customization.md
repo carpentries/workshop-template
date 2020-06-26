@@ -20,7 +20,6 @@ configure some site-wide variables and make the site function correctly:
     - `"lc"` for Library Carpentry workshops, and
     - `"cp"` for general Carpentries events such as instructor trainings (for which you should use
       <https://github.com/carpentries/training-template> as the website template).
-
 * `curriculum` - to tell us which curriculum is being taught.
   At the moment, applicable to Software and Data Carpentry workshops only.
   Possible values are:
