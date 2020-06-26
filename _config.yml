@@ -2,6 +2,9 @@
 # Values for this workshop.
 #------------------------------------------------------------
 
+# More detailed instructions are available at:
+# https://carpentries.github.io/workshop-template/customization/index.html
+
 # Which carpentry is this ("swc", "dc", "lc", or "cp")?
 # swc: Software Carpentry
 #  dc: Data Carpentry
@@ -13,21 +16,26 @@
 #  https://github.com/carpentries/training-template
 carpentry: "swc"
 
-# This option is currently only needed for Data Carpentry workshops.
-# The value of the variable will be ignored for Software Carpentry and
-# Library Carpentry workshops.
+# This option is currently only needed for
+# Data Carpentry and Software Carpentry workshops.
+# The value of the variable will be ignored for Library Carpentry
+# workshops.
 # Possible values are:
 # dc-ecology: for Data Carpentry Ecology workshops
 # dc-genomics: for Data Carpentry Genomics
 # dc-socsci: for Data Carpentry Social Sciences
 # dc-geospatial: for Data Carpentry Geospatial
+# swc-inflammation: for Software Carpentry based on the inflammation dataset
+# swc-gapminder: for Software Carpentry based on the Gapminder dataset
 curriculum: "FIXME"
 
-# If there is both an R and python official version of a curriculum, change the
-# value of the variable below ("flavor") to get the schedule updated accordingly
-# (valid values are 'r' or 'python').
-# Note: this is only for Data Carpentry curricula at this time.
-flavor: "r"
+# If there is both an R and python official version of a curriculum
+# (as listed on https://software-carpentry.org/lessons/ and
+# https://datacarpentry.org/lessons/), change the
+# value of the variable below ("flavor") to get the schedule and installation
+# instructions updated accordingly (valid values are 'r' or 'python').
+# Note: this is only for Data Carpentry and SWC at this time.
+flavor: "FIXME"
 
 # Overall title for the Workshop.
 # This variable is used to (optionally) add a title in the "jumbotron"
@@ -51,12 +59,12 @@ kind: "workshop"
 repository: <USERNAME>/<PROJECT>
 
 # Email address, no mailto:
-# (Don't change this -- the contact address for your workshop will be set 
+# (Don't change this -- the contact address for your workshop will be set
 # in the index.md file)
 email: "team@carpentries.org"
 
 # Sites.
-amy_site: "https://amy.carpentries.org/workshops"
+amy_site: "https://amy.carpentries.org"
 carpentries_github: "https://github.com/carpentries"
 carpentries_pages: "https://carpentries.github.io"
 carpentries_site: "https://carpentries.org/"
