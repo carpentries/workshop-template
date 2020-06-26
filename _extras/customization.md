@@ -14,15 +14,21 @@ permalink: /customization/index.html
 You should edit the `_config.yml` configuration file in the root directory of your workshop to
 configure some site-wide variables and make the site function correctly:
 
-* `carpentry` - to tell us which carpentry workshop this is, possible values are ("swc" for Software
-  Carpentry workshops, "dc" for Data Carpentry workshops, "lc" for Library Carpentry Workshops, or
-  "cp" for general Carpentries events such as instructor trainings for which you should use
-  <https://github.com/carpentries/training-template> for your website template).
-* `curriculum` - for Data Carpentry and Software Carpentry, which one of the curriculum is being
-  taught. Possible values are: `dc-ecology`, `dc-genomics`, `dc-socsci`, `dc-geospatial`,
-  `swc-inflammation` and `swc-gapminder`.
-* `flavor` - `r` or `python` depending on which lessons are being taught at the workshop (currently
-  only for Data Carpentry and Software Carpentry workshops)
+* `carpentry` - to tell us which carpentry workshop this is. Possible values are:
+    - `"swc"` for Software Carpentry workshops,
+    - `"dc"` for Data Carpentry workshops,
+    - `"lc"` for Library Carpentry workshops, and
+    - `"cp"` for general Carpentries events such as instructor trainings (for which you should use
+      <https://github.com/carpentries/training-template> as the website template).
+
+* `curriculum` - to tell us which curriculum is being taught.
+  At the moment, applicable to Software and Data Carpentry workshops only.
+  Possible values are:
+    - `"dc-ecology"`, `"dc-genomics"`, `"dc-socsci"`, or `"dc-geospatial"` for Data Carpentry
+      workshops
+    - `"swc-inflammation"` or `"swc-gapminder"` for Software Carpentry workshops.
+* `flavor` - `"r"` or `"python"` depending on which lessons are being taught at the workshop
+  (currently only for Data Carpentry and Software Carpentry workshops).
 * `title` - overall title for the workshop. If set (i.e., different from "Workshop Title" or empty),
   it will appear in the "jumbotron" (the gray box at the top of the page). This variable is also
   used for the title of the extra pages. More information about extra pages are [available in the
