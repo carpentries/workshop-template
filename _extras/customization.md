@@ -145,6 +145,11 @@ following modifications:
   host institution. If it does not, use `0` for both the latitude and the
   longitude.
 
+By default, the Setup Instructions will list the installation instructions for the
+videoconferencing service Zoom.
+If you use a different videoconferencing service,
+you can edit the file in `_includes/install_instructions/videoconferencing.html`
+to include the relevant installation instructions.
 
 ## Home Page: Schedule and Syllabus
 
