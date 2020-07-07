@@ -7,9 +7,9 @@
 {% include install_instructions/git.html %}
 {% include install_instructions/editor.html %}
 
-{% if site.flavor == "r" %}
+{% if site.flavor == "r" or site.flavor == "FIXME" %}
 {% include install_instructions/r.html %}
-{% elsif site.flavor == "python" %}
+{% elsif site.flavor == "python" or site.flavor == "FIXME" %}
 {% include install_instructions/python.html %}
 {% else %}
 {% include warning-flavor.html %}
