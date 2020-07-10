@@ -395,7 +395,7 @@ If you do not use Zoom for your online workshop, edit the file
 `_includes/install_instructions/videoconferencing.html`
 to include the relevant installation instrucctions.
 {% endcomment %}
-{% if page.address == "online" %}
+{% if online != "false" %}
 {% include install_instructions/videoconferencing.html %}
 {% endif %}
 
