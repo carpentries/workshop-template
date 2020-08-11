@@ -1,12 +1,9 @@
-# Use /bin/bash instead of /bin/sh
-export SHELL = /bin/bash
-
 ## ========================================
 ## Commands for both workshop and lesson websites.
 
 # Settings
 MAKEFILES=Makefile $(wildcard *.mk)
-JEKYLL=bundle install --path .vendor/bundle && bundle update && bundle exec jekyll
+JEKYLL=bundle config --local set path .vendor/bundle && bundle install && bundle update && bundle exec jekyll
 PARSER=bin/markdown_ast.rb
 DST=_site
 
@@ -128,7 +125,7 @@ lesson-md : ${RMD_DST}
 _episodes/%.md: _episodes_rmd/%.Rmd
 	@bin/knit_lessons.sh $< $@
 
-# * lesson-check     : validate lesson Markdown
+## * lesson-check     : validate lesson Markdown
 lesson-check : lesson-fixme
 	@${PYTHON} bin/lesson_check.py -s . -p ${PARSER} -r _includes/links.md
 
