@@ -222,6 +222,20 @@ you can add `{% raw %}{% include install_instructions/<filename.html> %}{% endra
 where `<filename.html>` needs to be replaced by one of the files
 in the `_includes/install_instructions` folder.
 
+## Homepage: who can attend?
+
+If you want to specify who can attend the workshop you are advertising,
+there is a commented-out section in `index.md` that you can use to
+inform workshop website visitors of who can attend the event.
+You may want to specify that only members of your university,
+department, etc. can attend or that the event is open to the public.
+We don't provide templated text for this as each situation is different.
+We do provide a section, called "Who can attend?" for you to specify this
+information.
+
+To use it, move the {% raw %}{% endcomment %}{% endraw %} line above the
+`<p>` tag marking the beginning of this section and edit the paragraph
+to reflect the attendance policy for your workshop.
 
 ## Updating the repository
 
