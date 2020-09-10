@@ -36,7 +36,7 @@ for your learners to practice in.
     (If you do not have an account, you can quickly create one for free.)
     You must be logged in for the remaining steps to work.
 
-2.  In this page (<https://github.com/carpentries/workshop-template>),
+2.  On this page (<https://github.com/carpentries/workshop-template>),
     click on the green "Use this template" button (top right)
 
     ![the 'use this template' button on GitHub](fig/select-github-use-template.png?raw=true)
@@ -49,7 +49,8 @@ for your learners to practice in.
     e.g., `2016-12-01-miskatonic`,
     where `YYYY-MM-DD` is the start date of the workshop.
 
-5.  Make sure the repository is public, and click on "Create repository from template".
+5.  Make sure the repository is public, leave "Include all branches" unchecked, and click 
+on "Create repository from template".
 You will be redirected to your new copy of the workshop template respository.
 
 6. Your new website will be rendered at `htttps://your_username.github.io/YYYY-MM-DD-site`.
