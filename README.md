@@ -49,8 +49,12 @@ for your learners to practice in.
     e.g., `2016-12-01-miskatonic`,
     where `YYYY-MM-DD` is the start date of the workshop.
 
-6.  Make sure the repository is public, and click on "Create repository from template".
-You will be redirected to your new copy of the workshop template.
+5.  Make sure the repository is public, and click on "Create repository from template".
+You will be redirected to your new copy of the workshop template respository.
+
+6. Your new website will be rendered at `htttps://your_username.github.io/YYYY-MM-DD-site`.
+For example, if your username is `gvwilson`, the website's URL will be
+`https://gvwilson.github.io/2016-12-01-miskatonic`.
 
 If you experience a problem, please [get in touch](#getting-and-giving-help).
 

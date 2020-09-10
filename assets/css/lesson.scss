@@ -16,6 +16,7 @@ $color-source:      #360084 !default;
 
 // blockquotes
 $color-callout:     #f4fd9c !default;
+$color-caution:     #cf000e !default;
 $color-challenge:   #eec275 !default;
 $color-checklist:   #dfd2a0 !default;
 $color-discussion:  #eec275 !default;
@@ -84,16 +85,42 @@ $color-testimonial: #fc8dc1 !default;
   border-radius: 0 0 4px 4px; // 4px == @border-radius-base
 }
 
-.error::before  { background-color: #ffebe6; content: "Error"; }
-.output::before { background-color: #efefef; content: "Output"; }
-.source::before { content: "Code"; }
-.bash::before, .language-bash::before { content: "Bash"; }
-.make::before, .language-make::before { content: "Make"; }
-.matlab::before, .language-matlab::before { content: "Matlab"; }
-.python::before, .language-python::before { content: "Python"; }
-.r::before, .language-r::before { content: "R"; }
-.sql::before, .language-sql::before { content: "SQL"; }
+// Stripe above tab panels where OS tabs are shown
+ul.nav.nav-tabs {
+  background: #E1E1E1;
+  border-radius: 4px 4px 0 0;  // 4px == @border-radius-base
+}
 
+// adjust line height of links so that clickable area (of OS tabs) is 44px high
+ul.nav.nav-tabs li a { line-height: 24px; } // or 1.714285716
+
+// This color provides better contrast ratio on most backgrounds used on Carpentries websites
+// 9.24 on FFFFFF: https://webaim.org/resources/contrastchecker/?fcolor=204A6F&bcolor=FFFFFF&api (body)
+// 8.78 on F9F9F9: https://webaim.org/resources/contrastchecker/?fcolor=204A6F&bcolor=F9F9F9&api (tables)
+// 7.07 on E1E1E1: https://webaim.org/resources/contrastchecker/?fcolor=204A6F&bcolor=E1E1E1&api (tab panels)
+a { color: #204A6F; }
+
+// .yt-wrapper2 can be used for limiting maximum width of YouTube iframes only
+.yt-wrapper2 { max-width: 100%; margin: 0 auto; }
+
+// Use full width on small displays
+@media only screen and (max-width: 600px) { .yt-wrapper2 { max-width: 100%; } }
+
+.yt-wrapper {
+    height: 0;
+    margin-top: 10px;
+    padding-bottom: 56.25%;
+    position: relative;
+    width: 100%;
+}
+
+.yt-frame {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
 
 //----------------------------------------
 // Specialized blockquote environments for learning objectives, callouts, etc.
@@ -135,6 +162,7 @@ $codeblock-padding: 5px !default;
 }
 
 .callout{ @include bkSetup($color-callout, "\e146"); }
+.caution{ @include bkSetup($color-caution, "\e107"); }
 .challenge{ @include bkSetup($color-challenge, "\270f"); }
 .checklist{ @include bkSetup($color-checklist, "\e067"); }
 .discussion{ @include bkSetup($color-discussion, "\e123"); }
@@ -180,10 +208,14 @@ blockquote :not(h2) + p {
 
 blockquote { font-size: inherit; }
 
+a code {
+  color: #006cad;
+}
+
 code {
   white-space: nowrap;
   padding: 2px 5px;
-  color: #006cad;
+  color: #24292e;
   background-color: #e7e7e7;
 }
 
@@ -226,7 +258,7 @@ article pre {
   text-align: center;
 }
 
-footer .copyright,
+footer .license,
 footer .help-links
 {
     font-size: inherit;
