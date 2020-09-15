@@ -153,10 +153,10 @@ to include the relevant installation instructions.
 
 ## Home Page: Schedule and Syllabus
 
-You should edit the sections titled `Schedule` and `Syllabus`
-so that they show what you're actually planning to teach and when.  These
-files are located in the appropriate workshop folder (`dc`, `lc` or `swc`)
-inside the `_includes` folder.
+To edit the sections titled `Schedule` and `Syllabus` that appear on the website
+so that they show what you are actually planning to teach and when, you need to
+modify the files that are located in the appropriate workshop folder (`dc`, `lc`
+or `swc`) inside the `_includes` folder.
 
 ## Home Page: Setup Instructions
 
