@@ -52,7 +52,7 @@ for your learners to practice in.
 5.  Make sure the repository is public, and click on "Create repository from template".
 You will be redirected to your new copy of the workshop template respository.
 
-6. Your new website will be rendered at `htttps://your_username.github.io/YYYY-MM-DD-site`.
+6. Your new website will be rendered at `https://your_username.github.io/YYYY-MM-DD-site`.
 For example, if your username is `gvwilson`, the website's URL will be
 `https://gvwilson.github.io/2016-12-01-miskatonic`.
 
