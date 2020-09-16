@@ -36,6 +36,10 @@ online workshops.
     <meta name="helper" content="{{page.helper|join:'|'}}" />
     <meta name="contact" content="{{page.email|join:'|'}}" />
     <meta name="carpentry" content="{{site.carpentry}}" />
+
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="{{ search_domain_url }}">
+
     {% if page.redirect %}
     <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
     {% endif %}
