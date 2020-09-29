@@ -30,6 +30,11 @@ if you are teaching Git,
 please [create a separate repository](#setting-up-a-separate-repository-for-learners)
 for your learners to practice in.
 
+## Video Tutorial
+
+There is a [YouTube video](https://www.youtube.com/watch?v=_Ag1JiZzyUQ) that demonstrates how to
+create a workshop website.
+
 ## Creating a Repository
 
 1.  Log in to GitHub.
@@ -49,7 +54,7 @@ for your learners to practice in.
     e.g., `2016-12-01-miskatonic`,
     where `YYYY-MM-DD` is the start date of the workshop.
 
-5.  Make sure the repository is public, leave "Include all branches" unchecked, and click 
+5.  Make sure the repository is public, leave "Include all branches" unchecked, and click
 on "Create repository from template".
 You will be redirected to your new copy of the workshop template respository.
 
