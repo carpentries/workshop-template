@@ -330,7 +330,7 @@ SCHEDULE
 
 Show the workshop's schedule.
 
-Small changes to the schedule can be done by modifying the
+Small changes to the schedule can be made by modifying the
 `schedule.html` found in the `_includes` folder for your
 workshop type (`swc`, `lc`, or `dc`). Edit the items and
 times in the table to match your plans. You may also want to

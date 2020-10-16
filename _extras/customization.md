@@ -154,10 +154,10 @@ to include the relevant installation instructions.
 ## Home Page: Schedule
 
 By default, the template displays the typical schedule for your workshop based on
-the values of the variables set in the `_config.yml`. If you need to modify this
-schedule, you need to edit the `schedule.html` file found in the folder that
-matches the type of workshop you will be teaching (`dc`, `lc`, or `swc`) found
-in the `_includes` folder.
+the values of the variables set in the `_config.yml`. If you need to  make
+minor modifications to this schedule, you can edit the `schedule.html` file
+found in the sub-folder of the `_includes` folder that matches the type of 
+workshop you will be teaching  (`dc`, `lc`, or `swc`).
 
 If you wish to create your own custom schedule, an empty template is avaiable in
 `_includes/custom-schedule.html`. In this file, we provide the structure for a
