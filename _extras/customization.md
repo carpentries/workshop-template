@@ -153,10 +153,23 @@ to include the relevant installation instructions.
 
 ## Home Page: Schedule
 
-To edit the section titled `Schedule` that appears on the website so that it shows
-when you are planning to teach the different episodes and lessons in your workshop,
-you need to modify the `schedule.html` file located in the appropriate workshop
-folder (`dc`, `lc` or `swc`) inside the `_includes` folder.
+By default, the template displays the typical schedule for your workshop based on
+the values of the variables set in the `_config.yml`. If you need to  make
+minor modifications to this schedule, you can edit the `schedule.html` file
+found in the sub-folder of the `_includes` folder that matches the type of 
+workshop you will be teaching  (`dc`, `lc`, or `swc`).
+
+If you wish to create your own custom schedule, an empty template is avaiable in
+`_includes/custom-schedule.html`. In this file, we provide the structure for a
+4-day workshop as it is often used for online workshops. To use the custom
+schedule instead of the one provided by default in the template, delete the
+block of code found under the "Schedule" header and replace it with
+`{% include custom-schedule.html %}`.
+
+The schedule is formatted using a table. If you would like to learn more about
+how to write tables in HTML, here is an [overview from
+Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table) and
+the [w3schools](https://www.w3schools.com/html/html_tables.asp).
 
 ## Home Page: Setup Instructions
 
