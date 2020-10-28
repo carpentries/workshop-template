@@ -18,7 +18,7 @@
           <li>Download the Git for Windows <a href="https://gitforwindows.org/">installer</a>.</li>
           <li>Run the installer and follow the steps below:
             <ol>
-              {% comment %} Git 2.27.0 Setup {% endcomment %}
+              {% comment %} Git 2.29.1 Setup {% endcomment %}
               <li>
                 Click on "Next" four times (two times if you've previously
                 installed Git).  You don't need to change anything
@@ -26,8 +26,17 @@
               </li>
               <li>
                 <strong>
-                  From the dropdown menu select "Use the nano editor by default" (NOTE: you may need to scroll <emph>up</emph> to find it) and click on "Next".
+                  From the dropdown menu select "Use the Nano editor by default" (NOTE: you will need to scroll <emph>up</emph> to find it) and click on "Next".
                 </strong>
+              </li>
+              {% comment %} Adjusting the name of the initial branch in new repositories {% endcomment %}
+              <li>
+                On the page that says "Adjusting the name of the initial branch in new repositories", ensure that
+		"Let Git decide" is selected. This will ensure the highest level of compatibility for our lessons.
+		{% comment %}
+		This section also has "Override the default branch name for new repositories" and has a text box set
+		to "main". I'm not having people switch to this just yet because our git lesson still uses the old paradigm.
+		{% endcomment %}     
               </li>
               {% comment %} Adjusting your PATH environment {% endcomment %}
               <li>
@@ -39,7 +48,7 @@
               {% comment %} Choosing the SSH executable {% endcomment %}
               {% comment %} Choosing HTTPS transport backend {% endcomment %}
               <li>
-		Ensure that "Use the native Windows Secure Channel library" is selected and click on "Next".
+		Ensure that "Use the native Windows Secure Channel Library" is selected and click on "Next".
 	      </li>
               {% comment %} This should mean that people stuck behind corporate firewalls that do MITM attacks
                                  with their own root CA are still able to access remote git repos. {% endcomment %}
@@ -58,7 +67,7 @@
 		Ensure that "Default (fast-forward or merge) is selected and click "Next"
               </li>
               <li>
-		Ensure that "Enable Git Credential Manager" is selected and click on "Next".
+		Ensure that "Git Credential Manager <strong>Core</strong>" is selected and click on "Next".
               </li>
               <li>
 		Ensure that "Enable file system caching" is selected and click on "Next".
