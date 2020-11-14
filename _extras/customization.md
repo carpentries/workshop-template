@@ -159,7 +159,7 @@ minor modifications to this schedule, you can edit the `schedule.html` file
 found in the sub-folder of the `_includes` folder that matches the type of 
 workshop you will be teaching  (`dc`, `lc`, or `swc`).
 
-If you wish to create your own custom schedule, an empty template is avaiable in
+If you wish to create your own custom schedule, an empty template is available in
 `_includes/custom-schedule.html`. In this file, we provide the structure for a
 4-day workshop as it is often used for online workshops. To use the custom
 schedule instead of the one provided by default in the template, delete the
