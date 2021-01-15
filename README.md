@@ -53,6 +53,8 @@ create a workshop website.
     This name should have the form `YYYY-MM-DD-site`,
     e.g., `2016-12-01-miskatonic`,
     where `YYYY-MM-DD` is the start date of the workshop.
+    If your workshop is held online, then the respository name should have `-online` in the end.
+    e.g., `2016-12-01-miskatonic-online`
 
 5.  Make sure the repository is public, leave "Include all branches" unchecked, and click
 on "Create repository from template".
