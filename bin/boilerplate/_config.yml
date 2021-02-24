@@ -7,6 +7,7 @@
 # dc: Data Carpentry
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor traning for instance)
+# incubator: Carpentries Incubator
 carpentry: "swc"
 
 # Overall title for pages.
@@ -33,7 +34,7 @@ repository: <USERNAME>/<PROJECT>
 email: "team@carpentries.org"
 
 # Sites.
-amy_site: "https://amy.carpentries.org"
+amy_site: "https://amy.carpentries.org/"
 carpentries_github: "https://github.com/carpentries"
 carpentries_pages: "https://carpentries.github.io"
 carpentries_site: "https://carpentries.org/"
