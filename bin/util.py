@@ -105,7 +105,7 @@ def read_markdown(parser, path):
     """
 
     # Split and extract YAML (if present).
-    with open(path, 'r') as reader:
+    with open(path, 'r', encoding='utf-8') as reader:
         body = reader.read()
     metadata_raw, metadata_yaml, body = split_metadata(path, body)
 
@@ -115,7 +115,7 @@ def read_markdown(parser, path):
              for (i, line) in enumerate(body.split('\n'))]
 
     # Parse Markdown.
-    cmd = 'ruby {0}'.format(parser)
+    cmd = 'bundle exec ruby {0}'.format(parser)
     p = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE,
               close_fds=True, universal_newlines=True, encoding='utf-8')
     stdout_data, stderr_data = p.communicate(body)
@@ -160,7 +160,7 @@ def load_yaml(filename):
     """
 
     try:
-        with open(filename, 'r') as reader:
+        with open(filename, 'r', encoding='utf-8') as reader:
             return yaml.load(reader, Loader=yaml.SafeLoader)
     except (yaml.YAMLError, IOError) as e:
         print('Unable to load YAML file {0}:\n{1}'.format(

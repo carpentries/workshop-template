@@ -93,10 +93,10 @@ workshop-check :
 ## III. Commands specific to lesson websites
 ## =================================================
 
-.PHONY : lesson-check lesson-md lesson-files lesson-fixme
+.PHONY : lesson-check lesson-md lesson-files lesson-fixme install-rmd-deps
 
 # RMarkdown files
-RMD_SRC = $(wildcard _episodes_rmd/??-*.Rmd)
+RMD_SRC = $(wildcard _episodes_rmd/*.Rmd)
 RMD_DST = $(patsubst _episodes_rmd/%.Rmd,_episodes/%.md,$(RMD_SRC))
 
 # Lesson source files in the order they appear in the navigation menu.
@@ -115,14 +115,19 @@ HTML_DST = \
   ${DST}/conduct/index.html \
   ${DST}/setup/index.html \
   $(patsubst _episodes/%.md,${DST}/%/index.html,$(sort $(wildcard _episodes/*.md))) \
-  ${DST}/reference/index.html \
+  ${DST}/reference.html \
   $(patsubst _extras/%.md,${DST}/%/index.html,$(sort $(wildcard _extras/*.md))) \
   ${DST}/license/index.html
+
+## * install-rmd-deps : Install R packages dependencies to build the RMarkdown lesson
+install-rmd-deps:
+	@${SHELL} bin/install_r_deps.sh
 
 ## * lesson-md        : convert Rmarkdown files to markdown
 lesson-md : ${RMD_DST}
 
-_episodes/%.md: _episodes_rmd/%.Rmd
+_episodes/%.md: _episodes_rmd/%.Rmd install-rmd-deps
+	@mkdir -p _episodes
 	@bin/knit_lessons.sh $< $@
 
 ## * lesson-check     : validate lesson Markdown
@@ -146,7 +151,7 @@ lesson-files :
 
 ## * lesson-fixme     : show FIXME markers embedded in source files
 lesson-fixme :
-	@fgrep -i -n FIXME ${MARKDOWN_SRC} || true
+	@grep --fixed-strings --word-regexp --line-number --no-messages FIXME ${MARKDOWN_SRC} || true
 
 ##
 ## IV. Auxililary (plumbing) commands
