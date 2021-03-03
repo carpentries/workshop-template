@@ -45,6 +45,10 @@ flavor: "FIXME"
 # https://github.com/carpentries/workshop-template#creating-extra-pages
 title: "Workshop Title"
 
+## human_language: the language in which the workshop is taught.
+# If set to anything other than "", a note about the language
+# of the workshop is added to the workshop description.
+human_language: ""
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
