@@ -33,8 +33,8 @@ configure some site-wide variables and make the site function correctly:
   used for the title of the extra pages. More information about extra pages are [available in the
   README](https://github.com/carpentries/workshop-template#creating-extra-pages).
 
-For example, if the URL for the repository is `https://github.com/gvwilson/2015-07-01-miskatonic`,
-the URL for the website will be `http://gvwilson.github.io/2015-07-01-miskatonic`.
+For example, if the URL for the repository is `https://github.com/gvwilson/2015-07-01-oomza`,
+the URL for the website will be `http://gvwilson.github.io/2015-07-01-oomza`.
 
 You should not need to modify any of the other variable values in `_config.yml`.
 
