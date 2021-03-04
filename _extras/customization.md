@@ -41,8 +41,11 @@ For lesson pilot workshops, you should uncomment the following three fields in
 * `pilot_pre_survey` - the URL of the pre-workshop survey you have prepared for the pilot workshop. (The standard Carpentries pre- and post-workshop surveys should not be used for pilot workshops.)
 * `pilot_post_survey` - the URL of the post-workshop survey you have prepared for the pilot workshop.
 
-For example, if the URL for the repository is `https://github.com/gvwilson/2015-07-01-miskatonic`,
-the URL for the website will be `http://gvwilson.github.io/2015-07-01-miskatonic`.
+## Site URL
+
+GitHub Pages sites are formatted as `https://GITHUB_USERNAME.github.io/REPOSITORY_NAME`.
+For example, if the URL for your repository is `https://github.com/gvwilson/2015-07-01-oomza`,
+the URL for its website will be `http://gvwilson.github.io/2015-07-01-oomza`.
 
 You should not need to modify any of the other variable values in `_config.yml`.
 
