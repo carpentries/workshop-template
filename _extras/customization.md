@@ -172,7 +172,7 @@ If you wish to create your own custom schedule, an empty template is available i
 4-day workshop as it is often used for online workshops. To use the custom
 schedule instead of the one provided by default in the template, delete the
 block of code found under the "Schedule" header and replace it with
-`{% include custom-schedule.html %}`.
+`{% raw %}{% include custom-schedule.html %}{% endraw %}`.
 
 The schedule is formatted using a table. If you would like to learn more about
 how to write tables in HTML, here is an [overview from
