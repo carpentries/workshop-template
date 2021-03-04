@@ -20,6 +20,7 @@ configure some site-wide variables and make the site function correctly:
     - `"lc"` for Library Carpentry workshops, and
     - `"cp"` for general Carpentries events such as instructor trainings (for which you should use
       <https://github.com/carpentries/training-template> as the website template).
+    - `"incubator"` for workshops piloting a lesson in The Carpentries Incubator.
 * `curriculum` - to tell us which curriculum is being taught.
   At the moment, applicable to Software and Data Carpentry workshops only.
   Possible values are:
@@ -32,6 +33,13 @@ configure some site-wide variables and make the site function correctly:
   it will appear in the "jumbotron" (the gray box at the top of the page). This variable is also
   used for the title of the extra pages. More information about extra pages are [available in the
   README](https://github.com/carpentries/workshop-template#creating-extra-pages).
+
+For lesson pilot workshops, you should uncomment the following three fields in
+`_config.yml`:
+
+* `lesson_site` - the URL of the lesson pages that will be taught at the workshop.
+* `pilot_pre_survey` - the URL of the pre-workshop survey you have prepared for the pilot workshop. (The standard Carpentries pre- and post-workshop surveys should not be used for pilot workshops.)
+* `pilot_post_survey` - the URL of the post-workshop survey you have prepared for the pilot workshop.
 
 For example, if the URL for the repository is `https://github.com/gvwilson/2015-07-01-miskatonic`,
 the URL for the website will be `http://gvwilson.github.io/2015-07-01-miskatonic`.
@@ -156,7 +164,7 @@ to include the relevant installation instructions.
 By default, the template displays the typical schedule for your workshop based on
 the values of the variables set in the `_config.yml`. If you need to  make
 minor modifications to this schedule, you can edit the `schedule.html` file
-found in the sub-folder of the `_includes` folder that matches the type of 
+found in the sub-folder of the `_includes` folder that matches the type of
 workshop you will be teaching  (`dc`, `lc`, or `swc`).
 
 If you wish to create your own custom schedule, an empty template is available in
@@ -170,6 +178,12 @@ The schedule is formatted using a table. If you would like to learn more about
 how to write tables in HTML, here is an [overview from
 Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table) and
 the [w3schools](https://www.w3schools.com/html/html_tables.asp).
+
+For pilot workshops, some placeholder text including a link to the lesson homepage
+will be displayed instead of a schedule table.
+The lesson homepage will contain estimated timings for teaching the lesson.
+Use the approach described above for `_includes/custome-schedule.html`
+if you would like to create a schedule table to replace this text.
 
 ## Home Page: Setup Instructions
 
