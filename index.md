@@ -333,6 +333,15 @@ SURVEYS - DO NOT EDIT SURVEY LINKS
 {% if site.carpentry == "pilot" %}
 <p><a href="{{ site.pilot_pre_survey }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.pilot_post_survey }}">Post-workshop Survey</a></p>
+{% elif site.pilot_pre_survey or site.pilot_post_survey %}
+<div class="alert alert-danger">
+WARNING: you have defined custom pre- and/or post-survey links for
+a workshop not configured as a lesson pilot
+(the value of `site` is not set to `pilot` in `_config.yml`).
+Please comment out the `pilot_pre_survey` and `pilot_post_survey` fields
+in `_config.yml` or, if this workshop is a lesson pilot,
+change the value of `carpentry` to `pilot`.
+</div>
 {% else %}
 <p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
