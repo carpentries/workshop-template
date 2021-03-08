@@ -20,7 +20,7 @@ configure some site-wide variables and make the site function correctly:
     - `"lc"` for Library Carpentry workshops, and
     - `"cp"` for general Carpentries events such as instructor trainings (for which you should use
       <https://github.com/carpentries/training-template> as the website template).
-    - `"incubator"` for workshops piloting a lesson in The Carpentries Incubator.
+    - `"pilot"` for workshops piloting a new lesson (e.g. in The Carpentries Incubator).
 * `curriculum` - to tell us which curriculum is being taught.
   At the moment, applicable to Software and Data Carpentry workshops only.
   Possible values are:
@@ -37,7 +37,7 @@ configure some site-wide variables and make the site function correctly:
 For lesson pilot workshops, you should uncomment the following three fields in
 `_config.yml`:
 
-* `lesson_site` - the URL of the lesson pages that will be taught at the workshop.
+* `pilot_lesson_site` - the URL of the lesson pages that will be taught at the workshop.
 * `pilot_pre_survey` - the URL of the pre-workshop survey you have prepared for the pilot workshop. (The standard Carpentries pre- and post-workshop surveys should not be used for pilot workshops.)
 * `pilot_post_survey` - the URL of the post-workshop survey you have prepared for the pilot workshop.
 
