@@ -46,8 +46,8 @@ in a workshop request yet, please also fill in
 <a href="{{site.amy_site}}/forms/self-organised/">this workshop request form</a>
 to let us know about your workshop and our administrator may contact you if we
 need any extra information.
-If this is a pilot workshop for a lesson in The Carpentries Incubator,
-remember to uncomment the `lesson_site`, `pilot_pre_survey`, and `pilot_post_survey`
+If this is a pilot workshop for a new lesson,
+remember to uncomment the `pilot_lesson_site`, `pilot_pre_survey`, and `pilot_post_survey`
 fields in `_config.yml`
 </div>
 
@@ -330,7 +330,7 @@ SURVEYS - DO NOT EDIT SURVEY LINKS
 {% endcomment %}
 <h2 id="surveys">Surveys</h2>
 <p>Please be sure to complete these surveys before and after the workshop.</p>
-{% if site.carpentry == "incubator" %}
+{% if site.carpentry == "pilot" %}
 <p><a href="{{ site.pilot_pre_survey }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.pilot_post_survey }}">Post-workshop Survey</a></p>
 {% else %}
@@ -371,7 +371,7 @@ of code below the Schedule `<h2>` header below with
 {% include dc/schedule.html %}
 {% elsif site.carpentry == "lc" %}
 {% include lc/schedule.html %}
-{% elsif site.carpentry == "incubator" %}
+{% elsif site.carpentry == "pilot" %}
 The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. If you would like to know the timing of these breaks in advance, please [contact the workshop organisers](#contact). For a list of lesson sections and estimated timings, [visit the lesson homepage]({{ site.lesson_site }}).
 {% comment %}
 Edit/replace the text above if you want to include a schedule table.
@@ -441,7 +441,7 @@ during the workshop.
 {% include dc/setup.html %}
 {% elsif site.carpentry == "lc" %}
 {% include lc/setup.html %}
-{% elsif site.carpentry == "incubator" %}
+{% elsif site.carpentry == "pilot" %}
 Please check the "Setup" page of
 [the lesson site]({{ site.lesson_site }}) for instructions to follow
 to obtain the software and data you will need to follow the lesson.
