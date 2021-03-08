@@ -10,14 +10,14 @@
 #  dc: Data Carpentry
 #  lc: Library Carpentry
 #  cp: Carpentries (to use for instructor training for instance)
-#  incubator: for Carpentries Incubator lesson pilot workshops
+#  pilot: for workshops piloting a new lesson (e.g. in The Carpentries Incubator)
 # Note that for regular workshops, you should use:
 #  https://github.com/carpentries/workshop-template
 # and for instructor training events you should use:
 #  https://github.com/carpentries/training-template
-# When setting this field to "incubator", please uncomment the
-# lesson_site, pilot_pre_survey, and pilot_post_survey
-# lines further down this file and add the URL to the Incubator lesson site.
+# When setting this field to "pilot", please uncomment the
+# pilot_lesson_site, pilot_pre_survey, and pilot_post_survey
+# lines further down this file and add the URL to the relevant lesson site.
 carpentry: "swc"
 
 # This option is currently only needed for
@@ -49,17 +49,19 @@ flavor: "FIXME"
 # https://github.com/carpentries/workshop-template#creating-extra-pages
 title: "Workshop Title"
 
-# lesson_site, pilot_pre_survey, and pilot_post_survey
-# are only relevant for Carpentries Incubator lesson pilots.
-
+#------------------------------------------------------------
+# Pilot workshop settings (only relevant for lesson pilots).
+#
 # For a lesson pilot, uncomment the line below and add the URL of the lesson site.
-# lesson_site: "put the URL of your Incubator lesson pages here"
-
+# pilot_lesson_site: "put the URL of the lesson being piloted here"
+#
 # For a lesson pilot, uncomment the line below and add the URL of your pre-workshop survey
 # pilot_pre_survey: "put the URL of your pre-workshop survey here"
-
+#
 # For a lesson pilot, uncomment the line below and add the URL of your post-workshop survey
 # pilot_post_survey: "put the URL of your post-workshop survey here"
+#
+#------------------------------------------------------------
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
