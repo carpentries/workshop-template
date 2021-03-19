@@ -333,7 +333,7 @@ SURVEYS - DO NOT EDIT SURVEY LINKS
 {% if site.carpentry == "pilot" %}
 <p><a href="{{ site.pilot_pre_survey }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.pilot_post_survey }}">Post-workshop Survey</a></p>
-{% elif site.pilot_pre_survey or site.pilot_post_survey %}
+{% elsif site.pilot_pre_survey or site.pilot_post_survey %}
 <div class="alert alert-danger">
 WARNING: you have defined custom pre- and/or post-survey links for
 a workshop not configured as a lesson pilot
