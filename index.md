@@ -46,6 +46,9 @@ in a workshop request yet, please also fill in
 <a href="{{site.amy_site}}/forms/self-organised/">this workshop request form</a>
 to let us know about your workshop and our administrator may contact you if we
 need any extra information.
+If this is a pilot workshop for a new lesson,
+remember to uncomment the `pilot_lesson_site`, `pilot_pre_survey`, and `pilot_post_survey`
+fields in `_config.yml`
 </div>
 
 {% comment %}
@@ -327,8 +330,22 @@ SURVEYS - DO NOT EDIT SURVEY LINKS
 {% endcomment %}
 <h2 id="surveys">Surveys</h2>
 <p>Please be sure to complete these surveys before and after the workshop.</p>
+{% if site.carpentry == "pilot" %}
+<p><a href="{{ site.pilot_pre_survey }}">Pre-workshop Survey</a></p>
+<p><a href="{{ site.pilot_post_survey }}">Post-workshop Survey</a></p>
+{% elsif site.pilot_pre_survey or site.pilot_post_survey %}
+<div class="alert alert-danger">
+WARNING: you have defined custom pre- and/or post-survey links for
+a workshop not configured as a lesson pilot
+(the value of `site` is not set to `pilot` in `_config.yml`).
+Please comment out the `pilot_pre_survey` and `pilot_post_survey` fields
+in `_config.yml` or, if this workshop is a lesson pilot,
+change the value of `carpentry` to `pilot`.
+</div>
+{% else %}
 <p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
+{% endif %}
 
 <hr/>
 
@@ -363,6 +380,13 @@ of code below the Schedule `<h2>` header below with
 {% include dc/schedule.html %}
 {% elsif site.carpentry == "lc" %}
 {% include lc/schedule.html %}
+{% elsif site.carpentry == "pilot" %}
+The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. If you would like to know the timing of these breaks in advance, please [contact the workshop organisers](#contact). For a list of lesson sections and estimated timings, [visit the lesson homepage]({{ site.lesson_site }}).
+{% comment %}
+Edit/replace the text above if you want to include a schedule table.
+See the contents of the _includes/custom_schedule.html file for an example of
+how one of these schedule tables is constructed.
+{% endcomment %}
 {% endif %}
 
 <hr/>
@@ -392,7 +416,7 @@ please preview your site before committing, and make sure to run
   Library Carpentry
   {% endif %}
   workshop,
-  you will need access to the software described below.
+  you will need access to software as described below.
   In addition, you will need an up-to-date web browser.
 </p>
 <p>
@@ -426,4 +450,8 @@ during the workshop.
 {% include dc/setup.html %}
 {% elsif site.carpentry == "lc" %}
 {% include lc/setup.html %}
+{% elsif site.carpentry == "pilot" %}
+Please check the "Setup" page of
+[the lesson site]({{ site.lesson_site }}) for instructions to follow
+to obtain the software and data you will need to follow the lesson.
 {% endif %}
