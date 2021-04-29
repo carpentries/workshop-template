@@ -1,6 +1,5 @@
 name: Website
 on:
-  workflow_dispatch: []
   push:
     branches:
       - gh-pages
