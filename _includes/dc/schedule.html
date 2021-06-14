@@ -1,13 +1,40 @@
 {% comment %}
 This is the typical schedule for the Data Carpentry workshops.
 The schedule for the different curricula are listed here:
+- dc-astronomy
 - dc-ecology
 - dc-genomics
 - dc-socsci
 - dc-geosptial
 {% endcomment %}
 
-{% if site.curriculum == "dc-ecology" %}
+{% if site.curriculum == "dc-astronomy" %}
+<div class="row">
+  <div class="col-md-6">
+    <h3>Day 1</h3>
+    <table class="table table-striped">
+      <tr>
+	<td>Before starting</td>
+	<td><a href="{{ site.pre_survey }}{{ site.github.project_title }}" target="_blank">Pre-workshop survey</a></td>
+      </tr>
+      <tr><td>Morning</td> <td> <a href="https://datacarpentry.org/astronomy-python/01-query/">Basic Queries</a></td></tr>
+      <tr><td> </td><td><a href="https://datacarpentry.org/astronomy-python/02-coords/">Coordinate Transformations</a></td></tr>
+      <tr><td>Afternoon</td> <td> <a href="https://datacarpentry.org/astronomy-python/03-motion/">Plotting and Pandas</a></td></tr>
+      <tr><td> </td><td><a href="https://datacarpentry.org/astronomy-python/04-select/">Transform and Select</a></td></tr>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h3>Day 2</h3>
+    <table class="table table-striped">
+      <tr><td>Morning</td> <td> <a href="https://datacarpentry.org/astronomy-python/05-join/">Join</a></td></tr>
+      <tr><td> </td><td><a href="https://datacarpentry.org/astronomy-python/06-photo/">Photometry</a></td></tr>
+      <tr><td>Afternoon</td> <td> <a href="https://datacarpentry.org/astronomy-python/06-photo/">Photometry (cont.)</a></td></tr>
+      <tr><td> </td><td><a href="https://datacarpentry.org/astronomy-python/07-plot/">Visualization</a></td></tr>
+    </table>
+  </div>
+</div>
+
+{% elsif site.curriculum == "dc-ecology" %}
 <div class="row">
   <div class="col-md-6">
     <h3>Day 1</h3>

@@ -25,7 +25,8 @@ carpentry: "swc"
 # The value of the variable will be ignored for Library Carpentry
 # workshops.
 # Possible values are:
-# dc-ecology: for Data Carpentry Ecology workshops
+# dc-astronomy: for Data Carpentry Astronomy
+# dc-ecology: for Data Carpentry Ecology
 # dc-genomics: for Data Carpentry Genomics
 # dc-socsci: for Data Carpentry Social Sciences
 # dc-geospatial: for Data Carpentry Geospatial

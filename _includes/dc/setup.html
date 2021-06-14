@@ -1,10 +1,22 @@
+{% comment %}
+Astronomy workshops
+{% endcomment %}
+
+
+{% if site.curriculum == "dc-astronomy" %}
+
+<p>
+  The setup instructions for the Data Carpentry Astronomy workshops
+  can be found at <a href="https://datacarpentry.org/astronomy-python/setup.html">
+    the workshop overview site</a>.
+</p>
 
 {% comment %}
 Ecology workshops
 {% endcomment %}
 
 
-{% if site.curriculum == "dc-ecology" %}
+{% elsif site.curriculum == "dc-ecology" %}
 
 {% if site.flavor == "r" %}
 <p>
