@@ -93,6 +93,7 @@ training_site: "https://carpentries.github.io/instructor-training"
 workshop_repo: "https://github.com/carpentries/workshop-template"
 workshop_site: "https://escience-academy.github.io/workshop-template"
 cc_by_human: "https://creativecommons.org/licenses/by/4.0/"
+esc_site: "https://www.esciencecenter.nl/"
 
 # Surveys.
 pre_survey: "https://carpentries.typeform.com/to/wi32rS?slug="
