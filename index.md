@@ -47,8 +47,7 @@ in a workshop request yet, please also fill in
 to let us know about your workshop and our administrator may contact you if we
 need any extra information.
 If this is a pilot workshop for a new lesson,
-remember to uncomment the `pilot_lesson_site`, `pilot_pre_survey`, and `pilot_post_survey`
-fields in `_config.yml`
+remember to uncomment the `pilot_lesson_site` field in `_config.yml`
 </div>
 
 {% comment %}
@@ -322,31 +321,6 @@ We will use this <a href="{{ page.collaborative_notes }}">collaborative document
 </p>
 <hr/>
 {% endif %}
-
-
-{% comment %}
-SURVEYS - DO NOT EDIT SURVEY LINKS
-{% endcomment %}
-<h2 id="surveys">Surveys</h2>
-<p>Please be sure to complete these surveys before and after the workshop.</p>
-{% if site.carpentry == "pilot" %}
-<p><a href="{{ site.pilot_pre_survey }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.pilot_post_survey }}">Post-workshop Survey</a></p>
-{% elsif site.pilot_pre_survey or site.pilot_post_survey %}
-<div class="alert alert-danger">
-WARNING: you have defined custom pre- and/or post-survey links for
-a workshop not configured as a lesson pilot
-(the value of `site` is not set to `pilot` in `_config.yml`).
-Please comment out the `pilot_pre_survey` and `pilot_post_survey` fields
-in `_config.yml` or, if this workshop is a lesson pilot,
-change the value of `carpentry` to `pilot`.
-</div>
-{% else %}
-<p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
-{% endif %}
-
-<hr/>
 
 
 {% comment %}
