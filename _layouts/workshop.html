@@ -10,9 +10,13 @@ in the metadata so it's easier for Regional Coordinators to identify
 online workshops.
 
 {% endcomment %}
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.dummy_data[0] %}
 
-{% assign begin_address = page.address | slice: 0, 4 | downcase  %}
-{% if page.address == "online" or begin_address contains "http" %}
+{% assign begin_address = info.address | slice: 0, 4 | downcase  %}
+{% if info.address == "online" or begin_address contains "http" %}
 {% assign online = " (online)" %}
 {% else %}
 {% assign online = "" %}
@@ -23,19 +27,19 @@ online workshops.
   <head>
 
     <meta name="slug" content="{{project_title}}" />
-    <meta name="startdate" content="{{page.startdate}}" />
-    <meta name="enddate" content="{{page.enddate}}" />
-    <meta name="humandate" content="{{page.humandate}}" />
-    <meta name="country" content="{{page.country}}" />
-    <meta name="venue" content="{{page.venue}}{{ online }}" />
-    <meta name="address" content="{{page.address}}" />
-    <meta name="latlng" content="{{page.latitude}},{{page.longitude}}" />
-    <meta name="language" content="{{page.language}}" />
-    <meta name="eventbrite" content="{{page.eventbrite}}" />
-    <meta name="instructor" content="{{page.instructor|join:'|'}}" />
-    <meta name="helper" content="{{page.helper|join:'|'}}" />
-    <meta name="contact" content="{{page.email|join:'|'}}" />
-    <meta name="carpentry" content="{{site.carpentry}}" />
+    <meta name="startdate" content="{{info.startdate}}" />
+    <meta name="enddate" content="{{info.enddate}}" />
+    <meta name="humandate" content="{{info.humandate}}" />
+    <meta name="country" content="{{info.country}}" />
+    <meta name="venue" content="{{info.venue}}{{ online }}" />
+    <meta name="address" content="{{info.address}}" />
+    <meta name="latlng" content="{{info.latitude}},{{info.longitude}}" />
+    <meta name="language" content="{{info.language}}" />
+    <meta name="eventbrite" content="{{info.eventbrite}}" />
+    <meta name="instructor" content="{{info.instructor|join:'|'}}" />
+    <meta name="helper" content="{{info.helper|join:'|'}}" />
+    <meta name="contact" content="{{site.email|join:'|'}}" />
+    <meta name="carpentry" content="{{info.carpentry}}" />
 
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="{{ search_domain_url }}">
@@ -61,7 +65,7 @@ online workshops.
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
-    <title>{{ page.venue }}: {{ page.humandate }}</title>
+    <title>{{ info.venue }}: {{ info.humandate }}</title>
   </head>
   <body>
     <div class="container">

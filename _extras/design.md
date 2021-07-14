@@ -3,6 +3,11 @@ layout: page
 title: Background and Design
 permalink: /design/
 ---
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.dummy_data[0] %}
+
 There are a few things you need to know in order to understand why we
 do things the way we do.  Some of them are specific to GitHub, rather
 than Git itself.
@@ -64,7 +69,7 @@ than Git itself.
     of the main Software Carpentry web site ({{site.swc_site}}).  Variables from the
     page's header are put in an object called `page`, and referred to
     as `page.variable`, so if a page's header defines a variable
-    called `venue`, `{% raw %}{{page.venue}}{% endraw %}` is replaced by "Euphoric State
+    called `venue`, `{% raw %}{{info.venue}}{% endraw %}` is replaced by "Euphoric State
     University" (or whatever value the variable has).
 
 8.  If a page uses `{% raw %}{% include something.html %}{% endraw %}`

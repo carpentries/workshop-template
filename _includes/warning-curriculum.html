@@ -1,8 +1,11 @@
-
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.dummy_data[0] %}
 <div class="alert alert-warning">
   Unrecognized value for variable <code>curriculum</code> set in
-  <code>_config.yml</code>. Currently the variable is set to:
-  <code>{{ site.curriculum }}</code>. Check the values of
+  <code>data.json</code>. Currently the variable is set to:
+  <code>{{ info.curriculum }}</code>. Check the values of
   <code>carpentry</code> and <code>curriculum</code> in the
-  <code>_config.yml</code> file.
+  <code>data.json</code> file.
 </div>

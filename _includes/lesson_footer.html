@@ -3,26 +3,29 @@
 {% endcomment %}
 
 {% include gh_variables.html %}
-
+{% comment %}
+	Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.dummy_data[0] %}
 <footer>
   <div class="row">
     <div class="col-md-6 license" id="license-info" align="left">
-	{% if site.carpentry == "swc" %}
+	{% if info.carpentry == "swc" %}
 	Licensed under <a href="{{ site.cc_by_human }}">CC-BY 4.0</a> 2018–{{ 'now' | date: "%Y" }}
 	by <a href="{{ site.carpentries_site }}">The Carpentries</a>
         <br>
         Licensed under <a href="{{ site.cc_by_human }}">CC-BY 4.0</a> 2016–2018
 	by <a href="{{ site.swc_site }}">Software Carpentry Foundation</a>
-	{% elsif site.carpentry == "dc" %}
+	{% elsif info.carpentry == "dc" %}
 	Licensed under <a href="{{ site.cc_by_human }}">CC-BY 4.0</a> 2018–{{ 'now' | date: "%Y" }}
 	by <a href="{{ site.carpentries_site }}">The Carpentries</a>
         <br>
         Licensed under <a href="{{ site.cc_by_human }}">CC-BY 4.0</a> 2016–2018
 	by <a href="{{ site.dc_site }}">Data Carpentry</a>
-	{% elsif site.carpentry == "lc" %}
+	{% elsif info.carpentry == "lc" %}
 	Licensed under <a href="{{ site.cc_by_human }}">CC-BY 4.0</a> 2016–{{ 'now' | date: "%Y" }}
 	by <a href="{{ site.lc_site }}">Library Carpentry</a>
-	{% elsif site.carpentry == "cp" %}
+	{% elsif info.carpentry == "cp" %}
 	Licensed under <a href="{{ site.cc_by_human }}">CC-BY 4.0</a> 2018–{{ 'now' | date: "%Y" }}
 	by <a href="{{ site.carpentries_site }}">The Carpentries</a>
 	{% endif %}

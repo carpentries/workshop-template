@@ -1,6 +1,10 @@
 {% comment %}
   JavaScript used in lesson and workshop pages.
 {% endcomment %}
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.dummy_data[0] %}
 <script src="{{ relative_root_path }}/assets/js/jquery.min.js"></script>
 <script src="{{ relative_root_path }}/assets/js/bootstrap.min.js"></script>
 <script src="{{ relative_root_path }}/assets/js/lesson.js"></script>
@@ -40,7 +44,7 @@ $('.nav-tabs li a').click(function(){
   // detect misssing iframe for Eventbrite
   $(document).ready(function(){
       if ($('iframe').height() == 0) {
-          $('iframe').before('<p>Looks like your adblocker blocked the registration window. Please navigate to <a href="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt">https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt</a> to register.</p>');
+          $('iframe').before('<p>Looks like your adblocker blocked the registration window. Please navigate to <a href="https://www.eventbrite.com/tickets-external?eid={{info.eventbrite}}&ref=etckt">https://www.eventbrite.com/tickets-external?eid={{info.eventbrite}}&ref=etckt</a> to register.</p>');
       }
   });
 
