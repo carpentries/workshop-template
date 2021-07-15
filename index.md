@@ -40,7 +40,7 @@ For a workshop please delete the following block until the next dashed-line
 {% comment %}
   Assign first row in data file as info to access workshop data
 {% endcomment %}
-{% assign info = site.data.dummy_data[0] %}
+{% assign info = site.data.data[0] %}
 
 <div class="alert alert-danger">
 This is the workshop template. Delete these lines and use it to

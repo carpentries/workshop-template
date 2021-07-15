@@ -6,7 +6,7 @@ permalink: /design/
 {% comment %}
   Assign first row in data file as info to access workshop data
 {% endcomment %}
-{% assign info = site.data.dummy_data[0] %}
+{% assign info = site.data.data[0] %}
 
 There are a few things you need to know in order to understand why we
 do things the way we do.  Some of them are specific to GitHub, rather

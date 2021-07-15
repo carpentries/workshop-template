@@ -6,7 +6,7 @@
 {% comment %}
   Assign first row in data file as info to access workshop data
 {% endcomment %}
-{% assign info = site.data.dummy_data[0] %}
+{% assign info = site.data.data[0] %}
 
 {% if site.kind == "lesson" %}
 <h1 class="maintitle"><a href="{{ relative_root_path }}{% link index.md %}">{{ info.title }}</a>{% if info.title %}: {{ info.title }}{% endif %}</h1>
