@@ -254,12 +254,6 @@ Display the contact email address set in the configuration file.
   for more information.
 </p>
 
-<p id="roles">
-  <strong>Roles:</strong>
-  To learn more about the roles at the workshop (who will be doing what),
-  refer to <a href="https://carpentries.org/workshop_faq/#what-are-the-roles-of-everyone-participating-in-a-workshop">our Workshop FAQ</a>.
-</p>
-
 {% comment %}
 WHO CAN ATTEND?
 
