@@ -288,6 +288,18 @@ CODE OF CONDUCT
 {% endcomment %}
 <h2 id="code-of-conduct">Code of Conduct</h2>
 
+{% if site.carpentry == "ds" or site.carpentry == "cr" %}
+<p>
+Participants are expected to follow those guidelines:
+<ul>
+  <li>Use welcoming and inclusive language</li>
+  <li>Be respectful of different viewpoints and experiences</li>
+  <li>Gracefully accept constructive criticism</li>
+  <li>Focus on what is best for the community</li>
+  <li>Show courtesy and respect towards other community members</li>
+</ul>
+</p>
+{% else %}
 <p>
 Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>. This document also outlines how to report an incident if needed.
 </p>
@@ -298,6 +310,7 @@ Everyone who participates in Carpentries activities is required to conform to th
   </a>
 </p>
 <hr/>
+{% endif %}
 
 
 {% comment %}
