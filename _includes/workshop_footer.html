@@ -15,12 +15,20 @@
 	<a href="{{ site.lc_site }}">Library Carpentry</a>
 	{% elsif site.carpentry == "cp" %}
 	<a href="{{ site.carpentries_site }}">The Carpentries</a>
+        {% elsif site.carpentry == "ds" %}
+        <a href="{{ site.carpentries_site }}">The Carpentries</a>
+        {% elsif site.carpentry == "cr" %}
+        <a href="{{ site.carpentries_site }}">The Carpentries</a>
 	{% endif %}
       </h4>
     </div>
     <div class="col-md-6" align="right">
       <h4>
-	<a href="mailto:{{ site.email }}">Contact The Carpentries</a>
+        {% if site.carpentry == "ds" or site.carpentry == "cr" %}
+        <a href="mailto:{{ site.email }}">Contact The Training Team</a>
+        {% else %}
+	<a href="mailto:{{ site.email_carpentries }}">Contact The Carpentries</a>
+        {% endif %}
       </h4>
     </div>
   </div>
