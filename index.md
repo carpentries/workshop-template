@@ -58,6 +58,16 @@ remember to uncomment the `pilot_lesson_site` field in `_config.yml`
 8< ============================= until here ==================
 {% endcomment %}
 
+{% comment %}
+Check carpentry
+{% endcomment %}
+
+{% if site.carpentry == "FIXME" %}
+<div class="alert alert-warning">
+It looks like you are setting up a website for a workshop but you haven't specified the carpentry type in the <code>_config.yml</code> file (current value in <code>_config.yml</code>: "<strong>{{ site.carpentry }}</strong>", possible values: <code>swc</code>, <code>dc</code>, <code>lc</code>, <code>cp</code>, <code>ds</code>, or <code>pilot</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
+</div>
+{% endif %}
+
 
 {% comment %}
 Check DC curriculum
