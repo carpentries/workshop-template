@@ -16,8 +16,8 @@
 # and for instructor training events you should use:
 #  https://github.com/carpentries/training-template
 # When setting this field to "pilot", please uncomment the
-# pilot_lesson_site, pilot_pre_survey, and pilot_post_survey
-# lines further down this file and add the URL to the relevant lesson site.
+# pilot_lesson_site line further down this file and
+# add the URL to the relevant lesson site.
 carpentry: "swc"
 
 # This option is currently only needed for
@@ -25,7 +25,8 @@ carpentry: "swc"
 # The value of the variable will be ignored for Library Carpentry
 # workshops.
 # Possible values are:
-# dc-ecology: for Data Carpentry Ecology workshops
+# dc-astronomy: for Data Carpentry Astronomy
+# dc-ecology: for Data Carpentry Ecology
 # dc-genomics: for Data Carpentry Genomics
 # dc-socsci: for Data Carpentry Social Sciences
 # dc-geospatial: for Data Carpentry Geospatial
@@ -54,12 +55,6 @@ title: "Workshop Title"
 #
 # For a lesson pilot, uncomment the line below and add the URL of the lesson site.
 # pilot_lesson_site: "put the URL of the lesson being piloted here"
-#
-# For a lesson pilot, uncomment the line below and add the URL of your pre-workshop survey
-# pilot_pre_survey: "put the URL of your pre-workshop survey here"
-#
-# For a lesson pilot, uncomment the line below and add the URL of your post-workshop survey
-# pilot_post_survey: "put the URL of your post-workshop survey here"
 #
 #------------------------------------------------------------
 

@@ -15,7 +15,7 @@ startdate: FIXME      # machine-readable start date for the workshop in YYYY-MM-
 enddate: FIXME        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 instructor: ["instructor one", "instructor two"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["helper one", "helper two"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
-email: ["first@example.org","second@example.org"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
+email: ["training@esciencecenter.nl"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 ---
@@ -51,8 +51,7 @@ in a workshop request yet, please also fill in
 to let us know about your workshop and our administrator may contact you if we
 need any extra information.
 If this is a pilot workshop for a new lesson,
-remember to uncomment the `pilot_lesson_site`, `pilot_pre_survey`, and `pilot_post_survey`
-fields in `_config.yml`
+remember to uncomment the `pilot_lesson_site` field in `_config.yml`
 </div>
 
 {% comment %}
@@ -65,16 +64,9 @@ Check DC curriculum
 {% endcomment %}
 
 {% if info.carpentry == "dc" %}
-{% unless info.curriculum == "dc-ecology" or info.curriculum == "dc-genomics" or info.curriculum == "dc-socsci" or info.curriculum == "dc-geospatial" %}
+{% unless info.curriculum == "dc-astronomy" or info.curriculum == "dc-ecology" or info.curriculum == "dc-genomics" or info.curriculum == "dc-socsci" or info.curriculum == "dc-geospatial" %}
 <div class="alert alert-warning">
-It looks like you are setting up a website for a Data Carpentry curriculum but you haven't specified the curriculum type in the <code>data.json</code> file (current value in <code>data.json</code>: "<strong>{{ info.curriculum }}</strong>", possible values: <code>dc-ecology</code>, <code>dc-genomics</code>, <code>dc-socsci</code>, or <code>dc-geospatial</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
-</div>
-{% endunless %}
-{% endif %}
-{% if info.carpentry == "ds" %}
-{% unless info.curriculum == "parallel" or info.curriculum == "gpu" or info.curriculum == "dl-intro" or info.curriculum == "containers" %}
-<div class="alert alert-warning">
-It looks like you are setting up a website for a Data Carpentry curriculum but you haven't specified the curriculum type in the <code>data.json</code> file (current value in <code>data.json</code>: "<strong>{{ info.curriculum }}</strong>", possible values: <code>parallel</code>, <code>gpu</code>, <code>dl-intro</code>, or <code>containers</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
+It looks like you are setting up a website for a Data Carpentry curriculum but you haven't specified the curriculum type in the <code>data.csv</code> file (current value in <code>data.csv</code>: "<strong>{{ info.curriculum }}</strong>", possible values: <code>dc-astronomy</code>, <code>dc-ecology</code>, <code>dc-genomics</code>, <code>dc-socsci</code>, or <code>dc-geospatial</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
 </div>
 {% endunless %}
 {% endif %}
@@ -183,13 +175,12 @@ address.
 {% comment %}
 DATE
 
-This block displays the date and links to Google Calendar.
+This block displays the date.
 {% endcomment %}
 {% if info.humandate %}
 <p id="when">
   <strong>When:</strong>
   {{info.humandate}}.
-  {% include workshop_calendar.html %}
 </p>
 {% endif %}
 
@@ -336,31 +327,6 @@ We will use this <a href="{{ info.collaborative_notes }}">collaborative document
 
 
 {% comment %}
-SURVEYS - DO NOT EDIT SURVEY LINKS
-{% endcomment %}
-<h2 id="surveys">Surveys</h2>
-<p>Please be sure to complete these surveys before and after the workshop.</p>
-{% if info.carpentry == "pilot" %}
-<p><a href="{{ site.pilot_pre_survey }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.pilot_post_survey }}">Post-workshop Survey</a></p>
-{% elsif site.pilot_pre_survey or site.pilot_post_survey %}
-<div class="alert alert-danger">
-WARNING: you have defined custom pre- and/or post-survey links for
-a workshop not configured as a lesson pilot
-(the value of `site` is not set to `pilot` in `_config.yml`).
-Please comment out the `pilot_pre_survey` and `pilot_post_survey` fields
-in `_config.yml` or, if this workshop is a lesson pilot,
-change the value of `carpentry` to `pilot`.
-</div>
-{% else %}
-<p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
-{% endif %}
-
-<hr/>
-
-
-{% comment %}
 SCHEDULE
 
 Show the workshop's schedule.
@@ -394,7 +360,7 @@ of code below the Schedule `<h2>` header below with
 The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. If you would like to know the timing of these breaks in advance, please [contact the workshop organisers](#contact). For a list of lesson sections and estimated timings, [visit the lesson homepage]({{ site.lesson_site }}).
 {% comment %}
 Edit/replace the text above if you want to include a schedule table.
-See the contents of the _includes/custom_schedule.html file for an example of
+See the contents of the _includes/custom-schedule.html file for an example of
 how one of these schedule tables is constructed.
 {% endcomment %}
 {% endif %}
