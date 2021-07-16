@@ -12,6 +12,10 @@
 {% assign carpentry = 'Library Carpentry' %}
 {% elsif info.carpentry == 'cp' %}
 {% assign carpentry = 'The Carpentries' %}
+{% elsif site.carpentry == 'ds' %}
+{% assign carpentry = 'Digital Skills' %}
+{% elsif site.carpentry == 'cr' %}
+{% assign carpentry = 'Code Refinery' %}
 {% endif %}
 
     <!-- Favicons for everyone -->
