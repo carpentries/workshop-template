@@ -62,9 +62,9 @@ remember to uncomment the `pilot_lesson_site` field in `_config.yml`
 Check carpentry
 {% endcomment %}
 
-{% if site.carpentry == "FIXME" %}
+{% if info.carpentry == "FIXME" %}
 <div class="alert alert-warning">
-It looks like you are setting up a website for a workshop but you haven't specified the carpentry type in the <code>_config.yml</code> file (current value in <code>_config.yml</code>: "<strong>{{ site.carpentry }}</strong>", possible values: <code>swc</code>, <code>dc</code>, <code>lc</code>, <code>cp</code>, <code>ds</code>, or <code>pilot</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
+It looks like you are setting up a website for a workshop but you haven't specified the carpentry type in the <code>_data/data.csv</code> file (current value in <code>_data/data.csv</code>: "<strong>{{ info.carpentry }}</strong>", possible values: <code>swc</code>, <code>dc</code>, <code>lc</code>, <code>cp</code>, <code>ds</code>, or <code>pilot</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
 </div>
 {% endif %}
 
@@ -96,10 +96,10 @@ It looks like you are setting up a website for a Software Carpentry curriculum b
 Check DS curriculum
 {% endcomment %}
 
-{% if site.carpentry == "ds" %}
-{% unless site.curriculum == "ds-cr" or site.curriculum == "ds-containers" or site.curriculum == "ds-dl-intro" or site.curriculum == "ds-gpu" or site.curriculum == "ds-parallel" %}
+{% if info.carpentry == "ds" %}
+{% unless info.curriculum == "ds-cr" or info.curriculum == "ds-containers" or info.curriculum == "ds-dl-intro" or info.curriculum == "ds-gpu" or info.curriculum == "ds-parallel" %}
 <div class="alert alert-warning">
-It looks like you are setting up a website for a Digital Skills curriculum but you haven't specified the curriculum type in the <code>_config.yml</code> file (current value in <code>_config.yml</code>: "<strong>{{ site.curriculum }}</strong>", possible values: <code>ds-cr</code>, <code>ds-containers</code>, <code>ds-dl-intro</code>, <code>ds-gpu</code>, or <code>ds-parallel</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
+It looks like you are setting up a website for a Digital Skills curriculum but you haven't specified the curriculum type in the <code>_data/data.csv</code> file (current value in <code>_data/data.csv</code>: "<strong>{{ info.curriculum }}</strong>", possible values: <code>ds-cr</code>, <code>ds-containers</code>, <code>ds-dl-intro</code>, <code>ds-gpu</code>, or <code>ds-parallel</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
 </div>
 {% endunless %}
 {% endif %}
