@@ -19,16 +19,16 @@
 	<a href="{{ site.lc_site }}">Library Carpentry</a>
 	{% elsif info.carpentry == "cp" %}
 	<a href="{{ site.carpentries_site }}">The Carpentries</a>
-        {% elsif site.carpentry == "ds" %}
+        {% elsif info.carpentry == "ds" %}
         <a href="{{ site.carpentries_site }}">The Carpentries</a>
-        {% elsif site.carpentry == "cr" %}
+        {% elsif info.carpentry == "cr" %}
         <a href="{{ site.carpentries_site }}">The Carpentries</a>
 	{% endif %}
       </h4>
     </div>
     <div class="col-md-6" align="right">
       <h4>
-        {% if site.carpentry == "ds" or site.carpentry == "cr" %}
+        {% if info.carpentry == "ds" or info.carpentry == "cr" %}
         <a href="mailto:{{ site.email }}">Contact The Training Team</a>
         {% else %}
 	<a href="mailto:{{ site.email_carpentries }}">Contact The Carpentries</a>
