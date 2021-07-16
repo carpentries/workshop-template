@@ -1,12 +1,22 @@
-
 {% comment %}
-Ecology workshops
+Astronomy workshops
 {% endcomment %}
 {% comment %}
   Assign first row in data file as info to access workshop data
 {% endcomment %}
 {% assign info = site.data.data[0] %}
 
+{% if info.curriculum == "dc-astronomy" %}
+
+<p>
+  The setup instructions for the Data Carpentry Astronomy workshops
+  can be found at <a href="https://datacarpentry.org/astronomy-python/setup.html">
+    the workshop overview site</a>.
+</p>
+
+{% comment %}
+Ecology workshops
+{% endcomment %}
 {% if info.curriculum == "dc-ecology" %}
 
 {% if info.flavor == "r" %}

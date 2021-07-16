@@ -1,6 +1,7 @@
 {% comment %}
 This is the typical schedule for the Data Carpentry workshops.
 The schedule for the different curricula are listed here:
+- dc-astronomy
 - dc-ecology
 - dc-genomics
 - dc-socsci
@@ -10,7 +11,35 @@ The schedule for the different curricula are listed here:
   Assign first row in data file as info to access workshop data
 {% endcomment %}
 {% assign info = site.data.data[0] %}
-{% if info.curriculum == "dc-ecology" %}
+
+
+{% if info.curriculum == "dc-astronomy" %}
+<div class="row">
+  <div class="col-md-6">
+    <h3>Day 1</h3>
+    <table class="table table-striped">
+      <tr>
+	<td>Before starting</td>
+	<td><a href="{{ site.pre_survey }}{{ site.github.project_title }}" target="_blank">Pre-workshop survey</a></td>
+      </tr>
+      <tr><td>Morning</td> <td> <a href="https://datacarpentry.org/astronomy-python/01-query/">Basic Queries</a></td></tr>
+      <tr><td> </td><td><a href="https://datacarpentry.org/astronomy-python/02-coords/">Coordinate Transformations</a></td></tr>
+      <tr><td>Afternoon</td> <td> <a href="https://datacarpentry.org/astronomy-python/03-motion/">Plotting and Pandas</a></td></tr>
+      <tr><td> </td><td><a href="https://datacarpentry.org/astronomy-python/04-select/">Transform and Select</a></td></tr>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h3>Day 2</h3>
+    <table class="table table-striped">
+      <tr><td>Morning</td> <td> <a href="https://datacarpentry.org/astronomy-python/05-join/">Join</a></td></tr>
+      <tr><td> </td><td><a href="https://datacarpentry.org/astronomy-python/06-photo/">Photometry</a></td></tr>
+      <tr><td>Afternoon</td> <td> <a href="https://datacarpentry.org/astronomy-python/06-photo/">Photometry (cont.)</a></td></tr>
+      <tr><td> </td><td><a href="https://datacarpentry.org/astronomy-python/07-plot/">Visualization</a></td></tr>
+    </table>
+  </div>
+</div>
+
+{% elsif info.curriculum == "dc-ecology" %}
 <div class="row">
   <div class="col-md-6">
     <h3>Day 1</h3>
@@ -24,9 +53,9 @@ The schedule for the different curricula are listed here:
       <tr>
         <td>Afternoon</td>
         <td>
-          {% if site.flavor == "r" %}
+          {% if info.flavor == "r" %}
           <a href="https://datacarpentry.org/R-ecology-lesson/">Introduction to R</a>
-          {% elsif site.flavor == "python" %}
+          {% elsif info.flavor == "python" %}
           <a href="https://datacarpentry.org/python-ecology-lesson/">Introduction to Python</a>
           {% else %}
           {% include warning-flavor.html %}
@@ -40,9 +69,9 @@ The schedule for the different curricula are listed here:
     <table class="table table-striped">
       <tr> <td>Morning</td>
         <td>
-          {% if site.flavor == "r" %}
+          {% if info.flavor == "r" %}
           <a href="https://datacarpentry.org/R-ecology-lesson/">Continuation of R: Data analysis and Visualization</a>
-          {% elsif site.flavor == "python" %}
+          {% elsif info.flavor == "python" %}
           <a href="https://datacarpentry.org/python-ecology-lesson/">Continuation of Python: Data analysis and Visualization</a>
           {% else %}
           {% include warning-flavor.html %}
