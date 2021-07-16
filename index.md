@@ -285,7 +285,7 @@ CODE OF CONDUCT
 {% endcomment %}
 <h2 id="code-of-conduct">Code of Conduct</h2>
 
-{% if site.carpentry == "ds" or site.carpentry == "cr" %}
+{% if info.carpentry == "ds" or info.carpentry == "cr" %}
 <p>
 Participants are expected to follow those guidelines:
 <ul>
