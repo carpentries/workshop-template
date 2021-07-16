@@ -49,7 +49,10 @@
           {% assign episode = lesson_episode %}
         {% endif %}
 {% endcomment %}
-
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.data[0] %}
 {% comment %}
 Manual ordering of Episodes begins here
 {% endcomment %}
@@ -77,7 +80,7 @@ Manual ordering of Episodes begins here
         'forloop.first', 'forloop.last', and 'forloop.index0'.
     {% endcomment %}
 
-    {% unless lesson_episode == page.slug %} {% continue %} {% endunless %}
+    {% unless lesson_episode == info.slug %} {% continue %} {% endunless %}
 
     {% if forloop.first %}
       {% assign previous_episode = nil %}

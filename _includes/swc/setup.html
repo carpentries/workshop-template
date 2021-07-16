@@ -1,17 +1,20 @@
 {% assign curricula = "swc-gapminder|swc-inflammation"  | split: "|" %}
-{% unless curricula contains site.curriculum %}
+{% unless curricula contains info.curriculum %}
 {% include warning-curriculum.html %}
 {% endunless %}
-
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.data[0] %}
 {% include install_instructions/shell.html %}
 {% include install_instructions/git.html %}
 {% include install_instructions/editor.html %}
 
-{% if site.flavor == "r" %}
+{% if info.flavor == "r" %}
 {% include install_instructions/r.html %}
-{% elsif site.flavor == "python" %}
+{% elsif info.flavor == "python" %}
 {% include install_instructions/python.html %}
-{% elsif site.flavor == "FIXME" %}
+{% elsif info.flavor == "FIXME" %}
 {% include install_instructions/r.html %}
 {% include install_instructions/python.html %}
 {% else %}

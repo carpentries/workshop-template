@@ -1,9 +1,12 @@
 {% comment %}
 Astronomy workshops
 {% endcomment %}
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.data[0] %}
 
-
-{% if site.curriculum == "dc-astronomy" %}
+{% if info.curriculum == "dc-astronomy" %}
 
 <p>
   The setup instructions for the Data Carpentry Astronomy workshops
@@ -15,17 +18,15 @@ Astronomy workshops
 Ecology workshops
 {% endcomment %}
 
-
-{% elsif site.curriculum == "dc-ecology" %}
-
-{% if site.flavor == "r" %}
+{% elsif info.curriculum == "dc-ecology" %}
+{% if info.flavor == "r" %}
 <p>
   The setup instructions for the Data Carpentry Ecology workshops (with R)
   can be found at <a href="https://datacarpentry.org/ecology-workshop/setup-r-workshop.html">
     the workshop overview site</a>.
 </p>
 
-{% elsif site.flavor == "python" %}
+{% elsif info.flavor == "python" %}
 <p>
   The setup instructions for the Data Carpentry Ecology workshops (with Python)
   can be found at <a href="https://datacarpentry.org/ecology-workshop/setup-python-workshop.html">
@@ -39,7 +40,7 @@ Ecology workshops
 Genomics workshops
 {% endcomment %}
 
-{% elsif site.curriculum == "dc-genomics" %}
+{% elsif info.curriculum == "dc-genomics" %}
 <p>The setup instructions for the Data Carpentry Genomics workshops can be found at <a href="https://datacarpentry.org/genomics-workshop/setup.html">the workshop overview site</a></p>.
 
 
@@ -47,16 +48,16 @@ Genomics workshops
 Social sciences workshops
 {% endcomment %}
 
-{% elsif site.curriculum == "dc-socsci" %}
+{% elsif info.curriculum == "dc-socsci" %}
 
-{% if site.flavor == "r" %}
+{% if info.flavor == "r" %}
 <p>
   The setup instructions for the Data Carpentry Social Sciences
   workshops (with R) can be found at <a href="https://datacarpentry.org/socialsci-workshop/setup-r-workshop.html">
     the workshop overview site</a>.
 </p>
 
-{% elsif site.flavor == "python" %}
+{% elsif info.flavor == "python" %}
 <p>
   The setup instructions for the Data Carpentry Social Sciences workshops (with Python)
   can be found at <a href="https://datacarpentry.org/socialsci-workshop/setup-python-workshop.html">
@@ -71,7 +72,7 @@ Social sciences workshops
 Geospatial workshops
 {% endcomment %}
 
-{% elsif site.curriculum == "dc-geospatial" %}
+{% elsif info.curriculum == "dc-geospatial" %}
 <p>The setup instructions for the Data Carpentry Geospatial workshop can be found at <a href="https://datacarpentry.org/geospatial-workshop/setup.html">the workshop overview site</a>.</p>
 
 {% else %}

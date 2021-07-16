@@ -37,6 +37,10 @@ And run 'make workshop-check' *before* committing to make sure that changes are 
 For a workshop please delete the following block until the next dashed-line
 {% endcomment %}
 
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.data[0] %}
 
 <div class="alert alert-danger">
 This is the workshop template. Delete these lines and use it to
@@ -59,22 +63,21 @@ remember to uncomment the `pilot_lesson_site` field in `_config.yml`
 Check DC curriculum
 {% endcomment %}
 
-{% if site.carpentry == "dc" %}
-{% unless site.curriculum == "dc-astronomy" or site.curriculum == "dc-ecology" or site.curriculum == "dc-genomics" or site.curriculum == "dc-socsci" or site.curriculum == "dc-geospatial" %}
+{% if info.carpentry == "dc" %}
+{% unless info.curriculum == "dc-astronomy" or info.curriculum == "dc-ecology" or info.curriculum == "dc-genomics" or info.curriculum == "dc-socsci" or info.curriculum == "dc-geospatial" %}
 <div class="alert alert-warning">
-It looks like you are setting up a website for a Data Carpentry curriculum but you haven't specified the curriculum type in the <code>_config.yml</code> file (current value in <code>_config.yml</code>: "<strong>{{ site.curriculum }}</strong>", possible values: <code>dc-astronomy</code>, <code>dc-ecology</code>, <code>dc-genomics</code>, <code>dc-socsci</code>, or <code>dc-geospatial</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
+It looks like you are setting up a website for a Data Carpentry curriculum but you haven't specified the curriculum type in the <code>data.csv</code> file (current value in <code>data.csv</code>: "<strong>{{ info.curriculum }}</strong>", possible values: <code>dc-astronomy</code>, <code>dc-ecology</code>, <code>dc-genomics</code>, <code>dc-socsci</code>, or <code>dc-geospatial</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
 </div>
 {% endunless %}
 {% endif %}
-
 {% comment %}
 Check SWC curriculum
 {% endcomment %}
 
-{% if site.carpentry == "swc" %}
-{% unless site.curriculum == "swc-inflammation" or site.curriculum == "swc-gapminder" %}
+{% if info.carpentry == "swc" %}
+{% unless info.curriculum == "swc-inflammation" or info.curriculum == "swc-gapminder" %}
 <div class="alert alert-warning">
-It looks like you are setting up a website for a Software Carpentry curriculum but you haven't specified the curriculum type in the <code>_config.yml</code> file (current value in <code>_config.yml</code>: "<strong>{{ site.curriculum }}</strong>", possible values: <code>swc-inflammation</code>, or <code>swc-gapminder</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
+It looks like you are setting up a website for a Software Carpentry curriculum but you haven't specified the curriculum type in the <code>data.json</code> file (current value in <code>data.json</code>: "<strong>{{ info.curriculum }}</strong>", possible values: <code>swc-inflammation</code>, or <code>swc-gapminder</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
 </div>
 {% endunless %}
 {% endif %}
@@ -87,11 +90,11 @@ This block includes the Eventbrite registration widget if
 are not using Eventbrite, or leave it in, since it will not be
 displayed if the 'eventbrite' field in the header is not set.
 {% endcomment %}
-{% if page.eventbrite %}
+{% if info.eventbrite %}
 <strong>Some adblockers block the registration window. If you do not see the
   registration box below, please check your adblocker settings.</strong>
 <iframe
-  src="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
+  src="https://www.eventbrite.com/tickets-external?eid={{info.eventbrite}}&ref=etckt"
   frameborder="0"
   width="100%"
   height="280px"
@@ -108,11 +111,11 @@ INTRODUCTION
 Edit the general explanatory paragraph below if you want to change
 the pitch.
 {% endcomment %}
-{% if site.carpentry == "swc" %}
+{% if info.carpentry == "swc" %}
 {% include swc/intro.html %}
-{% elsif site.carpentry == "dc" %}
+{% elsif info.carpentry == "dc" %}
 {% include dc/intro.html %}
-{% elsif site.carpentry == "lc" %}
+{% elsif info.carpentry == "lc" %}
 {% include lc/intro.html %}
 {% endif %}
 
@@ -122,11 +125,11 @@ AUDIENCE
 Explain who your audience is.  (In particular, tell readers if the
 workshop is only open to people from a particular institution.
 {% endcomment %}
-{% if site.carpentry == "swc" %}
+{% if info.carpentry == "swc" %}
 {% include swc/who.html %}
-{% elsif site.carpentry == "dc" %}
+{% elsif info.carpentry == "dc" %}
 {% include dc/who.html %}
-{% elsif site.carpentry == "lc" %}
+{% elsif info.carpentry == "lc" %}
 {% include lc/who.html %}
 {% endif %}
 
@@ -138,27 +141,27 @@ if the latitude and longitude of the workshop have been set.  You
 can use https://itouchmap.com/latlong.html to find the lat/long of an
 address.
 {% endcomment %}
-{% assign begin_address = page.address | slice: 0, 4 | downcase  %}
-{% if page.address == "online" %}
+{% assign begin_address = info.address | slice: 0, 4 | downcase  %}
+{% if info.address == "online" %}
 {% assign online = "true_private" %}
 {% elsif begin_address contains "http" %}
 {% assign online = "true_public" %}
 {% else %}
 {% assign online = "false" %}
 {% endif %}
-{% if page.latitude and page.longitude and online == "false" %}
+{% if info.latitude and info.longitude and online == "false" %}
 <p id="where">
   <strong>Where:</strong>
-  {{page.address}}.
+  {{info.address}}.
   Get directions with
-  <a href="//www.openstreetmap.org/?mlat={{page.latitude}}&mlon={{page.longitude}}&zoom=16">OpenStreetMap</a>
+  <a href="//www.openstreetmap.org/?mlat={{info.latitude}}&mlon={{info.longitude}}&zoom=16">OpenStreetMap</a>
   or
-  <a href="//maps.google.com/maps?q={{page.latitude}},{{page.longitude}}">Google Maps</a>.
+  <a href="//maps.google.com/maps?q={{info.latitude}},{{info.longitude}}">Google Maps</a>.
 </p>
 {% elsif online == "true_public" %}
 <p id="where">
   <strong>Where:</strong>
-  online at <a href="{{page.address}}">{{page.address}}</a>.
+  online at <a href="{{info.address}}">{{info.address}}</a>.
   If you need a password or other information to access the training,
   the instructor will pass it on to you before the workshop.
 </p>
@@ -174,10 +177,10 @@ DATE
 
 This block displays the date.
 {% endcomment %}
-{% if page.humandate %}
+{% if info.humandate %}
 <p id="when">
   <strong>When:</strong>
-  {{page.humandate}}.
+  {{info.humandate}}.
 </p>
 {% endif %}
 
@@ -237,9 +240,9 @@ Display the contact email address set in the configuration file.
 <p id="contact">
   <strong>Contact:</strong>
   Please email
-  {% if page.email %}
-  {% for email in page.email %}
-  {% if forloop.last and page.email.size > 1 %}
+  {% if site.email %}
+  {% for email in site.email %}
+  {% if forloop.last and site.email.size > 1 %}
   or
   {% else %}
   {% unless forloop.first %}
@@ -354,13 +357,13 @@ of code below the Schedule `<h2>` header below with
 
 <h2 id="schedule">Schedule</h2>
 
-{% if site.carpentry == "swc" %}
+{% if info.carpentry == "swc" %}
 {% include swc/schedule.html %}
-{% elsif site.carpentry == "dc" %}
+{% elsif info.carpentry == "dc" %}
 {% include dc/schedule.html %}
-{% elsif site.carpentry == "lc" %}
+{% elsif info.carpentry == "lc" %}
 {% include lc/schedule.html %}
-{% elsif site.carpentry == "pilot" %}
+{% elsif info.carpentry == "pilot" %}
 The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. If you would like to know the timing of these breaks in advance, please [contact the workshop organisers](#contact). For a list of lesson sections and estimated timings, [visit the lesson homepage]({{ site.lesson_site }}).
 {% comment %}
 Edit/replace the text above if you want to include a schedule table.
@@ -388,11 +391,11 @@ please preview your site before committing, and make sure to run
 
 <p>
   To participate in a
-  {% if site.carpentry == "swc" %}
+  {% if info.carpentry == "swc" %}
   Software Carpentry
-  {% elsif site.carpentry == "dc" %}
+  {% elsif info.carpentry == "dc" %}
   Data Carpentry
-  {% elsif site.carpentry == "lc" %}
+  {% elsif info.carpentry == "lc" %}
   Library Carpentry
   {% endif %}
   workshop,
@@ -424,13 +427,13 @@ These are the installation instructions for the tools used
 during the workshop.
 {% endcomment %}
 
-{% if site.carpentry == "swc" %}
+{% if info.carpentry == "swc" %}
 {% include swc/setup.html %}
-{% elsif site.carpentry == "dc" %}
+{% elsif info.carpentry == "dc" %}
 {% include dc/setup.html %}
-{% elsif site.carpentry == "lc" %}
+{% elsif info.carpentry == "lc" %}
 {% include lc/setup.html %}
-{% elsif site.carpentry == "pilot" %}
+{% elsif info.carpentry == "pilot" %}
 Please check the "Setup" page of
 [the lesson site]({{ site.lesson_site }}) for instructions to follow
 to obtain the software and data you will need to follow the lesson.

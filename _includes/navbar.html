@@ -4,7 +4,10 @@
 
 {% include gh_variables.html %}
 {% include manual_episode_order.html %}
-
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.data[0] %}
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -16,23 +19,23 @@
       </button>
 
       {% comment %} Select what logo to display. {% endcomment %}
-      {% if site.carpentry == "swc" %}
+      {% if info.carpentry == "swc" %}
       <a href="{{ site.swc_site }}" class="pull-left">
         <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/swc-icon-blue.svg %}" alt="Software Carpentry logo" />
       </a>
-      {% elsif site.carpentry == "dc" %}
+      {% elsif info.carpentry == "dc" %}
       <a href="{{ site.dc_site }}" class="pull-left">
         <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/dc-icon-black.svg %}" alt="Data Carpentry logo" />
       </a>
-      {% elsif site.carpentry == "lc" %}
+      {% elsif info.carpentry == "lc" %}
       <a href="{{ site.lc_site }}" class="pull-left">
         <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/lc-icon-black.svg %}" alt="Library Carpentry logo" />
       </a>
-      {% elsif site.carpentry == "cp" %}
+      {% elsif info.carpentry == "cp" %}
       <a href="{{ site.carpentries_site }}" class="pull-left">
         <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/cp-logo-blue.svg %}" alt="The Carpentries logo" />
       </a>
-      {% elsif site.carpentry == "pilot" %}
+      {% elsif info.carpentry == "pilot" %}
       <a href="{{ site.lesson_site }}" class="pull-left">
         <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/incubator-logo-blue.svg %}" alt="The Carpentries Incubator logo" />
       </a>

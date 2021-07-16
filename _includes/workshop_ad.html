@@ -1,9 +1,12 @@
 {% comment %}
   Advertising box at the top of a workshop website home page.
 {% endcomment %}
-
-{% assign begin_address = page.address | slice: 0, 4 | downcase  %}
-{% if page.address == "online" %}
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.data[0] %}
+{% assign begin_address = info.address | slice: 0, 4 | downcase  %}
+{% if info.address == "online" %}
 {% assign online = "true_private" %}
 {% elsif begin_address contains "http" %}
 {% assign online = "true_public" %}
@@ -11,36 +14,37 @@
 {% assign online = "false" %}
 {% endif %}
 
+
 <div class="jumbotron">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-      {% unless site.title == "Workshop Title" or site.title == "" %}
-      <h1>{{site.title}}</h1>
+      {% unless info.title == "Workshop Title" or info.title == "" %}
+      <h1>{{info.title}}</h1>
       {% endunless %}
-      <h2>{{page.venue}}</h2>
+      <h2>{{info.venue}}</h2>
       <div class="row">
         <div class="col-md-6">
           {% if online == "true_public" %}
-          <p>Online (<a href="{{page.address}}">link</a>)</p>
+          <p>Online (<a href="{{info.address}}">link</a>)</p>
           {% elsif online == "true_private" %}
           <p>Online</p>
           {% endif %}
-          <p>{{page.humandate}}</p>
-          <p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
+          <p>{{info.humandate}}</p>
+          <p>{% if info.humantime %}{{info.humantime}}{% endif %}</p>
         </div>
         <div class="col-md-6">
           <p>
           <strong>Instructors:</strong>
-          {% if page.instructor %}
-          {{page.instructor | join: ', ' %}}
+          {% if info.instructor %}
+          {{info.instructor | join: ', ' %}}
           {% else %}
           to be announced.
           {% endif %}
           </p>
-          {% if page.helper %}
+          {% if info.helper %}
           <p>
           <strong>Helpers:</strong>
-          {{page.helper | join: ', ' %}}
+          {{info.helper | join: ', ' %}}
           </p>
           {% endif %}
         </div>
