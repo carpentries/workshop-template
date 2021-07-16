@@ -16,6 +16,9 @@
       </button>
 
       {% comment %} Select what logo to display. {% endcomment %}
+      <a href="{{ site.esc_site }}" class="pull-left">
+        <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/netherlands-escience-center-logo-RGB.svg %}" alt="The Netherlands eScience Center logo" />
+      </a>
       {% if site.carpentry == "swc" %}
       <a href="{{ site.swc_site }}" class="pull-left">
         <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/swc-icon-blue.svg %}" alt="Software Carpentry logo" />
@@ -41,9 +44,6 @@
         <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/code_refinery_logo.png %}" alt="The Code Refinery logo" />
       </a>
       {% endif %}
-      <a href="{{ site.esc_site }}" class="pull-left">
-        <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/netherlands-escience-center-logo-RGB.svg %}" alt="The Netherlands eScience Center logo" />
-      </a>
 
       {% comment %} Always show link to home page. {% endcomment %}
       <a class="navbar-brand" href="{{ relative_root_path }}{% link index.md %}">Home</a>
