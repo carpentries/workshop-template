@@ -1,7 +1,11 @@
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.data[0] %}
   <div class="alert alert-warning">
     <p>
       Unrecognized value for variable <code>flavor</code> set in
-      <code>_config.yml</code>. Valid values are <code>"r"</code> and
-      <code>"python"</code>, currently set to <code>{{ site.flavor }}</code>.
+      <code>data.json</code>. Valid values are <code>"r"</code> and
+      <code>"python"</code>, currently set to <code>{{ info.flavor }}</code>.
     </p>
   </div>

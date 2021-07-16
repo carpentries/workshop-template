@@ -7,8 +7,13 @@ The schedule for the different curricula are listed here:
 - dc-socsci
 - dc-geosptial
 {% endcomment %}
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.data[0] %}
 
-{% if site.curriculum == "dc-astronomy" %}
+
+{% if info.curriculum == "dc-astronomy" %}
 <div class="row">
   <div class="col-md-6">
     <h3>Day 1</h3>
@@ -34,7 +39,7 @@ The schedule for the different curricula are listed here:
   </div>
 </div>
 
-{% elsif site.curriculum == "dc-ecology" %}
+{% elsif info.curriculum == "dc-ecology" %}
 <div class="row">
   <div class="col-md-6">
     <h3>Day 1</h3>
@@ -48,9 +53,9 @@ The schedule for the different curricula are listed here:
       <tr>
         <td>Afternoon</td>
         <td>
-          {% if site.flavor == "r" %}
+          {% if info.flavor == "r" %}
           <a href="https://datacarpentry.org/R-ecology-lesson/">Introduction to R</a>
-          {% elsif site.flavor == "python" %}
+          {% elsif info.flavor == "python" %}
           <a href="https://datacarpentry.org/python-ecology-lesson/">Introduction to Python</a>
           {% else %}
           {% include warning-flavor.html %}
@@ -64,9 +69,9 @@ The schedule for the different curricula are listed here:
     <table class="table table-striped">
       <tr> <td>Morning</td>
         <td>
-          {% if site.flavor == "r" %}
+          {% if info.flavor == "r" %}
           <a href="https://datacarpentry.org/R-ecology-lesson/">Continuation of R: Data analysis and Visualization</a>
-          {% elsif site.flavor == "python" %}
+          {% elsif info.flavor == "python" %}
           <a href="https://datacarpentry.org/python-ecology-lesson/">Continuation of Python: Data analysis and Visualization</a>
           {% else %}
           {% include warning-flavor.html %}
@@ -86,7 +91,7 @@ The schedule for the different curricula are listed here:
   </div>
 </div>
 
-{% elsif site.curriculum == "dc-genomics" %}
+{% elsif info.curriculum == "dc-genomics" %}
 
 <div class="row">
   <div class="col-md-6">
@@ -119,7 +124,7 @@ The schedule for the different curricula are listed here:
   </div>
 </div>
 
-{% elsif site.curriculum == "dc-socsci" %}
+{% elsif info.curriculum == "dc-socsci" %}
 
 <div class="row">
   <div class="col-md-6">
@@ -153,7 +158,7 @@ The schedule for the different curricula are listed here:
 </div>
 
 
-{% elsif site.curriculum == "dc-geospatial" %}
+{% elsif info.curriculum == "dc-geospatial" %}
 
 <div class="row">
   <div class="col-md-6">

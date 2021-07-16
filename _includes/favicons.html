@@ -1,12 +1,16 @@
-{% assign favicon_url = relative_root_path | append: '/assets/favicons/' | append: site.carpentry  %}
+{% comment %}
+    Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.data[0] %}
+{% assign favicon_url = relative_root_path | append: '/assets/favicons/' | append: info.carpentry  %}
 
-{% if site.carpentry == 'swc' %}
+{% if info.carpentry == 'swc' %}
 {% assign carpentry = 'Software Carpentry' %}
-{% elsif site.carpentry == 'dc' %}
+{% elsif info.carpentry == 'dc' %}
 {% assign carpentry = 'Data Carpentry' %}
-{% elsif site.carpentry == 'lc' %}
+{% elsif info.carpentry == 'lc' %}
 {% assign carpentry = 'Library Carpentry' %}
-{% elsif site.carpentry == 'cp' %}
+{% elsif info.carpentry == 'cp' %}
 {% assign carpentry = 'The Carpentries' %}
 {% elsif site.carpentry == 'ds' %}
 {% assign carpentry = 'Digital Skills' %}
@@ -28,7 +32,7 @@
     <link rel="icon" type="image/png" href="{{ favicon_url }}/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="{{ favicon_url }}/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="{{ favicon_url }}/favicon-128.png" sizes="128x128" />
-    <meta name="application-name" content="{{ carpentry }} - {{ site.title }}"/>
+    <meta name="application-name" content="{{ carpentry }} - {{ info.title }}"/>
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="{{ favicon_url }}/mstile-144x144.png" />
     <meta name="msapplication-square70x70logo" content="{{ favicon_url }}/mstile-70x70.png" />

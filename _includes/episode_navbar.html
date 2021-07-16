@@ -14,7 +14,10 @@ need to re-assign it here
     'previous_episode' and 'next_episodes' are defined in 'manual_episode_order.html'.
     These replace 'page.previous' and 'page.next' objects, correspondingly.
 {% endcomment %}
-
+{% comment %}
+    Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.data[0] %}
 <div class="row">
   <div class="col-xs-1">
     <h3 class="text-left">
@@ -27,7 +30,7 @@ need to re-assign it here
   </div>
   <div class="col-xs-10">
     {% if include.episode_navbar_title %}
-    <h3 class="maintitle"><a href="{{ relative_root_path }}/">{{ site.title }}</a></h3>
+    <h3 class="maintitle"><a href="{{ relative_root_path }}/">{{ info.title }}</a></h3>
     {% endif %}
   </div>
   <div class="col-xs-1">
