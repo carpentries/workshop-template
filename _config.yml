@@ -5,14 +5,18 @@
 # More detailed instructions are available at:
 # https://carpentries.github.io/workshop-template/customization/index.html
 
-# Which carpentry is this ("swc", "dc", "lc", or "cp")?
+# Which carpentry is this ("swc", "dc", "lc", etcetera)?
 # swc: Software Carpentry
 #  dc: Data Carpentry
 #  lc: Library Carpentry
 #  cp: Carpentries (to use for instructor training for instance)
 #  pilot: for workshops piloting a new lesson (e.g. in The Carpentries Incubator)
-# Note that for regular workshops, you should use:
+#  ds: Digital Skills
+#  cr: Code Refinery
+# Note that for regular carpentry workshops, you should use:
 #  https://github.com/carpentries/workshop-template
+# for eScience Center workshops you should use:
+#  https://github.com/escience-academy/next-workshop-template
 # and for instructor training events you should use:
 #  https://github.com/carpentries/training-template
 # When setting this field to "pilot", please uncomment the
