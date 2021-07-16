@@ -83,6 +83,18 @@ It looks like you are setting up a website for a Software Carpentry curriculum b
 {% endif %}
 
 {% comment %}
+Check DS curriculum
+{% endcomment %}
+
+{% if site.carpentry == "ds" %}
+{% unless site.curriculum == "ds-cr" or site.curriculum == "ds-containers" or site.curriculum == "ds-dl-intro" or site.curriculum == "ds-gpu" or site.curriculum == "ds-parallel" %}
+<div class="alert alert-warning">
+It looks like you are setting up a website for a Digital Skills curriculum but you haven't specified the curriculum type in the <code>_config.yml</code> file (current value in <code>_config.yml</code>: "<strong>{{ site.curriculum }}</strong>", possible values: <code>ds-cr</code>, <code>ds-containers</code>, <code>ds-dl-intro</code>, <code>ds-gpu</code>, or <code>ds-parallel</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
+</div>
+{% endunless %}
+{% endif %}
+
+{% comment %}
 EVENTBRITE
 
 This block includes the Eventbrite registration widget if
@@ -285,7 +297,7 @@ CODE OF CONDUCT
 {% endcomment %}
 <h2 id="code-of-conduct">Code of Conduct</h2>
 
-{% if info.carpentry == "ds" or info.carpentry == "cr" %}
+{% if info.carpentry == "ds" %}
 <p>
 Participants are expected to follow those guidelines:
 <ul>
