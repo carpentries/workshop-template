@@ -5,14 +5,13 @@
 # More detailed instructions are available at:
 # https://carpentries.github.io/workshop-template/customization/index.html
 
-# Which carpentry is this ("swc", "dc", "lc", etcetera)?
+# Which carpentry is this ("swc", "dc", "lc", "cp", or "ds")?
 # swc: Software Carpentry
 #  dc: Data Carpentry
 #  lc: Library Carpentry
 #  cp: Carpentries (to use for instructor training for instance)
-#  pilot: for workshops piloting a new lesson (e.g. in The Carpentries Incubator)
 #  ds: Digital Skills
-#  cr: Code Refinery
+#  pilot: for workshops piloting a new lesson (e.g. in The Carpentries Incubator)
 # Note that for regular carpentry workshops, you should use:
 #  https://github.com/carpentries/workshop-template
 # for eScience Center workshops you should use:
@@ -22,11 +21,12 @@
 # When setting this field to "pilot", please uncomment the
 # pilot_lesson_site line further down this file and
 # add the URL to the relevant lesson site.
+carpentry: "FIXME"
 
-# This option is currently only needed for
-# Data Carpentry and Software Carpentry workshops.
+# This option is currently only required for
+# Data Carpentry, Software Carpentry, and Digital Skills workshops.
 # The value of the variable will be ignored for Library Carpentry
-# workshops.
+# and Carpentries workshops.
 # Possible values are:
 # dc-astronomy: for Data Carpentry Astronomy
 # dc-ecology: for Data Carpentry Ecology
@@ -35,6 +35,12 @@
 # dc-geospatial: for Data Carpentry Geospatial
 # swc-inflammation: for Software Carpentry based on the inflammation dataset
 # swc-gapminder: for Software Carpentry based on the Gapminder dataset
+# ds-cr: for Digital Skills Code Refinery
+# ds-containers: for Digital Skills based on Containers Lesson from Incubator
+# ds-dl-intro: for Digital Skills Introduction to Deep Learning  
+# ds-gpu: for Digital Skills GPU Programming  
+# ds-parallel: for Digital Skills Parallel Programming 
+curriculum: "FIXME"
 
 # If there is both an R and python official version of a curriculum
 # (as listed on https://software-carpentry.org/lessons/ and

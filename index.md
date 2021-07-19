@@ -58,6 +58,16 @@ remember to uncomment the `pilot_lesson_site` field in `_config.yml`
 8< ============================= until here ==================
 {% endcomment %}
 
+{% comment %}
+Check carpentry
+{% endcomment %}
+
+{% if info.carpentry == "FIXME" %}
+<div class="alert alert-warning">
+It looks like you are setting up a website for a workshop but you haven't specified the carpentry type in the <code>_data/data.csv</code> file (current value in <code>_data/data.csv</code>: "<strong>{{ info.carpentry }}</strong>", possible values: <code>swc</code>, <code>dc</code>, <code>lc</code>, <code>cp</code>, <code>ds</code>, or <code>pilot</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
+</div>
+{% endif %}
+
 
 {% comment %}
 Check DC curriculum
@@ -78,6 +88,18 @@ Check SWC curriculum
 {% unless info.curriculum == "swc-inflammation" or info.curriculum == "swc-gapminder" %}
 <div class="alert alert-warning">
 It looks like you are setting up a website for a Software Carpentry curriculum but you haven't specified the curriculum type in the <code>_data/data.csv</code> file (current value in <code>_data/data.csv</code>: "<strong>{{ info.curriculum }}</strong>", possible values: <code>swc-inflammation</code>, or <code>swc-gapminder</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
+</div>
+{% endunless %}
+{% endif %}
+
+{% comment %}
+Check DS curriculum
+{% endcomment %}
+
+{% if info.carpentry == "ds" %}
+{% unless info.curriculum == "ds-cr" or info.curriculum == "ds-containers" or info.curriculum == "ds-dl-intro" or info.curriculum == "ds-gpu" or info.curriculum == "ds-parallel" %}
+<div class="alert alert-warning">
+It looks like you are setting up a website for a Digital Skills curriculum but you haven't specified the curriculum type in the <code>_data/data.csv</code> file (current value in <code>_data/data.csv</code>: "<strong>{{ info.curriculum }}</strong>", possible values: <code>ds-cr</code>, <code>ds-containers</code>, <code>ds-dl-intro</code>, <code>ds-gpu</code>, or <code>ds-parallel</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
 </div>
 {% endunless %}
 {% endif %}
@@ -285,7 +307,7 @@ CODE OF CONDUCT
 {% endcomment %}
 <h2 id="code-of-conduct">Code of Conduct</h2>
 
-{% if info.carpentry == "ds" or info.carpentry == "cr" %}
+{% if info.carpentry == "ds" %}
 <p>
 Participants are expected to follow those guidelines:
 <ul>
