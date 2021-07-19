@@ -210,7 +210,7 @@ special instructions.
   <strong>Accessibility:</strong>
 {% if online == "false" %}
   We are committed to making this workshop
-  accessible to everybody. The workshop organizers have checked that:
+  accessible to everybody.  For workshops at a physical location, the workshop organizers have checked that:
 </p>
 <ul>
   <li>The room is wheelchair / scooter accessible.</li>
