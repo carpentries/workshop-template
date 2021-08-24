@@ -84,7 +84,7 @@ options.
 
 *   `latitude` and `longitude` are the latitude and longitude of the workshop
     site (so we can put a pin on our map). You can use
-    [this site](https://getlatlong.net/) to find these values.
+    [this site](https://www.latlong.net/) to find these values.
     See section below for value to use for online workshops.
 
 *  `humandate` is the human-friendly start and end date for the
