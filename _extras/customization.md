@@ -31,8 +31,7 @@ configure some site-wide variables and make the site function correctly:
   (currently only for Data Carpentry and Software Carpentry workshops).
 * `title` - overall title for the workshop. If set (i.e., different from "Workshop Title" or empty),
   it will appear in the "jumbotron" (the gray box at the top of the page). This variable is also
-  used for the title of the extra pages. More information about extra pages are [available in the
-  README](https://github.com/carpentries/workshop-template#creating-extra-pages).
+  used for the title of the extra pages. The README contains [more information about extra pages](https://github.com/carpentries/workshop-template#creating-extra-pages).
 
 For lesson pilot workshops, you should uncomment the following three fields in
 `_config.yml`:
@@ -54,7 +53,7 @@ You should not need to modify any of the other variable values in `_config.yml`.
 Your workshop's home page lives in `index.md`,
 which must define the values below in its header.
 If your workshop is taught online, see the
-[following section](#for-online-workshops) for customization
+[online workshops section](#for-online-workshops) for customization
 options.
 
 *   `layout` must be `workshop`.
@@ -72,7 +71,7 @@ options.
 
 *   `country` must be a two-letter ISO-3166 code for the country in
     which the workshop is going to take place, such as "fr" (for
-    France) or "nz" (for New Zealand) - see [Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)
+    France) or "nz" (for New Zealand) - see [ISO-3166 codes on Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)
     for a complete list. See section below for value to use for
     online workshops.
 
@@ -84,7 +83,7 @@ options.
 
 *   `latitude` and `longitude` are the latitude and longitude of the workshop
     site (so we can put a pin on our map). You can use
-    [this site](https://getlatlong.net/) to find these values.
+    [LatLong.net](https://www.latlong.net/) to find these values.
     See section below for value to use for online workshops.
 
 *  `humandate` is the human-friendly start and end date for the
@@ -132,7 +131,7 @@ The header may optionally define the following:
 
 *   `collaborative_notes` is the URL for the Etherpad for your workshop.
     If you are not using an Etherpad, you can delete this line. You can
-    create a carpentries etherpad [here](https://pad.carpentries.org/).
+    [create a carpentries etherpad here](https://pad.carpentries.org/).
 
 *   `eventbrite` is the multi-digit Eventbrite registration key.  If you
     are using Eventbrite, the Carpentries Regional Coordinators will
@@ -178,9 +177,9 @@ block of code found under the "Schedule" header and replace it with
 `{% raw %}{% include custom-schedule.html %}{% endraw %}`.
 
 The schedule is formatted using a table. If you would like to learn more about
-how to write tables in HTML, here is an [overview from
+how to write tables in HTML, here is an [HTML table overview from
 Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table) and
-the [w3schools](https://www.w3schools.com/html/html_tables.asp).
+the [HTML tables chapter from w3schools](https://www.w3schools.com/html/html_tables.asp).
 
 For pilot workshops, some placeholder text including a link to the lesson homepage
 will be displayed instead of a schedule table.
