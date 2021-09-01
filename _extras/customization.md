@@ -20,7 +20,7 @@ configure some site-wide variables and make the site function correctly:
     - `"lc"` for Library Carpentry workshops, and
     - `"cp"` for general Carpentries events such as instructor trainings (for which you should use
       <https://github.com/carpentries/training-template> as the website template).
-    - `"pilot"` for workshops piloting a new lesson (e.g. in The Carpentries Incubator).
+    - `"incubator"` for workshops teaching a lesson in The Carpentries Incubator.
 * `curriculum` - to tell us which curriculum is being taught.
   At the moment, applicable to Software and Data Carpentry workshops only.
   Possible values are:
@@ -29,16 +29,20 @@ configure some site-wide variables and make the site function correctly:
     - `"swc-inflammation"` or `"swc-gapminder"` for Software Carpentry workshops.
 * `flavor` - `"r"` or `"python"` depending on which lessons are being taught at the workshop
   (currently only for Data Carpentry and Software Carpentry workshops).
+* `pilot` - set this to `true` if the workshop will be a lesson pilot
+  (of a new official lesson or a lesson in The Carpentries Incubator).
 * `title` - overall title for the workshop. If set (i.e., different from "Workshop Title" or empty),
   it will appear in the "jumbotron" (the gray box at the top of the page). This variable is also
   used for the title of the extra pages. The README contains [more information about extra pages](https://github.com/carpentries/workshop-template#creating-extra-pages).
 
-For lesson pilot workshops, you should uncomment the following three fields in
+For workshops teaching lessons in The Carpentries Incubator,
+i.e. where `carpentry` is set to `incubator`,
+you should uncomment the following three fields in
 `_config.yml`:
 
-* `pilot_lesson_site` - the URL of the lesson pages that will be taught at the workshop.
-* `pilot_pre_survey` - the URL of the pre-workshop survey you have prepared for the pilot workshop. (The standard Carpentries pre- and post-workshop surveys should not be used for pilot workshops.)
-* `pilot_post_survey` - the URL of the post-workshop survey you have prepared for the pilot workshop.
+* `incubator_lesson_site` - the URL of the lesson pages that will be taught at the workshop.
+* `incubator_pre_survey` - the URL of the pre-workshop survey you have prepared for the pilot workshop. (The standard Carpentries pre- and post-workshop surveys should not be used for Incubator workshops.)
+* `incubator_post_survey` - the URL of the post-workshop survey you have prepared for the pilot workshop.
 
 ## Site URL
 
