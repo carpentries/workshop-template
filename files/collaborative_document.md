@@ -67,6 +67,8 @@ Name/ pronouns (optional) / job, role / social media (twitter, github, ...) / ba
 
 ## 🗓️ Agenda
 
+## 🔧 Exercises
+
 ## 🧠 Collaborative Notes
 
 ## 📚 Resources
