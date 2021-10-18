@@ -68,6 +68,9 @@ It looks like you are setting up a website for a workshop but you haven't specif
 </div>
 {% endif %}
 
+{% comment %} remote_include
+https://raw.githubusercontent.com/carpentries-incubator/lesson-parallel-python/gh-pages/_meta/description.md
+{% endcomment %}
 
 {% comment %}
 Check DC curriculum
