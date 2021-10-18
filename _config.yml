@@ -21,7 +21,7 @@
 # When setting this field to "pilot", please uncomment the
 # pilot_lesson_site line further down this file and
 # add the URL to the relevant lesson site.
-carpentry: "FIXME"
+carpentry: "ds"
 
 # This option is currently only required for
 # Data Carpentry, Software Carpentry, and Digital Skills workshops.
@@ -40,7 +40,7 @@ carpentry: "FIXME"
 # ds-dl-intro: for Digital Skills Introduction to Deep Learning
 # ds-gpu: for Digital Skills GPU Programming
 # ds-parallel: for Digital Skills Parallel Programming
-curriculum: "FIXME"
+curriculum: "ds-parallel"
 
 # If there is both an R and python official version of a curriculum
 # (as listed on https://software-carpentry.org/lessons/ and
