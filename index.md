@@ -69,6 +69,8 @@ It looks like you are setting up a website for a workshop but you haven't specif
 </div>
 {% endif %}
 
+{{ site.data.repositories }}
+
 {% remote_include https://raw.githubusercontent.com/{{page.ds-lesson-repo}}/gh-pages/_meta/description.md
 %}
 
