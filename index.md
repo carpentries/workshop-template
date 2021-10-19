@@ -68,10 +68,12 @@ It looks like you are setting up a website for a workshop but you haven't specif
 </div>
 {% endif %}
 
+{% comment %}
+Read correct repository slug from _data/repositories.csv
+{% endcomment %}
 {% assign repository = site.data.repositories | where: "curriculum", info.curriculum %}
 {% capture lesson_meta %}https://raw.githubusercontent.com/{{repository[0].slug}}/gh-pages/_meta{% endcapture %}
 
-{% remote_include {{lesson_meta}}/description.md %}
 
 {% comment %}
 Check DC curriculum
@@ -106,6 +108,7 @@ Check DS curriculum
 It looks like you are setting up a website for a Digital Skills curriculum but you haven't specified the curriculum type in the <code>_data/data.csv</code> file (current value in <code>_data/data.csv</code>: "<strong>{{ info.curriculum }}</strong>", possible values: <code>ds-cr</code>, <code>ds-containers</code>, <code>ds-dl-intro</code>, <code>ds-gpu</code>, or <code>ds-parallel</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
 </div>
 {% endunless %}
+{% remote_include {{lesson_meta}}/description.md %}
 {% endif %}
 
 {% comment %}
