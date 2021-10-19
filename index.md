@@ -18,7 +18,6 @@ helper: ["helper one", "helper two"]     # boxed, comma-separated list of helper
 email: ["training@esciencecenter.nl"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
-ds-lesson-repo:       carpentries-incubator/lesson-parallel-python
 ---
 
 {% comment %} See instructions in the comments below for how to edit specific sections of this workshop template. {% endcomment %}
@@ -69,10 +68,10 @@ It looks like you are setting up a website for a workshop but you haven't specif
 </div>
 {% endif %}
 
-{{ site.data.repositories }}
+{% assign repository = site.data.repositories | where: "curriculum", info.curriculum %}
+{% capture lesson_meta %}https://raw.githubusercontent.com/{{repository[0].slug}}/gh-pages/_meta{% endcapture %}
 
-{% remote_include https://raw.githubusercontent.com/{{page.ds-lesson-repo}}/gh-pages/_meta/description.md
-%}
+{% remote_include {{lesson_meta}}/description.md %}
 
 {% comment %}
 Check DC curriculum
@@ -144,6 +143,8 @@ the pitch.
 {% include dc/intro.html %}
 {% elsif info.carpentry == "lc" %}
 {% include lc/intro.html %}
+{% elsif info.carpentry == "ds" %}
+{% include ds/intro.md %}
 {% endif %}
 
 {% comment %}
@@ -158,6 +159,11 @@ workshop is only open to people from a particular institution.
 {% include dc/who.html %}
 {% elsif info.carpentry == "lc" %}
 {% include lc/who.html %}
+{% elsif info.carpentry == "ds" %}
+<div style="display: flex"><div>
+     <strong>Who:&nbsp;</strong>
+     </div>
+     <div markdown=1>{% remote_include {{lesson_meta}}/who.md %}</div></div>
 {% endif %}
 
 {% comment %}
@@ -390,6 +396,8 @@ of code below the Schedule `<h2>` header below with
 {% include dc/schedule.html %}
 {% elsif info.carpentry == "lc" %}
 {% include lc/schedule.html %}
+{% elsif info.carpentry == "ds" %}
+{% remote_include {{lesson_meta}}/schedule.md %}
 {% elsif info.carpentry == "pilot" %}
 The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. If you would like to know the timing of these breaks in advance, please [contact the workshop organisers](#contact). For a list of lesson sections and estimated timings, [visit the lesson homepage]({{ site.lesson_site }}).
 {% comment %}
@@ -417,13 +425,15 @@ please preview your site before committing, and make sure to run
 <h2 id="setup">Setup</h2>
 
 <p>
-  To participate in a
+  To participate in
   {% if info.carpentry == "swc" %}
-  Software Carpentry
+  a Software Carpentry
   {% elsif info.carpentry == "dc" %}
-  Data Carpentry
+  a Data Carpentry
   {% elsif info.carpentry == "lc" %}
-  Library Carpentry
+  a Library Carpentry
+  {% else %}
+  this
   {% endif %}
   workshop,
   you will need access to software as described below.
@@ -460,6 +470,8 @@ during the workshop.
 {% include dc/setup.html %}
 {% elsif info.carpentry == "lc" %}
 {% include lc/setup.html %}
+{% elsif info.carpentry == "ds" %}
+{% remote_include {{lesson_meta}}/setup.md %}
 {% elsif info.carpentry == "pilot" %}
 Please check the "Setup" page of
 [the lesson site]({{ site.lesson_site }}) for instructions to follow

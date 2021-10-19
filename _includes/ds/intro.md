@@ -1,0 +1,1 @@
+The Digital Skills programme at the Netherlands eScience Center focuses on the foundational digital skills needed to put reproducible research into practice. The workshops we run cover the essentials of version control, online collaboration, reproducible code and good programming practices.
