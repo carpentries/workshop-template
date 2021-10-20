@@ -3,11 +3,11 @@
 # The Workshop Template
 
 This repository is a template for creating a workshop page for [eScience Center
-Digital Skills][ds-site], and the Carpentries' ([Software Carpentry][swc-site],
-[Data Carpentry][dc-site], [Library Carpentry][lc-site]'s).
-
-If you run into problems, or have ideas about how to make this process simpler,
-please [get in touch](#getting-and-giving-help).
+Digital Skills][ds-site], and the Carpentries [Software Carpentry][swc-site],
+[Data Carpentry][dc-site], [Library Carpentry][lc-site].
+We are committed to offering a pleasant setup experience for our learners and
+organizers. If you run into problems, or would like to suggest improvements,
+please [submit an issue][issues] or [mail us][email].
 
 ## Use this template
 
@@ -201,21 +201,14 @@ You should not have them use the workshop website repository because:
 
 You can call this repository whatever you like, and add whatever content you need to it.
 
-## Getting and Giving Help
 
-We are committed to offering a pleasant setup experience for our learners and organizers.
-If you find bugs in our instructions,
-or would like to suggest improvements,
-please [file an issue][issues]
-or [mail us][email].
-
-[email]: mailto:team@carpentries.org
+[email]: mailto:training@esciencecenter.nl
 [customization]: https://carpentries.github.io/workshop-template/customization/index.html
 [dc-site]: https://datacarpentry.org
 [design]: https://carpentries.github.io/workshop-template/design/index.html
 [faq]: https://carpentries.github.io/workshop-template/faq/index.html
 [github-project-pages]: https://jekyllrb.com/docs/continuous-integration/github-actions/
-[issues]: https://github.com/carpentries/workshop-template/issues
+[issues]: https://github.com/esciencecenter-digital-skills/next-workshop-template/issues
 [lesson-example]: https://carpentries.github.io/lesson-example/
 [self-organized-workshop-form]: https://amy.carpentries.org/forms/self-organised/
 [swc-site]: https://software-carpentry.org
