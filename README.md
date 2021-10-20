@@ -22,7 +22,7 @@ please [submit an issue][issues] or [mail us][email].
     `esciencecenter-digital-skills`.
 
 3.  Choose a name for your workshop website repository. This name should have
-    the form `YYYY-MM-DD-type-curriculum`, e.g., `2016-12-01-ds-gpu`, where
+    the form `YYYY-MM-DD-carpentry-curriculum`, e.g., `2016-12-01-ds-gpu`, where
     `YYYY-MM-DD` is the start date of the workshop, `ds` stands for Digital
     Skills, and `gpu` is the workshop name in this example.
 
@@ -39,56 +39,69 @@ please [submit an issue][issues] or [mail us][email].
    used for deployment that creats a `gh-pages` branch, see
    [building a Jekyll site usin a GitHub Action][github-project-pages] for more information.
 
-## Customizing Your Website (Required Steps)
 
-There are two ways of customizing your website. You can either:
+## Required information 
 
-- edit the files directly in GitHub using your web browser
-- clone the repository on your computer and update the files locally
+1. The file `data.csv` in `_data` directory of this repository contains the
+   workshop information:
 
-### Updating the files on GitHub in your web browser
+- venue: brief name of the institution that hosts the workshop without address
+(e.g., "eScience Center")
 
-1.  Go into your newly-created repository,
-    which will be at `https://github.com/your_username/YYYY-MM-DD-site`.
-    For example,
-    if your username is `gvwilson`,
-    the repository's URL will be `https://github.com/gvwilson/2016-12-01-oomza`.
+- address: full street address of workshop (e.g., "Science Park 140, 1098 XG
+  Amsterdam")
 
-3.  Ensure you are on the gh-pages branch by clicking on the branch under the drop
-    down in the menu bar (see the note below):
+- country: country for the institution that hosts the workshop (e.g.,
+  Netherlands)
 
-    ![screenshot of this repository's GitHub page showing the "Branch" dropdown menu expanded with the "gh-pages" branch selected](fig/select-gh-pages-branch.png?raw=true)
+- latitude: decimal latitude of workshop venue, use https://www.latlong.net/
+  (e.g., 52.35695685)
 
-3.  Edit the header of `index.md` to customize the list of instructors,
-    workshop venue, etc.
-    You can do this in the browser by clicking on it in the file view on GitHub
-    and then selecting the pencil icon in the menu bar:
+- longitude: decimal longitude of the workshop venue, use
+  https://www.latlong.net (e.g., 4.95433748205789)
 
-    ![screenshot of top menu bar for GitHub's file interface with the edit icon highlighted in the top right](fig/edit-index-file-menu-bar.png?raw=true)
+- humandate: human-readable dates for the workshop (e.g., "December 24 - 26,
+  2021, CET")
 
-    Editing hints are embedded in `index.md`,
-    and full instructions are in [the customization instructions][customization].
+- humantime: human-readable times for the workshop (e.g., "7:00 - 9:00")
 
-4.  Remove the notice about using the workshop template in the `index.md` file. You can safely
-    delete everything between the `{% comment %}` and `{% endcomment %}` (included) as indicated
-    below (about from line 35 to line 51):
+- startdate: machine-readable start date for the workshop (e.g.,
+  "2021-12-24T00:00:00Z")
 
-    ```jekyll
-    {% comment %} <------------ remove from this line
-    8< ============= For a workshop delete from here =============
-    For a workshop please delete the following block until the next dashed-line
-    {% endcomment %}
+- enddate: machine-readable end date for the workshop (e.g.,
+  "2021-12-26T00:00:00Z")
 
-    <div class="alert alert-danger">
-      ....
-    </div>
+- instructor: comma-separated list of instructors' names as strings (e.g.,
+  "Johan Hidding, Lieke de Boer, Mateusz Kuzak")
 
-    {% comment %}
-     8< ============================= until here ==================
-    {% endcomment %} <--------- until this line
-    ```
+- helper: comma-separated list of helpers' names, (e.g., ,"Pushpanjali Pawar,
+  Thijs van Lankveld")
 
-4.  Edit `_config.yml` to customize certain site-wide variables, such as: `carpentry` (to tell your
+- carpentry: "ds" for eScience Center Digital Skills, "swc" for Software
+  Carpentry, "dc" for Data Carpentry, and "lc" for Library Carpentry.
+
+- curriculum: lesson name (e.g. "ds-parallel")
+
+- title: the title of the workshop (e.g. "Christmas special test workshop")
+
+- slug: the name of workshop repository (e.g. "2021-12-24-dc-socsci-R-nlesc")
+
+- flavor: the programming language used in the workshop (e.g. "R")
+
+2. The file `repositories.csv` in `_data` directory of this repository contains the
+   links of the lessons (in GitHub):
+
+3. The folder `_meta` in the lesson repository contains lesson information:
+
+
+## Customizing your workshop page
+
+1. Edit `data.csv` in `_data` directory of this repository: You can do this in
+   the browser on GitHub or generates it by: FIXME
+
+2. Edit files in the folder `_meta` in the lesson repository.
+
+3.  Edit `_config.yml` to customize certain site-wide variables, such as: `carpentry` (to tell your
     participants the lesson program for your workshop), `curriculum` and `flavor` for the
     curriculum  taught in your workshop, and `title` (overall title for all pages).
 
