@@ -1,70 +1,43 @@
 [![Build Jekyll site](https://github.com/esciencecenter-digital-skills/next-workshop-template/actions/workflows/jekyll.yml/badge.svg)](https://github.com/esciencecenter-digital-skills/next-workshop-template/actions/workflows/jekyll.yml)
 
-# The Carpentries Workshop Template
+# The Workshop Template
 
-This repository is The Carpentries' ([Software Carpentry][swc-site], [Data Carpentry][dc-site], and
-[Library Carpentry][lc-site]'s) template for creating websites for workshops.
+This repository is a template for creating a workshop page for [eScience Center
+Digital Skills][ds-site], and the Carpentries' ([Software Carpentry][swc-site],
+[Data Carpentry][dc-site], [Library Carpentry][lc-site]'s).
 
-1. **Please _do not fork this repository directly on GitHub._** Instead, please use GitHub's
-   "template" function following [the instructions below](#creating-a-repository) to copy this
-   `workshop-template` repository and customize it for your workshop.
-
-2. Please *do your work in your repository's `gh-pages` branch*, since that is what is
-   [automatically published as a website by GitHub][github-project-pages].
-
-3. Once you are done, please also [let us know][email] the workshop URL. If this is a self-organised
-   workshop, you should also [fill in the self-organized workshop
-   form][self-organized-workshop-form] (if you have not already done so), so we can keep track of
-   all workshops. We build the list of workshops on our websites from the data included in your
-   `index.md` page. We can only do that if you [customize][customization] that page correctly *and*
-   let us know the workshop URL.
-
-If you run into problems,
-or have ideas about how to make this process simpler,
+If you run into problems, or have ideas about how to make this process simpler,
 please [get in touch](#getting-and-giving-help).
-The pages on [customizing your website][customization],
-the [FAQ][faq],
-and the [design notes][design] have more detail on what we do and why.
-And please note:
-if you are teaching Git,
-please [create a separate repository](#setting-up-a-separate-repository-for-learners)
-for your learners to practice in.
 
-## Video Tutorial
+## Use this template
 
-There is a [YouTube video](https://www.youtube.com/watch?v=_Ag1JiZzyUQ) that demonstrates how to
-create a workshop website.
+1. **Please _do not fork this repository directly on GitHub._** Instead,
+   use GitHub's function to copy this template repository and customize it for
+   your workshop. On this page
+   (<https://github.com/esciencecenter-digital-skills/next-workshop-template>),
+   click on the green `Use this template` button (top right).
 
-## Creating a Repository
+2.  Select the owner for your new repository. This will probably be you, but may
+    instead be an organization you belong to e.g.
+    `esciencecenter-digital-skills`.
 
-1.  Log in to GitHub.
-    (If you do not have an account, you can quickly create one for free.)
-    You must be logged in for the remaining steps to work.
+3.  Choose a name for your workshop website repository. This name should have
+    the form `YYYY-MM-DD-type-curriculum`, e.g., `2016-12-01-ds-gpu`, where
+    `YYYY-MM-DD` is the start date of the workshop, `ds` stands for Digital
+    Skills, and `gpu` is the workshop name in this example.
 
-2.  On this page (<https://github.com/carpentries/workshop-template>),
-    click on the green "Use this template" button (top right)
+4.  Make sure the repository is public, leave "Include all branches" unchecked,
+    and click on "Create repository from template". You will be redirected to
+    your new copy of the workshop template repository.
 
-    ![screenshot of this repository's GitHub page with an arrow pointing to the the 'use this template' button on the top left](fig/select-github-use-template.png?raw=true)
+5. Your new website will be rendered at
+   `https://owner_name.github.io/YYYY-MM-DD-type-curriculum`. For example, if
+   `esciencecenter-digital-skills` is the owner, the workshop's URL will be
+   `https://esciencecenter-digital-skills.github.io/2021-11-02-ds-gpu/`.
 
-3.  Select the owner for your new repository.
-    (This will probably be you, but may instead be an organization you belong to.)
-
-4.  Choose a name for your workshop website repository.
-    This name should have the form `YYYY-MM-DD-site`,
-    e.g., `2016-12-01-oomza`,
-    where `YYYY-MM-DD` is the start date of the workshop.
-    If your workshop is held online, then the respository name should have `-online` in the end.
-    e.g., `2016-12-01-oomza-online`
-
-5.  Make sure the repository is public, leave "Include all branches" unchecked, and click
-on "Create repository from template".
-You will be redirected to your new copy of the workshop template respository.
-
-6. Your new website will be rendered at `https://your_username.github.io/YYYY-MM-DD-site`.
-For example, if your username is `gvwilson`, the website's URL will be
-`https://gvwilson.github.io/2016-12-01-oomza`.
-
-If you experience a problem, please [get in touch](#getting-and-giving-help).
+6. Please do your work in the repository's `main` branch. A GitHub action is
+   used for deployment that creats a `gh-pages` branch, see
+   [building a Jekyll site usin a GitHub Action][github-project-pages] for more information.
 
 ## Customizing Your Website (Required Steps)
 
@@ -241,9 +214,10 @@ or [mail us][email].
 [dc-site]: https://datacarpentry.org
 [design]: https://carpentries.github.io/workshop-template/design/index.html
 [faq]: https://carpentries.github.io/workshop-template/faq/index.html
-[github-project-pages]: https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site
+[github-project-pages]: https://jekyllrb.com/docs/continuous-integration/github-actions/
 [issues]: https://github.com/carpentries/workshop-template/issues
 [lesson-example]: https://carpentries.github.io/lesson-example/
 [self-organized-workshop-form]: https://amy.carpentries.org/forms/self-organised/
 [swc-site]: https://software-carpentry.org
 [lc-site]: https://librarycarpentry.org
+[ds-site]: https://esciencecenter-digital-skills.github.io/
