@@ -87,16 +87,11 @@ You can do this by putting either Markdown or HTML pages in the website's root d
 and styling them according to the instructions give in
 [the lesson template][lesson-example].
 
-
 [email]: mailto:training@esciencecenter.nl
-[customization]: https://carpentries.github.io/workshop-template/customization/index.html
 [dc-site]: https://datacarpentry.org
-[design]: https://carpentries.github.io/workshop-template/design/index.html
-[faq]: https://carpentries.github.io/workshop-template/faq/index.html
 [github-project-pages]: https://jekyllrb.com/docs/continuous-integration/github-actions/
 [issues]: https://github.com/esciencecenter-digital-skills/next-workshop-template/issues
 [lesson-example]: https://carpentries.github.io/lesson-example/
-[self-organized-workshop-form]: https://amy.carpentries.org/forms/self-organised/
 [swc-site]: https://software-carpentry.org
 [lc-site]: https://librarycarpentry.org
 [ds-site]: https://esciencecenter-digital-skills.github.io/
