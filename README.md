@@ -36,8 +36,8 @@ please [submit an issue][issues] or [mail us][email].
    `https://esciencecenter-digital-skills.github.io/2021-11-02-ds-gpu/`.
 
 6. Please do your work in the repository's `main` branch. A GitHub action is
-   used for deployment that creats a `gh-pages` branch, see
-   [building a Jekyll site usin a GitHub Action][github-project-pages] for more information.
+   used for deployment that creates a `gh-pages` branch, see
+   [building a Jekyll site using a GitHub Action][github-project-pages] for more information.
 
 ## Required information and customizing your workshop page
 
@@ -51,7 +51,7 @@ please [submit an issue][issues] or [mail us][email].
 3.  Edit `_config.yml` to customize certain site-wide variables, such as: `carpentry` (to tell your
     participants the lesson program for your workshop), `curriculum` and `flavor` for the
     curriculum taught in your workshop, and `title` (overall title for all pages).
-    This file also contains links to the lessons in GitHub.
+    This file also contains links to the lessons on GitHub.
 
 If you are already familiar with Git, you can clone the lesson and workshop
 repositories, and edit these files. Then push your changes back to the
@@ -62,12 +62,13 @@ repository. Otherwise, you can edit files using the GitHub web interface.
 If you want to set up Jekyll so that you can preview changes on your own machine
 before pushing them to GitHub, you must install the software described in the
 lesson example 
-[setup instructions](https://carpentries.github.io/lesson-example/setup.html#jekyll-setup-for-lesson-development).
+[setup instructions][setup-instructions].
 Then, you can preview your site locally with:
 
 ```shell
 make serve
 ```
+
 and go to <http://0.0.0.0:4000> to preview your site.
 
 We recommend that you also check for any potential issues with your site by
@@ -93,3 +94,4 @@ and styling them according to the instructions give in
 [swc-site]: https://software-carpentry.org
 [lc-site]: https://librarycarpentry.org
 [ds-site]: https://esciencecenter-digital-skills.github.io/
+[setup-instructions]: https://carpentries.github.io/lesson-example/setup.html#jekyll-setup-for-lesson-development
