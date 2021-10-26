@@ -44,12 +44,3 @@ The file `data.csv` in this directory contains the workshop information:
 - slug: the name of workshop repository (e.g. "2021-12-24-dc-socsci-R-nlesc")
 
 - flavor: the programming language used in the workshop (e.g. "R")
-
-# repositories.csv
-
-The file `repositories.csv` in  this directory contains the
-   links of the lessons (in GitHub). 
-  
-- curriculum: e.g. `ds-parallel`
-
-- slug: the GitHub address of a lesson e.g. `escience-digital-skills/lesson-parallel-python`
