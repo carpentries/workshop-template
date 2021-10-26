@@ -31,7 +31,7 @@ The file `data.csv` in this directory contains the workshop information:
 - instructor: comma-separated list of instructors' names as strings (e.g.,
   "Johan Hidding, Lieke de Boer, Mateusz Kuzak")
 
-- helper: comma-separated list of helpers' names, (e.g., ,"Pushpanjali Pawar,
+- helper: comma-separated list of helpers' names (e.g., ,"Pushpanjali Pawar,
   Thijs van Lankveld")
 
 - carpentry: "ds" for eScience Center Digital Skills, "swc" for Software
@@ -44,3 +44,7 @@ The file `data.csv` in this directory contains the workshop information:
 - slug: the name of workshop repository (e.g. "2021-12-24-dc-socsci-R-nlesc")
 
 - flavor: the programming language used in the workshop (e.g. "R")
+
+- eventbrite: alphanumeric key for Eventbrite registration (e.g., "1234567890AB") 
+
+- ready:
