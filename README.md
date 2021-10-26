@@ -74,19 +74,12 @@ make serve
 
 and go to <http://0.0.0.0:4000> to preview your site.
 
-We recommend that you also check for any potential issues with your site by
-running:
-
-```shell
-make workshop-check
-```
-
 ## Creating Extra Pages
 
 In rare cases,
 you may want to add extra pages to your workshop website.
 You can do this by putting either Markdown or HTML pages in the website's root directory
-and styling them according to the instructions give in
+and styling them according to the instructions given in
 [the lesson template][lesson-example].
 
 [email]: mailto:training@esciencecenter.nl
