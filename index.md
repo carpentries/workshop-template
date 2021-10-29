@@ -42,6 +42,7 @@ For a workshop please delete the following block until the next dashed-line
 {% endcomment %}
 {% assign info = site.data.data[0] %}
 
+{% comment %}
 <div class="alert alert-danger">
 This is the workshop template. Delete these lines and use it to
 <a href="https://carpentries.github.io/workshop-template/customization/index.html">customize</a>
@@ -53,6 +54,7 @@ need any extra information.
 If this is a pilot workshop for a new lesson,
 remember to uncomment the `pilot_lesson_site` field in `_config.yml`
 </div>
+{% endcomment %}
 
 {% comment %}
 8< ============================= until here ==================
@@ -108,7 +110,6 @@ Check DS curriculum
 It looks like you are setting up a website for a Digital Skills curriculum but you haven't specified the curriculum type in the <code>_data/data.csv</code> file (current value in <code>_data/data.csv</code>: "<strong>{{ info.curriculum }}</strong>", possible values: <code>ds-cr</code>, <code>ds-containers</code>, <code>ds-dl-intro</code>, <code>ds-gpu</code>, or <code>ds-parallel</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
 </div>
 {% endunless %}
-{% remote_include {{lesson_meta}}/description.md %}
 {% endif %}
 
 {% comment %}
@@ -148,6 +149,7 @@ the pitch.
 {% include lc/intro.html %}
 {% elsif info.carpentry == "ds" %}
 {% include ds/intro.md %}
+{% remote_include {{lesson_meta}}/description.md %}
 {% endif %}
 
 {% comment %}
@@ -390,6 +392,11 @@ further. To use this custom schedule here, replace the block
 of code below the Schedule `<h2>` header below with
 `{% include custom-schedule.html %}`.
 {% endcomment %}
+
+{% if info.carpentry == "ds" %}
+<h2 id="syllabus">Syllabus</h2>
+{% remote_include {{lesson_meta}}/syllabus.md %}
+{% endif %}
 
 <h2 id="schedule">Schedule</h2>
 
