@@ -18,7 +18,7 @@ please [submit an issue][issues] or [mail us][email].
    click on the green `Use this template` button (top right).
 
 2.  Select the owner for your new repository. This should be
-    `esciencecenter-digital-skills`.
+    `esciencecenter-digital-skills` GitHub organisation.
 
 3.  Choose a name for your workshop website repository. This name should have
     the form `YYYY-MM-DD-carpentry-curriculum`, e.g., `2016-12-01-ds-gpu`, where
