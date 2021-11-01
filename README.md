@@ -17,7 +17,7 @@ please [submit an issue][issues] or [mail us][email].
    (<https://github.com/esciencecenter-digital-skills/next-workshop-template>),
    click on the green `Use this template` button (top right).
 
-2.  Select the owner for your new repository. This will probably be you, but may
+2.  Select the owner for your new repository. This should be
     instead be an organization you belong to e.g.
     `esciencecenter-digital-skills`.
 
