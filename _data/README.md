@@ -1,5 +1,6 @@
 # data.csv
-
+```suggestion
+`data.csv` file should not be edited by hand. It is generated automatically by the workshop coordinator when all the information is available.
 The file `data.csv` in this directory contains the workshop information:
 
 - venue: brief name of the institution that hosts the workshop without address
