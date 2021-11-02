@@ -43,6 +43,11 @@ For a workshop please delete the following block until the next dashed-line
 {% assign info = site.data.data[0] %}
 
 {% comment %}
+  Assign value in eventbrite file as eventbrite to access the code
+{% endcomment %}
+{% assign eventbrite = site.data.eventbrite %}
+
+{% comment %}
 <div class="alert alert-danger">
 This is the workshop template. Delete these lines and use it to
 <a href="https://carpentries.github.io/workshop-template/customization/index.html">customize</a>
@@ -120,11 +125,11 @@ This block includes the Eventbrite registration widget if
 are not using Eventbrite, or leave it in, since it will not be
 displayed if the 'eventbrite' field in the header is not set.
 {% endcomment %}
-{% if info.eventbrite %}
+{% if eventbrite %}
 <strong>Some adblockers block the registration window. If you do not see the
   registration box below, please check your adblocker settings.</strong>
 <iframe
-  src="https://www.eventbrite.com/tickets-external?eid={{info.eventbrite}}&ref=etckt"
+  src="https://www.eventbrite.com/tickets-external?eid={{eventbrite}}&ref=etckt"
   frameborder="0"
   width="100%"
   height="280px"
