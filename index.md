@@ -71,10 +71,9 @@ It looks like you are setting up a website for a workshop but you haven't specif
 {% endif %}
 
 {% comment %}
-Read correct repository slug from _data/repositories.csv
+Read correct lesson meta from esciencecenter-digital-skills/workshop-metadata
 {% endcomment %}
-{% assign repository = site.data.repositories | where: "curriculum", info.curriculum %}
-{% capture lesson_meta %}https://raw.githubusercontent.com/{{repository[0].slug}}/gh-pages/_meta{% endcapture %}
+{% capture lesson_meta %}https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{{info.curriculum}}{% endcapture %}
 
 
 {% comment %}
