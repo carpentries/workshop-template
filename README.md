@@ -43,20 +43,23 @@ please [submit an issue][issues] or [mail us][email].
 1. The file `data.csv` in `_data` directory contains the workshop information.
    See the [documention](./_data/README.md).
 
-2. The file `repositories.csv` in `_data` directory contains links to the
-  lessons on GitHub. 
+2. The file `eventbrite.json` in `_data` directory contains eventbrite code. See
+   the [documention](./_data/README.md).
+
+3. The file `repositories.csv` in `_data` directory contains links to the
+  lessons on GitHub.
   <!-- TODO move  repositories.csv to config.yml-->
 
-3. The folder `_meta` in the lesson repository contains lesson information. See
+4. The folder `_meta` in the lesson repository contains lesson information. See
    the [documention](FIXME).
    <!-- TODO add links to next-lesson-template-->
 
-4. Edit `_config.yml` to customize certain site-wide variables, such as:
+5. Edit `_config.yml` to customize certain site-wide variables, such as:
     `carpentry` (to tell your participants the lesson program for your
     workshop), `curriculum` and `flavor` for the curriculum taught in your
     workshop, and `title` (overall title for all pages).
 
-5. There is a `collaborative_document.md` in the `files` directory of this
+6. There is a `collaborative_document.md` in the `files` directory of this
    repository. You can use it as a template to create a collaborative document
    on [hackmd](https://hackmd.io/). Please note that you need to sign in.
 
