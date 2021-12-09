@@ -6,3 +6,16 @@ from here: https://stackoverflow.com/a/37659516/1113276
 {% assign final_day = page.enddate | date: '%s' | plus:86400 | date: '%F' | replace: "-", "" %}
 
 <a href="//calendar.google.com/calendar/render?action=TEMPLATE&text={% if site.carpentry == "swc" %}Software{% elsif site.carpentry == "lc" %}Library{% elsif site.carpentry == "dc" %}Data{% endif %} Carpentry Workshop&dates={{ page.startdate   | replace: "-", "" }}/{{ final_day }}&trp=false&sprop&sprop=name:&sf=true&output=xml&location={{ page.address }}&details={% if site.carpentry == "swc" %}Software{% elsif site.carpentry == "lc" %}Library{% elsif site.carpentry == "dc" %}Data{% endif %} Carpentry Workshop at {{ page.venue }}">Add to your Google Calendar.</a>
+
+{% comment %}
+https://datatracker.ietf.org/doc/html/rfc5545
+https://manueltgomes.com/microsoft/powerautomate/ics-calendar-event/
+https://robkendal.co.uk/blog/2020-04-17-saving-text-to-client-side-file-using-vanilla-js
+{% endcomment %}
+<form>
+                                <input type="hidden" name="summary" id="summary" value='{% if site.carpentry == "swc" %}Software{% elsif site.carpentry == "lc" %}Library{% elsif site.carpentry == "dc" %}Data{% endif %} Carpentry Workshop'><br>
+                                <input type="hidden" name="location" id="location" value='{{ page.address }}'><br>
+                                <input type="hidden" name="startdate" id="startdate" value='{{ page.startdate   | replace: "-", "" }}'><br>
+				<input type="hidden" name="enddate" id="enddate" value='{{ page.enddate   | replace: "-", "" }}'><br>
+<input type="submit" id="download-btn" value="Download ics"><br>
+</form>
