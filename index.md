@@ -489,7 +489,10 @@ during the workshop.
 {% remote_include {{lesson_meta}}/setup.md %}
 {% endcapture %}
 {% if content contains "/setup.md" %}
+  {% capture setup %}
   {% remote_include https://raw.githubusercontent.com/{{content | strip}} %}
+  {% endcapture %}
+  {{ setup | split: "---" | last}}
 {% else %}
   {{ content }}
 {% endif %}
