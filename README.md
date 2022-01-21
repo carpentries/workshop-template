@@ -29,12 +29,18 @@ please [submit an issue][issues] or [mail us][email].
     and click on "Create repository from template". You will be redirected to
     your new copy of the workshop template repository.
 
-5. Your new website will be rendered at
+5.  Go to the the workshop repository that is just created. Click on "Settings"
+    tab. In the left sidebar, click on "Pages". Under "GitHub Pages", use the
+    _gh-pages_ branch from drop-down menu and press "save". For more information,
+    see [GitHub
+    documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site). 
+
+6. Your new website will be rendered at
    `https://owner_name.github.io/YYYY-MM-DD-type-curriculum`. For example, if
    `esciencecenter-digital-skills` is the owner, the workshop's URL will be
    `https://esciencecenter-digital-skills.github.io/2021-11-02-ds-gpu/`.
 
-6. Please do your work in the repository's `main` branch. A GitHub action is
+7. Please do your work in the repository's `main` branch. A GitHub action is
    used for deployment that creates a `gh-pages` branch, see
    [building a Jekyll site using a GitHub Action][github-project-pages] for more information.
 
