@@ -56,7 +56,9 @@
       <ul class="nav navbar-nav">
 
 	{% comment %} Always show code of conduct. {% endcomment %}
+        {% if info.carpentry != "ds" %}
         <li><a href="{{ relative_root_path }}{% link CODE_OF_CONDUCT.md %}">Code of Conduct</a></li>
+        {% endif %}
 
         {% if site.kind == "lesson" %}
 	{% comment %} Show setup instructions. {% endcomment %}
@@ -101,7 +103,9 @@
 	{% endif %}
 
 	{% comment %} Always show license. {% endcomment %}
-        <li><a href="https://escience-academy.github.io/license">License</a></li>
+        {% if info.carpentry == "ds" %}
+        <li><a href="https://esciencecenter-digital-skills.github.io/license">License</a></li>
+        {% endif %}
       </ul>
     </div>
   </div>
