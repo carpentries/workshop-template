@@ -35,6 +35,9 @@
       {% elsif site.carpentry == "incubator" %}
       <a href="{{ site.incubator_lesson_site }}" class="pull-left">
         <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/incubator-logo-blue.svg %}" alt="The Carpentries Incubator logo" />
+      {% elsif site.carpentry == "lab" %}
+      <a href="{{ relative_root_path }}{% link index.md %}" class="pull-left">
+        <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/carpentrieslab.svg %}" alt="The Carpentries Lab" />
       </a>
       {% endif %}
 
@@ -84,7 +87,9 @@
             {% else %}
               {% assign extra = lesson_extra %}
             {% endif %}
-            <li><a href="{{ relative_root_path }}{{ extra.url }}">{{ extra.title }}</a></li>
+            {% unless extra.exclude %}
+              <li><a href="{{ relative_root_path }}{{ extra.url }}">{{ extra.title }}</a></li>
+            {% endunless %}
             {% endfor %}
           </ul>
         </li>
