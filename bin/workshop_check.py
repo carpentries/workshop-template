@@ -7,7 +7,8 @@ import sys
 import os
 import re
 from datetime import date
-from util import Reporter, split_metadata, load_yaml, check_unwanted_files
+from util import split_metadata, load_yaml, check_unwanted_files
+from reporter import Reporter
 
 # Metadata field patterns.
 EMAIL_PATTERN = r'[^@]+@[^@]+\.[^@]+'
@@ -16,7 +17,8 @@ EVENTBRITE_PATTERN = r'\d{9,10}'
 URL_PATTERN = r'https?://.+'
 
 # Defaults.
-DEFAULT_CONTACT_EMAIL = 'admin@software-carpentry.org'
+CARPENTRIES = ("dc", "swc", "lc", "cp")
+DEFAULT_CONTACT_EMAIL = 'team@carpentries.org'
 
 USAGE = 'Usage: "workshop_check.py path/to/root/directory"'
 
