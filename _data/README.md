@@ -6,10 +6,11 @@ the workshop coordinator when all the information is available.
 The file `data.csv` in this directory contains the workshop information:
 
 - venue: brief name of the institution that hosts the workshop without address
-(e.g., "eScience Center")
+(e.g., "Netherlands eScience Center")
 
-- address: full street address of workshop (e.g., "Science Park 140, 1098 XG
-  Amsterdam")
+- address: full street address of workshop (e.g., "Science Park 402 (Matrix
+  III), 1098 XH Amsterdam"). For an online workshop, instead of the address, the
+  value of this field can be the videoconferencing URL, or 'online'.
 
 - country: country for the institution that hosts the workshop (e.g.,
   Netherlands)
