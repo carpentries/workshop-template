@@ -217,12 +217,16 @@ address.
 {% comment %}
 DATE
 
-This block displays the date.
+This block displays the date and time.
 {% endcomment %}
 {% if info.humandate %}
 <p id="when">
   <strong>When:</strong>
-  {{info.humandate}}.
+  {% if info.humantime %}
+    {{info.humandate}}, {{info.humantime}}.
+  {% else %}
+    {{info.humandate}}.
+  {% endif %}
 </p>
 {% endif %}
 
