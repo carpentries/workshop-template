@@ -1,6 +1,1 @@
-Digital Skills Workshops by the Netherlands eScience Center focus on the
-foundational digital skills needed to put reproducible research into practice.
-They cover the essentials of version control, online collaboration, reproducible
-code and good programming practices, and intermediate and advanced technologies
-or method-specific skills, such as GPU and Parallel Programming and Deep
-Learning.
+The eScience Center offers a range of free workshops and training courses, open to all researchers affiliated with Dutch research organizations. We organize workshops covering digital skills needed to put reproducible research into practice. These include online collaboration, reproducible code and good programming practices. We also offer more advanced workshops such as GPU Programming, Parallel Programming and Deep Learning.
