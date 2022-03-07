@@ -482,6 +482,8 @@ These are the installation instructions for the tools used
 during the workshop.
 {% endcomment %}
 
+<h3 id="software-setup">Software setup</h3>
+
 {% if info.carpentry == "swc" %}
 {% include swc/setup.html %}
 {% elsif info.carpentry == "dc" %}
