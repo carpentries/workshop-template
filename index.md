@@ -491,7 +491,17 @@ during the workshop.
 {% elsif info.carpentry == "lc" %}
 {% include lc/setup.html %}
 {% elsif info.carpentry == "ds" %}
+{% capture content %}
 {% remote_include {{lesson_meta}}/setup.md %}
+{% endcapture %}
+{% if content contains "/setup.md" %}
+  {% capture setup %}
+  {% remote_include https://raw.githubusercontent.com/{{content | strip}} %}
+  {% endcapture %}
+  {{ setup | split: "---" | last}}
+{% else %}
+  {{ content }}
+{% endif %}
 {% elsif info.carpentry == "pilot" %}
 Please check the "Setup" page of
 [the lesson site]({{ site.lesson_site }}) for instructions to follow
