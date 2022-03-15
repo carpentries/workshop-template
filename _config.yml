@@ -36,7 +36,7 @@ carpentry: "ds"
 # swc-inflammation: for Software Carpentry based on the inflammation dataset
 # swc-gapminder: for Software Carpentry based on the Gapminder dataset
 # ds-cr: for Digital Skills Code Refinery
-# ds-containers: for Digital Skills based on Containers Lesson from Incubator
+# ds-docker: for Digital Skills based on Containers Lesson from Incubator
 # ds-dl-intro: for Digital Skills Introduction to Deep Learning
 # ds-gpu: for Digital Skills GPU Programming
 # ds-parallel: for Digital Skills Parallel Programming
