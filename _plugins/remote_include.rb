@@ -17,7 +17,7 @@ module Jekyll
     def render(context)
       url = Liquid::Template.parse(@remote_include).render(context)
       puts url
-      open(url)
+      open(url).gsub(/\{\%[^%]*\%\}/,"")
     end
 
   end
