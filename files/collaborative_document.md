@@ -66,6 +66,13 @@ Helper 1, Helper 2
 Name/ pronouns (optional) / job, role / social media (twitter, github, ...) / background or interests (optional) / city
 
 ## 🗓️ Agenda
+| Time | Topic |
+|--:|:---|
+| 9:00 | 	Welcome and icebreaker |
+| 9:15 |  |
+| 10:15 | Coffee break |
+| 10:30 | |
+|  | _etc_ |
 
 ## 🔧 Exercises
 
