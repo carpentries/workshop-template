@@ -23,7 +23,7 @@ Collaborative Document day 4: [link](<url>)
 
 ## 👮Code of Conduct
 
-* Participants are expected to follow those guidelines:
+* Participants are expected to follow these guidelines:
 * Use welcoming and inclusive language.
 * Be respectful of different viewpoints and experiences.
 * Gracefully accept constructive criticism.
