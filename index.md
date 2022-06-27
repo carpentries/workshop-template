@@ -18,6 +18,7 @@ helper: ["helper one", "helper two"]     # boxed, comma-separated list of helper
 email: ["first@example.org","second@example.org"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
+covid_protocols:   # A sentence or two describing the host site's COVID protocols.  Be sure to distinguish between mandates and recommendations.
 ---
 
 {% comment %} See instructions in the comments below for how to edit specific sections of this workshop template. {% endcomment %}
@@ -328,6 +329,15 @@ available at https://codimd.carpentries.org
 We will use this <a href="{{ page.collaborative_notes }}">collaborative document</a> for chatting, taking notes, and sharing URLs and bits of code.
 </p>
 <hr/>
+{% endif %}
+
+{% comment %}
+COVID PROTOCOLS
+{% endcomment %}
+
+{% if page.covid_protocols %}
+<h2 id="covid">Covid Protocols</h2>
+<p>{{ page.covid_protocols }} </p>
 {% endif %}
 
 
