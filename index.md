@@ -464,20 +464,6 @@ please preview your site before committing, and make sure to run
 </p>
 
 {% comment %}
-For online workshops, the section below provides:
-- installation instructions for the Zoom client
-- recommendations for setting up Learners' workspace so they can follow along
-  the instructions and the videoconferencing
-
-If you do not use Zoom for your online workshop, edit the file
-`_includes/install_instructions/videoconferencing.html`
-to include the relevant installation instrucctions.
-{% endcomment %}
-{% if online != "false" %}
-{% include install_instructions/videoconferencing.html %}
-{% endif %}
-
-{% comment %}
 These are the installation instructions for the tools used
 during the workshop.
 {% endcomment %}
@@ -507,3 +493,18 @@ Please check the "Setup" page of
 [the lesson site]({{ site.lesson_site }}) for instructions to follow
 to obtain the software and data you will need to follow the lesson.
 {% endif %}
+
+{% comment %}
+For online workshops, the section below provides:
+- installation instructions for the Zoom client
+- recommendations for setting up Learners' workspace so they can follow along
+  the instructions and the videoconferencing
+
+If you do not use Zoom for your online workshop, edit the file
+`_includes/install_instructions/videoconferencing.html`
+to include the relevant installation instrucctions.
+{% endcomment %}
+{% if online != "false" %}
+{% include install_instructions/videoconferencing.html %}
+{% endif %}
+
