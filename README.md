@@ -77,7 +77,12 @@ Then, you can preview your site locally with:
 make serve
 ```
 
-and go to <http://0.0.0.0:4000> to preview your site.
+and go to <http://0.0.0.0:4000> to preview your site. Alternatively, if you'd like to run Jekyll
+inside a Docker container, you may run
+
+```shell
+make docker-serve
+```
 
 ## Creating Extra Pages
 
