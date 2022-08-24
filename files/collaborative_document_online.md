@@ -36,11 +36,10 @@ All content is publicly available under the Creative Commons Attribution License
 
 ## 🙋Getting help
 
-To ask a question, type `/hand` in the chat window.
+To ask a question, raise your hand in zoom. Click on the icon labeled "Reactions" in the toolbar on the bottom center of your screen,
+then click the button 'Raise Hand ✋'. For urgent questions, just unmute and speak up!
 
-To get help, type `/help` in the chat window.
-
-You can ask questions in the document or chat window and helpers will try to help you.
+You can ask questions or ask for help in the chat window and helpers will try to help you.
 
 ## 🖥 Workshop website
 
