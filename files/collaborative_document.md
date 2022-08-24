@@ -40,7 +40,7 @@ To ask a question, type `/hand` in the chat window.
 
 To get help, type `/help` in the chat window.
 
-You can ask questions in the document or chat window and helpers will try to help you. Please note it is not necessary to monitor the chat - the helpers will make sure that relevant questions are addressed in a plenary way. 
+You can ask questions in the document or chat window and helpers will try to help you. Please note it is not necessary to monitor the chat - the helpers will make sure that relevant questions are addressed in a plenary way. (NB: Off-topic questions will still be answered in the chat)
 
 ## 🖥 Workshop website
 
