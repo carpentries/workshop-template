@@ -36,11 +36,9 @@ All content is publicly available under the Creative Commons Attribution License
 
 ## 🙋Getting help
 
-To ask a question, type `/hand` in the chat window.
+To ask a question, just raise your hand.
 
-To get help, type `/help` in the chat window.
-
-You can ask questions in the document or chat window and helpers will try to help you. Please note it is not necessary to monitor the chat - the helpers will make sure that relevant questions are addressed in a plenary way. (NB: Off-topic questions will still be answered in the chat)
+If you need help from a helper, place a pink post-it note on your laptop lid. A helper will come to assist you as soon as possible.
 
 ## 🖥 Workshop website
 
@@ -73,6 +71,15 @@ Name/ pronouns (optional) / job, role / social media (twitter, github, ...) / ba
 | 10:15 | Coffee break |
 | 10:30 | |
 |  | _etc_ |
+
+## 🏢 Location logistics
+* Coffee and toilets are in the hallway, just outside of the classroom.
+* If you leave the building, 
+  be sure to be accompanied by someone from the escience center to let you back in through the groundfloor door
+* For access to this floor you might need to ring the doorbell so someone can let you in
+* In case of an emergency, you can exit our floor using the main staircase.
+  Or follow green light signs at the ceiling to the emergency staircase.
+* **Wifi**: Eduroam should work. Otherwise use the 'matrixbuilding' network, password should be printed out and available somewhere in the room.
 
 ## 🔧 Exercises
 
