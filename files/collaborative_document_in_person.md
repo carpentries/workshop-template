@@ -38,7 +38,7 @@ All content is publicly available under the Creative Commons Attribution License
 
 To ask a question, just raise your hand.
 
-If you need help from a helper, place a red sticky note on your laptop. A helper will come to assist you as soon as possible.
+If you need help from a helper, place a pink post-it note on your laptop lid. A helper will come to assist you as soon as possible.
 
 ## 🖥 Workshop website
 
