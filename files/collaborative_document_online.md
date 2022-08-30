@@ -39,7 +39,7 @@ All content is publicly available under the Creative Commons Attribution License
 To ask a question, raise your hand in zoom. Click on the icon labeled "Reactions" in the toolbar on the bottom center of your screen,
 then click the button 'Raise Hand ✋'. For urgent questions, just unmute and speak up!
 
-You can also ask questions or ask for help in the chat window and helpers will try to help you.
+You can also ask questions or type 'I need help' in the chat window and helpers will try to help you.
 Please note it is not necessary to monitor the chat - the helpers will make sure that relevant questions are addressed in a plenary way.
 (By the way, off-topic questions will still be answered in the chat)
 
