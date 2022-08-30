@@ -79,7 +79,7 @@ Name/ pronouns (optional) / job, role / social media (twitter, github, ...) / ba
 * For access to this floor you might need to ring the doorbell so someone can let you in
 * In case of an emergency, you can exit our floor using the main staircase.
   Or follow green light signs at the ceiling to the emergency staircase.
-* **Wifi**: Eduroam should work. Otherwise use the 'matrixbuilding' network, see A4 papers on the walls.
+* **Wifi**: Eduroam should work. Otherwise use the 'matrixbuilding' network, password should be printed out and available somewhere in the room.
 
 ## 🔧 Exercises
 
