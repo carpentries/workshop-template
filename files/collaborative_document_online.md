@@ -41,7 +41,7 @@ then click the button 'Raise Hand ✋'. For urgent questions, just unmute and sp
 
 You can also ask questions or ask for help in the chat window and helpers will try to help you.
 Please note it is not necessary to monitor the chat - the helpers will make sure that relevant questions are addressed in a plenary way.
-(NB: Off-topic questions will still be answered in the chat)
+(By the way, off-topic questions will still be answered in the chat)
 
 
 ## 🖥 Workshop website
