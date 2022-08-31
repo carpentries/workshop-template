@@ -40,9 +40,10 @@ please [submit an issue][issues] or [mail us][email].
    `https://owner_name.github.io/YYYY-MM-DD-type-curriculum`. For example, if
    `esciencecenter-digital-skills` is the owner, the workshop's URL will be
    `https://esciencecenter-digital-skills.github.io/2021-11-02-ds-gpu/`.
+   Please note that the github action that builds the website can take a few minutes to complete!
 
 7. Please do your work in the repository's `main` branch. A GitHub action is
-   used for deployment that creates a `gh-pages` branch, see
+   used for deployment that creates a `gh-pages` branch. See
    [building a Jekyll site using a GitHub Action][github-project-pages] for more information.
 
 ## Required information and customizing your workshop page
