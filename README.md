@@ -14,7 +14,7 @@ please [submit an issue][issues] or [mail us][email].
 1. **Please _do not fork this repository directly on GitHub._** Instead,
    use GitHub's function to copy this template repository and customize it for
    your workshop. On this page
-   (<https://github.com/esciencecenter-digital-skills/next-workshop-template>),
+   (<https://github.com/esciencecenter-digital-skills/workshop-template>),
    click on the green `Use this template` button (top right).
 
 2.  Select the owner for your new repository. This should be
@@ -25,8 +25,9 @@ please [submit an issue][issues] or [mail us][email].
     `YYYY-MM-DD` is the start date of the workshop, `ds` stands for Digital
     Skills, and `gpu` is the workshop name in this example.
 
-4.  Make sure the repository is public, leave "Include all branches" unchecked,
-    and click on "Create repository from template". You will be redirected to
+4.  Make sure the repository is public, leave "Include all branches" unchecked 
+    (don't worry about the `gh-pages` branch, it will be created by a github action).
+    Click on "Create repository from template". You will be redirected to
     your new copy of the workshop template repository.
 
 5.  Go to the the workshop repository that is just created. Click on "Settings"
