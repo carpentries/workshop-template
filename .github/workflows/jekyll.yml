@@ -5,6 +5,10 @@ on:
   release:
     types:
       - published
+  # I have found this event triggers on initial creation of new repository from github template
+  push:
+    branches:
+      - '**'
 
 jobs:
   github-pages:
