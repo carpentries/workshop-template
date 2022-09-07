@@ -78,7 +78,12 @@ It looks like you are setting up a website for a workshop but you haven't specif
 {% comment %}
 Read correct lesson meta from esciencecenter-digital-skills/workshop-metadata
 {% endcomment %}
+
+{% if info.carpentry == "dc" %}
+{% capture lesson_meta %}https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{{info.curriculum}}-{{info.flavor}}{% endcapture %}
+{% else %}
 {% capture lesson_meta %}https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{{info.curriculum}}{% endcapture %}
+{% endif %}
 
 
 {% comment %}
