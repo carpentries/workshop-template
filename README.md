@@ -30,17 +30,20 @@ please [submit an issue][issues] or [mail us][email].
     Click on "Create repository from template". You will be redirected to
     your new copy of the workshop template repository.
 
-5.  Go to the the workshop repository that is just created. Click on "Settings"
-    tab. In the left sidebar, click on "Pages". Under "GitHub Pages", use the
-    _gh-pages_ branch from drop-down menu and press "save". For more information,
-    see [GitHub
-    documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site). 
+4.  Go to the the workshop repository that is just created. 
+    Manually run the 'Build and deploy Jekyll site to GitHub Pages' github action.
+    See instructions for manually triggering workflows [here][manually-run-workflow]
 
 6. Your new website will be rendered at
    `https://owner_name.github.io/YYYY-MM-DD-type-curriculum`. For example, if
    `esciencecenter-digital-skills` is the owner, the workshop's URL will be
    `https://esciencecenter-digital-skills.github.io/2021-11-02-ds-gpu/`.
    Please note that the github action that builds the website can take a few minutes to complete!
+
+7. Click on "Settings" tab. In the left sidebar, click on "Pages". Under "GitHub Pages", use the
+    _gh-pages_ branch from drop-down menu and press "save". For more information,
+    see [GitHub
+    documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
 7. Please do your work in the repository's `main` branch. A GitHub action is
    used for deployment that creates a `gh-pages` branch. See
@@ -102,6 +105,7 @@ and styling them according to the instructions given in
 [github-project-pages]: https://jekyllrb.com/docs/continuous-integration/github-actions/
 [issues]: https://github.com/esciencecenter-digital-skills/next-workshop-template/issues
 [lesson-example]: https://carpentries.github.io/lesson-example/
+[manually-run-workflow]: https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow
 [swc-site]: https://software-carpentry.org
 [lc-site]: https://librarycarpentry.org
 [ds-site]: https://esciencecenter-digital-skills.github.io/
