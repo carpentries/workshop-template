@@ -46,6 +46,8 @@ please [submit an issue][issues] or [mail us][email].
    used for deployment that creates a `gh-pages` branch. See
    [building a Jekyll site using a GitHub Action][github-project-pages] for more information.
 
+8. To trigger deployment of a new version of the website, [create a new release of your repository][create-release]
+
 ## Required information and customizing your workshop page
 
 1. The file `data.csv` in `_data` directory contains the workshop information.
@@ -94,6 +96,7 @@ You can do this by putting either Markdown or HTML pages in the website's root d
 and styling them according to the instructions given in
 [the lesson template][lesson-example].
 
+[create-release]: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release
 [email]: mailto:training@esciencecenter.nl
 [dc-site]: https://datacarpentry.org
 [github-project-pages]: https://jekyllrb.com/docs/continuous-integration/github-actions/
