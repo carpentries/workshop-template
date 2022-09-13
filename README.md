@@ -54,10 +54,26 @@ please [submit an issue][issues] or [mail us][email].
 2. The file `eventbrite.json` in `_data` directory contains eventbrite code. See
    the [documention](./_data/README.md).
 
-4. Additional lesson information lives in a folder in [workshop metadata
+3. Additional lesson information lives in a folder in [workshop metadata
    repository](https://github.com/esciencecenter-digital-skills/workshop-metadata).
    See the
    [documention](https://github.com/esciencecenter-digital-skills/workshop-metadata#readme).
+
+4. In some cases you want to deviate from the default lesson information (also known as 'workshop metadata').
+   The steps are as follows:
+   1. In the corresponding folder in the [workshop metadata
+       repository](https://github.com/esciencecenter-digital-skills/workshop-metadata)
+       add a new file. Give it a suitable name.
+       For example, if you want a different schedule for your workshop create 
+       a new file called `schedule-2.md` or `schedule-in-person.md`.
+   2. Add the desired workshop information to the file and commit to the `main` branch.
+   3. In the workshop repository edit the `index.md` file. 
+      Find where the default workshop metadata markdown file that you want to replace is included.
+      For example: the schedule.md file is included [here](https://github.com/esciencecenter-digital-skills/workshop-template/blob/main/index.md#schedule)
+      Instead of the default file, point to your new file (i.e. `schedule-in-person.md`).
+  4. Once you commit this, the github action will rebuild the workshop website. 
+     The `index.md` file will point to the alternative workshop metadata markdown file,
+     so that will be included in the workshop website.
 
 5. There is a `collaborative_document.md` in the `files` directory of this
    repository. You can use it as a template to create a collaborative document
