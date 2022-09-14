@@ -1,0 +1,36 @@
+name: Extract exercises
+on: workflow_dispatch
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install caex2
+      - name: Fetch the url for the lesson content github repository from metadata
+        uses: jannekem/run-python-script-action@v1
+        with:
+          script: |
+            import csv
+            from urllib.request import urlretrieve
+
+            with open('_data/data.csv', newline='') as csvfile:
+                reader = csv.DictReader(csvfile)
+                for row in reader:
+                    curriculum = row['curriculum']
+            link = f"https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{curriculum}/lesson-url.md"
+            urlretrieve(link, "lesson-url.txt")
+      - name: Run Carpentries Exercises Extractor
+        run: caex2 "$(cat lesson-url.txt)" --output files/exercises-document.md
+        shell: sh
+      - name: Commit exercises document
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Automatically add exercises document
+          file_pattern: files/exercises-document.md
