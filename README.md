@@ -78,6 +78,12 @@ please [submit an issue][issues] or [mail us][email].
 5. There is a `collaborative_document.md` in the `files` directory of this
    repository. You can use it as a template to create a collaborative document
    on [hackmd](https://hackmd.io/). Please note that you need to sign in.
+6. You can automatically create an exercises document.
+   Manually run the 'Extract exercises' github action.
+   See instructions for manually triggering workflows [here][manually-run-workflow]
+   This will extract all exercises from the lesson material, and put them in files/exercises-document.md
+   If it doesn't work automatically you can also manually use 
+   [the python package that extracts the exercises](https://github.com/esciencecenter-digital-skills/carpentries-exercises-extractor)
 
 If you are already familiar with Git, you can clone the lesson and workshop
 repositories, and edit these files. Then push your changes back to the
