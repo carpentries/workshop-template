@@ -30,6 +30,10 @@ Participants are expected to follow these guidelines:
 * Focus on what is best for the community.
 * Show courtesy and respect towards other community members.
  
+## 🎓 Certificate of attendance
+
+If you attend the full workshop you can request a certificate of attendance by emailing to training@esciencecenter.nl .
+
 ## ⚖️ License
 
 All content is publicly available under the Creative Commons Attribution License: [creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/).
