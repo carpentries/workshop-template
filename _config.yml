@@ -73,7 +73,10 @@ title: "Workshop Title"
 # Generic settings (should not need to change).
 #------------------------------------------------------------
 
-# What kind of thing is this ("workshop" or "lesson")?
+# The setting kind takes configurations from the style template.
+# It has options of "workshop" or "lesson".  Even if you are
+# teaching a lesson, choose "workshop" and use a custom
+# schedule as the option "lesson" will not build.
 kind: "workshop"
 
 # Magic to make URLs resolve both locally and on GitHub.
