@@ -80,7 +80,7 @@ Read correct lesson meta from esciencecenter-digital-skills/workshop-metadata
 {% endcomment %}
 
 
-{% if info.flavor %}
+{% if info.flavor and info.flavor != 'NA' %}
 {% capture lesson_meta %}https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{{info.curriculum}}-{{info.flavor}}{% endcapture %}
 {% else %}
 {% capture lesson_meta %}https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{{info.curriculum}}{% endcapture %}
