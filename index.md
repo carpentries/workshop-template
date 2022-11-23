@@ -338,7 +338,7 @@ CODE OF CONDUCT
 
 {% if info.carpentry == "ds" %}
 <p>
-Participants are expected to follow those guidelines:
+Participants are expected to follow these guidelines:
 <ul>
   <li>Use welcoming and inclusive language</li>
   <li>Be respectful of different viewpoints and experiences</li>
