@@ -8,7 +8,7 @@ Astronomy workshops
 <p>
   The setup instructions for the Data Carpentry Astronomy workshops
   can be found at <a href="https://datacarpentry.org/astronomy-python/setup.html">
-    the workshop overview site</a>.
+    the curriculum site</a>.
 </p>
 
 {% comment %}
@@ -43,9 +43,15 @@ Genomics workshops
 <p>The setup instructions for the Data Carpentry Genomics workshops can be found at <a href="https://datacarpentry.org/genomics-workshop/setup.html">the workshop overview site</a></p>.
 
 {% comment %}
-Ecology workshops
+Geospatial workshops
 {% endcomment %}
 
+{% elsif site.curriculum == "dc-geospatial" %}
+<p>The setup instructions for the Data Carpentry Geospatial workshop can be found at <a href="https://datacarpentry.org/geospatial-workshop/setup.html">the workshop overview site</a>.</p>
+
+{% comment %}
+Image workshops
+{% endcomment %}
 
 {% elsif site.curriculum == "dc-image" %}
 
@@ -73,14 +79,6 @@ Social sciences workshops
 {% else %}
 {% include warning-flavor.html %}
 {% endif %}
-
-
-{% comment %}
-Geospatial workshops
-{% endcomment %}
-
-{% elsif site.curriculum == "dc-geospatial" %}
-<p>The setup instructions for the Data Carpentry Geospatial workshop can be found at <a href="https://datacarpentry.org/geospatial-workshop/setup.html">the workshop overview site</a>.</p>
 
 {% else %}
 {% include warning-curriculum.html %}
