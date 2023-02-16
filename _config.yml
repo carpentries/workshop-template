@@ -28,6 +28,7 @@ carpentry: "swc"
 # dc-astronomy: for Data Carpentry Astronomy
 # dc-ecology: for Data Carpentry Ecology
 # dc-genomics: for Data Carpentry Genomics
+# dc-image: for Data Carpentry Image Processing
 # dc-socsci: for Data Carpentry Social Sciences
 # dc-geospatial: for Data Carpentry Geospatial
 # swc-inflammation: for Software Carpentry based on the inflammation dataset
@@ -74,8 +75,8 @@ title: "Workshop Title"
 #------------------------------------------------------------
 
 # This setting (kind) takes configurations from the styles
-# template. Please do not modify this. If you are teaching 
-# a custom set of lessons or a single lesson, use a custom 
+# template. Please do not modify this. If you are teaching
+# a custom set of lessons or a single lesson, use a custom
 # schedule.
 kind: "workshop"
 
