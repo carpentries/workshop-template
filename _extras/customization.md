@@ -24,7 +24,7 @@ configure some site-wide variables and make the site function correctly:
 * `curriculum` - to tell us which curriculum is being taught.
   At the moment, applicable to Software and Data Carpentry workshops only.
   Possible values are:
-    - `"dc-ecology"`, `"dc-genomics"`, `"dc-socsci"`, or `"dc-geospatial"` for Data Carpentry
+    - `"dc-astronomy"`, `"dc-ecology"`, `"dc-genomics"`, `"dc-socsci"`, `"dc-geospatial"`, or `"dc-image"` for Data Carpentry
       workshops
     - `"swc-inflammation"` or `"swc-gapminder"` for Software Carpentry workshops.
 * `flavor` - `"r"` or `"python"` depending on which lessons are being taught at the workshop
