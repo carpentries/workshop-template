@@ -132,3 +132,15 @@ and styling them according to the instructions given in
 [lc-site]: https://librarycarpentry.org
 [ds-site]: https://esciencecenter-digital-skills.github.io/
 [setup-instructions]: https://carpentries.github.io/lesson-example/setup.html#jekyll-setup-for-lesson-development
+
+## Troubleshooting
+
+### Understanding how the workshop metadata is retrieved
+Sometimes the template is not picking up the right metadata from https://github.com/esciencecenter-digital-skills/workshop-metadata.
+When something goes wrong it can help to understand how this workshop template links different data sources together.
+1. See [this line in `index.md`](https://github.com/esciencecenter-digital-skills/workshop-template/blob/6e16d9a3ea2d33abbff6767006a7c6503bb8506d/index.md?plain=1#L79). In the lines following we try to find the workshop metadata url based on the curriculum and the flavor if it exists.
+2. The flavor and curriculum are obtained from the `flavor` and `curriculum`column of `_data/data.csv`.
+3. The metadata is fetched from the metadata url
+
+### My commits do not trigger a new build github pages action, help!
+This is on purpose. We only trigger a new build upon creating a new release.
