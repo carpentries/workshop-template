@@ -91,6 +91,12 @@ The schedule for the different curricula are listed here:
   </div>
 </div>
 
+
+
+{% elsif info.curriculum == "dc-image-processing" %}
+{% remote_include {{lesson_meta}}/schedule.md %}
+
+
 {% elsif info.curriculum == "dc-genomics" %}
 
 <div class="row">

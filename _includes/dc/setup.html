@@ -68,12 +68,25 @@ Social sciences workshops
 {% endif %}
 
 
+
 {% comment %}
 Geospatial workshops
 {% endcomment %}
 
 {% elsif info.curriculum == "dc-geospatial" %}
 <p>The setup instructions for the Data Carpentry Geospatial workshop can be found at <a href="https://datacarpentry.org/geospatial-workshop/setup.html">the workshop overview site</a>.</p>
+
+{% else %}
+{% include warning-curriculum.html %}
+{% endif %}
+
+
+{% comment %}
+Image Processing workshops
+{% endcomment %}
+
+{% elsif info.curriculum == "dc-image-processing" %}
+<p>The setup instructions for our Data Carpentry Image Processing workshops can be found at <a href="https://github.com/esciencecenter-digital-skills/image-processing">the workshop overview site</a></p>.
 
 {% else %}
 {% include warning-curriculum.html %}
