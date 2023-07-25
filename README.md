@@ -47,21 +47,21 @@ create a workshop website.
     ![screenshot of this repository's GitHub page with an arrow pointing to the the 'use this template' button on the top left](fig/select-github-use-template.png?raw=true)
     Alternatively, use this link: [Use this template](https://github.com/new?template_name=workshop-template&template_owner=carpentries).
 
-4.  Select the owner for your new repository.
+3.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
 
-5.  Choose a name for your workshop website repository.
+4.  Choose a name for your workshop website repository.
     This name should have the form `YYYY-MM-DD-site`,
     e.g., `2016-12-01-oomza`,
     where `YYYY-MM-DD` is the start date of the workshop.
     If your workshop is held online, then the respository name should have `-online` in the end.
     e.g., `2016-12-01-oomza-online`
 
-6.  Make sure the repository is public, leave "Include all branches" unchecked, and click
+5.  Make sure the repository is public, leave "Include all branches" unchecked, and click
 on "Create repository from template".
 You will be redirected to your new copy of the workshop template respository.
 
-7. Your new website will be rendered at `https://your_username.github.io/YYYY-MM-DD-site`.
+6. Your new website will be rendered at `https://your_username.github.io/YYYY-MM-DD-site`.
 For example, if your username is `gvwilson`, the website's URL will be
 `https://gvwilson.github.io/2016-12-01-oomza`.
 
