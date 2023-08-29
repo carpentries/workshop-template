@@ -177,7 +177,7 @@ If you wish to create your own custom schedule, an empty template is available i
 `_includes/custom-schedule.html`. In this file, we provide the structure for a
 4-day workshop as it is often used for online workshops. To use this custom
 schedule instead of the one provided by default in the template, delete the
-block of code found under the "Schedule" header in the `index.md` file and 
+block of code found under the "Schedule" header in the `index.md` file and
 replace it with`{% raw %}{% include custom-schedule.html %}{% endraw %}`.
 
 The schedule is formatted using a table. If you would like to learn more about
@@ -195,8 +195,8 @@ if you would like to create a schedule table to replace this text.
 
 If you need assistance with customizing the setup instructions for your website,
 feel free to ask your questions in the Carpentries
-[Instructors Slack channel](https://swcarpentry.slack.com/archives/C08BVNU00)
-([join The Carpentries Slack workspace](https://swc-slack-invite.herokuapp.com/)).
+[Instructors Slack channel](https://carpentries.slack.com/archives/C08BVNU00)
+([join The Carpentries Slack workspace](https://slack-invite.carpentries.org/)).
 
 ### Software Carpentry workshops
 
