@@ -106,7 +106,7 @@
       </article>
       <article role="tabpanel" class="tab-pane" id="shell-macos">
         <p>
-          The default shell in some versions of macOS is Bash, and
+          The default shell in Mac OS X Ventura and newer versions is Zsh, but
 	  Bash is available in all versions, so no need to install anything.
 	  You access Bash from the Terminal (found in
 	  <code>/Applications/Utilities</code>).
@@ -118,11 +118,16 @@
             To see if your default shell is Bash type <code>echo $SHELL</code>
             in Terminal and press the <kbd>Return</kbd> key. If the message
             printed does not end with '/bash' then your default is something
-            else and you can run Bash by typing <code>bash</code>
+            else, you can change your current shell to Bash by typing
+            <code>bash</code> and then pressing  <kbd>Return</kbd>. To check
+            your current shell type <code>echo $0</code> and press <kbd>Return</kbd>.
         </p>
         <p>
-          If you want to change your default shell, see <a href="https://support.apple.com/en-au/HT208050" rel="noopener">
-          this Apple Support article</a> and follow the instructions on "How to change your default shell".
+          To change your default shell to Bash type <code>chsh -s /bin/bash</code> and
+          press the <kbd>Return</kbd> key, then reboot for the change to take effect. To
+          change your default back to Zsh, type <code>chsh -s /bin/zsh</code>, press the
+          <kbd>Return</kbd> key and reboot.  To check available shells, type
+          <code>cat /etc/shells</code>.
         </p>
         <h4 id="shell-macos-video-tutorial">Video Tutorial</h4>
         <div class="yt-wrapper2">
@@ -137,10 +142,19 @@
           install anything.
         </p>
         <p>
-          To see if your default shell is Bash type <code>echo $SHELL</code> in
-          a terminal and press the <kbd>Enter</kbd> key. If the message printed
-          does not end with '/bash' then your default is something else and you
-          can run Bash by typing <code>bash</code>.
+            To see if your default shell is Bash type <code>echo $SHELL</code>
+            in Terminal and press the <kbd>Return</kbd> key. If the message
+            printed does not end with '/bash' then your default is something
+            else, you can change your current shell to Bash by typing
+            <code>bash</code> and then pressing  <kbd>Return</kbd>. To check
+            your current shell type <code>echo $0</code> and press <kbd>Return</kbd>.
+        </p>
+        <p>
+          To change your default shell to Bash type <code>chsh -s /bin/bash</code> and
+          press the <kbd>Return</kbd> key, then reboot for the change to take effect. To
+          change your default back to Zsh, type <code>chsh -s /bin/zsh</code>, press the
+          <kbd>Return</kbd> key and reboot.  To check available shells, type
+          <code>cat /etc/shells</code>.
         </p>
       </article>
     </div>
