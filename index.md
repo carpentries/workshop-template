@@ -237,7 +237,7 @@ special instructions.
   We encourage you to share any information that would be helpful to make your Carpentries experience accessible.
   To request an accommodation for this workshop, please fill out the 
   <a href="https://carpentries.typeform.com/to/B2OSYaD0">accommodation request form</a>.
-  If you have questions or need assistance with the accommodation form please <a href="team@carpentries.org">email us</a>.
+  If you have questions or need assistance with the accommodation form please <a href="mailto:team@carpentries.org">email us</a>.
 </p>
 {% endif %}
 
