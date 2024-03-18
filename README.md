@@ -45,7 +45,7 @@ create a workshop website.
     click on the green "Use this template" button (top right)
 
     ![screenshot of this repository's GitHub page with an arrow pointing to the the 'use this template' button on the top left](fig/select-github-use-template.png?raw=true)
-    Alternatively, use this link: [Use this template](https://github.com/new?template_name=workshop-template&template_owner=carpentries).
+    Alternatively, use this link: [Use this template](https://github.com/new?template_name=workshop-template&template_owner=carpentries).  With the drop down button select "Create a new repository."
 
 3.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
