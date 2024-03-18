@@ -176,7 +176,7 @@ Click 'Edit' and add:
 
 2.  The URL for your workshop in the "Website" box (e.g., `https://gvwilson.github.io/2016-12-01-oomza`)
 
-This will help people find your website if they come to your repository's home page.
+This will help people find your website if they come to your repository's home page. You may wish to check the box "Use Github pages link."
 
 ### Update the content of the README file
 
