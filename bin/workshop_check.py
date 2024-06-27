@@ -401,26 +401,27 @@ def check_config(reporter, filename):
                    carpentry)
 
 
-def check_slug(reporter, repo_dir):
+def check_slug(reporter, filename, repo_dir):
     config = load_yaml(filename)
 
-    repo_name = os.path.basename(repo_dir)
+    repo_name = os.path.basename(os.path.realpath(repo_dir))
 
     carpentry = config.get('carpentry', None)
-    kind = config.get('kind', None)
-
-    if carpentry == "cp":
-        slugfmt = "YYYY-MM-DD-ttt-format"
-    else:
-        slugfmt = "YYYY-MM-DD-site-format"
-
-    fail_msg = f'Workshop website slug does not match the required `{slugfmt}`'
 
     if carpentry in ('swc', 'dc', 'lc', 'cp'):
-        reporter.check(
-            bool(re.match(SLUG_PATTERN, repo_name)),
-            fail_msg
+        if carpentry == "cp":
+            slugfmt = "YYYY-MM-DD-ttt[-online]"
+        else:
+            slugfmt = "YYYY-MM-DD-site[-online]"
+
+        fail_msg = (
+            'Website repository name `{0}` does not match the required slug format: `{1}`. '
+            'Please rename your repository to a valid slug using the rename option in the "Settings" menu.'
         )
+
+        if not bool(re.match(SLUG_PATTERN, repo_name)):
+            print(fail_msg.format(repo_name, slugfmt))
+            sys.exit(1)
 
 
 def main():
@@ -436,7 +437,9 @@ def main():
 
     reporter = Reporter()
     check_config(reporter, config_file)
-    check_slug(reporter, root_dir)
+
+    check_slug(reporter, config_file, root_dir)
+
     check_unwanted_files(root_dir, reporter)
     with open(index_file, encoding='utf-8') as reader:
         data = reader.read()

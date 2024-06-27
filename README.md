@@ -50,12 +50,13 @@ create a workshop website.
 3.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
 
-4.  Create a slug for your workshop website repository.
+4.  Name your workshop website repository using the Carpentries slug format.
     The slug should have the form `YYYY-MM-DD-site`,
     e.g., `2016-12-01-oomza`,
     where `YYYY-MM-DD` is the start date of the workshop and 'oomza' is an example site name.
     If your workshop is held online, then the respository name should have `-online` in the end.
-    e.g., `2016-12-01-oomza-online`
+    e.g., `2016-12-01-oomza-online`. Your website build will fail if the name of your
+    repository does not match the valid slug format!
 
 5.  Make sure the repository is public, leave "Include all branches" unchecked, and click
 on "Create repository from template".
