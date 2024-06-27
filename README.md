@@ -50,10 +50,10 @@ create a workshop website.
 3.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
 
-4.  Choose a name for your workshop website repository.
-    This name should have the form `YYYY-MM-DD-site`,
+4.  Create a slug for your workshop website repository.
+    The slug should have the form `YYYY-MM-DD-site`,
     e.g., `2016-12-01-oomza`,
-    where `YYYY-MM-DD` is the start date of the workshop.
+    where `YYYY-MM-DD` is the start date of the workshop and 'oomza' is an example site name.
     If your workshop is held online, then the respository name should have `-online` in the end.
     e.g., `2016-12-01-oomza-online`
 

@@ -15,6 +15,7 @@ EMAIL_PATTERN = r'[^@]+@[^@]+\.[^@]+'
 HUMANTIME_PATTERN = r'((0?[1-9]|1[0-2]):[0-5]\d(am|pm)(-|to)(0?[1-9]|1[0-2]):[0-5]\d(am|pm))|((0?\d|1\d|2[0-3]):[0-5]\d(-|to)(0?\d|1\d|2[0-3]):[0-5]\d)'
 EVENTBRITE_PATTERN = r'\d{9,10}'
 URL_PATTERN = r'https?://.+'
+SLUG_PATTERN = r'\d{4}-\d{2}-\d{2}-[A-z0-9\-\_]+'
 
 # Defaults.
 CARPENTRIES = ("dc", "swc", "lc", "cp")
@@ -400,6 +401,28 @@ def check_config(reporter, filename):
                    carpentry)
 
 
+def check_slug(reporter, repo_dir):
+    config = load_yaml(filename)
+
+    repo_name = os.path.basename(repo_dir)
+
+    carpentry = config.get('carpentry', None)
+    kind = config.get('kind', None)
+
+    if carpentry == "cp":
+        slugfmt = "YYYY-MM-DD-ttt-format"
+    else:
+        slugfmt = "YYYY-MM-DD-site-format"
+
+    fail_msg = f'Workshop website slug does not match the required `{slugfmt}`'
+
+    if carpentry in ('swc', 'dc', 'lc', 'cp'):
+        reporter.check(
+            bool(re.match(SLUG_PATTERN, repo_name)),
+            fail_msg
+        )
+
+
 def main():
     '''Run as the main program.'''
 
@@ -413,6 +436,7 @@ def main():
 
     reporter = Reporter()
     check_config(reporter, config_file)
+    check_slug(reporter, root_dir)
     check_unwanted_files(root_dir, reporter)
     with open(index_file, encoding='utf-8') as reader:
         data = reader.read()
