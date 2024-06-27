@@ -408,7 +408,7 @@ def check_slug(reporter, filename, repo_dir):
 
     carpentry = config.get('carpentry', None)
 
-    if carpentry in ('swc', 'dc', 'lc', 'cp'):
+    if (repo_name != "workshop-template") and carpentry in ('swc', 'dc', 'lc', 'cp'):
         if carpentry == "cp":
             slugfmt = "YYYY-MM-DD-ttt[-online]"
         else:
