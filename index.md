@@ -251,9 +251,6 @@ special instructions.
   for their learners.
 </p>
 
-  
-{% endif %}
-
 {% comment %}
 CONTACT EMAIL ADDRESS
 
