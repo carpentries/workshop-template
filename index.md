@@ -228,7 +228,9 @@ special instructions.
 <p id="accessibility">
   <strong>Accessibility:</strong>
   We are committed to making this workshop
-  accessible to everybody.  For workshops at a physical location, the workshop organizers have checked that:
+  accessible to everybody. 
+{% if online == "false" %}
+  The workshop organizers have checked that:
 <p>
   <ul>
     <li>The room is wheelchair / scooter accessible.</li>
