@@ -188,7 +188,7 @@ the [HTML tables chapter from w3schools](https://www.w3schools.com/html/html_tab
 For pilot workshops, some placeholder text including a link to the lesson homepage
 will be displayed instead of a schedule table.
 The lesson homepage will contain estimated timings for teaching the lesson.
-Use the approach described above for `_includes/custome-schedule.html`
+Use the approach described above for `_includes/custom-schedule.html`
 if you would like to create a schedule table to replace this text.
 
 ## Home Page: Setup Instructions
