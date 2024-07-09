@@ -408,20 +408,29 @@ def check_slug(reporter, filename, repo_dir):
 
     carpentry = config.get('carpentry', None)
 
-    if (repo_name != "workshop-template") and carpentry in ('swc', 'dc', 'lc', 'cp'):
-        if carpentry == "cp":
-            slugfmt = "YYYY-MM-DD-ttt[-online]"
-        else:
-            slugfmt = "YYYY-MM-DD-site[-online]"
+    slugfmt = "YYYY-MM-DD-site[-online]"
+    if (repo_name != "workshop-template"):
+        if carpentry in ('swc', 'dc', 'lc'):
+            fail_msg = (
+                'Website repository name `{0}` does not match the required slug format: `{1}`. '
+                'Please rename your repository to a valid slug using the rename option in the "Settings" menu.'
+            )
 
-        fail_msg = (
-            'Website repository name `{0}` does not match the required slug format: `{1}`. '
-            'Please rename your repository to a valid slug using the rename option in the "Settings" menu.'
-        )
+            if not bool(re.match(SLUG_PATTERN, repo_name)):
+                print(fail_msg.format(repo_name, slugfmt))
+                sys.exit(1)
 
-        if not bool(re.match(SLUG_PATTERN, repo_name)):
-            print(fail_msg.format(repo_name, slugfmt))
-            sys.exit(1)
+        elif carpentry in ('cp'):
+            warn_msg = (
+                'Website repository name `{0}` does not match the suggested slug format: `{1}`. '
+                'If teaching a workshop which you are collecting surveys for or are submitting into AMY, '
+                'please rename your repository to a valid slug using the rename option in the "Settings" menu.'
+            )
+
+            reporter.check(bool(re.match(SLUG_PATTERN, repo_name)),
+                None,
+                warn_msg,
+                repo_name, slugfmt)
 
 
 def main():
