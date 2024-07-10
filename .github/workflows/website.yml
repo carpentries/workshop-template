@@ -79,7 +79,6 @@ jobs:
           writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
         shell: Rscript {0}
 
-
       - name: Install system dependencies for R packages
         if: steps.check-rmd.outputs.count != 0
         run: |
@@ -97,6 +96,12 @@ jobs:
         with:
           ref: gh-pages
           path: gh-pages
+
+      - name: Validate workshop website
+        # https://github.com/carpentries/styles/issues/551 is no longer relevant as styles shouldn't be used for
+        # lessons but only workshop templates. So, always run the workshop checks now.
+        run: make workshop-check
+        if: always()
 
       - name: Commit and Push
         if: ${{ github.event_name == 'push' && steps.check-rmd.outputs.count != 0 && github.ref != 'refs/heads/gh-pages'}}
@@ -118,8 +123,3 @@ jobs:
           git push origin gh-pages
           # return
           cd ..
-
-      # waiting for https://github.com/carpentries/styles/issues/551
-      # to be addressed
-      # - run: make lesson-check-all
-      #   if: always()
