@@ -420,7 +420,7 @@ def check_slug(reporter, filename, repo_dir):
                 print(fail_msg.format(repo_name, slugfmt))
                 sys.exit(1)
 
-        elif carpentry in ('cp'):
+        elif carpentry in ('cp', 'incubator'):
             warn_msg = (
                 'Website repository name `{0}` does not match the suggested slug format: `{1}`. '
                 'If teaching a workshop which you are collecting surveys for or are submitting into AMY, '
