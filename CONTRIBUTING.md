@@ -1,6 +1,6 @@
 # Contributing
 
-[Software Carpentry][swc-site] and [Data Carpentry][dc-site] are open source projects,
+[Software Carpentry][swc-site], [Data Carpentry][dc-site] and [Library Carpentry][lc-site] are open source projects,
 and we welcome contributions of all kinds:
 new lessons,
 fixes to existing material,
@@ -14,7 +14,7 @@ you agree that we may redistribute your work under [our license](LICENSE.md).
 In exchange,
 we will address your issues and/or assess your change proposal as promptly as we can,
 and help you become a member of our community.
-Everyone involved in [Software Carpentry][swc-site] and [Data Carpentry][dc-site]
+Everyone involved in [Software Carpentry][swc-site], [Data Carpentry][dc-site] and [Library Carpentry][lc-site]
 agrees to abide by our [code of conduct](CONDUCT.md).
 
 ## How to Contribute
@@ -46,14 +46,14 @@ and to meet some of our community members.
 ## Where to Contribute
 
 1.  If you wish to change the template used for workshop websites,
-    please work in <https://github.com/swcarpentry/workshop-template>.
+    please work in <https://github.com/carpentries/workshop-template>.
     The home page of that repository explains how to set up workshop websites,
-    while the extra pages in <https://swcarpentry.github.io/workshop-template>
+    while the extra pages in <https://carpentries.github.io/workshop-template>
     provide more background on our design choices.
 
 2.  If you wish to change CSS style files, tools,
     or HTML boilerplate for lessons or workshops stored in `_includes` or `_layouts`,
-    please work in <https://github.com/swcarpentry/styles>.
+    please work in <https://github.com/carpentries/styles>.
 
 ## What to Contribute
 
@@ -64,8 +64,7 @@ and submitting [bug reports][issues]
 about things that don't work, aren't clear, or are missing.
 If you are looking for ideas,
 please see [the list of issues for this repository][issues],
-or the issues for [Data Carpentry][dc-issues]
-and [Software Carpentry][swc-issues] projects.
+or the issues for [Software Carpentry][swc-site], [Data Carpentry][dc-site] and [Library Carpentry][lc-site] projects.
 
 Comments on issues and reviews of pull requests are just as welcome:
 we are smarter together than we are on our own.
@@ -121,12 +120,12 @@ and have final say over what gets merged into the lesson.
 
 ## Other Resources
 
-General discussion of [Software Carpentry][swc-site] and [Data Carpentry][dc-site]
-happens on the [discussion mailing list][discuss-list],
+General discussion of [Software Carpentry][swc-site], [Data Carpentry][dc-site] and [Library Carpentry][lc-site]
+happens in the `#lessons` channel on The Carpentries [Slack channel][slack], or on the [discussion mailing list][discuss-list],
 which everyone is welcome to join.
 You can also [reach us by email][contact].
 
-[contact]: mailto:admin@software-carpentry.org
+[contact]: mailto:team@carpentries.org
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry
 [dc-lessons]: http://datacarpentry.org/lessons/
 [dc-site]: http://datacarpentry.org/
@@ -134,9 +133,13 @@ You can also [reach us by email][contact].
 [github]: http://github.com
 [github-flow]: https://guides.github.com/introduction/flow/
 [github-join]: https://github.com/join
-[how-contribute]: https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github
-[issues]: https://github.com/swcarpentry/workshop-template/issues/
-[repo]: https://github.com/swcarpentry/workshop-template/
+[how-contribute]: https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github
+[issues]: https://github.com/carpentries/workshop-template/issues/
+[repo]: https://github.com/carpentries/workshop-template/
 [swc-issues]: https://github.com/issues?q=user%3Aswcarpentry
 [swc-lessons]: http://software-carpentry.org/lessons/
 [swc-site]: http://software-carpentry.org/
+[lc-issues]: https://github.com/issues?q=user%3Alibrarycarpentry
+[lc-lessons]: http://librarycarpentry.org/lessons/
+[lc-site]: http://librarycarpentry.org/
+[slack]: https://slack-invite.carpentries.org/
