@@ -15,7 +15,7 @@ EMAIL_PATTERN = r'[^@]+@[^@]+\.[^@]+'
 HUMANTIME_PATTERN = r'((0?[1-9]|1[0-2]):[0-5]\d(am|pm)(-|to)(0?[1-9]|1[0-2]):[0-5]\d(am|pm))|((0?\d|1\d|2[0-3]):[0-5]\d(-|to)(0?\d|1\d|2[0-3]):[0-5]\d)'
 EVENTBRITE_PATTERN = r'\d{9,10}'
 URL_PATTERN = r'https?://.+'
-SLUG_PATTERN = r'\d{4}-\d{2}-\d{2}-[A-z0-9\-\_]+'
+SLUG_PATTERN = r'\d{4}-\d{2}-\d{2}-[A-z0-9\-\_]+[^-_]$'
 
 # Defaults.
 CARPENTRIES = ("dc", "swc", "lc", "cp")
