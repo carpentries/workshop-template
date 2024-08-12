@@ -55,14 +55,15 @@ create a workshop website.
     e.g., `2016-12-01-oomza`,
     where `YYYY-MM-DD` is the start date of the workshop and 'oomza' is an example site name.
     If your workshop is held online, then the respository name should have `-online` in the end.
-    e.g., `2016-12-01-oomza-online`. Your website build will fail if the name of your
-    repository does not match the valid slug format!
+    e.g., `2016-12-01-oomza-online`. Make sure your slug does not end with a `-` or `_`
+    character. Your website build will fail if the name of your repository does not match the
+    valid slug format! 
 
-5.  Make sure the repository is public, leave "Include all branches" unchecked, and click
+6.  Make sure the repository is public, leave "Include all branches" unchecked, and click
 on "Create repository from template".
 You will be redirected to your new copy of the workshop template respository.
 
-6. Your new website will be rendered at `https://your_username.github.io/YYYY-MM-DD-site`.
+7. Your new website will be rendered at `https://your_username.github.io/YYYY-MM-DD-site`.
 For example, if your username is `gvwilson`, the website's URL will be
 `https://gvwilson.github.io/2016-12-01-oomza`.
 
