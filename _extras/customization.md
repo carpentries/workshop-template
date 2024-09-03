@@ -35,6 +35,25 @@ configure some site-wide variables and make the site function correctly:
   it will appear in the "jumbotron" (the gray box at the top of the page). This variable is also
   used for the title of the extra pages. The README contains [more information about extra pages](https://github.com/carpentries/workshop-template#creating-extra-pages).
 
+### Slug Validation
+
+For workshops teaching a core or mix and match curriculum, i.e. 
+where `carpentry` is set to `swc`, `dc`, or `lc`, the website build
+will check that your repository name matches the Carpentries slug 
+format - `YYYY-MM-DD-site[-online]`, e.g. `2024-05-07-oomza-online`.
+
+**If your repository name does not match this format, the build will 
+fail, and will direct you to rename your workshop website repository 
+to a valid slug.** You will then need to commit a change to the repo 
+to rebuild the site, e.g. adding a space or other inconsequential 
+change to the `README.md`.
+
+Workshop websites using `cp` or `incubator` will go through the same
+check, but the build will not fail if the repo name does not match 
+the slug format. You will see a warning in the build output instead.
+
+### Incubator lessons
+
 For workshops teaching lessons in The Carpentries Incubator,
 i.e. where `carpentry` is set to `incubator`,
 you should uncomment the following three fields in
@@ -188,7 +207,7 @@ the [HTML tables chapter from w3schools](https://www.w3schools.com/html/html_tab
 For pilot workshops, some placeholder text including a link to the lesson homepage
 will be displayed instead of a schedule table.
 The lesson homepage will contain estimated timings for teaching the lesson.
-Use the approach described above for `_includes/custome-schedule.html`
+Use the approach described above for `_includes/custom-schedule.html`
 if you would like to create a schedule table to replace this text.
 
 ## Home Page: Setup Instructions

@@ -32,6 +32,7 @@ And run 'make workshop-check' *before* committing to make sure that changes are 
 {% endcomment %}
 
 
+
 {% comment %}
 8< ============= For a workshop delete from here =============
 For a workshop please delete the following block until the next dashed-line
@@ -56,7 +57,6 @@ fields in `_config.yml`
 {% comment %}
 8< ============================= until here ==================
 {% endcomment %}
-
 
 {% comment %}
 Check DC curriculum
@@ -197,7 +197,7 @@ This block displays the date and links to Google Calendar.
 {% if page.humandate %}
 <p id="when">
   <strong>When:</strong>
-  {{page.humandate}}.
+  {{page.humandate}}; {{page.humantime}}
   {% include workshop_calendar.html %}
 </p>
 {% endif %}
@@ -227,24 +227,18 @@ special instructions.
 {% endcomment %}
 <p id="accessibility">
   <strong>Accessibility:</strong>
-{% if online == "false" %}
   We are committed to making this workshop
-  accessible to everybody.  For workshops at a physical location, the workshop organizers have checked that:
-</p>
-<ul>
-  <li>The room is wheelchair / scooter accessible.</li>
-  <li>Accessible restrooms are available.</li>
-</ul>
+  accessible to everybody. 
+{% if online == "false" %}
+  The workshop organizers have checked that:
 <p>
-  Materials will be provided in advance of the workshop and
-  large-print handouts are available if needed by notifying the
-  organizers in advance.  If we can help making learning easier for
-  you (e.g. sign-language interpreters, lactation facilities) please
-  get in touch (using contact details below) and we will
-  attempt to provide them.
+  <ul>
+    <li>The room is wheelchair / scooter accessible.</li>
+    <li>Accessible restrooms are available.</li>
+  </ul>
+{% endif %}
 </p>
-{% else %}
-  We are dedicated to providing a positive and accessible learning environment for all. 
+<p>We are dedicated to providing a positive and accessible learning environment for all. 
   We do not require participants to provide documentation of disabilities or disclose any unnecessary personal information. 
   However, we do want to help create an inclusive, accessible experience for all participants. 
   We encourage you to share any information that would be helpful to make your Carpentries experience accessible.
@@ -252,7 +246,13 @@ special instructions.
   <a href="https://carpentries.typeform.com/to/B2OSYaD0">accommodation request form</a>.
   If you have questions or need assistance with the accommodation form please <a href="mailto:team@carpentries.org">email us</a>.
 </p>
-{% endif %}
+<p>
+  <a href="https://glosario.carpentries.org/">Glosario</a> is a multilingual glossary 
+  for computing and data science terms. The glossary helps 
+  learners attend workshops and use our lessons to make sense of computational and programming jargon written in English by offering it 
+  in their native language. Translating data science terms also provides a teaching tool for Carpentries Instructors to reduce barriers 
+  for their learners.
+</p>
 
 {% comment %}
 CONTACT EMAIL ADDRESS
@@ -404,8 +404,8 @@ of code below the Schedule `<h2>` header below with
 {% elsif site.carpentry == "lc" %}
 {% include lc/schedule.html %}
 {% elsif site.carpentry == "incubator" %}
-This workshop is teaching a lesson in [The Carpentries Incubator](https://carpentries-incubator.org/).
-Please check [the lesson homepage]({{ site.incubator_lesson_site }}) for a list of lesson sections and estimated timings.
+This workshop is teaching a lesson in 
+<a href="https://carpentries-incubator.org/">The Carpentries Incubator</a>. Please check <a href="{{site.incubator_lesson_site}}">the lesson homepage</a> for a list of lesson sections and estimated timings.
 {% endif %}
 
 {% comment %}
@@ -415,7 +415,7 @@ how one of these schedule tables is constructed.
 {% endcomment %}
 
 {% if site.pilot %}
-The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. Please [contact the workshop organisers](#contact) if you would like more information about the planned schedule.
+The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. Please <a href="mailto:{{page.email}}">contact the workshop organisers</a> if you would like more information about the planned schedule.
 {% endif %}
 
 <hr/>
@@ -481,6 +481,6 @@ during the workshop.
 {% include lc/setup.html %}
 {% elsif site.carpentry == "incubator" %}
 Please check the "Setup" page of
-[the lesson site]({{ site.incubator_lesson_site }}) for instructions to follow
+<a href="{{site.incubator_lesson_site}}">the lesson homepage</a> for instructions to follow
 to obtain the software and data you will need to follow the lesson.
 {% endif %}

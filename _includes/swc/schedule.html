@@ -7,9 +7,17 @@
       <tr> <td>10:30</td>  <td>Morning break</td> </tr>
       <tr> <td>11:00</td>  <td>Automating Tasks with the Unix Shell (Continued)</td> </tr>
       <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
+      {% if site.flavor == "r" %}
+      <tr> <td>13:00</td>  <td>Building Programs with R</td> </tr>
+      <tr> <td>14:30</td>  <td>Afternoon break</td> </tr>
+      <tr> <td>15:00</td>  <td>Building Programs with R (Continued)</td> </tr>
+      {% elsif site.flavor == "python" %}
       <tr> <td>13:00</td>  <td>Building Programs with Python</td> </tr>
       <tr> <td>14:30</td>  <td>Afternoon break</td> </tr>
       <tr> <td>15:00</td>  <td>Building Programs with Python (Continued)</td> </tr>
+      {% else %}
+      {% include warning-flavor.html %}
+      {% endif %}
       <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
       <tr> <td>16:30</td>  <td>END</td> </tr>
     </table>

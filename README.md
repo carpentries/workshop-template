@@ -45,23 +45,25 @@ create a workshop website.
     click on the green "Use this template" button (top right)
 
     ![screenshot of this repository's GitHub page with an arrow pointing to the the 'use this template' button on the top left](fig/select-github-use-template.png?raw=true)
-    Alternatively, use this link: [Use this template](https://github.com/new?template_name=workshop-template&template_owner=carpentries).
+    Alternatively, use this link: [Use this template](https://github.com/new?template_name=workshop-template&template_owner=carpentries).  With the drop down button select "Create a new repository."
 
 3.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
 
-4.  Choose a name for your workshop website repository.
-    This name should have the form `YYYY-MM-DD-site`,
+4.  Name your workshop website repository using the Carpentries slug format.
+    The slug should have the form `YYYY-MM-DD-site`,
     e.g., `2016-12-01-oomza`,
-    where `YYYY-MM-DD` is the start date of the workshop.
+    where `YYYY-MM-DD` is the start date of the workshop and 'oomza' is an example site name.
     If your workshop is held online, then the respository name should have `-online` in the end.
-    e.g., `2016-12-01-oomza-online`
+    e.g., `2016-12-01-oomza-online`. Make sure your slug does not end with a `-` or `_`
+    character. Your website build will fail if the name of your repository does not match the
+    valid slug format! 
 
-5.  Make sure the repository is public, leave "Include all branches" unchecked, and click
+6.  Make sure the repository is public, leave "Include all branches" unchecked, and click
 on "Create repository from template".
 You will be redirected to your new copy of the workshop template respository.
 
-6. Your new website will be rendered at `https://your_username.github.io/YYYY-MM-DD-site`.
+7. Your new website will be rendered at `https://your_username.github.io/YYYY-MM-DD-site`.
 For example, if your username is `gvwilson`, the website's URL will be
 `https://gvwilson.github.io/2016-12-01-oomza`.
 
@@ -176,7 +178,7 @@ Click 'Edit' and add:
 
 2.  The URL for your workshop in the "Website" box (e.g., `https://gvwilson.github.io/2016-12-01-oomza`)
 
-This will help people find your website if they come to your repository's home page.
+This will help people find your website if they come to your repository's home page. You may wish to check the box "Use Github pages link."
 
 ### Update the content of the README file
 

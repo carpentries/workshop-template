@@ -15,6 +15,7 @@ EMAIL_PATTERN = r'[^@]+@[^@]+\.[^@]+'
 HUMANTIME_PATTERN = r'((0?[1-9]|1[0-2]):[0-5]\d(am|pm)(-|to)(0?[1-9]|1[0-2]):[0-5]\d(am|pm))|((0?\d|1\d|2[0-3]):[0-5]\d(-|to)(0?\d|1\d|2[0-3]):[0-5]\d)'
 EVENTBRITE_PATTERN = r'\d{9,10}'
 URL_PATTERN = r'https?://.+'
+SLUG_PATTERN = r'\d{4}-\d{2}-\d{2}-[A-z0-9\-\_]+[^-_]$'
 
 # Defaults.
 CARPENTRIES = ("dc", "swc", "lc", "cp")
@@ -400,6 +401,38 @@ def check_config(reporter, filename):
                    carpentry)
 
 
+def check_slug(reporter, filename, repo_dir):
+    config = load_yaml(filename)
+
+    repo_name = os.path.basename(os.path.realpath(repo_dir))
+
+    carpentry = config.get('carpentry', None)
+
+    slugfmt = "YYYY-MM-DD-site[-online]"
+    if (repo_name != "workshop-template"):
+        if carpentry in ('swc', 'dc', 'lc'):
+            fail_msg = (
+                'Website repository name `{0}` does not match the required slug format: `{1}`. '
+                'Please rename your repository to a valid slug using the rename option in the "Settings" menu.'
+            )
+
+            if not bool(re.match(SLUG_PATTERN, repo_name)):
+                print(fail_msg.format(repo_name, slugfmt))
+                sys.exit(1)
+
+        elif carpentry in ('cp', 'incubator'):
+            warn_msg = (
+                'Website repository name `{0}` does not match the suggested slug format: `{1}`. '
+                'If teaching a workshop which you are collecting surveys for or are submitting into AMY, '
+                'please rename your repository to a valid slug using the rename option in the "Settings" menu.'
+            )
+
+            reporter.check(bool(re.match(SLUG_PATTERN, repo_name)),
+                None,
+                warn_msg,
+                repo_name, slugfmt)
+
+
 def main():
     '''Run as the main program.'''
 
@@ -413,6 +446,9 @@ def main():
 
     reporter = Reporter()
     check_config(reporter, config_file)
+
+    check_slug(reporter, config_file, root_dir)
+
     check_unwanted_files(root_dir, reporter)
     with open(index_file, encoding='utf-8') as reader:
         data = reader.read()
