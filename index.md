@@ -9,6 +9,7 @@ country: "FIXME"      # lowercase two-letter ISO country code such as "fr" (see 
 language: "FIXME"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
 latitude: "45"        # decimal latitude of workshop venue (use https://www.latlong.net/)
 longitude: "-1"       # decimal longitude of the workshop venue (use https://www.latlong.net)
+what3words:           # optional: what3words (https://https://what3words.com) address of the workshop venue, without leading slashes e.g. "globe.lessening.computers"
 humandate: "FIXME"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
 humantime: "FIXME"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
 startdate: FIXME      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
@@ -174,6 +175,10 @@ address.
   <a href="//www.openstreetmap.org/?mlat={{page.latitude}}&mlon={{page.longitude}}&zoom=16">OpenStreetMap</a>
   or
   <a href="//maps.google.com/maps?q={{page.latitude}},{{page.longitude}}">Google Maps</a>.
+  {% if page.what3words %}
+    What3Words location:
+    <a href="https://what3words.com/{{page.what3words}}">///{{page.what3words}}</a>.
+  {%endif %}
 </p>
 {% elsif online == "true_public" %}
 <p id="where">
