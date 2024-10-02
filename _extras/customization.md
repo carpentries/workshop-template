@@ -162,6 +162,14 @@ The header may optionally define the following:
     this line.  Note: this value must be given as a string in double
     quotes, rather than as a number.
 
+*   `what3words` is the [what3words](https://what3words.com) address for the
+    workshop venue. What3words divides the world into 3x3m squares and assigns
+    each a unique address consisting of three words separated by dots, allowing
+    users to specify locations precisely. Depending on the venue, this can be
+    used to specify the location of e.g. the room or the building entrance.
+    Note: this value is given in the form 'one.two.three' with no leading
+    slashes and not as a URL.
+
 ### For online workshops
 
 If the workshop is online, follow the same instructions as above with the
