@@ -100,7 +100,7 @@ displayed if the 'eventbrite' field in the header is not set.
     window.EBWidgets.createWidget({
         // Required
         widgetType: 'checkout',
-        eventId: {{eventbrite}},
+        eventId: {{page.eventbrite}},
         iframeContainerId: 'eventbrite-widget-container',
     });
 </script>
