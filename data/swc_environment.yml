@@ -1,0 +1,9 @@
+name: swc
+channels:
+  - conda-forge
+dependencies:
+  - ipykernel
+  - jupyter
+  - matplotlib
+  - numpy
+  - pandas
