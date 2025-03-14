@@ -1,4 +1,4 @@
-name: swc
+name: carpentries
 channels:
   - conda-forge
 dependencies:
@@ -7,3 +7,6 @@ dependencies:
   - matplotlib
   - numpy
   - pandas
+  - plotnine
+  - plotly
+  - seaborn
