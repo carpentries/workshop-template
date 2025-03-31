@@ -14,6 +14,165 @@
 
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="shell-windows">
+        <p>Two options are available for setting up your device so that you’re ready to learn in our workshops with Microsoft Windows.</p>
+
+        The first is Windows Subsystem for Linux v2 (“WSL 2”), and the second is Git for Windows (often referred to as “Git Bash”).
+
+        Please follow the instructions below, depending on <a href="#shell-windows-check">which version of Windows you are using</a>. If unsure, use the asterisk marked version <strong>*</strong>.
+
+        <table>
+            <tr>
+                <th>Windows Version</th>
+                <th>What to Install</th>
+            </tr>
+            <tr>
+                <td>Windows 8.1 or earlier</td>
+                <td><a href="#shell-git">Install Git for Windows</a></td>
+            </tr>
+            <tr>
+                <td>Windows 10 (#1902 and below)</td>
+                <td><a href="#shell-git">Install Git for Windows</a></td>
+            </tr>
+            <tr>
+                <td>Windows 10 (#1903 and above)</td>
+                <td><a href="#shell-wsl">Install WSL 2</a></td>
+            </tr>
+            <tr>
+                <td>Windows 11 <strong>*</strong></td>
+                <td><a href="#shell-wsl">Install WSL 2</a></td>
+            </tr>
+        </table>
+
+        <h4 id="shell-windows-check">Checking your Windows Version</h4>
+        <p>
+            Click on the Windows Start Menu button in the bottom left corner of your screen, or tap the Windows button on your keyboard, and type “System” in the search bar.
+            Click the “System (Control Panel)” option.
+            In the window that opens, there will be information about your current Windows system, including the version. Here is an example from Windows 11:
+        </p>
+
+        <p>
+           Depending on your version, please go to the relevant instructions below.
+        </p>
+
+        <h4 id="shell-windows-xp-7-8">Windows XP/Vista/7/8</h4>
+        <p>
+            <strong>These versions of Windows are considered End Of Life, and are not recommended for use in modern data science.</strong>
+            Software may experience issues, and security updates are also not available which puts your machine at risk.
+            Please consider upgrading your Windows version if you are able to do this yourself, or speak with your local IT administrator to discuss options available to you to upgrade.
+        </p>
+
+        <p>
+           If you are running any of these Windows versions, please install Git for Windows using the <a href="#shell-git">installation instructions</a> below.
+        </p>
+
+        <h4 id="shell-windows-10-1902">Windows 10 (earlier than version #1903)</h4>
+        <p>
+            For older versions of Windows 10 (version 1903/OS build 18362 and below), please follow the Git for Windows <a href="#shell-git">installation instructions</a> below.
+        </p>
+
+        <h4 id="shell-windows-10-11">Windows 10 (version #1903 and later) and Windows 11</h4>
+        <p>
+            WSL 2 is recommended for more modern versions of Windows as it provides an accurate and representative experience of Linux, but provided from within your Windows environment.
+        </p>
+
+        <p>
+          <strong>To install WSL 2, you will need Administrator (“admin”) privileges on your laptop/PC.</strong><br>
+          If you have a device provided by an institution that does not give you admin rights, please either request that they:
+          <ul>
+            <li>Give you admin rights (temporarily or otherwise) to install WSL 2 yourself OR</li>
+            <li>Install WSL 2 for you</li>
+          </ul>
+        </p>
+
+        If neither of these options is available, please install Git for Windows using the <a href="#shell-git">instructions below</a>.
+
+        <h3 id="shell-wsl">Installing WSL 2</h3>
+        <p>
+            Linux comes in many flavours, called <a href="https://en.wikipedia.org/wiki/Linux_distribution">“distributions”</a>, and each has its own benefits, features and quirks!
+        </p>
+
+        <p>
+            WSL 2 is a fully fledged Linux environment that runs completely within your Windows 10 or 11 operating system.
+            While there are many Linux distributions available to install (e.g. Ubuntu, Debian, Fedora, Mint, Arch, Gentoo, and hundreds more!), WSL 2 only supports a handful of distributions listed above due to the way it needs to be integrated with Windows itself.
+        </p>
+        <p>
+            So, we will use the default that WSL 2 recommends, Ubuntu.
+        </p>
+        <p>
+            Install Ubuntu either via the <a href="#shell-windows-wsl-store">Microsoft Store</a>, or from within the <a href="#shell-windows-wsl-powershell">Windows Powershell</a> command prompt.
+            There are also <a href="https://learn.microsoft.com/en-gb/windows/wsl/install">full instructions</a> on the Microsoft website.
+            <br>
+            <strong>Note:</strong> You will need to restart your computer after installing WSL 2, so make sure you have saved any work.
+        </p>
+
+        <h4 id="shell-windows-wsl-store">Via the Microsoft Store:</h4>
+        <ol>
+            <li>Open the Windows Start Menu button in the bottom left corner of your screen (four blue squares), or tap the Windows button on your keyboard (between the bottom left CTRL and ALT keys) and search “store”. Open the Microsoft Store.</li>
+            <li>In the Microsoft Store search bar, type “wsl ubuntu”, and select the Ubuntu 22.04 or 24.04 option (at the time of writing, <code>Ubuntu 22.04.05 LTS</code>, or <code>Ubuntu 24.04.01 LTS</code>):
+                <ul>
+                    <li>If a pop-up window appears asking if you want to make changes to your device, select “Yes”</li>
+                    <li>The install should proceed, and this can take a few minutes depending on your PC performance and internet download speed.</li>
+                    <li>Once installed, restart the computer.</li>
+                </ul>
+            </li>
+            <li>Once restarted, reopen the Windows Start Menu button in the bottom left corner of your screen, or tap the Windows button on your keyboard. In the search bar, type either:
+                <ul>
+                    <li><code>Ubuntu</code>: this will open the bash prompt directly</li>
+                    <li><code>Terminal</code>: this will open a new Windows Terminal window, which will look like a blank black window with a blinking cursor waiting for input. <strong>Note:</strong> This terminal might default to Powershell, and not Ubuntu. If this is the case, click the down arrow in the Terminal window menu bar at the top, and then click Ubuntu 22.04 or 24.04, depending on the version you installed. It will also show keyboard shortcuts (e.g. Ctrl+Shift+1) to open the various prompts available within the Terminal application.</li>
+                </ul>
+            </li>
+            <li>Follow the <a href="#shell-windows-wsl-install-software">Installing software within WSL 2</a> section below.</li>
+        </ol>
+
+        <h4 id="shell-windows-wsl-powershell">Via Powershell:</h4>
+        <ol>
+            <li>Click on the Windows Start Menu button in the bottom left corner of your screen, or tap the Windows button on your keyboard, and type “powershell” in the search bar.</li>
+            <li>Open Powershell in administrator mode by clicking “Run as Administrator” in the right hand side pane:
+                <ul>
+                    <li>If a pop-up window appears asking if you want to make changes to your device, select “Yes”</li>
+                    <li><strong>If you are unable to run in Administrator mode</strong>, you may have to contact your IT support personnel to ask for access or to install WSL 2 for you</li>
+                </ul>
+            </li>
+
+            <li>At the Powershell prompt, type <code>wsl -–install</code>:
+                <ul>
+                    <li>The installer will download Ubuntu by default, and this may take a few minutes</li>
+                    <li>Once installed, you will be prompted to enter in a new username and password. These will be only set for your Ubuntu environment, and are not related to your Windows operating system.</li>
+                    <li>Upon completion, you will be presented with the bash prompt.</li>
+                </ul>
+            </li>
+            <li>Follow the <a href="#shell-windows-wsl-install-software">Installing software within WSL 2</a> section below.</li>
+        </ol>
+
+        <h4 id="shell-windows-wsl-install-software">Installing software within WSL 2</h4>
+        <p>
+            Once you have installed WSL 2, you will need to install some software within the Ubuntu operating system in order to use it effectively. Make sure you are using Ubuntu by checking you see the bash prompt:
+        </p>
+
+        <p>
+            The first thing to do is to update the package manager's list of available packages. To do this in Ubuntu, we use a tool called <code>apt</code>.
+            Type the following command into the bash prompt:
+            <code>sudo apt update</code>
+        </p>
+        <p>
+            <strong>Note:</strong> You will be prompted to enter your password. This is the password you set when installing Ubuntu, and will not show up on the screen as you type it in.
+            This is a security feature of the terminal, and is normal behaviour.
+        </p>
+        <p>
+            Install updated versions of packages required across all our lessons, by typing:
+            <ul>
+                <li><code>sudo apt-get install git build-essential autotools python3 r-base</code></li>
+            </ul>
+        </p>
+        <p>
+            You’re all set!
+        </p>
+
+        <h3 id="shell-git">Installing Git for Windows</h3>
+        <p>
+            <strong>If you are unable to use WSL 2, please use the following instructions to install Git for Windows (“Git Bash”).</strong>
+        </p>
+
         <ol>
           <li>Download the Git for Windows <a href="https://gitforwindows.org/">installer</a>.</li>
           <li>Run the installer and follow the steps below:
@@ -36,7 +195,7 @@
 		{% comment %}
 		This section also has "Override the default branch name for new repositories" and has a text box set
 		to "main". I'm not having people switch to this just yet because our git lesson still uses the old paradigm.
-		{% endcomment %}     
+		{% endcomment %}
               </li>
               {% comment %} Adjusting your PATH environment {% endcomment %}
               <li>
@@ -104,6 +263,8 @@
         </div>
         </div>
       </article>
+
+
       <article role="tabpanel" class="tab-pane" id="shell-macos">
         <p>
           The default shell in Mac OS X Ventura and newer versions is Zsh, but
