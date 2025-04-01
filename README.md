@@ -101,7 +101,7 @@ There are two ways of customizing your website. You can either:
 
 4.  Remove the notice about using the workshop template in the `index.md` file. You can safely
     delete everything between the `{% comment %}` and `{% endcomment %}` (included) as indicated
-    below (from line 35 to line 58):
+    below (from line 37 to line 60):
 
     ```jekyll
     {% comment %} <------------ remove from this line
