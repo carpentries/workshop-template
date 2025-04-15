@@ -8,9 +8,9 @@ on:
 jobs:
   build-website:
     if: ${{ !endsWith(github.repository, '/styles') }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
-      RSPM: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"
+      RSPM: "https://packagemanager.rstudio.com/cran/__linux__/jammy/latest"
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     defaults:
       run:
