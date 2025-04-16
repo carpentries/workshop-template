@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         lesson: [swcarpentry/shell-novice, datacarpentry/r-intro-geospatial, librarycarpentry/lc-git]
-        os: [ubuntu-20.04, macos-latest, windows-latest]
+        os: [ubuntu-22.04, macos-latest, windows-latest]
         experimental: [false]
         include:
           - os: ubuntu-22.04
