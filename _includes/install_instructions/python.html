@@ -50,34 +50,38 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
         <ol>
           <li>Open <a href="https://conda-forge.org/download/">https://conda-forge.org/download/</a> with your web browser.</li>
           <li>Download the Miniforge for Windows installer</li>
-	      <li>Double click on the downloaded file (Something like, <code>Minforge3-Windows-x86_64.exe</code>)</li>
-	      <li>If you get a "Windows protected your PC" pop-up from Microsoft Defender SmartScreen, click on "More info" and select "Run anyway"</li>
+	        <li>Double click on the downloaded file (Something like, <code>Minforge3-Windows-x86_64.exe</code>)</li>
+	        <li>If you get a "Windows protected your PC" pop-up from Microsoft Defender SmartScreen, click on "More info" and select "Run anyway"</li>
           <li>Follow through the installer using all of the defaults for installation <em>except</em> make sure to check <strong>Add Miniforge3 to my PATH environment variable</strong>.</li>
-	      {% comment %}
-	      <li>Search for the application "Miniforge Prompt", open it and run: <code>conda install jupyter</code> and click <kbd>Enter</kbd> when asked for confirmation.</li>
-	          if we want to add an icon, it can be done with:
-	          https://medium.com/@kostal91/create-a-desktop-shortcut-for-jupyterlab-on-windows-9fcabcfa0d3f - easier and more convenient using %userprofile% variable rather than users\%username%
-	          and need to update miniconda for miniforge
-	          Also, the https://pypi.org/project/start-jupyter-cm/ could be helpful.
-	      {% endcomment %}
+	        {% comment %}
+	        <li>Search for the application "Miniforge Prompt", open it and run: <code>conda install jupyter</code> and click <kbd>Enter</kbd> when asked for confirmation.</li>
+	            if we want to add an icon, it can be done with:
+	            https://medium.com/@kostal91/create-a-desktop-shortcut-for-jupyterlab-on-windows-9fcabcfa0d3f - easier and more convenient using %userprofile% variable rather than users\%username%
+	            and need to update miniconda for miniforge
+	            Also, the https://pypi.org/project/start-jupyter-cm/ could be helpful.
+	        {% endcomment %}
           <li>Then:
             <ul>
-	        <li><strong>EITHER</strong> Right click the following link and click "Save link as...": <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">Carpentries environment file</a>.
-                Save the file to your <code>Downloads</code> folder.
-                Make sure that the filename is <code>carpentries_environment.yml</code> and the "Save as type" is set to <code>YML file (*.yml)</code><br>
-	            (The following steps requires using the shell. If you aren't
-                comfortable doing the installation yourself
-                stop here and request help at the workshop).
-	        </li>
-            <li><strong>OR </strong>Open git bash and perform the following steps:
-              <ul>
-                <li><code>cd ~/Downloads</code></li>
-                <li><code>curl -L -O https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml</code></li>
-              </ul>
-            </li>
+              <li><strong>EITHER</strong>:
+                <ul>
+                  <li>Right click the following link and click "Save link as...": <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">Carpentries environment file</a></li>
+                  <li>Save the file to your <code>Downloads</code> folder.</li>
+                  <li>Make sure that the filename is <code>carpentries_environment.yml</code> and the "Save as type" is set to <code>YML file (*.yml)</code><br>
+                  (The following steps requires using the shell. If you aren't
+                    comfortable doing the installation yourself
+                    stop here and request help at the workshop).</li>
+                </ul>
+              </li>
+              <li><strong>OR </strong>:
+                <ul>
+                  <li>Open git bash</li>
+                  <li><code>cd ~/Downloads</code></li>
+                  <li><code>curl -L -O https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml</code></li>
+                </ul>
+              </li>
             </ul>
           </li>
-	      <li>Search for the application "Miniforge Prompt", open it and run: <code>conda env create -f .\Downloads\carpentries_environment.yml</code></li>
+	        <li>Search for the application "Miniforge Prompt", open it and run: <code>conda env create -f .\Downloads\carpentries_environment.yml</code></li>
           <li>Close the terminal window.</li>
         </ol>
       </article>
@@ -114,22 +118,24 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
           </li>
           <li>Then:
             <ul>
-	        <li><strong>EITHER</strong> Right click the following link and click "Save link as...": <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">Carpentries environment file</a>.
-                Save the file to your <code>Downloads</code> folder.
-                Make sure that the filename is <code>carpentries_environment.yml</code> and the "Save as type" is set to <code>YML file (*.yml)</code><br>
-	        </li>
-            <li><strong>OR </strong>Open the terminal and perform the following steps:
-              <ul>
-                <li><code>cd ~/Downloads</code></li>
-                <li><code>curl -L -O https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml</code></li>
-              </ul>
-            </li>
+              <li><strong>EITHER</strong>:
+                <ul>
+                  <li>Right click the following link and click "Save link as...": <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">Carpentries environment file</a></li>
+                  <li>Save the file to your <code>Downloads</code> folder.</li>
+                  <li>Make sure that the filename is <code>carpentries_environment.yml</code> and the "Save as type" is set to <code>YML file (*.yml)</code></li>
+                </ul>
+              </li>
+              <li><strong>OR </strong>:
+                <ul>
+                  <li>Open your `bash` terminal</li>
+                  <li><code>cd ~/Downloads</code></li>
+                  <li><code>curl -L -O https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml</code></li>
+                </ul>
+              </li>
             </ul>
           </li>
-	      <li>In the terminal, run: <code>conda env create -f ~/Downloads/carpentries_environment.yml</code></li>
-          <li>
-            Close the terminal window.
-          </li>
+  	      <li>In the terminal, run: <code>conda env create -f ~/Downloads/carpentries_environment.yml</code></li>
+          <li>Close the terminal window.</li>
         </ol>
       </article>
       <article role="tabpanel" class="tab-pane" id="python-linux">
@@ -165,22 +171,24 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
           </li>
           <li>Then:
             <ul>
-	        <li><strong>EITHER</strong> Right click the following link and click "Save link as...": <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">Carpentries environment file</a>.
-                Save the file to your <code>Downloads</code> folder.
-                Make sure that the filename is <code>carpentries_environment.yml</code> and the "Save as type" is set to <code>YML file (*.yml)</code><br>
-	        </li>
-            <li><strong>OR </strong>Open the terminal and perform the following steps:
-              <ul>
-                <li><code>cd ~/Downloads</code></li>
-                <li><code>curl -L -O https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml</code></li>
-              </ul>
-            </li>
+              <li><strong>EITHER</strong>:
+                <ul>
+                  <li>Right click the following link and click "Save link as...": <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">Carpentries environment file</a></li>
+                  <li>Save the file to your <code>Downloads</code> folder.</li>
+                  <li>Make sure that the filename is <code>carpentries_environment.yml</code> and the "Save as type" is set to <code>YML file (*.yml)</code></li>
+                </ul>
+              </li>
+              <li><strong>OR </strong>:
+                <ul>
+                  <li>Open your terminal</li>
+                  <li><code>cd ~/Downloads</code></li>
+                  <li><code>curl -L -O https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml</code></li>
+                </ul>
+              </li>
             </ul>
           </li>
-	      <li>In the terminal, run: <code>conda env create -f ~/Downloads/carpentries_environment.yml</code></li>
-          <li>
-            Close the terminal window.
-          </li>
+	        <li>In the terminal, run: <code>conda env create -f ~/Downloads/carpentries_environment.yml</code></li>
+          <li>Close the terminal window.</li>
         </ol>
       </article>
     </div>
