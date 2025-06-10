@@ -49,12 +49,21 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
       <article role="tabpanel" class="tab-pane active" id="python-windows">
         <details>
             <summary><strong>Before you start:</strong> Issues relating to OneDrive</summary>
-            <p>
+            <div class="alert alert-warning">
                 OneDrive is used by many institutions to sync your user folder (<code>C:\Users\[your-username]\</code>) within an organisation.
                 It may cause issues with the installation of the Carpentries environment.<br/>
-                If you have OneDrive set up, please ensure that you can access your <code>C:\Users\[your-username]\Downloads</code> folder.<br/>
+                If you have OneDrive set up, please ensure that you can access your <code>C:\Users\[your-username]\Downloads</code> folder:
+                <p>
+                  <ul>
+                    <li>Open File Explorer</li>
+                    <li>Right click on the "Downloads" folder in the left-hand navigation pane</li>
+                    <li>Select "Properties"</li>
+                    <li>In the "Location" tab, ensure that the path is set to <code>C:\Users\[your-username]\Downloads</code></li>
+                    <img src="assets/img/onedrive_downloads_location.png" alt="OneDrive Downloads Location">
+                  </ul>
+                </p>
                 <strong>If you encounter problems, please contact your IT support team and workshop organisers for assistance before the workshop.</strong>
-            </p>
+            </div>
         </details>
         <ol>
           <li>Open <a href="https://conda-forge.org/download/">https://conda-forge.org/download/</a> with your web browser.</li>
@@ -79,7 +88,7 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
                   <li>Save the file to your <code>C:\Users\[your-username]\Downloads</code> folder.</li>
                   <li>
                     Make sure that the filename is <code>carpentries_environment.yml</code> and the "Save as type" option is set to <code>YML file (*.yml)</code><br/>
-                    (The following steps requires using the shell. If you aren't comfortable doing the installation yourself stop here and request help at the workshop).
+                    <em>The following steps requires using the Miniforge Prompt command line. If you aren't comfortable doing the installation yourself stop here and request help at the workshop</em>.
                   </li>
                 </ul>
               </li>
@@ -104,7 +113,10 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
                     <li>Find your username by typing <code>whoami</code> and press <kbd>Enter</kbd></li>
                     <li>Your username will be shown as <code>[machine-name]\[your-username]</code>. You only need the <code>[your-username]</code> part after the slash, i.e. <code>froggleston</code> in this example.</li>
                     <li>Type <code>cd C:\Users\[your-username]</code> and press <kbd>Enter</kbd></li>
-                    <img src="assets/img/miniforge_prompt_whoami.png" alt="Miniforge Prompt whoami">
+                </ul>
+                <img src="assets/img/miniforge_prompt_whoami.png" alt="Miniforge Prompt whoami">
+                <ul>
+                    <li>Continue to Step 8 below</li>
                 </ul>
                 <li><strong>If you get stuck, please contact your workshop organisers to get assistance before the workshop starts.</strong></li>
               </li>
