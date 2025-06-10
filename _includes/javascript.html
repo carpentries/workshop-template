@@ -9,16 +9,16 @@
 /* Based on https://stackoverflow.com/a/30894829/1802726 */
 var show_instructions = function() {
      //set all nav tabs to inactive
-    $('.nav-tabs li').removeClass('active');
+    $('#outer-tabs li').removeClass('active');
 
     //get all nav tabs matching the os and set to active
-    $('.nav-tabs li a[href*="'+localStorage.os+'"]').closest('li').addClass('active');
+    $('#outer-tabs li a[data-os="'+localStorage.os+'"]').parent().addClass('active');
 
     //set all tabs to inactive
-    $('.tab-pane').removeClass('active');
+    $('.os-tabs li[role="presentation"]').removeClass('active');
 
     //get all tabs matching the os and set to active
-    $('.tab-pane[id*="'+localStorage.os+'"]').addClass('active');
+    $('.os-tabs li a[data-os="'+localStorage.os+'"]').tab('show');
 }
 
 if (typeof(Storage) !== "undefined") {
@@ -31,10 +31,22 @@ if (typeof(Storage) !== "undefined") {
 }
 
 /* Based on https://stackoverflow.com/a/30894829/1802726 */
-$('.nav-tabs li a').click(function(){
+$('.os-tabs li a').click(function(){
     //get selected os
     localStorage.os = $(this)[0].dataset.os;
+
+    //show clicked tab content
+    $(this).tab('show');
+
+    //update other tabs
     show_instructions();
+});
+
+$('.os-switch').click(function() {
+    soft_sel = $(this)[0].dataset.software;
+
+    //show clicked tab content
+    $('#win-tabs li a[data-software="'+soft_sel+'"]').tab('show');
 });
 
   // hide alerts when site is rendered on carpentries.github.io
