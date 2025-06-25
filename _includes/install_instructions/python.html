@@ -42,107 +42,182 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
     <ul class="nav nav-tabs os-tabs" role="tablist">
       <li role="presentation" class="active"><a data-os="windows" href="#python-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
       <li role="presentation"><a data-os="macos" href="#python-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
-      <li role="presentation"><a data-os="linux" href="#python-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
+      <li role="presentation"><a data-os="linux" href="#python-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux / WSL</a></li>
     </ul>
 
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="python-windows">
+        <details>
+            <summary><strong>Before you start:</strong> Issues relating to OneDrive</summary>
+            <div class="alert alert-warning">
+                OneDrive is used by many institutions to sync your user folder (<code>C:\Users\[your-username]\</code>) within an organisation.
+                It may cause issues with the installation of the Carpentries environment.<br/>
+                If you have OneDrive set up, please ensure that you can access your <code>C:\Users\[your-username]\Downloads</code> folder:
+                <p>
+                  <ul>
+                    <li>Open File Explorer</li>
+                    <li>Right click on the "Downloads" folder in the left-hand navigation pane</li>
+                    <li>Select "Properties"</li>
+                    <li>In the "Location" tab, ensure that the path is set to <code>C:\Users\[your-username]\Downloads</code></li>
+                    <img src="assets/img/onedrive_downloads_location.png" alt="OneDrive Downloads Location">
+                  </ul>
+                </p>
+                <strong>If you encounter problems, please contact your IT support team and workshop organisers for assistance before the workshop.</strong>
+            </div>
+        </details>
         <ol>
           <li>Open <a href="https://conda-forge.org/download/">https://conda-forge.org/download/</a> with your web browser.</li>
           <li>Download the Miniforge for Windows installer</li>
-	  <li>Double click on the downloaded file (Something like, <code>Minforge3-Windows-x86_64.exe</code>)</li>
-	  <li>If you get a "Windows protected your PC" pop-up from Microsoft Defender SmartScreen, click on "More info" and select "Run anyway"</li>
+          <li>Double click on the downloaded file (Something like, <code>Minforge3-Windows-x86_64.exe</code>)</li>
+          <ul>
+            <li>If you get a "Windows protected your PC" pop-up from Microsoft Defender SmartScreen, click on "More info" and select "Run anyway"</li>
+          </ul>
           <li>Follow through the installer using all of the defaults for installation <em>except</em> make sure to check <strong>Add Miniforge3 to my PATH environment variable</strong>.</li>
-	  {% comment %}
-	  <li>Search for the application "Miniforge Prompt", open it and run: <code>conda install jupyter</code> and click <kbd>Enter</kbd> when asked for confirmation.</li>
-	  if we want to add an icon, it can be done with:
-	  https://medium.com/@kostal91/create-a-desktop-shortcut-for-jupyterlab-on-windows-9fcabcfa0d3f - easier and more convenient using %userprofile% variable rather than users\%username%
-	  and need to update miniconda for miniforge
-	  Also, the https://pypi.org/project/start-jupyter-cm/ could be helpful.
-	  {% endcomment %}
-	  <li>Download the <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml" download>environment file</a>. Save the file to your Downloads folder.<br>
-	    (The following steps requires using the shell. If you aren't
-            comfortable doing the installation yourself
-            stop here and request help at the workshop.)
-	  </li>
-	  <li>Search for the application "Miniforge Prompt", open it and run: <code>conda env create -f .\Downloads\carpentries_environment.yml</code></li>
-          <li>Close the terminal window.</li>
+	        {% comment %}
+	        <li>Search for the application "Miniforge Prompt", open it and run: <code>conda install jupyter</code> and click <kbd>Enter</kbd> when asked for confirmation.</li>
+	            if we want to add an icon, it can be done with:
+	            https://medium.com/@kostal91/create-a-desktop-shortcut-for-jupyterlab-on-windows-9fcabcfa0d3f - easier and more convenient using %userprofile% variable rather than users\%username%
+	            and need to update miniconda for miniforge
+	            Also, the https://pypi.org/project/start-jupyter-cm/ could be helpful.
+	        {% endcomment %}
+          <li>Then:
+            <ul>
+              <li><strong>EITHER</strong>:
+                <ul>
+                  <li>Right click the following link and click "Save link as...": <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">Carpentries environment file</a></li>
+                  <li>Save the file to your <code>C:\Users\[your-username]\Downloads</code> folder.</li>
+                  <li>
+                    Make sure that the filename is <code>carpentries_environment.yml</code> and the "Save as type" option is set to <code>YML file (*.yml)</code><br/>
+                    <em>The following steps requires using the Miniforge Prompt command line. If you aren't comfortable doing the installation yourself stop here and request help at the workshop</em>.
+                  </li>
+                </ul>
+              </li>
+              <li><strong>OR</strong>:
+                <ul>
+                  <li>Open Git Bash</li>
+                  <li><code>cd ~/Downloads</code></li>
+                  <li><code>curl -L -O https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml</code></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Open your Start Menu from your taskbar, or use the <kbd>Win</kbd> Windows key.</li>
+          <li>Search for the application "Miniforge Prompt", and click the icon to open it.
+            <ul>
+              <li>Once open, ensure the prompt shows your <code>C:\Users\[your-username]</code> folder. If it does, continue to Step 8 below:<br/>
+                <img src="assets/img/miniforge_prompt.png" alt="Miniforge Prompt [your-username] as froggleston"><br/>
+                In this case, the prompt shows <code>C:\Users\froggleston</code>. Your username will be different!
+              </li>
+              <li>If it doesn't:
+                <ul>
+                    <li>Find your username by typing <code>whoami</code> and press <kbd>Enter</kbd></li>
+                    <li>Your username will be shown as <code>[machine-name]\[your-username]</code>. You only need the <code>[your-username]</code> part after the slash, i.e. <code>froggleston</code> in this example.</li>
+                    <li>Type <code>cd C:\Users\[your-username]</code> and press <kbd>Enter</kbd></li>
+                </ul>
+                <img src="assets/img/miniforge_prompt_whoami.png" alt="Miniforge Prompt whoami">
+                <ul>
+                    <li>Continue to Step 8 below</li>
+                </ul>
+                <li><strong>If you get stuck, please contact your workshop organisers to get assistance before the workshop starts.</strong></li>
+              </li>
+            </ul>
+          </li>
+          <li>In the Miniforge Prompt window, run the following commands:
+            <ul>
+              <li>Type <code>cd Downloads</code> and press <kbd>Enter</kbd></li>
+              <li>Type <code>conda env create -f carpentries_environment.yml</code> and press <kbd>Enter</kbd></li>
+            </ul>
+          </li>
+          <li>The installation may take a few minutes depending on your internet connection speed. Once complete, you can close the Miniforge Prompt window.</li>
         </ol>
       </article>
       <article role="tabpanel" class="tab-pane" id="python-macos">
         <ol>
           <li>Open <a href="https://conda-forge.org/download/">https://conda-forge.org/download/</a> with your web browser.</li>
           <li>Download the appropriate Miniforge installer for macOS<br>
-	    (The following steps requires using the shell. If you aren't
-            comfortable doing the installation yourself
-            stop here and request help at the workshop.)
-	  </li>
+	          <em>The following steps require using the shell. If you aren't comfortable doing the installation yourself stop here and request help at the workshop</em>.
+	      </li>
           <li>
-            Open a terminal window and navigate to the directory where
-            the executable is downloaded (e.g., <code>cd ~/Downloads</code>).
+            Open a terminal window and navigate to the directory where the executable is downloaded (e.g., <code>cd ~/Downloads</code>).
           </li>
           <li>
-            Type <pre>bash Miniforge3-</pre> and then press
-            <kbd>Tab</kbd> to autocomplete the full file name. The name of
-            file you just downloaded should appear.
+            Type <pre>bash Miniforge3-</pre> and then press <kbd>Tab</kbd> to autocomplete the full file name.
+            The name of file you just downloaded should appear.
+            Press <kbd>Enter</kbd> (or <kbd>Return</kbd> depending on your keyboard).
           </li>
           <li>
-            Press <kbd>Enter</kbd>
-            (or <kbd>Return</kbd> depending on your keyboard).
-            You will follow the text-only prompts.
-            To move through the text, press <kbd>Spacebar</kbd>.
-            Type <code>yes</code> and press enter to approve the license.
-            Press <kbd>Enter</kbd> (or <kbd>Return</kbd>)
-            to approve the default location
-            for the files.
-            Type <code>yes</code> and press
-            <kbd>Enter</kbd> (or <kbd>Return</kbd>)
-            to prepend Miniforge to your <code>PATH</code>
-            (this makes the Miniforge distribution the default Python).
+            Follow the text-only prompts in the terminal. To move through the text, press <kbd>Spacebar</kbd>.
+            <ul>
+              <li>Type <code>yes</code> and press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to approve the license.</li>
+              <li>Press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to approve the default location for the files.</li>
+              <li>Type <code>yes</code> and press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to prepend Miniforge to your <code>PATH</code> (this makes the Miniforge distribution the default Python).</li>
+            </ul>
           </li>
-	  <li>Download the <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml" download>environment file</a>. Save the file to your Downloads folder.</li>
-	  <li>On the terminal run: <code>conda env create -f ~/Downloads/carpentries_environment.yml</code></li>
-          <li>
-            Close the terminal window.
+          <li>Then:
+            <ul>
+              <li><strong>EITHER</strong>:
+                <ul>
+                  <li>Right click the following link and click "Save link as...": <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">Carpentries environment file</a></li>
+                  <li>Save the file to your <code>Downloads</code> folder.</li>
+                  <li>Make sure that the filename is <code>carpentries_environment.yml</code> and the "Save as type" is set to <code>YML file (*.yml)</code></li>
+                </ul>
+              </li>
+              <li><strong>OR </strong>:
+                <ul>
+                  <li>Open your `bash` terminal</li>
+                  <li><code>cd ~/Downloads</code></li>
+                  <li><code>curl -L -O https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml</code></li>
+                </ul>
+              </li>
+            </ul>
           </li>
+  	      <li>In the terminal, run: <code>conda env create -f ~/Downloads/carpentries_environment.yml</code></li>
+          <li>Close the terminal window.</li>
         </ol>
       </article>
       <article role="tabpanel" class="tab-pane" id="python-linux">
         <ol>
           <li>Open <a href="https://conda-forge.org/download/">https://conda-forge.org/download/</a> with your web browser.</li>
           <li>Download the appropriate Miniforge installer for Linux<br>
-	    (The following steps requires using the shell. If you aren't
-            comfortable doing the installation yourself
-            stop here and request help at the workshop.)
-	  </li>
+	          <em>The following steps require using the shell. If you aren't comfortable doing the installation yourself stop here and request help at the workshop</em>.
+	      </li>
           <li>
-            Open a terminal window and navigate to the directory where
-            the executable is downloaded (e.g., `cd ~/Downloads`).
+            Open a terminal window and navigate to the directory where the executable is downloaded (e.g., <code>cd ~/Downloads</code>).
           </li>
           <li>
-            Type <pre>bash Miniforge3-</pre> and then press
-            <kbd>Tab</kbd> to autocomplete the full file name. The name of
-            file you just downloaded should appear.
+            Type <pre>bash Miniforge3-</pre> and then press <kbd>Tab</kbd> to autocomplete the full file name.
+            The name of file you just downloaded should appear.
+            Press <kbd>Enter</kbd> (or <kbd>Return</kbd> depending on your keyboard).
           </li>
           <li>
-            Press <kbd>Enter</kbd>
-            (or <kbd>Return</kbd> depending on your keyboard).
-            You will follow the text-only prompts.
+            Follow the text-only prompts in the terminal.
             To move through the text, press <kbd>Spacebar</kbd>.
-            Type <code>yes</code> and press enter to approve the license.
-            Press <kbd>Enter</kbd> (or <kbd>Return</kbd>)
-            to approve the default location
-            for the files.
-            Type <code>yes</code> and press
-            <kbd>Enter</kbd> (or <kbd>Return</kbd>)
-            to prepend Miniforge to your <code>PATH</code>
-            (this makes the Miniforge distribution the default Python).
+            <ul>
+              <li>Type <code>yes</code> and press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to approve the license.</li>
+              <li>Press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to approve the default location for the files.</li>
+              <li>Type <code>yes</code> and press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to prepend Miniforge to your <code>PATH</code> (this makes the Miniforge distribution the default Python).</li>
+            </ul>
           </li>
-	  <li>Download the <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml" download>environment file</a>. Save the file to your Downloads folder.</li>
-	  <li>Search for the application "Miniforge Prompt", open it and run: <code>conda env create -f ~/Downloads/carpentries_environment.yml</code></li>
-          <li>
-            Close the terminal window.
+          <li>Then:
+            <ul>
+              <li><strong>EITHER</strong>:
+                <ul>
+                  <li>Right click the following link and click "Save link as...": <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">Carpentries environment file</a></li>
+                  <li>Save the file to your <code>Downloads</code> folder.</li>
+                  <li>Make sure that the filename is <code>carpentries_environment.yml</code> and the "Save as type" is set to <code>YML file (*.yml)</code></li>
+                </ul>
+              </li>
+              <li><strong>OR </strong>:
+                <ul>
+                  <li>Open your terminal</li>
+                  <li><code>cd ~/Downloads</code></li>
+                  <li><code>curl -L -O https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml</code></li>
+                </ul>
+              </li>
+            </ul>
           </li>
+	        <li>In the terminal, run: <code>conda env create -f ~/Downloads/carpentries_environment.yml</code></li>
+          <li>Close the terminal window.</li>
         </ol>
       </article>
     </div>
