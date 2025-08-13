@@ -4,7 +4,8 @@ on:
     branches:
       - gh-pages
       - main
-  pull_request: []
+  pull_request:
+    types: [opened, synchronize, reopened]
 jobs:
   build-website:
     if: ${{ !endsWith(github.repository, '/styles') }}
