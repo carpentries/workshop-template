@@ -9,11 +9,12 @@
 
   <div>
     <ul class="nav nav-tabs os-tabs" role="tablist">
-      <li role="presentation" class="active"><a data-os="windows" href="#sql-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
-      <li role="presentation"><a data-os="macos" href="#sql-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
-      <li role="presentation"><a data-os="linux" href="#sql-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux / WSL</a></li>
-      <li role="presentation"><a data-os="web" href="#sql-web" aria-controls="Web" role="tab" data-toggle="tab">Web</a></li>
+      <li role="presentation" class="nav-item"><button class="nav-link active" data-os="windows" data-bs-target="#sql-windows" aria-controls="Windows" role="tab" data-bs-toggle="tab">Windows</button></li>
+      <li role="presentation" class="nav-item"><button class="nav-link" data-os="macos" data-bs-target="#sql-macos" aria-controls="MacOS" role="tab" data-bs-toggle="tab">MacOS</button></li>
+      <li role="presentation" class="nav-item"><button class="nav-link" data-os="linux" data-bs-target="#sql-linux" aria-controls="Linux" role="tab" data-bs-toggle="tab">Linux</button></li>
+      <li role="presentation" class="nav-item"><button class="nav-link" data-os="web" data-bs-target="#sql-web" aria-controls="Web" role="tab" data-bs-toggle="tab">Web</button></li>
     </ul>
+
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="sql-windows">
         <ul>
