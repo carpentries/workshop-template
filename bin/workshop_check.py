@@ -170,6 +170,7 @@ def check_latitude(latitude):
     except ValueError:
         return False
 
+@look_for_fixme
 def check_longitude(longitude):
     """
     'longitude' must be a valid latitude represented as a
