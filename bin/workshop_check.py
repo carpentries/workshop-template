@@ -93,14 +93,14 @@ def check_layout(layout):
 def check_country(country):
     '''"country" must be a lowercase ISO-3166 two-letter code.'''
 
-    return country in ISO_COUNTRY
+    return country.lower() in ISO_COUNTRY
 
 
 @look_for_fixme
 def check_language(language):
     '''"language" must be a lowercase ISO-639 two-letter code.'''
 
-    return language in ISO_LANGUAGE
+    return language.lower() in ISO_LANGUAGE
 
 
 @look_for_fixme
