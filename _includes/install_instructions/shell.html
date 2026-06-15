@@ -18,7 +18,12 @@
 
         <p>The first is Git for Windows (often referred to as “Git Bash”), and the second is Windows Subsystem for Linux v2 (“WSL 2”).</p>
 
+        <p>
+            <strong>If you experience any issues, please install Git for Windows using the <a class="os-switch" data-software="gitbash" href="#shell-install-gitbash">instructions below</a>.</strong>
+        </p>
+
         <div class="info alert-info">
+            <h5>Admin Privileges</h5>
             <strong>If you choose to install WSL 2, you will need Administrator (“admin”) privileges on your laptop/PC.</strong><br>
             If you have a device provided by an institution that does not give you admin rights, please either request that they:
             <ul>
@@ -27,58 +32,62 @@
             </ul>
         </div>
 
-        <p>
-            <strong>If you experience any issues, please install Git for Windows using the <a class="os-switch" data-software="gitbash" href="#shell-install-gitbash">instructions below</a>.</strong>
-        </p>
+        <div class="card w-100 alert-warning" style="width: 18rem; margin-bottom: 10px;">
+        <details class="mb-0">
+            <summary class="card-header w-100 rounded-0" role="button">
+            Help! What should I use?
+            </summary>
+            <div class="card-body bg-light border-top">
+            <div class="card-text">
+                <p>
+                We recommend Git for Windows as the default bash experience for Windows users attending our workshops, as it is the most straightforward to install and use, and does not require admin privileges.
+                However, it has limited functionality compared to a full Linux environment, and when you continue your data science learning after the workshop you will find that Git Bash does not support all the tools and workflows you might need.
+                We recommend that after the workshop, you consider installing WSL 2 to get a more complete Linux experience within your Windows environment, and to have access to the full range of tools and software available on Linux.
+                </p>
 
-        <details>
-            <summary>Help! What should I use?</summary>
-            <div class="info alert-info">
+                <h5 id="shell-windows-check">Checking your Windows Version</h5>
                 <p>
-                    We recommend Git for Windows as the default bash experience for Windows users attending our workshops, as it is the most straightforward to install and use, and does not require admin privileges.
-                    However, it has limited functionality compared to a full Linux environment, and when you continue your data science learning after the workshop you will find that Git Bash does not support all the tools and workflows you might need.
-                    We recommend that after the workshop, you consider installing WSL 2 to get a more complete Linux experience within your Windows environment, and to have access to the full range of tools and software available on Linux.
-                </p>
-                <p>
-                    <h4 id="shell-windows-check">Checking your Windows Version</h4>
-                    Click on the Windows Start Menu button in the bottom left corner of your screen, or tap the Windows button on your keyboard, and type “System” in the search bar.
-                    Click the “System (Control Panel)” option.
-                    In the window that opens, there will be information about your current Windows system, including the version. Here is an example from Windows 11:
-                    <br/>
-                    <img src="assets/img/windows_spec_example.png" alt="Windows System Info version example">
-                    Depending on your version, please go to the relevant instructions below.
-                </p>
+                Click on the Windows Start Menu button in the bottom left corner of your screen, or tap the Windows button on your keyboard, and type “System” in the search bar.
+                Click the “System (Control Panel)” option.
+                In the window that opens, there will be information about your current Windows system, including the version. Here is an example from Windows 11:
                 <br/>
-                <p>
-                    <h4 id="shell-windows-xp-7-8">Windows XP/Vista/7/8</h4>
-                    <strong>These versions of Windows are considered End Of Life, and are not recommended for use in modern data science.</strong>
-                    Software may experience issues, and security updates are also not available which puts your machine at risk.
-                    Please consider upgrading your Windows version if you are able to do this yourself, or speak with your local IT administrator to discuss options available to you to upgrade.
-                    <br/>
-                    If you are running any of these Windows versions, please install Git for Windows using the <a href="#shell-git">installation instructions</a> below.
+                <img src="assets/img/windows_spec_example.png" alt="Windows System Info version example">
+                Depending on your version, please go to the relevant instructions below.
                 </p>
-                <br/>
+
+                <h5 id="shell-windows-xp-7-8">Windows XP/Vista/7/8</h5>
                 <p>
-                    <h4 id="shell-windows-10-1902">Windows 10 (earlier than version #1903)</h4>
-                    For older versions of Windows 10 (version 1903/OS build 18362 and below), please follow the Git for Windows <a href="#shell-git">installation instructions</a> below.
+                <strong>These versions of Windows are considered End Of Life, and are not recommended for use in modern data science.</strong>
+                Software may experience issues, and security updates are also not available which puts your machine at risk.
+                Please consider upgrading your Windows version if you are able to do this yourself, or speak with your local IT administrator to discuss options available to you to upgrade.
+                <br/>
+                If you are running any of these Windows versions, please install Git for Windows using the <a href="#shell-git">installation instructions</a> below.
                 </p>
-                <br/>
+
+                <h5 id="shell-windows-10-1902">Windows 10 (earlier than version #1903)</h5>
                 <p>
-                    <h4 id="shell-windows-10-11">Windows 10 (version #1903 and later) and Windows 11</h4>
-                    Windows 11 and later versions of Windows 10 support WSL 2, so following the workshop where you will use Git Bash, we recommend that you consider installing WSL2.
-                    If you are not comfortable installing WSL 2, please follow the Git for Windows <a href="#shell-git">installation instructions</a> below.
+                For older versions of Windows 10 (version 1903/OS build 18362 and below), please follow the Git for Windows <a href="#shell-git">installation instructions</a> below.
+                <br/>
+                </p>
+
+                <p>
+                <h5 id="shell-windows-10-11">Windows 10 (version #1903 and later) and Windows 11</h5>
+                Windows 11 and later versions of Windows 10 support WSL 2, so following the workshop where you will use Git Bash, we recommend that you consider installing WSL2.
+                If you are not comfortable installing WSL 2, please follow the Git for Windows <a href="#shell-git">installation instructions</a> below.
                 </p>
             </div>
+            </div>
         </details>
+        </div>
 
         <ul class="nav nav-tabs os-tabs" role="tablist" id="win-tabs">
-          <li role="presentation" class="nav-item"><button class="nav-link active" data-software="gitbash" data-bs-target="#shell-install-gitbash" aria-controls="Windows" role="tab" data-bs-toggle="tab">Windows</button></li>
-          <li role="presentation" class="nav-item"><button class="nav-link" data-software="wsl" data-bs-target="#shell-install-wsl" aria-controls="MacOS" role="tab" data-bs-toggle="tab">MacOS</button></li>
+          <li role="presentation" class="nav-item"><button class="nav-link active" data-software="gitbash" data-bs-target="#shell-install-gitbash" aria-controls="Git Bash" role="tab" data-bs-toggle="tab">Git for Windows</button></li>
+          <li role="presentation" class="nav-item"><button class="nav-link" data-software="wsl" data-bs-target="#shell-install-wsl" aria-controls="Windows Subsystem for Linux" role="tab" data-bs-toggle="tab">Windows Subsystem for Linux</button></li>
         </ul>
 
         <div class="tab-content">
 
-            <article role="tabpanel" class="tab-pane active" id="shell-install-gitbash" aria-labelledby="tab-wsl">
+            <article role="tabpanel" class="tab-pane active" id="shell-install-gitbash" aria-labelledby="tab-gitbash">
                 <h3>Installing Git for Windows</h3>
 
                 <ol>
@@ -180,23 +189,29 @@
                     <strong>Note:</strong> You will need to restart your computer after installing WSL 2, so make sure you have saved any work.
                 </p>
 
-                <details>
-                    <summary>Why Ubuntu?</summary>
-                    <div class="info alert-info">
-                        <p>
+                <div class="card w-100 alert-warning" style="width: 18rem; margin-bottom: 10px;">
+                <details class="mb-0">
+                    <summary class="card-header w-100 rounded-0" role="button">
+                    Why Ubuntu?
+                    </summary>
+                    <div class="card-body bg-light border-top">
+                        <div class="card-text">
+                            <p>
                             Linux comes in many flavours, called <a href="https://en.wikipedia.org/wiki/Linux_distribution">“distributions”</a>, and each has its own benefits, features and quirks!
-                        </p>
-                        <p>
+                            </p>
+                            <p>
                             WSL 2 is a fully fledged Linux environment that runs completely within your Windows 10 or 11 operating system.
                             While there are many Linux distributions available to install (e.g. Ubuntu, Debian, Fedora, Mint, Arch, Gentoo, and hundreds more!), WSL 2 only supports a handful of distributions listed above due to the way it needs to be integrated with Windows itself.
-                        </p>
-                        <p>
+                            </p>
+                            <p>
                             So, we will use the default that WSL 2 recommends, Ubuntu.
-                        </p>
+                            </p>
+                        </div>
                     </div>
                 </details>
+                </div>
 
-                <h4 id="shell-windows-wsl-store">Via the Microsoft Store:</h4>
+                <h5 id="shell-windows-wsl-store">Via the Microsoft Store:</h5>
                 <ol>
                     <li>Open the Windows Start Menu button in the bottom left corner of your screen (four blue squares), or tap the <kbd>Win</kbd> Windows button on your keyboard (between the bottom left <kbd>CTRL</kbd> and <kbd>ALT</kbd> keys) and search “store”. Open the Microsoft Store.</li>
                     <li>In the Microsoft Store search bar, type “wsl ubuntu”, and select the Ubuntu 22.04 or 24.04 option (at the time of writing, <code>Ubuntu 22.04.06 LTS</code>, or <code>Ubuntu 24.04.01 LTS</code>):
@@ -215,7 +230,7 @@
                     <li>Follow the <a href="#shell-windows-wsl-install-software">Installing software within WSL 2</a> section below.</li>
                 </ol>
 
-                <h4 id="shell-windows-wsl-install-software">Installing software within WSL 2</h4>
+                <h5 id="shell-windows-wsl-install-software">Installing software within WSL 2</h5>
                 <p>
                     Once you have installed WSL 2, you will need to install some software within the Ubuntu operating system in order to use it effectively. Make sure you are using Ubuntu by checking you see the bash prompt:
                     <img src="assets/img/wsl2_example.png" alt="Ubuntu terminal running bash and showing the Ubuntu version">

@@ -141,20 +141,6 @@ This is a pilot workshop, testing out a lesson that is still under development. 
 {% endif %}
 
 {% comment %}
-AUDIENCE
-
-Explain who your audience is.  (In particular, tell readers if the
-workshop is only open to people from a particular institution.
-{% endcomment %}
-{% if site.carpentry == "swc" %}
-{% include swc/who.html %}
-{% elsif site.carpentry == "dc" %}
-{% include dc/who.html %}
-{% elsif site.carpentry == "lc" %}
-{% include lc/who.html %}
-{% endif %}
-
-{% comment %}
 LOCATION
 
 This block displays the address and links to maps showing directions
@@ -170,139 +156,187 @@ address.
 {% else %}
 {% assign online = "false" %}
 {% endif %}
-{% if page.latitude and page.longitude and online == "false" %}
-<p id="where">
-  <strong>Where:</strong>
-  {{page.address}}.
-  Get directions with
-  <a href="//www.openstreetmap.org/?mlat={{page.latitude}}&mlon={{page.longitude}}&zoom=16">OpenStreetMap</a>
-  or
-  <a href="//maps.google.com/maps?q={{page.latitude}},{{page.longitude}}">Google Maps</a>.
-  {% if page.what3words %}
-    What3Words location:
-    <a href="https://what3words.com/{{page.what3words}}">///{{page.what3words}}</a>.
-  {%endif %}
-</p>
-{% elsif online == "true_public" %}
-<p id="where">
-  <strong>Where:</strong>
-  online at <a href="{{page.address}}">{{page.address}}</a>.
-  If you need a password or other information to access the training,
-  the instructor will pass it on to you before the workshop.
-</p>
-{% elsif online == "true_private" %}
-<p id="where">
-  <strong>Where:</strong> This training will take place online.
-  The instructors will provide you with the information you will need to connect to this meeting.
-</p>
-{% endif %}
 
-{% comment %}
-DATE
+<dl class="mb-0">
+  <div class="row border-top">
+    <dt class="col-sm-2 col-lg-1 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Who</dt>
+    <dd class="col py-2 px-3 mb-0">
+        {% comment %}
+        AUDIENCE
 
-This block displays the date and links to Google Calendar.
-{% endcomment %}
-{% if page.humandate %}
-<p id="when">
-  <strong>When:</strong>
-  {{page.humandate}}; {{page.humantime}}
-  {% include workshop_calendar.html %}
-</p>
-{% endif %}
+        Explain who your audience is.  (In particular, tell readers if the
+        workshop is only open to people from a particular institution.
+        {% endcomment %}
+        {% if site.carpentry == "swc" %}
+        {% include swc/who.html %}
+        {% elsif site.carpentry == "dc" %}
+        {% include dc/who.html %}
+        {% elsif site.carpentry == "lc" %}
+        {% include lc/who.html %}
+        {% endif %}    
+    </dd>
+  </div>
+  <div class="row">
+    <dt class="col-sm-2 col-lg-1 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Where</dt>
+    <dd class="col py-2 px-3 mb-0">
+        {% if page.latitude and page.longitude and online == "false" %}    
+            {{page.address}}.
+            Get directions with
+            <a href="//www.openstreetmap.org/?mlat={{page.latitude}}&mlon={{page.longitude}}&zoom=16">OpenStreetMap</a>
+            or
+            <a href="//maps.google.com/maps?q={{page.latitude}},{{page.longitude}}">Google Maps</a>.
+            {% if page.what3words %}
+                What3Words location:
+                <a href="https://what3words.com/{{page.what3words}}">///{{page.what3words}}</a>.
+            {%endif %}
+            {% elsif online == "true_public" %}
+                <p id="where">
+                    Online at <a href="{{page.address}}">{{page.address}}</a>.
+                    If you need a password or other information to access the training,
+                    the instructor will pass it on to you before the workshop.
+                </p>
+            {% elsif online == "true_private" %}
+                <p id="where">
+                    This training will take place online.
+                    The instructors will provide you with the information you will need to connect to this meeting.
+                </p>
+            {% endif %}        
+    </dd>
+  </div>
+  <div class="row">
+    <dt class="col-sm-2 col-lg-1 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">When</dt>
+    <dd class="col py-2 px-3 mb-0">
+        {% comment %}
+        DATE
 
-{% comment %}
-SPECIAL REQUIREMENTS
+        This block displays the date and links to Google Calendar.
+        {% endcomment %}
+        {% if page.humandate %}
+            <p id="when">
+                {{page.humandate}}; {{page.humantime}}
+                {% include workshop_calendar.html %}
+            </p>
+        {% endif %}    
+    </dd>
+  </div>
+  <div class="row">
+    <dt class="col-sm-2 col-lg-1 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Requirements</dt>
+    <dd class="col py-2 px-3 mb-0">
+        {% comment %}
+        SPECIAL REQUIREMENTS
 
-Modify the block below if there are any special requirements.
-{% endcomment %}
-<p id="requirements">
-  <strong>Requirements:</strong>
-  {% if online == "false" %}
-    Participants must bring a laptop with a
-    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
-  {% else %}
-    Participants must have access to a computer with a
-    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
-  {% endif %}
-  They should have a few specific software packages installed (listed <a href="#setup">below</a>).
-</p>
+        Modify the block below if there are any special requirements.
+        {% endcomment %}
+        <p id="requirements">
+        {% if online == "false" %}
+            Participants must bring a laptop with a
+            Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
+        {% else %}
+            Participants must have access to a computer with a
+            Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
+        {% endif %}
+        They should have a few specific software packages installed (listed <a href="#setup">below</a>).
+        </p>
+    </dd>  
+  </div>
+  <div class="row">
+    <dt class="col-sm-2 col-lg-1 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Accessibility</dt>
+    <dd class="col py-2 px-3 mb-0">
+        {% comment %}
+        ACCESSIBILITY
 
-{% comment %}
-ACCESSIBILITY
+        Modify the block below if there are any barriers to accessibility or special instructions.
+        {% endcomment %}
 
-Modify the block below if there are any barriers to accessibility or
-special instructions.
-{% endcomment %}
-<p id="accessibility">
-  <strong>Accessibility:</strong>
-  We are committed to making this workshop
-  accessible to everybody. 
-{% if online == "false" %}
-  The workshop organizers have checked that:
-<p>
-  <ul>
-    <li>The room is wheelchair / scooter accessible.</li>
-    <li>Accessible restrooms are available.</li>
-  </ul>
-{% endif %}
-</p>
-<p>We are dedicated to providing a positive and accessible learning environment for all. 
-  We do not require participants to provide documentation of disabilities or disclose any unnecessary personal information. 
-  However, we do want to help create an inclusive, accessible experience for all participants. 
-  We encourage you to share any information that would be helpful to make your Carpentries experience accessible.
-  To request accessibility support for this workshop, please fill out the 
-  <a href="https://carpentries.typeform.com/to/B2OSYaD0">accessibility support request form</a>.
-  If you have questions or need assistance with the accessibility support form please <a href="mailto:team@carpentries.org">email us</a>.
-</p>
-<p>
-  <a href="https://glosario.carpentries.org/">Glosario</a> is a multilingual glossary 
-  for computing and data science terms. The glossary helps 
-  learners attend workshops and use our lessons to make sense of computational and programming jargon written in English by offering it 
-  in their native language. Translating data science terms also provides a teaching tool for Carpentries Instructors to reduce barriers 
-  for their learners.
-</p>
+        <p id="accessibility">
+        We are committed to making this workshop accessible to everybody. 
+        {% if online == "false" %}
+            The workshop organizers have checked that:
+            <br/>
+            <ul>
+                <li>The room is wheelchair / scooter accessible.</li>
+                <li>Accessible restrooms are available.</li>
+            </ul>
+        {% endif %}
+        </p>
+        <p>
+          We are dedicated to providing a positive and accessible learning environment for all. 
+          We do not require participants to provide documentation of disabilities or disclose any unnecessary personal information. 
+          However, we do want to help create an inclusive, accessible experience for all participants. 
+          We encourage you to share any information that would be helpful to make your Carpentries experience accessible.
+          To request accessibility support for this workshop, please fill out the 
+          <a href="https://carpentries.typeform.com/to/B2OSYaD0">accessibility support request form</a>.
+          If you have questions or need assistance with the accessibility support form please <a href="mailto:team@carpentries.org">email us</a>.
+        </p>
+        <p>
+          <a href="https://glosario.carpentries.org/">Glosario</a> is a multilingual glossary for computing and data science terms.
+          The glossary helps learners attend workshops and use our lessons to make sense of computational and programming jargon written in English by offering it in their native language.
+          Translating data science terms also provides a teaching tool for Carpentries Instructors to reduce barriers for their learners.
+        </p>
+    </dd>
+  </div>
+  <div class="row">
+    <dt class="col-sm-2 col-lg-1 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Workshop Recordings</dt>
+    <dd class="col py-2 px-3 mb-0">
+        {% comment %}
+        WORKSHOP RECORDINGS
 
-{% comment %}
-WORKSHOP RECORDINGS
+        Modify or remove the block below if you plan to record the workshop.
+        {% endcomment %}
+        <p id="recordings">
+        Carpentries workshops are designed to be interactive rather than lecture-based, with lessons that build upon one another.
+        To foster a positive online learning environment, we strongly recommend that participants join in real time.
+        As a result, workshop recordings are not recommended and may not be available to learners.
+        </p>
+    </dd>
+  </div>
+  <div class="row">
+    <dt class="col-sm-2 col-lg-1 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Contact</dt>
+    <dd class="col py-2 px-3 mb-0">
+        {% comment %}
+        CONTACT EMAIL ADDRESS
 
-Modify or remove the block below if you plan to record the workshop.
-{% endcomment %}
-<p id="recordings">
-  <strong>Workshop Recordings:</strong>
-  Carpentries workshops are designed to be interactive rather than lecture-based, with lessons that build upon one another.
-  To foster a positive online learning environment, we strongly recommend that participants join in real time.
-  As a result, workshop recordings are not recommended and may not be available to learners.
-</p>
-{% comment %}
-CONTACT EMAIL ADDRESS
+        Display the contact email address set in the configuration file.
+        {% endcomment %}
+        <p id="contact">
+        Please email
+        {% if page.email %}
+        {% for email in page.email %}
+        {% if forloop.last and page.email.size > 1 %}
+        or
+        {% else %}
+        {% unless forloop.first %}
+        ,
+        {% endunless %}
+        {% endif %}
+        <a href='mailto:{{email}}'>{{email}}</a>
+        {% endfor %}
+        {% else %}
+        to-be-announced
+        {% endif %}
+        for more information.
+        </p>
+    </dd>
+  </div>
+  
+  <div class="row">
+    <dt class="col-sm-2 col-lg-1 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Workshop FAQ</dt>
+    <dd class="col py-2 px-3 mb-0">
+        <p id="workshops-faq">
+        For answers to frequently asked questions about workshops,
+        refer to <a href="[https://carpentries.org/workshops/workshops-faq/](https://carpentries.org/workshops/workshops-faq/)">the Carpentries Workshop FAQ</a>.
+        </p>    
+    </dd>
+  </div>
 
-Display the contact email address set in the configuration file.
-{% endcomment %}
-<p id="contact">
-  <strong>Contact:</strong>
-  Please email
-  {% if page.email %}
-  {% for email in page.email %}
-  {% if forloop.last and page.email.size > 1 %}
-  or
-  {% else %}
-  {% unless forloop.first %}
-  ,
-  {% endunless %}
-  {% endif %}
-  <a href='mailto:{{email}}'>{{email}}</a>
-  {% endfor %}
-  {% else %}
-  to-be-announced
-  {% endif %}
-  for more information.
-</p>
+  <!-- <div class="row">
+    <dt class="col-sm-2 col-lg-1 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Accessibility</dt>
+    <dd class="col py-2 px-3 mb-0">
+    
+    </dd>
+  </div> -->
 
-<p id="workshops-faq">
-  <strong>Workshops FAQ:</strong>
-  For answers to frequently asked questions about workshops,
-  refer to <a href="[https://carpentries.org/workshops/workshops-faq/](https://carpentries.org/workshops/workshops-faq/)">the Carpentries Workshop FAQ</a>.
-</p>
+</dl>
 
 {% comment %}
 WHO CAN ATTEND?
@@ -371,26 +405,55 @@ We will use this <a href="{{ page.collaborative_notes }}">collaborative document
 SURVEYS - DO NOT EDIT SURVEY LINKS
 {% endcomment %}
 <h2 id="surveys">Surveys</h2>
-<p>Please be sure to complete these surveys before and after the workshop.</p>
-{% if site.carpentry == "incubator" %}
-<p><a href="{{ site.incubator_pre_survey }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.incubator_post_survey }}">Post-workshop Survey</a></p>
-{% elsif site.incubator_pre_survey or site.incubator_post_survey %}
-<div class="alert alert-danger">
-WARNING: you have defined custom pre- and/or post-survey links for
-a workshop not configured for The Carpentries Incubator
-(the value of `curriculum` is not set to `incubator` in `_config.yml`).
-Please comment out the `incubator_pre_survey` and `incubator_post_survey` fields
-in `_config.yml` or, if this workshop is teaching a lesson in the Incubator,
-change the value of `carpentry` to `incubator`.
-</div>
-{% else %}
-<p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
-{% endif %}
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card text-center">
+        <div class="card-body">
+            <h5 class="card-title">Pre-Workshop Survey</h5>
+            <p class="card-text">Please fill out this survey <strong>before</strong> attending the workshop.</p>
+            {% if site.carpentry == "incubator" %}
+            <a href="{{ site.incubator_pre_survey }}">Pre-workshop Survey</a>
+            {% elsif site.incubator_pre_survey %}
+            <div class="alert alert-danger">
+            WARNING: you have defined custom pre- and/or post-survey links for
+            a workshop not configured for The Carpentries Incubator
+            (the value of `curriculum` is not set to `incubator` in `_config.yml`).
+            Please comment out the `incubator_pre_survey` and `incubator_post_survey` fields
+            in `_config.yml` or, if this workshop is teaching a lesson in the Incubator,
+            change the value of `carpentry` to `incubator`.
+            </div>
+            {% else %}
+            <a href="{{ site.pre_survey }}{{ site.github.project_title }}" class="btn btn-primary">Fill Out the Pre-Workshop Survey</a>
+            {% endif %}
+        </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card text-center">
+        <div class="card-body">
+            <h5 class="card-title">Post-Workshop Survey</h5>
+            <p class="card-text">Please fill out this survey <strong>before you leave</strong> the workshop.</p>
+            {% if site.carpentry == "incubator" %}
+            <a href="{{ site.incubator_post_survey }}">Post-workshop Survey</a>
+            {% elsif site.incubator_post_survey %}
+            <div class="alert alert-danger">
+            WARNING: you have defined custom pre- and/or post-survey links for
+            a workshop not configured for The Carpentries Incubator
+            (the value of `curriculum` is not set to `incubator` in `_config.yml`).
+            Please comment out the `incubator_pre_survey` and `incubator_post_survey` fields
+            in `_config.yml` or, if this workshop is teaching a lesson in the Incubator,
+            change the value of `carpentry` to `incubator`.
+            </div>
+            {% else %}
+            <a href="{{ site.post_survey }}{{ site.github.project_title }}" class="btn btn-primary">Fill Out the Post-Workshop Survey</a>
+            {% endif %}
+        </div>
+    </div>
+  </div>
+</div>  
 
 <hr/>
-
 
 {% comment %}
 SCHEDULE

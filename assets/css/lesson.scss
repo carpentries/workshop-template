@@ -92,8 +92,8 @@ div.language-sql::before      { content: "SQL"; }
 div.language-vulkan::before   { content: "Vulkan"; }
 
 div.info {
-  padding: 15px;
-  margin-bottom: 20px;
+  padding: 20px;
+  margin-bottom: 10px;
   border: 1px solid transparent;
   border-radius: 4px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -236,6 +236,10 @@ a code {
   color: #006cad;
 }
 
+a.btn-primary {
+  color: #fff !important;
+}
+
 a:link {
   color: #196EBD;
 }
@@ -345,6 +349,24 @@ p.image-with-shadow img,
 img.image-with-shadow {
   box-shadow: 0 0.39em 1.56em 0 #888;
 }
+
+.jumbo p {
+    font-size: 21px;
+}
+
+.card-text h1,
+.card-text h2,
+.card-text h3,
+.card-text h4,
+.card-text h5 {
+    margin-top: 1.3em;
+    margin-bottom: 0.65em;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 10px;
+}
+
 
 //----------------------------------------
 // Life cycle box

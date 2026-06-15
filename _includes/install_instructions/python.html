@@ -47,12 +47,18 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
 
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="python-windows">
-        <details>
-            <summary><strong>Before you start:</strong> Issues relating to OneDrive</summary>
-            <div class="info alert-info">
+        <div class="card w-100 alert-warning" style="width: 18rem; margin-bottom: 10px;">
+        <details class="mb-0">
+            <summary class="card-header w-100 rounded-0" role="button">
+            Challenges with OneDrive
+            </summary>
+            <div class="card-body bg-light border-top">
+            <div class="card-text">
+                <p>
                 OneDrive is used by many institutions to sync your user folder (<code>C:\Users\[your-username]\</code>) within an organisation.
                 It may cause issues with the installation of the Carpentries environment.<br/>
                 If you have OneDrive set up, please ensure that you can access your <code>C:\Users\[your-username]\Downloads</code> folder:
+                </p>
                 <p>
                   <ul>
                     <li>Open File Explorer</li>
@@ -64,7 +70,10 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
                 </p>
                 <strong>If you encounter problems, please contact your IT support team and workshop organisers for assistance before the workshop.</strong>
             </div>
+            </div>
         </details>
+        </div>
+
         <ol>
           <li>Open <a href="https://conda-forge.org/download/">https://conda-forge.org/download/</a> with your web browser.</li>
           <li>Download the Miniforge for Windows installer</li>
