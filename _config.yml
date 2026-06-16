@@ -34,7 +34,7 @@ carpentry: "swc"
 # dc-image:         for Data Carpentry Image Processing
 # swc-inflammation: for Software Carpentry based on the inflammation dataset
 # swc-gapminder:    for Software Carpentry based on the Gapminder dataset
-curriculum: "swc-gapminder"
+curriculum: "FIXME"
 
 # If there is both an R and python official version of a curriculum
 # (as listed on https://software-carpentry.org/lessons/ and
@@ -42,7 +42,7 @@ curriculum: "swc-gapminder"
 # value of the variable below ("flavor") to get the schedule and installation
 # instructions updated accordingly (valid values are 'r' or 'python').
 # Note: this is only for Data Carpentry and SWC at this time.
-flavor: "r"
+flavor: "FIXME"
 
 # If the workshop will be a lesson pilot (for a new official lesson or
 # a lesson in The Carpentries Incubator), set pilot to "true"
@@ -54,7 +54,7 @@ pilot: false
 # Most workshops don't use extra pages. More information about extra
 # pages are included in the README:
 # https://github.com/carpentries/workshop-template#creating-extra-pages
-title: "A Fantastic Workshop"
+title: "Workshop Title"
 
 #------------------------------------------------------------
 # Incubator workshop settings (only relevant for workshops teaching a lesson
