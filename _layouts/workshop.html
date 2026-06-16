@@ -53,6 +53,11 @@ online workshops.
     <link rel="stylesheet" type="text/css" href="{{ relative_root_path }}/assets/css/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="{{ relative_root_path }}/assets/css/lesson.css" />
 
+    {% if page.pretix %}
+    <link rel="stylesheet" type="text/css" href="https://pretix.eu/{{page.pretix}}/widget/v1.css" crossorigin>
+    <script type="text/javascript" src="https://pretix.eu/widget/v1.en.js" async crossorigin></script>
+    {% endif %}
+
     {% include favicons.html %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
