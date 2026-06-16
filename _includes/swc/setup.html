@@ -1,11 +1,11 @@
 {% assign curricula = "swc-gapminder|swc-inflammation"  | split: "|" %}
+
 {% unless curricula contains site.curriculum %}
 {% include warning-curriculum.html %}
 {% endunless %}
 
 {% include install_instructions/shell.html %}
 
-<br/>
 <div class="info alert-info">
   <h5>Note for Windows Users</h5>
   <ul>

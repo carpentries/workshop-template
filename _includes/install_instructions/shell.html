@@ -1,12 +1,13 @@
-<div id="shell">
-  <h3>The Bash Shell</h3>
+<div class="card mb-2" id="shell">
+  <h5 class="card-header">The Bash Shell</h5>
+  <div class="card-body">
   <p>
     Bash is a commonly-used shell that gives you the power to do tasks more quickly.
 	Instructions for finding and opening a shell on your operating system can be found in the Software Carpentry <a href="https://swcarpentry.github.io/shell-novice/index.html#open-a-new-shell">shell-novice lesson</a>.
   </p>
 
   <div>
-    <ul class="nav nav-tabs os-tabs" role="tablist" id="outer-tabs">
+    <ul class="nav nav-pills os-tabs" role="tablist" id="outer-tabs">
       <li role="presentation" class="nav-item"><button class="nav-link active" data-os="windows" data-bs-target="#shell-windows" aria-controls="Windows" role="tab" data-bs-toggle="tab">Windows</button></li>
       <li role="presentation" class="nav-item"><button class="nav-link" data-os="macos" data-bs-target="#shell-macos" aria-controls="MacOS" role="tab" data-bs-toggle="tab">MacOS</button></li>
       <li role="presentation" class="nav-item"><button class="nav-link" data-os="linux" data-bs-target="#shell-linux" aria-controls="Linux" role="tab" data-bs-toggle="tab">Linux</button></li>
@@ -21,16 +22,6 @@
         <p>
             <strong>If you experience any issues, please install Git for Windows using the <a class="os-switch" data-software="gitbash" href="#shell-install-gitbash">instructions below</a>.</strong>
         </p>
-
-        <div class="info alert-info">
-            <h5>Admin Privileges</h5>
-            <strong>If you choose to install WSL 2, you will need Administrator (“admin”) privileges on your laptop/PC.</strong><br>
-            If you have a device provided by an institution that does not give you admin rights, please either request that they:
-            <ul>
-                <li>Give you admin rights (temporarily or otherwise) to install WSL 2 yourself OR</li>
-                <li>Install WSL 2 for you</li>
-            </ul>
-        </div>
 
         <div class="card w-100 alert-warning" style="width: 18rem; margin-bottom: 10px;">
         <details class="mb-0">
@@ -80,7 +71,7 @@
         </details>
         </div>
 
-        <ul class="nav nav-tabs os-tabs" role="tablist" id="win-tabs">
+        <ul class="nav nav-pills os-tabs" role="tablist" id="win-tabs">
           <li role="presentation" class="nav-item"><button class="nav-link active" data-software="gitbash" data-bs-target="#shell-install-gitbash" aria-controls="Git Bash" role="tab" data-bs-toggle="tab">Git for Windows</button></li>
           <li role="presentation" class="nav-item"><button class="nav-link" data-software="wsl" data-bs-target="#shell-install-wsl" aria-controls="Windows Subsystem for Linux" role="tab" data-bs-toggle="tab">Windows Subsystem for Linux</button></li>
         </ul>
@@ -181,6 +172,16 @@
                 <p>
                     <strong>If you are confident to try installing WSL 2 rather than Git Bash, please use the following instructions.</strong>
                 </p>
+
+                <div class="info alert-info">
+                    <h5>Admin Privileges</h5>
+                    <strong>If you choose to install WSL 2, you will need Administrator (“admin”) privileges on your laptop/PC.</strong><br>
+                    If you have a device provided by an institution that does not give you admin rights, please either request that they:
+                    <ul>
+                        <li>Give you admin rights (temporarily or otherwise) to install WSL 2 yourself OR</li>
+                        <li>Install WSL 2 for you</li>
+                    </ul>
+                </div>
 
                 <p>
                     We will install Ubuntu via the <a href="#shell-windows-wsl-store">Microsoft Store</a>.
@@ -305,5 +306,6 @@
         </p>
       </article>
     </div>
+  </div>
   </div>
 </div>
