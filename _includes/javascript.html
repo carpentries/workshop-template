@@ -6,48 +6,54 @@
 <script src="{{ relative_root_path }}/assets/js/lesson.js"></script>
 
 <script>
-var show_instructions = function() {
-  document.querySelectorAll('.os-tabs .nav-link[data-os]').forEach(trigger => {
-    trigger.addEventListener('shown.bs.tab', function () {
-      const os = this.dataset.os;
-      localStorage.os = os;
-
-      // change other os-tabs tabs
-      document.querySelectorAll('.os-tabs .nav-link[data-os="' + os + '"]').forEach(el => {
-      if (el !== this) {
-        bootstrap.Tab.getOrCreateInstance(el).show();
-      }
-      });
+let userClickedTabId = null;
+document.querySelectorAll('.os-tabs .nav-link[data-os]').forEach(trigger => {
+    trigger.addEventListener('mousedown', function () {
+        userClickedTabId = this.dataset.bsTarget;
     });
-  });
 
-  // persist user tab selection on page reload
-  const savedOs = localStorage.getItem('os');
-  if (savedOs) {
+    trigger.addEventListener('shown.bs.tab', function () {
+        const os = this.dataset.os;
+        localStorage.os = os;
+
+        // Sync other tab groups
+        document.querySelectorAll('.os-tabs .nav-link[data-os="' + os + '"]').forEach(el => {
+            if (el !== this) {
+                bootstrap.Tab.getOrCreateInstance(el).show();
+            }
+        });
+
+        // Scroll to the tab the user actually clicked, not the one that was automatically activated in another tab group
+        if (userClickedTabId && this.dataset.bsTarget === userClickedTabId) {
+            const navEl = document.querySelector('.os-tabs .nav-link[data-bs-target="' + userClickedTabId + '"]');
+            const scrollTarget = navEl.closest('.card') ?? navEl.closest('.card-header') ?? navEl;
+            setTimeout(() => {
+                scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+            userClickedTabId = null;
+        }
+    });
+});
+
+// Restore saved preference on page load
+if (typeof Storage !== 'undefined') {
+    const savedOs = localStorage.os && localStorage.os !== 'undefined'
+        ? localStorage.os
+        : 'windows';
+
+    localStorage.os = savedOs;
+
     const trigger = document.querySelector('.os-tabs .nav-link[data-os="' + savedOs + '"]');
     if (trigger) {
-      bootstrap.Tab.getOrCreateInstance(trigger).show();
+        bootstrap.Tab.getOrCreateInstance(trigger).show();
     }
-  }
 }
-
-if (typeof(Storage) !== "undefined") {
-    if (localStorage.os == "undefined") {
-        localStorage.os = "windows";
-    }
-    show_instructions();
-} else {
-    console.log("No localStorage");
-}
-
-$('.os-tabs li button').click(function(){
-    show_instructions();
-});
 
   // hide alerts when site is rendered on carpentries.github.io
 $(document).ready(function() {
   if (location.href.startsWith("https://carpentries.github.io/workshop-template/")) {
-    $("div.alert").hide();
+    // hide alert if they aren't also an info class
+    $("div.alert").not(".info").hide();
   }
 });
 </script>

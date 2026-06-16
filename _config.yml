@@ -42,7 +42,7 @@ curriculum: "swc-gapminder"
 # value of the variable below ("flavor") to get the schedule and installation
 # instructions updated accordingly (valid values are 'r' or 'python').
 # Note: this is only for Data Carpentry and SWC at this time.
-flavor: "python"
+flavor: "r"
 
 # If the workshop will be a lesson pilot (for a new official lesson or
 # a lesson in The Carpentries Incubator), set pilot to "true"

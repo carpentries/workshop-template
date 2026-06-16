@@ -201,7 +201,7 @@ address.
   <div class="card-body">
     <dl class="mb-0">
     <div class="row">
-        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Who</dt>
+        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Who</dt>
         <dd class="col py-2 px-3 mx-0 mb-0">
             {% comment %}
             AUDIENCE
@@ -216,7 +216,7 @@ address.
         </dd>
     </div>
     <div class="row">
-        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Where</dt>
+        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Where</dt>
         <dd class="col py-2 px-3 mx-0 mb-0">
             {% if page.latitude and page.longitude and online == "false" %}    
                 {{page.address}}.
@@ -243,7 +243,7 @@ address.
         </dd>
     </div>
     <div class="row">
-        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">When</dt>
+        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">When</dt>
         <dd class="col py-2 px-3 mx-0 mb-0">
             {% comment %}
             DATE
@@ -259,7 +259,7 @@ address.
         </dd>
     </div>
     <div class="row">
-        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Requirements</dt>
+        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Requirements</dt>
         <dd class="col py-2 px-3 mx-0 mb-0">
             {% comment %}
             SPECIAL REQUIREMENTS
@@ -279,7 +279,7 @@ address.
         </dd>  
     </div>
     <div class="row">
-        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Accessibility</dt>
+        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Accessibility</dt>
         <dd class="col py-2 px-3 mx-0 mb-0">
             {% comment %}
             ACCESSIBILITY
@@ -315,7 +315,7 @@ address.
         </dd>
     </div>
     <div class="row">
-        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Workshop Recordings</dt>
+        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Workshop Recordings</dt>
         <dd class="col py-2 px-3 mx-0 mb-0">
             {% comment %}
             WORKSHOP RECORDINGS
@@ -330,7 +330,7 @@ address.
         </dd>
     </div>
     <div class="row">
-        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Contact</dt>
+        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Contact</dt>
         <dd class="col py-2 px-3 mx-0 mb-0">
             {% comment %}
             CONTACT EMAIL ADDRESS
@@ -359,7 +359,7 @@ address.
     </div>
     
     <div class="row">
-        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Workshop FAQ</dt>
+        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Workshop FAQ</dt>
         <dd class="col py-2 px-3 mx-0 mb-0">
             <p id="workshops-faq">
             For answers to frequently asked questions about workshops,
@@ -369,7 +369,7 @@ address.
     </div>
 
     <!-- <div class="row">
-        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-secondary text-body-secondary fw-bold">Accessibility</dt>
+        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Accessibility</dt>
         <dd class="col py-2 px-3 mx-0 mb-0">
         
         </dd>

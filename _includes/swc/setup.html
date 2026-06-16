@@ -6,7 +6,7 @@
 
 {% include install_instructions/shell.html %}
 
-<div class="info alert-info">
+<div class="info alert alert-info">
   <h5>Note for Windows Users</h5>
   <ul>
     <li>If you have chosen <strong>Git for Windows ("Git Bash")</strong>, please follow the <strong>Windows</strong> instructions.</li>
@@ -27,9 +27,13 @@
 {% include warning-flavor.html %}
 {% endif %}
 
+{% comment %}
 The following setup instructions are commented out because Carpentries workshops
 cover the these topics less frequently. Please uncomment the lines that
 correspond to the topics covered in your workshop.
+{% endcomment %}
 
+{% comment %}
 {% include install_instructions/sql.html %}
 {% include install_instructions/openrefine.html %}
+{% endcomment %}
