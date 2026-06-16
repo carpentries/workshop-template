@@ -1,5 +1,12 @@
 <div class="card mb-2" id="r">
-  <h5 class="card-header">R</h5>
+  <div class="card-header d-flex align-items-center justify-content-between">
+    <h5>R</h5>
+    <ul class="nav nav-pills os-tabs" role="tablist">
+      <li role="presentation" class="nav-item"><button class="nav-link active" data-os="windows" data-bs-target="#rstats-windows" aria-controls="Windows" role="tab" data-bs-toggle="tab">Windows</button></li>
+      <li role="presentation" class="nav-item"><button class="nav-link" data-os="macos" data-bs-target="#rstats-macos" aria-controls="MacOS" role="tab" data-bs-toggle="tab">MacOS</button></li>
+      <li role="presentation" class="nav-item"><button class="nav-link" data-os="linux" data-bs-target="#rstats-linux" aria-controls="Linux" role="tab" data-bs-toggle="tab">Linux</button></li>
+    </ul>
+  </div>
   <div class="card-body">
 
   <p>
@@ -9,100 +16,92 @@
     <a href="https://posit.co/products/open-source/rstudio/">RStudio</a>.
   </p>
 
-  <div>
-    <ul class="nav nav-pills os-tabs" role="tablist">
-      <li role="presentation" class="nav-item"><button class="nav-link active" data-os="windows" data-bs-target="#rstats-windows" aria-controls="Windows" role="tab" data-bs-toggle="tab">Windows</button></li>
-      <li role="presentation" class="nav-item"><button class="nav-link" data-os="macos" data-bs-target="#rstats-macos" aria-controls="MacOS" role="tab" data-bs-toggle="tab">MacOS</button></li>
-      <li role="presentation" class="nav-item"><button class="nav-link" data-os="linux" data-bs-target="#rstats-linux" aria-controls="Linux" role="tab" data-bs-toggle="tab">Linux</button></li>
-    </ul>
+<div class="tab-content">
+    <article role="tabpanel" class="tab-pane active" id="rstats-windows">
+    <p>
+        Install R by:
+        <ul>
+        <li>Downloading and running <a href="https://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a> from <a href="https://cran.r-project.org/index.html">CRAN</a>.</li>
+        <li>Installing the <a href="https://posit.co/download/rstudio-desktop/">RStudio IDE</a>.</li>
+        <br/>
+        <div class="alert alert-warning">
+            Note that if you have separate user and admin accounts, you should run the
+            installers as administrator (right-click on .exe file and select "Run as
+            administrator" instead of double-clicking).
+            Otherwise problems may occur later, for example when installing R packages.
+        </div>
+        </ul>
+    </p>
+    </article>
+    <article role="tabpanel" class="tab-pane" id="rstats-macos">
+    <p>
+        Install R by:
+        <ul>
+        <li>Downloading and running <a href="https://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a> from <a href="https://cran.r-project.org/index.html">CRAN</a>.</li>
+        <li>Installing the <a href="https://posit.co/download/rstudio-desktop/">RStudio IDE</a>.</li>
+        </ul>
+    </p>
+    </article>
+    <article role="tabpanel" class="tab-pane" id="rstats-linux">
+    <p>
+        Install R by:
+        <ul>
+        <li>Navigating to <a href="https://cran.r-project.org/bin/linux/">CRAN</a> and following the instructions outlined there, using your package manager. We have reproduced the commands below:<br/>
+        <div class="info alert-info">
+            Use the terminal command prompt to type/copy-and-paste these commands in, pressing <kbd>Enter</kbd> after each line to run the command.<br/>
+            Do not run the lines with <code>#</code> at the start of each line, as this indicates a comment and is not part of the command.
+        </div>
+            <pre>
+# update indices
+sudo apt update -qq
 
-    <div class="tab-content">
-      <article role="tabpanel" class="tab-pane active" id="rstats-windows">
-        <p>
-          Install R by:
-          <ul>
-            <li>Downloading and running <a href="https://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a> from <a href="https://cran.r-project.org/index.html">CRAN</a>.</li>
-            <li>Installing the <a href="https://posit.co/download/rstudio-desktop/">RStudio IDE</a>.</li>
-            <br/>
-            <div class="alert alert-warning">
-              Note that if you have separate user and admin accounts, you should run the
-              installers as administrator (right-click on .exe file and select "Run as
-              administrator" instead of double-clicking).
-              Otherwise problems may occur later, for example when installing R packages.
-            </div>
-          </ul>
-        </p>
-      </article>
-      <article role="tabpanel" class="tab-pane" id="rstats-macos">
-        <p>
-          Install R by:
-          <ul>
-            <li>Downloading and running <a href="https://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a> from <a href="https://cran.r-project.org/index.html">CRAN</a>.</li>
-            <li>Installing the <a href="https://posit.co/download/rstudio-desktop/">RStudio IDE</a>.</li>
-          </ul>
-        </p>
-      </article>
-      <article role="tabpanel" class="tab-pane" id="rstats-linux">
-        <p>
-          Install R by:
-          <ul>
-            <li>Navigating to <a href="https://cran.r-project.org/bin/linux/">CRAN</a> and following the instructions outlined there, using your package manager. We have reproduced the commands below:<br/>
-            <div class="info alert-info">
-                Use the terminal command prompt to type/copy-and-paste these commands in, pressing <kbd>Enter</kbd> after each line to run the command.<br/>
-                Do not run the lines with <code>#</code> at the start of each line, as this indicates a comment and is not part of the command.
-            </div>
-                <pre>
-    # update indices
-    sudo apt update -qq
+# install two helper packages we need
+sudo apt install --no-install-recommends software-properties-common dirmngr
 
-    # install two helper packages we need
-    sudo apt install --no-install-recommends software-properties-common dirmngr
+# add the signing key for these repos
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 
-    # add the signing key for these repos
-    wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+# add the repo from CRAN
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
 
-    # add the repo from CRAN
-    sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+# install R itself
+sudo apt install --no-install-recommends r-base
+            </pre>
+        </li>
+        <li>Installing the <a href="https://posit.co/download/rstudio-server/">RStudio Server IDE</a>:<br/>
+            <pre>
+# install dependencies
+sudo apt install -y r-base-core r-recommended r-base-dev gdebi-core build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev
+sudo apt install --no-install-recommends gdebi-core
 
-    # install R itself
-    sudo apt install --no-install-recommends r-base
-                </pre>
-            </li>
-            <li>Installing the <a href="https://posit.co/download/rstudio-server/">RStudio Server IDE</a>:<br/>
-                <pre>
-    # install dependencies
-    sudo apt install -y r-base-core r-recommended r-base-dev gdebi-core build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev
-    sudo apt install --no-install-recommends gdebi-core
+# cd ~/Downloads
 
-    # cd ~/Downloads
+# download the latest RStudio Server .deb file
+wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2025.05.1-513-amd64.deb
 
-    # download the latest RStudio Server .deb file
-    wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2025.05.1-513-amd64.deb
+# install the .deb file
+sudo gdebi rstudio-server-2025.05.1-513-amd64.deb
 
-    # install the .deb file
-    sudo gdebi rstudio-server-2025.05.1-513-amd64.deb
+# start the RStudio Server
+sudo systemctl start rstudio-server
 
-    # start the RStudio Server
-    sudo systemctl start rstudio-server
-
-    # enable RStudio Server to start on boot
-    sudo systemctl enable rstudio-server
-                </pre>
-            </li>
-            <li>After installation of RStudio Server, check you can access it by:
-              <ul>
-                <li>Opening a web browser and navigating to <code>http://localhost:8787</code>.</li>
-                <li>Logging in with the username and password you used when you set up Linux / WSL2.</li>
-              </ul>
-            </li>
-          </ul>
-        </p>
-        <p>
-            If you are using Windows and WSL2, the full in-depth instructions for installing R on WSL2 can be found in this
-            <a href="https://support.posit.co/hc/en-us/articles/360049776974-Using-RStudio-Server-in-Windows-WSL2">POSIT article</a>.
-        </p>
-      </article>
-    </div>
+# enable RStudio Server to start on boot
+sudo systemctl enable rstudio-server
+            </pre>
+        </li>
+        <li>After installation of RStudio Server, check you can access it by:
+            <ul>
+            <li>Opening a web browser and navigating to <code>http://localhost:8787</code>.</li>
+            <li>Logging in with the username and password you used when you set up Linux / WSL2.</li>
+            </ul>
+        </li>
+        </ul>
+    </p>
+    <p>
+        If you are using Windows and WSL2, the full in-depth instructions for installing R on WSL2 can be found in this
+        <a href="https://support.posit.co/hc/en-us/articles/360049776974-Using-RStudio-Server-in-Windows-WSL2">POSIT article</a>.
+    </p>
+    </article>
   </div>
   </div>
 </div>

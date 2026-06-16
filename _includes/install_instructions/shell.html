@@ -1,19 +1,16 @@
 <div class="card mb-2" id="shell">
-  <h5 class="card-header">The Bash Shell</h5>
+  <div class="card-header d-flex align-items-center justify-content-between">
+    <h5>The Bash Shell</h5>
+      <ul class="nav nav-pills os-tabs" role="tablist" id="outer-tabs">
+        <li role="presentation" class="nav-item"><button class="nav-link active" data-os="windows" data-bs-target="#shell-windows" aria-controls="Windows" role="tab" data-bs-toggle="tab">Windows</button></li>
+        <li role="presentation" class="nav-item"><button class="nav-link" data-os="macos" data-bs-target="#shell-macos" aria-controls="MacOS" role="tab" data-bs-toggle="tab">MacOS</button></li>
+        <li role="presentation" class="nav-item"><button class="nav-link" data-os="linux" data-bs-target="#shell-linux" aria-controls="Linux" role="tab" data-bs-toggle="tab">Linux</button></li>
+      </ul>
+  </div>
   <div class="card-body">
-  <p>
-    Bash is a commonly-used shell that gives you the power to do tasks more quickly.
-	Instructions for finding and opening a shell on your operating system can be found in the Software Carpentry <a href="https://swcarpentry.github.io/shell-novice/index.html#open-a-new-shell">shell-novice lesson</a>.
-  </p>
-
-  <div>
-    <ul class="nav nav-pills os-tabs" role="tablist" id="outer-tabs">
-      <li role="presentation" class="nav-item"><button class="nav-link active" data-os="windows" data-bs-target="#shell-windows" aria-controls="Windows" role="tab" data-bs-toggle="tab">Windows</button></li>
-      <li role="presentation" class="nav-item"><button class="nav-link" data-os="macos" data-bs-target="#shell-macos" aria-controls="MacOS" role="tab" data-bs-toggle="tab">MacOS</button></li>
-      <li role="presentation" class="nav-item"><button class="nav-link" data-os="linux" data-bs-target="#shell-linux" aria-controls="Linux" role="tab" data-bs-toggle="tab">Linux</button></li>
-    </ul>
-
     <div class="tab-content">
+      Bash is a commonly-used shell that gives you the power to do tasks more quickly.
+      Instructions for finding and opening a shell on your operating system can be found in the Software Carpentry <a href="https://swcarpentry.github.io/shell-novice/index.html#open-a-new-shell">shell-novice lesson</a>.
       <article role="tabpanel" class="tab-pane outer-tab active" id="shell-windows">
         <p>Two options are available for setting up your device so that you’re ready to learn in our workshops with Microsoft Windows.</p>
 
@@ -306,6 +303,5 @@
         </p>
       </article>
     </div>
-  </div>
   </div>
 </div>

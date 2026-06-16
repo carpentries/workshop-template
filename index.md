@@ -21,6 +21,8 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
 what3words:           # optional: what3words (https://what3words.com) address of the workshop venue, without leading slashes e.g. "globe.lessening.computers"
 ---
 
+{% assign isOfficial = site.official_curricula | has: site.carpentry %}
+
 {% comment %} See instructions in the comments below for how to edit specific sections of this workshop template. {% endcomment %}
 
 {% comment %}
@@ -127,13 +129,10 @@ the pitch.
             helpers, and supporters who share a mission to teach foundational computational and data science
             skills to researchers.
             </p>
-            {% if site.carpentry == "swc" %}
-            {% include swc/intro.html %}
-            {% elsif site.carpentry == "dc" %}
-            {% include dc/intro.html %}
-            {% elsif site.carpentry == "lc" %}
-            {% include lc/intro.html %}
-            {% endif %}        
+            {% assign intro_file = site.carpentry | append: '/intro.html' %}
+            {% if isOfficial %}
+            {% include {{ intro_file }} %}
+            {% endif %}
         </div>
     </div>
   </div>
@@ -210,12 +209,9 @@ address.
             Explain who your audience is.  (In particular, tell readers if the
             workshop is only open to people from a particular institution.
             {% endcomment %}
-            {% if site.carpentry == "swc" %}
-            {% include swc/who.html %}
-            {% elsif site.carpentry == "dc" %}
-            {% include dc/who.html %}
-            {% elsif site.carpentry == "lc" %}
-            {% include lc/who.html %}
+            {% assign who_file = site.carpentry | append: '/who.html' %}
+            {% if isOfficial %}
+            {% include {{ who_file }} %}
             {% endif %}    
         </dd>
     </div>
@@ -449,6 +445,8 @@ SURVEYS - DO NOT EDIT SURVEY LINKS
                 in `_config.yml` or, if this workshop is teaching a lesson in the Incubator,
                 change the value of `carpentry` to `incubator`.
                 </div>
+                {% elsif site.carpentry == "hpcc" %}
+                <a href="{{ site.hpcc_pre_survey }}{{ site.github.project_title }}" class="btn btn-primary">Fill Out the Pre-Workshop Survey</a>
                 {% else %}
                 <a href="{{ site.pre_survey }}{{ site.github.project_title }}" class="btn btn-primary">Fill Out the Pre-Workshop Survey</a>
                 {% endif %}
@@ -471,6 +469,8 @@ SURVEYS - DO NOT EDIT SURVEY LINKS
                 in `_config.yml` or, if this workshop is teaching a lesson in the Incubator,
                 change the value of `carpentry` to `incubator`.
                 </div>
+                {% elsif site.carpentry == "hpcc" %}
+                <a href="{{ site.hpcc_post_survey }}{{ site.github.project_title }}" class="btn btn-primary">Fill Out the Pre-Workshop Survey</a>
                 {% else %}
                 <a href="{{ site.post_survey }}{{ site.github.project_title }}" class="btn btn-primary">Fill Out the Post-Workshop Survey</a>
                 {% endif %}
@@ -507,12 +507,9 @@ of code below the Schedule `<h2>` header below with
   <h5 class="card-header">Schedule</h5>
   <div class="card-body">
 
-    {% if site.carpentry == "swc" %}
-    {% include swc/schedule.html %}
-    {% elsif site.carpentry == "dc" %}
-    {% include dc/schedule.html %}
-    {% elsif site.carpentry == "lc" %}
-    {% include lc/schedule.html %}
+    {% assign schedule_file = site.carpentry | append: '/schedule.html' %}
+    {% if isOfficial %}
+    {% include {{ schedule_file }} %}
     {% elsif site.carpentry == "incubator" %}
     This workshop is teaching a lesson in 
     <a href="https://carpentries-incubator.org/">The Carpentries Incubator</a>. Please check <a href="{{site.incubator_lesson_site}}">the lesson homepage</a> for a list of lesson sections and estimated timings.
@@ -554,6 +551,8 @@ please preview your site before committing, and make sure to run
   Data Carpentry
   {% elsif site.carpentry == "lc" %}
   Library Carpentry
+  {% elsif site.carpentry == "hpcc" %}
+  High Performance Computing Carpentry
   {% endif %}
   workshop,
   you will need access to software as described below.
@@ -584,12 +583,9 @@ These are the installation instructions for the tools used
 during the workshop.
 {% endcomment %}
 
-{% if site.carpentry == "swc" %}
-{% include swc/setup.html %}
-{% elsif site.carpentry == "dc" %}
-{% include dc/setup.html %}
-{% elsif site.carpentry == "lc" %}
-{% include lc/setup.html %}
+{% assign setup_file = site.carpentry | append: '/setup.html' %}
+{% if isOfficial %}
+{% include {{ setup_file }} %}
 {% elsif site.carpentry == "incubator" %}
 Please check the "Setup" page of
 <a href="{{site.incubator_lesson_site}}">the lesson homepage</a> for instructions to follow
