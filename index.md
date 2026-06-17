@@ -123,9 +123,12 @@ the pitch.
         <h5 class="card-header">The Carpentries</h5>
         <div class="card-body">
             <p>
-            <strong><a href="https://carpentries.org">The Carpentries</a></strong> project comprises the <a
-            href="{{site.swc_site}}">Software Carpentry</a>, <a href="{{site.dc_site}}">Data Carpentry</a>, and
-            <a href="{{site.lc_site}}">Library Carpentry</a> communities of Instructors, Trainers, Maintainers,
+            <strong><a href="https://carpentries.org">The Carpentries</a></strong> project comprises the
+            <a href="{{site.dc_site}}">Data Carpentry</a>,
+            <a href="{{site.hpcc_site}}">High Performance Computing Carpentry</a>,  
+            <a href="{{site.lc_site}}">Library Carpentry</a>, and
+            <a href="{{site.swc_site}}">Software Carpentry</a>
+             communities of Instructors, Trainers, Maintainers,
             helpers, and supporters who share a mission to teach foundational computational and data science
             skills to researchers.
             </p>

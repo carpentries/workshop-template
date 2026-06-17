@@ -161,6 +161,8 @@ exclude:
 # Turn on built-in syntax highlighting.
 highlighter: rouge
 
+# list of official Carpentries curricula
+# DO NOT CHANGE THESE
 official_curricula:
   - swc
   - dc
