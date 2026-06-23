@@ -5,10 +5,11 @@
 # More detailed instructions are available at:
 # https://carpentries.github.io/workshop-template/customization/index.html
 
-# Which carpentry is this ("swc", "dc", "lc", or "cp")?
+# Which carpentry is this ("swc", "dc", "lc", "hpcc", or "cp")?
 # swc: Software Carpentry
 #  dc: Data Carpentry
 #  lc: Library Carpentry
+#  hpcc: High Performance Computing Carpentry
 #  cp: Carpentries (to use for instructor training for instance)
 #  incubator: for workshops teaching a lesson in The Carpentries Incubator
 # Note that for regular workshops, you should use:
@@ -103,6 +104,9 @@ lc_site: "https://librarycarpentry.org/"
 swc_github: "https://github.com/swcarpentry"
 swc_pages: "https://swcarpentry.github.io"
 swc_site: "https://software-carpentry.org"
+hpcc_github: "https://github.com/hpc-carpentry"
+hpcc_pages: "https://hpc-carpentry.github.io"
+hpcc_site: "https://hpc-carpentry.org"
 template_repo: "https://github.com/carpentries/styles"
 training_site: "https://carpentries.github.io/instructor-training"
 workshop_repo: "https://github.com/carpentries/workshop-template"
@@ -112,6 +116,8 @@ cc_by_human: "https://creativecommons.org/licenses/by/4.0/"
 # Surveys.
 pre_survey: "https://carpentries.typeform.com/to/wi32rS?slug="
 post_survey: "https://carpentries.typeform.com/to/UgVdRQ?slug="
+hpcc_pre_survey: "https://carpentries.typeform.com/to/B1ODiMAi?slug="
+hpcc_post_survey: "https://carpentries.typeform.com/to/UVy0uF8B?slug="
 
 # Start time in minutes (0 to be clock-independent, 540 to show a start at 09:00 am).
 start_time: 0
@@ -154,3 +160,11 @@ exclude:
 
 # Turn on built-in syntax highlighting.
 highlighter: rouge
+
+# list of official Carpentries curricula
+# DO NOT CHANGE THESE
+official_curricula:
+  - swc
+  - dc
+  - lc
+  - hpcc
