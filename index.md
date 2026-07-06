@@ -1,8 +1,7 @@
 ---
-layout: workshop      # DON'T CHANGE THIS.
-# More detailed instructions (including how to fill these variables for an
-# online workshop) are available at
-# https://carpentries.github.io/workshop-template/customization/index.html
+# More detailed instructions (including how to fill these variables for an # online workshop) are available at https://carpentries.github.io/workshop-template/customization/index.html#yaml-header
+
+# Required variables
 venue: "FIXME"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
 address: "FIXME"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
 country: "FIXME"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
@@ -16,12 +15,30 @@ enddate: FIXME        # machine-readable end date for the workshop in YYYY-MM-DD
 instructor: ["instructor one", "instructor two"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["helper one", "helper two"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 email: ["first@example.org","second@example.org"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
-collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
-eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
-what3words:           # optional: what3words (https://what3words.com) address of the workshop venue, without leading slashes e.g. "globe.lessening.computers"
+
+# Optional variables
+collaborative_notes:  # URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
+eventbrite:           # alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
+what3words:           # what3words (https://what3words.com) address of the workshop venue, without leading slashes e.g. "globe.lessening.computers"
+
+# DON'T CHANGE THIS
+layout: workshop      
 ---
 
 {% assign isOfficial = site.official_curricula | has: site.carpentry %}
+
+{% if page.venue == "FIXME" or
+      page.address == "FIXME" or
+      page.country == "FIXME" or
+      page.language == "FIXME" or
+      page.latitude == "FIXME" or
+      page.longitude == "FIXME" or
+      page.humandate == "FIXME" or
+      page.humantime == "FIXME" or
+      page.startdate == "FIXME" or
+      page.enddate == "FIXME" %}
+      {% assign fixmes = true %}
+{% endif %}
 
 {% comment %} See instructions in the comments below for how to edit specific sections of this workshop template. {% endcomment %}
 
@@ -29,37 +46,25 @@ what3words:           # optional: what3words (https://what3words.com) address of
 HEADER
 
 Edit the values in the block above to be appropriate for your workshop.
-If the value is not 'true', 'false', 'null', or a number, please use
-double quotation marks around the value, unless specified otherwise.
+If the value is not 'true', 'false', 'null', or a number, please use double quotation marks around the value, unless specified otherwise.
 And run 'make workshop-check' *before* committing to make sure that changes are good.
 {% endcomment %}
 
-
-
-{% comment %}
-8< ============= For a workshop delete from here =============
-For a workshop please delete the following block until the next dashed-line
-{% endcomment %}
-
-
+{% if fixmes %}
 <div class="alert alert-danger">
-This is the workshop template. Delete these lines and use it to
-<a href="{{relative_root_path}}/customization/index.html">customize</a>
-your own website. If you are running a self-organized workshop or have not put
-in a workshop request yet, please also fill in
-<a href="{{site.amy_site}}/forms/self-organised/">this workshop request form</a>
-to let us know about your workshop and our administrator may contact you if we
-need any extra information.
-If this is a pilot workshop for a new lesson,
-set the `pilot` field to `true` in `_config.yml`.
-For workshops teaching a lesson in The Carpentries Incubator,
-remember to uncomment the `incubator_lesson_site`, `incubator_pre_survey`, and `incubator_post_survey`
-fields in `_config.yml`
+    <p>
+        This is the Carpentries workshop template. Fill in the required variables as described in the <a href="{{relative_root_path}}/customization/index.html#yaml-header">customisation</a> instructions to remove this message.
+    </p>
+    <p>
+        If you are running a self-organized workshop or have not put in a workshop request yet, please also fill in <a href="{{site.amy_site}}/forms/self-organised/">this workshop request form</a> to let us know about your workshop and our administrator may contact you if we need any extra information.
+    </p>
+    <p>
+        If this is a pilot workshop for a new lesson, set the <code>pilot</code> field to <code>true</code> in <code>_config.yml</code>.
+        For workshops teaching a lesson in The Carpentries Incubator, remember to uncomment and supply values for <code>incubator_lesson_site</code>, <code>incubator_pre_survey</code>, and <code>incubator_post_survey</code> fields in <code>_config.yml</code>.
+    </p>
 </div>
+{% endif %}
 
-{% comment %}
-8< ============================= until here ==================
-{% endcomment %}
 
 {% comment %}
 Check DC curriculum
@@ -73,6 +78,7 @@ It looks like you are setting up a website for a Data Carpentry curriculum but y
 {% endunless %}
 {% endif %}
 
+
 {% comment %}
 Check SWC curriculum
 {% endcomment %}
@@ -85,6 +91,7 @@ It looks like you are setting up a website for a Software Carpentry curriculum b
 {% endunless %}
 {% endif %}
 
+
 {% comment %}
 EVENTBRITE
 
@@ -93,9 +100,9 @@ This block includes the Eventbrite registration widget if
 are not using Eventbrite, or leave it in, since it will not be
 displayed if the 'eventbrite' field in the header is not set.
 {% endcomment %}
+
 {% if page.eventbrite %}
-<strong>Some adblockers block the registration window. If you do not see the
-  registration box below, please check your adblocker settings.</strong>
+<strong>Some adblockers block the registration window. If you do not see the registration box below, please check your adblocker settings.</strong>
 <div id="eventbrite-widget-container"></div>
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 <script type="text/javascript">
@@ -108,11 +115,11 @@ displayed if the 'eventbrite' field in the header is not set.
 </script>
 {% endif %}
 
+
 {% comment %}
 INTRODUCTION
 
-Edit the general explanatory paragraph below if you want to change
-the pitch.
+Edit the general explanatory paragraph below if you want to change the pitch.
 {% endcomment %}
 
 <div class="row g-3 pb-3">
@@ -128,9 +135,7 @@ the pitch.
             <a href="{{site.hpcc_site}}">High Performance Computing Carpentry</a>,  
             <a href="{{site.lc_site}}">Library Carpentry</a>, and
             <a href="{{site.swc_site}}">Software Carpentry</a>
-             communities of Instructors, Trainers, Maintainers,
-            helpers, and supporters who share a mission to teach foundational computational and data science
-            skills to researchers.
+             communities of Instructors, Trainers, Maintainers, helpers, and supporters who share a mission to teach foundational computational and data science skills to researchers.
             </p>
             {% assign intro_file = site.carpentry | append: '/intro.html' %}
             {% if isOfficial %}
@@ -182,6 +187,7 @@ the pitch.
 This is a pilot workshop, testing out a lesson that is still under development. The lesson authors would appreciate any feedback you can give them about the lesson content and suggestions for how it could be further improved.
 {% endif %}
 
+
 {% comment %}
 LOCATION
 
@@ -190,13 +196,14 @@ if the latitude and longitude of the workshop have been set.  You
 can use https://www.latlong.net/ to find the lat/long of an
 address.
 {% endcomment %}
+
 {% assign begin_address = page.address | slice: 0, 4 | downcase  %}
 {% if page.address == "online" %}
-{% assign online = "true_private" %}
+  {% assign online = "true_private" %}
 {% elsif begin_address contains "http" %}
-{% assign online = "true_public" %}
+  {% assign online = "true_public" %}
 {% else %}
-{% assign online = "false" %}
+  {% assign online = "false" %}
 {% endif %}
 
 <div class="card mb-2">
@@ -366,7 +373,7 @@ address.
         <dd class="col py-2 px-3 mx-0 mb-0">
             <p id="workshops-faq">
             For answers to frequently asked questions about workshops,
-            refer to <a href="[https://carpentries.org/workshops/workshops-faq/](https://carpentries.org/workshops/workshops-faq/)">the Carpentries Workshop FAQ</a>.
+            refer to <a href="https://carpentries.org/workshops/workshops-faq">the Carpentries Workshop FAQ</a>.
             </p>    
         </dd>
     </div>
@@ -382,14 +389,13 @@ address.
   </div>
 </div>
 
+
 {% comment %}
 WHO CAN ATTEND?
 
-If you would like to specify who can attend the workshop,
-you can use the section below.
+If you would like to specify who can attend the workshop, you can use the section below.
 
-Move the 'endcomment' tag above the beginning of the following
-<p> tag to make this section visible.
+Move the 'endcomment' tag above the beginning of the following <p> tag to make this section visible.
 
 Edit the text to match who can attend the workshop. For instance:
 - This workshop is open to affiliates to ABC university.
@@ -403,8 +409,9 @@ Edit the text to match who can attend the workshop. For instance:
 </p>
 {% endcomment %}
 
+
 {% comment %}
-Collaborative Notes
+COLLABORATIVE NOTES
 
 If you want to use an Etherpad, go to
 
@@ -413,12 +420,10 @@ https://pad.carpentries.org/YYYY-MM-DD-site
 where 'YYYY-MM-DD-site' is the identifier for your workshop,
 e.g., '2015-06-10-esu'.
 
-Note we also have a CodiMD (the open-source version of HackMD)
-available at https://codimd.carpentries.org
+Note we also have a CodiMD (the open-source version of HackMD) available at https://codimd.carpentries.org
 {% endcomment %}
 {% if page.collaborative_notes %}
 <h2 id="collaborative_notes">Collaborative Notes</h2>
-
 <p>
 We will use this <a href="{{ page.collaborative_notes }}">collaborative document</a> for chatting, taking notes, and sharing URLs and bits of code.
 </p>
@@ -484,6 +489,7 @@ SURVEYS - DO NOT EDIT SURVEY LINKS
   </div>
 </div>
 
+
 {% comment %}
 SCHEDULE
 
@@ -509,28 +515,28 @@ of code below the Schedule `<h2>` header below with
 <div class="card mb-2">
   <h5 class="card-header">Schedule</h5>
   <div class="card-body">
-
     {% assign schedule_file = site.carpentry | append: '/schedule.html' %}
     {% if isOfficial %}
     {% include {{ schedule_file }} %}
     {% elsif site.carpentry == "incubator" %}
-    This workshop is teaching a lesson in 
-    <a href="https://carpentries-incubator.org/">The Carpentries Incubator</a>. Please check <a href="{{site.incubator_lesson_site}}">the lesson homepage</a> for a list of lesson sections and estimated timings.
+    This workshop is teaching a lesson in <a href="https://carpentries-incubator.org/">The Carpentries Incubator</a>.
+    Please check <a href="{{site.incubator_lesson_site}}">the lesson homepage</a> for a list of lesson sections and estimated timings.
     {% endif %}
 
     {% comment %}
     Edit/replace the text above if you want to include a schedule table.
-    See the contents of the _includes/custom-schedule.html file for an example of
-    how one of these schedule tables is constructed.
+    See the contents of the _includes/custom-schedule.html file for an example of how one of these schedule tables is constructed.
     {% endcomment %}
 
     {% if site.pilot %}
-    The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. Please <a href="mailto:{{page.email}}">contact the workshop organisers</a> if you would like more information about the planned schedule.
+    The lesson taught in this workshop is being piloted and a precise schedule is yet to be established.
+    The workshop will include regular breaks. Please <a href="mailto:{{page.email}}">contact the workshop organisers</a> if you would like more information about the planned schedule.
     {% endif %}
   </div>
 </div>
 
 <hr/>
+
 
 {% comment %}
 SETUP
@@ -545,7 +551,6 @@ please preview your site before committing, and make sure to run
 {% endcomment %}
 
 <h2 id="setup">Setup</h2>
-
 <p>
   To participate in a
   {% if site.carpentry == "swc" %}
@@ -557,40 +562,35 @@ please preview your site before committing, and make sure to run
   {% elsif site.carpentry == "hpcc" %}
   High Performance Computing Carpentry
   {% endif %}
-  workshop,
-  you will need access to software as described below.
+  workshop, you will need access to software as described below.
   In addition, you will need an up-to-date web browser.
 </p>
 <p>
-  We maintain a list of common issues that occur during installation as a reference for instructors
-  that may be useful on the
-  <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
+  We maintain a list of common issues that occur during installation as a reference for instructors that may be useful on the
+  <a href="{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
+
 
 {% comment %}
 For online workshops, the section below provides:
 - installation instructions for the Zoom client
-- recommendations for setting up Learners' workspace so they can follow along
-  the instructions and the videoconferencing
+- recommendations for setting up Learners' workspace so they can follow along the instructions and the videoconferencing
 
-If you do not use Zoom for your online workshop, edit the file
-`_includes/install_instructions/videoconferencing.html`
-to include the relevant installation instructions.
+If you do not use Zoom for your online workshop, edit the file `_includes/install_instructions/videoconferencing.html` to include the relevant installation instructions.
 {% endcomment %}
+
 {% if online != "false" %}
-{% include install_instructions/videoconferencing.html %}
+  {% include install_instructions/videoconferencing.html %}
 {% endif %}
 
+
 {% comment %}
-These are the installation instructions for the tools used
-during the workshop.
+These are the installation instructions for the tools used during the workshop.
 {% endcomment %}
 
 {% assign setup_file = site.carpentry | append: '/setup.html' %}
 {% if isOfficial %}
-{% include {{ setup_file }} %}
+  {% include {{ setup_file }} %}
 {% elsif site.carpentry == "incubator" %}
-Please check the "Setup" page of
-<a href="{{site.incubator_lesson_site}}">the lesson homepage</a> for instructions to follow
-to obtain the software and data you will need to follow the lesson.
+  Please check the "Setup" page of <a href="{{site.incubator_lesson_site}}">the lesson homepage</a> for instructions to follow to obtain the software and data you will need to follow the lesson.
 {% endif %}
