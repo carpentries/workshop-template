@@ -2,59 +2,60 @@
   JavaScript used in lesson and workshop pages.
 {% endcomment %}
 <script src="{{ relative_root_path }}/assets/js/jquery.min.js"></script>
-<script src="{{ relative_root_path }}/assets/js/bootstrap.min.js"></script>
+<script src="{{ relative_root_path }}/assets/js/bootstrap.bundle.min.js"></script>
 <script src="{{ relative_root_path }}/assets/js/lesson.js"></script>
 
 <script>
-/* Based on https://stackoverflow.com/a/30894829/1802726 */
-var show_instructions = function() {
-     //set all nav tabs to inactive
-    $('#outer-tabs li').removeClass('active');
+let userClickedTabId = null;
+document.querySelectorAll('.os-tabs .nav-link[data-os]').forEach(trigger => {
+    trigger.addEventListener('mousedown', function () {
+        userClickedTabId = this.dataset.bsTarget;
+    });
 
-    //get all nav tabs matching the os and set to active
-    $('#outer-tabs li a[data-os="'+localStorage.os+'"]').parent().addClass('active');
+    trigger.addEventListener('shown.bs.tab', function () {
+        const os = this.dataset.os;
+        localStorage.os = os;
 
-    //set all tabs to inactive
-    $('.os-tabs li[role="presentation"]').removeClass('active');
+        // Sync other tab groups
+        document.querySelectorAll('.os-tabs .nav-link[data-os="' + os + '"]').forEach(el => {
+            if (el !== this) {
+                bootstrap.Tab.getOrCreateInstance(el).show();
+            }
+        });
 
-    //get all tabs matching the os and set to active
-    $('.os-tabs li a[data-os="'+localStorage.os+'"]').tab('show');
-}
+        // Scroll to the tab the user actually clicked, not the one that was automatically activated in another tab group
+        if (userClickedTabId && this.dataset.bsTarget === userClickedTabId) {
+            const navEl = document.querySelector('.os-tabs .nav-link[data-bs-target="' + userClickedTabId + '"]');
+            const scrollTarget = navEl.closest('.card') ?? navEl.closest('.card-header') ?? navEl;
+            setTimeout(() => {
+                scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+            userClickedTabId = null;
+        }
+    });
+});
 
-if (typeof(Storage) !== "undefined") {
-    if (localStorage.os == "undefined") {
-        localStorage.os = "windows";
+// Restore saved preference on page load
+if (typeof Storage !== 'undefined') {
+    const savedOs = localStorage.os && localStorage.os !== 'undefined'
+        ? localStorage.os
+        : 'windows';
+
+    localStorage.os = savedOs;
+
+    const trigger = document.querySelector('.os-tabs .nav-link[data-os="' + savedOs + '"]');
+    if (trigger) {
+        bootstrap.Tab.getOrCreateInstance(trigger).show();
     }
-    show_instructions();
-} else {
-    console.log("No localStorage");
 }
-
-/* Based on https://stackoverflow.com/a/30894829/1802726 */
-$('.os-tabs li a').click(function(){
-    //get selected os
-    localStorage.os = $(this)[0].dataset.os;
-
-    //show clicked tab content
-    $(this).tab('show');
-
-    //update other tabs
-    show_instructions();
-});
-
-$('.os-switch').click(function() {
-    soft_sel = $(this)[0].dataset.software;
-
-    //show clicked tab content
-    $('#win-tabs li a[data-software="'+soft_sel+'"]').tab('show');
-});
 
   // hide alerts when site is rendered on carpentries.github.io
-  $(document).ready(function() {
-      if (location.href.startsWith("https://carpentries.github.io/workshop-template/")) {
-          $("div.alert").hide();
-      }
-  });
+$(document).ready(function() {
+  if (location.href.startsWith("https://carpentries.github.io/workshop-template/")) {
+    // hide alert if they aren't also an info class
+    $("div.alert").not(".info").hide();
+  }
+});
 </script>
 {% if site.kind == "lesson" %}
 <!-- Matomo -->

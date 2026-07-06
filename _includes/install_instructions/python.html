@@ -5,8 +5,16 @@ using something other than the Jupyter Notebook. Details at
 
 https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatibility
 {% endcomment %}
-<div id="python">
-  <h3>Python</h3>
+<div class="card mb-2" id="python">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    <h5>Python</h5>
+    <ul class="nav nav-pills os-tabs" role="tablist">
+      <li role="presentation" class="nav-item"><button class="nav-link active" data-os="windows" data-bs-target="#python-windows" aria-controls="Windows" role="tab" data-bs-toggle="tab">Windows</button></li>
+      <li role="presentation" class="nav-item"><button class="nav-link" data-os="macos" data-bs-target="#python-macos" aria-controls="MacOS" role="tab" data-bs-toggle="tab">MacOS</button></li>
+      <li role="presentation" class="nav-item"><button class="nav-link" data-os="linux" data-bs-target="#python-linux" aria-controls="Linux" role="tab" data-bs-toggle="tab">Linux</button></li>
+    </ul>
+  </div>
+  <div class="card-body">
 
   <p>
     <a href="https://python.org">Python</a> is a popular language for
@@ -39,20 +47,20 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
   </p>
 
   <div>
-    <ul class="nav nav-tabs os-tabs" role="tablist">
-      <li role="presentation" class="active"><a data-os="windows" href="#python-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
-      <li role="presentation"><a data-os="macos" href="#python-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
-      <li role="presentation"><a data-os="linux" href="#python-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux / WSL</a></li>
-    </ul>
-
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="python-windows">
-        <details>
-            <summary><strong>Before you start:</strong> Issues relating to OneDrive</summary>
-            <div class="info alert-info">
+        <div class="card w-100 text-bg-warning" style="width: 18rem; margin-bottom: 10px;">
+        <details class="mb-0">
+            <summary class="card-header w-100 rounded-0" role="button">
+            Challenges with OneDrive
+            </summary>
+            <div class="card-body bg-light border-top">
+            <div class="card-text">
+                <p>
                 OneDrive is used by many institutions to sync your user folder (<code>C:\Users\[your-username]\</code>) within an organisation.
                 It may cause issues with the installation of the Carpentries environment.<br/>
                 If you have OneDrive set up, please ensure that you can access your <code>C:\Users\[your-username]\Downloads</code> folder:
+                </p>
                 <p>
                   <ul>
                     <li>Open File Explorer</li>
@@ -64,7 +72,10 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
                 </p>
                 <strong>If you encounter problems, please contact your IT support team and workshop organisers for assistance before the workshop.</strong>
             </div>
+            </div>
         </details>
+        </div>
+
         <ol>
           <li>Open <a href="https://conda-forge.org/download/">https://conda-forge.org/download/</a> with your web browser.</li>
           <li>Download the Miniforge for Windows installer</li>
@@ -221,5 +232,6 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
         </ol>
       </article>
     </div>
+  </div>
   </div>
 </div>

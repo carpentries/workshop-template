@@ -1,16 +1,16 @@
 {% assign curricula = "swc-gapminder|swc-inflammation"  | split: "|" %}
+
 {% unless curricula contains site.curriculum %}
 {% include warning-curriculum.html %}
 {% endunless %}
 
 {% include install_instructions/shell.html %}
 
-<br/>
-<div class="info alert-info">
-  <h4>Note for Windows Users</h4>
+<div class="info alert alert-info">
+  <h5>Note for Windows Users</h5>
   <ul>
-    <li>If you have used <strong>Windows Subsystem for Linux ("WSL2")</strong> please open your Ubuntu bash terminal and follow the <strong>Linux</strong> instructions for each of the software packages below.</li>
-    <li>If not, please follow the <strong>Windows</strong> instructions.</li>
+    <li>If you have chosen <strong>Git for Windows ("Git Bash")</strong>, please follow the <strong>Windows</strong> instructions.</li>
+    <li>If you have chosen <strong>Windows Subsystem for Linux ("WSL2")</strong>, please open your Ubuntu bash terminal and follow the <strong>Linux</strong> instructions for each of the software packages below.</li>
   </ul>
 </div>
 
@@ -31,7 +31,9 @@
 The following setup instructions are commented out because Carpentries workshops
 cover the these topics less frequently. Please uncomment the lines that
 correspond to the topics covered in your workshop.
+{% endcomment %}
 
+{% comment %}
 {% include install_instructions/sql.html %}
 {% include install_instructions/openrefine.html %}
 {% endcomment %}

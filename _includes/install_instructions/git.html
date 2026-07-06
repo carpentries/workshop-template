@@ -3,8 +3,16 @@ Git Setup instructions rely on Shell instructions. If you don't include
 Shell instructions as part of your workshop website, make sure to adjust
 the text below accordingly.
 {% endcomment %}
-<div id="git">
-  <h3>Git</h3>
+<div class="card mb-2" id="git">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    <h5>Git</h5>
+      <ul class="nav nav-pills os-tabs" role="tablist">
+        <li role="presentation" class="nav-item"><button class="nav-link active" data-os="windows" data-bs-target="#git-windows" aria-controls="Windows" role="tab" data-bs-toggle="tab">Windows</button></li>
+        <li role="presentation" class="nav-item"><button class="nav-link" data-os="macos" data-bs-target="#git-macos" aria-controls="MacOS" role="tab" data-bs-toggle="tab">MacOS</button></li>
+        <li role="presentation" class="nav-item"><button class="nav-link" data-os="linux" data-bs-target="#git-linux" aria-controls="Linux" role="tab" data-bs-toggle="tab">Linux</button></li>
+      </ul>
+  </div>
+  <div class="card-body">
   <p>
     Git is a version control system that lets you track who made changes
     to what when and has options for easily updating a shared or public
@@ -23,47 +31,36 @@ the text below accordingly.
       for keeping your email address private</a> provided at GitHub.
   </p>
 
-  <div>
-    <ul class="nav nav-tabs os-tabs" role="tablist">
-      <li role="presentation" class="active"><a data-os="windows" href="#git-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
-      <li role="presentation"><a data-os="macos" href="#git-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
-      <li role="presentation"><a data-os="linux" href="#git-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux / WSL</a></li>
-    </ul>
-
-    <div class="tab-content">
-      <article role="tabpanel" class="tab-pane active" id="git-windows">
-        <p>
-          Git should be installed on your computer as part of your Bash
-          install (see the
-          <a href="#shell">Shell installation instructions</a>).
-        </p>
-      </article>
-      <article role="tabpanel" class="tab-pane" id="git-macos">
-        <p>
-          Please open the Terminal app, type <code>git --version</code> and press
-          <kbd>Enter</kbd>/<kbd>Return</kbd>. If it's not installed already,
-          follow the instructions to <code>Install</code> the "command line
-          developer tools". <strong>Do not click</strong> "Get Xcode", because that will
-          take too long and is not necessary for our Git lesson.
-          After installing these tools, there won't be anything in your <code>/Applications</code>
-          folder, as they and Git are command line programs.
-          <strong>For older versions of OS X (10.5-10.8)</strong> use the
-          most recent available installer labelled "snow-leopard"
-          <a href="http://sourceforge.net/projects/git-osx-installer/files/">available here</a>.
-          (Note: this project is no longer maintained.)
-          Because this installer is not signed by the developer, you may have to
-          right click (control click) on the .pkg file, click Open, and click
-          Open in the pop-up dialog.
-        </p>
-      </article>
-      <article role="tabpanel" class="tab-pane" id="git-linux">
-        <p>
-          If Git is not already available on your machine you can try to
-          install it via your distro's package manager. For Debian/Ubuntu run
-          <code>sudo apt-get install git</code> and for Fedora run
-          <code>sudo dnf install git</code>.
-        </p>
-      </article>
+  <div class="tab-content">
+    <article role="tabpanel" class="tab-pane active" id="git-windows">
+    Git should be installed on your computer as part of your Bash install (see the <a href="#shell">Shell installation instructions</a>).
+    </article>
+    <article role="tabpanel" class="tab-pane" id="git-macos">
+    <p>
+        Please open the Terminal app, type <code>git --version</code> and press
+        <kbd>Enter</kbd>/<kbd>Return</kbd>. If it's not installed already,
+        follow the instructions to <code>Install</code> the "command line
+        developer tools". <strong>Do not click</strong> "Get Xcode", because that will
+        take too long and is not necessary for our Git lesson.
+        After installing these tools, there won't be anything in your <code>/Applications</code>
+        folder, as they and Git are command line programs.
+        <strong>For older versions of OS X (10.5-10.8)</strong> use the
+        most recent available installer labelled "snow-leopard"
+        <a href="http://sourceforge.net/projects/git-osx-installer/files/">available here</a>.
+        (Note: this project is no longer maintained.)
+        Because this installer is not signed by the developer, you may have to
+        right click (control click) on the .pkg file, click Open, and click
+        Open in the pop-up dialog.
+    </p>
+    </article>
+    <article role="tabpanel" class="tab-pane" id="git-linux">
+    <p>
+        If Git is not already available on your machine you can try to
+        install it via your distro's package manager. For Debian/Ubuntu run
+        <code>sudo apt-get install git</code> and for Fedora run
+        <code>sudo dnf install git</code>.
+    </p>
+    </article>
     </div>
   </div>
 </div>

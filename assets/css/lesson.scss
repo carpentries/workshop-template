@@ -92,8 +92,8 @@ div.language-sql::before      { content: "SQL"; }
 div.language-vulkan::before   { content: "Vulkan"; }
 
 div.info {
-  padding: 15px;
-  margin-bottom: 20px;
+  padding: 20px;
+  margin-bottom: 10px;
   border: 1px solid transparent;
   border-radius: 4px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -103,9 +103,10 @@ div.info {
 
 // Tab panels are used on Setup pages to show instructions for different Operating Systems
 .tab-pane {
-  border: solid 0.065em #ddd; // #ddd == @nav-tabs-active-link-hover-border-color
+  // border: solid 0.065em #ddd; // #ddd == @nav-tabs-active-link-hover-border-color
   border-top: none;
-  padding: 1.3em 1.3em 0.65em 1.3em;
+  // padding: 1.3em 1.3em 0.65em 1.3em;
+  padding-top: 1.3em;
   border-radius: 0 0 0.26em 0.26em; // 0.26em == @border-radius-base
 }
 
@@ -230,10 +231,18 @@ blockquote :not(h2) + p {
 // Override Bootstrap settings.
 //----------------------------------------
 
+.navbar-nav .nav-item {
+    margin-left: 0.65em;
+}
+
 blockquote { font-size: inherit; }
 
 a code {
   color: #006cad;
+}
+
+a.btn-primary {
+  color: #fff !important;
 }
 
 a:link {
@@ -345,6 +354,43 @@ p.image-with-shadow img,
 img.image-with-shadow {
   box-shadow: 0 0.39em 1.56em 0 #888;
 }
+
+.jumbo p {
+    font-size: 21px;
+}
+
+.card-text h1,
+.card-text h2,
+.card-text h3,
+.card-text h4,
+.card-text h5 {
+    margin-top: 1.3em;
+    margin-bottom: 0.65em;
+}
+
+.card-header h5 {
+    padding-top: 5px;
+}
+
+.tab-content {
+    margin-bottom: 10px;
+}
+
+.bi-pencil-fill {
+    padding-bottom: 2px;
+}
+
+h1.maintitle {
+    font-size: 2.25em;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+// .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+//     margin-top: 10px;
+// }
+
 
 //----------------------------------------
 // Life cycle box
