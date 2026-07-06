@@ -96,27 +96,9 @@ There are two ways of customizing your website. You can either:
 
     ![screenshot of top menu bar for GitHub's file interface with the edit icon highlighted in the top right](fig/edit-index-file-menu-bar.png?raw=true)
 
-    Editing hints are embedded in `index.md`,
-    and full instructions are in [the customization instructions][customization].
+    Editing hints are embedded in `index.md`, and full instructions are in [the customization instructions][customization].
 
-4.  Remove the notice about using the workshop template in the `index.md` file. You can safely
-    delete everything between the `{% comment %}` and `{% endcomment %}` (included) as indicated
-    below (from line 37 to line 60):
-
-    ```jekyll
-    {% comment %} <------------ remove from this line
-    8< ============= For a workshop delete from here =============
-    For a workshop please delete the following block until the next dashed-line
-    {% endcomment %}
-
-    <div class="alert alert-danger">
-      ....
-    </div>
-
-    {% comment %}
-     8< ============================= until here ==================
-    {% endcomment %} <--------- until this line
-    ```
+    Once all the required variables in the YAML header have been set to valid values, i.e. not `FIXME`, then the warning customisation message will disappear from the index page.
 
 4.  Edit `_config.yml` to customize certain site-wide variables, such as: `carpentry` (to tell your
     participants the lesson program for your workshop), `curriculum` and `flavor` for the
