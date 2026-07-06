@@ -122,26 +122,17 @@ hpcc_post_survey: "https://carpentries.typeform.com/to/UVy0uF8B?slug="
 # Start time in minutes (0 to be clock-independent, 540 to show a start at 09:00 am).
 start_time: 0
 
-# Specify that things in the episodes collection should be output.
+# Specify that things in the extras collection should be output.
 collections:
-  episodes:
-    output: true
-    permalink: /:path/index.html
   extras:
     output: true
     permalink: /:path/index.html
 
-# Set the default layout for things in the episodes collection.
+# Set the default layout for things in the extras collection.
 defaults:
   - values:
       root: .
       layout: page
-  - scope:
-      path: ""
-      type: episodes
-    values:
-      root: ..
-      layout: episode
   - scope:
       path: ""
       type: extras

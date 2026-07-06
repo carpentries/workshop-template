@@ -1,6 +1,6 @@
 # Contributing
 
-[Software Carpentry][swc-site], [Data Carpentry][dc-site] and [Library Carpentry][lc-site] are open source projects,
+[Software Carpentry][swc-site], [Data Carpentry][dc-site], [Library Carpentry][lc-site] and [High Performance Computing Carpentry][hpcc-site] are open source projects,
 and we welcome contributions of all kinds:
 new lessons,
 fixes to existing material,
@@ -14,8 +14,8 @@ you agree that we may redistribute your work under [our license](LICENSE.md).
 In exchange,
 we will address your issues and/or assess your change proposal as promptly as we can,
 and help you become a member of our community.
-Everyone involved in [Software Carpentry][swc-site], [Data Carpentry][dc-site] and [Library Carpentry][lc-site]
-agrees to abide by our [code of conduct](CONDUCT.md).
+Everyone involved in [Software Carpentry][swc-site], [Data Carpentry][dc-site], [Library Carpentry][lc-site] and 
+[High Performance Computing Carpentry][hpcc-site] agrees to abide by our [code of conduct](CONDUCT.md).
 
 ## How to Contribute
 
@@ -45,15 +45,8 @@ and to meet some of our community members.
 
 ## Where to Contribute
 
-1.  If you wish to change the template used for workshop websites,
-    please work in <https://github.com/carpentries/workshop-template>.
-    The home page of that repository explains how to set up workshop websites,
-    while the extra pages in <https://carpentries.github.io/workshop-template>
-    provide more background on our design choices.
-
-2.  If you wish to change CSS style files, tools,
-    or HTML boilerplate for lessons or workshops stored in `_includes` or `_layouts`,
-    please work in <https://github.com/carpentries/styles>.
+If you wish to change this template used for workshop websites,
+please work in the workshop template repository at <https://github.com/carpentries/workshop-template>.
 
 ## What to Contribute
 
@@ -64,7 +57,7 @@ and submitting [bug reports][issues]
 about things that don't work, aren't clear, or are missing.
 If you are looking for ideas,
 please see [the list of issues for this repository][issues],
-or the issues for [Software Carpentry][swc-site], [Data Carpentry][dc-site] and [Library Carpentry][lc-site] projects.
+or the issues for [Software Carpentry][swc-site], [Data Carpentry][dc-site], [Library Carpentry][lc-site] and [High Performance Computing Carpentry][hpcc-site] projects.
 
 Comments on issues and reviews of pull requests are just as welcome:
 we are smarter together than we are on our own.
@@ -113,33 +106,36 @@ In brief:
         make changes on your desktop and push to your branch on GitHub:
         the pull request will update automatically.
 
-Each lesson has two maintainers who review issues and pull requests
-or encourage others to do so.
-The maintainers are community volunteers,
-and have final say over what gets merged into the lesson.
+Most Carpentries resources have maintainers who review issues and pull requests or encourage others to do so.
+The maintainers are community volunteers, and have final say over what gets merged into the lesson.
+
+**All contributions to our repositories must be made in alignment with our [Generative AI Contributions policy](https://docs.carpentries.org/policies/genai-policy.html).**
 
 ## Other Resources
 
-General discussion of [Software Carpentry][swc-site], [Data Carpentry][dc-site] and [Library Carpentry][lc-site]
+General discussion of [Software Carpentry][swc-site], [Data Carpentry][dc-site], [Library Carpentry][lc-site] and [][]
 happens in the `#lessons` channel on The Carpentries [Slack channel][slack], or on the [discussion mailing list][discuss-list],
 which everyone is welcome to join.
 You can also [reach us by email][contact].
 
 [contact]: mailto:team@carpentries.org
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry
-[dc-lessons]: http://datacarpentry.org/lessons/
-[dc-site]: http://datacarpentry.org/
-[discuss-list]: http://lists.software-carpentry.org/listinfo/discuss
-[github]: http://github.com
+[dc-lessons]: https://datacarpentry.org/lessons/
+[dc-site]: https://datacarpentry.org/
+[discuss-list]: https://lists.software-carpentry.org/listinfo/discuss
+[github]: https://github.com
 [github-flow]: https://guides.github.com/introduction/flow/
 [github-join]: https://github.com/join
 [how-contribute]: https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github
 [issues]: https://github.com/carpentries/workshop-template/issues/
 [repo]: https://github.com/carpentries/workshop-template/
 [swc-issues]: https://github.com/issues?q=user%3Aswcarpentry
-[swc-lessons]: http://software-carpentry.org/lessons/
-[swc-site]: http://software-carpentry.org/
+[swc-lessons]: https://software-carpentry.org/lessons/
+[swc-site]: https://software-carpentry.org/
 [lc-issues]: https://github.com/issues?q=user%3Alibrarycarpentry
-[lc-lessons]: http://librarycarpentry.org/lessons/
-[lc-site]: http://librarycarpentry.org/
+[lc-lessons]: https://librarycarpentry.org/lessons/
+[lc-site]: https://librarycarpentry.org/
+[hpcc-issues]: https://github.com/issues?q=user%3Ahpccarpentry
+[hpcc-lessons]: https://hpc-carpentry.org/lessons/
+[hpcc-site]: https://hpc-carpentry.org/
 [slack]: https://slack-invite.carpentries.org/
