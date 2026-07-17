@@ -132,7 +132,7 @@ Edit the general explanatory paragraph below if you want to change the pitch.
             <p>
             <strong><a href="https://carpentries.org">The Carpentries</a></strong> project comprises the
             <a href="{{site.dc_site}}">Data Carpentry</a>,
-            <a href="{{site.hpcc_site}}">High Performance Computing Carpentry</a>,  
+            <a href="{{site.hpcc_site}}">High-Performance Computing Carpentry</a>,  
             <a href="{{site.lc_site}}">Library Carpentry</a>, and
             <a href="{{site.swc_site}}">Software Carpentry</a>
              communities of Instructors, Trainers, Maintainers, helpers, and supporters who share a mission to teach foundational computational and data science skills to researchers.
@@ -560,7 +560,7 @@ please preview your site before committing, and make sure to run
   {% elsif site.carpentry == "lc" %}
   Library Carpentry
   {% elsif site.carpentry == "hpcc" %}
-  High Performance Computing Carpentry
+  High-Performance Computing Carpentry
   {% endif %}
   workshop, you will need access to software as described below.
   In addition, you will need an up-to-date web browser.
