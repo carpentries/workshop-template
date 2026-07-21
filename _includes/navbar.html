@@ -1,9 +1,9 @@
 {% comment %}
-  Lesson navigation bar.
+  Workshop navigation bar.
 {% endcomment %}
 
 {% include gh_variables.html %}
-{% include manual_episode_order.html %}
+{% assign workshop_extras = site.extras %}
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -23,6 +23,10 @@
     {% elsif site.carpentry == "lc" %}
       <a href="{{ site.lc_site }}" class="pull-left">
         <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/lc-icon-black.svg %}" alt="Library Carpentry logo" />
+      </a>
+    {% elsif site.carpentry == "hpcc" %}
+      <a href="{{ site.hpcc_site }}" class="pull-left">
+        <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/hpcc-icon-black.svg %}" alt="High Performance Computing Carpentry logo" />
       </a>
     {% elsif site.carpentry == "cp" %}
       <a href="{{ site.carpentries_site }}" class="pull-left">
@@ -46,41 +50,17 @@
 	    {% comment %} Always show code of conduct. {% endcomment %}
         <li class="nav-item"><a class="nav-link" href="{{ relative_root_path }}{% link CODE_OF_CONDUCT.md %}">Code of Conduct</a></li>
 
-        {% if site.kind == "lesson" %}
-	        {% comment %} Show setup instructions. {% endcomment %}
-            <li class="nav-item"><a class="nav-link" href="{{ relative_root_path }}{% link setup.md %}">Setup</a></li>
-
-            {% comment %} Show lesson episodes for lessons. {% endcomment %}
-            {% if lesson_episodes.size > 0 %}
-            <li class="nav-item dropdown">
-            <a href="{{ relative_root_path }}/" class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {% for lesson_episode in lesson_episodes %}
-                {% if site.episode_order %}
-                {% assign episode = site.episodes | where: "slug", lesson_episode | first %}
-                {% else %}
-                {% assign episode = lesson_episode %}
-                {% endif %}
-                <li class="nav-item"><a class="nav-link" href="{{ relative_root_path }}{{ episode.url }}">{{ episode.title }}</a></li>
-                {% endfor %}
-            <li role="separator" class="divider"></li>
-                <li class="nav-item"><a class="nav-link" href="{{ relative_root_path }}{% link aio.md %}">All in one page (Beta)</a></li>
-            </ul>
-            </li>
-            {% endif %}
-	    {% endif %}
-
-	    {% comment %} Show extras for lessons or if this is the main workshop-template repo (where they contain documentation). {% endcomment %}
+	    <!-- {% comment %} Show extras for lessons or if this is the main workshop-template repo (where they contain documentation). {% endcomment %}
 	    {% if site.kind == "lesson" %}
         <li class="nav-item dropdown">
           <a href="{{ relative_root_path }}/" class="nav-link dropdown-toggle" id="navbarDropdownExtras" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownExtras">
             <li class="nav-item"><a class="nav-link" href="{{ relative_root_path }}{% link reference.md %}">Reference</a></li>
-            {% for lesson_extra in lesson_extras %}
+            {% for workshop_extra in workshop_extras %}
             {% if site.extras_order %}
-              {% assign extra = site.extras | where: "slug", lesson_extra | first %}
+              {% assign extra = site.extras | where: "slug", workshop_extra | first %}
             {% else %}
-              {% assign extra = lesson_extra %}
+              {% assign extra = workshop_extra %}
             {% endif %}
             {% unless extra.exclude %}
               <li class="nav-item"><a class="nav-link" href="{{ relative_root_path }}{{ extra.url }}">{{ extra.title }}</a></li>
@@ -88,19 +68,11 @@
             {% endfor %}
           </ul>
         </li>
-	    {% endif %}
+	    {% endif %} -->
 
 	    {% comment %} Always show licence. {% endcomment %}
         <li class="nav-item"><a class="nav-link" href="{{ relative_root_path }}{% link LICENSE.md %}">Licence</a></li>
         <li class="nav-item"><a class="nav-link" href="https://www.zeffy.com/en-US/donation-form/donate-to-make-a-difference-7497?utm_source=workshop-website">Donate</a></li>
-
-        {% if site.life_cycle == 'transition-step-1' %}
-          {% assign improve_repo_url = repo_url %}
-        {% elsif page.source == "Rmd" %}
-          {% assign improve_repo_url = repo_url | append: "/edit/" | append: default_branch | append: "/" | append: page.path | replace: "_episodes", "_episodes_rmd" | replace: ".md", ".Rmd" %}
-        {% else %}
-          {% assign improve_repo_url = repo_url | append: "/edit/" | append: default_branch | append: "/" | append: page.path %}
-        {% endif %}
 
         <li class="nav-item">
           <a class="nav-link" href="{{improve_repo_url}}" data-checker-ignore>Improve this page
