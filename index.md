@@ -151,7 +151,7 @@ Edit the general explanatory paragraph below if you want to change the pitch.
         <strong>Want to learn more and stay engaged with The Carpentries?</strong>
         </p>
         <p class="text-center">
-        Carpentries Clippings is The Carpentries' biweekly newsletter, where we share community news, community job postings, and more.
+        Carpentries Clippings is The Carpentries' monthly newsletter, where we share community news, community job postings, and more.
         </p>
         <p class="text-center">
             <a href="https://carpentries.org/newsletter/">
