@@ -108,6 +108,7 @@ displayed if the 'eventbrite' field in the header is not set.
         widgetType: 'checkout',
         eventId: {{page.eventbrite}},
         iframeContainerId: 'eventbrite-widget-container',
+        iframeContainerHeight: '580px'
     });
 </script>
 {% endif %}
