@@ -50,7 +50,7 @@ And run 'make workshop-check' *before* committing to make sure that changes are 
 {% if fixmes %}
 <div class="alert alert-danger">
     <p>
-        This is the Carpentries workshop template. Fill in the required variables as described in the <a href="{{relative_root_path}}/customization/index.html#yaml-header">customisation</a> instructions to remove this message.
+        This is the Carpentries workshop template. Fill in the required variables as described in the <a href="{{site.url}}{{site.baseurl}}/customization/index.html#yaml-header">customisation</a> instructions to remove this message.
     </p>
     <p>
         If you are running a self-organized workshop or have not put in a workshop request yet, please also fill in <a href="{{site.amy_site}}/forms/self-organised/">this workshop request form</a> to let us know about your workshop and our administrator may contact you if we need any extra information.
