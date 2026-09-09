@@ -1,0 +1,24 @@
+{% comment %}
+Fill in the setup links for your incubator workshop below.
+{% endcomment %}
+
+{% comment %}
+Use flavors if you have configured a specific programming language for your Incubator workshop.
+If you have not configured a flavor, the default setup instructions can be edited in the last section of this file.
+{% endcomment %}
+<div id="spreadsheets-setup">
+  <h3>Required Workshop Software</h3>
+{% if site.flavor == "r" %}
+  <p>
+    The setup instructions for this Incubator R workshop can be found at <a href="{{ site.incubator_lesson_site }}"> the workshop overview site</a>.
+  </p>
+{% elsif site.flavor == "python" %}
+  <p>
+    The setup instructions for this Incubator Python workshop can be found at <a href="{{ site.incubator_lesson_site }}"> the workshop overview site</a>.
+  </p>
+{% else %}
+  <p>
+    The setup instructions for this Incubator workshop can be found at <a href="{{ site.incubator_lesson_site }}"> the curriculum site</a>.
+  </p>
+{% endif %}
+</div>
