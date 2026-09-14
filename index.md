@@ -144,6 +144,24 @@ Edit the general explanatory paragraph below if you want to change the pitch.
 
   <!-- right column with two stacked cards -->
   <div class="col-md-6 d-flex flex-column gap-3">
+
+    <div class="card flex-fill">
+        <h5 class="card-header">Donate to The Carpentries</h5>
+        <div class="card-body">
+        <p class="text-center">
+        <strong>The Carpentries is a nonprofit...</strong>
+        </p>
+        <p class="text-center">
+       Please consider contributing here....
+        </p>
+        <p class="text-center">
+            <a href="https://carpentries.org/support/donate-form/">
+                <button type="button" class="btn btn-success">Donate</button>
+            </a>
+        </p>
+      </div>
+    </div>
+
     <div class="card flex-fill">
         <h5 class="card-header">Carpentries Clippings</h5>
         <div class="card-body">
@@ -160,6 +178,8 @@ Edit the general explanatory paragraph below if you want to change the pitch.
         </p>
       </div>
     </div>
+
+
     <div class="card flex-fill">
       <h5 class="card-header">Code of Conduct</h5>
       <div class="card-body">
