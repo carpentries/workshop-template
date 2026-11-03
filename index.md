@@ -505,7 +505,7 @@ For larger changes, a blank template for a 4-day workshop
 you will be teaching to this file. You may also want to add
 rows to the table if you wish to break down the schedule
 further. To use this custom schedule here, replace the block
-of code below the Schedule `<h2>` header below with
+of code below the Schedule `<h5>` header below with
 `{% include custom-schedule.html %}`.
 {% endcomment %}
 
